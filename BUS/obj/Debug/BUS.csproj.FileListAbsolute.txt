@@ -1,0 +1,16 @@
+D:\GitHub\Nhom6-Quanly-HocSinh\BUS\bin\Debug\BUS.exe.config
+D:\GitHub\Nhom6-Quanly-HocSinh\BUS\bin\Debug\BUS.exe
+D:\GitHub\Nhom6-Quanly-HocSinh\BUS\bin\Debug\BUS.pdb
+D:\GitHub\Nhom6-Quanly-HocSinh\BUS\bin\Debug\DAO.exe
+D:\GitHub\Nhom6-Quanly-HocSinh\BUS\bin\Debug\DTO.exe
+D:\GitHub\Nhom6-Quanly-HocSinh\BUS\bin\Debug\DAO.pdb
+D:\GitHub\Nhom6-Quanly-HocSinh\BUS\bin\Debug\DAO.exe.config
+D:\GitHub\Nhom6-Quanly-HocSinh\BUS\bin\Debug\DTO.pdb
+D:\GitHub\Nhom6-Quanly-HocSinh\BUS\bin\Debug\DTO.exe.config
+D:\GitHub\Nhom6-Quanly-HocSinh\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+D:\GitHub\Nhom6-Quanly-HocSinh\BUS\obj\Debug\BUS.Properties.Resources.resources
+D:\GitHub\Nhom6-Quanly-HocSinh\BUS\obj\Debug\BUS.csproj.GenerateResource.cache
+D:\GitHub\Nhom6-Quanly-HocSinh\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+D:\GitHub\Nhom6-Quanly-HocSinh\BUS\obj\Debug\BUS.csproj.Up2Date
+D:\GitHub\Nhom6-Quanly-HocSinh\BUS\obj\Debug\BUS.exe
+D:\GitHub\Nhom6-Quanly-HocSinh\BUS\obj\Debug\BUS.pdb

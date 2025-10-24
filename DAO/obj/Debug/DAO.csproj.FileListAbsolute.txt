@@ -1,0 +1,13 @@
+D:\GitHub\Nhom6-Quanly-HocSinh\DAO\bin\Debug\DAO.exe.config
+D:\GitHub\Nhom6-Quanly-HocSinh\DAO\bin\Debug\DAO.exe
+D:\GitHub\Nhom6-Quanly-HocSinh\DAO\bin\Debug\DAO.pdb
+D:\GitHub\Nhom6-Quanly-HocSinh\DAO\bin\Debug\DTO.exe
+D:\GitHub\Nhom6-Quanly-HocSinh\DAO\bin\Debug\DTO.pdb
+D:\GitHub\Nhom6-Quanly-HocSinh\DAO\bin\Debug\DTO.exe.config
+D:\GitHub\Nhom6-Quanly-HocSinh\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache
+D:\GitHub\Nhom6-Quanly-HocSinh\DAO\obj\Debug\DAO.Properties.Resources.resources
+D:\GitHub\Nhom6-Quanly-HocSinh\DAO\obj\Debug\DAO.csproj.GenerateResource.cache
+D:\GitHub\Nhom6-Quanly-HocSinh\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+D:\GitHub\Nhom6-Quanly-HocSinh\DAO\obj\Debug\DAO.csproj.Up2Date
+D:\GitHub\Nhom6-Quanly-HocSinh\DAO\obj\Debug\DAO.exe
+D:\GitHub\Nhom6-Quanly-HocSinh\DAO\obj\Debug\DAO.pdb
