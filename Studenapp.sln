@@ -13,6 +13,21 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "DAO\DAO.csproj", "{2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{F61EA1CE-E116-47AC-AB8B-92579E06BC94}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "image", "image", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		image\hocphi_24.png = image\hocphi_24.png
+		image\nhapdiem.png = image\nhapdiem.png
+		image\nhapdiem_24.png = image\nhapdiem_24.png
+		image\nhapdiem_32.png = image\nhapdiem_32.png
+		image\nhapdiem_48.png = image\nhapdiem_48.png
+		image\nhapngaynghi_24.png = image\nhapngaynghi_24.png
+		image\tinnhan_24.png = image\tinnhan_24.png
+		image\xemdiem_24.png = image\xemdiem_24.png
+		image\xemlichday_24.png = image\xemlichday_24.png
+		image\xemtkb_24.png = image\xemtkb_24.png
+		image\xinphepvang_24.png = image\xinphepvang_24.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
