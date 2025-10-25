@@ -72,6 +72,9 @@
     <Compile Include="Sidebar.Designer.cs">
       <DependentUpon>Sidebar.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,6 +164,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\dangxuat_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anhnen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anhnenLogin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

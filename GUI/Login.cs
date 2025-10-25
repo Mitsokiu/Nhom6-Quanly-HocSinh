@@ -16,5 +16,33 @@ namespace GUI
         {
             InitializeComponent();
         }
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            String username = txtUser.Text.Trim();
+            String password = txtPass.Text.Trim();
+
+            if(username == "admin" && password == "123")
+            {
+                this.Hide();
+
+                MainForm mainForm = new MainForm();
+                mainForm.ShowDialog();
+
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Sai tài khoản hoặc mật khẩu!",
+                                "Đăng nhập thất bại",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+        }
     }
 }
