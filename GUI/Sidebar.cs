@@ -12,6 +12,8 @@ namespace GUI
 {
     public partial class Sidebar : UserControl
     {
+        public event EventHandler BtnNhapDiemClick;
+        public event EventHandler BtnXemDiemClick;
         public Sidebar()
         {
             InitializeComponent();
@@ -40,6 +42,16 @@ namespace GUI
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnNhapDiem_Click(object sender, EventArgs e)
+        {
+            BtnNhapDiemClick?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void btnXemDiem_Click_1(object sender, EventArgs e)
+        {
+            BtnXemDiemClick?.Invoke(this, EventArgs.Empty);
         }
     }
 }

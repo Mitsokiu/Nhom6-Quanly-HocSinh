@@ -18,3 +18,5 @@ D:\GitHub\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.Sidebar.resources
 D:\GitHub\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.MainForm.resources
 D:\GitHub\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.exe.config
 D:\GitHub\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.Login.resources
+D:\GitHub\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.XemDiemControl.resources
+D:\GitHub\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.NhapDiemControl.resources

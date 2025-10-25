@@ -229,6 +229,7 @@ namespace GUI
             this.btnXemDiem.Text = "  Xem điểm";
             this.btnXemDiem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXemDiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXemDiem.Click += new System.EventHandler(this.btnXemDiem_Click_1);
             // 
             // btnNhapDiem
             // 
@@ -245,6 +246,7 @@ namespace GUI
             this.btnNhapDiem.Text = "  Nhập điểm";
             this.btnNhapDiem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNhapDiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNhapDiem.Click += new System.EventHandler(this.btnNhapDiem_Click);
             // 
             // pictureBox1
             // 
