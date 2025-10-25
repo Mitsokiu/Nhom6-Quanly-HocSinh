@@ -37,7 +37,7 @@
             this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainForm";
+            this.Text = "Quản lý học sinh";
             this.ResumeLayout(false);
 
         }
