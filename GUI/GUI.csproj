@@ -64,6 +64,12 @@
     <Compile Include="HocPhiControl.Designer.cs">
       <DependentUpon>HocPhiControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="HocSinhControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HocSinhControl.Designer.cs">
+      <DependentUpon>HocSinhControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="LichDay.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     <Compile Include="XemDiemControl.Designer.cs">
       <DependentUpon>XemDiemControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="HocSinhControl.resx">
+      <DependentUpon>HocSinhControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -224,6 +233,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\anhnenLogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hocsinh_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timkiem_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lophoc_24.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -12,6 +12,7 @@ namespace GUI
             // Gắn sự kiện chuyển tab
             sidebar.BtnNhapDiemClick += Sidebar_BtnNhapDiemClick;
             sidebar.BtnXemDiemClick += Sidebar_BtnXemDiemClick;
+            sidebar.BtnHocSinhClick += Sidebar_BtnHocSinhClick;
         }
 
         // Xử lý khi bấm nút "Nhập điểm"
@@ -24,6 +25,11 @@ namespace GUI
         private void Sidebar_BtnXemDiemClick(object sender, EventArgs e)
         {
             LoadContent(new XemDiemControl());
+        }
+
+        private void Sidebar_BtnHocSinhClick(object sender, EventArgs e)
+        {
+            LoadContent(new HocSinhControl());
         }
 
         // Hàm load user control vào panelContent

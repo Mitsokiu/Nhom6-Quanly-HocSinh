@@ -36,8 +36,8 @@ namespace GUI
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.btnTaiKhoan = new System.Windows.Forms.Button();
             this.btnDiemDanh = new System.Windows.Forms.Button();
-            this.btnNhapNgayNghi = new System.Windows.Forms.Button();
-            this.btnXinPhepVang = new System.Windows.Forms.Button();
+            this.btnLopHoc = new System.Windows.Forms.Button();
+            this.btnHocSinh = new System.Windows.Forms.Button();
             this.btnXemLichDay = new System.Windows.Forms.Button();
             this.btnXemTKB = new System.Windows.Forms.Button();
             this.btnTinNhan = new System.Windows.Forms.Button();
@@ -118,37 +118,38 @@ namespace GUI
             this.btnDiemDanh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDiemDanh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             // 
-            // btnNhapNgayNghi
+            // btnLopHoc
             // 
-            this.btnNhapNgayNghi.FlatAppearance.BorderSize = 0;
-            this.btnNhapNgayNghi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNhapNgayNghi.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNhapNgayNghi.Image = ((System.Drawing.Image)(resources.GetObject("btnNhapNgayNghi.Image")));
-            this.btnNhapNgayNghi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhapNgayNghi.Location = new System.Drawing.Point(5, 511);
-            this.btnNhapNgayNghi.Name = "btnNhapNgayNghi";
-            this.btnNhapNgayNghi.Padding = new System.Windows.Forms.Padding(8, 2, 0, 0);
-            this.btnNhapNgayNghi.Size = new System.Drawing.Size(244, 43);
-            this.btnNhapNgayNghi.TabIndex = 20;
-            this.btnNhapNgayNghi.Text = "  Nhập ngày nghỉ";
-            this.btnNhapNgayNghi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhapNgayNghi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLopHoc.FlatAppearance.BorderSize = 0;
+            this.btnLopHoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLopHoc.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLopHoc.Image = global::GUI.Properties.Resources.lophoc_24;
+            this.btnLopHoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLopHoc.Location = new System.Drawing.Point(5, 511);
+            this.btnLopHoc.Name = "btnLopHoc";
+            this.btnLopHoc.Padding = new System.Windows.Forms.Padding(8, 2, 0, 0);
+            this.btnLopHoc.Size = new System.Drawing.Size(244, 43);
+            this.btnLopHoc.TabIndex = 20;
+            this.btnLopHoc.Text = "  Lớp học";
+            this.btnLopHoc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLopHoc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             // 
-            // btnXinPhepVang
+            // btnHocSinh
             // 
-            this.btnXinPhepVang.FlatAppearance.BorderSize = 0;
-            this.btnXinPhepVang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXinPhepVang.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXinPhepVang.Image = ((System.Drawing.Image)(resources.GetObject("btnXinPhepVang.Image")));
-            this.btnXinPhepVang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXinPhepVang.Location = new System.Drawing.Point(5, 461);
-            this.btnXinPhepVang.Name = "btnXinPhepVang";
-            this.btnXinPhepVang.Padding = new System.Windows.Forms.Padding(8, 2, 0, 0);
-            this.btnXinPhepVang.Size = new System.Drawing.Size(244, 43);
-            this.btnXinPhepVang.TabIndex = 19;
-            this.btnXinPhepVang.Text = "  Xin phép vắng";
-            this.btnXinPhepVang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXinPhepVang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHocSinh.FlatAppearance.BorderSize = 0;
+            this.btnHocSinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHocSinh.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHocSinh.Image = global::GUI.Properties.Resources.hocsinh_24;
+            this.btnHocSinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHocSinh.Location = new System.Drawing.Point(5, 461);
+            this.btnHocSinh.Name = "btnHocSinh";
+            this.btnHocSinh.Padding = new System.Windows.Forms.Padding(8, 2, 0, 0);
+            this.btnHocSinh.Size = new System.Drawing.Size(244, 43);
+            this.btnHocSinh.TabIndex = 19;
+            this.btnHocSinh.Text = "  Học sinh";
+            this.btnHocSinh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHocSinh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHocSinh.Click += new System.EventHandler(this.btnHocSinh_Click);
             // 
             // btnXemLichDay
             // 
@@ -269,8 +270,8 @@ namespace GUI
             this.Controls.Add(this.btnDangXuat);
             this.Controls.Add(this.btnTaiKhoan);
             this.Controls.Add(this.btnDiemDanh);
-            this.Controls.Add(this.btnNhapNgayNghi);
-            this.Controls.Add(this.btnXinPhepVang);
+            this.Controls.Add(this.btnLopHoc);
+            this.Controls.Add(this.btnHocSinh);
             this.Controls.Add(this.btnXemLichDay);
             this.Controls.Add(this.btnXemTKB);
             this.Controls.Add(this.btnTinNhan);
@@ -294,8 +295,8 @@ namespace GUI
         private System.Windows.Forms.Label lbWelcome;
         private System.Windows.Forms.Label lbInfo;
         private Button btnDiemDanh;
-        private Button btnNhapNgayNghi;
-        private Button btnXinPhepVang;
+        private Button btnLopHoc;
+        private Button btnHocSinh;
         private Button btnXemLichDay;
         private Button btnXemTKB;
         private Button btnTinNhan;
