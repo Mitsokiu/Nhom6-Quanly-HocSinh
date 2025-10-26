@@ -7,3 +7,4 @@ D:\GitHub\Nhom6-Quanly-HocSinh\DTO\obj\Debug\DTO.csproj.GenerateResource.cache
 D:\GitHub\Nhom6-Quanly-HocSinh\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 D:\GitHub\Nhom6-Quanly-HocSinh\DTO\obj\Debug\DTO.exe
 D:\GitHub\Nhom6-Quanly-HocSinh\DTO\obj\Debug\DTO.pdb
+D:\GitHub\Nhom6-Quanly-HocSinh\DTO\obj\Debug\DTO.exe.config

@@ -3,7 +3,23 @@
   "WorkspaceRootPath": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\Nhom6-Quanly-HocSinh\\gui\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\Nhom6-Quanly-HocSinh\\gui\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|D:\\GitHub\\Nhom6-Quanly-HocSinh\\dto\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|solutionrelative:dto\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|D:\\GitHub\\Nhom6-Quanly-HocSinh\\dao\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|solutionrelative:dao\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|D:\\GitHub\\Nhom6-Quanly-HocSinh\\bus\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|solutionrelative:bus\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\nhom6-quanly-hocsinh\\gui\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -11,19 +27,11 @@
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\nhom6-quanly-hocsinh\\gui\\lichday.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\Nhom6-Quanly-HocSinh\\gui\\lichday.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\lichday.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|D:\\GitHub\\Nhom6-Quanly-HocSinh\\dto\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|solutionrelative:dto\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|D:\\GitHub\\Nhom6-Quanly-HocSinh\\bus\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|solutionrelative:bus\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\nhom6-quanly-hocsinh\\gui\\diemdanhcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\Nhom6-Quanly-HocSinh\\gui\\diemdanhcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\diemdanhcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -35,35 +43,31 @@
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\nhom6-quanly-hocsinh\\gui\\nhapdiemcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\Nhom6-Quanly-HocSinh\\gui\\nhapdiemcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\nhapdiemcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\nhom6-quanly-hocsinh\\gui\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\Nhom6-Quanly-HocSinh\\gui\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\nhom6-quanly-hocsinh\\gui\\nhapdiemcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\Nhom6-Quanly-HocSinh\\gui\\nhapdiemcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\nhapdiemcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\nhom6-quanly-hocsinh\\gui\\xemdiemcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\Nhom6-Quanly-HocSinh\\gui\\xemdiemcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\xemdiemcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\nhom6-quanly-hocsinh\\gui\\xemdiemcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\Nhom6-Quanly-HocSinh\\gui\\xemdiemcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\xemdiemcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\nhom6-quanly-hocsinh\\gui\\taikhoancontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\Nhom6-Quanly-HocSinh\\gui\\taikhoancontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\taikhoancontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\nhom6-quanly-hocsinh\\gui\\thoikhoabieucontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\Nhom6-Quanly-HocSinh\\gui\\thoikhoabieucontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\thoikhoabieucontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -79,11 +83,11 @@
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\sidebar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\nhom6-quanly-hocsinh\\gui\\tinnhancontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\Nhom6-Quanly-HocSinh\\gui\\tinnhancontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\tinnhancontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\nhom6-quanly-hocsinh\\gui\\hocphicontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\Nhom6-Quanly-HocSinh\\gui\\hocphicontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\hocphicontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -101,10 +105,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{9AC93801-BD14-49D1-B814-2D86723DEB87}|Studenapp\\Studenapp.csproj|d:\\github\\nhom6-quanly-hocsinh\\studenapp\\usercontrols\\adduserform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AC93801-BD14-49D1-B814-2D86723DEB87}|Studenapp\\Studenapp.csproj|solutionrelative:studenapp\\usercontrols\\adduserform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|D:\\GitHub\\Nhom6-Quanly-HocSinh\\dao\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|solutionrelative:dao\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9AC93801-BD14-49D1-B814-2D86723DEB87}|Studenapp\\Studenapp.csproj|d:\\github\\nhom6-quanly-hocsinh\\studenapp\\forms\\adminform .designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -429,132 +429,6 @@
               "Name": "ST:1:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DiemDanhControl.cs [Design]",
-              "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\DiemDanhControl.cs",
-              "RelativeDocumentMoniker": "GUI\\DiemDanhControl.cs",
-              "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\DiemDanhControl.cs [Design]",
-              "RelativeToolTip": "GUI\\DiemDanhControl.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T18:06:42.633Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "XemDiemControl.cs",
-              "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\XemDiemControl.cs",
-              "RelativeDocumentMoniker": "GUI\\XemDiemControl.cs",
-              "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\XemDiemControl.cs",
-              "RelativeToolTip": "GUI\\XemDiemControl.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T17:35:08.729Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "NhapDiemControl.cs",
-              "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\NhapDiemControl.cs",
-              "RelativeDocumentMoniker": "GUI\\NhapDiemControl.cs",
-              "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\NhapDiemControl.cs",
-              "RelativeToolTip": "GUI\\NhapDiemControl.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T17:33:38.363Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LichDay.cs [Design]",
-              "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\LichDay.cs",
-              "RelativeDocumentMoniker": "GUI\\LichDay.cs",
-              "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\LichDay.cs [Design]",
-              "RelativeToolTip": "GUI\\LichDay.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T17:26:46.644Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ThoiKhoaBieuControl.cs [Design]",
-              "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\ThoiKhoaBieuControl.cs",
-              "RelativeDocumentMoniker": "GUI\\ThoiKhoaBieuControl.cs",
-              "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\ThoiKhoaBieuControl.cs [Design]",
-              "RelativeToolTip": "GUI\\ThoiKhoaBieuControl.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T17:26:35.315Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "TaiKhoanControl.cs [Design]",
-              "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\TaiKhoanControl.cs",
-              "RelativeDocumentMoniker": "GUI\\TaiKhoanControl.cs",
-              "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\TaiKhoanControl.cs [Design]",
-              "RelativeToolTip": "GUI\\TaiKhoanControl.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T17:26:17.886Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "TinNhanControl.cs [Design]",
-              "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\TinNhanControl.cs",
-              "RelativeDocumentMoniker": "GUI\\TinNhanControl.cs",
-              "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\TinNhanControl.cs [Design]",
-              "RelativeToolTip": "GUI\\TinNhanControl.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T17:26:05.693Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "HocPhiControl.cs [Design]",
-              "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\HocPhiControl.cs",
-              "RelativeDocumentMoniker": "GUI\\HocPhiControl.cs",
-              "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\HocPhiControl.cs [Design]",
-              "RelativeToolTip": "GUI\\HocPhiControl.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T17:25:31.537Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "NhapDiemControl.cs [Design]",
-              "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\NhapDiemControl.cs",
-              "RelativeDocumentMoniker": "GUI\\NhapDiemControl.cs",
-              "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\NhapDiemControl.cs [Design]",
-              "RelativeToolTip": "GUI\\NhapDiemControl.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T17:25:09.54Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "XemDiemControl.cs [Design]",
-              "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\XemDiemControl.cs",
-              "RelativeDocumentMoniker": "GUI\\XemDiemControl.cs",
-              "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\XemDiemControl.cs [Design]",
-              "RelativeToolTip": "GUI\\XemDiemControl.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T17:24:54.721Z",
-              "EditorCaption": " [Design]"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 101,
               "Title": "nhapdiem.png - PNG [96x96, 32 bit, PNG]",
@@ -717,8 +591,7 @@
               "RelativeToolTip": "Studenapp\\UserControls\\UC_GVCN_HocPhi.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T12:28:29.53Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-17T12:28:29.53Z"
             },
             {
               "$type": "Document",
@@ -855,8 +728,7 @@
               "RelativeToolTip": "Studenapp\\Studenapp.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-10-13T10:37:52.75Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-13T10:37:52.75Z"
             },
             {
               "$type": "Document",
@@ -971,8 +843,7 @@
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\UserControls\\UC_Admin_Namhoc.resx",
               "RelativeToolTip": "Studenapp\\UserControls\\UC_Admin_Namhoc.resx",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-10-14T00:40:27.509Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-14T00:40:27.509Z"
             },
             {
               "$type": "Document",
@@ -1002,7 +873,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "AddUserForm.cs",
               "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\UserControls\\AddUserForm.cs",
               "RelativeDocumentMoniker": "Studenapp\\UserControls\\AddUserForm.cs",
@@ -1034,8 +905,7 @@
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\Forms\\AdminForm .resx",
               "RelativeToolTip": "Studenapp\\Forms\\AdminForm .resx",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-10-13T10:42:35.408Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-13T10:42:35.408Z"
             },
             {
               "$type": "Document",
@@ -1047,8 +917,7 @@
               "RelativeToolTip": "Studenapp\\Forms\\AdminForm .Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T10:50:16.524Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-13T10:50:16.524Z"
             },
             {
               "$type": "Document",
@@ -1060,8 +929,7 @@
               "RelativeToolTip": "Studenapp\\UserControls\\AddUserForm.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAALoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T10:46:31.756Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-13T10:46:31.756Z"
             },
             {
               "$type": "Document",
@@ -1073,12 +941,139 @@
               "RelativeToolTip": "Studenapp\\Forms\\LoginForm.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T10:40:08.318Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-13T10:40:08.318Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 4,
+              "Title": "Login.cs [Design]",
+              "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\Login.cs",
+              "RelativeDocumentMoniker": "GUI\\Login.cs",
+              "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\Login.cs [Design]",
+              "RelativeToolTip": "GUI\\Login.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T15:04:02.235Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DiemDanhControl.cs [Design]",
+              "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\DiemDanhControl.cs",
+              "RelativeDocumentMoniker": "GUI\\DiemDanhControl.cs",
+              "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\DiemDanhControl.cs [Design]",
+              "RelativeToolTip": "GUI\\DiemDanhControl.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T18:06:42.633Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "XemDiemControl.cs",
+              "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\XemDiemControl.cs",
+              "RelativeDocumentMoniker": "GUI\\XemDiemControl.cs",
+              "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\XemDiemControl.cs",
+              "RelativeToolTip": "GUI\\XemDiemControl.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T17:35:08.729Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "NhapDiemControl.cs",
+              "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\NhapDiemControl.cs",
+              "RelativeDocumentMoniker": "GUI\\NhapDiemControl.cs",
+              "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\NhapDiemControl.cs",
+              "RelativeToolTip": "GUI\\NhapDiemControl.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T17:33:38.363Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LichDay.cs [Design]",
+              "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\LichDay.cs",
+              "RelativeDocumentMoniker": "GUI\\LichDay.cs",
+              "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\LichDay.cs [Design]",
+              "RelativeToolTip": "GUI\\LichDay.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T17:26:46.644Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ThoiKhoaBieuControl.cs [Design]",
+              "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\ThoiKhoaBieuControl.cs",
+              "RelativeDocumentMoniker": "GUI\\ThoiKhoaBieuControl.cs",
+              "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\ThoiKhoaBieuControl.cs [Design]",
+              "RelativeToolTip": "GUI\\ThoiKhoaBieuControl.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T17:26:35.315Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "TaiKhoanControl.cs [Design]",
+              "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\TaiKhoanControl.cs",
+              "RelativeDocumentMoniker": "GUI\\TaiKhoanControl.cs",
+              "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\TaiKhoanControl.cs [Design]",
+              "RelativeToolTip": "GUI\\TaiKhoanControl.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T17:26:17.886Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "TinNhanControl.cs [Design]",
+              "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\TinNhanControl.cs",
+              "RelativeDocumentMoniker": "GUI\\TinNhanControl.cs",
+              "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\TinNhanControl.cs [Design]",
+              "RelativeToolTip": "GUI\\TinNhanControl.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T17:26:05.693Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "HocPhiControl.cs [Design]",
+              "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\HocPhiControl.cs",
+              "RelativeDocumentMoniker": "GUI\\HocPhiControl.cs",
+              "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\HocPhiControl.cs [Design]",
+              "RelativeToolTip": "GUI\\HocPhiControl.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T17:25:31.537Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "NhapDiemControl.cs [Design]",
+              "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\NhapDiemControl.cs",
+              "RelativeDocumentMoniker": "GUI\\NhapDiemControl.cs",
+              "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\NhapDiemControl.cs [Design]",
+              "RelativeToolTip": "GUI\\NhapDiemControl.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T17:25:09.54Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "XemDiemControl.cs [Design]",
+              "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\XemDiemControl.cs",
+              "RelativeDocumentMoniker": "GUI\\XemDiemControl.cs",
+              "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\XemDiemControl.cs [Design]",
+              "RelativeToolTip": "GUI\\XemDiemControl.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T17:24:54.721Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "MainForm.cs",
               "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\MainForm.cs",
               "RelativeDocumentMoniker": "GUI\\MainForm.cs",
@@ -1091,19 +1086,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Login.cs [Design]",
-              "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\Login.cs",
-              "RelativeDocumentMoniker": "GUI\\Login.cs",
-              "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\Login.cs [Design]",
-              "RelativeToolTip": "GUI\\Login.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T15:04:02.235Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Login.cs",
               "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\Login.cs",
               "RelativeDocumentMoniker": "GUI\\Login.cs",
@@ -1111,12 +1094,11 @@
               "RelativeToolTip": "GUI\\Login.cs",
               "ViewState": "AgIAABMAAAAAAAAAAIA/wCUAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T16:42:17.161Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-25T16:42:17.161Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "Login.Designer.cs",
               "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\Login.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\Login.Designer.cs",
@@ -1129,19 +1111,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Sidebar.cs [Design]",
               "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\Sidebar.cs",
               "RelativeDocumentMoniker": "GUI\\Sidebar.cs",
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\Sidebar.cs [Design]",
               "RelativeToolTip": "GUI\\Sidebar.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T14:36:58.418Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-25T14:36:58.418Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "App.config",
               "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\App.config",
               "RelativeDocumentMoniker": "GUI\\App.config",
@@ -1154,7 +1135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "Sidebar.cs",
               "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\Sidebar.cs",
               "RelativeDocumentMoniker": "GUI\\Sidebar.cs",
@@ -1162,12 +1143,11 @@
               "RelativeToolTip": "GUI\\Sidebar.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAAhwDUAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T15:52:24.655Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-25T15:52:24.655Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "Sidebar.Designer.cs",
               "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\Sidebar.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\Sidebar.Designer.cs",
@@ -1175,12 +1155,11 @@
               "RelativeToolTip": "GUI\\Sidebar.Designer.cs",
               "ViewState": "AgIAAAkBAAAAAAAAAAAAABgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T15:00:04.132Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-25T15:00:04.132Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "MainForm.Designer.cs",
               "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\MainForm.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\MainForm.Designer.cs",
@@ -1193,7 +1172,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "MainForm.cs [Design]",
               "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\MainForm.cs",
               "RelativeDocumentMoniker": "GUI\\MainForm.cs",
@@ -1205,7 +1184,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\Program.cs",
               "RelativeDocumentMoniker": "GUI\\Program.cs",
@@ -1217,7 +1196,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\DTO\\Form1.cs",
               "RelativeDocumentMoniker": "DTO\\Form1.cs",
@@ -1229,18 +1208,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 2,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\DAO\\Form1.cs",
               "RelativeDocumentMoniker": "DAO\\Form1.cs",
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\DAO\\Form1.cs [Design]",
               "RelativeToolTip": "DAO\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T14:16:52.731Z"
+              "WhenOpened": "2025-10-24T14:16:52.731Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\BUS\\Form1.cs",
               "RelativeDocumentMoniker": "BUS\\Form1.cs",
@@ -1252,7 +1232,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\GUI\\Form1.cs",
               "RelativeDocumentMoniker": "GUI\\Form1.cs",
@@ -1270,8 +1250,7 @@
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\Forms\\GiaoVienChuNhiem.cs [Design]",
               "RelativeToolTip": "Studenapp\\Forms\\GiaoVienChuNhiem.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T12:54:36.543Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-17T12:54:36.543Z"
             },
             {
               "$type": "Document",
@@ -1282,8 +1261,7 @@
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\Forms\\LoginForm.cs [Design]",
               "RelativeToolTip": "Studenapp\\Forms\\LoginForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T10:41:12.144Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-13T10:41:12.144Z"
             },
             {
               "$type": "Document",
@@ -1294,8 +1272,7 @@
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\Forms\\PhuHuynh.cs [Design]",
               "RelativeToolTip": "Studenapp\\Forms\\PhuHuynh.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T11:04:32.478Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-13T11:04:32.478Z"
             },
             {
               "$type": "Document",
@@ -1306,8 +1283,7 @@
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\UserControls\\UC_Admin_User.cs [Design]",
               "RelativeToolTip": "Studenapp\\UserControls\\UC_Admin_User.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T11:05:05.688Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-13T11:05:05.688Z"
             },
             {
               "$type": "Document",
@@ -1318,8 +1294,7 @@
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\Forms\\HocSinh.cs [Design]",
               "RelativeToolTip": "Studenapp\\Forms\\HocSinh.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T10:42:31.194Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-13T10:42:31.194Z"
             },
             {
               "$type": "Document",
@@ -1330,8 +1305,7 @@
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\Forms\\GiaoVienBoMon.cs [Design]",
               "RelativeToolTip": "Studenapp\\Forms\\GiaoVienBoMon.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T10:49:15.155Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-13T10:49:15.155Z"
             },
             {
               "$type": "Document",
@@ -1342,8 +1316,7 @@
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\Forms\\AdminForm .cs [Design]",
               "RelativeToolTip": "Studenapp\\Forms\\AdminForm .cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T11:18:21.818Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-13T11:18:21.818Z"
             },
             {
               "$type": "Document",
@@ -1354,8 +1327,7 @@
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\UserControls\\UC_GVCN_QLHS.cs [Design]",
               "RelativeToolTip": "Studenapp\\UserControls\\UC_GVCN_QLHS.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T12:39:11.488Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-17T12:39:11.488Z"
             },
             {
               "$type": "Document",
@@ -1366,8 +1338,7 @@
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\UserControls\\UC_GVCN_HocPhi.cs [Design]",
               "RelativeToolTip": "Studenapp\\UserControls\\UC_GVCN_HocPhi.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T12:25:47.202Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-17T12:25:47.202Z"
             },
             {
               "$type": "Document",
@@ -1418,8 +1389,7 @@
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\UserControls\\UC_GVCN_Tbao.cs [Design]",
               "RelativeToolTip": "Studenapp\\UserControls\\UC_GVCN_Tbao.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T12:57:51.858Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-17T12:57:51.858Z"
             },
             {
               "$type": "Document",
@@ -1430,8 +1400,7 @@
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\UserControls\\UC_GVCN_NS.cs [Design]",
               "RelativeToolTip": "Studenapp\\UserControls\\UC_GVCN_NS.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T12:47:21.214Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-17T12:47:21.214Z"
             },
             {
               "$type": "Document",
@@ -1442,8 +1411,7 @@
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\UserControls\\UC_Admin_Class.cs [Design]",
               "RelativeToolTip": "Studenapp\\UserControls\\UC_Admin_Class.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T12:00:05.985Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-13T12:00:05.985Z"
             },
             {
               "$type": "Document",
@@ -1464,8 +1432,7 @@
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\UserControls\\UC_Admin_CauHinh.cs [Design]",
               "RelativeToolTip": "Studenapp\\UserControls\\UC_Admin_CauHinh.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-14T06:29:01.386Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-14T06:29:01.386Z"
             },
             {
               "$type": "Document",
@@ -1476,8 +1443,7 @@
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs [Design]",
               "RelativeToolTip": "Studenapp\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-14T01:42:33.389Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-14T01:42:33.389Z"
             },
             {
               "$type": "Document",
@@ -1488,8 +1454,7 @@
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\UserControls\\UC_Admin_NamHoc_HocPhi.cs [Design]",
               "RelativeToolTip": "Studenapp\\UserControls\\UC_Admin_NamHoc_HocPhi.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-14T01:23:17.459Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-14T01:23:17.459Z"
             },
             {
               "$type": "Document",
@@ -1500,8 +1465,7 @@
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\UserControls\\AddUserForm.cs [Design]",
               "RelativeToolTip": "Studenapp\\UserControls\\AddUserForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T10:46:26.81Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-13T10:46:26.81Z"
             },
             {
               "$type": "Document",
@@ -1512,8 +1476,7 @@
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\UserControls\\UC_PhuHuynh.cs [Design]",
               "RelativeToolTip": "Studenapp\\UserControls\\UC_PhuHuynh.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T06:37:02.789Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-17T06:37:02.789Z"
             },
             {
               "$type": "Document",
@@ -1555,8 +1518,7 @@
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\UserControls\\UC_GVBM.cs [Design]",
               "RelativeToolTip": "Studenapp\\UserControls\\UC_GVBM.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-14T11:43:57.851Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-14T11:43:57.851Z"
             },
             {
               "$type": "Document",
@@ -1567,8 +1529,7 @@
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\UserControls\\UC_GVBM_Diem.cs [Design]",
               "RelativeToolTip": "Studenapp\\UserControls\\UC_GVBM_Diem.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-14T12:09:30.64Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-14T12:09:30.64Z"
             },
             {
               "$type": "Document",
@@ -1579,8 +1540,7 @@
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\UserControls\\UC_Admin_CauHinh_ThangDiem.cs [Design]",
               "RelativeToolTip": "Studenapp\\UserControls\\UC_Admin_CauHinh_ThangDiem.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-14T06:32:50.331Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-14T06:32:50.331Z"
             },
             {
               "$type": "Document",
@@ -1591,8 +1551,7 @@
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\UserControls\\UC_Admin_Namhoc_HocKi.cs [Design]",
               "RelativeToolTip": "Studenapp\\UserControls\\UC_Admin_Namhoc_HocKi.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-14T05:38:08.685Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-14T05:38:08.685Z"
             },
             {
               "$type": "Document",
@@ -1603,8 +1562,7 @@
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\UserControls\\UC_Admin_Namhoc.cs [Design]",
               "RelativeToolTip": "Studenapp\\UserControls\\UC_Admin_Namhoc.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-14T00:12:32.514Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-14T00:12:32.514Z"
             },
             {
               "$type": "Document",
@@ -1626,8 +1584,7 @@
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\UserControls\\UC_Admin_Class_Monhoc.cs [Design]",
               "RelativeToolTip": "Studenapp\\UserControls\\UC_Admin_Class_Monhoc.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T12:18:26.954Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-13T12:18:26.954Z"
             },
             {
               "$type": "Document",
@@ -1638,8 +1595,7 @@
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\UserControls\\UC_Admin_Class_Phancong.cs [Design]",
               "RelativeToolTip": "Studenapp\\UserControls\\UC_Admin_Class_Phancong.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T12:28:49.311Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-13T12:28:49.311Z"
             },
             {
               "$type": "Document",
@@ -1650,8 +1606,7 @@
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\UserControls\\UC_Admin_CauHinh_Khac.cs [Design]",
               "RelativeToolTip": "Studenapp\\UserControls\\UC_Admin_CauHinh_Khac.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-14T06:33:34.572Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-14T06:33:34.572Z"
             },
             {
               "$type": "Document",
@@ -1672,8 +1627,7 @@
               "ToolTip": "D:\\GitHub\\Nhom6-Quanly-HocSinh\\Studenapp\\UserControls\\UC_Admin_NamHoc_TKB.cs [Design]",
               "RelativeToolTip": "Studenapp\\UserControls\\UC_Admin_NamHoc_TKB.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-14T00:58:18.759Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-14T00:58:18.759Z"
             }
           ]
         }

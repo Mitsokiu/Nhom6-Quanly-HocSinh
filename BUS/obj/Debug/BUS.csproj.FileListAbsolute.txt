@@ -14,3 +14,4 @@ D:\GitHub\Nhom6-Quanly-HocSinh\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
 D:\GitHub\Nhom6-Quanly-HocSinh\BUS\obj\Debug\BUS.csproj.Up2Date
 D:\GitHub\Nhom6-Quanly-HocSinh\BUS\obj\Debug\BUS.exe
 D:\GitHub\Nhom6-Quanly-HocSinh\BUS\obj\Debug\BUS.pdb
+D:\GitHub\Nhom6-Quanly-HocSinh\BUS\obj\Debug\BUS.exe.config
