@@ -73,3 +73,46 @@ C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_Phu
 C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_PhuHuynh_NhanXet.resources
 C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_PhuHuynh_Thongtin.resources
 C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_Admin_Namhoc.resources
+C:\studentapp\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\studentapp\GUI\obj\Debug\GUI.exe.config
+C:\studentapp\GUI\obj\Debug\GUI.HocSinhControl.resources
+C:\studentapp\GUI\obj\Debug\GUI.Login.resources
+C:\studentapp\GUI\obj\Debug\GUI.MainForm.resources
+C:\studentapp\GUI\obj\Debug\GUI.NhapDiemControl.resources
+C:\studentapp\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\studentapp\GUI\obj\Debug\GUI.Sidebar.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.AddUserForm.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_Admin_CauHinh.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_Admin_CauHinh_Khac.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_Admin_CauHinh_ThangDiem.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_Admin_CauHinh_XepLoai.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_Admin_Class.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_Admin_Class_KhoiLop.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_Admin_Class_Monhoc.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_Admin_Class_Phancong.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_Admin_Namhoc.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_Admin_Namhoc_HocKi.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_Admin_NamHoc_HocPhi.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_Admin_NamHoc_HocPhi_PhieuThu.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_Admin_NamHoc_TKB.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_Admin_User.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_GVBM.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_GVBM_Diem.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_GVBM_TKB.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_GVCN.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_GVCN_DS.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_GVCN_HocPhi.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_GVCN_NS.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_GVCN_QLHS.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_GVCN_Tbao.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_HocSinh_Diem.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_HocSinh_TKB.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_Home.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_PhuHuynh.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_PhuHuynh_HocPhi.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_PhuHuynh_NhanXet.resources
+C:\studentapp\GUI\obj\Debug\GUI.UserControls.UC_PhuHuynh_Thongtin.resources
+C:\studentapp\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\studentapp\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\studentapp\GUI\obj\Debug\GUI.exe
+C:\studentapp\GUI\obj\Debug\GUI.pdb

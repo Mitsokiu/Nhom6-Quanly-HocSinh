@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace GUI.UserControls
+namespace StudentMan
 {
     public partial class AddUserForm : Form
     {
