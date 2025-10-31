@@ -1,0 +1,75 @@
+D:\GitHub\Nhom6-Quanly-HocSinh\GUI\bin\Debug\GUI.exe.config
+D:\GitHub\Nhom6-Quanly-HocSinh\GUI\bin\Debug\GUI.exe
+D:\GitHub\Nhom6-Quanly-HocSinh\GUI\bin\Debug\GUI.pdb
+D:\GitHub\Nhom6-Quanly-HocSinh\GUI\bin\Debug\BUS.exe
+D:\GitHub\Nhom6-Quanly-HocSinh\GUI\bin\Debug\DTO.exe
+D:\GitHub\Nhom6-Quanly-HocSinh\GUI\bin\Debug\BUS.pdb
+D:\GitHub\Nhom6-Quanly-HocSinh\GUI\bin\Debug\BUS.exe.config
+D:\GitHub\Nhom6-Quanly-HocSinh\GUI\bin\Debug\DTO.pdb
+D:\GitHub\Nhom6-Quanly-HocSinh\GUI\bin\Debug\DTO.exe.config
+D:\GitHub\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
+D:\GitHub\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.Properties.Resources.resources
+D:\GitHub\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+D:\GitHub\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+D:\GitHub\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.csproj.Up2Date
+D:\GitHub\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.exe
+D:\GitHub\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.pdb
+D:\GitHub\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.Sidebar.resources
+D:\GitHub\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.MainForm.resources
+D:\GitHub\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.exe.config
+D:\GitHub\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.Login.resources
+D:\GitHub\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.XemDiemControl.resources
+D:\GitHub\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.NhapDiemControl.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.exe.config
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.HocSinhControl.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.Login.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.MainForm.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.NhapDiemControl.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.Sidebar.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.exe
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.pdb
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\bin\Debug\GUI.exe.config
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\bin\Debug\GUI.exe
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\bin\Debug\GUI.pdb
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\bin\Debug\BUS.exe
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\bin\Debug\DTO.exe
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\bin\Debug\BUS.pdb
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\bin\Debug\BUS.exe.config
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\bin\Debug\DTO.pdb
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\bin\Debug\DTO.exe.config
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.csproj.Up2Date
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.AddUserForm.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_Admin_CauHinh.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_Admin_CauHinh_Khac.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_Admin_CauHinh_ThangDiem.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_Admin_CauHinh_XepLoai.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_Admin_Class.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_Admin_Class_KhoiLop.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_Admin_Class_Monhoc.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_Admin_Class_Phancong.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_Admin_Namhoc_HocKi.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_Admin_NamHoc_HocPhi.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_Admin_NamHoc_HocPhi_PhieuThu.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_Admin_NamHoc_TKB.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_Admin_User.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_GVBM.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_GVBM_Diem.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_GVBM_TKB.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_GVCN.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_GVCN_DS.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_GVCN_HocPhi.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_GVCN_NS.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_GVCN_QLHS.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_GVCN_Tbao.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_HocSinh_Diem.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_HocSinh_TKB.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_Home.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_PhuHuynh.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_PhuHuynh_HocPhi.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_PhuHuynh_NhanXet.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_PhuHuynh_Thongtin.resources
+C:\Users\nauht\OneDrive\Tài liệu\cthang\GUI\obj\Debug\GUI.UserControls.UC_Admin_Namhoc.resources
