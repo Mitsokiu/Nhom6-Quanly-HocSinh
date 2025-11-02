@@ -66,7 +66,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-   
     <Compile Include="Sidebar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -247,6 +246,9 @@
     <Compile Include="UserControls\UC_PhuHuynh_Thongtin.Designer.cs">
       <DependentUpon>UC_PhuHuynh_Thongtin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddUser.resx">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

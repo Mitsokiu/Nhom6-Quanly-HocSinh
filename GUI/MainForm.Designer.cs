@@ -37,10 +37,11 @@
             // 
             this.panelContent.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(298, 0);
+            this.panelContent.Location = new System.Drawing.Point(292, 0);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1500, 844);
+            this.panelContent.Size = new System.Drawing.Size(1500, 821);
             this.panelContent.TabIndex = 1;
+            this.panelContent.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContent_Paint);
             // 
             // sidebar
             // 
@@ -50,7 +51,7 @@
             this.sidebar.Location = new System.Drawing.Point(0, 0);
             this.sidebar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(298, 844);
+            this.sidebar.Size = new System.Drawing.Size(292, 821);
             this.sidebar.TabIndex = 0;
             this.sidebar.Load += new System.EventHandler(this.sidebar_Load);
             // 
@@ -58,11 +59,11 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1798, 844);
+            this.ClientSize = new System.Drawing.Size(1792, 821);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.sidebar);
-            this.MaximumSize = new System.Drawing.Size(1820, 900);
-            this.MinimumSize = new System.Drawing.Size(1820, 900);
+            this.MaximumSize = new System.Drawing.Size(1820, 950);
+            this.MinimumSize = new System.Drawing.Size(1820, 950);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý học sinh";

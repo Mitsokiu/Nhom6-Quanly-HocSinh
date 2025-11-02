@@ -107,5 +107,10 @@ namespace GUI
         private void sidebar_Load(object sender, EventArgs e)
         {
         }
+
+        private void panelContent_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

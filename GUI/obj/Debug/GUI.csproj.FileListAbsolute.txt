@@ -173,3 +173,4 @@ C:\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
 C:\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.csproj.Up2Date
 C:\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.exe
 C:\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.pdb
+C:\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.AddUser.resources

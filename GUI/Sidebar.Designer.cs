@@ -38,18 +38,18 @@ namespace GUI
             // lbWelcome
             // 
             this.lbWelcome.AutoSize = true;
-            this.lbWelcome.Location = new System.Drawing.Point(100, 130);
+            this.lbWelcome.Location = new System.Drawing.Point(87, 121);
             this.lbWelcome.Name = "lbWelcome";
-            this.lbWelcome.Size = new System.Drawing.Size(79, 20);
+            this.lbWelcome.Size = new System.Drawing.Size(119, 29);
             this.lbWelcome.TabIndex = 1;
             this.lbWelcome.Text = "Xin chào !";
             // 
             // lbInfo
             // 
             this.lbInfo.AutoSize = true;
-            this.lbInfo.Location = new System.Drawing.Point(87, 150);
+            this.lbInfo.Location = new System.Drawing.Point(64, 156);
             this.lbInfo.Name = "lbInfo";
-            this.lbInfo.Size = new System.Drawing.Size(111, 20);
+            this.lbInfo.Size = new System.Drawing.Size(164, 29);
             this.lbInfo.TabIndex = 2;
             this.lbInfo.Text = "Nguyễn Văn A";
             this.lbInfo.Click += new System.EventHandler(this.lbInfo_Click);
@@ -189,7 +189,7 @@ namespace GUI
             this.btnDangXuat.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnDangXuat.Image = global::GUI.Properties.Resources.dangxuat_24;
             this.btnDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDangXuat.Location = new System.Drawing.Point(0, 801);
+            this.btnDangXuat.Location = new System.Drawing.Point(0, 787);
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.Size = new System.Drawing.Size(291, 86);
             this.btnDangXuat.TabIndex = 4;
@@ -214,7 +214,7 @@ namespace GUI
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.btnDangXuat);
             this.Name = "Sidebar";
-            this.Size = new System.Drawing.Size(291, 887);
+            this.Size = new System.Drawing.Size(291, 873);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
