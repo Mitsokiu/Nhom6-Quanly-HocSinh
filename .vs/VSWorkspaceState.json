@@ -1,11 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\GUI",
-    "\\GUI\\UserControls",
-    "\\Studenapp",
-    "\\Studenapp\\UserControls"
+    "\\GUI\\UserControls"
   ],
-  "SelectedNode": "\\GUI\\UserControls\\AddUserForm.Designer.cs",
+  "SelectedNode": "\\BUS",
   "PreviewInSolutionExplorer": false
 }

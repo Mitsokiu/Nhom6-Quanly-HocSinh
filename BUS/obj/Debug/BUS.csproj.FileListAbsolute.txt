@@ -32,3 +32,20 @@ C:\Users\nauht\OneDrive\Tài liệu\cthang\BUS\bin\Debug\DAO.exe.config
 C:\Users\nauht\OneDrive\Tài liệu\cthang\BUS\bin\Debug\DTO.pdb
 C:\Users\nauht\OneDrive\Tài liệu\cthang\BUS\bin\Debug\DTO.exe.config
 C:\Users\nauht\OneDrive\Tài liệu\cthang\BUS\obj\Debug\BUS.csproj.Up2Date
+C:\studentapp\BUS\obj\Debug\BUS.exe
+C:\studentapp\BUS\obj\Debug\BUS.pdb
+C:\studentapp\BUS\bin\Debug\BUS.exe.config
+C:\studentapp\BUS\bin\Debug\BUS.exe
+C:\studentapp\BUS\bin\Debug\BUS.pdb
+C:\studentapp\BUS\bin\Debug\DAO.exe
+C:\studentapp\BUS\bin\Debug\DTO.exe
+C:\studentapp\BUS\bin\Debug\DAO.pdb
+C:\studentapp\BUS\bin\Debug\DAO.exe.config
+C:\studentapp\BUS\bin\Debug\DTO.pdb
+C:\studentapp\BUS\bin\Debug\DTO.exe.config
+C:\studentapp\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+C:\studentapp\BUS\obj\Debug\BUS.exe.config
+C:\studentapp\BUS\obj\Debug\BUS.Properties.Resources.resources
+C:\studentapp\BUS\obj\Debug\BUS.csproj.GenerateResource.cache
+C:\studentapp\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+C:\studentapp\BUS\obj\Debug\BUS.csproj.Up2Date

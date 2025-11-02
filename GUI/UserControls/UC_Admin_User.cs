@@ -20,7 +20,7 @@ namespace GUI.UserControls
 
         private void Add_Click(object sender, EventArgs e)
         {
-            AddUserForm formAdd = new AddUserForm();
+            AddUser formAdd = new AddUser();
             formAdd.StartPosition = FormStartPosition.CenterParent; // cho form hiện giữa màn hình
             formAdd.ShowDialog(); // hiển thị form (modal)
 

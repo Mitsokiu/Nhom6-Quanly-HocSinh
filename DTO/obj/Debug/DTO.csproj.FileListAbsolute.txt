@@ -18,3 +18,13 @@ C:\Users\nauht\OneDrive\Tài liệu\cthang\DTO\obj\Debug\DTO.pdb
 C:\Users\nauht\OneDrive\Tài liệu\cthang\DTO\bin\Debug\DTO.exe.config
 C:\Users\nauht\OneDrive\Tài liệu\cthang\DTO\bin\Debug\DTO.exe
 C:\Users\nauht\OneDrive\Tài liệu\cthang\DTO\bin\Debug\DTO.pdb
+C:\studentapp\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\studentapp\DTO\obj\Debug\DTO.exe.config
+C:\studentapp\DTO\obj\Debug\DTO.exe
+C:\studentapp\DTO\obj\Debug\DTO.pdb
+C:\studentapp\DTO\bin\Debug\DTO.exe.config
+C:\studentapp\DTO\bin\Debug\DTO.exe
+C:\studentapp\DTO\bin\Debug\DTO.pdb
+C:\studentapp\DTO\obj\Debug\DTO.Properties.Resources.resources
+C:\studentapp\DTO\obj\Debug\DTO.csproj.GenerateResource.cache
+C:\studentapp\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache

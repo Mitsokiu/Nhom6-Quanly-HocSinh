@@ -1,4 +1,6 @@
-﻿namespace StudentMan
+﻿using System.Windows.Forms;
+
+namespace GUI
 {
     partial class AddUserForm
     {
