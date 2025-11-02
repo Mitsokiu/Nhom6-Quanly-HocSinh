@@ -46,7 +46,14 @@ namespace GUI
             }
         }
 
+        private void txtUser_TextChanged(object sender, EventArgs e)
+        {
 
+        }
 
+        private void lblForgot_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

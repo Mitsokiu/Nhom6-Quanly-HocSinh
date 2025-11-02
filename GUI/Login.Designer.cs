@@ -64,7 +64,12 @@
             // panelRight
             // 
             this.panelRight.BackColor = System.Drawing.Color.White;
+            this.panelRight.Controls.Add(this.lblForgot);
+            this.panelRight.Controls.Add(this.btnLogin);
             this.panelRight.Controls.Add(this.lblTitle);
+            this.panelRight.Controls.Add(this.txtUser);
+            this.panelRight.Controls.Add(this.txtPass);
+            this.panelRight.Controls.Add(this.lblUser);
             this.panelRight.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelRight.Location = new System.Drawing.Point(380, 0);
             this.panelRight.Name = "panelRight";
@@ -77,9 +82,9 @@
             this.lblTitle.BackColor = System.Drawing.Color.White;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblTitle.Location = new System.Drawing.Point(138, 63);
+            this.lblTitle.Location = new System.Drawing.Point(70, 44);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(162, 32);
+            this.lblTitle.Size = new System.Drawing.Size(287, 57);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "ABC SCHOOL";
             this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
@@ -89,9 +94,9 @@
             this.lblUser.AutoSize = true;
             this.lblUser.BackColor = System.Drawing.Color.White;
             this.lblUser.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblUser.Location = new System.Drawing.Point(460, 130);
+            this.lblUser.Location = new System.Drawing.Point(80, 114);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(76, 20);
+            this.lblUser.Size = new System.Drawing.Size(140, 37);
             this.lblUser.TabIndex = 6;
             this.lblUser.Text = "Tài khoản";
             // 
@@ -102,25 +107,26 @@
             this.lblPass.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.lblPass.Location = new System.Drawing.Point(460, 190);
             this.lblPass.Name = "lblPass";
-            this.lblPass.Size = new System.Drawing.Size(75, 20);
+            this.lblPass.Size = new System.Drawing.Size(138, 37);
             this.lblPass.TabIndex = 4;
             this.lblPass.Text = "Mật khẩu";
             // 
             // txtUser
             // 
             this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUser.Location = new System.Drawing.Point(460, 150);
+            this.txtUser.Location = new System.Drawing.Point(80, 154);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(250, 22);
+            this.txtUser.Size = new System.Drawing.Size(250, 35);
             this.txtUser.TabIndex = 1;
+            this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             // 
             // txtPass
             // 
             this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPass.Location = new System.Drawing.Point(460, 210);
+            this.txtPass.Location = new System.Drawing.Point(80, 230);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
-            this.txtPass.Size = new System.Drawing.Size(250, 22);
+            this.txtPass.Size = new System.Drawing.Size(250, 35);
             this.txtPass.TabIndex = 2;
             // 
             // btnLogin
@@ -131,9 +137,9 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(460, 280);
+            this.btnLogin.Location = new System.Drawing.Point(80, 338);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(250, 35);
+            this.btnLogin.Size = new System.Drawing.Size(250, 48);
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -146,22 +152,18 @@
             this.lblForgot.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblForgot.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Underline);
             this.lblForgot.ForeColor = System.Drawing.Color.Gray;
-            this.lblForgot.Location = new System.Drawing.Point(460, 240);
+            this.lblForgot.Location = new System.Drawing.Point(81, 299);
             this.lblForgot.Name = "lblForgot";
-            this.lblForgot.Size = new System.Drawing.Size(109, 20);
+            this.lblForgot.Size = new System.Drawing.Size(193, 36);
             this.lblForgot.TabIndex = 2;
             this.lblForgot.Text = "Quên mật khẩu";
+            this.lblForgot.Click += new System.EventHandler(this.lblForgot_Click);
             // 
             // Login
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.lblForgot);
-            this.Controls.Add(this.txtPass);
             this.Controls.Add(this.lblPass);
-            this.Controls.Add(this.txtUser);
-            this.Controls.Add(this.lblUser);
             this.Controls.Add(this.panelRight);
             this.Controls.Add(this.panelLeft);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
