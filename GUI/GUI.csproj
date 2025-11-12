@@ -52,12 +52,6 @@
     <Compile Include="DiemDanhControl.Designer.cs">
       <DependentUpon>DiemDanhControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="HocPhiControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -126,6 +120,9 @@
     <Compile Include="XemDiemControl.Designer.cs">
       <DependentUpon>XemDiemControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="HocPhiControl.resx">
+      <DependentUpon>HocPhiControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HocSinhControl.resx">
       <DependentUpon>HocSinhControl.cs</DependentUpon>
     </EmbeddedResource>

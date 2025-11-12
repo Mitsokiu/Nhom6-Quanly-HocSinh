@@ -214,6 +214,7 @@ namespace GUI
             this.btnHocPhi.Text = "  Học phí";
             this.btnHocPhi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHocPhi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHocPhi.Click += new System.EventHandler(this.btnHocPhi_Click_1);
             // 
             // btnXemDiem
             // 

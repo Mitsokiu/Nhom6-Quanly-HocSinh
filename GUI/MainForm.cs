@@ -13,8 +13,14 @@ namespace GUI
             sidebar.BtnNhapDiemClick += Sidebar_BtnNhapDiemClick;
             sidebar.BtnXemDiemClick += Sidebar_BtnXemDiemClick;
             sidebar.BtnHocSinhClick += Sidebar_BtnHocSinhClick;
+            sidebar.BtnHocPhiClick += Sidebar_BtnHocPhiClick;
         }
 
+
+        private void Sidebar_BtnHocPhiClick(object sender, EventArgs e)
+        {
+            LoadContent(new HocPhiControl());
+        }   
         // Xử lý khi bấm nút "Nhập điểm"
         private void Sidebar_BtnNhapDiemClick(object sender, EventArgs e)
         {
@@ -38,6 +44,11 @@ namespace GUI
             panelContent.Controls.Clear();
             control.Dock = DockStyle.Fill;
             panelContent.Controls.Add(control);
+        }
+
+        private void sidebar_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
