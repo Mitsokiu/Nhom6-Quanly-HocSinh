@@ -82,7 +82,7 @@
             this.lblTitle.Size = new System.Drawing.Size(190, 38);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "ABC SCHOOL";
-            this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
+
             // 
             // lblUser
             // 

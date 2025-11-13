@@ -1,46 +1,24 @@
-﻿
-using BUS;
+﻿using BUS;
 using DTO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GUI.UserControls
 {
     public partial class UC_Admin_User : UserControl
     {
+        private UserBUS userBUS = new UserBUS();
+
         public UC_Admin_User()
         {
             InitializeComponent();
             LoadUserData();
         }
 
-        private UserBUS userBUS = new UserBUS();
-
-        private void Add_Click(object sender, EventArgs e)
-        {
-            AddUser formAdd = new AddUser();
-            formAdd.StartPosition = FormStartPosition.CenterParent; // cho form hiện giữa màn hình
-          
-            if (formAdd.ShowDialog() == DialogResult.OK) // chỉ reload nếu có user mới
-            {
-                LoadUserData(); // reload GridView
-            }
-
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        // ==========================
+        // Load dữ liệu user lên GridView
+        // ==========================
         private void LoadUserData()
         {
             dataGridView1.Rows.Clear();
@@ -52,53 +30,62 @@ namespace GUI.UserControls
                 dataGridView1.Rows.Add(
                     user.Username,
                     user.Password,
-                    user.FullName,
+                    user.Fullname,
                     user.Email,
                     user.Phone,
                     user.CreatedAt.ToString("yyyy-MM-dd"),
-                    user.UserRoles
+                    user.RoleName
                 );
             }
         }
+
+        // ==========================
+        // Khi click vào GridView
+        // ==========================
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // tránh header
-            {
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+            if (e.RowIndex < 0) return; // tránh header
 
-                // Gán giá trị vào các TextBox/ComboBox
-                textBox2.Text = row.Cells["Taikhoan"].Value?.ToString();
-                textBox3.Text = row.Cells["MatKhau"].Value?.ToString();
-                textBox4.Text = row.Cells["HoTen"].Value?.ToString();
-                textBox5.Text = row.Cells["Email"].Value?.ToString();
-                textBox6.Text = row.Cells["SDT"].Value?.ToString();
-                dateTimePicker1.Value = DateTime.TryParse(row.Cells["NgayTao"].Value?.ToString(), out DateTime dt) ? dt : DateTime.Now;
-                comboBox1.Text = row.Cells["Role"].Value?.ToString();
-               
+            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+            textBox2.Text = row.Cells["Taikhoan"].Value?.ToString();
+            textBox3.Text = row.Cells["MatKhau"].Value?.ToString();
+            textBox4.Text = row.Cells["HoTen"].Value?.ToString();
+            textBox5.Text = row.Cells["Email"].Value?.ToString();
+            textBox6.Text = row.Cells["SDT"].Value?.ToString();
+            dateTimePicker1.Value = DateTime.TryParse(row.Cells["NgayTao"].Value?.ToString(), out DateTime dt) ? dt : DateTime.Now;
+            comboBox1.Text = row.Cells["Role"].Value?.ToString();
+        }
+
+        // ==========================
+        // Thêm user mới
+        // ==========================
+        private void Add_Click(object sender, EventArgs e)
+        {
+            AddUser formAdd = new AddUser
+            {
+                StartPosition = FormStartPosition.CenterParent
+            };
+
+            if (formAdd.ShowDialog() == DialogResult.OK)
+            {
+                LoadUserData();
             }
         }
 
-        private void combo_chucvu(object sender, EventArgs e)
+        // ==========================
+        // Sửa user
+        // ==========================
+        private void btn_sua_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void UC_Admin_User_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_sua_Click(object sender, EventArgs e) // nút Sửa
-        {
-            UserDTO user = new UserDTO()
+            UserDTO user = new UserDTO
             {
                 Username = textBox2.Text,
                 Password = textBox3.Text,
-                FullName = textBox4.Text,
+                Fullname = textBox4.Text,
                 Email = textBox5.Text,
                 Phone = textBox6.Text,
-                UserRoles = comboBox1.Text,
-             
+                RoleName = comboBox1.Text
             };
 
             if (userBUS.UpdateUser(user))
@@ -112,7 +99,10 @@ namespace GUI.UserControls
             }
         }
 
-        private void btn_xoa_Click(object sender, EventArgs e) // nút Xóa
+        // ==========================
+        // Xóa user
+        // ==========================
+        private void btn_xoa_Click(object sender, EventArgs e)
         {
             string username = textBox2.Text;
 
@@ -130,5 +120,17 @@ namespace GUI.UserControls
             }
         }
 
+        // ==========================
+        // Placeholder cho ComboBox hoặc sự kiện khác nếu cần
+        // ==========================
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // xử lý nếu cần
+        }
+
+        private void UC_Admin_User_Load(object sender, EventArgs e)
+        {
+            // khởi tạo nếu cần
+        }
     }
 }

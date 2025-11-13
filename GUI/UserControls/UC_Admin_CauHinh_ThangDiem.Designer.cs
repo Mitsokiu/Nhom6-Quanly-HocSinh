@@ -72,7 +72,7 @@ namespace GUI.UserControls
             label1.Size = new Size(145, 25);
             label1.TabIndex = 0;
             label1.Text = "Loại Thang Điểm";
-            label1.Click += label1_Click;
+            //label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -125,7 +125,7 @@ namespace GUI.UserControls
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(257, 31);
             textBox1.TabIndex = 6;
-            textBox1.TextChanged += textBox1_TextChanged;
+            //textBox1.TextChanged += textBox1_TextChanged;
             // 
             // textBox2
             // 

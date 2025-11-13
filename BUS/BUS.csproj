@@ -95,9 +95,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassBUS.cs" />
+    <Compile Include="HocKiBUS.cs" />
+    <Compile Include="HocPhiBUS.cs" />
+    <Compile Include="MonHocBUS.cs" />
+    <Compile Include="NamHocBUS.cs" />
+    <Compile Include="PhanCongBUS.cs" />
+    <Compile Include="PhieuThuBUS.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserBUSS.cs" />
+    <Compile Include="ThangDiemBUS.cs" />
+    <Compile Include="ThongBaoBUS.cs" />
+    <Compile Include="TKBBUS.cs" />
+    <Compile Include="TruongBUS.cs" />
+    <Compile Include="UserBUS.cs" />
+    <Compile Include="XepLoaiBUS.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

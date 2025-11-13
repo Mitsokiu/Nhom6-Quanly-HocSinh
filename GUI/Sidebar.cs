@@ -8,7 +8,7 @@ namespace GUI
     public partial class Sidebar : UserControl
     {
         // ============================
-        // KHAI BÁO SỰ KIỆN (ĐÃ ĐỔI TÊN)
+        // KHAI BÁO SỰ KIỆN
         // ============================
         public event EventHandler TaiKhoanClicked;
         public event EventHandler NhapDiemClicked;
@@ -22,52 +22,60 @@ namespace GUI
         public event EventHandler CauHinhClicked;
         public event EventHandler HomeClicked;
 
+        private UserDTO currentUser;
+
         public Sidebar()
         {
             InitializeComponent();
 
-            // Thiết lập FlowLayoutPanel
+            // Cấu hình layout
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.WrapContents = false;
             flowLayoutPanel1.AutoScroll = true;
         }
 
-
-
+        // ============================
+        // GÁN THÔNG TIN NGƯỜI DÙNG
+        // ============================
         public void SetUserInfo(UserDTO user)
         {
-            if (user != null)
-            {
-                lbInfo.Text = user.FullName;  // Gán họ tên
-                SetRole(user.UserRoles);       // Ẩn/hiện nút theo vai trò
-            }
-        }
+            if (user == null) return;
 
+            currentUser = user;
+
+            lbInfo.Text = $"{user.Fullname} ({user.RoleName})";
+            SetRole(user.RoleName);
+        }
 
         // ============================
         // ẨN/HIỆN NÚT THEO VAI TRÒ
         // ============================
         public void SetRole(string role)
         {
+            // Ẩn toàn bộ trước
             foreach (Button btn in flowLayoutPanel1.Controls.OfType<Button>())
                 btn.Visible = false;
 
-            switch (role)
+            // Hiển thị nút theo quyền
+            switch (role?.ToLower())
             {
                 case "admin":
-                    ShowButtons(btnTaiKhoan, btnQlyLop, btnCauHinh);
+                    ShowButtons(btnTaiKhoan, btnQlyLop, btnCauHinh, btnHome);
                     break;
-                case "GVBM":
-                    ShowButtons(btnNhapDiem, btnXemLichDay);
+                case "gvbm":
+                    ShowButtons(btnNhapDiem, btnXemLichDay, btnHome);
                     break;
-                case "GVCN":
-                    ShowButtons(btnHocSinh, btnNhapDiem, btnXemLichDay);
+                case "gvcn":
+                    ShowButtons(btnHocSinh, btnNhapDiem, btnXemLichDay, btnHome);
                     break;
-                case "PH":
-                    ShowButtons(btnHocPhi, btnTinhHinh,btnXemDiem,btnXemTKB);
+                case "ph":
+                    ShowButtons(btnHocPhi, btnTinhHinh, btnXemDiem, btnXemTKB, btnHome);
                     break;
-                case "HS":
-                    ShowButtons(btnXemDiem,btnXemTKB);
+                case "hs":
+                    ShowButtons(btnXemDiem, btnXemTKB, btnHome);
+                    break;
+                default:
+                    ShowButtons(btnHome);
                     break;
             }
         }
@@ -75,7 +83,7 @@ namespace GUI
         private void ShowButtons(params Button[] buttons)
         {
             foreach (var btn in buttons)
-                btn.Visible = true;
+                if (btn != null) btn.Visible = true;
         }
 
         // ============================
@@ -98,17 +106,22 @@ namespace GUI
         // ============================
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Bạn có chắc muốn đăng xuất?", "Xác nhận", MessageBoxButtons.YesNo);
+            var result = MessageBox.Show("Bạn có chắc muốn đăng xuất?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                new Login().Show();
-                this.FindForm()?.Close();
+                // Ẩn form hiện tại và mở lại form đăng nhập
+                Form mainForm = this.FindForm();
+                mainForm?.Hide();
+
+                Login loginForm = new Login();
+                loginForm.FormClosed += (s, args) => mainForm?.Close();
+                loginForm.Show();
             }
         }
 
         private void lbInfo_Click(object sender, EventArgs e)
         {
-
+            // Có thể dùng để hiện popup thông tin tài khoản nếu cần
         }
     }
 }

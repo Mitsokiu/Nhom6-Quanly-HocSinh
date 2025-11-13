@@ -1,104 +1,64 @@
-﻿using DAO;
-using DTO;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
+using DTO;
+using BUS;
 
 namespace GUI.UserControls
 {
     public partial class UC_Admin_Class_Monhoc : UserControl
     {
-       
-            private SubjectDAO subjectDAO = new SubjectDAO();
+        private MonHocBUS bus = new MonHocBUS();
 
-            public UC_Admin_Class_Monhoc()
+        public UC_Admin_Class_Monhoc()
+        {
+            InitializeComponent();
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            dataGridView1.Rows.Clear();
+            foreach (var mon in bus.GetAllMonHoc())
             {
-                InitializeComponent();
-                LoadSubjects();
-                dataGridView1.CellClick += DataGridView1_CellClick;
-                button4.Click += BtnAdd_Click;
-                button5.Click += BtnEdit_Click;
-                button6.Click += BtnDelete_Click;
+                dataGridView1.Rows.Add(mon.MaMon, mon.TenMon);
             }
+        }
 
-            private void LoadSubjects()
+        private void BtnAdd_Click(object sender, EventArgs e)
+        {
+            MonHocDTO mon = new MonHocDTO
             {
-                dataGridView1.Rows.Clear();
-                List<SubjectDTO> subjects = subjectDAO.GetAllSubjects();
+                MaMon = textBox2.Text.Trim(),
+                TenMon = textBox1.Text.Trim()
+            };
+            bus.AddMonHoc(mon);
+            LoadData();
+        }
 
-                foreach (var s in subjects)
-                {
-                    dataGridView1.Rows.Add(s.Id, s.Code, s.Name);
-                }
-            }
-
-            private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void BtnEdit_Click(object sender, EventArgs e)
+        {
+            MonHocDTO mon = new MonHocDTO
             {
-                if (e.RowIndex >= 0)
-                {
-                    var row = dataGridView1.Rows[e.RowIndex];
-                    textBox2.Text = row.Cells["mamon"].Value?.ToString(); // mã môn
-                    textBox1.Text = row.Cells["NameMH"].Value?.ToString(); // tên môn
-                }
-            }
+                MaMon = textBox2.Text.Trim(),
+                TenMon = textBox1.Text.Trim()
+            };
+            if (bus.UpdateMonHoc(mon))
+                LoadData();
+        }
 
-            private void BtnAdd_Click(object sender, EventArgs e)
-            {
-                SubjectDTO sub = new SubjectDTO
-                {
-                    Code = textBox2.Text,
-                    Name = textBox1.Text
-                };
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            string maMon = textBox2.Text.Trim();
+            if (bus.DeleteMonHoc(maMon))
+                LoadData();
+        }
 
-                if (subjectDAO.AddSubject(sub))
-                {
-                    MessageBox.Show("Thêm môn học thành công!");
-                    LoadSubjects();
-                }
-                else
-                    MessageBox.Show("Thêm thất bại!");
-            }
-
-            private void BtnEdit_Click(object sender, EventArgs e)
-            {
-                if (dataGridView1.SelectedRows.Count > 0 && int.TryParse(dataGridView1.SelectedRows[0].Cells["mamon"].Value.ToString(), out int id))
-                {
-                    SubjectDTO sub = new SubjectDTO
-                    {
-                        Id = id,
-                        Code = textBox2.Text,
-                        Name = textBox1.Text
-                    };
-
-                    if (subjectDAO.UpdateSubject(sub))
-                    {
-                        MessageBox.Show("Cập nhật thành công!");
-                        LoadSubjects();
-                    }
-                    else
-                        MessageBox.Show("Cập nhật thất bại!");
-                }
-            }
-
-            private void BtnDelete_Click(object sender, EventArgs e)
-            {
-                if (dataGridView1.SelectedRows.Count > 0 && int.TryParse(dataGridView1.SelectedRows[0].Cells["mamon"].Value.ToString(), out int id))
-                {
-                    if (subjectDAO.DeleteSubject(id))
-                    {
-                        MessageBox.Show("Xóa thành công!");
-                        LoadSubjects();
-                    }
-                    else
-                        MessageBox.Show("Xóa thất bại!");
-                }
-            }
-        
+        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            var row = dataGridView1.Rows[e.RowIndex];
+            textBox2.Text = row.Cells[0].Value?.ToString();
+            textBox1.Text = row.Cells[1].Value?.ToString();
+        }
     }
 }

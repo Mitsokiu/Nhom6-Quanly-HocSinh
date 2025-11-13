@@ -33,7 +33,7 @@ namespace GUI
             this.comboRole = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -164,15 +164,15 @@ namespace GUI
             this.label1.Size = new System.Drawing.Size(65, 20);
             this.label1.TabIndex = 12;
             this.label1.Text = "Ho Ten;";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            
             // 
-            // textBox1
+            // txtEmail
             // 
-            this.textBox1.Location = new System.Drawing.Point(135, 187);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(225, 26);
-            this.textBox1.TabIndex = 13;
+            this.txtEmail.Location = new System.Drawing.Point(135, 187);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(225, 26);
+            this.txtEmail.TabIndex = 13;
             // 
             // AddUser
             // 
@@ -180,7 +180,7 @@ namespace GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(405, 421);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.comboRole);
@@ -221,6 +221,6 @@ namespace GUI
         private ComboBox comboRole;
         private Button btnSave;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox txtEmail;
     }
 }

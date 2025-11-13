@@ -99,7 +99,7 @@ namespace GUI.UserControls
             label2.Size = new Size(68, 25);
             label2.TabIndex = 1;
             label2.Text = "Địa Chỉ";
-            label2.Click += label2_Click;
+            //label2.Click += label2_Click;
             // 
             // label3
             // 
@@ -118,7 +118,7 @@ namespace GUI.UserControls
             label4.Size = new Size(136, 25);
             label4.TabIndex = 3;
             label4.Text = "Năm Thành Lập";
-            label4.Click += label4_Click;
+            //label4.Click += label4_Click;
             // 
             // label5
             // 
@@ -182,7 +182,7 @@ namespace GUI.UserControls
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(192, 31);
             textBox4.TabIndex = 10;
-            textBox4.TextChanged += textBox4_TextChanged;
+            //textBox4.TextChanged += textBox4_TextChanged;
             // 
             // textBox5
             // 
@@ -190,7 +190,7 @@ namespace GUI.UserControls
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(361, 31);
             textBox5.TabIndex = 11;
-            textBox5.TextChanged += textBox5_TextChanged;
+            //textBox5.TextChanged += textBox5_TextChanged;
             // 
             // UC_Admin_CauHinh_Khac
             // 

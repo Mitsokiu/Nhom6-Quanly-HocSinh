@@ -95,11 +95,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GradesDTO.cs" />
+    <Compile Include="ClassDTO.cs" />
+    <Compile Include="HocKiDTO.cs" />
+    <Compile Include="HocPhiDTO.cs" />
+    <Compile Include="MonHocDTO.cs" />
+    <Compile Include="NamHocDTO.cs" />
+    <Compile Include="PhanCongDTO.cs" />
+    <Compile Include="PhieuThuDTO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="subjectsDTO.cs" />
+    <Compile Include="ThangDiemDTO.cs" />
+    <Compile Include="ThongBaoDTO.cs" />
+    <Compile Include="TKBDTO.cs" />
+    <Compile Include="TruongDTO.cs" />
     <Compile Include="UserDTO.cs" />
+    <Compile Include="XepLoaiDTO.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

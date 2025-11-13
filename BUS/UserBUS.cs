@@ -8,7 +8,6 @@ namespace BUS
     {
         private UserDAO userDAO = new UserDAO();
 
-        // Kiểm tra login
         public bool Login(string username, string password)
         {
             UserDTO user = new UserDTO
@@ -19,12 +18,10 @@ namespace BUS
             return userDAO.CheckLogin(user);
         }
 
-        // Lấy thông tin user khi login thành công
         public UserDTO GetUserInfo(string username)
         {
             return userDAO.GetUserInfo(username);
         }
-
 
         public bool AddUser(UserDTO user)
         {
@@ -36,16 +33,14 @@ namespace BUS
             return userDAO.GetAllUsers();
         }
 
-        // trong UserBUS
         public bool UpdateUser(UserDTO user)
         {
-            return userDAO.UpdateUser(user); // gọi DAO để update DB
+            return userDAO.UpdateUser(user);
         }
 
         public bool DeleteUser(string username)
         {
-            return userDAO.DeleteUser(username); // gọi DAO để xóa user theo username
+            return userDAO.DeleteUser(username);
         }
-
     }
 }

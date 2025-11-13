@@ -7,7 +7,7 @@ namespace DAO
 {
     public class UserDAO
     {
-        // Kiểm tra login bằng username và password
+        // Kiểm tra đăng nhập
         public bool CheckLogin(UserDTO user)
         {
             string query = "SELECT COUNT(*) FROM users WHERE username=@user AND password=@pass";
@@ -24,11 +24,14 @@ namespace DAO
             }
         }
 
-        // Lấy thông tin user đầy đủ khi login thành công
+        // Lấy thông tin user sau khi đăng nhập
         public UserDTO GetUserInfo(string username)
         {
-            string query = "SELECT id, username, email, full_name, phone, created_at, user_roles " +
-                           "FROM users WHERE username=@user";
+            string query = @"SELECT u.user_id, u.username, u.fullname, u.email, u.phone, 
+                                    u.created_at, u.role_id, r.role_name
+                             FROM users u
+                             LEFT JOIN roles r ON u.role_id = r.role_id
+                             WHERE u.username=@user";
 
             using (var conn = DbConnect.GetConnection())
             {
@@ -42,48 +45,52 @@ namespace DAO
                     {
                         return new UserDTO
                         {
-                            Id = reader.GetInt32("id"),
+                            UserId = reader.GetInt32("user_id"),
                             Username = reader.GetString("username"),
-                            Email = reader.GetString("email"),
-                            FullName = reader.GetString("full_name"),
-                            Phone = reader.GetString("phone"),
+                            Fullname = reader["fullname"]?.ToString(),
+                            Email = reader["email"]?.ToString(),
+                            Phone = reader["phone"]?.ToString(),
                             CreatedAt = reader.GetDateTime("created_at"),
-                            UserRoles = reader.GetString("user_roles")
+                            RoleId = reader.GetInt32("role_id"),
+                            RoleName = reader["role_name"]?.ToString()
                         };
                     }
-                    else
-                        return null;
+                    return null;
                 }
             }
         }
 
+        // Thêm người dùng
         public bool AddUser(UserDTO user)
         {
             string query = @"INSERT INTO users 
-                             (username, password, email, full_name, phone, created_at, user_roles) 
-                             VALUES (@username, @password, @email, @fullname, @phone, @created_at, @role)";
+                             (username, password, fullname, email, phone, role_id, created_at) 
+                             VALUES (@username, @password, @fullname, @email, @phone, @role_id, @created_at)";
 
             using (var conn = DbConnect.GetConnection())
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@username", user.Username);
-                cmd.Parameters.AddWithValue("@password", user.Password); // Nên hash sau này
-                cmd.Parameters.AddWithValue("@email", user.Email);
-                cmd.Parameters.AddWithValue("@fullname", user.FullName ?? "");
+                cmd.Parameters.AddWithValue("@password", user.Password);
+                cmd.Parameters.AddWithValue("@fullname", user.Fullname ?? "");
+                cmd.Parameters.AddWithValue("@email", user.Email ?? "");
                 cmd.Parameters.AddWithValue("@phone", user.Phone ?? "");
+                cmd.Parameters.AddWithValue("@role_id", user.RoleId);
                 cmd.Parameters.AddWithValue("@created_at", DateTime.Now);
-                cmd.Parameters.AddWithValue("@role", user.UserRoles);
 
-                int rows = cmd.ExecuteNonQuery();
-                return rows > 0;
+                return cmd.ExecuteNonQuery() > 0;
             }
         }
 
+        // Lấy toàn bộ user
         public List<UserDTO> GetAllUsers()
         {
             List<UserDTO> users = new List<UserDTO>();
-            string query = "SELECT username,password, full_name, email, phone, created_at, user_roles FROM users";
+            string query = @"SELECT u.user_id, u.username, u.fullname, u.email, u.phone, 
+                                    u.created_at, u.role_id, r.role_name
+                             FROM users u
+                             LEFT JOIN roles r ON u.role_id = r.role_id";
 
             using (var conn = DbConnect.GetConnection())
             {
@@ -95,37 +102,37 @@ namespace DAO
                     {
                         users.Add(new UserDTO
                         {
+                            UserId = reader.GetInt32("user_id"),
                             Username = reader.GetString("username"),
-                            Password = reader.GetString("password"),
-                            FullName = reader.GetString("full_name"),
-                            Email = reader.GetString("email"),
-                            Phone = reader.GetString("phone"),
+                            Fullname = reader["fullname"]?.ToString(),
+                            Email = reader["email"]?.ToString(),
+                            Phone = reader["phone"]?.ToString(),
                             CreatedAt = reader.GetDateTime("created_at"),
-                            UserRoles = reader.GetString("user_roles")
+                            RoleId = reader.GetInt32("role_id"),
+                            RoleName = reader["role_name"]?.ToString()
                         });
                     }
                 }
             }
-
             return users;
         }
 
-        // trong UserDAO
+        // Cập nhật user
         public bool UpdateUser(UserDTO user)
         {
-            string sql = @"UPDATE users SET 
-                           password=@pass, full_name=@fullname, email=@email, phone=@phone, 
-                           user_roles=@role
+            string sql = @"UPDATE users 
+                           SET password=@pass, fullname=@fullname, email=@email, 
+                               phone=@phone, role_id=@role_id
                            WHERE username=@username";
             using (var conn = DbConnect.GetConnection())
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@pass", user.Password);
-                cmd.Parameters.AddWithValue("@fullname", user.FullName);
+                cmd.Parameters.AddWithValue("@fullname", user.Fullname);
                 cmd.Parameters.AddWithValue("@email", user.Email);
                 cmd.Parameters.AddWithValue("@phone", user.Phone);
-                cmd.Parameters.AddWithValue("@role", user.UserRoles);
+                cmd.Parameters.AddWithValue("@role_id", user.RoleId);
                 cmd.Parameters.AddWithValue("@username", user.Username);
 
                 return cmd.ExecuteNonQuery() > 0;
@@ -144,6 +151,5 @@ namespace DAO
                 return cmd.ExecuteNonQuery() > 0;
             }
         }
-
     }
 }
