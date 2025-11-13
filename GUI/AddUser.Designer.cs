@@ -20,155 +20,190 @@ namespace GUI
 
         private void InitializeComponent()
         {
-            labelTitle = new Label();
-            labelUsername = new Label();
-            labelPassword = new Label();
-            labelEmail = new Label();
-            labelRole = new Label();
-            labelPhone = new Label();
-            txtUsername = new TextBox();
-            txtPassword = new TextBox();
-            txtEmail = new TextBox();
-            txtPhone = new TextBox();
-            comboRole = new ComboBox();
-            btnSave = new Button();
-            SuspendLayout();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.labelUsername = new System.Windows.Forms.Label();
+            this.labelPassword = new System.Windows.Forms.Label();
+            this.labelEmail = new System.Windows.Forms.Label();
+            this.labelRole = new System.Windows.Forms.Label();
+            this.labelPhone = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtFullName = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.comboRole = new System.Windows.Forms.ComboBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
             // 
             // labelTitle
             // 
-            labelTitle.AutoSize = true;
-            labelTitle.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            labelTitle.ForeColor = Color.DarkSlateGray;
-            labelTitle.Location = new Point(120, 20);
-            labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(157, 38);
-            labelTitle.TabIndex = 0;
-            labelTitle.Text = "Thêm User";
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.labelTitle.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.labelTitle.Location = new System.Drawing.Point(108, 16);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(157, 38);
+            this.labelTitle.TabIndex = 0;
+            this.labelTitle.Text = "Thêm User";
             // 
             // labelUsername
             // 
-            labelUsername.AutoSize = true;
-            labelUsername.Location = new Point(30, 80);
-            labelUsername.Name = "labelUsername";
-            labelUsername.Size = new Size(90, 25);
-            labelUsername.TabIndex = 1;
-            labelUsername.Text = "Tài khoản:";
+            this.labelUsername.AutoSize = true;
+            this.labelUsername.Location = new System.Drawing.Point(27, 64);
+            this.labelUsername.Name = "labelUsername";
+            this.labelUsername.Size = new System.Drawing.Size(82, 20);
+            this.labelUsername.TabIndex = 1;
+            this.labelUsername.Text = "Tài khoản:";
             // 
             // labelPassword
             // 
-            labelPassword.AutoSize = true;
-            labelPassword.Location = new Point(30, 130);
-            labelPassword.Name = "labelPassword";
-            labelPassword.Size = new Size(90, 25);
-            labelPassword.TabIndex = 3;
-            labelPassword.Text = "Mật khẩu:";
+            this.labelPassword.AutoSize = true;
+            this.labelPassword.Location = new System.Drawing.Point(27, 104);
+            this.labelPassword.Name = "labelPassword";
+            this.labelPassword.Size = new System.Drawing.Size(79, 20);
+            this.labelPassword.TabIndex = 3;
+            this.labelPassword.Text = "Mật khẩu:";
             // 
             // labelEmail
             // 
-            labelEmail.AutoSize = true;
-            labelEmail.Location = new Point(30, 180);
-            labelEmail.Name = "labelEmail";
-            labelEmail.Size = new Size(58, 25);
-            labelEmail.TabIndex = 5;
-            labelEmail.Text = "Email:";
+            this.labelEmail.AutoSize = true;
+            this.labelEmail.Location = new System.Drawing.Point(27, 187);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(52, 20);
+            this.labelEmail.TabIndex = 5;
+            this.labelEmail.Text = "Email:";
             // 
             // labelRole
             // 
-            labelRole.AutoSize = true;
-            labelRole.Location = new Point(30, 280);
-            labelRole.Name = "labelRole";
-            labelRole.Size = new Size(109, 25);
-            labelRole.TabIndex = 9;
-            labelRole.Text = "Phân quyền:";
+            this.labelRole.AutoSize = true;
+            this.labelRole.Location = new System.Drawing.Point(27, 259);
+            this.labelRole.Name = "labelRole";
+            this.labelRole.Size = new System.Drawing.Size(97, 20);
+            this.labelRole.TabIndex = 9;
+            this.labelRole.Text = "Phân quyền:";
             // 
             // labelPhone
             // 
-            labelPhone.AutoSize = true;
-            labelPhone.Location = new Point(30, 230);
-            labelPhone.Name = "labelPhone";
-            labelPhone.Size = new Size(48, 25);
-            labelPhone.TabIndex = 7;
-            labelPhone.Text = "SĐT:";
+            this.labelPhone.AutoSize = true;
+            this.labelPhone.Location = new System.Drawing.Point(27, 219);
+            this.labelPhone.Name = "labelPhone";
+            this.labelPhone.Size = new System.Drawing.Size(45, 20);
+            this.labelPhone.TabIndex = 7;
+            this.labelPhone.Text = "SĐT:";
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(150, 77);
-            txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(250, 31);
-            txtUsername.TabIndex = 2;
+            this.txtUsername.Location = new System.Drawing.Point(135, 62);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(225, 26);
+            this.txtUsername.TabIndex = 2;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(150, 127);
-            txtPassword.Name = "txtPassword";
-            txtPassword.PasswordChar = '●';
-            txtPassword.Size = new Size(250, 31);
-            txtPassword.TabIndex = 4;
+            this.txtPassword.Location = new System.Drawing.Point(135, 102);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '●';
+            this.txtPassword.Size = new System.Drawing.Size(225, 26);
+            this.txtPassword.TabIndex = 4;
             // 
-            // txtEmail
+            // txtFullName
             // 
-            txtEmail.Location = new Point(150, 177);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(250, 31);
-            txtEmail.TabIndex = 6;
+            this.txtFullName.Location = new System.Drawing.Point(135, 146);
+            this.txtFullName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.Size = new System.Drawing.Size(225, 26);
+            this.txtFullName.TabIndex = 6;
             // 
             // txtPhone
             // 
-            txtPhone.Location = new Point(150, 227);
-            txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(250, 31);
-            txtPhone.TabIndex = 8;
+            this.txtPhone.Location = new System.Drawing.Point(135, 217);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(225, 26);
+            this.txtPhone.TabIndex = 8;
             // 
             // comboRole
             // 
-            comboRole.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboRole.FormattingEnabled = true;
-            comboRole.Items.AddRange(new object[] { "Admin", "Giáo viên", "Học sinh", "Phụ huynh" });
-            comboRole.Location = new Point(150, 277);
-            comboRole.Name = "comboRole";
-            comboRole.Size = new Size(250, 33);
-            comboRole.TabIndex = 10;
+            this.comboRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboRole.FormattingEnabled = true;
+            this.comboRole.Items.AddRange(new object[] {
+            "Admin",
+            "Giáo viên CN",
+            "Giáo viên BM",
+            "Học sinh",
+            "Phụ huynh"});
+            this.comboRole.Location = new System.Drawing.Point(135, 257);
+            this.comboRole.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboRole.Name = "comboRole";
+            this.comboRole.Size = new System.Drawing.Size(225, 28);
+            this.comboRole.TabIndex = 10;
             // 
             // btnSave
             // 
-            btnSave.BackColor = Color.MediumSeaGreen;
-            btnSave.FlatStyle = FlatStyle.Flat;
-            btnSave.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(300, 338);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new Size(100, 40);
-            btnSave.TabIndex = 11;
-            btnSave.Text = "Thêm";
-            btnSave.UseVisualStyleBackColor = false;
-            btnSave.Click += btnSave_Click;
+            this.btnSave.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(270, 323);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(90, 44);
+            this.btnSave.TabIndex = 11;
+            this.btnSave.Text = "Thêm";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // AddUserForm
+            // label1
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.WhiteSmoke;
-            ClientSize = new Size(450, 420);
-            Controls.Add(btnSave);
-            Controls.Add(comboRole);
-            Controls.Add(labelRole);
-            Controls.Add(txtPhone);
-            Controls.Add(labelPhone);
-            Controls.Add(txtEmail);
-            Controls.Add(labelEmail);
-            Controls.Add(txtPassword);
-            Controls.Add(labelPassword);
-            Controls.Add(txtUsername);
-            Controls.Add(labelUsername);
-            Controls.Add(labelTitle);
-            FormBorderStyle = FormBorderStyle.FixedDialog;
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "AddUserForm";
-            StartPosition = FormStartPosition.CenterParent;
-            Text = "Thêm người dùng";
-            ResumeLayout(false);
-            PerformLayout();
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(27, 149);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 20);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Ho Ten;";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(135, 187);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(225, 26);
+            this.textBox1.TabIndex = 13;
+            // 
+            // AddUser
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(405, 421);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.comboRole);
+            this.Controls.Add(this.labelRole);
+            this.Controls.Add(this.txtPhone);
+            this.Controls.Add(this.labelPhone);
+            this.Controls.Add(this.txtFullName);
+            this.Controls.Add(this.labelEmail);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.labelPassword);
+            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.labelUsername);
+            this.Controls.Add(this.labelTitle);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "AddUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Thêm người dùng";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -181,9 +216,11 @@ namespace GUI
         private Label labelPhone;
         private TextBox txtUsername;
         private TextBox txtPassword;
-        private TextBox txtEmail;
+        private TextBox txtFullName;
         private TextBox txtPhone;
         private ComboBox comboRole;
         private Button btnSave;
+        private Label label1;
+        private TextBox textBox1;
     }
 }

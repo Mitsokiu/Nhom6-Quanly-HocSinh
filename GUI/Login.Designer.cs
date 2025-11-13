@@ -79,7 +79,7 @@
             this.lblTitle.ForeColor = System.Drawing.Color.SteelBlue;
             this.lblTitle.Location = new System.Drawing.Point(138, 63);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(162, 32);
+            this.lblTitle.Size = new System.Drawing.Size(190, 38);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "ABC SCHOOL";
             this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
@@ -91,7 +91,7 @@
             this.lblUser.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.lblUser.Location = new System.Drawing.Point(460, 130);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(76, 20);
+            this.lblUser.Size = new System.Drawing.Size(94, 25);
             this.lblUser.TabIndex = 6;
             this.lblUser.Text = "Tài khoản";
             // 
@@ -102,7 +102,7 @@
             this.lblPass.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.lblPass.Location = new System.Drawing.Point(460, 190);
             this.lblPass.Name = "lblPass";
-            this.lblPass.Size = new System.Drawing.Size(75, 20);
+            this.lblPass.Size = new System.Drawing.Size(93, 25);
             this.lblPass.TabIndex = 4;
             this.lblPass.Text = "Mật khẩu";
             // 
@@ -111,7 +111,7 @@
             this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUser.Location = new System.Drawing.Point(460, 150);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(250, 22);
+            this.txtUser.Size = new System.Drawing.Size(250, 26);
             this.txtUser.TabIndex = 1;
             // 
             // txtPass
@@ -120,7 +120,7 @@
             this.txtPass.Location = new System.Drawing.Point(460, 210);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
-            this.txtPass.Size = new System.Drawing.Size(250, 22);
+            this.txtPass.Size = new System.Drawing.Size(250, 26);
             this.txtPass.TabIndex = 2;
             // 
             // btnLogin
@@ -148,7 +148,7 @@
             this.lblForgot.ForeColor = System.Drawing.Color.Gray;
             this.lblForgot.Location = new System.Drawing.Point(460, 240);
             this.lblForgot.Name = "lblForgot";
-            this.lblForgot.Size = new System.Drawing.Size(109, 20);
+            this.lblForgot.Size = new System.Drawing.Size(129, 23);
             this.lblForgot.TabIndex = 2;
             this.lblForgot.Text = "Quên mật khẩu";
             // 
@@ -168,6 +168,7 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.panelLeft.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureIllustration)).EndInit();
             this.panelRight.ResumeLayout(false);

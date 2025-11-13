@@ -31,155 +31,196 @@ namespace GUI.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
-            button6 = new Button();
-            button5 = new Button();
-            button4 = new Button();
-            dataGridView1 = new DataGridView();
-            id = new DataGridViewTextBoxColumn();
-            Khoi = new DataGridViewTextBoxColumn();
-            Lop = new DataGridViewTextBoxColumn();
-            GVCN = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            SuspendLayout();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Khoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GVCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.SuspendLayout();
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(117, 123);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(281, 31);
-            textBox3.TabIndex = 20;
+            this.textBox3.Location = new System.Drawing.Point(105, 143);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(253, 26);
+            this.textBox3.TabIndex = 20;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(117, 217);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(281, 31);
-            textBox2.TabIndex = 19;
+            this.textBox2.Location = new System.Drawing.Point(105, 219);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(253, 26);
+            this.textBox2.TabIndex = 19;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(117, 40);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(281, 31);
-            textBox1.TabIndex = 18;
+            this.textBox1.Location = new System.Drawing.Point(105, 91);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(253, 26);
+            this.textBox1.TabIndex = 18;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(32, 123);
-            label3.Name = "label3";
-            label3.Size = new Size(42, 25);
-            label3.TabIndex = 17;
-            label3.Text = "Lớp";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(29, 149);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 20);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Lớp";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(32, 223);
-            label2.Name = "label2";
-            label2.Size = new Size(59, 25);
-            label2.TabIndex = 16;
-            label2.Text = "GVCN";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(29, 219);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 20);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "GVCN";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(32, 46);
-            label1.Name = "label1";
-            label1.Size = new Size(47, 25);
-            label1.TabIndex = 15;
-            label1.Text = "Khối";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(29, 94);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 20);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Khối";
             // 
             // button6
             // 
-            button6.Location = new Point(330, 434);
-            button6.Name = "button6";
-            button6.Size = new Size(112, 34);
-            button6.TabIndex = 14;
-            button6.Text = "Xóa";
-            button6.UseVisualStyleBackColor = true;
+            this.button6.Location = new System.Drawing.Point(297, 347);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(101, 27);
+            this.button6.TabIndex = 14;
+            this.button6.Text = "Xóa";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.btnxoa_Click);
             // 
             // button5
             // 
-            button5.Location = new Point(175, 434);
-            button5.Name = "button5";
-            button5.Size = new Size(112, 34);
-            button5.TabIndex = 13;
-            button5.Text = "Sửa";
-            button5.UseVisualStyleBackColor = true;
+            this.button5.Location = new System.Drawing.Point(158, 347);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(101, 27);
+            this.button5.TabIndex = 13;
+            this.button5.Text = "Sửa";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.btnsua_Click);
             // 
             // button4
             // 
-            button4.Location = new Point(7, 434);
-            button4.Name = "button4";
-            button4.Size = new Size(112, 34);
-            button4.TabIndex = 12;
-            button4.Text = "Thêm";
-            button4.UseVisualStyleBackColor = true;
+            this.button4.Location = new System.Drawing.Point(6, 347);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(101, 27);
+            this.button4.TabIndex = 12;
+            this.button4.Text = "Thêm";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.btnadd_Click);
             // 
             // dataGridView1
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id, Khoi, Lop, GVCN });
-            dataGridView1.Location = new Point(448, 15);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(666, 474);
-            dataGridView1.TabIndex = 11;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Khoi,
+            this.Lop,
+            this.GVCN});
+            this.dataGridView1.Location = new System.Drawing.Point(421, 13);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.Size = new System.Drawing.Size(700, 379);
+            this.dataGridView1.TabIndex = 11;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
             // 
-            // id
+            // ID
             // 
-            id.HeaderText = "ID";
-            id.MinimumWidth = 8;
-            id.Name = "id";
-            id.Width = 150;
+            this.ID.HeaderText = "Mã";
+            this.ID.MinimumWidth = 8;
+            this.ID.Name = "ID";
+            this.ID.Width = 150;
             // 
             // Khoi
             // 
-            Khoi.HeaderText = "Khối";
-            Khoi.MinimumWidth = 8;
-            Khoi.Name = "Khoi";
-            Khoi.Width = 150;
+            this.Khoi.HeaderText = "Khối";
+            this.Khoi.MinimumWidth = 8;
+            this.Khoi.Name = "Khoi";
+            this.Khoi.Width = 150;
             // 
             // Lop
             // 
-            Lop.HeaderText = "Lop";
-            Lop.MinimumWidth = 8;
-            Lop.Name = "Lop";
-            Lop.Width = 150;
+            this.Lop.HeaderText = "Lop";
+            this.Lop.MinimumWidth = 8;
+            this.Lop.Name = "Lop";
+            this.Lop.Width = 150;
             // 
             // GVCN
             // 
-            GVCN.HeaderText = "GVCN";
-            GVCN.MinimumWidth = 8;
-            GVCN.Name = "GVCN";
-            GVCN.Width = 150;
+            this.GVCN.HeaderText = "GVCN";
+            this.GVCN.MinimumWidth = 8;
+            this.GVCN.Name = "GVCN";
+            this.GVCN.Width = 150;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(105, 36);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(253, 26);
+            this.textBox4.TabIndex = 22;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(29, 39);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(31, 20);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Mã";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // UC_Admin_Class_KhoiLop
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(button6);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(dataGridView1);
-            Name = "UC_Admin_Class_KhoiLop";
-            Size = new Size(1123, 505);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "UC_Admin_Class_KhoiLop";
+            this.Size = new System.Drawing.Size(1121, 404);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -194,9 +235,11 @@ namespace GUI.UserControls
         private Button button5;
         private Button button4;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn id;
+        private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn Khoi;
         private DataGridViewTextBoxColumn Lop;
         private DataGridViewTextBoxColumn GVCN;
+        private TextBox textBox4;
+        private Label label4;
     }
 }

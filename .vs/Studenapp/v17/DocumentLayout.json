@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\studentapp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|c:\\studentapp\\gui\\usercontrols\\uc_admin_class_monhoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_class_monhoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|c:\\studentapp\\gui\\usercontrols\\uc_admin_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\studentapp\\gui\\usercontrols\\uc_admin_cauhinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_cauhinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|c:\\studentapp\\gui\\usercontrols\\uc_admin_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\studentapp\\gui\\usercontrols\\uc_admin_class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\studentapp\\gui\\usercontrols\\uc_admin_class_khoilop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_class_khoilop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\studentapp\\gui\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,25 +43,63 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UC_Admin_Class_Monhoc.cs [Design]",
-              "DocumentMoniker": "C:\\studentapp\\GUI\\UserControls\\UC_Admin_Class_Monhoc.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_Class_Monhoc.cs",
-              "ToolTip": "C:\\studentapp\\GUI\\UserControls\\UC_Admin_Class_Monhoc.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_Class_Monhoc.cs [Design]",
+              "Title": "UC_Admin_User.cs",
+              "DocumentMoniker": "C:\\studentapp\\GUI\\UserControls\\UC_Admin_User.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_User.cs",
+              "ToolTip": "C:\\studentapp\\GUI\\UserControls\\UC_Admin_User.cs",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_User.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T13:48:12.316Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-11-12T14:25:18.678Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UC_Admin_CauHinh.cs [Design]",
-              "DocumentMoniker": "C:\\studentapp\\GUI\\UserControls\\UC_Admin_CauHinh.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_CauHinh.cs",
-              "ToolTip": "C:\\studentapp\\GUI\\UserControls\\UC_Admin_CauHinh.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_CauHinh.cs [Design]",
+              "Title": "UC_Admin_User.cs [Design]",
+              "DocumentMoniker": "C:\\studentapp\\GUI\\UserControls\\UC_Admin_User.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_User.cs",
+              "ToolTip": "C:\\studentapp\\GUI\\UserControls\\UC_Admin_User.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_User.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T13:46:25.759Z"
+              "WhenOpened": "2025-11-12T14:25:17.056Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UC_Admin_Class.cs [Design]",
+              "DocumentMoniker": "C:\\studentapp\\GUI\\UserControls\\UC_Admin_Class.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_Class.cs",
+              "ToolTip": "C:\\studentapp\\GUI\\UserControls\\UC_Admin_Class.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_Class.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T13:19:26.556Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UC_Admin_Class_KhoiLop.cs [Design]",
+              "DocumentMoniker": "C:\\studentapp\\GUI\\UserControls\\UC_Admin_Class_KhoiLop.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_Class_KhoiLop.cs",
+              "ToolTip": "C:\\studentapp\\GUI\\UserControls\\UC_Admin_Class_KhoiLop.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_Class_KhoiLop.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T12:00:42.335Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\studentapp\\GUI\\Login.cs",
+              "RelativeDocumentMoniker": "GUI\\Login.cs",
+              "ToolTip": "C:\\studentapp\\GUI\\Login.cs",
+              "RelativeToolTip": "GUI\\Login.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T10:37:26.865Z"
             }
           ]
         }

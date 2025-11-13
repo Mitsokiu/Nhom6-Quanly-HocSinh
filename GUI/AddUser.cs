@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BUS;
+using DTO;
+using System;
 using System.Windows.Forms;
 
 namespace GUI
@@ -12,28 +14,47 @@ namespace GUI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Text;
-            string password = txtPassword.Text;
-            string email = txtEmail.Text;
-            string role = comboRole.Text;
-            string phone = txtPhone.Text;
+            string username = txtUsername.Text.Trim();
+            string password = txtPassword.Text.Trim();
+            string email = txtFullName.Text.Trim();
+            string fullname = txtFullName.Text.Trim();
+            string phone = txtPhone.Text.Trim();
+            string role = comboRole.Text.Trim();
 
-            // Kiểm tra đơn giản
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("Vui lòng nhập đủ thông tin!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // TODO: thêm xử lý lưu vào DB hoặc danh sách người dùng
-            MessageBox.Show($"Đã thêm user:\nTên: {username}\nEmail: {email}\nRole: {role}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            UserDTO user = new UserDTO
+            {
+                Username = username,
+                Password = password,
+                Email = email,
+                FullName = fullname,
+                Phone = phone,
+                UserRoles = role
+            };
 
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            UserBUS bus = new UserBUS();
+            bool result = bus.AddUser(user);
+
+            if (result)
+            {
+                MessageBox.Show($"Đã thêm user: {username}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Thêm user thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
 
-
-
+        }
     }
 }

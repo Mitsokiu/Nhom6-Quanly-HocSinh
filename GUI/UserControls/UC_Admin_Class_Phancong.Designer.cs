@@ -31,153 +31,162 @@ namespace GUI.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            button6 = new Button();
-            button5 = new Button();
-            button4 = new Button();
-            label1 = new Label();
-            label2 = new Label();
-            label4 = new Label();
-            Lop = new DataGridViewTextBoxColumn();
-            Mon = new DataGridViewTextBoxColumn();
-            GiaoVien = new DataGridViewTextBoxColumn();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            comboBox3 = new ComboBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            SuspendLayout();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Lop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaoVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.SuspendLayout();
             // 
             // dataGridView1
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Lop, Mon, GiaoVien });
-            dataGridView1.Location = new Point(349, 23);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(525, 486);
-            dataGridView1.TabIndex = 0;
-            // 
-            // button6
-            // 
-            button6.Location = new Point(235, 425);
-            button6.Name = "button6";
-            button6.Size = new Size(102, 34);
-            button6.TabIndex = 12;
-            button6.Text = "Xóa";
-            button6.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            button5.Location = new Point(115, 425);
-            button5.Name = "button5";
-            button5.Size = new Size(96, 34);
-            button5.TabIndex = 11;
-            button5.Text = "Sửa";
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(14, 425);
-            button4.Name = "button4";
-            button4.Size = new Size(86, 34);
-            button4.TabIndex = 10;
-            button4.Text = "Thêm";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(26, 51);
-            label1.Name = "label1";
-            label1.Size = new Size(42, 25);
-            label1.TabIndex = 13;
-            label1.Text = "Lớp";
-            label1.Click += label1_Click;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(26, 125);
-            label2.Name = "label2";
-            label2.Size = new Size(49, 25);
-            label2.TabIndex = 14;
-            label2.Text = "Môn";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(26, 207);
-            label4.Name = "label4";
-            label4.Size = new Size(87, 25);
-            label4.TabIndex = 16;
-            label4.Text = "Gíao Viên";
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Lop,
+            this.Mon,
+            this.GiaoVien});
+            this.dataGridView1.Location = new System.Drawing.Point(314, 18);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.Size = new System.Drawing.Size(529, 389);
+            this.dataGridView1.TabIndex = 0;
             // 
             // Lop
             // 
-            Lop.HeaderText = "Lớp";
-            Lop.MinimumWidth = 8;
-            Lop.Name = "Lop";
-            Lop.Width = 150;
+            this.Lop.HeaderText = "Lớp";
+            this.Lop.MinimumWidth = 8;
+            this.Lop.Name = "Lop";
+            this.Lop.Width = 150;
             // 
             // Mon
             // 
-            Mon.HeaderText = "Môn";
-            Mon.MinimumWidth = 8;
-            Mon.Name = "Mon";
-            Mon.Width = 150;
+            this.Mon.HeaderText = "Môn";
+            this.Mon.MinimumWidth = 8;
+            this.Mon.Name = "Mon";
+            this.Mon.Width = 150;
             // 
             // GiaoVien
             // 
-            GiaoVien.HeaderText = "Giáo Viên";
-            GiaoVien.MinimumWidth = 8;
-            GiaoVien.Name = "GiaoVien";
-            GiaoVien.Width = 150;
+            this.GiaoVien.HeaderText = "Giáo Viên";
+            this.GiaoVien.MinimumWidth = 8;
+            this.GiaoVien.Name = "GiaoVien";
+            this.GiaoVien.Width = 150;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(212, 340);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(92, 27);
+            this.button6.TabIndex = 12;
+            this.button6.Text = "Xóa";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(104, 340);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(86, 27);
+            this.button5.TabIndex = 11;
+            this.button5.Text = "Sửa";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(13, 340);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(77, 27);
+            this.button4.TabIndex = 10;
+            this.button4.Text = "Thêm";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(23, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 20);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Lớp";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(23, 100);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 20);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Môn";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(23, 166);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 20);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Gíao Viên";
             // 
             // comboBox1
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(126, 53);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(182, 33);
-            comboBox1.TabIndex = 17;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(113, 42);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(164, 28);
+            this.comboBox1.TabIndex = 17;
             // 
             // comboBox2
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(126, 125);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(182, 33);
-            comboBox2.TabIndex = 18;
-            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(113, 100);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(164, 28);
+            this.comboBox2.TabIndex = 18;
             // 
             // comboBox3
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(126, 204);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(182, 33);
-            comboBox3.TabIndex = 19;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(113, 163);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(164, 28);
+            this.comboBox3.TabIndex = 19;
             // 
             // UC_Admin_Class_Phancong
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(comboBox3);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
-            Controls.Add(label4);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(button6);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(dataGridView1);
-            Name = "UC_Admin_Class_Phancong";
-            Size = new Size(881, 512);
-            Load += UC_Admin_Class_Phancong_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "UC_Admin_Class_Phancong";
+            this.Size = new System.Drawing.Size(891, 410);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

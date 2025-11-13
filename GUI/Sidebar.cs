@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -30,6 +31,18 @@ namespace GUI
             flowLayoutPanel1.WrapContents = false;
             flowLayoutPanel1.AutoScroll = true;
         }
+
+
+
+        public void SetUserInfo(UserDTO user)
+        {
+            if (user != null)
+            {
+                lbInfo.Text = user.FullName;  // Gán họ tên
+                SetRole(user.UserRoles);       // Ẩn/hiện nút theo vai trò
+            }
+        }
+
 
         // ============================
         // ẨN/HIỆN NÚT THEO VAI TRÒ
