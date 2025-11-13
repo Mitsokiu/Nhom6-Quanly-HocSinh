@@ -97,12 +97,13 @@
             this.btnThemKhoanPhi.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemKhoanPhi.ForeColor = System.Drawing.Color.White;
             this.btnThemKhoanPhi.Location = new System.Drawing.Point(1063, 31);
-            this.btnThemKhoanPhi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThemKhoanPhi.Margin = new System.Windows.Forms.Padding(4);
             this.btnThemKhoanPhi.Name = "btnThemKhoanPhi";
             this.btnThemKhoanPhi.Size = new System.Drawing.Size(227, 49);
             this.btnThemKhoanPhi.TabIndex = 1;
             this.btnThemKhoanPhi.Text = "+ Thêm khoản phí mới";
             this.btnThemKhoanPhi.UseVisualStyleBackColor = false;
+            this.btnThemKhoanPhi.Click += new System.EventHandler(this.btnThemKhoanPhi_Click);
             // 
             // panelTongDaThanhToan
             // 
@@ -111,7 +112,7 @@
             this.panelTongDaThanhToan.Controls.Add(this.lblValueDaThanhToan);
             this.panelTongDaThanhToan.Controls.Add(this.lblTitleDaThanhToan);
             this.panelTongDaThanhToan.Location = new System.Drawing.Point(53, 105);
-            this.panelTongDaThanhToan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelTongDaThanhToan.Margin = new System.Windows.Forms.Padding(4);
             this.panelTongDaThanhToan.Name = "panelTongDaThanhToan";
             this.panelTongDaThanhToan.Size = new System.Drawing.Size(393, 123);
             this.panelTongDaThanhToan.TabIndex = 2;
@@ -146,7 +147,7 @@
             this.panelTongChuaThanhToan.Controls.Add(this.lblValueChuaThanhToan);
             this.panelTongChuaThanhToan.Controls.Add(this.lblTitleChuaThanhToan);
             this.panelTongChuaThanhToan.Location = new System.Drawing.Point(473, 105);
-            this.panelTongChuaThanhToan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelTongChuaThanhToan.Margin = new System.Windows.Forms.Padding(4);
             this.panelTongChuaThanhToan.Name = "panelTongChuaThanhToan";
             this.panelTongChuaThanhToan.Size = new System.Drawing.Size(393, 123);
             this.panelTongChuaThanhToan.TabIndex = 3;
@@ -181,7 +182,7 @@
             this.panelHoaDonQuaHan.Controls.Add(this.lblValueQuaHan);
             this.panelHoaDonQuaHan.Controls.Add(this.lblTitleQuaHan);
             this.panelHoaDonQuaHan.Location = new System.Drawing.Point(893, 105);
-            this.panelHoaDonQuaHan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelHoaDonQuaHan.Margin = new System.Windows.Forms.Padding(4);
             this.panelHoaDonQuaHan.Name = "panelHoaDonQuaHan";
             this.panelHoaDonQuaHan.Size = new System.Drawing.Size(393, 123);
             this.panelHoaDonQuaHan.TabIndex = 4;
@@ -222,7 +223,7 @@
             this.panelFilters.Controls.Add(this.cmbHocKy);
             this.panelFilters.Controls.Add(this.txtSearch);
             this.panelFilters.Location = new System.Drawing.Point(53, 252);
-            this.panelFilters.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelFilters.Margin = new System.Windows.Forms.Padding(4);
             this.panelFilters.Name = "panelFilters";
             this.panelFilters.Size = new System.Drawing.Size(1235, 86);
             this.panelFilters.TabIndex = 5;
@@ -243,7 +244,7 @@
             // 
             this.dtpNgayHetHan.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayHetHan.Location = new System.Drawing.Point(827, 27);
-            this.dtpNgayHetHan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpNgayHetHan.Margin = new System.Windows.Forms.Padding(4);
             this.dtpNgayHetHan.Name = "dtpNgayHetHan";
             this.dtpNgayHetHan.Size = new System.Drawing.Size(252, 29);
             this.dtpNgayHetHan.TabIndex = 3;
@@ -257,7 +258,7 @@
             "Chưa thanh toán",
             "Quá hạn"});
             this.cmbTrangThai.Location = new System.Drawing.Point(627, 27);
-            this.cmbTrangThai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbTrangThai.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTrangThai.Name = "cmbTrangThai";
             this.cmbTrangThai.Size = new System.Drawing.Size(172, 29);
             this.cmbTrangThai.TabIndex = 2;
@@ -271,7 +272,7 @@
             "Học kỳ 1 (2023-2024)",
             "Học kỳ 2 (2023-2024)"});
             this.cmbHocKy.Location = new System.Drawing.Point(427, 27);
-            this.cmbHocKy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbHocKy.Margin = new System.Windows.Forms.Padding(4);
             this.cmbHocKy.Name = "cmbHocKy";
             this.cmbHocKy.Size = new System.Drawing.Size(172, 29);
             this.cmbHocKy.TabIndex = 1;
@@ -282,7 +283,7 @@
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.Color.Gray;
             this.txtSearch.Location = new System.Drawing.Point(27, 27);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(372, 29);
             this.txtSearch.TabIndex = 0;
@@ -332,7 +333,7 @@
             this.dgvHocPhi.EnableHeadersVisualStyles = false;
             this.dgvHocPhi.GridColor = System.Drawing.Color.Gainsboro;
             this.dgvHocPhi.Location = new System.Drawing.Point(50, 357);
-            this.dgvHocPhi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvHocPhi.Margin = new System.Windows.Forms.Padding(4);
             this.dgvHocPhi.Name = "dgvHocPhi";
             this.dgvHocPhi.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -360,31 +361,33 @@
             // 
             // colMaHS
             // 
+            this.colMaHS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colMaHS.HeaderText = "MÃ HS";
             this.colMaHS.MinimumWidth = 6;
             this.colMaHS.Name = "colMaHS";
             this.colMaHS.ReadOnly = true;
-            this.colMaHS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells; // <--- SỬA DÒNG NÀY
+            this.colMaHS.Width = 103;
             // 
             // colHoTen
             // 
+            this.colHoTen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colHoTen.FillWeight = 150F;
             this.colHoTen.HeaderText = "HỌ VÀ TÊN";
             this.colHoTen.MinimumWidth = 6;
             this.colHoTen.Name = "colHoTen";
-            this.colHoTen.FillWeight = 150F;
             this.colHoTen.ReadOnly = true;
-            this.colHoTen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill; // <--- SỬA DÒNG NÀY
             // 
             // colHocKy
             // 
+            this.colHocKy.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colHocKy.HeaderText = "HỌC KỲ";
             this.colHocKy.MinimumWidth = 6;
             this.colHocKy.Name = "colHocKy";
             this.colHocKy.ReadOnly = true;
-            this.colHocKy.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill; // <--- SỬA DÒNG NÀY
             // 
             // colSoTien
             // 
+            this.colSoTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.Format = "N0";
             dataGridViewCellStyle2.NullValue = null;
@@ -393,33 +396,34 @@
             this.colSoTien.MinimumWidth = 6;
             this.colSoTien.Name = "colSoTien";
             this.colSoTien.ReadOnly = true;
-            this.colSoTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill; // <--- SỬA DÒNG NÀY
             // 
             // colHanNop
             // 
+            this.colHanNop.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colHanNop.HeaderText = "HẠN NỘP";
             this.colHanNop.MinimumWidth = 6;
             this.colHanNop.Name = "colHanNop";
             this.colHanNop.ReadOnly = true;
-            this.colHanNop.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill; // <--- SỬA DÒNG NÀY
             // 
             // colTrangThai
             // 
+            this.colTrangThai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colTrangThai.HeaderText = "TRẠNG THÁI";
             this.colTrangThai.MinimumWidth = 6;
             this.colTrangThai.Name = "colTrangThai";
             this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colTrangThai.Width = 150;
             // 
             // colView
             // 
+            this.colView.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.colView.HeaderText = "HÀNH ĐỘNG";
             this.colView.MinimumWidth = 6;
             this.colView.Name = "colView";
             this.colView.ReadOnly = true;
             this.colView.Text = "Xem";
             this.colView.UseColumnTextForButtonValue = true;
-            this.colView.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colView.Width = 131;
             // 
             // colEdit
             // 
@@ -455,7 +459,7 @@
             this.panelPagination.Controls.Add(this.btnPrev);
             this.panelPagination.Controls.Add(this.lblPagingInfo);
             this.panelPagination.Location = new System.Drawing.Point(53, 825);
-            this.panelPagination.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelPagination.Margin = new System.Windows.Forms.Padding(4);
             this.panelPagination.Name = "panelPagination";
             this.panelPagination.Size = new System.Drawing.Size(1236, 62);
             this.panelPagination.TabIndex = 7;
@@ -466,7 +470,7 @@
             this.btnNext.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Location = new System.Drawing.Point(1176, 12);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(4);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(40, 37);
             this.btnNext.TabIndex = 7;
@@ -479,7 +483,7 @@
             this.btnPage100.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnPage100.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPage100.Location = new System.Drawing.Point(1115, 12);
-            this.btnPage100.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPage100.Margin = new System.Windows.Forms.Padding(4);
             this.btnPage100.Name = "btnPage100";
             this.btnPage100.Size = new System.Drawing.Size(53, 37);
             this.btnPage100.TabIndex = 6;
@@ -503,7 +507,7 @@
             this.btnPage3.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnPage3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPage3.Location = new System.Drawing.Point(1039, 12);
-            this.btnPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPage3.Margin = new System.Windows.Forms.Padding(4);
             this.btnPage3.Name = "btnPage3";
             this.btnPage3.Size = new System.Drawing.Size(40, 37);
             this.btnPage3.TabIndex = 4;
@@ -518,7 +522,7 @@
             this.btnPage2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPage2.ForeColor = System.Drawing.Color.White;
             this.btnPage2.Location = new System.Drawing.Point(991, 12);
-            this.btnPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPage2.Margin = new System.Windows.Forms.Padding(4);
             this.btnPage2.Name = "btnPage2";
             this.btnPage2.Size = new System.Drawing.Size(40, 37);
             this.btnPage2.TabIndex = 3;
@@ -531,7 +535,7 @@
             this.btnPage1.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnPage1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPage1.Location = new System.Drawing.Point(943, 12);
-            this.btnPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPage1.Margin = new System.Windows.Forms.Padding(4);
             this.btnPage1.Name = "btnPage1";
             this.btnPage1.Size = new System.Drawing.Size(40, 37);
             this.btnPage1.TabIndex = 2;
@@ -544,7 +548,7 @@
             this.btnPrev.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrev.Location = new System.Drawing.Point(895, 12);
-            this.btnPrev.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPrev.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(40, 37);
             this.btnPrev.TabIndex = 1;
@@ -576,7 +580,7 @@
             this.Controls.Add(this.panelTongDaThanhToan);
             this.Controls.Add(this.btnThemKhoanPhi);
             this.Controls.Add(this.lblTitle);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "HocPhiControl";
             this.Size = new System.Drawing.Size(1333, 923);
             this.panelTongDaThanhToan.ResumeLayout(false);

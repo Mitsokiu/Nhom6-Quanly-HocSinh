@@ -22,3 +22,5 @@ D:\GitHub\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.XemDiemControl.resources
 D:\GitHub\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.NhapDiemControl.resources
 D:\GitHub\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.HocSinhControl.resources
 D:\GitHub\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.HocPhiControl.resources
+D:\GitHub\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.LopHoc.resources
+D:\GitHub\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.ThemHocSinh.resources

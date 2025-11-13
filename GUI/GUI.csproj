@@ -78,6 +78,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="LopHoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LopHoc.Designer.cs">
+      <DependentUpon>LopHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,18 @@
     </Compile>
     <Compile Include="TaiKhoanControl.Designer.cs">
       <DependentUpon>TaiKhoanControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemHocPhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemHocPhi.Designer.cs">
+      <DependentUpon>ThemHocPhi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemHocSinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemHocSinh.Designer.cs">
+      <DependentUpon>ThemHocSinh.cs</DependentUpon>
     </Compile>
     <Compile Include="ThoiKhoaBieuControl.cs">
       <SubType>UserControl</SubType>
@@ -131,6 +149,9 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LopHoc.resx">
+      <DependentUpon>LopHoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +170,9 @@
     </Compile>
     <EmbeddedResource Include="Sidebar.resx">
       <DependentUpon>Sidebar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemHocSinh.resx">
+      <DependentUpon>ThemHocSinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XemDiemControl.resx">
       <DependentUpon>XemDiemControl.cs</DependentUpon>

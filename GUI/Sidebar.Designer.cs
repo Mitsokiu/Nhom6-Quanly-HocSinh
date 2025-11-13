@@ -133,6 +133,7 @@ namespace GUI
             this.btnLopHoc.Text = "  Lớp học";
             this.btnLopHoc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLopHoc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLopHoc.Click += new System.EventHandler(this.btnLopHoc_Click);
             // 
             // btnHocSinh
             // 

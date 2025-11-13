@@ -16,6 +16,7 @@ namespace GUI
         public event EventHandler BtnXemDiemClick;
         public event EventHandler BtnHocSinhClick;
         public event EventHandler BtnHocPhiClick;
+        public event EventHandler BtnLopHoc_Click;
         public Sidebar()
         {
             InitializeComponent();
@@ -64,6 +65,11 @@ namespace GUI
         private void btnHocPhi_Click_1(object sender, EventArgs e)
         {
             BtnHocPhiClick?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void btnLopHoc_Click(object sender, EventArgs e)
+        {
+            BtnLopHoc_Click?.Invoke(this, EventArgs.Empty);
         }
     }
 }

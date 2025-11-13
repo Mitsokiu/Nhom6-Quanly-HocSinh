@@ -14,6 +14,7 @@ namespace GUI
             sidebar.BtnXemDiemClick += Sidebar_BtnXemDiemClick;
             sidebar.BtnHocSinhClick += Sidebar_BtnHocSinhClick;
             sidebar.BtnHocPhiClick += Sidebar_BtnHocPhiClick;
+            sidebar.BtnLopHoc_Click += Sidebar_BtnLopHoc_Click;
         }
 
 
@@ -36,6 +37,11 @@ namespace GUI
         private void Sidebar_BtnHocSinhClick(object sender, EventArgs e)
         {
             LoadContent(new HocSinhControl());
+        }
+
+        private void Sidebar_BtnLopHoc_Click(object sender, EventArgs e)
+        {
+            LoadContent(new LopHoc());
         }
 
         // Hàm load user control vào panelContent

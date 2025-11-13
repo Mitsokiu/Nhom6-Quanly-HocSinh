@@ -16,6 +16,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "image", "image", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 	ProjectSection(SolutionItems) = preProject
 		image\hocphi_24.png = image\hocphi_24.png
+		image\icons8-delete-24.png = image\icons8-delete-24.png
+		image\icons8-edit-24.png = image\icons8-edit-24.png
+		image\icons8-view-24.png = image\icons8-view-24.png
 		image\nhapdiem.png = image\nhapdiem.png
 		image\nhapdiem_24.png = image\nhapdiem_24.png
 		image\nhapdiem_32.png = image\nhapdiem_32.png

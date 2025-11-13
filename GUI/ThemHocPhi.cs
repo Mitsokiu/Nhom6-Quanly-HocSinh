@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class HocPhiControl : UserControl
+    public partial class ThemHocPhi : Form
     {
-        public HocPhiControl()
+        public ThemHocPhi()
         {
             InitializeComponent();
-        }
-
-        private void btnThemKhoanPhi_Click(object sender, EventArgs e)
-        {
-            ThemHocPhi themHocPhiForm = new ThemHocPhi();
-            themHocPhiForm.ShowDialog();
         }
     }
 }
