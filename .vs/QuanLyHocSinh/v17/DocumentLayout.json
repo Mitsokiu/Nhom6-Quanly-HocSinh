@@ -1,0 +1,86 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Code\\qlyhocsinh\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{22E873F4-AE88-4F30-9882-D8723E69F573}|DTO\\DTO.csproj|c:\\code\\qlyhocsinh\\dto\\giaoviendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22E873F4-AE88-4F30-9882-D8723E69F573}|DTO\\DTO.csproj|solutionrelative:dto\\giaoviendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D7BE687-7131-436D-AE2C-28C018A13B33}|DAO\\DAO.csproj|c:\\code\\qlyhocsinh\\dao\\dataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D7BE687-7131-436D-AE2C-28C018A13B33}|DAO\\DAO.csproj|solutionrelative:dao\\dataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D7BE687-7131-436D-AE2C-28C018A13B33}|DAO\\DAO.csproj|c:\\code\\qlyhocsinh\\dao\\dantocdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D7BE687-7131-436D-AE2C-28C018A13B33}|DAO\\DAO.csproj|solutionrelative:dao\\dantocdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\code\\qlyhocsinh\\quanlyhocsinh\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:quanlyhocsinh\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GiaoVienDTO.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhocsinh\\DTO\\GiaoVienDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\GiaoVienDTO.cs",
+              "ToolTip": "C:\\Code\\qlyhocsinh\\DTO\\GiaoVienDTO.cs",
+              "RelativeToolTip": "DTO\\GiaoVienDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T02:02:50.881Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DanTocDAO.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhocsinh\\DAO\\DanTocDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\DanTocDAO.cs",
+              "ToolTip": "C:\\Code\\qlyhocsinh\\DAO\\DanTocDAO.cs",
+              "RelativeToolTip": "DAO\\DanTocDAO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T02:02:39.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DataProvider.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhocsinh\\DAO\\DataProvider.cs",
+              "RelativeDocumentMoniker": "DAO\\DataProvider.cs",
+              "ToolTip": "C:\\Code\\qlyhocsinh\\DAO\\DataProvider.cs",
+              "RelativeToolTip": "DAO\\DataProvider.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T02:01:16.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmDangNhap.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhocsinh\\QuanLyHocSinh\\frmDangNhap.cs",
+              "RelativeDocumentMoniker": "QuanLyHocSinh\\frmDangNhap.cs",
+              "ToolTip": "C:\\Code\\qlyhocsinh\\QuanLyHocSinh\\frmDangNhap.cs [Design]",
+              "RelativeToolTip": "QuanLyHocSinh\\frmDangNhap.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T02:00:58.179Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

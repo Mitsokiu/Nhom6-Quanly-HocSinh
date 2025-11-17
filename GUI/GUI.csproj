@@ -121,29 +121,11 @@
     <Compile Include="Sidebar.Designer.cs">
       <DependentUpon>Sidebar.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_Admin_CauHinh.cs">
+    <Compile Include="UserControls\UC_Admin_PhanCong_gvcn.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_Admin_CauHinh.Designer.cs">
-      <DependentUpon>UC_Admin_CauHinh.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\UC_Admin_CauHinh_Khac.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UC_Admin_CauHinh_Khac.Designer.cs">
-      <DependentUpon>UC_Admin_CauHinh_Khac.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\UC_Admin_CauHinh_ThangDiem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UC_Admin_CauHinh_ThangDiem.Designer.cs">
-      <DependentUpon>UC_Admin_CauHinh_ThangDiem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\UC_Admin_CauHinh_XepLoai.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UC_Admin_CauHinh_XepLoai.Designer.cs">
-      <DependentUpon>UC_Admin_CauHinh_XepLoai.cs</DependentUpon>
+    <Compile Include="UserControls\UC_Admin_PhanCong_gvcn.Designer.cs">
+      <DependentUpon>UC_Admin_PhanCong_gvcn.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UC_Admin_Class.cs">
       <SubType>UserControl</SubType>
@@ -317,17 +299,8 @@
     <EmbeddedResource Include="Sidebar.resx">
       <DependentUpon>Sidebar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_Admin_CauHinh.resx">
-      <DependentUpon>UC_Admin_CauHinh.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_Admin_CauHinh_Khac.resx">
-      <DependentUpon>UC_Admin_CauHinh_Khac.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_Admin_CauHinh_ThangDiem.resx">
-      <DependentUpon>UC_Admin_CauHinh_ThangDiem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_Admin_CauHinh_XepLoai.resx">
-      <DependentUpon>UC_Admin_CauHinh_XepLoai.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UC_Admin_PhanCong_gvcn.resx">
+      <DependentUpon>UC_Admin_PhanCong_gvcn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_Admin_Class.resx">
       <DependentUpon>UC_Admin_Class.cs</DependentUpon>

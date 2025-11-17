@@ -6,7 +6,7 @@ namespace DAO
 {
     public class DbConnect
     {
-        private static string connectionString = "Server=localhost;Database=quanly_hocsinh_full;User ID=root;Password=congthuan;";
+        private static string connectionString = "Server=localhost;Database=school_management;User ID=root;Password=congthuan;";
 
         public static MySqlConnection GetConnection()
         {
@@ -50,6 +50,24 @@ namespace DAO
                 return false;
             }
         }
+
+        public static int ExecuteNonQuery(string query, object[] parameters = null)
+        {
+            using (MySqlConnection connection = GetConnection())
+            {
+                connection.Open();
+                MySqlCommand command = new MySqlCommand(query, connection);
+                if (parameters != null)
+                {
+                    for (int i = 0; i < parameters.Length; i++)
+                        command.Parameters.AddWithValue($"@param{i}", parameters[i]);
+                }
+                int result = command.ExecuteNonQuery();
+                connection.Close();
+                return result;
+            }
+        }
+
 
 
     }

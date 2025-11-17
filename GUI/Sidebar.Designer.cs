@@ -29,7 +29,7 @@ namespace GUI
             this.btnHocSinh = new System.Windows.Forms.Button();
             this.btnTinhHinh = new System.Windows.Forms.Button();
             this.btnQlyLop = new System.Windows.Forms.Button();
-            this.btnCauHinh = new System.Windows.Forms.Button();
+            this.btnNamhoc = new System.Windows.Forms.Button();
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
@@ -66,7 +66,7 @@ namespace GUI
             this.flowLayoutPanel1.Controls.Add(this.btnHocSinh);
             this.flowLayoutPanel1.Controls.Add(this.btnTinhHinh);
             this.flowLayoutPanel1.Controls.Add(this.btnQlyLop);
-            this.flowLayoutPanel1.Controls.Add(this.btnCauHinh);
+            this.flowLayoutPanel1.Controls.Add(this.btnNamhoc);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 188);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -173,16 +173,16 @@ namespace GUI
             this.btnQlyLop.Text = "Qly Lớp, Môn học";
             this.btnQlyLop.Click += new System.EventHandler(this.btnQlyLop_Click);
             // 
-            // btnCauHinh
+            // btnNamhoc
             // 
-            this.btnCauHinh.Image = global::GUI.Properties.Resources.tinnhan_24;
-            this.btnCauHinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCauHinh.Location = new System.Drawing.Point(3, 507);
-            this.btnCauHinh.Name = "btnCauHinh";
-            this.btnCauHinh.Size = new System.Drawing.Size(282, 50);
-            this.btnCauHinh.TabIndex = 9;
-            this.btnCauHinh.Text = "Cấu hình hệ thống";
-            this.btnCauHinh.Click += new System.EventHandler(this.btnCauHinh_Click);
+            this.btnNamhoc.Image = global::GUI.Properties.Resources.tinnhan_24;
+            this.btnNamhoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNamhoc.Location = new System.Drawing.Point(3, 507);
+            this.btnNamhoc.Name = "btnNamhoc";
+            this.btnNamhoc.Size = new System.Drawing.Size(282, 50);
+            this.btnNamhoc.TabIndex = 10;
+            this.btnNamhoc.Text = "Quản Lý Năm Học";
+            this.btnNamhoc.Click += new System.EventHandler(this.btnNamhoc_Click);
             // 
             // btnDangXuat
             // 
@@ -235,8 +235,8 @@ namespace GUI
         private Button btnHocSinh;
         private Button btnTinhHinh;
         private Button btnQlyLop;
-        private Button btnCauHinh;
         private Button btnDangXuat;
         private Button btnHome;
+        private Button btnNamhoc;
     }
 }

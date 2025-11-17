@@ -2,9 +2,8 @@
 {
     public class ClassDTO
     {
-        public string Id { get; set; }
-        public string Khoi { get; set; }
-        public string Lop { get; set; }
-        public string GVCN { get; set; }
+        public int Id { get; set; }
+        public int GradeId { get; set; }
+        public string ClassName { get; set; }
     }
 }

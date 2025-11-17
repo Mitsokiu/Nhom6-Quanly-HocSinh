@@ -130,11 +130,11 @@ namespace GUI
             this.comboRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboRole.FormattingEnabled = true;
             this.comboRole.Items.AddRange(new object[] {
-            "Admin",
-            "Giáo viên CN",
-            "Giáo viên BM",
-            "Học sinh",
-            "Phụ huynh"});
+            "admin",
+            "gvcn",
+            "gvbm",
+            "parent",
+            "student"});
             this.comboRole.Location = new System.Drawing.Point(135, 257);
             this.comboRole.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboRole.Name = "comboRole";
@@ -164,7 +164,6 @@ namespace GUI
             this.label1.Size = new System.Drawing.Size(65, 20);
             this.label1.TabIndex = 12;
             this.label1.Text = "Ho Ten;";
-            
             // 
             // txtEmail
             // 

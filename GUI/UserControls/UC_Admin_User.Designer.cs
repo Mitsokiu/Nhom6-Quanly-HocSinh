@@ -31,48 +31,47 @@ namespace GUI.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.Add = new System.Windows.Forms.Button();
+            this.btn_add = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_xoa = new System.Windows.Forms.Button();
             this.btn_sua = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.Text_mail = new System.Windows.Forms.TextBox();
+            this.Text_sdt = new System.Windows.Forms.TextBox();
+            this.Text_ht = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Text_mk = new System.Windows.Forms.TextBox();
+            this.Text_tk = new System.Windows.Forms.TextBox();
+            this.combo_role = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button8 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btn_search = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.Taikhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayTao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayTao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // Add
+            // btn_add
             // 
-            this.Add.BackColor = System.Drawing.Color.Silver;
-            this.Add.Location = new System.Drawing.Point(1131, 28);
-            this.Add.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(101, 27);
-            this.Add.TabIndex = 10;
-            this.Add.Text = "Them";
-            this.Add.UseVisualStyleBackColor = false;
-            this.Add.Click += new System.EventHandler(this.Add_Click);
+            this.btn_add.BackColor = System.Drawing.Color.Silver;
+            this.btn_add.Location = new System.Drawing.Point(1131, 28);
+            this.btn_add.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(101, 27);
+            this.btn_add.TabIndex = 10;
+            this.btn_add.Text = "Them";
+            this.btn_add.UseVisualStyleBackColor = false;
+            this.btn_add.Click += new System.EventHandler(this.Add_Click);
             // 
             // label1
             // 
@@ -87,16 +86,15 @@ namespace GUI.UserControls
             // 
             this.panel2.Controls.Add(this.btn_xoa);
             this.panel2.Controls.Add(this.btn_sua);
-            this.panel2.Controls.Add(this.textBox6);
-            this.panel2.Controls.Add(this.textBox5);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.Controls.Add(this.Text_mail);
+            this.panel2.Controls.Add(this.Text_sdt);
+            this.panel2.Controls.Add(this.Text_ht);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.Text_mk);
+            this.panel2.Controls.Add(this.Text_tk);
+            this.panel2.Controls.Add(this.combo_role);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(30, 71);
@@ -129,37 +127,29 @@ namespace GUI.UserControls
             this.btn_sua.UseVisualStyleBackColor = false;
             this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
             // 
-            // textBox6
+            // Text_mail
             // 
-            this.textBox6.Location = new System.Drawing.Point(105, 148);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(207, 26);
-            this.textBox6.TabIndex = 11;
+            this.Text_mail.Location = new System.Drawing.Point(105, 148);
+            this.Text_mail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Text_mail.Name = "Text_mail";
+            this.Text_mail.Size = new System.Drawing.Size(207, 26);
+            this.Text_mail.TabIndex = 11;
             // 
-            // textBox5
+            // Text_sdt
             // 
-            this.textBox5.Location = new System.Drawing.Point(105, 190);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(207, 26);
-            this.textBox5.TabIndex = 10;
+            this.Text_sdt.Location = new System.Drawing.Point(105, 190);
+            this.Text_sdt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Text_sdt.Name = "Text_sdt";
+            this.Text_sdt.Size = new System.Drawing.Size(207, 26);
+            this.Text_sdt.TabIndex = 10;
             // 
-            // textBox4
+            // Text_ht
             // 
-            this.textBox4.Location = new System.Drawing.Point(105, 116);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(207, 26);
-            this.textBox4.TabIndex = 9;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 231);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(248, 26);
-            this.dateTimePicker1.TabIndex = 8;
+            this.Text_ht.Location = new System.Drawing.Point(105, 116);
+            this.Text_ht.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Text_ht.Name = "Text_ht";
+            this.Text_ht.Size = new System.Drawing.Size(207, 26);
+            this.Text_ht.TabIndex = 9;
             // 
             // label6
             // 
@@ -188,37 +178,38 @@ namespace GUI.UserControls
             this.label4.TabIndex = 5;
             this.label4.Text = "Email";
             // 
-            // textBox3
+            // Text_mk
             // 
-            this.textBox3.Location = new System.Drawing.Point(105, 86);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(207, 26);
-            this.textBox3.TabIndex = 4;
+            this.Text_mk.Location = new System.Drawing.Point(105, 86);
+            this.Text_mk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Text_mk.Name = "Text_mk";
+            this.Text_mk.Size = new System.Drawing.Size(207, 26);
+            this.Text_mk.TabIndex = 4;
             // 
-            // textBox2
+            // Text_tk
             // 
-            this.textBox2.Location = new System.Drawing.Point(105, 56);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(207, 26);
-            this.textBox2.TabIndex = 3;
+            this.Text_tk.Location = new System.Drawing.Point(105, 56);
+            this.Text_tk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Text_tk.Name = "Text_tk";
+            this.Text_tk.Size = new System.Drawing.Size(207, 26);
+            this.Text_tk.TabIndex = 3;
             // 
-            // comboBox1
+            // combo_role
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Hoc Sinh",
-            "Phu Huynh",
-            "Giao Vien Chu Nhiem",
-            "Giao Vien Bo on"});
-            this.comboBox1.Location = new System.Drawing.Point(4, 12);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(164, 28);
-            this.comboBox1.TabIndex = 2;
-            this.comboBox1.Text = "Loai Tai Khoan";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.combo_role.FormattingEnabled = true;
+            this.combo_role.Items.AddRange(new object[] {
+            "admin",
+            "student",
+            "gvcn",
+            "gvbm",
+            "parent"});
+            this.combo_role.Location = new System.Drawing.Point(117, 235);
+            this.combo_role.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.combo_role.Name = "combo_role";
+            this.combo_role.Size = new System.Drawing.Size(164, 28);
+            this.combo_role.TabIndex = 2;
+            this.combo_role.Text = "Role";
+            this.combo_role.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -247,8 +238,8 @@ namespace GUI.UserControls
             this.HoTen,
             this.Email,
             this.SDT,
-            this.NgayTao,
-            this.Role});
+            this.Role,
+            this.NgayTao});
             this.dataGridView1.Location = new System.Drawing.Point(374, 71);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
@@ -257,24 +248,24 @@ namespace GUI.UserControls
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // button8
+            // btn_search
             // 
-            this.button8.Location = new System.Drawing.Point(543, 14);
-            this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(101, 27);
-            this.button8.TabIndex = 12;
-            this.button8.Text = "Seach";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btn_search.Location = new System.Drawing.Point(543, 14);
+            this.btn_search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(101, 27);
+            this.btn_search.TabIndex = 12;
+            this.btn_search.Text = "Seach";
+            this.btn_search.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(202, 14);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(336, 26);
-            this.textBox1.TabIndex = 11;
-            this.textBox1.Text = "Search";
+            this.txtSearch.Location = new System.Drawing.Point(202, 14);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(336, 26);
+            this.txtSearch.TabIndex = 11;
+            this.txtSearch.Text = "Search";
             // 
             // Taikhoan
             // 
@@ -311,13 +302,6 @@ namespace GUI.UserControls
             this.SDT.Name = "SDT";
             this.SDT.Width = 150;
             // 
-            // NgayTao
-            // 
-            this.NgayTao.HeaderText = "Ngay Tao";
-            this.NgayTao.MinimumWidth = 8;
-            this.NgayTao.Name = "NgayTao";
-            this.NgayTao.Width = 150;
-            // 
             // Role
             // 
             this.Role.HeaderText = "Chuc Vu";
@@ -325,16 +309,23 @@ namespace GUI.UserControls
             this.Role.Name = "Role";
             this.Role.Width = 150;
             // 
+            // NgayTao
+            // 
+            this.NgayTao.HeaderText = "Ngay Tao";
+            this.NgayTao.MinimumWidth = 8;
+            this.NgayTao.Name = "NgayTao";
+            this.NgayTao.Width = 150;
+            // 
             // UC_Admin_User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.Add);
+            this.Controls.Add(this.btn_add);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btn_search);
+            this.Controls.Add(this.txtSearch);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UC_Admin_User";
             this.Size = new System.Drawing.Size(1505, 603);
@@ -349,32 +340,31 @@ namespace GUI.UserControls
 
         #endregion
 
-        private Button Add;
+        private Button btn_add;
         private Label label1;
         private Panel panel2;
         private Button btn_xoa;
         private Button btn_sua;
-        private TextBox textBox6;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private DateTimePicker dateTimePicker1;
+        private TextBox Text_mail;
+        private TextBox Text_sdt;
+        private TextBox Text_ht;
         private Label label6;
         private Label label5;
         private Label label4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private ComboBox comboBox1;
+        private TextBox Text_mk;
+        private TextBox Text_tk;
+        private ComboBox combo_role;
         private Label label3;
         private Label label2;
         private DataGridView dataGridView1;
-        private Button button8;
-        private TextBox textBox1;
+        private Button btn_search;
+        private TextBox txtSearch;
         private DataGridViewTextBoxColumn Taikhoan;
         private DataGridViewTextBoxColumn MatKhau;
         private DataGridViewTextBoxColumn HoTen;
         private DataGridViewTextBoxColumn Email;
         private DataGridViewTextBoxColumn SDT;
-        private DataGridViewTextBoxColumn NgayTao;
         private DataGridViewTextBoxColumn Role;
+        private DataGridViewTextBoxColumn NgayTao;
     }
 }

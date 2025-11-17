@@ -35,12 +35,14 @@ namespace GUI
         {
             string username = txtUser.Text.Trim();
             string password = txtPass.Text.Trim();
+            Console.WriteLine($"Attempting login with Username: {username}, Password: {password}");
+            UserDTO user1 = bus.GetUserInfo(username);
+            Console.WriteLine($"Retrieved User Info: {user1?.Username}, {user1?.Fullname}");
 
             if (bus.Login(username, password))
             {
                 UserDTO user = bus.GetUserInfo(username);
-                MessageBox.Show($"Đăng nhập thành công!\nXin chào {user.Fullname} ({user.RoleName})");
-
+               
                 MainForm main = new MainForm(username);
                 main.FormClosed += (s, args) => this.Show();
                 main.Show();
@@ -48,8 +50,10 @@ namespace GUI
             }
             else
             {
+               
                 MessageBox.Show("Sai tài khoản hoặc mật khẩu!", "Đăng nhập thất bại",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
     }

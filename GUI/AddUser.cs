@@ -59,49 +59,40 @@ namespace GUI
         {
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
-            string email = txtEmail.Text.Trim();
             string fullname = txtFullName.Text.Trim();
+            string email = txtEmail.Text.Trim();
             string phone = txtPhone.Text.Trim();
+            string role = comboRole.SelectedItem?.ToString();
 
-            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) ||
+                string.IsNullOrEmpty(fullname) || string.IsNullOrEmpty(role))
             {
-                MessageBox.Show("Vui lòng nhập đủ thông tin bắt buộc!", "Cảnh báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
                 return;
             }
-
-            if (comboRole.SelectedItem == null)
-            {
-                MessageBox.Show("Vui lòng chọn quyền người dùng!", "Cảnh báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            int roleId = ((KeyValuePair<int, string>)comboRole.SelectedItem).Key;
 
             UserDTO user = new UserDTO
             {
                 Username = username,
-                Password = password, // Sau này nên mã hóa
-                Email = email,
+                Password = password,
                 Fullname = fullname,
+                Email = email,
                 Phone = phone,
-                RoleId = roleId
+                RoleName = role
             };
 
-            bool result = userBUS.AddUser(user);
+            UserBUS bus = new UserBUS();
+            bool result = bus.AddUser(user);
 
             if (result)
             {
-                MessageBox.Show($"Đã thêm user: {username}", "Thành công",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thêm user thành công.");
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Thêm user thất bại!", "Lỗi",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi: Không thể thêm user.");
             }
         }
 

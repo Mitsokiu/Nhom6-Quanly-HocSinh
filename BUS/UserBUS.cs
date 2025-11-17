@@ -6,41 +6,51 @@ namespace BUS
 {
     public class UserBUS
     {
-        private UserDAO userDAO = new UserDAO();
+        private UserDAO dao = new UserDAO();
+
 
         public bool Login(string username, string password)
         {
-            UserDTO user = new UserDTO
-            {
-                Username = username,
-                Password = password
-            };
-            return userDAO.CheckLogin(user);
+            return dao.CheckLogin(username, password);
         }
 
         public UserDTO GetUserInfo(string username)
         {
-            return userDAO.GetUserInfo(username);
-        }
 
-        public bool AddUser(UserDTO user)
-        {
-            return userDAO.AddUser(user);
+            return dao.GetUserByUsername(username);
         }
 
         public List<UserDTO> GetAllUsers()
         {
-            return userDAO.GetAllUsers();
+            return dao.GetAllUsers();
         }
 
         public bool UpdateUser(UserDTO user)
         {
-            return userDAO.UpdateUser(user);
+            return dao.UpdateUser(user);
         }
 
-        public bool DeleteUser(string username)
+        public bool DeleteUser(int userId)
         {
-            return userDAO.DeleteUser(username);
+            return dao.DeleteUser(userId);
         }
+
+        public bool AddUser(UserDTO user)
+        {
+            return dao.AddUserFull(user);
+        }
+
+        public List<UserDTO> SearchUsers(string keyword)
+        {
+            return dao.SearchUsers(keyword);
+        }
+
+        public static List<UserDTO> GetAllTeachers()
+        {
+            return UserDAO.GetAllTeachers();
+        }
+
+
+
     }
 }

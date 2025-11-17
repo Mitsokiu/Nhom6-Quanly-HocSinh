@@ -1,20 +1,31 @@
-﻿using GUI.UserControls;
+﻿using BUS;
+using DTO;
+using GUI.UserControls;
 using System;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
 namespace GUI
 {
     public partial class MainForm : Form
     {
-        public MainForm(string role) // Truyền vai trò từ form đăng nhập
+        public MainForm(string username) // Truyền vai trò từ form đăng nhập
         {
             InitializeComponent();
             LoadContent(new UC_Home()); // Mặc định load trang Home
+            UserDTO user = new UserBUS().GetUserInfo(username);
+            if (user != null)
+            {
+                // Truyền role vào sidebar
+                sidebar.SetRole(user.RoleName);
 
-            // Ẩn/hiện nút theo vai trò
-            sidebar.SetRole(role);
+                // Nếu muốn hiển thị thông tin user
+                sidebar.SetUserInfo(user);
+            }
 
+
+          
             // Gắn sự kiện từ Sidebar (đúng tên event mới)
             sidebar.TaiKhoanClicked += Sidebar_TaiKhoanClicked;
             sidebar.NhapDiemClicked += Sidebar_NhapDiemClicked;
@@ -25,8 +36,9 @@ namespace GUI
             sidebar.HocSinhClicked += Sidebar_HocSinhClicked;
             sidebar.TinhHinhClicked += Sidebar_TinhHinhClicked;
             sidebar.QlyLopClicked += Sidebar_QlyLopClicked;
-            sidebar.CauHinhClicked += Sidebar_CauHinhClicked;
+            
             sidebar.HomeClicked += Sidebar_HomeClicked;
+            sidebar.QlyNamHocClicked += Sidebar_QlyNamHocClicked;
         }
 
         // =====================
@@ -88,14 +100,15 @@ namespace GUI
             LoadContent(new UC_Admin_Class());
         }
 
-        private void Sidebar_CauHinhClicked(object sender, EventArgs e)
-        {
-            LoadContent(new UC_Admin_CauHinh());
-        }
-
+       
         private void Sidebar_HomeClicked(object sender, EventArgs e)
         {
             LoadContent(new UC_Home());
+        }
+
+        private void Sidebar_QlyNamHocClicked(object sender, EventArgs e)
+        {
+            LoadContent(new UC_Admin_Namhoc());
         }
 
         // =====================

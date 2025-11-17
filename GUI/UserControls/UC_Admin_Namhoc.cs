@@ -15,7 +15,7 @@ namespace GUI.UserControls
         public UC_Admin_Namhoc()
         {
             InitializeComponent();
-            LoadUserControl(new UC_Admin_Namhoc_HocKi());
+            LoadUserControl(new UC_Admin_Namhoc_Hocki());
 
         }
 
@@ -33,7 +33,7 @@ namespace GUI.UserControls
         private void button1_Click(object sender, EventArgs e)
 
         {
-            LoadUserControl(new UC_Admin_Namhoc_HocKi());
+            LoadUserControl(new UC_Admin_Namhoc_Hocki());
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -44,6 +44,10 @@ namespace GUI.UserControls
         private void button3_Click(object sender, EventArgs e)
         {
             LoadUserControl(new UC_Admin_NamHoc_HocPhi());
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            LoadUserControl(new UC_Admin_Namhoc_Hocki());
         }
 
 
@@ -61,5 +65,15 @@ namespace GUI.UserControls
         {
 
         }
+
+        private void UC_Admin_Namhoc_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void label1_Click(object sender, EventArgs e)
+        {
+            // hiện tại để trống
+        }
+
     }
 }
