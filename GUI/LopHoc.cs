@@ -55,20 +55,20 @@ namespace GUI
             Image icon = null;
             string colName = dgvHocSinh.Columns[e.ColumnIndex].Name;
 
-            try
-            //{
-            //    switch (colName)
-            //    {
-            //        case "colView":
-            //            icon = Resources.; // Lấy icon từ Resources
-            //            break;
-            //        case "colEdit":
-            //            icon = Resources.edit_icon; // Lấy icon từ Resources
-            //            break;
-            //        case "colDelete":
-            //            icon = Resources.delete_icon; // Lấy icon từ Resources
-            //            break;
-            //    }
+            try {
+                //{
+                //    switch (colName)
+                //    {
+                //        case "colView":
+                //            icon = Resources.; // Lấy icon từ Resources
+                //            break;
+                //        case "colEdit":
+                //            icon = Resources.edit_icon; // Lấy icon từ Resources
+                //            break;
+                //        case "colDelete":
+                //            icon = Resources.delete_icon; // Lấy icon từ Resources
+                //            break;
+                //    }
 
                 // Nếu cột này có icon, chúng ta sẽ vẽ nó vào giữa ô
                 if (icon != null)

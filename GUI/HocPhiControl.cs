@@ -22,5 +22,10 @@ namespace GUI
             ThemHocPhi themHocPhiForm = new ThemHocPhi();
             themHocPhiForm.ShowDialog();
         }
+
+        private void lblValueQuaHan_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

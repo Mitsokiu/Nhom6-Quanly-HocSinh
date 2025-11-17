@@ -198,6 +198,7 @@
             this.lblValueQuaHan.Size = new System.Drawing.Size(49, 37);
             this.lblValueQuaHan.TabIndex = 1;
             this.lblValueQuaHan.Text = "12";
+            this.lblValueQuaHan.Click += new System.EventHandler(this.lblValueQuaHan_Click);
             // 
             // lblTitleQuaHan
             // 

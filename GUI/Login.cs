@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -17,31 +10,28 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void lblTitle_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            String username = txtUser.Text.Trim();
-            String password = txtPass.Text.Trim();
+            string username = txtUser.Text.Trim();
+            string password = txtPass.Text.Trim();
+            string role = "";
 
-            if(username == "admin" && password == "123")
+            // Giả lập Database
+            if (username == "admin" && password == "123") role = "Admin";
+            else if (username == "giaovien" && password == "123") role = "GiaoVien";
+            else if (username == "hocsinh" && password == "123") role = "HocSinh";
+            else if (username == "phuhuynh" && password == "123") role = "PhuHuynh";
+
+            if (role != "")
             {
                 this.Hide();
-
-                MainForm mainForm = new MainForm();
+                MainForm mainForm = new MainForm(role); // Truyền Role vào MainForm
                 mainForm.ShowDialog();
-
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Sai tài khoản hoặc mật khẩu!",
-                                "Đăng nhập thất bại",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
+                MessageBox.Show("Sai tài khoản hoặc mật khẩu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

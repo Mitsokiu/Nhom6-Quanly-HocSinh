@@ -35,7 +35,7 @@ namespace GUI
             this.lbInfo = new System.Windows.Forms.Label();
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.btnTaiKhoan = new System.Windows.Forms.Button();
-            this.btnDiemDanh = new System.Windows.Forms.Button();
+            this.btnQuanLyLopHoc = new System.Windows.Forms.Button();
             this.btnLopHoc = new System.Windows.Forms.Button();
             this.btnHocSinh = new System.Windows.Forms.Button();
             this.btnXemLichDay = new System.Windows.Forms.Button();
@@ -45,6 +45,8 @@ namespace GUI
             this.btnXemDiem = new System.Windows.Forms.Button();
             this.btnNhapDiem = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnQuanLyKhoiLop = new System.Windows.Forms.Button();
+            this.btnQuanLyMonHoc = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,7 +95,7 @@ namespace GUI
             this.btnTaiKhoan.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaiKhoan.Image = global::GUI.Properties.Resources.taikhoan_24;
             this.btnTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTaiKhoan.Location = new System.Drawing.Point(3, 610);
+            this.btnTaiKhoan.Location = new System.Drawing.Point(5, 701);
             this.btnTaiKhoan.Name = "btnTaiKhoan";
             this.btnTaiKhoan.Padding = new System.Windows.Forms.Padding(8, 2, 0, 0);
             this.btnTaiKhoan.Size = new System.Drawing.Size(244, 43);
@@ -101,22 +103,23 @@ namespace GUI
             this.btnTaiKhoan.Text = "  Tài khoản";
             this.btnTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTaiKhoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTaiKhoan.Click += new System.EventHandler(this.btnTaiKhoan_Click);
             // 
-            // btnDiemDanh
+            // btnQuanLyLopHoc
             // 
-            this.btnDiemDanh.FlatAppearance.BorderSize = 0;
-            this.btnDiemDanh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDiemDanh.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDiemDanh.Image = ((System.Drawing.Image)(resources.GetObject("btnDiemDanh.Image")));
-            this.btnDiemDanh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDiemDanh.Location = new System.Drawing.Point(5, 561);
-            this.btnDiemDanh.Name = "btnDiemDanh";
-            this.btnDiemDanh.Padding = new System.Windows.Forms.Padding(8, 2, 0, 0);
-            this.btnDiemDanh.Size = new System.Drawing.Size(244, 43);
-            this.btnDiemDanh.TabIndex = 21;
-            this.btnDiemDanh.Text = "  Điểm danh";
-            this.btnDiemDanh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDiemDanh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnQuanLyLopHoc.FlatAppearance.BorderSize = 0;
+            this.btnQuanLyLopHoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuanLyLopHoc.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuanLyLopHoc.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLyLopHoc.Image")));
+            this.btnQuanLyLopHoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuanLyLopHoc.Location = new System.Drawing.Point(5, 561);
+            this.btnQuanLyLopHoc.Name = "btnQuanLyLopHoc";
+            this.btnQuanLyLopHoc.Padding = new System.Windows.Forms.Padding(8, 2, 0, 0);
+            this.btnQuanLyLopHoc.Size = new System.Drawing.Size(244, 43);
+            this.btnQuanLyLopHoc.TabIndex = 21;
+            this.btnQuanLyLopHoc.Text = "  Quản lý lớp học";
+            this.btnQuanLyLopHoc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuanLyLopHoc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             // 
             // btnLopHoc
             // 
@@ -263,15 +266,49 @@ namespace GUI
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // btnQuanLyKhoiLop
+            // 
+            this.btnQuanLyKhoiLop.FlatAppearance.BorderSize = 0;
+            this.btnQuanLyKhoiLop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuanLyKhoiLop.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuanLyKhoiLop.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLyKhoiLop.Image")));
+            this.btnQuanLyKhoiLop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuanLyKhoiLop.Location = new System.Drawing.Point(5, 610);
+            this.btnQuanLyKhoiLop.Name = "btnQuanLyKhoiLop";
+            this.btnQuanLyKhoiLop.Padding = new System.Windows.Forms.Padding(8, 2, 0, 0);
+            this.btnQuanLyKhoiLop.Size = new System.Drawing.Size(244, 43);
+            this.btnQuanLyKhoiLop.TabIndex = 22;
+            this.btnQuanLyKhoiLop.Text = "  Quản lý khối lớp";
+            this.btnQuanLyKhoiLop.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuanLyKhoiLop.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            // 
+            // btnQuanLyMonHoc
+            // 
+            this.btnQuanLyMonHoc.FlatAppearance.BorderSize = 0;
+            this.btnQuanLyMonHoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuanLyMonHoc.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuanLyMonHoc.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLyMonHoc.Image")));
+            this.btnQuanLyMonHoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuanLyMonHoc.Location = new System.Drawing.Point(3, 652);
+            this.btnQuanLyMonHoc.Name = "btnQuanLyMonHoc";
+            this.btnQuanLyMonHoc.Padding = new System.Windows.Forms.Padding(8, 2, 0, 0);
+            this.btnQuanLyMonHoc.Size = new System.Drawing.Size(244, 43);
+            this.btnQuanLyMonHoc.TabIndex = 23;
+            this.btnQuanLyMonHoc.Text = "  Quản lý môn học";
+            this.btnQuanLyMonHoc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuanLyMonHoc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            // 
             // Sidebar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Controls.Add(this.btnQuanLyMonHoc);
+            this.Controls.Add(this.btnQuanLyKhoiLop);
             this.Controls.Add(this.btnDangXuat);
             this.Controls.Add(this.btnTaiKhoan);
-            this.Controls.Add(this.btnDiemDanh);
+            this.Controls.Add(this.btnQuanLyLopHoc);
             this.Controls.Add(this.btnLopHoc);
             this.Controls.Add(this.btnHocSinh);
             this.Controls.Add(this.btnXemLichDay);
@@ -296,7 +333,7 @@ namespace GUI
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbWelcome;
         private System.Windows.Forms.Label lbInfo;
-        private Button btnDiemDanh;
+        private Button btnQuanLyLopHoc;
         private Button btnLopHoc;
         private Button btnHocSinh;
         private Button btnXemLichDay;
@@ -307,5 +344,7 @@ namespace GUI
         private Button btnNhapDiem;
         private Button btnTaiKhoan;
         private Button btnDangXuat;
+        private Button btnQuanLyKhoiLop;
+        private Button btnQuanLyMonHoc;
     }
 }

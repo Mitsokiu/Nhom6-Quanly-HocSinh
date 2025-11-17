@@ -44,7 +44,7 @@
             this.sidebar.Name = "sidebar";
             this.sidebar.Size = new System.Drawing.Size(258, 853);
             this.sidebar.TabIndex = 0;
-            this.sidebar.Load += new System.EventHandler(this.sidebar_Load);
+            //this.sidebar.Load += new System.EventHandler(this.sidebar_Load);
             // 
             // panelContent
             // 
