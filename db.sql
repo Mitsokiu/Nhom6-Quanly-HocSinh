@@ -28,8 +28,7 @@ INSERT INTO users (username, password, fullname, email, phone, role_id) VALUES
 ('gv02', '123456', 'Lê Văn Thầy', 'gv02@school.com', '0900000012', 'gvbm'),
 ('hs01', '123456', 'Nguyễn Minh Khang', 'hs01@school.com', '0900000021', 'student'),
 ('hs02', '123456', 'Trần Bảo Ngọc', 'hs02@school.com', '0900000022', 'student'),
-('ph01', '123456', 'Nguyễn Văn Ba', 'ph01@school.com', '0900000031', 'parent'),
-('ph02', '123456', 'Trần Thị Mai', 'ph02@school.com', '0900000032', 'parent');
+
 
 -- =====================================
 -- 2. Parents & Students

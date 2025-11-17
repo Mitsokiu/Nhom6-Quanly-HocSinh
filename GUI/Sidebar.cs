@@ -69,11 +69,10 @@ namespace GUI
                 case "gvcn":
                     ShowButtons(btnHocSinh, btnNhapDiem, btnXemLichDay, btnHome);
                     break;
-                case "parent":
-                    ShowButtons(btnHocPhi, btnTinhHinh, btnXemDiem, btnXemTKB, btnHome);
-                    break;
+                
+                  
                 case "student":
-                    ShowButtons(btnXemDiem, btnXemTKB, btnHome);
+                    ShowButtons(btnXemDiem, btnXemTKB, btnHome, btnHocPhi, btnTinhHinh);
                     break;
                 default:
                     ShowButtons(btnHome);
