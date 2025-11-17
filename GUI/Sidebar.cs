@@ -14,6 +14,7 @@ namespace GUI
         public event EventHandler BtnHocPhiClick;
         public event EventHandler BtnLopHoc_Click; // Của giáo viên/học sinh
         public event EventHandler BtnDangXuat_Click_Event;
+        public event EventHandler BtnLichDayClick;
 
         // Event riêng cho Admin
         public event EventHandler BtnQuanLyMonHoc_Click;
@@ -42,7 +43,7 @@ namespace GUI
             // Phải liệt kê đủ thì mới ẩn sạch được
             List<Button> allBtns = new List<Button>() {
                 btnNhapDiem, btnXemDiem, btnHocPhi, btnTinNhan, btnXemTKB,
-                btnXemLichDay, btnHocSinh, btnLopHoc,
+                btnLichDay, btnHocSinh, btnLopHoc,
                 btnQuanLyLopHoc, btnQuanLyKhoiLop, btnQuanLyMonHoc,
                 btnTaiKhoan, btnDangXuat
             };
@@ -67,10 +68,10 @@ namespace GUI
             else if (role == "GiaoVien")
             {
                 activeButtons.Add(btnNhapDiem);
-                activeButtons.Add(btnXemLichDay);
+                activeButtons.Add(btnLopHoc);
+                activeButtons.Add(btnLichDay);
                 activeButtons.Add(btnHocSinh);
                 activeButtons.Add(btnTinNhan);
-                activeButtons.Add(btnTaiKhoan);
                 activeButtons.Add(btnDangXuat);
             }
             else if (role == "HocSinh" || role == "PhuHuynh")
@@ -79,7 +80,6 @@ namespace GUI
                 activeButtons.Add(btnXemTKB);
                 activeButtons.Add(btnHocPhi);
                 activeButtons.Add(btnTinNhan);
-                activeButtons.Add(btnTaiKhoan);
                 activeButtons.Add(btnDangXuat);
             }
 
@@ -107,7 +107,7 @@ namespace GUI
         private void btnHocPhi_Click_1(object sender, EventArgs e) => BtnHocPhiClick?.Invoke(this, EventArgs.Empty);
         private void btnLopHoc_Click(object sender, EventArgs e) => BtnLopHoc_Click?.Invoke(this, EventArgs.Empty);
         private void btnTaiKhoan_Click(object sender, EventArgs e) => BtnTaiKhoan_Click?.Invoke(this, EventArgs.Empty);
-
+        private void btnLichDay_Click(object sender, EventArgs e) => BtnLichDayClick?.Invoke(this, EventArgs.Empty);
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
             BtnDangXuat_Click_Event?.Invoke(this, EventArgs.Empty);

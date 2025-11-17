@@ -38,7 +38,7 @@ namespace GUI
             this.btnQuanLyLopHoc = new System.Windows.Forms.Button();
             this.btnLopHoc = new System.Windows.Forms.Button();
             this.btnHocSinh = new System.Windows.Forms.Button();
-            this.btnXemLichDay = new System.Windows.Forms.Button();
+            this.btnLichDay = new System.Windows.Forms.Button();
             this.btnXemTKB = new System.Windows.Forms.Button();
             this.btnTinNhan = new System.Windows.Forms.Button();
             this.btnHocPhi = new System.Windows.Forms.Button();
@@ -155,21 +155,22 @@ namespace GUI
             this.btnHocSinh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHocSinh.Click += new System.EventHandler(this.btnHocSinh_Click);
             // 
-            // btnXemLichDay
+            // btnLichDay
             // 
-            this.btnXemLichDay.FlatAppearance.BorderSize = 0;
-            this.btnXemLichDay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXemLichDay.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXemLichDay.Image = ((System.Drawing.Image)(resources.GetObject("btnXemLichDay.Image")));
-            this.btnXemLichDay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXemLichDay.Location = new System.Drawing.Point(5, 411);
-            this.btnXemLichDay.Name = "btnXemLichDay";
-            this.btnXemLichDay.Padding = new System.Windows.Forms.Padding(8, 2, 0, 0);
-            this.btnXemLichDay.Size = new System.Drawing.Size(244, 43);
-            this.btnXemLichDay.TabIndex = 18;
-            this.btnXemLichDay.Text = "  Lịch dạy";
-            this.btnXemLichDay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXemLichDay.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLichDay.FlatAppearance.BorderSize = 0;
+            this.btnLichDay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLichDay.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLichDay.Image = ((System.Drawing.Image)(resources.GetObject("btnLichDay.Image")));
+            this.btnLichDay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLichDay.Location = new System.Drawing.Point(5, 411);
+            this.btnLichDay.Name = "btnLichDay";
+            this.btnLichDay.Padding = new System.Windows.Forms.Padding(8, 2, 0, 0);
+            this.btnLichDay.Size = new System.Drawing.Size(244, 43);
+            this.btnLichDay.TabIndex = 18;
+            this.btnLichDay.Text = "  Lịch dạy";
+            this.btnLichDay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLichDay.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLichDay.Click += new System.EventHandler(this.btnLichDay_Click);
             // 
             // btnXemTKB
             // 
@@ -311,7 +312,7 @@ namespace GUI
             this.Controls.Add(this.btnQuanLyLopHoc);
             this.Controls.Add(this.btnLopHoc);
             this.Controls.Add(this.btnHocSinh);
-            this.Controls.Add(this.btnXemLichDay);
+            this.Controls.Add(this.btnLichDay);
             this.Controls.Add(this.btnXemTKB);
             this.Controls.Add(this.btnTinNhan);
             this.Controls.Add(this.btnHocPhi);
@@ -336,7 +337,7 @@ namespace GUI
         private Button btnQuanLyLopHoc;
         private Button btnLopHoc;
         private Button btnHocSinh;
-        private Button btnXemLichDay;
+        private Button btnLichDay;
         private Button btnXemTKB;
         private Button btnTinNhan;
         private Button btnHocPhi;
