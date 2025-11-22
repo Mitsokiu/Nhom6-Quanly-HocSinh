@@ -41,11 +41,36 @@ namespace DAO
             }
         }
 
+        // File: DAO/UserDAO.cs
         public bool CheckLogin(string username, string password)
         {
+            // 1. Tìm user trong DB
             UserDTO user = GetUserByUsername(username);
-            if (user == null) return false;
-            return user.Password.Trim() == password.Trim();
+
+            // DEBUG: Kiểm tra xem có tìm thấy user không
+            if (user == null)
+            {
+                System.Windows.Forms.MessageBox.Show($"Không tìm thấy tài khoản: {username} trong Database!", "Debug");
+                return false;
+            }
+
+            // 2. Lấy mật khẩu từ DB và mật khẩu nhập vào
+            string dbPass = user.Password.Trim();
+            string inputPass = password.Trim();
+
+            // DEBUG: So sánh mật khẩu (ẩn đi sau khi sửa xong lỗi nhé)
+            // System.Windows.Forms.MessageBox.Show($"Pass trong DB: '{dbPass}'\nPass nhập vào: '{inputPass}'", "Debug So Sánh");
+
+            // 3. So sánh
+            if (dbPass == inputPass)
+            {
+                return true;
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Tìm thấy User nhưng sai mật khẩu!", "Debug");
+                return false;
+            }
         }
 
         public List<UserDTO> GetAllUsers()
