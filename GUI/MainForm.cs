@@ -23,6 +23,8 @@ namespace GUI
             sidebar.BtnHocSinhClick += (s, e) => LoadContent(new HocSinhControl());
             sidebar.BtnLopHoc_Click += (s, e) => LoadContent(new LopHoc());
             sidebar.BtnLichDayClick += (s, e) => LoadContent(new LichDay());
+            sidebar.BtnXemTKBClick += (s, e) => LoadContent(new ThoiKhoaBieuControl());
+
             // --- Nút ADMIN ---
             sidebar.BtnQuanLyLopHoc_Click += (s, e) => LoadContent(new QuanLyLopHocControl());
             sidebar.BtnQuanLyMonHoc_Click += (s, e) => LoadContent(new QuanLyMonHoc());

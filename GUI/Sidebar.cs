@@ -15,6 +15,7 @@ namespace GUI
         public event EventHandler BtnLopHoc_Click; // Của giáo viên/học sinh
         public event EventHandler BtnDangXuat_Click_Event;
         public event EventHandler BtnLichDayClick;
+        public event EventHandler BtnXemTKBClick;
 
         // Event riêng cho Admin
         public event EventHandler BtnQuanLyMonHoc_Click;
@@ -108,6 +109,7 @@ namespace GUI
         private void btnLopHoc_Click(object sender, EventArgs e) => BtnLopHoc_Click?.Invoke(this, EventArgs.Empty);
         private void btnTaiKhoan_Click(object sender, EventArgs e) => BtnTaiKhoan_Click?.Invoke(this, EventArgs.Empty);
         private void btnLichDay_Click(object sender, EventArgs e) => BtnLichDayClick?.Invoke(this, EventArgs.Empty);
+        private void btnXemTKB_Click(object sender, EventArgs e) => BtnXemTKBClick?.Invoke(this, EventArgs.Empty);
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
             BtnDangXuat_Click_Event?.Invoke(this, EventArgs.Empty);

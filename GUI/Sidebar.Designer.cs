@@ -186,6 +186,7 @@ namespace GUI
             this.btnXemTKB.TabIndex = 17;
             this.btnXemTKB.Text = "  Thời khóa biểu";
             this.btnXemTKB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXemTKB.Click += new System.EventHandler(this.btnXemTKB_Click);
             this.btnXemTKB.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             // 
             // btnTinNhan

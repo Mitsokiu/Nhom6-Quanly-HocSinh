@@ -15,3 +15,10 @@ D:\GitHub\Nhom6-Quanly-HocSinh\BUS\obj\Debug\BUS.csproj.Up2Date
 D:\GitHub\Nhom6-Quanly-HocSinh\BUS\obj\Debug\BUS.exe
 D:\GitHub\Nhom6-Quanly-HocSinh\BUS\obj\Debug\BUS.pdb
 D:\GitHub\Nhom6-Quanly-HocSinh\BUS\obj\Debug\BUS.exe.config
+D:\GitHub\QLHS\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+D:\GitHub\QLHS\BUS\obj\Debug\BUS.exe.config
+D:\GitHub\QLHS\BUS\obj\Debug\BUS.Properties.Resources.resources
+D:\GitHub\QLHS\BUS\obj\Debug\BUS.csproj.GenerateResource.cache
+D:\GitHub\QLHS\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+D:\GitHub\QLHS\BUS\obj\Debug\BUS.exe
+D:\GitHub\QLHS\BUS\obj\Debug\BUS.pdb
