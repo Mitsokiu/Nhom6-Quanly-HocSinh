@@ -1,5 +1,5 @@
-﻿using BUS; // Gọi tầng BUS
-using DTO; // Gọi tầng DTO
+﻿using BUS;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -9,32 +9,36 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class ThoiKhoaBieuControl : UserControl
+    public partial class UC_HocSinh_TKB : UserControl
     {
-        // GIẢ LẬP: ID lớp học hiện tại.
-        // Trong thực tế, khi đăng nhập xong bạn sẽ lấy ClassID của học sinh đó lưu vào biến toàn cục.
-        // Theo file db.sql của bạn, học sinh id=1 đang học lớp id=1.
-        private int currentClassId = 1;
+        private int _loggedInUserId;
+        private int _currentClassId = -1;
 
-        public ThoiKhoaBieuControl()
+        private SemesterBUS _semesterBUS = new SemesterBUS();
+        private StudentBUS _studentBUS = new StudentBUS();
+
+        // Constructor nhận UserId từ MainForm
+        public UC_HocSinh_TKB(int userId)
         {
             InitializeComponent();
+            this._loggedInUserId = userId;
 
-            // 1. Tối ưu hiệu suất
             ConfigureDoubleBuffering();
-
-            // 2. Vẽ khung Header (Thứ/Tiết)
             InitTableHeaders();
 
-            // 3. Nạp danh sách Học kỳ vào ComboBox và tải dữ liệu
-            LoadSemesters();
+            // 1. Tìm lớp học của học sinh này
+            LoadStudentClass();
+
+            // 2. Load danh sách học kỳ -> Tự động load TKB
+            LoadSemestersFromDB();
         }
+
+        // Constructor mặc định (để tránh lỗi Designer, nhưng không nên dùng khi chạy thật)
+        public UC_HocSinh_TKB() : this(0) { }
 
         private void ConfigureDoubleBuffering()
         {
             this.DoubleBuffered = true;
-            this.SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
-            this.UpdateStyles();
             if (this.tblTimetable != null)
             {
                 typeof(Control).InvokeMember("DoubleBuffered",
@@ -43,11 +47,9 @@ namespace GUI
             }
         }
 
-        // --- HEADER GIAO DIỆN ---
         private void InitTableHeaders()
         {
             this.tblTimetable.SuspendLayout();
-            // Header Hàng ngang
             AddHeaderLabel("Tiết", 0, 0);
             AddHeaderLabel("Thứ Hai", 1, 0);
             AddHeaderLabel("Thứ Ba", 2, 0);
@@ -56,7 +58,6 @@ namespace GUI
             AddHeaderLabel("Thứ Sáu", 5, 0);
             AddHeaderLabel("Thứ Bảy", 6, 0);
 
-            // Header Cột dọc
             AddPeriodLabel("Tiết 1\n7:00 - 7:45", 0, 1);
             AddPeriodLabel("Tiết 2\n8:00 - 8:45", 0, 2);
             AddPeriodLabel("Tiết 3\n9:00 - 9:45", 0, 3);
@@ -65,65 +66,71 @@ namespace GUI
             this.tblTimetable.ResumeLayout();
         }
 
-        // --- TẢI DỮ LIỆU TỪ DB ---
-
-        private void LoadSemesters()
+        private void LoadStudentClass()
         {
-            // Nạp danh sách học kỳ vào ComboBox
-            // (Lẽ ra nên load từ bảng `semesters`, nhưng ở đây mình tạo cứng cho khớp với data mẫu của bạn)
-            cboWeek.Items.Clear();
-
-            // Dùng class vô danh để lưu Text và Value
-            cboWeek.DisplayMember = "Text";
-            cboWeek.ValueMember = "Value";
-
-            cboWeek.Items.Add(new { Text = "Học kỳ 1 (2024-2025)", Value = 1 });
-            cboWeek.Items.Add(new { Text = "Học kỳ 2 (2024-2025)", Value = 2 });
-
-            // Sự kiện khi chọn học kỳ -> Load lại TKB
-            cboWeek.SelectedIndexChanged += (s, e) => LoadTimetableFromDB();
-
-            // Mặc định chọn cái đầu tiên
-            if (cboWeek.Items.Count > 0) cboWeek.SelectedIndex = 0;
+            if (_loggedInUserId > 0)
+            {
+                _currentClassId = _studentBUS.GetClassIdByUserId(_loggedInUserId);
+                if (_currentClassId == -1)
+                {
+                    MessageBox.Show("Tài khoản này chưa được xếp vào lớp nào!", "Thông báo");
+                }
+            }
         }
 
-        private void LoadTimetableFromDB()
+        private void LoadSemestersFromDB()
         {
-            if (cboWeek.SelectedItem == null) return;
+            List<SemesterDTO> semesters = _semesterBUS.GetAllSemesters();
+            cboWeek.DataSource = null;
+            cboWeek.Items.Clear();
 
-            // Lấy SemesterID từ ComboBox
-            dynamic selectedItem = cboWeek.SelectedItem;
-            int semesterId = selectedItem.Value;
+            if (semesters.Count > 0)
+            {
+                cboWeek.DataSource = semesters;
+                cboWeek.DisplayMember = "DisplayName";
+                cboWeek.ValueMember = "SemesterId";
+
+                cboWeek.SelectedIndexChanged -= CboWeek_SelectedIndexChanged;
+                cboWeek.SelectedIndexChanged += CboWeek_SelectedIndexChanged;
+
+                cboWeek.SelectedIndex = 0;
+            }
+        }
+
+        private void CboWeek_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboWeek.SelectedValue == null) return;
+            int semesterId;
+            if (int.TryParse(cboWeek.SelectedValue.ToString(), out semesterId))
+            {
+                LoadTimetable(semesterId);
+            }
+        }
+
+        private void LoadTimetable(int semesterId)
+        {
+            if (_currentClassId == -1) return;
 
             this.tblTimetable.SuspendLayout();
             try
             {
-                // 1. Xóa các môn học cũ trên bảng (Giữ lại Header)
-                // Duyệt ngược để xóa an toàn. Chỉ xóa Panel (là thẻ môn học), không xóa Label (là Header)
+                // Xóa các môn cũ (giữ header)
                 for (int i = tblTimetable.Controls.Count - 1; i >= 0; i--)
                 {
-                    Control c = tblTimetable.Controls[i];
-                    if (c is Panel)
-                    {
+                    if (tblTimetable.Controls[i] is Panel)
                         tblTimetable.Controls.RemoveAt(i);
-                    }
                 }
 
-                // 2. GỌI BUS ĐỂ LẤY LIST DỮ LIỆU
-                List<TimetableDTO> listTKB = TimetableBUS.Instance.GetTimetable(currentClassId, semesterId);
+                List<TimetableDTO> listTKB = TimetableBUS.Instance.GetTimetable(_currentClassId, semesterId);
 
-                // 3. Vẽ dữ liệu lên bảng
                 foreach (var item in listTKB)
                 {
-                    // Database lưu: "Mon", "Tue"... -> Cần đổi sang cột 1, 2...
                     int col = ConvertDayToColumn(item.Day);
-                    int row = item.Period; // Tiết 1 -> Hàng 1
+                    int row = item.Period;
 
                     if (col != -1 && row >= 1 && row <= 5)
                     {
-                        // Tự động chọn màu theo tên môn
                         SubjectColor color = GetColorBySubjectName(item.SubjectName);
-
                         AddSubject(col, row, item.SubjectName, "GV: " + item.TeacherName, "Phòng: " + item.Room, color);
                     }
                 }
@@ -134,10 +141,9 @@ namespace GUI
             }
         }
 
-        // Hàm chuyển đổi "Mon" -> Cột 1
         private int ConvertDayToColumn(string day)
         {
-            switch (day.Trim()) // Trim để xóa khoảng trắng thừa nếu có trong DB
+            switch (day.Trim())
             {
                 case "Mon": return 1;
                 case "Tue": return 2;
@@ -148,8 +154,6 @@ namespace GUI
                 default: return -1;
             }
         }
-
-        // --- VẼ GIAO DIỆN ---
 
         private void AddSubject(int col, int row, string subjectName, string teacherName, string roomName, SubjectColor colorType)
         {
@@ -171,7 +175,6 @@ namespace GUI
                 cardPanel.Controls.Add(lblRoom);
             }
 
-            // Vẽ bo góc
             cardPanel.Paint += (s, e) =>
             {
                 e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
@@ -184,7 +187,6 @@ namespace GUI
             this.tblTimetable.Controls.Add(cardPanel, col, row);
         }
 
-        // Helper tạo Label Header
         private void AddHeaderLabel(string text, int col, int row)
         {
             Label lbl = new Label { Text = text, Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleCenter, Font = new Font("Segoe UI", 10F, FontStyle.Bold), ForeColor = Color.FromArgb(73, 80, 87), BackColor = Color.White, Margin = new Padding(0) };
@@ -197,10 +199,8 @@ namespace GUI
             this.tblTimetable.Controls.Add(lbl, col, row);
         }
 
-        // --- MÀU SẮC ---
         public enum SubjectColor { Red, Blue, Orange, Green, Purple, Yellow, Cyan, Gray }
 
-        // Chọn màu dựa trên tên môn học
         private SubjectColor GetColorBySubjectName(string name)
         {
             name = name.ToLower();

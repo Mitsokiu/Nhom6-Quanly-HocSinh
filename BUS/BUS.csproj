@@ -103,6 +103,7 @@
     <Compile Include="SemesterBUS.cs" />
     <Compile Include="subject.cs" />
     <Compile Include="TeacherAssignmentBUS.cs" />
+    <Compile Include="TimetableBUS.cs" />
     <Compile Include="UserBUS.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

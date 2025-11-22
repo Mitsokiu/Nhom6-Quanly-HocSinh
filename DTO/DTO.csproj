@@ -103,6 +103,7 @@
     <Compile Include="SemesterDTO.cs" />
     <Compile Include="subjectDTO.cs" />
     <Compile Include="TeacherAssignments.cs" />
+    <Compile Include="TimetableDTO.cs" />
     <Compile Include="UserDTO.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
