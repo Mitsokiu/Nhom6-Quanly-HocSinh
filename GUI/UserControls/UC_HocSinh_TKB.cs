@@ -14,27 +14,21 @@ namespace GUI.UserControls
         private int _loggedInUserId;
         private int _currentClassId = -1;
 
-        // Gọi BUS
         private SemesterBUS _semesterBUS = new SemesterBUS();
         private StudentBUS _studentBUS = new StudentBUS();
 
-        // Constructor nhận UserID (Được gọi từ MainForm)
         public UC_HocSinh_TKB(int userId)
         {
             InitializeComponent();
             this._loggedInUserId = userId;
 
-            ConfigureDoubleBuffering(); // Chống giật lag
-            InitTableHeaders();         // Vẽ tiêu đề Thứ/Tiết
+            ConfigureDoubleBuffering();
+            InitTableHeaders();
 
-            // 1. Tìm lớp của học sinh
             LoadStudentClass();
-
-            // 2. Load danh sách học kỳ -> Tự động kích hoạt load TKB
             LoadSemestersFromDB();
         }
 
-        // Constructor mặc định (Để Visual Studio Designer không báo lỗi)
         public UC_HocSinh_TKB() : this(0) { }
 
         private void ConfigureDoubleBuffering()
@@ -74,8 +68,7 @@ namespace GUI.UserControls
                 _currentClassId = _studentBUS.GetClassIdByUserId(_loggedInUserId);
                 if (_currentClassId == -1)
                 {
-                    // Nếu không tìm thấy lớp, có thể thông báo nhẹ hoặc log
-                    // MessageBox.Show("Học sinh này chưa được xếp lớp.", "Thông báo");
+                    MessageBox.Show("Tài khoản này chưa được xếp vào lớp nào!", "Thông báo");
                 }
             }
         }
@@ -88,22 +81,20 @@ namespace GUI.UserControls
 
             if (semesters.Count > 0)
             {
-                cboWeek.DisplayMember = "DisplayName"; // Hiển thị tên (vd: Học kỳ 1)
-                cboWeek.ValueMember = "SemesterId";    // Giá trị ngầm (ID)
+                cboWeek.DisplayMember = "DisplayName";
+                cboWeek.ValueMember = "SemesterId";
                 cboWeek.DataSource = semesters;
 
-                // Đăng ký sự kiện sau khi gán data để tránh kích hoạt sai lúc load
                 cboWeek.SelectedIndexChanged -= CboWeek_SelectedIndexChanged;
                 cboWeek.SelectedIndexChanged += CboWeek_SelectedIndexChanged;
 
-                cboWeek.SelectedIndex = 0; // Chọn cái đầu tiên
+                cboWeek.SelectedIndex = 0;
             }
         }
 
         private void CboWeek_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboWeek.SelectedValue == null) return;
-
             int semesterId;
             if (int.TryParse(cboWeek.SelectedValue.ToString(), out semesterId))
             {
@@ -118,14 +109,12 @@ namespace GUI.UserControls
             this.tblTimetable.SuspendLayout();
             try
             {
-                // Xóa các Card môn học cũ (Giữ lại các Label Header)
                 for (int i = tblTimetable.Controls.Count - 1; i >= 0; i--)
                 {
                     if (tblTimetable.Controls[i] is Panel)
                         tblTimetable.Controls.RemoveAt(i);
                 }
 
-                // Gọi BUS lấy dữ liệu
                 List<TimetableDTO> listTKB = TimetableBUS.Instance.GetTimetable(_currentClassId, semesterId);
 
                 foreach (var item in listTKB)

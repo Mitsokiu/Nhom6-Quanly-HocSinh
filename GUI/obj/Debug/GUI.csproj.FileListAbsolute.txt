@@ -281,7 +281,6 @@ D:\GitHub\QLHS\GUI\bin\Debug\System.Numerics.Vectors.xml
 D:\GitHub\QLHS\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\GitHub\QLHS\GUI\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
-D:\GitHub\QLHS\GUI\obj\Debug\GUI.exe.config
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.AddUser.resources
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.Login.resources
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.MainForm.resources
@@ -319,4 +318,4 @@ D:\GitHub\QLHS\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.csproj.Up2Date
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.exe
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.pdb
-D:\GitHub\QLHS\GUI\obj\Debug\GUI.UC_HocSinh_TKB.resources
+D:\GitHub\QLHS\GUI\obj\Debug\GUI.exe.config

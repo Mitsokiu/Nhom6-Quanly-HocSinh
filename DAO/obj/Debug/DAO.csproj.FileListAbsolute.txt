@@ -157,3 +157,4 @@ D:\GitHub\QLHS\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
 D:\GitHub\QLHS\DAO\obj\Debug\DAO.csproj.Up2Date
 D:\GitHub\QLHS\DAO\obj\Debug\DAO.exe
 D:\GitHub\QLHS\DAO\obj\Debug\DAO.pdb
+D:\GitHub\QLHS\DAO\obj\Debug\DAO.exe.config
