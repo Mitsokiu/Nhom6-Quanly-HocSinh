@@ -151,7 +151,6 @@ D:\GitHub\QLHS\DAO\bin\Debug\System.Numerics.Vectors.xml
 D:\GitHub\QLHS\DAO\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\GitHub\QLHS\DAO\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\GitHub\QLHS\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache
-D:\GitHub\QLHS\DAO\obj\Debug\DAO.exe.config
 D:\GitHub\QLHS\DAO\obj\Debug\DAO.Properties.Resources.resources
 D:\GitHub\QLHS\DAO\obj\Debug\DAO.csproj.GenerateResource.cache
 D:\GitHub\QLHS\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache

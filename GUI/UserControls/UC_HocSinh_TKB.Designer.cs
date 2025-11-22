@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace GUI
+namespace GUI.UserControls
 {
     partial class UC_HocSinh_TKB
     {

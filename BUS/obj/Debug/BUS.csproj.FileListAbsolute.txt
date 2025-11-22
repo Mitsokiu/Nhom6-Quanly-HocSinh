@@ -166,7 +166,6 @@ D:\GitHub\QLHS\BUS\bin\Debug\System.Numerics.Vectors.xml
 D:\GitHub\QLHS\BUS\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\GitHub\QLHS\BUS\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\GitHub\QLHS\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
-D:\GitHub\QLHS\BUS\obj\Debug\BUS.exe.config
 D:\GitHub\QLHS\BUS\obj\Debug\BUS.Properties.Resources.resources
 D:\GitHub\QLHS\BUS\obj\Debug\BUS.csproj.GenerateResource.cache
 D:\GitHub\QLHS\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache

@@ -134,7 +134,6 @@ D:\GitHub\QLHS\DTO\bin\Debug\System.Numerics.Vectors.xml
 D:\GitHub\QLHS\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\GitHub\QLHS\DTO\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\GitHub\QLHS\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
-D:\GitHub\QLHS\DTO\obj\Debug\DTO.exe.config
 D:\GitHub\QLHS\DTO\obj\Debug\DTO.Properties.Resources.resources
 D:\GitHub\QLHS\DTO\obj\Debug\DTO.csproj.GenerateResource.cache
 D:\GitHub\QLHS\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache

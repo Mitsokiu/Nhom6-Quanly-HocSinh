@@ -319,3 +319,4 @@ D:\GitHub\QLHS\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.csproj.Up2Date
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.exe
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.pdb
+D:\GitHub\QLHS\GUI\obj\Debug\GUI.UC_HocSinh_TKB.resources

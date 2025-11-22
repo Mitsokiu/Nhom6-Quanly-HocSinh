@@ -10,11 +10,12 @@ namespace GUI
 {
     public partial class MainForm : Form
     {
+        private UserDTO user;
         public MainForm(string username) // Truyền vai trò từ form đăng nhập
         {
             InitializeComponent();
             LoadContent(new UC_Home()); // Mặc định load trang Home
-            UserDTO user = new UserBUS().GetUserInfo(username);
+            user = new UserBUS().GetUserInfo(username);
             if (user != null)
             {
                 // Truyền role vào sidebar
@@ -77,7 +78,7 @@ namespace GUI
 
         private void Sidebar_XemTKBClicked(object sender, EventArgs e)
         {
-            LoadContent(new UC_HocSinh_TKB());
+            LoadContent(new UC_HocSinh_TKB(user.UserId));
         }
 
         private void Sidebar_XemLichDayClicked(object sender, EventArgs e)
