@@ -92,7 +92,6 @@ namespace GUI
         private void btnTaiKhoan_Click(object sender, EventArgs e) => TaiKhoanClicked?.Invoke(this, EventArgs.Empty);
         private void btnNhapDiem_Click(object sender, EventArgs e) => NhapDiemClicked?.Invoke(this, EventArgs.Empty);
         private void btnXemDiem_Click(object sender, EventArgs e) => XemDiemClicked?.Invoke(this, EventArgs.Empty);
-        private void btnHocPhi_Click(object sender, EventArgs e) => HocPhiClicked?.Invoke(this, EventArgs.Empty);
         private void btnXemTKB_Click(object sender, EventArgs e) => XemTKBClicked?.Invoke(this, EventArgs.Empty);
         private void btnXemLichDay_Click(object sender, EventArgs e) => XemLichDayClicked?.Invoke(this, EventArgs.Empty);
         private void btnHocSinh_Click(object sender, EventArgs e) => HocSinhClicked?.Invoke(this, EventArgs.Empty);
@@ -100,7 +99,7 @@ namespace GUI
         private void btnQlyLop_Click(object sender, EventArgs e) => QlyLopClicked?.Invoke(this, EventArgs.Empty);
         private void btnCauHinh_Click(object sender, EventArgs e) => CauHinhClicked?.Invoke(this, EventArgs.Empty);
         private void btnHome_Click(object sender, EventArgs e) => HomeClicked?.Invoke(this, EventArgs.Empty);
-
+        private void btnHocPhi_Click(object sender, EventArgs e) => HocPhiClicked?.Invoke(this, EventArgs.Empty);
         private void btnNamhoc_Click(object sender, EventArgs e) => QlyNamHocClicked?.Invoke(this, EventArgs.Empty);
         // ============================
         // XỬ LÝ ĐĂNG XUẤT

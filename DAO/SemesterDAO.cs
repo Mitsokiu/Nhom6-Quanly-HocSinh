@@ -8,26 +8,31 @@ namespace DAO
 {
     public class SemesterDAO
     {
-        private static SemesterDAO instance;
-        public static SemesterDAO Instance
-        {
-            get { if (instance == null) instance = new SemesterDAO(); return instance; }
-        }
-        private SemesterDAO() { }
+        private DbConnect db = new DbConnect();
 
         public List<SemesterDTO> GetAllSemesters()
         {
             List<SemesterDTO> list = new List<SemesterDTO>();
-            string query = "SELECT semester_id, name, year_id FROM semesters ORDER BY start_date DESC";
+            string query = @"
+                SELECT s.semester_id, s.name, s.year_id, s.start_date, s.end_date, 
+                       y.name AS YearName 
+                FROM semesters s
+                JOIN academic_years y ON s.year_id = y.year_id
+                ORDER BY s.start_date DESC";
 
             DataTable data = DbConnect.ExecuteQuery(query);
-            foreach (DataRow row in data.Rows)
+            foreach(DataRow row in data.Rows)
             {
                 list.Add(new SemesterDTO
                 {
                     SemesterId = (int)row["semester_id"],
                     SemesterName = row["name"].ToString(),
-                    YearId = (int)row["year_id"]
+                    YearId = (int)row["year_id"],
+
+                    YearName = row["YearName"].ToString(),
+
+                    StartDate = Convert.ToDateTime(row["start_date"]),
+                    EndDate = Convert.ToDateTime(row["end_date"])
                 });
             }
             return list;

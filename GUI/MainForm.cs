@@ -31,13 +31,12 @@ namespace GUI
             sidebar.TaiKhoanClicked += Sidebar_TaiKhoanClicked;
             sidebar.NhapDiemClicked += Sidebar_NhapDiemClicked;
             sidebar.XemDiemClicked += Sidebar_XemDiemClicked;
-            sidebar.HocPhiClicked += Sidebar_HocPhiClicked;
             sidebar.XemTKBClicked += Sidebar_XemTKBClicked;
             sidebar.XemLichDayClicked += Sidebar_XemLichDayClicked;
             sidebar.HocSinhClicked += Sidebar_HocSinhClicked;
             sidebar.TinhHinhClicked += Sidebar_TinhHinhClicked;
             sidebar.QlyLopClicked += Sidebar_QlyLopClicked;
-            
+            sidebar.HocPhiClicked += Sidebar_HocPhiClicked;
             sidebar.HomeClicked += Sidebar_HomeClicked;
             sidebar.QlyNamHocClicked += Sidebar_QlyNamHocClicked;
         }
@@ -69,11 +68,6 @@ namespace GUI
         private void Sidebar_XemDiemClicked(object sender, EventArgs e)
         {
             LoadContent(new UC_HocSinh_Diem());
-        }
-
-        private void Sidebar_HocPhiClicked(object sender, EventArgs e)
-        {
-            LoadContent(new UC_PhuHuynh_HocPhi());
         }
 
         private void Sidebar_XemTKBClicked(object sender, EventArgs e)
@@ -110,6 +104,14 @@ namespace GUI
         private void Sidebar_QlyNamHocClicked(object sender, EventArgs e)
         {
             LoadContent(new UC_Admin_Namhoc());
+        }
+
+        private void Sidebar_HocPhiClicked(object sender, EventArgs e)
+        {
+            if (user != null)
+            {
+                LoadContent(new UC_HocSinh_HocPhi(user.UserId));
+            }
         }
 
         // =====================

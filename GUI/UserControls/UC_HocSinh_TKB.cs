@@ -16,6 +16,7 @@ namespace GUI.UserControls
 
         private SemesterBUS _semesterBUS = new SemesterBUS();
         private StudentBUS _studentBUS = new StudentBUS();
+        private TimetableBUS _timetableBUS = new TimetableBUS();
 
         public UC_HocSinh_TKB(int userId)
         {
@@ -115,7 +116,7 @@ namespace GUI.UserControls
                         tblTimetable.Controls.RemoveAt(i);
                 }
 
-                List<TimetableDTO> listTKB = TimetableBUS.Instance.GetTimetable(_currentClassId, semesterId);
+                List<TimetableDTO> listTKB = _timetableBUS.GetTimetableByClass(_currentClassId, semesterId);
 
                 foreach (var item in listTKB)
                 {
