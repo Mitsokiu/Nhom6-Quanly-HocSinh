@@ -11,6 +11,7 @@ namespace GUI
     public partial class MainForm : Form
     {
         private UserDTO user;
+        private UC_HocSinh_ThongBao ucThongBaoList;
         public MainForm(string username) // Truyền vai trò từ form đăng nhập
         {
             InitializeComponent();
@@ -78,8 +79,7 @@ namespace GUI
 
         private void Sidebar_XemThongBaoClicked(object sender, EventArgs e)
         {
-            // Gọi UserControl Thông báo (Đã tạo ở bước trước)
-            LoadContent(new UC_HocSinh_ThongBao());
+            OpenNotificationList();
         }
 
         private void Sidebar_XemLichDayClicked(object sender, EventArgs e)
@@ -119,6 +119,39 @@ namespace GUI
             {
                 LoadContent(new UC_HocSinh_HocPhi(user.UserId));
             }
+        }
+
+        private void OpenNotificationList()
+        {
+            // Nếu chưa có thì tạo mới
+            if (ucThongBaoList == null)
+            {
+                ucThongBaoList = new UC_HocSinh_ThongBao();
+
+                // QUAN TRỌNG: Đăng ký sự kiện "Khi bấm vào 1 dòng -> Mở trang chi tiết"
+                ucThongBaoList.DetailClicked += (s, dto) =>
+                {
+                    OpenNotificationDetail(dto);
+                };
+            }
+
+            // Hiển thị lên Panel chính
+            LoadContent(ucThongBaoList);
+        }
+
+        // Hàm mở trang chi tiết
+        private void OpenNotificationDetail(NotificationDTO dto)
+        {
+            // Tạo trang chi tiết và truyền dữ liệu vào
+            var ucDetail = new UC_HocSinh_ChiTietThongBao(dto);
+
+            // Đăng ký sự kiện "Khi bấm nút Back -> Quay lại danh sách"
+            ucDetail.BackClicked += (s, e) =>
+            {
+                OpenNotificationList(); // Quay lại list cũ
+            };
+
+            LoadContent(ucDetail);
         }
 
         // =====================

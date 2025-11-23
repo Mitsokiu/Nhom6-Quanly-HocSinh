@@ -39,5 +39,10 @@ namespace BUS
 
             return allList;
         }
+
+        public NotificationDTO GetDetail(int id)
+        {
+            return dao.GetNotificationById(id);
+        }
     }
 }

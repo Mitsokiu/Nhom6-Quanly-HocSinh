@@ -42,5 +42,33 @@ namespace DAO
             }
             return list;
         }
+
+        // Thêm hàm lấy chi tiết theo ID
+        public NotificationDTO GetNotificationById(int id)
+        {
+            string query = @"
+                SELECT n.id, n.title, n.message, n.created_at, 
+                        u.fullname AS SenderName, u.role_id AS SenderRole
+                FROM notifications n
+                JOIN users u ON n.sender_id = u.user_id
+                WHERE n.id = @param0";
+
+            DataTable data = DbConnect.ExecuteQuery(query, new object[] { id });
+
+            if (data.Rows.Count > 0)
+            {
+                DataRow row = data.Rows[0];
+                return new NotificationDTO
+                {
+                    Id = Convert.ToInt32(row["id"]),
+                    Title = row["title"].ToString(),
+                    Message = row["message"].ToString(),
+                    CreatedAt = Convert.ToDateTime(row["created_at"]),
+                    SenderName = row["SenderName"].ToString(),
+                    SenderRole = row["SenderRole"].ToString()
+                };
+            }
+            return null;
+        }
     }
 }
