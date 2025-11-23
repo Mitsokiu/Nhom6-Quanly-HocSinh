@@ -22,6 +22,7 @@ namespace GUI
         public event EventHandler CauHinhClicked;
         public event EventHandler HomeClicked;
         public event EventHandler QlyNamHocClicked;
+        public event EventHandler XemThongBaoClicked;
 
         private UserDTO currentUser;
 
@@ -72,7 +73,7 @@ namespace GUI
                 
                   
                 case "student":
-                    ShowButtons(btnXemDiem, btnXemTKB, btnHome, btnHocPhi, btnTinhHinh);
+                    ShowButtons(btnXemDiem, btnXemTKB, btnHome, btnHocPhi, btnTinhHinh, btnXemThongBao  );
                     break;
                 default:
                     ShowButtons(btnHome);
@@ -93,6 +94,7 @@ namespace GUI
         private void btnNhapDiem_Click(object sender, EventArgs e) => NhapDiemClicked?.Invoke(this, EventArgs.Empty);
         private void btnXemDiem_Click(object sender, EventArgs e) => XemDiemClicked?.Invoke(this, EventArgs.Empty);
         private void btnXemTKB_Click(object sender, EventArgs e) => XemTKBClicked?.Invoke(this, EventArgs.Empty);
+        private void btnXemThongBao_Click(object sender, EventArgs e) => XemThongBaoClicked?.Invoke(this, EventArgs.Empty);
         private void btnXemLichDay_Click(object sender, EventArgs e) => XemLichDayClicked?.Invoke(this, EventArgs.Empty);
         private void btnHocSinh_Click(object sender, EventArgs e) => HocSinhClicked?.Invoke(this, EventArgs.Empty);
         private void btnTinhHinh_Click(object sender, EventArgs e) => TinhHinhClicked?.Invoke(this, EventArgs.Empty);

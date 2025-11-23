@@ -20,6 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "image", "image", "{02EA681E
 		image\nhapdiem_48.png = image\nhapdiem_48.png
 		image\nhapngaynghi_24.png = image\nhapngaynghi_24.png
 		image\tinnhan_24.png = image\tinnhan_24.png
+		image\notification_24.png = image\notification_24.png
 		image\xemdiem_24.png = image\xemdiem_24.png
 		image\xemlichday_24.png = image\xemlichday_24.png
 		image\xemtkb_24.png = image\xemtkb_24.png
