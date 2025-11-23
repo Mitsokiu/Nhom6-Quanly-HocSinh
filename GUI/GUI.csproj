@@ -235,6 +235,12 @@
     <Compile Include="UserControls\UC_GVCN_Tbao.Designer.cs">
       <DependentUpon>UC_GVCN_Tbao.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UC_HocSinh_ChiTietThongBao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_HocSinh_ChiTietThongBao.Designer.cs">
+      <DependentUpon>UC_HocSinh_ChiTietThongBao.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UC_HocSinh_Diem.cs">
       <SubType>UserControl</SubType>
     </Compile>

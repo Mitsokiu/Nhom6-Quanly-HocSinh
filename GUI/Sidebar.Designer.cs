@@ -17,6 +17,7 @@ namespace GUI
 
         private void InitializeComponent()
         {
+            // --- 1. KHỞI TẠO ĐỐI TƯỢNG (NEW) - PHẢI LÀM ĐẦU TIÊN ---
             this.lbWelcome = new System.Windows.Forms.Label();
             this.lbInfo = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -33,8 +34,10 @@ namespace GUI
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnXemThongBao = new System.Windows.Forms.Button();
+
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
+
             // 
             // lbWelcome
             // 
@@ -63,7 +66,10 @@ namespace GUI
             this.flowLayoutPanel1.Controls.Add(this.btnXemDiem);
             this.flowLayoutPanel1.Controls.Add(this.btnHocPhi);
             this.flowLayoutPanel1.Controls.Add(this.btnXemTKB);
+
+            // Thêm nút Thông báo vào danh sách (Vị trí này OK vì đã được new ở trên)
             this.flowLayoutPanel1.Controls.Add(this.btnXemThongBao);
+
             this.flowLayoutPanel1.Controls.Add(this.btnXemLichDay);
             this.flowLayoutPanel1.Controls.Add(this.btnHocSinh);
             this.flowLayoutPanel1.Controls.Add(this.btnTinhHinh);
@@ -131,11 +137,24 @@ namespace GUI
             this.btnXemTKB.Text = "Thời khóa biểu";
             this.btnXemTKB.Click += new System.EventHandler(this.btnXemTKB_Click);
             // 
+            // btnXemThongBao (Cấu hình chi tiết)
+            // 
+            this.btnXemThongBao.Image = global::GUI.Properties.Resources.tinnhan_24;
+            this.btnXemThongBao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXemThongBao.Location = new System.Drawing.Point(3, 283); // Tự chỉnh vị trí X,Y nếu cần
+            this.btnXemThongBao.Name = "btnXemThongBao";
+            this.btnXemThongBao.Size = new System.Drawing.Size(282, 50);
+            this.btnXemThongBao.TabIndex = 11;
+            this.btnXemThongBao.Text = "Thông báo";
+            this.btnXemThongBao.UseVisualStyleBackColor = true;
+            this.btnXemThongBao.Click += new System.EventHandler(this.btnXemThongBao_Click);
+
+            // 
             // btnXemLichDay
             // 
             this.btnXemLichDay.Image = global::GUI.Properties.Resources.xemlichday_24;
             this.btnXemLichDay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXemLichDay.Location = new System.Drawing.Point(3, 283);
+            this.btnXemLichDay.Location = new System.Drawing.Point(3, 339);
             this.btnXemLichDay.Name = "btnXemLichDay";
             this.btnXemLichDay.Size = new System.Drawing.Size(282, 50);
             this.btnXemLichDay.TabIndex = 5;
@@ -146,7 +165,7 @@ namespace GUI
             // 
             this.btnHocSinh.Image = global::GUI.Properties.Resources.hocsinh_24;
             this.btnHocSinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHocSinh.Location = new System.Drawing.Point(3, 339);
+            this.btnHocSinh.Location = new System.Drawing.Point(3, 395);
             this.btnHocSinh.Name = "btnHocSinh";
             this.btnHocSinh.Size = new System.Drawing.Size(282, 50);
             this.btnHocSinh.TabIndex = 6;
@@ -157,7 +176,7 @@ namespace GUI
             // 
             this.btnTinhHinh.Image = global::GUI.Properties.Resources.xinphepvang_24;
             this.btnTinhHinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTinhHinh.Location = new System.Drawing.Point(3, 395);
+            this.btnTinhHinh.Location = new System.Drawing.Point(3, 451);
             this.btnTinhHinh.Name = "btnTinhHinh";
             this.btnTinhHinh.Size = new System.Drawing.Size(282, 50);
             this.btnTinhHinh.TabIndex = 7;
@@ -168,7 +187,7 @@ namespace GUI
             // 
             this.btnQlyLop.Image = global::GUI.Properties.Resources.timkiem_24;
             this.btnQlyLop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQlyLop.Location = new System.Drawing.Point(3, 451);
+            this.btnQlyLop.Location = new System.Drawing.Point(3, 507);
             this.btnQlyLop.Name = "btnQlyLop";
             this.btnQlyLop.Size = new System.Drawing.Size(282, 50);
             this.btnQlyLop.TabIndex = 8;
@@ -179,7 +198,7 @@ namespace GUI
             // 
             this.btnNamhoc.Image = global::GUI.Properties.Resources.tinnhan_24;
             this.btnNamhoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNamhoc.Location = new System.Drawing.Point(3, 507);
+            this.btnNamhoc.Location = new System.Drawing.Point(3, 563);
             this.btnNamhoc.Name = "btnNamhoc";
             this.btnNamhoc.Size = new System.Drawing.Size(282, 50);
             this.btnNamhoc.TabIndex = 10;
@@ -207,16 +226,6 @@ namespace GUI
             this.btnHome.TabIndex = 5;
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-
-           
-            this.btnXemThongBao.Image = global::GUI.Properties.Resources.tinnhan_24; // Ảnh bạn yêu cầu
-            this.btnXemThongBao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXemThongBao.Name = "btnXemThongBao";
-            this.btnXemThongBao.Size = new System.Drawing.Size(282, 50);
-            this.btnXemThongBao.TabIndex = 11; 
-            this.btnXemThongBao.Text = "Thông báo";
-            this.btnXemThongBao.UseVisualStyleBackColor = true;
-            this.btnXemThongBao.Click += new System.EventHandler(this.btnXemThongBao_Click);
             // 
             // Sidebar
             // 

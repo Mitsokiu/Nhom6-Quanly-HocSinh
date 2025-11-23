@@ -1,5 +1,5 @@
-﻿using BUS; // Thêm
-using DTO; // Thêm
+﻿using BUS;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -10,42 +10,40 @@ namespace GUI.UserControls
 {
     public partial class UC_HocSinh_ThongBao : UserControl
     {
-        // Khai báo BUS và List lưu trữ
+        // Khai báo sự kiện
+        public event EventHandler<NotificationDTO> DetailClicked;
+
         private NotificationBUS _notificationBUS = new NotificationBUS();
-        private List<NotificationDTO> _allNotifications = new List<NotificationDTO>(); // Lưu gốc để lọc
+        private List<NotificationDTO> _allNotifications = new List<NotificationDTO>();
 
         public UC_HocSinh_ThongBao()
         {
             InitializeComponent();
 
-            // Cấu hình UI
-            flowPanelNotifications.AutoScroll = true;
-            flowPanelNotifications.FlowDirection = FlowDirection.LeftToRight;
-            flowPanelNotifications.WrapContents = true;
-
+            // Hack cuộn mượt
             typeof(Panel).InvokeMember("DoubleBuffered",
                 System.Reflection.BindingFlags.SetProperty | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic,
                 null, flowPanelNotifications, new object[] { true });
 
+            // Setup FlowLayout
+            flowPanelNotifications.AutoScroll = true;
+            flowPanelNotifications.FlowDirection = FlowDirection.LeftToRight;
+            flowPanelNotifications.WrapContents = true;
+
             InitCustomUI();
 
-            // --- SỰ KIỆN LOAD DỮ LIỆU THẬT ---
             this.Load += (s, e) => LoadDataFromDB();
-
-            // Sự kiện lọc ComboBox
             cboFilter.SelectedIndexChanged += (s, e) => FilterData();
-
             this.Resize += (s, e) => {
                 CenterPagination();
                 ResizeNotificationItems();
             };
         }
 
-        // --- SETUP GIAO DIỆN (Giữ nguyên) ---
+        // --- CÁC HÀM SETUP UI ---
         private void InitCustomUI()
         {
             cboFilter.Items.Clear();
-            // Sửa lại item cho khớp với Logic BUS
             cboFilter.Items.AddRange(new object[] { "Tất cả", "Nhà trường", "Giáo viên" });
             cboFilter.SelectedIndex = 0;
 
@@ -57,7 +55,6 @@ namespace GUI.UserControls
 
         private void SetupBtn(Button btn, string text, bool active)
         {
-            // (Giữ nguyên code cũ của bạn)
             btn.Text = text;
             btn.Size = new Size(40, 40);
             btn.FlatStyle = FlatStyle.Flat;
@@ -67,31 +64,24 @@ namespace GUI.UserControls
             else { btn.BackColor = Color.White; btn.ForeColor = Color.Black; }
         }
 
-        // --- NẠP DỮ LIỆU TỪ DB ---
+        // --- LOGIC NẠP DỮ LIỆU ---
         private void LoadDataFromDB()
         {
             try
             {
-                // 1. Lấy toàn bộ thông báo từ Server
                 _allNotifications = _notificationBUS.GetNotificationsForStudent();
-
-                // 2. Hiển thị ra màn hình
                 DisplayList(_allNotifications);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi tải thông báo: " + ex.Message);
+                MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
 
         private void FilterData()
         {
-            string filter = cboFilter.SelectedItem.ToString();
-
-            // Gọi BUS để lọc list đã tải về
+            string filter = cboFilter.SelectedItem?.ToString();
             var filteredList = _notificationBUS.FilterNotifications(_allNotifications, filter);
-
-            // Hiển thị list đã lọc
             DisplayList(filteredList);
         }
 
@@ -102,23 +92,35 @@ namespace GUI.UserControls
 
             foreach (var item in list)
             {
-                AddNotification(item.Title, item.SenderName, item.DateDisplay, item.Message);
+                // QUAN TRỌNG: Truyền cả đối tượng DTO vào đây
+                AddNotification(item);
             }
 
             flowPanelNotifications.ResumeLayout();
-            ResizeNotificationItems(); // Chỉnh lại kích thước ngay sau khi add
+            ResizeNotificationItems();
         }
 
-        private void AddNotification(string title, string sender, string date, string content)
+        // --- SỬA LẠI HÀM NÀY ĐỂ HẾT LỖI BIẾN 'DATA' ---
+        private void AddNotification(NotificationDTO data)
         {
-            NotificationItem item = new NotificationItem(title, sender, date, content);
+            // Tạo item từ DTO
+            NotificationItem item = new NotificationItem(data);
+
             int w = flowPanelNotifications.ClientSize.Width - 25;
             if (w < 500) w = 800;
             item.Width = w;
             item.Margin = new Padding(0, 0, 0, 15);
+
+            // Gắn sự kiện Click: Khi bấm vào item -> Bắn sự kiện ra ngoài kèm theo 'data'
+            item.Click += (s, e) =>
+            {
+                DetailClicked?.Invoke(this, data); // Giờ biến 'data' đã hợp lệ
+            };
+
             flowPanelNotifications.Controls.Add(item);
         }
 
+        // --- CÁC HÀM CĂN CHỈNH KHÁC ---
         private void ResizeNotificationItems()
         {
             int w = flowPanelNotifications.ClientSize.Width - 25;
@@ -131,10 +133,10 @@ namespace GUI.UserControls
 
         private void CenterPagination()
         {
-            // (Giữ nguyên logic căn giữa cũ của bạn)
             if (panelPagination.Width == 0) return;
             int totalWidth = 250;
             int startX = (panelPagination.Width - totalWidth) / 2;
+
             btnPrev.Location = new Point(startX, 10);
             btnPage1.Location = new Point(startX + 50, 10);
             btnPage2.Location = new Point(startX + 100, 10);
@@ -143,16 +145,15 @@ namespace GUI.UserControls
         }
     }
 
-    // Class NotificationItem (Giữ nguyên như cũ)
+    // --- CLASS CON: NOTIFICATION ITEM ---
     public class NotificationItem : Panel
     {
-        // ... (Giữ nguyên code class con cũ của bạn) ...
-        // Copy lại Constructor và các thành phần bên trong từ code cũ
-        public NotificationItem(string title, string sender, string date, string content)
+        public NotificationItem(NotificationDTO data)
         {
             this.Height = 140;
             this.BackColor = Color.White;
             this.Padding = new Padding(20);
+            this.Cursor = Cursors.Hand;
 
             Panel pnlBar = new Panel();
             pnlBar.BackColor = Color.FromArgb(13, 110, 253);
@@ -160,21 +161,21 @@ namespace GUI.UserControls
             pnlBar.Dock = DockStyle.Left;
 
             Label lblTitle = new Label();
-            lblTitle.Text = title;
+            lblTitle.Text = data.Title;
             lblTitle.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             lblTitle.ForeColor = Color.FromArgb(33, 37, 41);
             lblTitle.AutoSize = true;
             lblTitle.Location = new Point(30, 15);
 
             Label lblMeta = new Label();
-            lblMeta.Text = $"{sender}  •  {date}";
+            lblMeta.Text = $"{data.SenderName}  •  {data.DateDisplay}";
             lblMeta.Font = new Font("Segoe UI", 10F, FontStyle.Regular);
             lblMeta.ForeColor = Color.Gray;
             lblMeta.AutoSize = true;
             lblMeta.Location = new Point(30, 45);
 
             Label lblContent = new Label();
-            lblContent.Text = content;
+            lblContent.Text = data.Message;
             lblContent.Font = new Font("Segoe UI", 11F, FontStyle.Regular);
             lblContent.ForeColor = Color.FromArgb(64, 64, 64);
             lblContent.Location = new Point(30, 75);
@@ -187,13 +188,21 @@ namespace GUI.UserControls
             this.Controls.Add(lblContent);
             this.Controls.Add(pnlBar);
 
-            this.MouseEnter += (s, e) => this.BackColor = Color.FromArgb(240, 248, 255);
-            this.MouseLeave += (s, e) => this.BackColor = Color.White;
+            // Lan truyền sự kiện Click cho tất cả control con
+            // Để khi click vào chữ cũng tính là click vào thẻ
+            void TriggerClick(object sender, EventArgs e) => this.OnClick(e);
+
             foreach (Control c in this.Controls)
             {
+                c.Click += TriggerClick;
+                c.Cursor = Cursors.Hand;
+
                 c.MouseEnter += (s, e) => this.BackColor = Color.FromArgb(240, 248, 255);
                 c.MouseLeave += (s, e) => this.BackColor = Color.White;
             }
+
+            this.MouseEnter += (s, e) => this.BackColor = Color.FromArgb(240, 248, 255);
+            this.MouseLeave += (s, e) => this.BackColor = Color.White;
         }
     }
 }
