@@ -2,7 +2,8 @@
 -- DATABASE: school_management
 -- =====================================
 SET NAMES 'utf8mb4';
-CREATE DATABASE IF NOT EXISTS school_management
+DROP DATABASE IF EXISTS school_management;
+CREATE DATABASE school_management
 CHARACTER SET utf8mb4
 COLLATE utf8mb4_unicode_ci;
 
@@ -18,17 +19,18 @@ CREATE TABLE users (
     fullname VARCHAR(100) NOT NULL,
     email VARCHAR(100),
     phone VARCHAR(15),
-    role_id VARCHAR(50),  -- đổi từ INT sang VARCHAR, bỏ FK
+    role_id VARCHAR(50),  -- admin, gvcn, gvbm, student, parent
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
 INSERT INTO users (username, password, fullname, email, phone, role_id) VALUES
-('admin01', '123456', 'Nguyễn Văn A', 'admin@school.com', '0900000001', 'admin'),
-('gv01', '123456', 'Trần Thị Giáo Viên', 'gv01@school.com', '0900000011', 'gvcn'),
-('gv02', '123456', 'Lê Văn Thầy', 'gv02@school.com', '0900000012', 'gvbm'),
-('hs01', '123456', 'Nguyễn Minh Khang', 'hs01@school.com', '0900000021', 'student'),
-('hs02', '123456', 'Trần Bảo Ngọc', 'hs02@school.com', '0900000022', 'student'),
-
+('admin01', '123456', 'Văn Phòng Nhà Trường', 'admin@school.com', '0900000001', 'admin'), -- ID 1
+('gv01', '123456', 'Cô Mai (GVCN)', 'gv01@school.com', '0900000011', 'gvcn'),       -- ID 2
+('gv02', '123456', 'Thầy Hùng (GV Toán)', 'gv02@school.com', '0900000012', 'gvbm'), -- ID 3
+('hs01', '123456', 'Nguyễn Minh Khang', 'hs01@school.com', '0900000021', 'student'), -- ID 4
+('hs02', '123456', 'Trần Bảo Ngọc', 'hs02@school.com', '0900000022', 'student'),     -- ID 5
+('ph01', '123456', 'Lê Văn Bố', 'ph01@school.com', '0900000031', 'parent'),          -- ID 6
+('ph02', '123456', 'Trần Thị Mẹ', 'ph02@school.com', '0900000032', 'parent');        -- ID 7
 
 -- =====================================
 -- 2. Parents & Students
@@ -54,8 +56,8 @@ CREATE TABLE students (
 );
 
 INSERT INTO students (user_id, dob, gender, address) VALUES
-(4, '2010-05-12', 'Male', 'HCM'),
-(5, '2011-09-21', 'Female', 'HCM');
+(4, '2010-05-12', 'Male', 'HCM'), -- ID 1 (hs01)
+(5, '2011-09-21', 'Female', 'HCM'); -- ID 2 (hs02)
 
 CREATE TABLE student_parent (
     student_id INT,
@@ -104,25 +106,19 @@ CREATE TABLE grade_levels (
     grade_name VARCHAR(20) NOT NULL
 );
 
-INSERT INTO grade_levels (grade_name) VALUES
-('Khối 6'),
-('Khối 7');
+INSERT INTO grade_levels (grade_name) VALUES ('Khối 6'), ('Khối 7');
 
 CREATE TABLE classes (
     class_id INT AUTO_INCREMENT PRIMARY KEY,
     class_name VARCHAR(50) NOT NULL,
     grade_id INT NOT NULL,
-    homeroom_teacher_id INT,
-    year_id INT NOT NULL,
-    FOREIGN KEY (grade_id) REFERENCES grade_levels(grade_id),
-    FOREIGN KEY (homeroom_teacher_id) REFERENCES users(user_id),
-    FOREIGN KEY (year_id) REFERENCES academic_years(year_id)
+    FOREIGN KEY (grade_id) REFERENCES grade_levels(grade_id)
 );
 
-INSERT INTO classes (class_name, grade_id, homeroom_teacher_id, year_id) VALUES
-('6A1', 1, 2, 1),
-('6A2', 1, NULL, 1),
-('7A1', 2, 3, 1);
+INSERT INTO classes (class_name, grade_id) VALUES
+('6A1', 1),
+('6A2', 1),
+('7A1', 2);
 
 -- =====================================
 -- 5. Subjects & Teacher Assignment
@@ -132,11 +128,7 @@ CREATE TABLE subjects (
     name VARCHAR(100) NOT NULL
 );
 
-INSERT INTO subjects (name) VALUES
-('Toán'),
-('Ngữ Văn'),
-('Tiếng Anh'),
-('Vật Lý');
+INSERT INTO subjects (name) VALUES ('Toán'), ('Ngữ Văn'), ('Tiếng Anh'), ('Vật Lý');
 
 CREATE TABLE teacher_assignments (
     assign_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -144,6 +136,7 @@ CREATE TABLE teacher_assignments (
     subject_id INT NOT NULL,
     class_id INT NOT NULL,
     semester_id INT NOT NULL,
+    periods INT NOT NULL DEFAULT 0, 
     FOREIGN KEY (teacher_id) REFERENCES users(user_id),
     FOREIGN KEY (subject_id) REFERENCES subjects(subject_id),
     FOREIGN KEY (class_id) REFERENCES classes(class_id),
@@ -226,10 +219,13 @@ INSERT INTO scores (student_id, assign_id, score_type, score_value) VALUES
 CREATE TABLE tuition (
     tuition_id INT AUTO_INCREMENT PRIMARY KEY,
     student_id INT NOT NULL,
+    name VARCHAR(255) NOT NULL, 
     amount DECIMAL(10,2),
+    semester_id INT NOT NULL,   
     due_date DATE,
     status ENUM('unpaid','paid') DEFAULT 'unpaid',
-    FOREIGN KEY(student_id) REFERENCES students(student_id)
+    FOREIGN KEY(student_id) REFERENCES students(student_id),
+    FOREIGN KEY(semester_id) REFERENCES semesters(semester_id)
 );
 
 CREATE TABLE receipts (
@@ -240,15 +236,21 @@ CREATE TABLE receipts (
     FOREIGN KEY(tuition_id) REFERENCES tuition(tuition_id)
 );
 
-INSERT INTO tuition (student_id, amount, due_date, status) VALUES
-(1, 1500000, '2024-09-01', 'paid'),
-(2, 1500000, '2024-09-01', 'unpaid');
+-- Dữ liệu mẫu Học phí cho HS01 (student_id = 1)
+INSERT INTO tuition (student_id, name, amount, semester_id, due_date, status) VALUES
+(1, 'Học phí chính khóa', 15000000, 1, '2024-08-15', 'paid'),
+(1, 'Phí cơ sở vật chất', 1000000, 1, '2024-08-15', 'paid'),
+(1, 'Bảo hiểm y tế', 850000, 1, '2024-08-15', 'paid'),
+(1, 'Tiền ăn bán trú', 5000000, 1, '2024-08-15', 'unpaid'),
+(1, 'Tiền xe đưa đón', 3000000, 1, '2024-08-15', 'unpaid'),
+(1, 'Học phí chính khóa HK2', 15000000, 2, '2025-01-15', 'unpaid'),
+(1, 'Bảo hiểm tai nạn', 150000, 2, '2025-01-15', 'unpaid');
 
-INSERT INTO receipts (tuition_id, paid_date, amount_paid) VALUES
-(1, '2024-09-05', 1500000);
+INSERT INTO tuition (student_id, name, amount, semester_id, due_date, status) VALUES
+(2, 'Học phí chính khóa', 15000000, 1, '2024-08-15', 'unpaid');
 
 -- =====================================
--- 10. Notifications & Comments
+-- 10. Notifications & Comments (Dữ liệu thông báo)
 -- =====================================
 CREATE TABLE notifications (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -260,8 +262,13 @@ CREATE TABLE notifications (
     FOREIGN KEY(sender_id) REFERENCES users(user_id)
 );
 
-INSERT INTO notifications (sender_id, target_role, title, message) VALUES
-(1, 'parent', 'Thông báo họp PH', 'Kính mời phụ huynh đến họp vào ngày 20/12.');
+-- Dữ liệu Thông báo (4 tin cho HS, 1 tin cho PH)
+INSERT INTO notifications (sender_id, target_role, title, message, created_at) VALUES
+(1, 'all', 'Thông báo nghỉ lễ Giỗ Tổ Hùng Vương', 'Toàn thể học sinh sẽ được nghỉ học vào ngày 18/04/2024 để kỷ niệm lễ Giỗ Tổ Hùng Vương. Lịch học bù sẽ được thông báo sau.', '2024-04-15 08:00:00'),
+(2, 'student', 'Nhắc nhở nộp bài tập lớn môn Văn', 'Các em học sinh lớp 6A1 lưu ý hạn cuối nộp bài tập lớn môn Ngữ Văn là vào thứ Sáu, ngày 19/04/2024. Nộp bài qua hệ thống LMS.', '2024-04-14 09:30:00'),
+(1, 'student', 'Kế hoạch tổ chức Hội thao cấp trường', 'Nhằm tạo sân chơi lành mạnh và bổ ích, nhà trường sẽ tổ chức hội thao với nhiều môn thi đấu hấp dẫn. Học sinh đăng ký tham gia với GVCN.', '2024-04-12 14:00:00'),
+(3, 'student', 'Lịch kiểm tra 15 phút môn Đại số', 'Lớp sẽ có bài kiểm tra 15 phút vào tiết học Toán ngày mai. Nội dung ôn tập: Phương trình bậc hai và Định lý Vi-et.', '2024-04-10 10:15:00'),
+(1, 'parent', 'Thông báo họp PH', 'Kính mời phụ huynh đến họp vào ngày 20/12.', '2024-04-05 08:00:00');
 
 CREATE TABLE comments (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -305,20 +312,9 @@ INSERT INTO grade_rank (rank_name, min_score, max_score) VALUES
 ('Trung bình', 5.0, 6.4),
 ('Yếu', 0, 4.9);
 
-
-ALTER TABLE classes
-DROP FOREIGN KEY classes_ibfk_2,  -- ràng buộc của homeroom_teacher_id
-DROP FOREIGN KEY classes_ibfk_3;  -- ràng buộc của year_id
-
-ALTER TABLE classes
-DROP COLUMN homeroom_teacher_id,
-DROP COLUMN year_id;
-ALTER TABLE teacher_assignments 
-ADD COLUMN periods INT NOT NULL DEFAULT 0;
-
-
-USE school_management;
-
+-- =====================================
+-- 12. Homeroom Assignments
+-- =====================================
 CREATE TABLE homeroom_assignments (
     assign_id INT AUTO_INCREMENT PRIMARY KEY,
     class_id INT NOT NULL,
@@ -333,9 +329,6 @@ CREATE TABLE homeroom_assignments (
     CONSTRAINT unique_gvcn_per_class_per_year UNIQUE (class_id, year_id)
 );
 
--- Thêm dữ liệu mẫu
-USE school_management;
 INSERT INTO homeroom_assignments (class_id, teacher_id, year_id, assigned_date) VALUES
-(1, 1, 1, '2025-09-01'),
-(2, 2, 1, '2025-09-01'),
-(3, 3, 1, '2025-09-01');
+(1, 2, 1, '2024-08-01'),
+(2, 3, 1, '2024-08-01');
