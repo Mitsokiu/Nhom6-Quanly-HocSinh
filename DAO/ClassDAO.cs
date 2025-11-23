@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace DAO
 {
@@ -80,21 +81,28 @@ namespace DAO
             return list;
         }
 
+        // Kiểm tra lớp theo tên và grade_id
         public static bool ExistsClass(string className, int gradeId)
         {
-            string query = "SELECT COUNT(*) FROM classes WHERE class_name = @name AND grade_id = @grade";
-
-            using (var conn = DbConnect.GetConnection())
+            string sql = "SELECT COUNT(*) FROM classes WHERE class_name=@param0 AND grade_id=@param1";
+            object[] parameters = { className, gradeId };
+            DataTable dt = DbConnect.ExecuteQuery(sql, parameters);
+            if (dt.Rows.Count > 0)
             {
-                conn.Open();
-                using (var cmd = new MySqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@name", className);
-                    cmd.Parameters.AddWithValue("@grade", gradeId);
-                    int count = Convert.ToInt32(cmd.ExecuteScalar());
-                    return count > 0; // true nếu đã tồn tại
-                }
+                int count = Convert.ToInt32(dt.Rows[0][0]);
+                return count > 0;
             }
+            return false;
+        }
+        public  static DataTable GetClassesByYear(int yearId)
+        {
+            string sql = @"
+                SELECT DISTINCT c.class_id, c.class_name
+                FROM classes c
+                JOIN student_class sc ON sc.class_id = c.class_id
+                WHERE sc.school_year_id = @param0";
+
+            return DbConnect.ExecuteQuery(sql, new object[] { yearId });
         }
 
     }

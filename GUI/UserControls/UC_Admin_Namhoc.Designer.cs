@@ -83,7 +83,7 @@ namespace GUI.UserControls
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "UC_Admin_Namhoc";
-            this.Size = new System.Drawing.Size(1429, 648);
+            this.Size = new System.Drawing.Size(1436, 648);
             this.Load += new System.EventHandler(this.UC_Admin_Namhoc_Load);
             this.ResumeLayout(false);
 

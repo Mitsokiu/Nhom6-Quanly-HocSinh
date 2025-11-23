@@ -29,6 +29,13 @@ namespace DAO
             return list;
         }
 
+        public static DataTable GetAllYear()
+        {
+            string sql = "SELECT year_id, name FROM academic_years";
+            return DbConnect.ExecuteQuery(sql);
+        }
+
+
         public static bool AddYear(AcademicYearDTO year)
         {
             string query = "INSERT INTO academic_years (name, start_date, end_date) VALUES (@param0, @param1, @param2)";

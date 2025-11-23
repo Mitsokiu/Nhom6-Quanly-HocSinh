@@ -43,7 +43,7 @@ namespace GUI.UserControls
 
         private void button3_Click(object sender, EventArgs e)
         {
-            LoadUserControl(new UC_Admin_NamHoc_HocPhi());
+            LoadUserControl(new UC_Admin_NamHoc_HocPhi_Bar());
         }
         private void button4_Click(object sender, EventArgs e)
         {

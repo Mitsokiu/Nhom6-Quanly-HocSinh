@@ -121,6 +121,12 @@
     <Compile Include="Sidebar.Designer.cs">
       <DependentUpon>Sidebar.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UC_Admin_NamHoc_HocPhi_Bar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_Admin_NamHoc_HocPhi_Bar.Designer.cs">
+      <DependentUpon>UC_Admin_NamHoc_HocPhi_Bar.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UC_Admin_PhanCong_gvcn.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -298,6 +304,9 @@
     </Compile>
     <EmbeddedResource Include="Sidebar.resx">
       <DependentUpon>Sidebar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_Admin_NamHoc_HocPhi_Bar.resx">
+      <DependentUpon>UC_Admin_NamHoc_HocPhi_Bar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_Admin_PhanCong_gvcn.resx">
       <DependentUpon>UC_Admin_PhanCong_gvcn.cs</DependentUpon>

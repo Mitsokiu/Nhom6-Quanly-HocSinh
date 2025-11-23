@@ -238,3 +238,4 @@ C:\Code\qlyhocsinh\GUI\obj\Debug\GUI.csproj.Up2Date
 C:\Code\qlyhocsinh\GUI\obj\Debug\GUI.exe
 C:\Code\qlyhocsinh\GUI\obj\Debug\GUI.pdb
 C:\Code\qlyhocsinh\GUI\obj\Debug\GUI.UC_Admin_PhanCong_gvcn.resources
+C:\Code\qlyhocsinh\GUI\obj\Debug\GUI.UserControls.UC_Admin_NamHoc_HocPhi_Bar.resources

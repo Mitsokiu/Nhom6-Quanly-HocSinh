@@ -339,3 +339,8 @@ INSERT INTO homeroom_assignments (class_id, teacher_id, year_id, assigned_date) 
 (1, 1, 1, '2025-09-01'),
 (2, 2, 1, '2025-09-01'),
 (3, 3, 1, '2025-09-01');
+
+USE school_management;
+
+ALTER TABLE tuition
+ADD COLUMN description VARCHAR(255) NOT NULL AFTER student_id;

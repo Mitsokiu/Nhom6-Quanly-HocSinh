@@ -2,6 +2,8 @@
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Windows.Forms;
 
 namespace BUS
 {
@@ -45,5 +47,10 @@ namespace BUS
         }
 
         public static bool DeleteYear(int yearId) => AcademicYearDAO.DeleteYear(yearId);
+
+        
+        public DataTable GetAllYear() => AcademicYearDAO.GetAllYear();
     }
+
+
 }
