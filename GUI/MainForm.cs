@@ -32,6 +32,7 @@ namespace GUI
             sidebar.NhapDiemClicked += Sidebar_NhapDiemClicked;
             sidebar.XemDiemClicked += Sidebar_XemDiemClicked;
             sidebar.XemTKBClicked += Sidebar_XemTKBClicked;
+            sidebar.XemThongBaoClicked += Sidebar_XemThongBaoClicked;
             sidebar.XemLichDayClicked += Sidebar_XemLichDayClicked;
             sidebar.HocSinhClicked += Sidebar_HocSinhClicked;
             sidebar.TinhHinhClicked += Sidebar_TinhHinhClicked;
@@ -73,6 +74,12 @@ namespace GUI
         private void Sidebar_XemTKBClicked(object sender, EventArgs e)
         {
             LoadContent(new UC_HocSinh_TKB(user.UserId));
+        }
+
+        private void Sidebar_XemThongBaoClicked(object sender, EventArgs e)
+        {
+            // Gọi UserControl Thông báo (Đã tạo ở bước trước)
+            LoadContent(new UC_HocSinh_ThongBao());
         }
 
         private void Sidebar_XemLichDayClicked(object sender, EventArgs e)

@@ -247,6 +247,12 @@
     <Compile Include="UserControls\UC_HocSinh_HocPhi.Designer.cs">
       <DependentUpon>UC_HocSinh_HocPhi.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UC_HocSinh_ThongBao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_HocSinh_ThongBao.Designer.cs">
+      <DependentUpon>UC_HocSinh_ThongBao.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UC_HocSinh_TKB.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -478,6 +484,8 @@
   <ItemGroup>
     <None Include="Resources\lophoc_24.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\notification_24.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

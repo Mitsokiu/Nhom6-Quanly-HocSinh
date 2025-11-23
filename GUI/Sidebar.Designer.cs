@@ -32,6 +32,7 @@ namespace GUI
             this.btnNamhoc = new System.Windows.Forms.Button();
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
+            this.btnXemThongBao = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +63,7 @@ namespace GUI
             this.flowLayoutPanel1.Controls.Add(this.btnXemDiem);
             this.flowLayoutPanel1.Controls.Add(this.btnHocPhi);
             this.flowLayoutPanel1.Controls.Add(this.btnXemTKB);
+            this.flowLayoutPanel1.Controls.Add(this.btnXemThongBao);
             this.flowLayoutPanel1.Controls.Add(this.btnXemLichDay);
             this.flowLayoutPanel1.Controls.Add(this.btnHocSinh);
             this.flowLayoutPanel1.Controls.Add(this.btnTinhHinh);
@@ -205,6 +207,16 @@ namespace GUI
             this.btnHome.TabIndex = 5;
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+
+           
+            this.btnXemThongBao.Image = global::GUI.Properties.Resources.tinnhan_24; // Ảnh bạn yêu cầu
+            this.btnXemThongBao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXemThongBao.Name = "btnXemThongBao";
+            this.btnXemThongBao.Size = new System.Drawing.Size(282, 50);
+            this.btnXemThongBao.TabIndex = 11; 
+            this.btnXemThongBao.Text = "Thông báo";
+            this.btnXemThongBao.UseVisualStyleBackColor = true;
+            this.btnXemThongBao.Click += new System.EventHandler(this.btnXemThongBao_Click);
             // 
             // Sidebar
             // 
@@ -238,5 +250,6 @@ namespace GUI
         private Button btnDangXuat;
         private Button btnHome;
         private Button btnNamhoc;
+        private Button btnXemThongBao;
     }
 }

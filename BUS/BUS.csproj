@@ -98,6 +98,7 @@
     <Compile Include="AcademicBUS.cs" />
     <Compile Include="ClassBUS.cs" />
     <Compile Include="HomeroomAssignmentBUS.cs" />
+    <Compile Include="NotificationBUS.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SemesterBUS.cs" />

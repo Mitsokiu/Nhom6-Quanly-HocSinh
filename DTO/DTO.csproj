@@ -98,6 +98,7 @@
     <Compile Include="AcademicYearDTO.cs" />
     <Compile Include="ClassDTO.cs" />
     <Compile Include="HomeroomAssignmentDTO.cs" />
+    <Compile Include="NotificationDTO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SemesterDTO.cs" />

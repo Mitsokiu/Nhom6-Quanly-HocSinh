@@ -172,3 +172,4 @@ D:\GitHub\QLHS\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
 D:\GitHub\QLHS\BUS\obj\Debug\BUS.csproj.Up2Date
 D:\GitHub\QLHS\BUS\obj\Debug\BUS.exe
 D:\GitHub\QLHS\BUS\obj\Debug\BUS.pdb
+D:\GitHub\QLHS\BUS\obj\Debug\BUS.exe.config
