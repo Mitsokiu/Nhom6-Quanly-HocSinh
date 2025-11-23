@@ -241,6 +241,12 @@
     <Compile Include="UserControls\UC_HocSinh_Diem.Designer.cs">
       <DependentUpon>UC_HocSinh_Diem.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UC_HocSinh_HocPhi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_HocSinh_HocPhi.Designer.cs">
+      <DependentUpon>UC_HocSinh_HocPhi.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UC_HocSinh_TKB.cs">
       <SubType>UserControl</SubType>
     </Compile>
