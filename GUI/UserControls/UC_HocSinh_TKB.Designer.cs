@@ -47,6 +47,7 @@
             this.panelHeader.SuspendLayout();
             this.panelWeekWrapper.SuspendLayout();
             this.panelContainer.SuspendLayout();
+
             this.SuspendLayout();
             // 
             // panelHeader
@@ -113,15 +114,17 @@
             this.panelContainer.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.panelContainer.Size = new System.Drawing.Size(960, 500);
             this.panelContainer.TabIndex = 1;
+            this.panelContainer.AutoScroll = true;
             // 
             // tblTimetable
             // 
             this.tblTimetable.BackColor = System.Drawing.Color.White;
             this.tblTimetable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tblTimetable.RowCount = 11;
             this.tblTimetable.ColumnCount = 7;
 
             // --- BUNG VÒNG LẶP COLUMN RA THÀNH TỪNG DÒNG ---
-            this.tblTimetable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F)); // Cột Tiết
+            this.tblTimetable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F)); // Cột Tiết
             this.tblTimetable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F)); // Thứ 2
             this.tblTimetable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F)); // Thứ 3
             this.tblTimetable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F)); // Thứ 4
@@ -133,17 +136,31 @@
             this.tblTimetable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(226)))), ((int)(((byte)(230)))));
             this.tblTimetable.Location = new System.Drawing.Point(0, 10);
             this.tblTimetable.Name = "tblTimetable";
-            this.tblTimetable.RowCount = 6;
 
-            // --- BUNG VÒNG LẶP ROW RA THÀNH TỪNG DÒNG ---
-            this.tblTimetable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F)); // Header row
-            this.tblTimetable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F)); // Tiết 1
-            this.tblTimetable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F)); // Tiết 2
-            this.tblTimetable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F)); // Tiết 3
-            this.tblTimetable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F)); // Tiết 4
-            this.tblTimetable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F)); // Tiết 5
 
-            this.tblTimetable.Size = new System.Drawing.Size(960, 490);
+            // --- 2. Row Styles (Viết tường minh 11 dòng) ---
+            // Header
+            this.tblTimetable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+
+            // 10 Tiết học (Mỗi tiết 75px -> Tổng cao ~800px -> Sẽ hiện Scrollbar)
+            this.tblTimetable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F)); // Tiết 1
+            this.tblTimetable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tblTimetable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tblTimetable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tblTimetable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F)); // Tiết 5
+
+            this.tblTimetable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F)); // Tiết 6
+            this.tblTimetable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tblTimetable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tblTimetable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tblTimetable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F)); // Tiết 10
+
+            // Dock Top để nó dãn xuống dưới, không Fill
+            this.tblTimetable.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tblTimetable.Location = new System.Drawing.Point(0, 0);
+            this.tblTimetable.Name = "tblTimetable";
+            this.tblTimetable.Size = new System.Drawing.Size(960, 800); 
+            this.tblTimetable.AutoSize = true; // Tự co giãn theo nội dung
             this.tblTimetable.TabIndex = 0;
             // 
             // UC_HocSinh_TKB

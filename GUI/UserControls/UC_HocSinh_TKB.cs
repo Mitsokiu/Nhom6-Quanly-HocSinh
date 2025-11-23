@@ -46,6 +46,8 @@ namespace GUI.UserControls
         private void InitTableHeaders()
         {
             this.tblTimetable.SuspendLayout();
+
+            // Header Thứ
             AddHeaderLabel("Tiết", 0, 0);
             AddHeaderLabel("Thứ Hai", 1, 0);
             AddHeaderLabel("Thứ Ba", 2, 0);
@@ -54,11 +56,20 @@ namespace GUI.UserControls
             AddHeaderLabel("Thứ Sáu", 5, 0);
             AddHeaderLabel("Thứ Bảy", 6, 0);
 
+            // --- Sáng ---
             AddPeriodLabel("Tiết 1\n7:00 - 7:45", 0, 1);
-            AddPeriodLabel("Tiết 2\n8:00 - 8:45", 0, 2);
-            AddPeriodLabel("Tiết 3\n9:00 - 9:45", 0, 3);
-            AddPeriodLabel("Tiết 4\n10:00 - 10:45", 0, 4);
-            AddPeriodLabel("Tiết 5\n11:00 - 11:45", 0, 5);
+            AddPeriodLabel("Tiết 2\n7:50 - 8:35", 0, 2);
+            AddPeriodLabel("Tiết 3\n8:45 - 9:30", 0, 3);
+            AddPeriodLabel("Tiết 4\n9:40 - 10:25", 0, 4);
+            AddPeriodLabel("Tiết 5\n10:35 - 11:20", 0, 5);
+
+            // --- Chiều (Bắt đầu 13h) ---
+            AddPeriodLabel("Tiết 6\n13:00 - 13:45", 0, 6);
+            AddPeriodLabel("Tiết 7\n13:50 - 14:35", 0, 7);
+            AddPeriodLabel("Tiết 8\n14:45 - 15:30", 0, 8);
+            AddPeriodLabel("Tiết 9\n15:40 - 16:25", 0, 9);
+            AddPeriodLabel("Tiết 10\n16:35 - 17:20", 0, 10);
+
             this.tblTimetable.ResumeLayout();
         }
 
@@ -89,7 +100,14 @@ namespace GUI.UserControls
                 cboWeek.SelectedIndexChanged -= CboWeek_SelectedIndexChanged;
                 cboWeek.SelectedIndexChanged += CboWeek_SelectedIndexChanged;
 
+                // Chọn mặc định và Tải dữ liệu ngay lập tức ---
                 cboWeek.SelectedIndex = 0;
+
+                if (cboWeek.SelectedValue != null && int.TryParse(cboWeek.SelectedValue.ToString(), out int firstSemesterId))
+                {
+                    LoadTimetable(firstSemesterId);
+                }
+                // -----------------------------------------------------
             }
         }
 
@@ -110,6 +128,7 @@ namespace GUI.UserControls
             this.tblTimetable.SuspendLayout();
             try
             {
+                // Xóa các Card cũ (Giữ lại Header Labels)
                 for (int i = tblTimetable.Controls.Count - 1; i >= 0; i--)
                 {
                     if (tblTimetable.Controls[i] is Panel)
@@ -123,7 +142,8 @@ namespace GUI.UserControls
                     int col = ConvertDayToColumn(item.Day);
                     int row = item.Period;
 
-                    if (col != -1 && row >= 1 && row <= 5)
+                    // SỬA: Cho phép hiển thị đến tiết 10
+                    if (col != -1 && row >= 1 && row <= 10)
                     {
                         SubjectColor color = GetColorBySubjectName(item.SubjectName);
                         AddSubject(col, row, item.SubjectName, "GV: " + item.TeacherName, "Phòng: " + item.Room, color);
@@ -152,7 +172,7 @@ namespace GUI.UserControls
 
         private void AddSubject(int col, int row, string subjectName, string teacherName, string roomName, SubjectColor colorType)
         {
-            Panel cardPanel = new Panel { Dock = DockStyle.Fill, Margin = new Padding(4), BackColor = Color.Transparent };
+            Panel cardPanel = new Panel { Dock = DockStyle.Fill, Margin = new Padding(8, 4, 8, 4), BackColor = Color.Transparent };
             Color bgColor, textColor;
             GetColorSchema(colorType, out bgColor, out textColor);
 
@@ -190,7 +210,25 @@ namespace GUI.UserControls
 
         private void AddPeriodLabel(string text, int col, int row)
         {
-            Label lbl = new Label { Text = text, Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleCenter, Font = new Font("Segoe UI", 9F, FontStyle.Bold), ForeColor = Color.Black, BackColor = Color.White, Margin = new Padding(0) };
+            Label lbl = new Label
+            {
+                Text = text,
+                Dock = DockStyle.Fill,
+                TextAlign = ContentAlignment.MiddleCenter, // Căn giữa tuyệt đối
+
+                // SỬA 1: Giảm font xuống 8.5F để chữ "Tiết 10" và giờ không bị rớt dòng lung tung
+                Font = new Font("Segoe UI", 8.5F, FontStyle.Bold),
+
+                // SỬA 2: Màu xám đậm (nhìn sang hơn màu đen tuyền)
+                ForeColor = Color.FromArgb(64, 64, 64),
+
+                // SỬA 3: Nền xám nhẹ để phân biệt cột mốc thời gian
+                BackColor = Color.WhiteSmoke,
+
+                Margin = new Padding(1), // Tạo viền trắng mỏng xung quanh
+                AutoSize = false // QUAN TRỌNG: Ngăn label tự co giãn gây vỡ layout
+            };
+
             this.tblTimetable.Controls.Add(lbl, col, row);
         }
 
