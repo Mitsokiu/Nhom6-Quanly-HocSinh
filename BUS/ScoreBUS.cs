@@ -48,18 +48,36 @@ namespace BUS
             return diemHS;
         }
 
-        private float? CalculateAverage(SubjectScoreDTO s)
+        private float? CalculateAverage(SubjectScoreDTO diem)
         {
-            float total = 0;
-            int coeffSum = 0;
+            float tongDiem = 0;
+            int tongHeSo = 0;
 
-            if (s.OralScore.HasValue) { total += s.OralScore.Value * 1; coeffSum += 1; }
-            if (s.FifteenMinScore.HasValue) { total += s.FifteenMinScore.Value * 1; coeffSum += 1; }
-            if (s.OnePeriodScore.HasValue) { total += s.OnePeriodScore.Value * 2; coeffSum += 2; }
-            if (s.FinalScore.HasValue) { total += s.FinalScore.Value * 3; coeffSum += 3; }
+            if (diem.OralScore.HasValue)
+            {
+                tongDiem += diem.OralScore.Value * 1;
+                tongHeSo += 1;
+            }
+            if (diem.FifteenMinScore.HasValue)
+            {
+                tongDiem += diem.FifteenMinScore.Value * 1;
+                tongHeSo += 1;
+            }
+            if (diem.OnePeriodScore.HasValue)
+            {
+                tongDiem += diem.OnePeriodScore.Value * 2;
+                tongHeSo += 2;
+            }
+            if (diem.FinalScore.HasValue)
+            {
+                tongDiem += diem.FinalScore.Value * 3;
+                tongHeSo += 3;
+            }
 
-            if (coeffSum == 0) return null;
-            return (float)Math.Round(total / coeffSum, 1);
+            // Nếu chưa có cột điểm nào thì trả về null (ô trống)
+            if (tongHeSo == 0) return null;
+
+            return (float)Math.Round(tongDiem / tongHeSo, 1);
         }
 
     }
