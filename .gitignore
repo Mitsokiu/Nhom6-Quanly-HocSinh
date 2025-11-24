@@ -1,0 +1,27 @@
+############################
+# Build .NET (mọi tầng)
+############################
+
+# Ignore mọi thư mục bin & obj ở bất kỳ đâu
+**/bin/
+**/obj/
+
+# Nếu muốn ghi rõ cũng được (không bắt buộc)
+DTO/obj/
+BUS/obj/
+DAO/obj/
+GUI/obj/
+
+############################
+# Visual Studio / VSCode
+############################
+
+.vs/
+.vs/*
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
