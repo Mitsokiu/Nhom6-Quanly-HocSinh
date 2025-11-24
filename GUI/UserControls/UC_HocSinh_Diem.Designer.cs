@@ -39,7 +39,6 @@ namespace GUI.UserControls
             this.CuoiKi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tb = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,11 +52,11 @@ namespace GUI.UserControls
             this.mottiet,
             this.CuoiKi,
             this.Tb});
-            this.dataGridView1.Location = new System.Drawing.Point(270, 18);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(180, 12);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(1008, 501);
+            this.dataGridView1.Size = new System.Drawing.Size(672, 326);
             this.dataGridView1.TabIndex = 0;
             // 
             // MonHoc
@@ -102,43 +101,29 @@ namespace GUI.UserControls
             this.Tb.Name = "Tb";
             this.Tb.Width = 150;
             // 
-            // comboBox1
+            // comboBox
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "2022-2023",
             "2024-2025",
             "2025-2026"});
-            this.comboBox1.Location = new System.Drawing.Point(20, 33);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox1.Location = new System.Drawing.Point(13, 21);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(164, 28);
+            this.comboBox1.Size = new System.Drawing.Size(111, 21);
             this.comboBox1.TabIndex = 1;
-            this.comboBox1.Text = "Năm Học";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "HK1",
-            "HK2"});
-            this.comboBox2.Location = new System.Drawing.Point(20, 85);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(164, 28);
-            this.comboBox2.TabIndex = 2;
-            this.comboBox2.Text = "Học Kì";
+            this.comboBox1.Text = "Học Kỳ - Năm Học";
             // 
             // UC_HocSinh_Diem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "UC_HocSinh_Diem";
-            this.Size = new System.Drawing.Size(1236, 542);
+            this.Size = new System.Drawing.Size(824, 352);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -154,6 +139,5 @@ namespace GUI.UserControls
         private DataGridViewTextBoxColumn CuoiKi;
         private DataGridViewTextBoxColumn Tb;
         private ComboBox comboBox1;
-        private ComboBox comboBox2;
     }
 }
