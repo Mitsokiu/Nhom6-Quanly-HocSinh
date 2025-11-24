@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BUS;
+using DTO;
+using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -6,19 +9,33 @@ namespace GUI.UserControls
 {
     public partial class UC_HocSinh_Diem : UserControl
     {
+
+        private ScoreBUS scoreBUS = new ScoreBUS();
+        private SemesterBUS semesterBUS = new SemesterBUS();
+        private int loggedInUserId; 
+
+
         // Màu sắc giao diện
         private Color primaryBlue = Color.FromArgb(45, 108, 223);
         private Color textDark = Color.FromArgb(30, 30, 30);
         private Color textLight = Color.Gray;
         private Color bgGray = Color.FromArgb(245, 247, 250);
 
-        public UC_HocSinh_Diem()
+        public UC_HocSinh_Diem(int userId)
         {
             InitializeComponent();
+            this.loggedInUserId = userId;
             CustomInit();
         }
 
         private void CustomInit()
+        {
+            SetupUI();
+
+            LoadSemesters();
+        }
+
+        private void SetupUI()
         {
             // 1. Cấu hình nền
             this.BackColor = bgGray;
@@ -91,20 +108,12 @@ namespace GUI.UserControls
             comboBox1.Location = new Point(pnlMainContent.Width - 300, 15);
             comboBox1.Width = 250;
             comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-
-            // [QUAN TRỌNG] Đổi sang giao diện hệ thống -> Sạch, đẹp, không bị ám xanh khi Focus
             comboBox1.FlatStyle = FlatStyle.System;
-
-            // Vẫn giữ DropDownList để chặn sửa chữ
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            // [Tùy chọn] Tắt TabStop nếu bạn muốn nó không bao giờ được chọn bằng phím Tab
             comboBox1.TabStop = false;
 
-            comboBox1.Items.Clear();
-            comboBox1.Items.Add("Học kỳ 1 - Năm học 2023 - 2024");
-            comboBox1.Items.Add("Học kỳ 2 - Năm học 2023 - 2024");
-            comboBox1.SelectedIndex = 0;
+            comboBox1.SelectedIndexChanged -= ComboBox1_SelectedIndexChanged;
+            comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
 
 
             // Styling DataGridView
@@ -114,7 +123,45 @@ namespace GUI.UserControls
             dataGridView1.Size = new Size(pnlMainContent.Width - 40, pnlMainContent.Height - 90);
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
 
-            LoadDummyData();
+        }
+
+        private void LoadSemesters()
+        {
+            List<SemesterDTO> list = semesterBUS.GetAllSemesters();
+            comboBox1.DataSource = list;
+            comboBox1.DisplayMember = "DisplayName";
+            comboBox1.ValueMember = "SemesterId";
+        }
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedValue is int semesterId)
+            {
+                LoadScoresData(semesterId);
+            }
+            this.Focus();
+        }
+
+        private void LoadScoresData(int semesterId)
+        {
+            if (loggedInUserId <= 0) return;
+
+            // Gọi BUS lấy dữ liệu
+            List<SubjectScoreDTO> listDiem = scoreBUS.GetScoresData(loggedInUserId, semesterId);
+
+            // Đổ vào Grid
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.DataSource = listDiem;
+
+            // Map cột (Tên cột trong Grid = Tên property trong DTO)
+            if (dataGridView1.Columns["MonHoc"] != null) dataGridView1.Columns["MonHoc"].DataPropertyName = "SubjectName";
+            if (dataGridView1.Columns["Mieng"] != null) dataGridView1.Columns["Mieng"].DataPropertyName = "OralScore";
+            if (dataGridView1.Columns["muoilamp"] != null) dataGridView1.Columns["muoilamp"].DataPropertyName = "FifteenMinScore";
+            if (dataGridView1.Columns["mottiet"] != null) dataGridView1.Columns["mottiet"].DataPropertyName = "OnePeriodScore";
+            if (dataGridView1.Columns["CuoiKi"] != null) dataGridView1.Columns["CuoiKi"].DataPropertyName = "FinalScore";
+            if (dataGridView1.Columns["Tb"] != null) dataGridView1.Columns["Tb"].DataPropertyName = "AverageScore";
+
+            // Cập nhật số liệu lên Card
+           // UpdateSummaryCards(listDiem);
         }
 
         // Hàm tạo Card (Đã bỏ tham số xPos, width vì TableLayout tự lo)
@@ -210,14 +257,5 @@ namespace GUI.UserControls
             }
         }
 
-        private void LoadDummyData()
-        {
-            dataGridView1.Rows.Clear();
-            dataGridView1.Rows.Add("Toán", "8.5", "9.0", "7.5", "8.0", "8.2");
-            dataGridView1.Rows.Add("Vật lý", "9.0", "8.0", "8.5", "9.5", "8.8");
-            dataGridView1.Rows.Add("Hóa học", "7.0", "6.5", "7.0", "8.0", "7.2");
-            dataGridView1.Rows.Add("Ngữ văn", "8.0", "9.5", "9.0", "8.5", "8.7");
-            dataGridView1.Rows.Add("Tiếng Anh", "10.0", "9.0", "9.5", "9.0", "9.3");
-        }
     }
 }

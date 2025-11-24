@@ -69,7 +69,7 @@ namespace GUI
 
         private void Sidebar_XemDiemClicked(object sender, EventArgs e)
         {
-            LoadContent(new UC_HocSinh_Diem());
+            LoadContent(new UC_HocSinh_Diem(user.UserId));
         }
 
         private void Sidebar_XemTKBClicked(object sender, EventArgs e)
