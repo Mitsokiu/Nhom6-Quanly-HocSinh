@@ -10,37 +10,48 @@ namespace GUI.UserControls
 {
     public partial class UC_HocSinh_ThongBao : UserControl
     {
-        // Khai báo sự kiện
         public event EventHandler<NotificationDTO> DetailClicked;
 
         private NotificationBUS _notificationBUS = new NotificationBUS();
-        private List<NotificationDTO> _allNotifications = new List<NotificationDTO>();
+
+        // Biến lưu trữ dữ liệu
+        private List<NotificationDTO> _allNotifications = new List<NotificationDTO>(); // Dữ liệu gốc từ DB
+        private List<NotificationDTO> _currentList = new List<NotificationDTO>();      // Dữ liệu đang hiển thị (sau khi lọc)
+
+        // Biến phân trang
+        private int _currentPage = 1;
+        private int _pageSize = 4; // Số thông báo mỗi trang (4 cái là đẹp)
+        private int _totalPages = 0;
 
         public UC_HocSinh_ThongBao()
         {
             InitializeComponent();
 
-            // Hack cuộn mượt
-            typeof(Panel).InvokeMember("DoubleBuffered",
-                System.Reflection.BindingFlags.SetProperty | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic,
-                null, flowPanelNotifications, new object[] { true });
-
-            // Setup FlowLayout
+            // Cấu hình UI
             flowPanelNotifications.AutoScroll = true;
             flowPanelNotifications.FlowDirection = FlowDirection.LeftToRight;
             flowPanelNotifications.WrapContents = true;
 
+            typeof(Panel).InvokeMember("DoubleBuffered",
+                System.Reflection.BindingFlags.SetProperty | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic,
+                null, flowPanelNotifications, new object[] { true });
+
             InitCustomUI();
 
+            // Events
             this.Load += (s, e) => LoadDataFromDB();
             cboFilter.SelectedIndexChanged += (s, e) => FilterData();
+
+            // Sự kiện phân trang
+            InitPaginationEvents();
+
             this.Resize += (s, e) => {
                 CenterPagination();
                 ResizeNotificationItems();
             };
         }
 
-        // --- CÁC HÀM SETUP UI ---
+        // --- SETUP UI ---
         private void InitCustomUI()
         {
             cboFilter.Items.Clear();
@@ -64,13 +75,25 @@ namespace GUI.UserControls
             else { btn.BackColor = Color.White; btn.ForeColor = Color.Black; }
         }
 
-        // --- LOGIC NẠP DỮ LIỆU ---
+        private void InitPaginationEvents()
+        {
+            btnPrev.Click += (s, e) => ChangePage(_currentPage - 1);
+            btnNext.Click += (s, e) => ChangePage(_currentPage + 1);
+            btnPage1.Click += (s, e) => ChangePage(1);
+            btnPage2.Click += (s, e) => ChangePage(2);
+        }
+
+        // --- XỬ LÝ DỮ LIỆU ---
         private void LoadDataFromDB()
         {
             try
             {
                 _allNotifications = _notificationBUS.GetNotificationsForStudent();
-                DisplayList(_allNotifications);
+                // Mặc định hiển thị tất cả
+                _currentList = _allNotifications;
+
+                CalculatePagination();
+                ShowCurrentPage();
             }
             catch (Exception ex)
             {
@@ -81,29 +104,73 @@ namespace GUI.UserControls
         private void FilterData()
         {
             string filter = cboFilter.SelectedItem?.ToString();
-            var filteredList = _notificationBUS.FilterNotifications(_allNotifications, filter);
-            DisplayList(filteredList);
+
+            // Lọc dữ liệu và lưu vào _currentList
+            _currentList = _notificationBUS.FilterNotifications(_allNotifications, filter);
+
+            // Tính toán lại phân trang cho danh sách mới lọc
+            CalculatePagination();
+            ShowCurrentPage();
         }
 
-        private void DisplayList(List<NotificationDTO> list)
+        // --- LOGIC PHÂN TRANG ---
+        private void CalculatePagination()
+        {
+            _totalPages = (int)Math.Ceiling((double)_currentList.Count / _pageSize);
+            if (_totalPages < 1) _totalPages = 1;
+            _currentPage = 1; // Reset về trang 1 mỗi khi nạp lại data
+        }
+
+        private void ChangePage(int newPage)
+        {
+            if (newPage < 1 || newPage > _totalPages) return;
+            _currentPage = newPage;
+            ShowCurrentPage();
+        }
+
+        private void ShowCurrentPage()
         {
             flowPanelNotifications.SuspendLayout();
             flowPanelNotifications.Controls.Clear();
 
-            foreach (var item in list)
+            // Cắt dữ liệu theo trang
+            var pageData = _currentList.Skip((_currentPage - 1) * _pageSize).Take(_pageSize).ToList();
+
+            foreach (var item in pageData)
             {
-                // QUAN TRỌNG: Truyền cả đối tượng DTO vào đây
                 AddNotification(item);
             }
 
             flowPanelNotifications.ResumeLayout();
             ResizeNotificationItems();
+            UpdatePaginationButtons(); // Cập nhật trạng thái nút
         }
 
-        // --- SỬA LẠI HÀM NÀY ĐỂ HẾT LỖI BIẾN 'DATA' ---
+        private void UpdatePaginationButtons()
+        {
+            // Ẩn hiện nút Prev/Next
+            btnPrev.Enabled = _currentPage > 1;
+            btnNext.Enabled = _currentPage < _totalPages;
+
+            // Reset style
+            SetupBtn(btnPage1, "1", false);
+            SetupBtn(btnPage2, "2", false);
+
+            // Highlight trang hiện tại
+            if (_currentPage == 1) SetupBtn(btnPage1, "1", true);
+            else if (_currentPage == 2) SetupBtn(btnPage2, "2", true);
+
+            // Logic ẩn hiện nút số (Demo đơn giản cho 2 trang, nếu nhiều hơn cần logic phức tạp hơn giống bên Học phí)
+            btnPage1.Visible = true;
+            btnPage2.Visible = _totalPages >= 2;
+            lblDots.Visible = _totalPages > 2; // Hiện dấu ... nếu còn nhiều trang nữa
+
+            CenterPagination();
+        }
+
+        // --- CÁC HÀM ADD/RESIZE ITEM (Giữ nguyên) ---
         private void AddNotification(NotificationDTO data)
         {
-            // Tạo item từ DTO
             NotificationItem item = new NotificationItem(data);
 
             int w = flowPanelNotifications.ClientSize.Width - 25;
@@ -111,16 +178,11 @@ namespace GUI.UserControls
             item.Width = w;
             item.Margin = new Padding(0, 0, 0, 15);
 
-            // Gắn sự kiện Click: Khi bấm vào item -> Bắn sự kiện ra ngoài kèm theo 'data'
-            item.Click += (s, e) =>
-            {
-                DetailClicked?.Invoke(this, data); // Giờ biến 'data' đã hợp lệ
-            };
+            item.Click += (s, e) => DetailClicked?.Invoke(this, data);
 
             flowPanelNotifications.Controls.Add(item);
         }
 
-        // --- CÁC HÀM CĂN CHỈNH KHÁC ---
         private void ResizeNotificationItems()
         {
             int w = flowPanelNotifications.ClientSize.Width - 25;
@@ -134,22 +196,41 @@ namespace GUI.UserControls
         private void CenterPagination()
         {
             if (panelPagination.Width == 0) return;
-            int totalWidth = 250;
-            int startX = (panelPagination.Width - totalWidth) / 2;
 
-            btnPrev.Location = new Point(startX, 10);
-            btnPage1.Location = new Point(startX + 50, 10);
-            btnPage2.Location = new Point(startX + 100, 10);
-            lblDots.Location = new Point(startX + 150, 15);
-            btnNext.Location = new Point(startX + 190, 10);
+            // Tính tổng chiều rộng các nút đang hiện
+            int totalWidth = 0;
+            int gap = 10;
+
+            if (btnPrev.Visible) totalWidth += 40 + gap;
+            if (btnPage1.Visible) totalWidth += 40 + gap;
+            if (btnPage2.Visible) totalWidth += 40 + gap;
+            if (lblDots.Visible) totalWidth += 30 + gap;
+            if (btnNext.Visible) totalWidth += 40;
+
+            int startX = (panelPagination.Width - totalWidth) / 2;
+            int currentX = startX;
+
+            // Sắp xếp vị trí
+            btnPrev.Location = new Point(currentX, 10); currentX += 50;
+
+            if (btnPage1.Visible) { btnPage1.Location = new Point(currentX, 10); currentX += 50; }
+            if (btnPage2.Visible) { btnPage2.Location = new Point(currentX, 10); currentX += 50; }
+            if (lblDots.Visible) { lblDots.Location = new Point(currentX, 15); currentX += 40; }
+
+            btnNext.Location = new Point(currentX, 10);
         }
     }
 
-    // --- CLASS CON: NOTIFICATION ITEM ---
+    // --- CLASS CON (Giữ nguyên) ---
     public class NotificationItem : Panel
     {
+        // ... (Copy lại class NotificationItem từ code cũ của bạn vào đây) ...
+        // (Phần này không thay đổi gì nên mình lược bớt để code gọn)
+        public NotificationDTO Data { get; private set; }
+
         public NotificationItem(NotificationDTO data)
         {
+            this.Data = data;
             this.Height = 140;
             this.BackColor = Color.White;
             this.Padding = new Padding(20);
@@ -188,15 +269,12 @@ namespace GUI.UserControls
             this.Controls.Add(lblContent);
             this.Controls.Add(pnlBar);
 
-            // Lan truyền sự kiện Click cho tất cả control con
-            // Để khi click vào chữ cũng tính là click vào thẻ
             void TriggerClick(object sender, EventArgs e) => this.OnClick(e);
 
             foreach (Control c in this.Controls)
             {
                 c.Click += TriggerClick;
                 c.Cursor = Cursors.Hand;
-
                 c.MouseEnter += (s, e) => this.BackColor = Color.FromArgb(240, 248, 255);
                 c.MouseLeave += (s, e) => this.BackColor = Color.White;
             }
