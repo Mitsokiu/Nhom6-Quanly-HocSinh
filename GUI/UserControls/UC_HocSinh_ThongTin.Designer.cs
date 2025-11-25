@@ -57,7 +57,7 @@
             this.lbTitle1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbEmailMe = new System.Windows.Forms.TextBox();
             this.lbEmailMe = new System.Windows.Forms.Label();
             this.tbSDTMe = new System.Windows.Forms.TextBox();
             this.lbSDTMe = new System.Windows.Forms.Label();
@@ -67,7 +67,7 @@
             this.lbSDTCha = new System.Windows.Forms.Label();
             this.tbNgheNghiepMe = new System.Windows.Forms.TextBox();
             this.lbNgheNghiepMe = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tbHoTenMe = new System.Windows.Forms.TextBox();
             this.lbHoTenMe = new System.Windows.Forms.Label();
             this.tbNgheNghiepCha = new System.Windows.Forms.TextBox();
             this.lbNgheNghiepCha = new System.Windows.Forms.Label();
@@ -111,7 +111,7 @@
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.Location = new System.Drawing.Point(44, 22);
+            this.lbTitle.Location = new System.Drawing.Point(38, 22);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(148, 21);
             this.lbTitle.TabIndex = 17;
@@ -119,9 +119,9 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::GUI.Properties.Resources.icons8_person_96;
             this.pictureBox1.Location = new System.Drawing.Point(48, 80);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Image = global::GUI.Properties.Resources.icons8_person_96;
             this.pictureBox1.Size = new System.Drawing.Size(188, 200);
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
@@ -354,7 +354,7 @@
             // 
             this.lbTitle1.AutoSize = true;
             this.lbTitle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle1.Location = new System.Drawing.Point(41, 13);
+            this.lbTitle1.Location = new System.Drawing.Point(35, 13);
             this.lbTitle1.Name = "lbTitle1";
             this.lbTitle1.Size = new System.Drawing.Size(140, 21);
             this.lbTitle1.TabIndex = 18;
@@ -364,7 +364,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.tbEmailMe);
             this.panel1.Controls.Add(this.lbEmailMe);
             this.panel1.Controls.Add(this.tbSDTMe);
             this.panel1.Controls.Add(this.lbSDTMe);
@@ -374,7 +374,7 @@
             this.panel1.Controls.Add(this.lbSDTCha);
             this.panel1.Controls.Add(this.tbNgheNghiepMe);
             this.panel1.Controls.Add(this.lbNgheNghiepMe);
-            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Controls.Add(this.tbHoTenMe);
             this.panel1.Controls.Add(this.lbHoTenMe);
             this.panel1.Controls.Add(this.tbNgheNghiepCha);
             this.panel1.Controls.Add(this.lbNgheNghiepCha);
@@ -389,25 +389,25 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Silver;
-            this.panel2.Location = new System.Drawing.Point(42, 204);
+            this.panel2.Location = new System.Drawing.Point(42, 206);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(818, 1);
             this.panel2.TabIndex = 35;
             // 
-            // textBox1
+            // tbEmailMe
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(458, 312);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(402, 27);
-            this.textBox1.TabIndex = 34;
+            this.tbEmailMe.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEmailMe.Location = new System.Drawing.Point(458, 307);
+            this.tbEmailMe.Name = "tbEmailMe";
+            this.tbEmailMe.ReadOnly = true;
+            this.tbEmailMe.Size = new System.Drawing.Size(402, 27);
+            this.tbEmailMe.TabIndex = 34;
             // 
             // lbEmailMe
             // 
             this.lbEmailMe.AutoSize = true;
             this.lbEmailMe.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmailMe.Location = new System.Drawing.Point(455, 285);
+            this.lbEmailMe.Location = new System.Drawing.Point(455, 280);
             this.lbEmailMe.Name = "lbEmailMe";
             this.lbEmailMe.Size = new System.Drawing.Size(57, 15);
             this.lbEmailMe.TabIndex = 33;
@@ -416,7 +416,7 @@
             // tbSDTMe
             // 
             this.tbSDTMe.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSDTMe.Location = new System.Drawing.Point(458, 247);
+            this.tbSDTMe.Location = new System.Drawing.Point(458, 242);
             this.tbSDTMe.Name = "tbSDTMe";
             this.tbSDTMe.ReadOnly = true;
             this.tbSDTMe.Size = new System.Drawing.Size(402, 27);
@@ -426,7 +426,7 @@
             // 
             this.lbSDTMe.AutoSize = true;
             this.lbSDTMe.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSDTMe.Location = new System.Drawing.Point(455, 220);
+            this.lbSDTMe.Location = new System.Drawing.Point(455, 215);
             this.lbSDTMe.Name = "lbSDTMe";
             this.lbSDTMe.Size = new System.Drawing.Size(51, 15);
             this.lbSDTMe.TabIndex = 31;
@@ -473,7 +473,7 @@
             // tbNgheNghiepMe
             // 
             this.tbNgheNghiepMe.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNgheNghiepMe.Location = new System.Drawing.Point(45, 312);
+            this.tbNgheNghiepMe.Location = new System.Drawing.Point(45, 307);
             this.tbNgheNghiepMe.Name = "tbNgheNghiepMe";
             this.tbNgheNghiepMe.ReadOnly = true;
             this.tbNgheNghiepMe.Size = new System.Drawing.Size(397, 27);
@@ -483,26 +483,26 @@
             // 
             this.lbNgheNghiepMe.AutoSize = true;
             this.lbNgheNghiepMe.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNgheNghiepMe.Location = new System.Drawing.Point(42, 285);
+            this.lbNgheNghiepMe.Location = new System.Drawing.Point(42, 280);
             this.lbNgheNghiepMe.Name = "lbNgheNghiepMe";
             this.lbNgheNghiepMe.Size = new System.Drawing.Size(99, 15);
             this.lbNgheNghiepMe.TabIndex = 25;
             this.lbNgheNghiepMe.Text = "Nghề nghiệp Mẹ";
             // 
-            // textBox6
+            // tbHoTenMe
             // 
-            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(45, 247);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(397, 27);
-            this.textBox6.TabIndex = 24;
+            this.tbHoTenMe.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbHoTenMe.Location = new System.Drawing.Point(45, 242);
+            this.tbHoTenMe.Name = "tbHoTenMe";
+            this.tbHoTenMe.ReadOnly = true;
+            this.tbHoTenMe.Size = new System.Drawing.Size(397, 27);
+            this.tbHoTenMe.TabIndex = 24;
             // 
             // lbHoTenMe
             // 
             this.lbHoTenMe.AutoSize = true;
             this.lbHoTenMe.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHoTenMe.Location = new System.Drawing.Point(42, 220);
+            this.lbHoTenMe.Location = new System.Drawing.Point(42, 215);
             this.lbHoTenMe.Name = "lbHoTenMe";
             this.lbHoTenMe.Size = new System.Drawing.Size(82, 15);
             this.lbHoTenMe.TabIndex = 23;
@@ -550,7 +550,7 @@
             // 
             this.lbTitle2.AutoSize = true;
             this.lbTitle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle2.Location = new System.Drawing.Point(41, 18);
+            this.lbTitle2.Location = new System.Drawing.Point(38, 18);
             this.lbTitle2.Name = "lbTitle2";
             this.lbTitle2.Size = new System.Drawing.Size(151, 21);
             this.lbTitle2.TabIndex = 18;
@@ -576,7 +576,7 @@
             this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "UC_HocSinh_ThongTin";
             this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 20);
-            this.Size = new System.Drawing.Size(1353, 836);
+            this.Size = new System.Drawing.Size(1319, 836);
             this.pCaNhan.ResumeLayout(false);
             this.pCaNhan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -618,7 +618,7 @@
         private System.Windows.Forms.Label lbDiaChi;
         private System.Windows.Forms.Label lbTitle1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbEmailMe;
         private System.Windows.Forms.Label lbEmailMe;
         private System.Windows.Forms.TextBox tbSDTMe;
         private System.Windows.Forms.Label lbSDTMe;
@@ -628,7 +628,7 @@
         private System.Windows.Forms.Label lbSDTCha;
         private System.Windows.Forms.TextBox tbNgheNghiepMe;
         private System.Windows.Forms.Label lbNgheNghiepMe;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tbHoTenMe;
         private System.Windows.Forms.Label lbHoTenMe;
         private System.Windows.Forms.TextBox tbNgheNghiepCha;
         private System.Windows.Forms.Label lbNgheNghiepCha;

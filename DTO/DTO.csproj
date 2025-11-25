@@ -102,6 +102,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SemesterDTO.cs" />
+    <Compile Include="StudentProfileDTO.cs" />
     <Compile Include="subjectDTO.cs" />
     <Compile Include="SubjectScoreDTO.cs" />
     <Compile Include="TeacherAssignments.cs" />

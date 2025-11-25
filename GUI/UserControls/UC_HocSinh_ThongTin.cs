@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BUS;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -8,6 +10,11 @@ namespace GUI.UserControls
 {
     public partial class UC_HocSinh_ThongTin : UserControl
     {
+
+        private StudentBUS studentBUS = new StudentBUS();
+        private int loggedInUserId;
+
+
         // --- BẢNG MÀU ---
         private readonly Color clrBackground = Color.FromArgb(249, 250, 251);
         private readonly Color clrCard = Color.White;
@@ -33,11 +40,53 @@ namespace GUI.UserControls
         public UC_HocSinh_ThongTin(int userId)
         {
             InitializeComponent();
+            this.loggedInUserId = userId;
             SetupModernUI();
-            LoadStaticData(); // Load data mẫu
+            LoadRealData();
 
             // Tự động căn giữa khi resize form
             this.Resize += (s, e) => CenterAllPanels();
+        }
+
+        private void LoadRealData()
+        {
+            StudentProfileDTO profile = studentBUS.GetStudentProfile(loggedInUserId);
+
+            if (profile == null) return;
+
+            // --- Thông tin học sinh ---
+            tbMaHS.Text = profile.StudentCode;
+            tbHoTen.Text = profile.FullName;
+
+            // Xử lý DateOfBirth: Kiểm tra null trước khi hiển thị
+            tbNgaySinh.Text = profile.DateOfBirth.HasValue
+                              ? profile.DateOfBirth.Value.ToString("dd/MM/yyyy")
+                              : "";
+
+            tbGioiTinh.Text = profile.Gender;
+            tbLop.Text = profile.ClassName;
+            tbNienKhoa.Text = profile.SchoolYear;
+
+            // --- Thông tin GVCN ---
+            tbGVCN.Text = profile.TeacherName;       
+            tbSDTGVCN.Text = profile.TeacherPhone;   
+
+            // --- Thông tin Liên hệ ---
+            tbDiaChi.Text = profile.Address;
+            tbSDTHS.Text = profile.Phone;
+            tbEmail.Text = profile.Email;
+
+            // --- Thông tin Cha ---
+            tbHoTenCha.Text = profile.FatherName;
+            tbSDTCha.Text = profile.FatherPhone;
+            tbNgheNghiepCha.Text = profile.FatherJob;
+            tbEmailCha.Text = profile.FatherEmail;
+
+            // --- Thông tin Mẹ ---
+            if (tbHoTenMe != null) tbHoTenMe.Text = profile.MotherName;
+            tbNgheNghiepMe.Text = profile.MotherJob;
+            tbSDTMe.Text = profile.MotherPhone;
+            if (tbEmailMe != null) tbEmailMe.Text = profile.MotherEmail;
         }
 
         private void SetupModernUI()
@@ -146,32 +195,6 @@ namespace GUI.UserControls
                 }
                 else if (c is Panel) StyleAllLabels(c);
             }
-        }
-
-        private void LoadStaticData()
-        {
-            tbMaHS.Text = "HS20248899";
-            tbHoTen.Text = "Nguyễn Minh Khang";
-            tbNgaySinh.Text = "15/08/2008";
-            tbGioiTinh.Text = "Nam";
-            tbLop.Text = "11A3";
-            tbNienKhoa.Text = "2023 - 2026";
-            tbGVCN.Text = "Cô Phan Thị Hồng Hạnh";
-            tbSDTGVCN.Text = "0988.777.666";
-
-            tbDiaChi.Text = "Số 12, Đường Nguyễn Văn Cừ, Phường 5, Quận 5, TP.HCM";
-            tbSDTHS.Text = "0912.345.678";
-            tbEmail.Text = "minhkhang.nguyen@student.school.edu.vn";
-
-            tbHoTenCha.Text = "Nguyễn Văn Hùng";
-            tbSDTCha.Text = "0909.111.222";
-            tbNgheNghiepCha.Text = "Kỹ sư xây dựng";
-            tbEmailCha.Text = "hung.nguyenvan@gmail.com";
-
-            if (textBox6 != null) textBox6.Text = "Trần Thị Thu Thủy";
-            if (textBox1 != null) textBox1.Text = "thuthuy.tran@gmail.com";
-            tbSDTMe.Text = "0903.444.555";
-            tbNgheNghiepMe.Text = "Giáo viên trung học";
         }
 
         private void CenterAllPanels()
