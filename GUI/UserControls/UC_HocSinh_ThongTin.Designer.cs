@@ -119,9 +119,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Gray;
             this.pictureBox1.Location = new System.Drawing.Point(48, 80);
             this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Image = global::GUI.Properties.Resources.icons8_person_96;
             this.pictureBox1.Size = new System.Drawing.Size(188, 200);
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
