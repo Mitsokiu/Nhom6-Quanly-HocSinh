@@ -3,6 +3,7 @@ using DTO;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace GUI.UserControls
@@ -12,8 +13,10 @@ namespace GUI.UserControls
 
         private ScoreBUS scoreBUS = new ScoreBUS();
         private SemesterBUS semesterBUS = new SemesterBUS();
-        private int loggedInUserId; 
+        private int loggedInUserId;
 
+        private Label lbDiemTB;
+        private Label lbXepLoai;
 
         // Màu sắc giao diện
         private Color primaryBlue = Color.FromArgb(45, 108, 223);
@@ -74,15 +77,18 @@ namespace GUI.UserControls
 
             this.Controls.Add(tlpCards);
 
-            // Tạo Card và ném vào TableLayout
-            // Lưu ý: Margin để tạo khoảng hở ở giữa 2 card
-            Panel card1 = CreateSummaryCard("Điểm TB Học kỳ", "8.5", true);
-            card1.Margin = new Padding(0, 0, 10, 0); // Cách bên phải 10px
+            lbDiemTB = new Label();
+            lbXepLoai = new Label();
 
-            Panel card2 = CreateSummaryCard("Xếp loại Học kỳ", "Giỏi", false);
-            card2.Margin = new Padding(10, 0, 0, 0); // Cách bên trái 10px
+            // 2. Truyền biến vào hàm tạo Card
+            // Card 1: Gắn với lblGiaTriDiemTB
+            Panel card1 = CreateSummaryCard("Điểm TB Học kỳ", lbDiemTB, true);
+            card1.Margin = new Padding(0, 0, 10, 0);
 
-            // Thêm vào ô (0,0) và (1,0)
+            // Card 2: Gắn với lblGiaTriXepLoai
+            Panel card2 = CreateSummaryCard("Xếp loại Học kỳ", lbXepLoai, false);
+            card2.Margin = new Padding(10, 0, 0, 0);
+
             tlpCards.Controls.Add(card1, 0, 0);
             tlpCards.Controls.Add(card2, 1, 0);
 
@@ -128,9 +134,24 @@ namespace GUI.UserControls
         private void LoadSemesters()
         {
             List<SemesterDTO> list = semesterBUS.GetAllSemesters();
+
+            // Reset trước khi gán để tránh lỗi sự kiện chồng chéo
+            comboBox1.DataSource = null;
+
             comboBox1.DataSource = list;
             comboBox1.DisplayMember = "DisplayName";
             comboBox1.ValueMember = "SemesterId";
+
+            // --- ĐOẠN FIX LỖI ---
+            // Sau khi gán xong xuôi, nếu danh sách có dữ liệu -> Ta gọi hàm load luôn
+            if (list.Count > 0)
+            {
+                // Lấy ID của học kỳ đầu tiên trong danh sách
+                int firstSemesterId = list[0].SemesterId;
+
+                // Gọi hàm tải bảng điểm ngay lập tức
+                LoadScoresData(firstSemesterId);
+            }
         }
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -160,12 +181,11 @@ namespace GUI.UserControls
             if (dataGridView1.Columns["CuoiKi"] != null) dataGridView1.Columns["CuoiKi"].DataPropertyName = "FinalScore";
             if (dataGridView1.Columns["Tb"] != null) dataGridView1.Columns["Tb"].DataPropertyName = "AverageScore";
 
-            // Cập nhật số liệu lên Card
-           // UpdateSummaryCards(listDiem);
+            UpdateSummaryCards(listDiem);
         }
 
         // Hàm tạo Card (Đã bỏ tham số xPos, width vì TableLayout tự lo)
-        private Panel CreateSummaryCard(string title, string value, bool isStarIcon)
+        private Panel CreateSummaryCard(string title, Label lblValueToBind, bool isStarIcon)
         {
             Panel pnl = new Panel();
             pnl.Dock = DockStyle.Fill;
@@ -186,18 +206,46 @@ namespace GUI.UserControls
             lblTitle.Location = new Point(90, 25);
             lblTitle.AutoSize = true;
 
-            Label lblValue = new Label();
-            lblValue.Text = value;
-            lblValue.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            lblValue.ForeColor = textDark;
-            lblValue.Location = new Point(85, 50);
-            lblValue.AutoSize = true;
+            lblValueToBind.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            lblValueToBind.ForeColor = Color.FromArgb(30, 30, 30);
+            lblValueToBind.Location = new Point(100, 45);
+            lblValueToBind.AutoSize = true;
+            lblValueToBind.Text = "...";
 
             pnl.Controls.Add(lblIcon);
             pnl.Controls.Add(lblTitle);
-            pnl.Controls.Add(lblValue);
+            pnl.Controls.Add(lblValueToBind);
 
             return pnl;
+        }
+
+        private void UpdateSummaryCards(List<SubjectScoreDTO> list)
+        {
+            if (list == null || list.Count == 0)
+            {
+                lbDiemTB.Text = "...";
+                lbXepLoai.Text = "...";
+                return;
+            }
+
+            // 1. Tính toán (Logic cũ)
+            var validScores = list.Where(x => x.AverageScore.HasValue).Select(x => x.AverageScore.Value);
+            float dtb = validScores.Any() ? validScores.Average() : 0;
+
+            string xepLoai = "Yếu";
+            if (dtb >= 8.0) xepLoai = "Giỏi";
+            else if (dtb >= 6.5) xepLoai = "Khá";
+            else if (dtb >= 5.0) xepLoai = "Trung Bình";
+
+            // 2. CẬP NHẬT GIAO DIỆN (DỄ ỢT)
+            // Vì ta đã nắm đầu biến rồi, chỉ việc gán text
+            lbDiemTB.Text = dtb.ToString("0.0"); // Làm tròn 1 số lẻ
+            lbXepLoai.Text = xepLoai;
+
+            // Thậm chí đổi màu cực dễ
+            if (xepLoai == "Giỏi") lbXepLoai.ForeColor = Color.Green;
+            else if (xepLoai == "Yếu") lbXepLoai.ForeColor = Color.Red;
+            else lbXepLoai.ForeColor = Color.FromArgb(30, 30, 30);
         }
 
         private void StyleDataGridView(DataGridView dgv)
