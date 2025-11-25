@@ -101,7 +101,7 @@ namespace GUI.UserControls
             this.Tb.Name = "Tb";
             this.Tb.Width = 150;
             // 
-            // comboBox
+            // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
