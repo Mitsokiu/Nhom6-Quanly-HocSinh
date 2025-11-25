@@ -491,7 +491,9 @@
     <None Include="Resources\lophoc_24.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\calendar_20.png" />
     <Content Include="Resources\notification_24.png" />
+    <Content Include="Resources\sender_20.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
