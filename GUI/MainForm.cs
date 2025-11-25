@@ -41,6 +41,7 @@ namespace GUI
             sidebar.HocPhiClicked += Sidebar_HocPhiClicked;
             sidebar.HomeClicked += Sidebar_HomeClicked;
             sidebar.QlyNamHocClicked += Sidebar_QlyNamHocClicked;
+            sidebar.XemThongTinHocSinhClicked += Sidebar_XemThongTinHocSinhClicked;
         }
 
         // =====================
@@ -118,6 +119,14 @@ namespace GUI
             if (user != null)
             {
                 LoadContent(new UC_HocSinh_HocPhi(user.UserId));
+            }
+        }
+
+        private void Sidebar_XemThongTinHocSinhClicked(object sender, EventArgs e)
+        {
+            if (user != null)
+            {
+                LoadContent(new UC_HocSinh_ThongTin(user.UserId));
             }
         }
 

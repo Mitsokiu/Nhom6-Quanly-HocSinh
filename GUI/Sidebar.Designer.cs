@@ -34,7 +34,7 @@ namespace GUI
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnXemThongBao = new System.Windows.Forms.Button();
-
+            this.btnXemThongTinHocSinh = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
 
@@ -66,7 +66,7 @@ namespace GUI
             this.flowLayoutPanel1.Controls.Add(this.btnXemDiem);
             this.flowLayoutPanel1.Controls.Add(this.btnHocPhi);
             this.flowLayoutPanel1.Controls.Add(this.btnXemTKB);
-
+            this.flowLayoutPanel1.Controls.Add(this.btnXemThongTinHocSinh);
             // Thêm nút Thông báo vào danh sách (Vị trí này OK vì đã được new ở trên)
             this.flowLayoutPanel1.Controls.Add(this.btnXemThongBao);
 
@@ -205,6 +205,17 @@ namespace GUI
             this.btnNamhoc.Text = "Quản Lý Năm Học";
             this.btnNamhoc.Click += new System.EventHandler(this.btnNamhoc_Click);
             // 
+            // btnXemThongTinHocSinh
+            // 
+            this.btnXemThongTinHocSinh.Image = global::GUI.Properties.Resources.hocsinh_24; // Dùng tạm icon học sinh hoặc icon person
+            this.btnXemThongTinHocSinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXemThongTinHocSinh.Name = "btnXemThongTinHocSinh";
+            this.btnXemThongTinHocSinh.Size = new System.Drawing.Size(282, 50);
+            this.btnXemThongTinHocSinh.TabIndex = 12; // Số thứ tự tab
+            this.btnXemThongTinHocSinh.Text = "Thông tin cá nhân";
+            this.btnXemThongTinHocSinh.UseVisualStyleBackColor = true;
+            this.btnXemThongTinHocSinh.Click += new System.EventHandler(this.btnXemThongTinHocSinh_Click); // Gắn sự kiện click
+            // 
             // btnDangXuat
             // 
             this.btnDangXuat.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -260,5 +271,7 @@ namespace GUI
         private Button btnHome;
         private Button btnNamhoc;
         private Button btnXemThongBao;
+        private Button btnXemThongTinHocSinh;
+
     }
 }
