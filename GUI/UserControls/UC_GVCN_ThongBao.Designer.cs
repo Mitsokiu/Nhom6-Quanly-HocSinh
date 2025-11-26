@@ -12,7 +12,7 @@
 
         // Search
         private System.Windows.Forms.Panel pnlSearch;
-        private System.Windows.Forms.Panel pnlSearchInner; // Khung trắng bo góc
+        private System.Windows.Forms.Panel pnlSearchInner;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.PictureBox picSearchIcon;
 
@@ -40,8 +40,8 @@
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle headerStyle = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle rowStyle = new System.Windows.Forms.DataGridViewCellStyle();
 
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.btnCreate = new System.Windows.Forms.Button();
@@ -90,6 +90,7 @@
             this.pnlHeader.Controls.Add(this.lblSubTitle);
             this.pnlHeader.Controls.Add(this.lblTitle);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHeader.Height = 80;
             this.pnlHeader.Location = new System.Drawing.Point(30, 30);
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(1040, 80);
@@ -120,7 +121,7 @@
             this.lblSubTitle.Text = "Xem, tạo, sửa và xóa thông báo cho lớp của bạn.";
 
             // 
-            // btnCreate (ĐÃ CHỈNH LẠI VỊ TRÍ)
+            // btnCreate (ĐÃ SỬA: Nhỏ gọn hơn, Basic hơn)
             // 
             this.btnCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCreate.BackColor = System.Drawing.Color.FromArgb(13, 110, 253);
@@ -129,12 +130,11 @@
             this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnCreate.ForeColor = System.Drawing.Color.White;
-            // Đặt vị trí X = Width - ButtonWidth (khoảng 860), Y = 10
-            this.btnCreate.Location = new System.Drawing.Point(860, 10);
+            this.btnCreate.Location = new System.Drawing.Point(900, 10); // Căn phải
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(180, 45);
+            this.btnCreate.Size = new System.Drawing.Size(140, 40); // Size chuẩn
             this.btnCreate.TabIndex = 2;
-            this.btnCreate.Text = "+ Tạo thông báo mới";
+            this.btnCreate.Text = "+ Thêm mới"; // Text ngắn gọn
             this.btnCreate.UseVisualStyleBackColor = false;
 
             // 
@@ -150,22 +150,23 @@
             this.pnlSearch.TabIndex = 1;
 
             // 
-            // pnlSearchInner (ĐÃ THU NGẮN LẠI)
+            // pnlSearchInner
             // 
             this.pnlSearchInner.BackColor = System.Drawing.Color.White;
             this.pnlSearchInner.Controls.Add(this.txtSearch);
             this.pnlSearchInner.Controls.Add(this.picSearchIcon);
             this.pnlSearchInner.Location = new System.Drawing.Point(0, 10);
             this.pnlSearchInner.Name = "pnlSearchInner";
-            this.pnlSearchInner.Size = new System.Drawing.Size(400, 40); // Fix cứng width = 400px
+            this.pnlSearchInner.Size = new System.Drawing.Size(400, 40);
             this.pnlSearchInner.TabIndex = 0;
+
             // 
             // txtSearch
             // 
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtSearch.ForeColor = System.Drawing.Color.Gray;
-            this.txtSearch.Location = new System.Drawing.Point(45, 9); // Căn giữa theo chiều dọc
+            this.txtSearch.Location = new System.Drawing.Point(45, 9);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(340, 25);
             this.txtSearch.TabIndex = 0;
@@ -180,8 +181,6 @@
             this.picSearchIcon.Size = new System.Drawing.Size(20, 20);
             this.picSearchIcon.TabIndex = 1;
             this.picSearchIcon.TabStop = false;
-            // Bạn nhớ gán ảnh vào đây nếu có: 
-            // this.picSearchIcon.Image = global::GUI.Properties.Resources.search_icon;
 
             // 
             // pnlContent
@@ -205,25 +204,23 @@
             this.dgvThongBao.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvThongBao.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
 
-            // Style Header
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(160, 174, 192);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(160, 174, 192);
-            this.dgvThongBao.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            headerStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            headerStyle.BackColor = System.Drawing.Color.White;
+            headerStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            headerStyle.ForeColor = System.Drawing.Color.FromArgb(160, 174, 192);
+            headerStyle.SelectionBackColor = System.Drawing.Color.White;
+            headerStyle.SelectionForeColor = System.Drawing.Color.FromArgb(160, 174, 192);
+            this.dgvThongBao.ColumnHeadersDefaultCellStyle = headerStyle;
             this.dgvThongBao.ColumnHeadersHeight = 40;
 
-            // Style Row
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(33, 37, 41);
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(243, 244, 246);
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(33, 37, 41);
-            this.dgvThongBao.DefaultCellStyle = dataGridViewCellStyle2;
+            rowStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            rowStyle.BackColor = System.Drawing.Color.White;
+            rowStyle.Font = new System.Drawing.Font("Segoe UI", 10F);
+            rowStyle.ForeColor = System.Drawing.Color.FromArgb(33, 37, 41);
+            rowStyle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            rowStyle.SelectionBackColor = System.Drawing.Color.FromArgb(243, 244, 246);
+            rowStyle.SelectionForeColor = System.Drawing.Color.FromArgb(33, 37, 41);
+            this.dgvThongBao.DefaultCellStyle = rowStyle;
 
             this.dgvThongBao.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvThongBao.EnableHeadersVisualStyles = false;
@@ -235,7 +232,7 @@
             this.dgvThongBao.TabIndex = 0;
 
             // 
-            // pnlPagination
+            // pnlPagination (Container chứa các nút)
             // 
             this.pnlPagination.Controls.Add(this.btnNext);
             this.pnlPagination.Controls.Add(this.btnPageLast);
@@ -250,30 +247,38 @@
             this.pnlPagination.Size = new System.Drawing.Size(1040, 60);
             this.pnlPagination.TabIndex = 1;
 
-            // Init buttons (Vị trí sẽ được chỉnh lại bằng code C#)
-            this.btnNext.Location = new System.Drawing.Point(0, 0);
+            // 
+            // Cấu hình chung cho các nút (Vị trí sẽ được code C# tính toán)
+            // 
             this.btnNext.Size = new System.Drawing.Size(35, 35);
-            this.btnNext.TabIndex = 0;
-            this.btnPageLast.Location = new System.Drawing.Point(0, 0);
+            this.btnNext.Text = ">";
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.FlatAppearance.BorderSize = 0;
+
+            this.btnPrev.Size = new System.Drawing.Size(35, 35);
+            this.btnPrev.Text = "<";
+            this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrev.FlatAppearance.BorderSize = 0;
+
             this.btnPageLast.Size = new System.Drawing.Size(35, 35);
-            this.btnPageLast.TabIndex = 1;
+            this.btnPageLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPageLast.FlatAppearance.BorderSize = 0;
+
+            this.btnPage3.Size = new System.Drawing.Size(35, 35);
+            this.btnPage3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPage3.FlatAppearance.BorderSize = 0;
+
+            this.btnPage2.Size = new System.Drawing.Size(35, 35);
+            this.btnPage2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPage2.FlatAppearance.BorderSize = 0;
+
+            this.btnPage1.Size = new System.Drawing.Size(35, 35);
+            this.btnPage1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPage1.FlatAppearance.BorderSize = 0;
+
             this.lblDots.AutoSize = true;
             this.lblDots.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lblDots.Location = new System.Drawing.Point(0, 0);
-            this.lblDots.TabIndex = 2;
             this.lblDots.Text = "...";
-            this.btnPage3.Location = new System.Drawing.Point(0, 0);
-            this.btnPage3.Size = new System.Drawing.Size(35, 35);
-            this.btnPage3.TabIndex = 3;
-            this.btnPage2.Location = new System.Drawing.Point(0, 0);
-            this.btnPage2.Size = new System.Drawing.Size(35, 35);
-            this.btnPage2.TabIndex = 4;
-            this.btnPage1.Location = new System.Drawing.Point(0, 0);
-            this.btnPage1.Size = new System.Drawing.Size(35, 35);
-            this.btnPage1.TabIndex = 5;
-            this.btnPrev.Location = new System.Drawing.Point(0, 0);
-            this.btnPrev.Size = new System.Drawing.Size(35, 35);
-            this.btnPrev.TabIndex = 6;
 
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();

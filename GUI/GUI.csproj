@@ -121,6 +121,12 @@
     <Compile Include="Sidebar.Designer.cs">
       <DependentUpon>Sidebar.cs</DependentUpon>
     </Compile>
+    <Compile Include="SuaThongBao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuaThongBao.Designer.cs">
+      <DependentUpon>SuaThongBao.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThemThongBao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -498,6 +504,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\calendar_20.png" />
+    <Content Include="Resources\delete-20.png" />
+    <Content Include="Resources\edit-20.png" />
     <Content Include="Resources\notification_24.png" />
     <Content Include="Resources\sender_20.png" />
   </ItemGroup>

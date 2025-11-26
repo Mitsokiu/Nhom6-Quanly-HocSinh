@@ -1,4 +1,5 @@
 ﻿using BUS;
+using DTO;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -8,49 +9,19 @@ namespace GUI
 {
     public partial class ThemThongBao : Form
     {
-        private Color clrBorder = Color.FromArgb(222, 226, 230);
-        private Color clrText = Color.FromArgb(33, 37, 41);
-        private Color clrPlaceholder = Color.FromArgb(108, 117, 125);
-
-        private int _currentUserId;
         private NotificationBUS _bus = new NotificationBUS();
+        private int _userId;
+        private Color clrBorder = Color.FromArgb(222, 226, 230); // Màu viền
 
         public ThemThongBao(int userId)
         {
             InitializeComponent();
-            this._currentUserId = userId;
+            this._userId = userId;
             this.Load += ThemThongBao_Load;
         }
 
+        // Constructor mặc định
         public ThemThongBao() : this(0) { }
-
-        private void btnSubmit_Click(object sender, EventArgs e)
-        {
-            string title = txtTitle.Text.Trim();
-            string content = rtbContent.Text.Trim();
-
-            // LOGIC MỚI: Mặc định gửi cho học sinh (student)
-            string target = "student";
-
-            string errorMsg;
-            bool isSuccess = _bus.CreateNotification(_currentUserId, target, title, content, out errorMsg);
-
-            if (isSuccess)
-            {
-                MessageBox.Show("Đăng thông báo thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show(errorMsg, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void ThemThongBao_Load(object sender, EventArgs e)
         {
@@ -59,18 +30,32 @@ namespace GUI
             SetRoundedRegion(pnlEditor, 8);
         }
 
-        private void SetRoundedRegion(Control c, int radius)
+        private void btnSubmit_Click(object sender, EventArgs e)
         {
-            Rectangle bounds = new Rectangle(0, 0, c.Width, c.Height);
-            GraphicsPath path = new GraphicsPath();
-            int d = radius * 2;
-            path.AddArc(0, 0, d, d, 180, 90);
-            path.AddArc(bounds.Width - d, 0, d, d, 270, 90);
-            path.AddArc(bounds.Width - d, bounds.Height - d, d, d, 0, 90);
-            path.AddArc(0, bounds.Height - d, d, d, 90, 90);
-            c.Region = new Region(path);
+            string title = txtTitle.Text;
+            string msg = rtbContent.Text;
+            string error;
+
+            if (_bus.CreateNotification(_userId, title, msg, out error))
+            {
+                MessageBox.Show("Đã đăng thông báo mới thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show(error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        // --- CÁC HÀM UI HELPERS (Đã bổ sung đầy đủ) ---
+
+        // 1. Hàm vẽ viền (FIX LỖI CỦA BẠN Ở ĐÂY)
         private void Control_Paint_Border(object sender, PaintEventArgs e)
         {
             Panel pnl = sender as Panel;
@@ -79,46 +64,35 @@ namespace GUI
                 e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
                 using (Pen pen = new Pen(clrBorder, 1))
                 {
-                    Rectangle rect = new Rectangle(0, 0, pnl.Width - 1, pnl.Height - 1);
-                    e.Graphics.DrawRectangle(pen, rect);
+                    e.Graphics.DrawRectangle(pen, 0, 0, pnl.Width - 1, pnl.Height - 1);
                 }
             }
         }
 
+        // 2. Hàm bo tròn
+        private void SetRoundedRegion(Control c, int r)
+        {
+            Rectangle bounds = new Rectangle(0, 0, c.Width, c.Height);
+            using (GraphicsPath path = new GraphicsPath())
+            {
+                int d = r * 2;
+                path.AddArc(0, 0, d, d, 180, 90);
+                path.AddArc(bounds.Width - d, 0, d, d, 270, 90);
+                path.AddArc(bounds.Width - d, bounds.Height - d, d, d, 0, 90);
+                path.AddArc(0, bounds.Height - d, d, d, 90, 90);
+                c.Region = new Region(path);
+            }
+        }
+
+        // 3. Placeholder Tiêu đề
         private void txtTitle_Enter(object sender, EventArgs e)
         {
-            if (txtTitle.Text == "Nhập tiêu đề...")
-            {
-                txtTitle.Text = "";
-                txtTitle.ForeColor = clrText;
-            }
+            if (txtTitle.Text == "Nhập tiêu đề...") { txtTitle.Text = ""; txtTitle.ForeColor = Color.Black; }
         }
 
         private void txtTitle_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtTitle.Text))
-            {
-                txtTitle.Text = "Nhập tiêu đề...";
-                txtTitle.ForeColor = clrPlaceholder;
-            }
-        }
-
-        // --- Logic Editor (Giữ nguyên) ---
-        private void btnBold_Click(object sender, EventArgs e) => SetFontStyle(FontStyle.Bold);
-        private void btnItalic_Click(object sender, EventArgs e) => SetFontStyle(FontStyle.Italic);
-        private void btnUnderline_Click(object sender, EventArgs e) => SetFontStyle(FontStyle.Underline);
-
-        private void SetFontStyle(FontStyle style)
-        {
-            if (rtbContent.SelectionFont != null)
-            {
-                Font currentFont = rtbContent.SelectionFont;
-                FontStyle newStyle = rtbContent.SelectionFont.Style.HasFlag(style)
-                    ? currentFont.Style & ~style
-                    : currentFont.Style | style;
-
-                rtbContent.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, newStyle);
-            }
+            if (string.IsNullOrWhiteSpace(txtTitle.Text)) { txtTitle.Text = "Nhập tiêu đề..."; txtTitle.ForeColor = Color.Gray; }
         }
     }
 }
