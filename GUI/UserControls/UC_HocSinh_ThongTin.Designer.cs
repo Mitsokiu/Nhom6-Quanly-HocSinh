@@ -576,7 +576,7 @@
             this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "UC_HocSinh_ThongTin";
             this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 20);
-            this.Size = new System.Drawing.Size(1319, 836);
+            this.Size = new System.Drawing.Size(1302, 836);
             this.pCaNhan.ResumeLayout(false);
             this.pCaNhan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -16,7 +16,7 @@ namespace GUI.UserControls
 
 
         // --- BẢNG MÀU ---
-        private readonly Color clrBackground = Color.FromArgb(249, 250, 251);
+        private readonly Color clrBackground = Color.FromArgb(245, 247, 250);
         private readonly Color clrCard = Color.White;
         private readonly Color clrTextMain = Color.FromArgb(17, 24, 39);      // Màu chữ nội dung (Đậm)
 
@@ -250,5 +250,6 @@ namespace GUI.UserControls
             lb.ForeColor = clrTextMain;
             lb.Font = fontTitle;
         }
+
     }
 }
