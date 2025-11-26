@@ -35,6 +35,8 @@ namespace GUI
             this.btnHome = new System.Windows.Forms.Button();
             this.btnXemThongBao = new System.Windows.Forms.Button();
 
+            this.btnQuanLyThongBao = new System.Windows.Forms.Button();
+
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
 
@@ -75,6 +77,9 @@ namespace GUI
             this.flowLayoutPanel1.Controls.Add(this.btnTinhHinh);
             this.flowLayoutPanel1.Controls.Add(this.btnQlyLop);
             this.flowLayoutPanel1.Controls.Add(this.btnNamhoc);
+
+            this.flowLayoutPanel1.Controls.Add(this.btnQuanLyThongBao);
+
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 188);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -204,6 +209,20 @@ namespace GUI
             this.btnNamhoc.TabIndex = 10;
             this.btnNamhoc.Text = "Quản Lý Năm Học";
             this.btnNamhoc.Click += new System.EventHandler(this.btnNamhoc_Click);
+
+            // btnQuanLyThongBao
+            this.btnQuanLyThongBao.Image = global::GUI.Properties.Resources.tinnhan_24; // Dùng tạm icon tin nhắn hoặc icon khác
+            this.btnQuanLyThongBao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuanLyThongBao.Name = "btnQuanLyThongBao";
+            this.btnQuanLyThongBao.Size = new System.Drawing.Size(282, 50);
+            this.btnQuanLyThongBao.TabIndex = 12;
+            this.btnQuanLyThongBao.Text = "Quản lý Thông báo";
+            this.btnQuanLyThongBao.UseVisualStyleBackColor = true;
+            this.btnQuanLyThongBao.Click += new System.EventHandler(this.btnQuanLyThongBao_Click);
+
+
+
+
             // 
             // btnDangXuat
             // 
@@ -260,5 +279,6 @@ namespace GUI
         private Button btnHome;
         private Button btnNamhoc;
         private Button btnXemThongBao;
+        private Button btnQuanLyThongBao;
     }
 }

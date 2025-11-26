@@ -305,7 +305,6 @@ D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_GVCN_DS.resources
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_GVCN_HocPhi.resources
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_GVCN_NS.resources
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_GVCN_QLHS.resources
-D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_GVCN_Tbao.resources
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_HocSinh_Diem.resources
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_HocSinh_TKB.resources
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_Home.resources
@@ -318,3 +317,5 @@ D:\GitHub\QLHS\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.csproj.Up2Date
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.exe
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.pdb
+D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_GVCN_ThongBao.resources
+D:\GitHub\QLHS\GUI\obj\Debug\GUI.exe.config

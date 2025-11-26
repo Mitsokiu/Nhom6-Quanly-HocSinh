@@ -121,6 +121,12 @@
     <Compile Include="Sidebar.Designer.cs">
       <DependentUpon>Sidebar.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThemThongBao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemThongBao.Designer.cs">
+      <DependentUpon>ThemThongBao.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UC_Admin_PhanCong_gvcn.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -229,11 +235,11 @@
     <Compile Include="UserControls\UC_GVCN_QLHS.Designer.cs">
       <DependentUpon>UC_GVCN_QLHS.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_GVCN_Tbao.cs">
+    <Compile Include="UserControls\UC_GVCN_ThongBao.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_GVCN_Tbao.Designer.cs">
-      <DependentUpon>UC_GVCN_Tbao.cs</DependentUpon>
+    <Compile Include="UserControls\UC_GVCN_ThongBao.Designer.cs">
+      <DependentUpon>UC_GVCN_ThongBao.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UC_HocSinh_ChiTietThongBao.cs">
       <SubType>UserControl</SubType>
@@ -372,8 +378,8 @@
     <EmbeddedResource Include="UserControls\UC_GVCN_QLHS.resx">
       <DependentUpon>UC_GVCN_QLHS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_GVCN_Tbao.resx">
-      <DependentUpon>UC_GVCN_Tbao.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UC_GVCN_ThongBao.resx">
+      <DependentUpon>UC_GVCN_ThongBao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_HocSinh_Diem.resx">
       <DependentUpon>UC_HocSinh_Diem.cs</DependentUpon>

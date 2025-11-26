@@ -41,6 +41,8 @@ namespace GUI
             sidebar.HocPhiClicked += Sidebar_HocPhiClicked;
             sidebar.HomeClicked += Sidebar_HomeClicked;
             sidebar.QlyNamHocClicked += Sidebar_QlyNamHocClicked;
+
+            sidebar.QuanLyThongBaoClicked += Sidebar_QuanLyThongBaoClicked;
         }
 
         // =====================
@@ -120,6 +122,15 @@ namespace GUI
                 LoadContent(new UC_HocSinh_HocPhi(user.UserId));
             }
         }
+
+        private void Sidebar_QuanLyThongBaoClicked(object sender, EventArgs e)
+        {
+            if (user != null)
+            {
+                LoadContent(new UC_GVCN_ThongBao(user.UserId));
+            }
+        }
+
 
         private void OpenNotificationList()
         {
