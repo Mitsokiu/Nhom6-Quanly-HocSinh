@@ -247,6 +247,12 @@
     <Compile Include="UserControls\UC_HocSinh_Diem.Designer.cs">
       <DependentUpon>UC_HocSinh_Diem.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UC_HocSinh_DoiMatKhau.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_HocSinh_DoiMatKhau.Designer.cs">
+      <DependentUpon>UC_HocSinh_DoiMatKhau.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UC_HocSinh_HocPhi.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -383,6 +389,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_HocSinh_Diem.resx">
       <DependentUpon>UC_HocSinh_Diem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_HocSinh_DoiMatKhau.resx">
+      <DependentUpon>UC_HocSinh_DoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_HocSinh_ThongTin.resx">
       <DependentUpon>UC_HocSinh_ThongTin.cs</DependentUpon>

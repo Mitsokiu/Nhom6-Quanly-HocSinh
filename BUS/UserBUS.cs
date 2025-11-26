@@ -50,6 +50,21 @@ namespace BUS
             return UserDAO.GetAllTeachers();
         }
 
+        public string ChangePassword(int userId, string oldPass, string newPass)
+        {
+            if (!dao.CheckPasswordById(userId, oldPass))
+            {
+                return "Mật khẩu cũ không chính xác!";
+            }
+            if (dao.UpdatePassword(userId, newPass))
+            {
+                return "Success";
+            }
+            else
+            {
+                return "Đã xảy ra lỗi hệ thống, vui lòng thử lại sau.";
+            }
+        }
 
 
     }

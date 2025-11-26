@@ -24,7 +24,7 @@ namespace GUI
         public event EventHandler QlyNamHocClicked;
         public event EventHandler XemThongBaoClicked;
         public event EventHandler XemThongTinHocSinhClicked;
-
+        public event EventHandler DoiMatKhauHSClicked;
         private UserDTO currentUser;
 
         public Sidebar()
@@ -74,7 +74,7 @@ namespace GUI
                 
                   
                 case "student":
-                    ShowButtons(btnXemThongTinHocSinh, btnXemDiem, btnXemTKB, btnHome, btnHocPhi, btnTinhHinh, btnXemThongBao  );
+                    ShowButtons(btnXemThongTinHocSinh, btnDoiMatKhauHS, btnXemDiem, btnXemTKB, btnHome, btnHocPhi, btnTinhHinh, btnXemThongBao  );
                     break;
                 default:
                     ShowButtons(btnHome);
@@ -106,6 +106,8 @@ namespace GUI
         private void btnNamhoc_Click(object sender, EventArgs e) => QlyNamHocClicked?.Invoke(this, EventArgs.Empty);
 
         private void btnXemThongTinHocSinh_Click(object sender, EventArgs e) => XemThongTinHocSinhClicked?.Invoke(this, EventArgs.Empty);
+        private void btnDoiMatKhauHS_Click(object sender, EventArgs e) => DoiMatKhauHSClicked?.Invoke(this, EventArgs.Empty);
+        
 
         // ============================
         // XỬ LÝ ĐĂNG XUẤT

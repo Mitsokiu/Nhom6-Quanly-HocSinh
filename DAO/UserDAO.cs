@@ -283,5 +283,41 @@ namespace DAO
             return list;
         }
 
+        public bool CheckPasswordById(int userId, string oldPassword)
+        {
+            using (var conn = DbConnect.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT password FROM users WHERE user_id = @userId";
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@userId", userId);
+                    var result = cmd.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        string currentPass = result.ToString();
+                        return currentPass == oldPassword;
+                    }
+                    return false;
+                }
+            }
+        }
+
+        public bool UpdatePassword(int userId, string newPassword)
+        {
+            using (var conn = DbConnect.GetConnection())
+            {
+                conn.Open();
+                string query = "UPDATE users SET password = @password WHERE user_id = @userId";
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@password", newPassword);
+                    cmd.Parameters.AddWithValue("@userId", userId);
+
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+        }
     }
 }
