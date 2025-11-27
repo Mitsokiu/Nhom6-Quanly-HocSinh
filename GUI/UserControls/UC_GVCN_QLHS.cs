@@ -1,6 +1,6 @@
-﻿// File: GUI/UserControls/UC_GVCN_QLHS.cs
-using BUS;
+﻿using BUS;
 using DTO;
+using GUI; // Để gọi form ThemHocSinh
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -24,16 +24,22 @@ namespace GUI.UserControls
         private int _totalPages = 1;
         private const string PLACEHOLDER_TEXT = "Tìm kiếm học sinh...";
 
+        // Màu icon (nếu muốn vẽ đè, nhưng ở đây dùng ảnh gốc)
+
         public UC_GVCN_QLHS(int teacherUserId)
         {
             _teacherUserId = teacherUserId;
             InitializeComponent();
             SetupDataGridView();
 
-            this.Load += (s, e) => LoadDataFromDB();
+            this.Load += (s, e) => {
+                LoadDataFromDB();
+                // Bo tròn thanh tìm kiếm khi load xong
+                SetRoundedRegion(pnlSearchBox, 20);
+            };
             this.Resize += (s, e) => CenterPagination();
 
-            // Search box
+            // Search Box Logic
             txtSearch.Text = PLACEHOLDER_TEXT;
             txtSearch.ForeColor = Color.Gray;
             txtSearch.Enter += (s, e) => { if (txtSearch.Text == PLACEHOLDER_TEXT) { txtSearch.Text = ""; txtSearch.ForeColor = Color.Black; } };
@@ -41,12 +47,14 @@ namespace GUI.UserControls
             txtSearch.TextChanged += TxtSearch_TextChanged;
 
             btnAddStudent.Click += BtnAddStudent_Click;
+
+            // Vẽ icon & Click
             dgvStudents.CellPainting += DgvStudents_CellPainting;
             dgvStudents.CellContentClick += DgvStudents_CellContentClick;
 
-            // Load icon tìm kiếm (Nếu chưa set trong designer)
-            picSearchIcon.Image = Properties.Resources.timkiem_24;
-            picSearchIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            // Load icon search từ resource
+            if (Properties.Resources.search_32 != null)
+                picSearchIcon.Image = Properties.Resources.search_32;
 
             InitPaginationEvents();
             ShowHomeroomClassName();
@@ -58,71 +66,48 @@ namespace GUI.UserControls
             if (dt != null && dt.Rows.Count > 0)
             {
                 string className = dt.Rows[0]["class_name"].ToString();
-                lblTitle.Text = $"Lớp chủ nhiệm: {className}";
-                lblSubTitle.Text = "Quản lý học sinh trong lớp bạn đang chủ nhiệm";
+                lblTitle.Text = $"Quản lý Học sinh - Lớp {className}";
             }
             else
             {
-                lblTitle.Text = "Chưa được phân công lớp chủ nhiệm";
-                lblSubTitle.Text = "Vui lòng liên hệ quản trị viên để được phân công lớp.";
+                lblTitle.Text = "Chưa được phân công chủ nhiệm";
+                lblSubTitle.Text = "Vui lòng liên hệ Admin.";
+                btnAddStudent.Enabled = false;
             }
         }
 
         private void LoadDataFromDB()
         {
             int classId = _teacherBus.GetCurrentHomeroomClassId(_teacherUserId);
-
-            if (classId <= 0)
-            {
-                _fullList = new List<StudentDTO>();
-                _studentList = new List<StudentDTO>();
-                MessageBox.Show("Bạn chưa được phân công chủ nhiệm lớp nào trong năm học này!",
-                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
+            if (classId > 0)
             {
                 var all = _studentBus.GetAllStudents();
                 _fullList = all.Where(s => s.ClassID == classId).ToList();
                 _studentList = new List<StudentDTO>(_fullList);
             }
-
             _currentPage = 1;
             UpdatePagination();
         }
 
         private void TxtSearch_TextChanged(object sender, EventArgs e)
         {
-            string keyword = txtSearch.Text.Trim();
-
-            if (string.IsNullOrWhiteSpace(keyword) || keyword == PLACEHOLDER_TEXT)
+            string kw = txtSearch.Text.Trim();
+            if (kw == PLACEHOLDER_TEXT || string.IsNullOrWhiteSpace(kw))
             {
                 _studentList = new List<StudentDTO>(_fullList);
             }
             else
             {
-                string lower = keyword.ToLower();
+                string lower = kw.ToLower();
                 _studentList = _fullList.Where(s =>
-                    (s.FullName?.ToLower().Contains(lower) == true) ||
-                    (s.StudentCode?.ToLower().Contains(lower) == true)
+                    s.FullName.ToLower().Contains(lower) || s.StudentCode.ToLower().Contains(lower)
                 ).ToList();
             }
-
             _currentPage = 1;
             UpdatePagination();
         }
 
-        private void BtnAddStudent_Click(object sender, EventArgs e)
-        {
-            using (var frm = new ThemHocSinh(_teacherUserId))
-            {
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
-                    LoadDataFromDB();
-                }
-            }
-        }
-
-        // --- SỬ DỤNG ICON TỪ RESOURCE ---
+        // --- VẼ ICON ---
         private void DgvStudents_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex == dgvStudents.Columns["Action"].Index)
@@ -130,89 +115,85 @@ namespace GUI.UserControls
                 e.Handled = true;
                 e.PaintBackground(e.CellBounds, true);
 
-                int iconSize = 20; // Kích thước icon
-                int gap = 15;      // Khoảng cách giữa các icon
+                // Config kích thước vẽ (nhỏ hơn 40px chút để đẹp)
+                int iconW = 24;
+                int iconH = 24;
+                int gap = 15; // Khoảng cách
 
-                // Tính toán vị trí X bắt đầu để căn giữa bộ 3 icon
-                int totalWidth = (iconSize * 3) + (gap * 2);
-                int startX = e.CellBounds.X + (e.CellBounds.Width - totalWidth) / 2;
-                int startY = e.CellBounds.Y + (e.CellBounds.Height - iconSize) / 2;
+                // Tính toán vị trí X để căn giữa 3 icon
+                int totalW = (iconW * 3) + (gap * 2);
+                int startX = e.CellBounds.X + (e.CellBounds.Width - totalW) / 2;
+                int startY = e.CellBounds.Y + (e.CellBounds.Height - iconH) / 2;
 
-                // 1. Icon View
-                if (Properties.Resources.view_20 != null)
-                    e.Graphics.DrawImage(Properties.Resources.view_20, startX, startY, iconSize, iconSize);
+                // Vẽ 3 icon từ Resource
+                if (Properties.Resources.view_40 != null)
+                    e.Graphics.DrawImage(Properties.Resources.view_40, startX, startY, iconW, iconH);
 
-                // 2. Icon Edit
-                if (Properties.Resources.edit_25 != null)
-                    e.Graphics.DrawImage(Properties.Resources.edit_25, startX + iconSize + gap, startY, iconSize, iconSize);
+                if (Properties.Resources.edit_40 != null)
+                    e.Graphics.DrawImage(Properties.Resources.edit_40, startX + iconW + gap, startY, iconW, iconH);
 
-                // 3. Icon Delete
-                if (Properties.Resources.delete_20 != null)
-                    e.Graphics.DrawImage(Properties.Resources.delete_20, startX + (iconSize + gap) * 2, startY, iconSize, iconSize);
+                if (Properties.Resources.delete_40 != null)
+                    e.Graphics.DrawImage(Properties.Resources.delete_40, startX + (iconW + gap) * 2, startY, iconW, iconH);
             }
         }
 
+        // --- XỬ LÝ CLICK ---
         private void DgvStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0 || e.ColumnIndex != dgvStudents.Columns["Action"].Index) return;
 
+            // Lấy ID học sinh từ Tag (đã lưu lúc bind data)
             int studentId = (int)dgvStudents.Rows[e.RowIndex].Tag;
-            string studentName = dgvStudents.Rows[e.RowIndex].Cells["HoTen"].Value.ToString();
+            // Tìm object DTO tương ứng trong list
+            var student = _studentList.FirstOrDefault(s => s.StudentID == studentId);
+            if (student == null) return;
 
-            // Tính toán lại vị trí click để biết người dùng bấm vào icon nào
+            // Tính toán lại vị trí click
             var cellRect = dgvStudents.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
             int mouseX = dgvStudents.PointToClient(Cursor.Position).X - cellRect.Left;
 
-            int iconSize = 20;
+            int iconW = 24;
             int gap = 15;
-            int totalWidth = iconSize * 3 + gap * 2;
-            int startX = (cellRect.Width - totalWidth) / 2;
+            int totalW = iconW * 3 + gap * 2;
+            int startX = (cellRect.Width - totalW) / 2;
 
-            // Kiểm tra tọa độ click
-            if (mouseX >= startX && mouseX < startX + iconSize) // VIEW
+            // Kiểm tra click vào icon nào
+            if (mouseX >= startX && mouseX < startX + iconW) // VIEW
             {
-                MessageBox.Show($"Xem chi tiết học sinh:\n{studentName}", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Mở form Xem Chi Tiết (dùng chung ThemHocSinh nhưng khóa textbox)
+                // ThemHocSinh frm = new ThemHocSinh(_teacherUserId, student, true); // true = ViewMode
+                // frm.ShowDialog();
+                MessageBox.Show($"Xem chi tiết: {student.FullName}", "Info");
             }
-            else if (mouseX >= startX + iconSize + gap && mouseX < startX + (iconSize + gap) * 2) // EDIT
+            else if (mouseX >= startX + iconW + gap && mouseX < startX + (iconW + gap) * 2) // EDIT
             {
-                // Gọi form sửa (truyền ID hoặc DTO)
-                MessageBox.Show($"Sửa học sinh: {studentName}", "Sửa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Mở form Sửa
+                // ThemHocSinh frm = new ThemHocSinh(_teacherUserId, student, false); // false = EditMode
+                // if (frm.ShowDialog() == DialogResult.OK) LoadDataFromDB();
+                MessageBox.Show($"Sửa: {student.FullName}", "Info");
             }
-            else if (mouseX >= startX + (iconSize + gap) * 2) // DELETE
+            else if (mouseX >= startX + (iconW + gap) * 2) // DELETE
             {
-                if (MessageBox.Show($"Bạn có chắc chắn muốn xóa học sinh:\n{studentName}?",
-                    "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (MessageBox.Show($"Bạn chắc chắn muốn xóa học sinh {student.FullName}?", "Xác nhận",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     if (_studentBus.DeleteStudent(studentId))
                     {
-                        MessageBox.Show("Xóa học sinh thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Xóa thành công!", "Thông báo");
                         LoadDataFromDB();
                     }
-                    else
-                    {
-                        MessageBox.Show("Xóa thất bại! Học sinh có thể đang được sử dụng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    else MessageBox.Show("Xóa thất bại!", "Lỗi");
                 }
             }
         }
 
-        // ... (Giữ nguyên các hàm Pagination, SetupDataGridView như cũ) ...
-        private void UpdatePagination()
+        // --- CÁC HÀM KHÁC ---
+        private void BtnAddStudent_Click(object sender, EventArgs e)
         {
-            _totalPages = (int)Math.Ceiling((double)_studentList.Count / _pageSize);
-            if (_totalPages == 0) _totalPages = 1;
-            if (_currentPage > _totalPages) _currentPage = _totalPages;
-
-            dgvStudents.Rows.Clear();
-
-            var pageData = _studentList.Skip((_currentPage - 1) * _pageSize).Take(_pageSize).ToList();
-            foreach (var s in pageData)
+            using (var frm = new ThemHocSinh(_teacherUserId))
             {
-                int idx = dgvStudents.Rows.Add(s.StudentCode, s.FullName, s.DobDisplay, s.GenderDisplay, s.Address);
-                dgvStudents.Rows[idx].Tag = s.StudentID;
+                if (frm.ShowDialog() == DialogResult.OK) LoadDataFromDB();
             }
-
-            RenderPaginationButtons();
         }
 
         private void SetupDataGridView()
@@ -223,7 +204,7 @@ namespace GUI.UserControls
             dgvStudents.Columns.Add("NgaySinh", "NGÀY SINH");
             dgvStudents.Columns.Add("GioiTinh", "GIỚI TÍNH");
             dgvStudents.Columns.Add("DiaChi", "ĐỊA CHỈ");
-            dgvStudents.Columns.Add(new DataGridViewTextBoxColumn { Name = "Action", HeaderText = "", Width = 120 });
+            dgvStudents.Columns.Add(new DataGridViewTextBoxColumn { Name = "Action", HeaderText = "HÀNH ĐỘNG", Width = 150 });
 
             dgvStudents.Columns["MaHS"].Width = 100;
             dgvStudents.Columns["HoTen"].Width = 200;
@@ -232,11 +213,26 @@ namespace GUI.UserControls
             dgvStudents.Columns["DiaChi"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
+        private void UpdatePagination()
+        {
+            _totalPages = (int)Math.Ceiling((double)_studentList.Count / _pageSize);
+            if (_totalPages == 0) _totalPages = 1;
+            if (_currentPage > _totalPages) _currentPage = _totalPages;
+
+            dgvStudents.Rows.Clear();
+            var pageData = _studentList.Skip((_currentPage - 1) * _pageSize).Take(_pageSize).ToList();
+            foreach (var s in pageData)
+            {
+                int idx = dgvStudents.Rows.Add(s.StudentCode, s.FullName, s.DobDisplay, s.GenderDisplay, s.Address);
+                dgvStudents.Rows[idx].Tag = s.StudentID;
+            }
+            RenderPaginationButtons();
+        }
+
         private void RenderPaginationButtons()
         {
             btnPrev.Enabled = _currentPage > 1;
             btnNext.Enabled = _currentPage < _totalPages;
-
             btnPage1.Visible = btnPage2.Visible = btnPage3.Visible = btnPageLast.Visible = lblDots.Visible = false;
 
             if (_totalPages <= 4)
@@ -256,56 +252,52 @@ namespace GUI.UserControls
                 lblDots.Visible = true;
                 SetupBtn(btnPageLast, _totalPages);
             }
-
-            HighlightBtn(btnPage1); HighlightBtn(btnPage2);
-            HighlightBtn(btnPage3); HighlightBtn(btnPageLast);
+            HighlightBtn(btnPage1); HighlightBtn(btnPage2); HighlightBtn(btnPage3); HighlightBtn(btnPageLast);
             CenterPagination();
-        }
-
-        private void SetupBtn(Button b, int page)
-        {
-            b.Visible = true;
-            b.Text = page.ToString();
-            b.Tag = page;
-        }
-
-        private void HighlightBtn(Button b)
-        {
-            if (!b.Visible || b.Tag == null) return;
-            bool active = (int)b.Tag == _currentPage;
-            b.BackColor = active ? Color.FromArgb(13, 110, 253) : Color.White;
-            b.ForeColor = active ? Color.White : Color.Black;
         }
 
         private void CenterPagination()
         {
             if (pnlPagination.Width == 0) return;
-
-            int totalW = 0;
-            int gap = 5;
-            int btnW = 35;
-
-            var controls = new Control[] { btnPrev, btnPage1, btnPage2, btnPage3, lblDots, btnPageLast, btnNext };
-            foreach (var c in controls.Where(c => c.Visible))
-                totalW += c == lblDots ? 20 : btnW + gap;
+            int totalW = 0, gap = 5, btnW = 35;
+            var ctls = new Control[] { btnPrev, btnPage1, btnPage2, btnPage3, lblDots, btnPageLast, btnNext };
+            foreach (var c in ctls.Where(c => c.Visible)) totalW += c == lblDots ? 20 : btnW + gap;
 
             int x = (pnlPagination.Width - totalW) / 2;
             int y = (pnlPagination.Height - 35) / 2;
-
-            foreach (var c in controls.Where(c => c.Visible))
+            foreach (var c in ctls.Where(c => c.Visible))
             {
                 c.Location = new Point(x, c == lblDots ? y + 5 : y);
                 x += c == lblDots ? 20 + gap : btnW + gap;
             }
         }
 
+        private void SetupBtn(Button b, int p) { b.Visible = true; b.Text = p.ToString(); b.Tag = p; }
+        private void HighlightBtn(Button b)
+        {
+            if (!b.Visible) return;
+            bool active = (int)b.Tag == _currentPage;
+            b.BackColor = active ? Color.FromArgb(13, 110, 253) : Color.White;
+            b.ForeColor = active ? Color.White : Color.Black;
+        }
         private void InitPaginationEvents()
         {
-            EventHandler click = (s, e) => { _currentPage = (int)((Button)s).Tag; UpdatePagination(); };
-            btnPage1.Click += click; btnPage2.Click += click; btnPage3.Click += click; btnPageLast.Click += click;
-
+            EventHandler ck = (s, e) => { _currentPage = (int)((Button)s).Tag; UpdatePagination(); };
+            btnPage1.Click += ck; btnPage2.Click += ck; btnPage3.Click += ck; btnPageLast.Click += ck;
             btnPrev.Click += (s, e) => { if (_currentPage > 1) { _currentPage--; UpdatePagination(); } };
             btnNext.Click += (s, e) => { if (_currentPage < _totalPages) { _currentPage++; UpdatePagination(); } };
+        }
+
+        private void SetRoundedRegion(Control c, int radius)
+        {
+            Rectangle bounds = new Rectangle(0, 0, c.Width, c.Height);
+            using (GraphicsPath path = new GraphicsPath())
+            {
+                int d = radius * 2;
+                path.AddArc(0, 0, d, d, 180, 90); path.AddArc(bounds.Width - d, 0, d, d, 270, 90);
+                path.AddArc(bounds.Width - d, bounds.Height - d, d, d, 0, 90); path.AddArc(0, bounds.Height - d, d, d, 90, 90);
+                c.Region = new Region(path);
+            }
         }
     }
 }

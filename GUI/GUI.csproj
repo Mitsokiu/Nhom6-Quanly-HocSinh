@@ -511,11 +511,15 @@
   <ItemGroup>
     <Content Include="Resources\calendar_20.png" />
     <Content Include="Resources\delete_20.png" />
+    <Content Include="Resources\delete_40.png" />
     <Content Include="Resources\edit_20.png" />
     <Content Include="Resources\edit_25.png" />
+    <Content Include="Resources\edit_40.png" />
     <Content Include="Resources\notification_24.png" />
+    <Content Include="Resources\search_32.png" />
     <Content Include="Resources\sender_20.png" />
     <Content Include="Resources\view_20.png" />
+    <Content Include="Resources\view_40.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

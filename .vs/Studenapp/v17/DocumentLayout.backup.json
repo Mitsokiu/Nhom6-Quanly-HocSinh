@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\GitHub\\QLHS\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\usercontrols\\uc_gvcn_qlhs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvcn_qlhs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\qlhs\\gui\\properties\\resources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\properties\\resources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\usercontrols\\uc_gvcn_qlhs.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvcn_qlhs.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\usercontrols\\uc_gvcn_qlhs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvcn_qlhs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\usercontrols\\uc_gvcn_qlhs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -497,7 +497,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 370,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 16,
           "Children": [
             {
               "$type": "Document",
@@ -538,7 +538,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Resources.resx",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\Properties\\Resources.resx",
               "RelativeDocumentMoniker": "GUI\\Properties\\Resources.resx",
@@ -550,13 +550,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Resources.resx",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\Properties\\Resources.resx",
               "RelativeDocumentMoniker": "GUI\\Properties\\Resources.resx",
               "ToolTip": "D:\\GitHub\\QLHS\\GUI\\Properties\\Resources.resx",
               "RelativeToolTip": "GUI\\Properties\\Resources.resx",
-              "ViewState": "AgIAAJ8AAAAAAAAAAAAowMMAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAJ8AAAAAAAAAAAAowMYAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
               "WhenOpened": "2025-11-27T16:27:44.135Z",
               "EditorCaption": ""
@@ -700,20 +700,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "UC_GVCN_QLHS.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_GVCN_QLHS.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN_QLHS.cs",
               "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_GVCN_QLHS.cs",
               "RelativeToolTip": "GUI\\UserControls\\UC_GVCN_QLHS.cs",
-              "ViewState": "AgIAAIUAAAAAAAAAAAAIwJkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAjwJEAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-26T17:37:58.705Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "UC_GVCN_QLHS.Designer.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_GVCN_QLHS.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN_QLHS.Designer.cs",
