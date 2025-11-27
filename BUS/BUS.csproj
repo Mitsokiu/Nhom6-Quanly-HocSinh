@@ -105,6 +105,7 @@
     <Compile Include="StudentBUS.cs" />
     <Compile Include="subject.cs" />
     <Compile Include="TeacherAssignmentBUS.cs" />
+    <Compile Include="TeacherBUS.cs" />
     <Compile Include="TimetableBUS.cs" />
     <Compile Include="TuitionBUS.cs" />
     <Compile Include="UserBUS.cs" />

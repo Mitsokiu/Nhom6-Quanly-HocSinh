@@ -72,6 +72,23 @@ namespace DAO
         }
 
 
+        public static object ExecuteScalar(string query, object[] parameters = null)
+        {
+            using (MySqlConnection connection = GetConnection())
+            {
+                connection.Open();
+                MySqlCommand command = new MySqlCommand(query, connection);
+                if (parameters != null)
+                {
+                    for (int i = 0; i < parameters.Length; i++)
+                        command.Parameters.AddWithValue($"@param{i}", parameters[i]);
+                }
+                object result = command.ExecuteScalar();
+                connection.Close();
+                return result;
+            }
+        }
+
 
     }
 }

@@ -106,6 +106,7 @@
     <Compile Include="StudentDAO.cs" />
     <Compile Include="subjectDAO.cs" />
     <Compile Include="TeacherAssignmentDAO.cs" />
+    <Compile Include="TeacherDAO.cs" />
     <Compile Include="TimetableDAO.cs" />
     <Compile Include="TuitionDAO.cs" />
     <Compile Include="UserDAO.cs" />

@@ -1,4 +1,8 @@
-﻿using System;
+﻿// File: GUI/ThemHocSinh.cs
+using BUS;
+using DTO;
+using System;
+using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
@@ -7,167 +11,165 @@ namespace GUI
 {
     public partial class ThemHocSinh : Form
     {
-        private Color clrActive = Color.FromArgb(13, 110, 253);
-        private Color clrInactive = Color.White;
-        private Color clrBorder = Color.FromArgb(222, 226, 230);
+        private readonly StudentBUS _studentBus = new StudentBUS();
+        private readonly TeacherBUS _teacherBus = new TeacherBUS();
+        private readonly ErrorProvider _errorProvider = new ErrorProvider();
 
-        public ThemHocSinh()
+        private readonly int _currentTeacherUserId;
+
+        private readonly Color clrActive = Color.FromArgb(13, 110, 253);
+        private readonly Color clrInactive = Color.White;
+
+        private const string PH_NAME = "Nhập họ và tên học sinh";
+        private const string PH_ADDRESS = "Nhập địa chỉ";
+        private const string PH_F_NAME = "Nhập họ tên";
+        private const string PH_F_PHONE = "Nhập số điện thoại";
+        private const string PH_F_JOB = "Nhập nghề nghiệp";
+        private const string PH_M_NAME = "Nhập họ tên";
+        private const string PH_M_PHONE = "Nhập số điện thoại";
+        private const string PH_M_JOB = "Nhập nghề nghiệp";
+
+        public ThemHocSinh(int teacherUserId)
         {
+            _currentTeacherUserId = teacherUserId;
             InitializeComponent();
 
-            // Mặc định chọn Nam
-            ToggleGender(true);
+            _errorProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
+            _errorProvider.ContainerControl = this;
 
-            // 1. Thiết lập Placeholder cho các ô nhập liệu (Vì Designer đã xóa)
-            SetupPlaceholder(txtName, "Nhập họ và tên học sinh");
-            SetupPlaceholder(txtAddress, "Nhập địa chỉ");
-            SetupPlaceholder(txtID, "Nhập mã số");
-            SetupPlaceholder(txtFatherName, "Nhập họ tên");
-            SetupPlaceholder(txtFatherPhone, "Nhập số điện thoại");
-            SetupPlaceholder(txtFatherJob, "Nhập nghề nghiệp");
-            SetupPlaceholder(txtMotherName, "Nhập họ tên");
-            SetupPlaceholder(txtMotherPhone, "Nhập số điện thoại");
-            SetupPlaceholder(txtMotherJob, "Nhập nghề nghiệp");
+            SetupPlaceholders();
+            LoadComboBoxData();
 
-            // 2. Gán sự kiện Click cho giới tính
             btnGenderMale.Click += (s, e) => ToggleGender(true);
             btnGenderFemale.Click += (s, e) => ToggleGender(false);
+            btnSave.Click += btnSave_Click;
+            btnCancel.Click += (s, e) => this.Close();
 
-            // 3. Gán sự kiện Paint vẽ viền và avatar
-            pnlAvatar.Paint += PnlAvatar_Paint;
-
-            pnlInputName.Paint += Control_Paint_Border;
-            pnlInputDob.Paint += Control_Paint_Border;
-            pnlInputAddress.Paint += Control_Paint_Border;
-            pnlInputID.Paint += Control_Paint_Border;
-            pnlInputClass.Paint += Control_Paint_Border;
-            pnlInputYear.Paint += Control_Paint_Border;
-            pnlInputFatherName.Paint += Control_Paint_Border;
-            pnlInputFatherPhone.Paint += Control_Paint_Border;
-            pnlInputFatherJob.Paint += Control_Paint_Border;
-            pnlInputMotherName.Paint += Control_Paint_Border;
-            pnlInputMotherPhone.Paint += Control_Paint_Border;
-            pnlInputMotherJob.Paint += Control_Paint_Border;
-
-            // 4. Sự kiện Load để bo tròn
-            this.Load += ThemHocSinh_Load;
+            this.Load += (s, e) => ApplyRoundedCorners();
+            ToggleGender(true);
         }
 
-        private void ThemHocSinh_Load(object sender, EventArgs e)
+        private void LoadComboBoxData()
         {
-            SetRoundedRegion(btnSave, 5);
-            SetRoundedRegion(btnCancel, 5);
-            SetRoundedRegion(btnGenderMale, 5);
-            SetRoundedRegion(btnGenderFemale, 5);
-
-            SetRoundedRegion(pnlInputName, 5);
-            SetRoundedRegion(pnlInputDob, 5);
-            SetRoundedRegion(pnlInputAddress, 5);
-            SetRoundedRegion(pnlInputID, 5);
-            SetRoundedRegion(pnlInputClass, 5);
-            SetRoundedRegion(pnlInputYear, 5);
-
-            SetRoundedRegion(pnlInputFatherName, 5);
-            SetRoundedRegion(pnlInputFatherPhone, 5);
-            SetRoundedRegion(pnlInputFatherJob, 5);
-            SetRoundedRegion(pnlInputMotherName, 5);
-            SetRoundedRegion(pnlInputMotherPhone, 5);
-            SetRoundedRegion(pnlInputMotherJob, 5);
-        }
-
-        // --- LOGIC PLACEHOLDER (THAY THẾ PlaceholderText) ---
-        private void SetupPlaceholder(TextBox txt, string placeholder)
-        {
-            // Set giá trị ban đầu
-            txt.Text = placeholder;
-            txt.ForeColor = Color.Gray;
-
-            // Sự kiện Enter (Click vào)
-            txt.Enter += (s, e) => {
-                if (txt.Text == placeholder)
-                {
-                    txt.Text = "";
-                    txt.ForeColor = Color.Black;
-                }
-            };
-
-            // Sự kiện Leave (Click ra ngoài)
-            txt.Leave += (s, e) => {
-                if (string.IsNullOrWhiteSpace(txt.Text))
-                {
-                    txt.Text = placeholder;
-                    txt.ForeColor = Color.Gray;
-                }
-            };
-        }
-
-        private void ToggleGender(bool isMale)
-        {
-            if (isMale)
+            try
             {
-                btnGenderMale.BackColor = clrActive;
-                btnGenderMale.ForeColor = Color.White;
-                btnGenderFemale.BackColor = clrInactive;
-                btnGenderFemale.ForeColor = Color.Black;
+                var dtClass = _teacherBus.GetHomeroomClass(_currentTeacherUserId);
+                if (dtClass != null && dtClass.Rows.Count > 0)
+                {
+                    cboClass.DataSource = dtClass;
+                    cboClass.DisplayMember = "class_name";
+                    cboClass.ValueMember = "class_id";
+                    cboClass.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Bạn chưa được phân công chủ nhiệm lớp nào!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cboClass.Enabled = false;
+                }
+
+                var dtYear = _teacherBus.GetCurrentAcademicYear();
+                if (dtYear != null && dtYear.Rows.Count > 0)
+                {
+                    cboYear.DataSource = dtYear;
+                    cboYear.DisplayMember = "name";
+                    cboYear.ValueMember = "year_id";
+                    cboYear.Enabled = false;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                btnGenderFemale.BackColor = clrActive;
-                btnGenderFemale.ForeColor = Color.White;
-                btnGenderMale.BackColor = clrInactive;
-                btnGenderMale.ForeColor = Color.Black;
+                MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.DialogResult = DialogResult.OK;
-            this.Close();
-        }
+            _errorProvider.Clear();
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+            string fullName = txtName.Text.Trim() == PH_NAME ? "" : txtName.Text.Trim();
+            string address = txtAddress.Text.Trim() == PH_ADDRESS ? "" : txtAddress.Text.Trim();
 
-        // --- LOGIC VẼ ---
-        private void Control_Paint_Border(object sender, PaintEventArgs e)
-        {
-            Panel pnl = sender as Panel;
-            if (pnl != null)
+            if (string.IsNullOrWhiteSpace(fullName)) { _errorProvider.SetError(pnlInputName, "Vui lòng nhập họ tên"); return; }
+            if (string.IsNullOrWhiteSpace(address)) { _errorProvider.SetError(pnlInputAddress, "Vui lòng nhập địa chỉ"); return; }
+            if (dtpDob.Value.Date > DateTime.Today) { _errorProvider.SetError(pnlInputDob, "Ngày sinh không hợp lệ"); return; }
+
+            var student = new StudentDTO
             {
-                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                using (Pen pen = new Pen(clrBorder, 1))
-                {
-                    e.Graphics.DrawRectangle(pen, 0, 0, pnl.Width - 1, pnl.Height - 1);
-                }
+                FullName = fullName,
+                DateOfBirth = dtpDob.Value,
+                Gender = btnGenderMale.BackColor == clrActive ? "Male" : "Female",
+                Address = address,
+                ClassID = Convert.ToInt32(cboClass.SelectedValue),
+                YearID = Convert.ToInt32(cboYear.SelectedValue),
+                FatherName = GetText(txtFatherName, PH_F_NAME),
+                FatherPhone = GetText(txtFatherPhone, PH_F_PHONE),
+                FatherJob = GetText(txtFatherJob, PH_F_JOB),
+                MotherName = GetText(txtMotherName, PH_M_NAME),
+                MotherPhone = GetText(txtMotherPhone, PH_M_PHONE),
+                MotherJob = GetText(txtMotherJob, PH_M_JOB)
+            };
+
+            string error;
+            if (_studentBus.AddStudent(student, out error))
+            {
+                MessageBox.Show("Thêm học sinh thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show(error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
-        private void PnlAvatar_Paint(object sender, PaintEventArgs e)
+        private string GetText(TextBox txt, string placeholder) => txt.Text.Trim() == placeholder ? "" : txt.Text.Trim();
+
+        private void SetupPlaceholders()
         {
-            using (Pen pen = new Pen(Color.LightGray, 2) { DashStyle = DashStyle.Dash })
+            var list = new (TextBox txt, string ph)[]
             {
-                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                e.Graphics.DrawEllipse(pen, 5, 5, 140, 140);
+                (txtName, PH_NAME), (txtAddress, PH_ADDRESS),
+                (txtFatherName, PH_F_NAME), (txtFatherPhone, PH_F_PHONE), (txtFatherJob, PH_F_JOB),
+                (txtMotherName, PH_M_NAME), (txtMotherPhone, PH_M_PHONE), (txtMotherJob, PH_M_JOB)
+            };
+
+            foreach (var (txt, ph) in list)
+            {
+                txt.Text = ph;
+                txt.ForeColor = Color.Gray;
+                txt.Enter += (s, e) => { if (txt.Text == ph) { txt.Text = ""; txt.ForeColor = Color.Black; } };
+                txt.Leave += (s, e) => { if (string.IsNullOrWhiteSpace(txt.Text)) { txt.Text = ph; txt.ForeColor = Color.Gray; } };
             }
-            // Vẽ biểu tượng upload đơn giản
-            e.Graphics.FillRectangle(Brushes.Gray, 70, 60, 10, 20);
-            Point[] arrowHead = { new Point(60, 60), new Point(90, 60), new Point(75, 40) };
-            e.Graphics.FillPolygon(Brushes.Gray, arrowHead);
         }
 
-        private void SetRoundedRegion(Control c, int r)
+        private void ToggleGender(bool isMale)
         {
-            Rectangle bounds = new Rectangle(0, 0, c.Width, c.Height);
+            btnGenderMale.BackColor = isMale ? clrActive : clrInactive;
+            btnGenderMale.ForeColor = isMale ? Color.White : Color.Black;
+            btnGenderFemale.BackColor = isMale ? clrInactive : clrActive;
+            btnGenderFemale.ForeColor = isMale ? Color.Black : Color.White;
+        }
+
+        private void ApplyRoundedCorners()
+        {
+            foreach (Control c in new Control[] { btnSave, btnCancel, btnGenderMale, btnGenderFemale,
+                pnlInputName, pnlInputDob, pnlInputAddress, pnlInputClass, pnlInputYear,
+                pnlInputFatherName, pnlInputFatherPhone, pnlInputFatherJob,
+                pnlInputMotherName, pnlInputMotherPhone, pnlInputMotherJob })
+            {
+                SetRoundedRegion(c, 8);
+            }
+        }
+
+        private void SetRoundedRegion(Control c, int radius)
+        {
             using (GraphicsPath path = new GraphicsPath())
             {
-                int d = r * 2;
+                int d = radius * 2;
                 path.AddArc(0, 0, d, d, 180, 90);
-                path.AddArc(bounds.Width - d, 0, d, d, 270, 90);
-                path.AddArc(bounds.Width - d, bounds.Height - d, d, d, 0, 90);
-                path.AddArc(0, bounds.Height - d, d, d, 90, 90);
+                path.AddArc(c.Width - d, 0, d, d, 270, 90);
+                path.AddArc(c.Width - d, c.Height - d, d, d, 0, 90);
+                path.AddArc(0, c.Height - d, d, d, 90, 90);
                 c.Region = new Region(path);
             }
         }

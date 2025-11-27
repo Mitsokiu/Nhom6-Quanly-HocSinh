@@ -91,7 +91,14 @@ namespace GUI
 
         private void Sidebar_HocSinhClicked(object sender, EventArgs e)
         {
-            LoadContent(new UC_GVCN_QLHS());
+            // QUAN TRỌNG: Phải truyền UserId của GVCN đang đăng nhập
+            if (user == null || user.UserId <= 0)
+            {
+                MessageBox.Show("Không xác định được thông tin giáo viên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            LoadContent(new UC_GVCN_QLHS(user.UserId));
         }
 
         private void Sidebar_TinhHinhClicked(object sender, EventArgs e)
