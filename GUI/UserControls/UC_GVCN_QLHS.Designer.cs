@@ -138,14 +138,14 @@
             // 
             // pnlSearch
             // 
-            this.pnlSearch.BackColor = System.Drawing.Color.Transparent;
-            this.pnlSearch.Controls.Add(this.pnlSearchInner);
-            this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSearch.Location = new System.Drawing.Point(30, 110);
-            this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Padding = new System.Windows.Forms.Padding(0, 5, 0, 10);
-            this.pnlSearch.Size = new System.Drawing.Size(1040, 60);
-            this.pnlSearch.TabIndex = 1;
+            this.picSearchIcon.BackColor = System.Drawing.Color.Transparent;
+            this.picSearchIcon.Image = global::GUI.Properties.Resources.timkiem_24; // Dùng icon từ Resource
+            this.picSearchIcon.Location = new System.Drawing.Point(10, 10);
+            this.picSearchIcon.Name = "picSearchIcon";
+            this.picSearchIcon.Size = new System.Drawing.Size(20, 20);
+            this.picSearchIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSearchIcon.TabIndex = 1;
+            this.picSearchIcon.TabStop = false;
 
             // 
             // pnlSearchInner

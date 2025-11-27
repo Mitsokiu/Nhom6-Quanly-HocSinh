@@ -16,8 +16,8 @@ namespace GUI.UserControls
         private readonly StudentBUS _studentBus = new StudentBUS();
         private readonly TeacherBUS _teacherBus = new TeacherBUS();
 
-        private List<StudentDTO> _fullList = new List<StudentDTO>();    // Danh sách gốc của lớp
-        private List<StudentDTO> _studentList = new List<StudentDTO>(); // Danh sách đang hiển thị (sau tìm kiếm)
+        private List<StudentDTO> _fullList = new List<StudentDTO>();
+        private List<StudentDTO> _studentList = new List<StudentDTO>();
 
         private int _currentPage = 1;
         private const int _pageSize = 6;
@@ -43,6 +43,10 @@ namespace GUI.UserControls
             btnAddStudent.Click += BtnAddStudent_Click;
             dgvStudents.CellPainting += DgvStudents_CellPainting;
             dgvStudents.CellContentClick += DgvStudents_CellContentClick;
+
+            // Load icon tìm kiếm (Nếu chưa set trong designer)
+            picSearchIcon.Image = Properties.Resources.timkiem_24;
+            picSearchIcon.SizeMode = PictureBoxSizeMode.Zoom;
 
             InitPaginationEvents();
             ShowHomeroomClassName();
@@ -118,6 +122,36 @@ namespace GUI.UserControls
             }
         }
 
+        // --- SỬ DỤNG ICON TỪ RESOURCE ---
+        private void DgvStudents_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == dgvStudents.Columns["Action"].Index)
+            {
+                e.Handled = true;
+                e.PaintBackground(e.CellBounds, true);
+
+                int iconSize = 20; // Kích thước icon
+                int gap = 15;      // Khoảng cách giữa các icon
+
+                // Tính toán vị trí X bắt đầu để căn giữa bộ 3 icon
+                int totalWidth = (iconSize * 3) + (gap * 2);
+                int startX = e.CellBounds.X + (e.CellBounds.Width - totalWidth) / 2;
+                int startY = e.CellBounds.Y + (e.CellBounds.Height - iconSize) / 2;
+
+                // 1. Icon View
+                if (Properties.Resources.view_20 != null)
+                    e.Graphics.DrawImage(Properties.Resources.view_20, startX, startY, iconSize, iconSize);
+
+                // 2. Icon Edit
+                if (Properties.Resources.edit_25 != null)
+                    e.Graphics.DrawImage(Properties.Resources.edit_25, startX + iconSize + gap, startY, iconSize, iconSize);
+
+                // 3. Icon Delete
+                if (Properties.Resources.delete_20 != null)
+                    e.Graphics.DrawImage(Properties.Resources.delete_20, startX + (iconSize + gap) * 2, startY, iconSize, iconSize);
+            }
+        }
+
         private void DgvStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0 || e.ColumnIndex != dgvStudents.Columns["Action"].Index) return;
@@ -125,23 +159,26 @@ namespace GUI.UserControls
             int studentId = (int)dgvStudents.Rows[e.RowIndex].Tag;
             string studentName = dgvStudents.Rows[e.RowIndex].Cells["HoTen"].Value.ToString();
 
+            // Tính toán lại vị trí click để biết người dùng bấm vào icon nào
             var cellRect = dgvStudents.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
             int mouseX = dgvStudents.PointToClient(Cursor.Position).X - cellRect.Left;
 
             int iconSize = 20;
-            int gap = 10;
+            int gap = 15;
             int totalWidth = iconSize * 3 + gap * 2;
             int startX = (cellRect.Width - totalWidth) / 2;
 
-            if (mouseX >= startX && mouseX < startX + iconSize)
+            // Kiểm tra tọa độ click
+            if (mouseX >= startX && mouseX < startX + iconSize) // VIEW
             {
                 MessageBox.Show($"Xem chi tiết học sinh:\n{studentName}", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if (mouseX >= startX + iconSize + gap && mouseX < startX + (iconSize + gap) * 2)
+            else if (mouseX >= startX + iconSize + gap && mouseX < startX + (iconSize + gap) * 2) // EDIT
             {
-                MessageBox.Show($"Chức năng sửa học sinh đang phát triển...", "Sửa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Gọi form sửa (truyền ID hoặc DTO)
+                MessageBox.Show($"Sửa học sinh: {studentName}", "Sửa", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if (mouseX >= startX + (iconSize + gap) * 2)
+            else if (mouseX >= startX + (iconSize + gap) * 2) // DELETE
             {
                 if (MessageBox.Show($"Bạn có chắc chắn muốn xóa học sinh:\n{studentName}?",
                     "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
@@ -159,6 +196,7 @@ namespace GUI.UserControls
             }
         }
 
+        // ... (Giữ nguyên các hàm Pagination, SetupDataGridView như cũ) ...
         private void UpdatePagination()
         {
             _totalPages = (int)Math.Ceiling((double)_studentList.Count / _pageSize);
@@ -194,34 +232,6 @@ namespace GUI.UserControls
             dgvStudents.Columns["DiaChi"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
-        private void DgvStudents_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.ColumnIndex == dgvStudents.Columns["Action"].Index)
-            {
-                e.Handled = true;
-                e.PaintBackground(e.CellBounds, true);
-
-                int iconSize = 20;
-                int gap = 10;
-                int startX = e.CellBounds.X + (e.CellBounds.Width - (iconSize * 3 + gap * 2)) / 2;
-                int startY = e.CellBounds.Y + (e.CellBounds.Height - iconSize) / 2;
-
-                DrawIcon(e.Graphics, "View", Color.FromArgb(13, 110, 253), startX, startY, iconSize);
-                DrawIcon(e.Graphics, "Edit", Color.FromArgb(255, 193, 7), startX + iconSize + gap, startY, iconSize);
-                DrawIcon(e.Graphics, "Delete", Color.FromArgb(220, 53, 69), startX + (iconSize + gap) * 2, startY, iconSize);
-            }
-        }
-
-        private void DrawIcon(Graphics g, string text, Color color, int x, int y, int size)
-        {
-            using (var brush = new SolidBrush(color))
-            using (var font = new Font("Segoe UI Emoji", 12, FontStyle.Regular))
-            {
-                g.DrawString(text, font, brush, x, y - 2);
-            }
-        }
-
-        // ==================== PHÂN TRANG (giữ nguyên đẹp như cũ) ====================
         private void RenderPaginationButtons()
         {
             btnPrev.Enabled = _currentPage > 1;
