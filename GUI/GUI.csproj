@@ -101,6 +101,12 @@
     <Compile Include="AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChiTietHocSinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiTietHocSinh.Designer.cs">
+      <DependentUpon>ChiTietHocSinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,12 @@
     </Compile>
     <Compile Include="Sidebar.Designer.cs">
       <DependentUpon>Sidebar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuaHocSinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuaHocSinh.Designer.cs">
+      <DependentUpon>SuaHocSinh.cs</DependentUpon>
     </Compile>
     <Compile Include="SuaThongBao.cs">
       <SubType>Form</SubType>

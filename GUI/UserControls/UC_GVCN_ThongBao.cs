@@ -1,5 +1,6 @@
 ﻿using BUS;
 using DTO;
+using GUI;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -13,106 +14,187 @@ namespace GUI.UserControls
     {
         private NotificationBUS _bus = new NotificationBUS();
         private int _loggedInUserId;
-        private List<NotificationDTO> _originalList = new List<NotificationDTO>();
+
+        private List<NotificationDTO> _fullList = new List<NotificationDTO>();
         private List<NotificationDTO> _displayList = new List<NotificationDTO>();
 
-        // Biến phân trang
         private int _currentPage = 1;
-        private int _pageSize = 6;
+        private const int _pageSize = 6;
         private int _totalPages = 0;
-
-        // Chuỗi placeholder mặc định
         private const string PLACEHOLDER_TEXT = "Tìm kiếm thông báo...";
+
+        // Cấu hình Icon
+        private const int ICON_W = 24;
+        private const int ICON_H = 24;
+        private const int ICON_GAP = 20;
 
         public UC_GVCN_ThongBao(int userId)
         {
             InitializeComponent();
             this._loggedInUserId = userId;
+
             SetupDataGridView();
-            InitPaginationEvents();
 
-            // --- FIX LỖI TÌM KIẾM ---
-            // 1. Đặt text mặc định ngay khi khởi tạo để đảm bảo khớp
-            txtSearch.Text = PLACEHOLDER_TEXT;
-            txtSearch.ForeColor = Color.Gray;
-
-            // 2. Sự kiện khi click vào ô tìm kiếm (Enter)
-            txtSearch.Enter += (s, e) => {
-                if (txtSearch.Text == PLACEHOLDER_TEXT)
-                {
-                    txtSearch.Text = "";
-                    txtSearch.ForeColor = Color.Black;
-                }
+            this.Load += (s, e) => {
+                LoadDataFromDB();
+                SetRoundedRegion(pnlSearchBox, 20);
             };
-
-            // 3. Sự kiện khi click ra ngoài ô tìm kiếm (Leave)
-            txtSearch.Leave += (s, e) => {
-                if (string.IsNullOrWhiteSpace(txtSearch.Text))
-                {
-                    txtSearch.Text = PLACEHOLDER_TEXT;
-                    txtSearch.ForeColor = Color.Gray;
-                }
-            };
-
-            // 4. Sự kiện gõ phím tìm kiếm
-            txtSearch.TextChanged += (s, e) => {
-                // Nếu đang là chữ placeholder thì không tìm
-                if (txtSearch.Text == PLACEHOLDER_TEXT) return;
-
-                _displayList = _bus.FilterNotifications(_originalList, txtSearch.Text);
-                _currentPage = 1;
-                UpdatePagination();
-            };
-            // ------------------------
-
-            this.Load += (s, e) => LoadData();
             this.Resize += (s, e) => CenterPagination();
 
-            // Sự kiện nút Tạo mới
+            txtSearch.Text = PLACEHOLDER_TEXT;
+            txtSearch.ForeColor = Color.Gray;
+            txtSearch.Enter += (s, e) => { if (txtSearch.Text == PLACEHOLDER_TEXT) { txtSearch.Text = ""; txtSearch.ForeColor = Color.Black; } };
+            txtSearch.Leave += (s, e) => { if (string.IsNullOrWhiteSpace(txtSearch.Text)) { txtSearch.Text = PLACEHOLDER_TEXT; txtSearch.ForeColor = Color.Gray; } };
+            txtSearch.TextChanged += TxtSearch_TextChanged;
+
             btnCreate.Click += BtnCreate_Click;
 
-            // Vẽ nút bo tròn
-            btnCreate.Paint += (s, e) => {
-                Button btn = (Button)s;
-                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                Rectangle r = new Rectangle(0, 0, btn.Width, btn.Height);
-                using (GraphicsPath path = new GraphicsPath())
-                {
-                    int rad = 10;
-                    path.AddArc(0, 0, rad, rad, 180, 90);
-                    path.AddArc(r.Width - rad, 0, rad, rad, 270, 90);
-                    path.AddArc(r.Width - rad, r.Height - rad, rad, rad, 0, 90);
-                    path.AddArc(0, r.Height - rad, rad, rad, 90, 90);
-                    btn.Region = new Region(path);
-                }
-            };
-
-            // Sự kiện GridView
-            dgvThongBao.MouseClick += DgvThongBao_MouseClick;
             dgvThongBao.CellPainting += DgvThongBao_CellPainting;
+            dgvThongBao.CellMouseClick += DgvThongBao_CellMouseClick;
+
+            if (Properties.Resources.search_32 != null)
+                picSearchIcon.Image = Properties.Resources.search_32;
+
+            InitPaginationEvents();
         }
 
-        public UC_GVCN_ThongBao() : this(0) { }
-
-        private void LoadData()
+        private void LoadDataFromDB()
         {
             if (_loggedInUserId <= 0) return;
-            _originalList = _bus.GetMyNotifications(_loggedInUserId);
+            _fullList = _bus.GetMyNotifications(_loggedInUserId);
 
-            // Nếu ô tìm kiếm đang trống hoặc là placeholder thì hiển thị hết
             if (txtSearch.Text == PLACEHOLDER_TEXT || string.IsNullOrWhiteSpace(txtSearch.Text))
-                _displayList = new List<NotificationDTO>(_originalList);
+                _displayList = new List<NotificationDTO>(_fullList);
             else
-                _displayList = _bus.FilterNotifications(_originalList, txtSearch.Text);
+                _displayList = _bus.FilterNotifications(_fullList, txtSearch.Text);
 
             _currentPage = 1;
             UpdatePagination();
         }
 
+        private void TxtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string kw = txtSearch.Text.Trim();
+            if (kw == PLACEHOLDER_TEXT) return;
+
+            _displayList = _bus.FilterNotifications(_fullList, kw);
+            _currentPage = 1;
+            UpdatePagination();
+        }
+
+        // --- CẤU HÌNH BẢNG (Đã sửa căn giữa Header Action) ---
+        private void SetupDataGridView()
+        {
+            dgvThongBao.Columns.Clear();
+            dgvThongBao.Columns.Add("Title", "TIÊU ĐỀ");
+            dgvThongBao.Columns.Add("Creator", "NGƯỜI TẠO");
+            dgvThongBao.Columns.Add("Date", "NGÀY ĐĂNG");
+
+            // Cột Action
+            var actionCol = new DataGridViewTextBoxColumn { Name = "Action", HeaderText = "HÀNH ĐỘNG", Width = 150 };
+            dgvThongBao.Columns.Add(actionCol);
+
+            // Căn giữa tiêu đề cột Hành động
+            dgvThongBao.Columns["Action"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            dgvThongBao.Columns[0].FillWeight = 45;
+            dgvThongBao.Columns[1].FillWeight = 20;
+            dgvThongBao.Columns[2].FillWeight = 20;
+            dgvThongBao.Columns["Action"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None; // Cố định chiều rộng để không bị giãn
+
+            dgvThongBao.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvThongBao.MultiSelect = false;
+            dgvThongBao.ReadOnly = true;
+        }
+
+        // --- VẼ ICON (Đã sửa tọa độ chuẩn xác) ---
+        private void DgvThongBao_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == dgvThongBao.Columns["Action"].Index)
+            {
+                e.Handled = true;
+
+                // 1. Vẽ nền (Xử lý màu khi Selected)
+                bool isSelected = (e.State & DataGridViewElementStates.Selected) == DataGridViewElementStates.Selected;
+                Color backColor = isSelected ? e.CellStyle.SelectionBackColor : e.CellStyle.BackColor;
+
+                using (Brush backBrush = new SolidBrush(backColor))
+                {
+                    e.Graphics.FillRectangle(backBrush, e.CellBounds);
+                }
+
+                // 2. Vẽ đường kẻ dưới
+                using (Pen gridPen = new Pen(dgvThongBao.GridColor))
+                {
+                    e.Graphics.DrawLine(gridPen, e.CellBounds.Left, e.CellBounds.Bottom - 1, e.CellBounds.Right, e.CellBounds.Bottom - 1);
+                }
+
+                // 3. Tính toán vị trí căn giữa (Dynamic theo chiều rộng ô thực tế)
+                int totalIconWidth = (ICON_W * 2) + ICON_GAP; // Tổng chiều rộng 2 icon + khoảng cách
+
+                // Tọa độ X bắt đầu = (Chiều rộng ô - Tổng chiều rộng icon) / 2 + Tọa độ X của ô
+                int startX = e.CellBounds.X + (e.CellBounds.Width - totalIconWidth) / 2;
+
+                // Tọa độ Y bắt đầu = (Chiều cao ô - Chiều cao icon) / 2 + Tọa độ Y của ô
+                int startY = e.CellBounds.Y + (e.CellBounds.Height - ICON_H) / 2;
+
+                // 4. Vẽ Icon
+                // Icon Edit
+                if (Properties.Resources.edit_40 != null)
+                    e.Graphics.DrawImage(Properties.Resources.edit_40, startX, startY, ICON_W, ICON_H);
+
+                // Icon Delete (cách Edit một khoảng Gap)
+                if (Properties.Resources.delete_40 != null)
+                    e.Graphics.DrawImage(Properties.Resources.delete_40, startX + ICON_W + ICON_GAP, startY, ICON_W, ICON_H);
+            }
+        }
+
+        // --- XỬ LÝ CLICK (Đã đồng bộ tọa độ với hàm vẽ) ---
+        private void DgvThongBao_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex != dgvThongBao.Columns["Action"].Index) return;
+
+            var data = dgvThongBao.Rows[e.RowIndex].Tag as NotificationDTO;
+            if (data == null) return;
+
+            // Lấy tọa độ click trong ô
+            int clickX = e.X; // Tọa độ X tương đối trong ô
+
+            // Tính lại vị trí các vùng icon (giống hệt hàm vẽ)
+            int cellWidth = dgvThongBao.Columns[e.ColumnIndex].Width;
+            int totalIconWidth = (ICON_W * 2) + ICON_GAP;
+            int startX = (cellWidth - totalIconWidth) / 2;
+
+            // Kiểm tra click vào vùng EDIT
+            if (clickX >= startX && clickX <= startX + ICON_W)
+            {
+                ThemThongBao frm = new ThemThongBao(_loggedInUserId, data);
+                if (frm.ShowDialog() == DialogResult.OK) LoadDataFromDB();
+            }
+            // Kiểm tra click vào vùng DELETE
+            else if (clickX >= startX + ICON_W + ICON_GAP && clickX <= startX + (ICON_W * 2) + ICON_GAP)
+            {
+                if (MessageBox.Show($"Bạn chắc chắn muốn xóa thông báo: {data.Title}?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    if (_bus.DeleteNotification(data.Id))
+                    {
+                        MessageBox.Show("Đã xóa thành công!");
+                        LoadDataFromDB();
+                    }
+                }
+            }
+        }
+
+        private void BtnCreate_Click(object sender, EventArgs e)
+        {
+            ThemThongBao frm = new ThemThongBao(_loggedInUserId);
+            if (frm.ShowDialog() == DialogResult.OK) LoadDataFromDB();
+        }
+
         private void UpdatePagination()
         {
             _totalPages = (int)Math.Ceiling((double)_displayList.Count / _pageSize);
-            if (_totalPages < 1) _totalPages = 1;
+            if (_totalPages == 0) _totalPages = 1;
             if (_currentPage > _totalPages) _currentPage = _totalPages;
 
             dgvThongBao.Rows.Clear();
@@ -126,76 +208,6 @@ namespace GUI.UserControls
             RenderPaginationButtons();
         }
 
-        // --- XỬ LÝ SỰ KIỆN CLICK ---
-        private void BtnCreate_Click(object sender, EventArgs e)
-        {
-            ThemThongBao frm = new ThemThongBao(_loggedInUserId);
-            if (frm.ShowDialog() == DialogResult.OK) LoadData();
-        }
-
-        private void DgvThongBao_MouseClick(object sender, MouseEventArgs e)
-        {
-            var hit = dgvThongBao.HitTest(e.X, e.Y);
-            if (hit.RowIndex >= 0 && hit.ColumnIndex == 3)
-            {
-                var row = dgvThongBao.Rows[hit.RowIndex];
-                var noti = row.Tag as NotificationDTO;
-                if (noti == null) return;
-
-                Rectangle cellRect = dgvThongBao.GetCellDisplayRectangle(3, hit.RowIndex, false);
-                // Xác định click nửa trái (Sửa) hay phải (Xóa)
-                if (e.X - cellRect.X < cellRect.Width / 2)
-                {
-                    // >>> GỌI FORM SỬA <<<
-                    SuaThongBao frm = new SuaThongBao(_loggedInUserId, noti);
-                    if (frm.ShowDialog() == DialogResult.OK) LoadData();
-                }
-                else
-                {
-                    // >>> GỌI HÀM XÓA <<<
-                    if (MessageBox.Show($"Xóa thông báo: {noti.Title}?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                    {
-                        if (_bus.DeleteNotification(noti.Id)) { MessageBox.Show("Đã xóa!"); LoadData(); }
-                    }
-                }
-            }
-        }
-
-        // --- UI HELPERS ---
-        private void SetupDataGridView()
-        {
-            dgvThongBao.Columns.Clear();
-            dgvThongBao.Columns.Add("Title", "TIÊU ĐỀ");
-            dgvThongBao.Columns.Add("Creator", "NGƯỜI TẠO");
-            dgvThongBao.Columns.Add("Date", "NGÀY ĐĂNG");
-            dgvThongBao.Columns.Add("Action", "");
-            dgvThongBao.Columns[0].FillWeight = 45;
-            dgvThongBao.Columns[1].FillWeight = 20;
-            dgvThongBao.Columns[2].FillWeight = 20;
-            dgvThongBao.Columns[3].FillWeight = 15;
-            dgvThongBao.RowTemplate.Height = 50;
-        }
-
-        private void DgvThongBao_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.ColumnIndex == 3)
-            {
-                e.Handled = true;
-                e.PaintBackground(e.CellBounds, true);
-                int size = 20;
-                int y = e.CellBounds.Y + (e.CellBounds.Height - size) / 2;
-                int center = e.CellBounds.X + e.CellBounds.Width / 2;
-
-                // Nút Sửa (Xanh)
-                using (Brush b = new SolidBrush(Color.FromArgb(13, 110, 253)))
-                    e.Graphics.FillRectangle(b, center - 25, y, size, size);
-                // Nút Xóa (Đỏ)
-                using (Brush b = new SolidBrush(Color.FromArgb(220, 53, 69)))
-                    e.Graphics.FillRectangle(b, center + 5, y, size, size);
-            }
-        }
-
-        // --- PHÂN TRANG ---
         private void RenderPaginationButtons()
         {
             btnPrev.Enabled = _currentPage > 1;
@@ -204,15 +216,16 @@ namespace GUI.UserControls
 
             if (_totalPages <= 4)
             {
-                if (_totalPages >= 1) SetupBtn(btnPage1, 1);
-                if (_totalPages >= 2) SetupBtn(btnPage2, 2);
-                if (_totalPages >= 3) SetupBtn(btnPage3, 3);
-                if (_totalPages >= 4) SetupBtn(btnPageLast, 4);
+                for (int i = 1; i <= _totalPages; i++)
+                {
+                    Button btn = i == 1 ? btnPage1 : i == 2 ? btnPage2 : i == 3 ? btnPage3 : btnPageLast;
+                    SetupBtn(btn, i);
+                }
             }
             else
             {
                 SetupBtn(btnPage1, 1);
-                int mid = (_currentPage <= 2) ? 2 : (_currentPage >= _totalPages - 1 ? _totalPages - 1 : _currentPage);
+                int mid = _currentPage <= 2 ? 2 : (_currentPage >= _totalPages - 1 ? _totalPages - 1 : _currentPage);
                 SetupBtn(btnPage2, mid);
                 if (mid + 1 < _totalPages) SetupBtn(btnPage3, mid + 1);
                 lblDots.Visible = true;
@@ -225,42 +238,45 @@ namespace GUI.UserControls
         private void CenterPagination()
         {
             if (pnlPagination.Width == 0) return;
-            int w = 0, gap = 5, btnW = 35;
-            if (btnPrev.Visible) w += btnW + gap;
-            if (btnPage1.Visible) w += btnW + gap;
-            if (btnPage2.Visible) w += btnW + gap;
-            if (btnPage3.Visible) w += btnW + gap;
-            if (lblDots.Visible) w += 20 + gap;
-            if (btnPageLast.Visible) w += btnW + gap;
-            if (btnNext.Visible) w += btnW;
+            int totalW = 0, gap = 5, btnW = 35;
+            var ctls = new Control[] { btnPrev, btnPage1, btnPage2, btnPage3, lblDots, btnPageLast, btnNext };
+            foreach (var c in ctls.Where(c => c.Visible)) totalW += c == lblDots ? 20 : btnW + gap;
 
-            int x = (pnlPagination.Width - w) / 2;
-            int y = 12;
-
-            if (btnPrev.Visible) { btnPrev.Location = new Point(x, y); x += btnW + gap; }
-            if (btnPage1.Visible) { btnPage1.Location = new Point(x, y); x += btnW + gap; }
-            if (btnPage2.Visible) { btnPage2.Location = new Point(x, y); x += btnW + gap; }
-            if (btnPage3.Visible) { btnPage3.Location = new Point(x, y); x += btnW + gap; }
-            if (lblDots.Visible) { lblDots.Location = new Point(x, y + 5); x += 20 + gap; }
-            if (btnPageLast.Visible) { btnPageLast.Location = new Point(x, y); x += btnW + gap; }
-            if (btnNext.Visible) btnNext.Location = new Point(x, y);
+            int x = (pnlPagination.Width - totalW) / 2;
+            int y = (pnlPagination.Height - 35) / 2;
+            foreach (var c in ctls.Where(c => c.Visible))
+            {
+                c.Location = new Point(x, c == lblDots ? y + 5 : y);
+                x += c == lblDots ? 20 + gap : btnW + gap;
+            }
         }
 
         private void SetupBtn(Button b, int p) { b.Visible = true; b.Text = p.ToString(); b.Tag = p; }
         private void HighlightBtn(Button b)
         {
-            if (!b.Visible || b.Tag == null) return;
+            if (!b.Visible) return;
             bool active = (int)b.Tag == _currentPage;
             b.BackColor = active ? Color.FromArgb(13, 110, 253) : Color.White;
             b.ForeColor = active ? Color.White : Color.Black;
         }
-
         private void InitPaginationEvents()
         {
-            EventHandler click = (s, e) => { _currentPage = (int)((Button)s).Tag; UpdatePagination(); };
-            btnPage1.Click += click; btnPage2.Click += click; btnPage3.Click += click; btnPageLast.Click += click;
+            EventHandler ck = (s, e) => { _currentPage = (int)((Button)s).Tag; UpdatePagination(); };
+            btnPage1.Click += ck; btnPage2.Click += ck; btnPage3.Click += ck; btnPageLast.Click += ck;
             btnPrev.Click += (s, e) => { if (_currentPage > 1) { _currentPage--; UpdatePagination(); } };
             btnNext.Click += (s, e) => { if (_currentPage < _totalPages) { _currentPage++; UpdatePagination(); } };
+        }
+
+        private void SetRoundedRegion(Control c, int radius)
+        {
+            Rectangle bounds = new Rectangle(0, 0, c.Width, c.Height);
+            using (GraphicsPath path = new GraphicsPath())
+            {
+                int d = radius * 2;
+                path.AddArc(0, 0, d, d, 180, 90); path.AddArc(bounds.Width - d, 0, d, d, 270, 90);
+                path.AddArc(bounds.Width - d, bounds.Height - d, d, d, 0, 90); path.AddArc(0, bounds.Height - d, d, d, 90, 90);
+                c.Region = new Region(path);
+            }
         }
     }
 }

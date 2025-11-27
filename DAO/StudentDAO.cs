@@ -96,101 +96,108 @@ namespace DAO
         // 3. Thêm mới học sinh
         public bool AddStudent(StudentDTO s)
         {
-            // Bước 1: Tạo User (Tài khoản) cho học sinh
             string username = "hs" + DateTime.Now.ToString("yyyyMMddHHmmss");
-            string queryUser = @"INSERT INTO users (username, password, fullname, role_id) 
-                                 VALUES (@param0, '123456', @param1, 'student'); 
-                                 SELECT LAST_INSERT_ID();";
-
+            string queryUser = @"INSERT INTO users (username, password, fullname, role_id) VALUES (@param0, '123456', @param1, 'student'); SELECT LAST_INSERT_ID();";
             object userIdObj = DbConnect.ExecuteScalar(queryUser, new object[] { username, s.FullName });
             if (userIdObj == null) return false;
             int newUserId = Convert.ToInt32(userIdObj);
 
-            // Bước 2: Tạo Student (Hồ sơ)
-            string queryStudent = @"INSERT INTO students (user_id, dob, gender, address) 
-                                    VALUES (@param0, @param1, @param2, @param3); 
-                                    SELECT LAST_INSERT_ID();";
-
+            string queryStudent = @"INSERT INTO students (user_id, dob, gender, address) VALUES (@param0, @param1, @param2, @param3); SELECT LAST_INSERT_ID();";
             object studentIdObj = DbConnect.ExecuteScalar(queryStudent, new object[] { newUserId, s.DateOfBirth.Date, s.Gender, s.Address });
             if (studentIdObj == null) return false;
             int newStudentId = Convert.ToInt32(studentIdObj);
 
-            // Bước 3: Xếp lớp (Nếu có chọn lớp và năm học)
             if (s.ClassID > 0 && s.YearID > 0)
             {
-                string queryClass = @"INSERT INTO student_class (student_id, class_id, school_year_id) 
-                                      VALUES (@param0, @param1, @param2)";
+                string queryClass = @"INSERT INTO student_class (student_id, class_id, school_year_id) VALUES (@param0, @param1, @param2)";
                 DbConnect.ExecuteNonQuery(queryClass, new object[] { newStudentId, s.ClassID, s.YearID });
             }
 
-            // Bước 4: Thêm phụ huynh
-            if (!string.IsNullOrWhiteSpace(s.FatherName))
-            {
-                string fatherUsername = "ph" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-                string queryParentUser = @"INSERT INTO users (username, password, fullname, phone, role_id) 
-                                           VALUES (@param0, '123456', @param1, @param2, 'parent'); 
-                                           SELECT LAST_INSERT_ID();";
-                object fatherUserIdObj = DbConnect.ExecuteScalar(queryParentUser, new object[] { fatherUsername, s.FatherName, s.FatherPhone });
-                if (fatherUserIdObj == null) return false;
-                int fatherUserId = Convert.ToInt32(fatherUserIdObj);
-
-                string queryParent = @"INSERT INTO parents (user_id, job) 
-                                       VALUES (@param0, @param1); 
-                                       SELECT LAST_INSERT_ID();";
-                object parentIdObj = DbConnect.ExecuteScalar(queryParent, new object[] { fatherUserId, s.FatherJob });
-                if (parentIdObj == null) return false;
-                int fatherParentId = Convert.ToInt32(parentIdObj);
-
-                string queryRelation = @"INSERT INTO student_parent (student_id, parent_id, relation) 
-                                         VALUES (@param0, @param1, 'Cha')";
-                DbConnect.ExecuteNonQuery(queryRelation, new object[] { newStudentId, fatherParentId });
-            }
-
-            if (!string.IsNullOrWhiteSpace(s.MotherName))
-            {
-                string motherUsername = "ph" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-                string queryParentUser = @"INSERT INTO users (username, password, fullname, phone, role_id) 
-                                           VALUES (@param0, '123456', @param1, @param2, 'parent'); 
-                                           SELECT LAST_INSERT_ID();";
-                object motherUserIdObj = DbConnect.ExecuteScalar(queryParentUser, new object[] { motherUsername, s.MotherName, s.MotherPhone });
-                if (motherUserIdObj == null) return false;
-                int motherUserId = Convert.ToInt32(motherUserIdObj);
-
-                string queryParent = @"INSERT INTO parents (user_id, job) 
-                                       VALUES (@param0, @param1); 
-                                       SELECT LAST_INSERT_ID();";
-                object parentIdObj = DbConnect.ExecuteScalar(queryParent, new object[] { motherUserId, s.MotherJob });
-                if (parentIdObj == null) return false;
-                int motherParentId = Convert.ToInt32(parentIdObj);
-
-                string queryRelation = @"INSERT INTO student_parent (student_id, parent_id, relation) 
-                                         VALUES (@param0, @param1, 'Mẹ')";
-                DbConnect.ExecuteNonQuery(queryRelation, new object[] { newStudentId, motherParentId });
-            }
+            // Thêm phụ huynh (Code thêm phụ huynh giữ nguyên như cũ của bạn hoặc logic tương tự)
+            AddParent(newStudentId, s.FatherName, s.FatherPhone, s.FatherJob, "Cha");
+            AddParent(newStudentId, s.MotherName, s.MotherPhone, s.MotherJob, "Mẹ");
 
             return true;
+        }
+
+        // Helper thêm phụ huynh (tách ra cho gọn)
+        private void AddParent(int studentId, string name, string phone, string job, string relation)
+        {
+            if (string.IsNullOrWhiteSpace(name)) return;
+            string username = "ph" + DateTime.Now.Ticks + (relation == "Cha" ? "1" : "2");
+            object userId = DbConnect.ExecuteScalar("INSERT INTO users (username, password, fullname, phone, role_id) VALUES (@param0, '123456', @param1, @param2, 'parent'); SELECT LAST_INSERT_ID();", new object[] { username, name, phone });
+            if (userId != null)
+            {
+                object parentId = DbConnect.ExecuteScalar("INSERT INTO parents (user_id, job) VALUES (@param0, @param1); SELECT LAST_INSERT_ID();", new object[] { userId, job });
+                if (parentId != null) DbConnect.ExecuteNonQuery("INSERT INTO student_parent (student_id, parent_id, relation) VALUES (@param0, @param1, @param2)", new object[] { studentId, parentId, relation });
+            }
         }
 
         // 4. Xóa học sinh
         public bool DeleteStudent(int studentID)
         {
-            // Lấy UserID trước khi xóa
             string queryGet = "SELECT user_id FROM students WHERE student_id = @param0";
             DataTable dt = DbConnect.ExecuteQuery(queryGet, new object[] { studentID });
             if (dt.Rows.Count == 0) return false;
             int userId = Convert.ToInt32(dt.Rows[0]["user_id"]);
 
-            // Xóa các bảng phụ thuộc thủ công (Nếu DB chưa set ON DELETE CASCADE)
+            // Xóa các bảng phụ thuộc
             DbConnect.ExecuteNonQuery("DELETE FROM student_class WHERE student_id = @param0", new object[] { studentID });
             DbConnect.ExecuteNonQuery("DELETE FROM scores WHERE student_id = @param0", new object[] { studentID });
             DbConnect.ExecuteNonQuery("DELETE FROM tuition WHERE student_id = @param0", new object[] { studentID });
+
+            // Xóa Parent liên kết (Phức tạp hơn nếu parent có nhiều con, ở đây xóa link student_parent trước)
+            // Lấy list parent_id để xóa user nếu cần (bỏ qua bước xóa user phụ huynh để an toàn dữ liệu)
             DbConnect.ExecuteNonQuery("DELETE FROM student_parent WHERE student_id = @param0", new object[] { studentID });
 
-            // Xóa Student
             DbConnect.ExecuteNonQuery("DELETE FROM students WHERE student_id = @param0", new object[] { studentID });
-
-            // Xóa User
             return DbConnect.ExecuteNonQuery("DELETE FROM users WHERE user_id = @param0", new object[] { userId }) > 0;
+        }
+
+        public bool UpdateStudent(StudentDTO s)
+        {
+            // 1. Cập nhật thông tin cơ bản (Bảng Users và Students)
+            string updateStudent = @"UPDATE students SET dob = @param0, gender = @param1, address = @param2 WHERE student_id = @param3";
+            DbConnect.ExecuteNonQuery(updateStudent, new object[] { s.DateOfBirth, s.Gender, s.Address, s.StudentID });
+
+            string updateUser = @"UPDATE users SET fullname = @param0 WHERE user_id = @param1";
+            DbConnect.ExecuteNonQuery(updateUser, new object[] { s.FullName, s.UserID });
+
+            // 2. Cập nhật Lớp (Nếu có thay đổi) - Cập nhật bản ghi mới nhất trong student_class
+            // Giả sử logic là update bản ghi hiện tại
+            string updateClass = @"UPDATE student_class SET class_id = @param0, school_year_id = @param1 WHERE student_id = @param2";
+            // Lưu ý: Thực tế có thể cần INSERT mới nếu là chuyển lớp, ở đây ta UPDATE cho đơn giản
+            DbConnect.ExecuteNonQuery(updateClass, new object[] { s.ClassID, s.YearID, s.StudentID });
+
+            // 3. Cập nhật Phụ huynh (Khó hơn vì phải tìm ID)
+            UpdateParentInfo(s.StudentID, "Cha", s.FatherName, s.FatherPhone, s.FatherJob);
+            UpdateParentInfo(s.StudentID, "Mẹ", s.MotherName, s.MotherPhone, s.MotherJob);
+
+            return true;
+        }
+
+        private void UpdateParentInfo(int studentId, string relation, string name, string phone, string job)
+        {
+            // Tìm parent_id dựa vào quan hệ
+            string sqlFind = @"SELECT p.parent_id, p.user_id FROM student_parent sp 
+                               JOIN parents p ON sp.parent_id = p.parent_id 
+                               WHERE sp.student_id = @param0 AND sp.relation = @param1 LIMIT 1";
+            DataTable dt = DbConnect.ExecuteQuery(sqlFind, new object[] { studentId, relation });
+
+            if (dt.Rows.Count > 0)
+            {
+                // Đã có -> Update
+                int parentId = Convert.ToInt32(dt.Rows[0]["parent_id"]);
+                int userId = Convert.ToInt32(dt.Rows[0]["user_id"]);
+
+                DbConnect.ExecuteNonQuery("UPDATE users SET fullname = @param0, phone = @param1 WHERE user_id = @param2", new object[] { name, phone, userId });
+                DbConnect.ExecuteNonQuery("UPDATE parents SET job = @param0 WHERE parent_id = @param1", new object[] { job, parentId });
+            }
+            else if (!string.IsNullOrWhiteSpace(name))
+            {
+                // Chưa có nhưng người dùng nhập mới -> Thêm mới
+                AddParent(studentId, name, phone, job, relation);
+            }
         }
 
         // 5. Lấy danh sách lớp cho ComboBox

@@ -25,6 +25,12 @@ namespace BUS
             return dao.AddStudent(s);
         }
 
+        public bool UpdateStudent(StudentDTO s, out string error)
+        {
+            if (!ValidateStudent(s, out error)) return false;
+            return dao.UpdateStudent(s);
+        }
+
         public bool DeleteStudent(int id) => dao.DeleteStudent(id);
         public DataTable GetClassList() => dao.GetAllClasses();
         public DataTable GetYearList() => dao.GetAllYears();
