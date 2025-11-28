@@ -51,6 +51,8 @@ namespace GUI.UserControls
             txtSearch.TextChanged += TxtSearch_TextChanged;
 
             btnAddStudent.Click += BtnAddStudent_Click;
+            btnImportExcel.Click += BtnImportExcel_Click; 
+            btnExportExcel.Click += BtnExportExcel_Click; 
 
             // 2. Gán sự kiện vẽ và click cho Grid
             dgvStudents.CellPainting += DgvStudents_CellPainting;
@@ -61,6 +63,19 @@ namespace GUI.UserControls
 
             InitPaginationEvents();
             ShowHomeroomClassName();
+        }
+
+        // --- SỰ KIỆN MỚI CHO 2 NÚT EXCEL ---
+        private void BtnImportExcel_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Chức năng Nhập Excel đang được phát triển!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Sau này bạn sẽ viết code Import ở đây
+        }
+
+        private void BtnExportExcel_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Chức năng Xuất Excel đang được phát triển!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Sau này bạn sẽ viết code Export ở đây
         }
 
         private void ShowHomeroomClassName()

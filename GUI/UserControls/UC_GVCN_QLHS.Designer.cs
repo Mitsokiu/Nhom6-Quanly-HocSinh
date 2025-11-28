@@ -10,6 +10,9 @@
         private System.Windows.Forms.Label lblSubTitle;
         private System.Windows.Forms.Button btnAddStudent;
 
+        private System.Windows.Forms.Button btnImportExcel;
+        private System.Windows.Forms.Button btnExportExcel; 
+
         // Search
         private System.Windows.Forms.Panel pnlSearch; // Container chính
         private System.Windows.Forms.Panel pnlSearchBox; // Hộp trắng bên trong
@@ -43,6 +46,8 @@
 
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.btnAddStudent = new System.Windows.Forms.Button();
+            this.btnExportExcel = new System.Windows.Forms.Button(); 
+            this.btnImportExcel = new System.Windows.Forms.Button();
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlSearch = new System.Windows.Forms.Panel();
@@ -85,6 +90,8 @@
             // 
             this.pnlHeader.BackColor = System.Drawing.Color.Transparent;
             this.pnlHeader.Controls.Add(this.btnAddStudent);
+            this.pnlHeader.Controls.Add(this.btnExportExcel); // Add control
+            this.pnlHeader.Controls.Add(this.btnImportExcel); // Add control
             this.pnlHeader.Controls.Add(this.lblSubTitle);
             this.pnlHeader.Controls.Add(this.lblTitle);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
@@ -119,7 +126,7 @@
             this.lblSubTitle.Text = "Xem, tìm kiếm và quản lý thông tin học sinh.";
 
             // 
-            // btnAddStudent
+            // btnAddStudent (Nút Xanh Dương - Ngoài cùng bên phải)
             // 
             this.btnAddStudent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddStudent.BackColor = System.Drawing.Color.FromArgb(13, 110, 253);
@@ -134,6 +141,52 @@
             this.btnAddStudent.TabIndex = 2;
             this.btnAddStudent.Text = "+ Thêm Học sinh";
             this.btnAddStudent.UseVisualStyleBackColor = false;
+
+            // 
+            // btnExportExcel (Nút Xuất - Màu xanh nhẹ hơn, tăng chiều rộng)
+            // 
+            this.btnExportExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            // Đổi màu sang xanh lá tươi hơn (Excel Green)
+            this.btnExportExcel.BackColor = System.Drawing.Color.FromArgb(40, 167, 69);
+            this.btnExportExcel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExportExcel.FlatAppearance.BorderSize = 0;
+            this.btnExportExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportExcel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnExportExcel.ForeColor = System.Drawing.Color.White;
+            this.btnExportExcel.Image = global::GUI.Properties.Resources.xuatexcel_32;
+            this.btnExportExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExportExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            // Cập nhật vị trí: 880 (nút Thêm) - 10 (khoảng cách) - 150 (chiều rộng nút này) = 720
+            this.btnExportExcel.Location = new System.Drawing.Point(720, 10);
+            this.btnExportExcel.Name = "btnExportExcel";
+            // Tăng chiều rộng lên 150 để không mất chữ
+            this.btnExportExcel.Size = new System.Drawing.Size(150, 40);
+            this.btnExportExcel.TabIndex = 3;
+            this.btnExportExcel.Text = " Xuất Excel";
+            this.btnExportExcel.UseVisualStyleBackColor = false;
+
+            // 
+            // btnImportExcel (Nút Nhập - Màu xanh nhẹ hơn, tăng chiều rộng)
+            // 
+            this.btnImportExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            // Đổi màu giống nút Xuất
+            this.btnImportExcel.BackColor = System.Drawing.Color.FromArgb(40, 167, 69);
+            this.btnImportExcel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImportExcel.FlatAppearance.BorderSize = 0;
+            this.btnImportExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImportExcel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnImportExcel.ForeColor = System.Drawing.Color.White;
+            this.btnImportExcel.Image = global::GUI.Properties.Resources.nhapexcel_32;
+            this.btnImportExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImportExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            // Cập nhật vị trí: 720 (nút Xuất) - 10 (khoảng cách) - 150 (chiều rộng nút này) = 560
+            this.btnImportExcel.Location = new System.Drawing.Point(560, 10);
+            this.btnImportExcel.Name = "btnImportExcel";
+            // Tăng chiều rộng lên 150 để hiện đủ chữ "Nhập Excel"
+            this.btnImportExcel.Size = new System.Drawing.Size(150, 40);
+            this.btnImportExcel.TabIndex = 4;
+            this.btnImportExcel.Text = " Nhập Excel";
+            this.btnImportExcel.UseVisualStyleBackColor = false;
 
             // 
             // pnlSearch (Container)
