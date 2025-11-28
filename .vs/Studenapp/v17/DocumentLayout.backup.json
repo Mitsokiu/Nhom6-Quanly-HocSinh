@@ -3,27 +3,27 @@
   "WorkspaceRootPath": "D:\\GitHub\\QLHS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\qlhs\\gui\\usercontrols\\uc_gvcn_qlhs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\usercontrols\\uc_gvcn_qlhs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvcn_qlhs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\chitiethocsinh.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\qlhs\\gui\\chitiethocsinh.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\chitiethocsinh.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\themhocsinh.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\qlhs\\gui\\themhocsinh.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\themhocsinh.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\chitiethocsinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\qlhs\\gui\\chitiethocsinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\chitiethocsinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\suahocsinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\qlhs\\gui\\suahocsinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\suahocsinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\suahocsinh.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\qlhs\\gui\\suahocsinh.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\suahocsinh.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -31,11 +31,11 @@
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\themhocsinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\chitiethocsinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\qlhs\\gui\\chitiethocsinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\chitiethocsinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\suahocsinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\qlhs\\gui\\suahocsinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\suahocsinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -71,11 +71,11 @@
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvcn_qlhs.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\properties\\resources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\qlhs\\gui\\properties\\resources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\properties\\resources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\properties\\resources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\qlhs\\gui\\properties\\resources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\properties\\resources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
@@ -83,7 +83,7 @@
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvcn_qlhs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\resources\\timkiem_24.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\qlhs\\gui\\resources\\timkiem_24.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\resources\\timkiem_24.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
     },
     {
@@ -99,7 +99,7 @@
       "RelativeMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|solutionrelative:bus\\timetablebus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|D:\\GitHub\\QLHS\\bus\\teacherbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|d:\\github\\qlhs\\bus\\teacherbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|solutionrelative:bus\\teacherbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -107,7 +107,7 @@
       "RelativeMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|solutionrelative:dao\\dbconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|D:\\GitHub\\QLHS\\dao\\teacherdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|d:\\github\\qlhs\\dao\\teacherdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|solutionrelative:dao\\teacherdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -115,7 +115,7 @@
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|D:\\GitHub\\QLHS\\dto\\studentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|d:\\github\\qlhs\\dto\\studentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|solutionrelative:dto\\studentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -558,7 +558,8 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_GVCN_ThongBao.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-26T01:02:06.733Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -571,7 +572,8 @@
               "ViewState": "AgIAAPgBAAAAAAAAAAAAwBECAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-26T17:43:26.676Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -583,7 +585,8 @@
               "RelativeToolTip": "GUI\\ChiTietHocSinh.Designer.cs",
               "ViewState": "AgIAAGoAAAAAAAAAAAAjwHUAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T18:04:08.747Z"
+              "WhenOpened": "2025-11-27T18:04:08.747Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -595,7 +598,8 @@
               "RelativeToolTip": "GUI\\ChiTietHocSinh.cs",
               "ViewState": "AgIAAI8AAAAAAAAAAAAAwKgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T18:03:52.346Z"
+              "WhenOpened": "2025-11-27T18:03:52.346Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -607,7 +611,8 @@
               "RelativeToolTip": "GUI\\SuaHocSinh.Designer.cs",
               "ViewState": "AgIAAHoAAAAAAAAAAAAjwHUAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T18:02:52.555Z"
+              "WhenOpened": "2025-11-27T18:02:52.555Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -619,7 +624,8 @@
               "RelativeToolTip": "GUI\\SuaHocSinh.cs",
               "ViewState": "AgIAALcAAAAAAAAAAAAAwMcAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T18:02:27.08Z"
+              "WhenOpened": "2025-11-27T18:02:27.08Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -630,7 +636,8 @@
               "ToolTip": "D:\\GitHub\\QLHS\\GUI\\ChiTietHocSinh.cs [Design]",
               "RelativeToolTip": "GUI\\ChiTietHocSinh.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T17:49:20.128Z"
+              "WhenOpened": "2025-11-27T17:49:20.128Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -641,7 +648,8 @@
               "ToolTip": "D:\\GitHub\\QLHS\\GUI\\SuaHocSinh.cs [Design]",
               "RelativeToolTip": "GUI\\SuaHocSinh.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T17:47:57.687Z"
+              "WhenOpened": "2025-11-27T17:47:57.687Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -652,7 +660,8 @@
               "ToolTip": "D:\\GitHub\\QLHS\\GUI\\Properties\\Resources.resx",
               "RelativeToolTip": "GUI\\Properties\\Resources.resx",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-11-27T16:28:53.676Z"
+              "WhenOpened": "2025-11-27T16:28:53.676Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -664,7 +673,8 @@
               "RelativeToolTip": "GUI\\Properties\\Resources.resx",
               "ViewState": "AgIAAJ8AAAAAAAAAAAAowNIAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-11-27T16:27:44.135Z"
+              "WhenOpened": "2025-11-27T16:27:44.135Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -675,7 +685,8 @@
               "ToolTip": "D:\\GitHub\\QLHS\\GUI\\Resources\\timkiem_24.png - PNG [24x24, 32 bit, PNG]",
               "RelativeToolTip": "GUI\\Resources\\timkiem_24.png - PNG [24x24, 32 bit, PNG]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
-              "WhenOpened": "2025-11-27T16:20:03.196Z"
+              "WhenOpened": "2025-11-27T16:20:03.196Z",
+              "EditorCaption": " - PNG [24x24, 32 bit, PNG]"
             },
             {
               "$type": "Document",
@@ -687,7 +698,8 @@
               "RelativeToolTip": "DAO\\TeacherDAO.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAYwDEAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T15:30:05.414Z"
+              "WhenOpened": "2025-11-27T15:30:05.414Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -699,7 +711,8 @@
               "RelativeToolTip": "BUS\\TeacherBUS.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T15:29:40.292Z"
+              "WhenOpened": "2025-11-27T15:29:40.292Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -711,7 +724,8 @@
               "RelativeToolTip": "DTO\\StudentDTO.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAgwCgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T14:36:20.562Z"
+              "WhenOpened": "2025-11-27T14:36:20.562Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -771,7 +785,8 @@
               "RelativeToolTip": "GUI\\ThemHocSinh.cs",
               "ViewState": "AgIAAJ8AAAAAAAAAAAAAwLgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T17:43:41.465Z"
+              "WhenOpened": "2025-11-26T17:43:41.465Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -782,7 +797,8 @@
               "ToolTip": "D:\\GitHub\\QLHS\\GUI\\ThemHocSinh.cs [Design]",
               "RelativeToolTip": "GUI\\ThemHocSinh.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T17:38:46.358Z"
+              "WhenOpened": "2025-11-26T17:38:46.358Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -792,7 +808,7 @@
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN_QLHS.cs",
               "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_GVCN_QLHS.cs",
               "RelativeToolTip": "GUI\\UserControls\\UC_GVCN_QLHS.cs",
-              "ViewState": "AgIAANIAAAAAAAAAAAAAwOQAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAMcAAAAAAAAAAAAAwNsAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-26T17:37:58.705Z",
               "EditorCaption": ""
@@ -807,7 +823,8 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_GVCN_QLHS.Designer.cs",
               "ViewState": "AgIAAPgAAAAAAAAAAAAAwBEBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T17:37:47.106Z"
+              "WhenOpened": "2025-11-26T17:37:47.106Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -854,7 +871,8 @@
               "RelativeToolTip": "GUI\\MainForm.cs",
               "ViewState": "AgIAAFAAAAAAAAAAAAAqwGIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T07:38:44.449Z"
+              "WhenOpened": "2025-11-17T07:38:44.449Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -866,7 +884,8 @@
               "RelativeToolTip": "GUI\\ThemThongBao.cs",
               "ViewState": "AgIAAEgAAAAAAAAAAAAAwGEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T01:50:28.789Z"
+              "WhenOpened": "2025-11-26T01:50:28.789Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -878,7 +897,8 @@
               "RelativeToolTip": "GUI\\ThemThongBao.Designer.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAjwCsAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T01:50:08.969Z"
+              "WhenOpened": "2025-11-26T01:50:08.969Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -889,7 +909,8 @@
               "ToolTip": "D:\\GitHub\\QLHS\\GUI\\ThemThongBao.cs [Design]",
               "RelativeToolTip": "GUI\\ThemThongBao.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T01:43:55.717Z"
+              "WhenOpened": "2025-11-26T01:43:55.717Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -901,7 +922,8 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_GVCN_ThongBao.cs",
               "ViewState": "AgIAAP0AAAAAAAAAAAAxwBkBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T01:16:20.849Z"
+              "WhenOpened": "2025-11-26T01:16:20.849Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -913,7 +935,8 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_GVCN_ThongBao.Designer.cs",
               "ViewState": "AgIAAM0AAAAAAAAAAAAAwOYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T01:09:59.431Z"
+              "WhenOpened": "2025-11-26T01:09:59.431Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -925,7 +948,8 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T07:42:11.075Z"
+              "WhenOpened": "2025-11-23T07:42:11.075Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -948,7 +972,8 @@
               "RelativeToolTip": "GUI\\Properties\\Resources.Designer.cs",
               "ViewState": "AgIAAPkAAAAAAAAAAAAqwBgAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T14:43:35.968Z"
+              "WhenOpened": "2025-11-25T14:43:35.968Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -972,7 +997,8 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.Designer.cs",
               "ViewState": "AgIAACkAAAAAAAAAAAAIwJQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T07:38:00.208Z"
+              "WhenOpened": "2025-11-23T07:38:00.208Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -983,7 +1009,8 @@
               "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.cs [Design]",
               "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T07:37:50.069Z"
+              "WhenOpened": "2025-11-23T07:37:50.069Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -995,7 +1022,8 @@
               "RelativeToolTip": "BUS\\NotificationBUS.cs",
               "ViewState": "AgIAAEkAAAAAAAAAAADwvxQAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T07:19:47.811Z"
+              "WhenOpened": "2025-11-23T07:19:47.811Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1077,7 +1105,8 @@
               "RelativeToolTip": "GUI\\MainForm.Designer.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAQwEwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T05:13:49.024Z"
+              "WhenOpened": "2025-11-23T05:13:49.024Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1160,7 +1189,8 @@
               "RelativeToolTip": "BUS\\TimetableBUS.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T02:59:40.931Z"
+              "WhenOpened": "2025-11-23T02:59:40.931Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1219,7 +1249,8 @@
               "RelativeToolTip": "BUS\\StudentBUS.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAA3wB8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T18:22:39.68Z"
+              "WhenOpened": "2025-11-22T18:22:39.68Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1231,7 +1262,8 @@
               "RelativeToolTip": "DAO\\StudentDAO.cs",
               "ViewState": "AgIAAM4AAAAAAAAAAAAYwMgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T18:20:50.801Z"
+              "WhenOpened": "2025-11-22T18:20:50.801Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1243,7 +1275,8 @@
               "RelativeToolTip": "BUS\\SemesterBUS.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T08:14:33.947Z"
+              "WhenOpened": "2025-11-17T08:14:33.947Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1291,7 +1324,8 @@
               "RelativeToolTip": "DAO\\DBconnect.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAApwCIAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T08:15:04.615Z"
+              "WhenOpened": "2025-11-17T08:15:04.615Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1302,7 +1336,8 @@
               "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_GVCN_QLHS.cs [Design]",
               "RelativeToolTip": "GUI\\UserControls\\UC_GVCN_QLHS.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T07:25:36.792Z"
+              "WhenOpened": "2025-11-17T07:25:36.792Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -1324,7 +1359,8 @@
               "ToolTip": "D:\\GitHub\\QLHS\\GUI\\MainForm.cs [Design]",
               "RelativeToolTip": "GUI\\MainForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T11:12:13.953Z"
+              "WhenOpened": "2025-11-17T11:12:13.953Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -1335,7 +1371,8 @@
               "ToolTip": "D:\\GitHub\\QLHS\\GUI\\AddUser.cs [Design]",
               "RelativeToolTip": "GUI\\AddUser.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T07:35:29.615Z"
+              "WhenOpened": "2025-11-17T07:35:29.615Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -1915,7 +1952,8 @@
               "RelativeToolTip": "GUI\\AddUser.cs",
               "ViewState": "AgIAAGAAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T07:35:31.877Z"
+              "WhenOpened": "2025-11-17T07:35:31.877Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

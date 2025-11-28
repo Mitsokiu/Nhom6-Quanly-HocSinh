@@ -11,7 +11,6 @@ namespace DTO
         public DateTime DateOfBirth { get; set; }
         public string Gender { get; set; } // "Male" hoặc "Female" từ DB
         public string Address { get; set; }
-        public string Avatar { get; set; }
 
         // Thông tin học tập (Map với bảng student_class -> classes)
         public int ClassID { get; set; }
