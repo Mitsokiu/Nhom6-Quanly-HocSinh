@@ -13,57 +13,32 @@ namespace GUI
         private readonly TeacherBUS _teacherBus = new TeacherBUS();
         private readonly int _currentTeacherUserId;
         private readonly StudentDTO _studentData;
-        private PictureBox picAvatar;
 
         private readonly Color clrActive = Color.FromArgb(13, 110, 253);
         private readonly Color clrInactive = Color.White;
 
         public ChiTietHocSinh(int teacherUserId, StudentDTO student)
         {
-            InitializeComponent();
+            InitializeComponent(); // Designer sẽ khởi tạo picAvatar (không có lblUpload cho form xem)
             _currentTeacherUserId = teacherUserId;
             _studentData = student;
 
-            InitializeAvatarControl();
+            // Load dữ liệu
             LoadComboBoxData();
             SetupUIForView();
+            SetupEventHandlers(); // Gán sự kiện gọn gàng
 
-            btnCancel.Click += (s, e) => this.Close();
-            this.Load += (s, e) => { ApplyRoundedCorners(); lblHeaderTitle.Focus(); };
+            this.Load += (s, e) =>
+            {
+                ApplyRoundedCorners();
+                lblHeaderTitle.Focus(); // Bỏ focus khỏi textbox đầu tiên
+            };
             pnlContent.MouseEnter += (s, e) => pnlContent.Focus();
         }
 
-        private void InitializeAvatarControl()
+        private void SetupEventHandlers()
         {
-            picAvatar = new PictureBox
-            {
-                Size = new Size(130, 130),
-                Location = new Point(40, 20),
-                SizeMode = PictureBoxSizeMode.Zoom,
-                BorderStyle = BorderStyle.None
-            };
-            MakeAvatarCircular();
-            this.Controls.Add(picAvatar);
-            picAvatar.BringToFront();
-        }
-
-        private void MakeAvatarCircular()
-        {
-            if (picAvatar.Image == null) return;
-            using (var bmp = new Bitmap(picAvatar.Width, picAvatar.Height))
-            {
-                using (var g = Graphics.FromImage(bmp))
-                {
-                    g.SmoothingMode = SmoothingMode.AntiAlias;
-                    using (var path = new GraphicsPath())
-                    {
-                        path.AddEllipse(0, 0, picAvatar.Width - 1, picAvatar.Height - 1);
-                        picAvatar.Region = new Region(path);
-                        g.Clear(Color.Transparent);
-                        g.DrawImage(picAvatar.Image, 0, 0, picAvatar.Width, picAvatar.Height);
-                    }
-                }
-            }
+            btnCancel.Click += (s, e) => this.Close();
         }
 
         private void SetupUIForView()
@@ -75,10 +50,8 @@ namespace GUI
             if (_studentData != null)
             {
                 txtName.Text = _studentData.FullName;
-                txtName.ForeColor = Color.Black;
                 dtpDob.Value = _studentData.DateOfBirth;
                 txtAddress.Text = _studentData.Address;
-                txtAddress.ForeColor = Color.Black;
                 txtID.Text = _studentData.StudentCode;
                 ToggleGender(_studentData.Gender == "Male");
 
@@ -89,26 +62,33 @@ namespace GUI
                     else cboYear.Text = _studentData.AcademicYear;
                 }
 
-                txtFatherName.Text = _studentData.FatherName; txtFatherName.ForeColor = Color.Black;
-                txtFatherPhone.Text = _studentData.FatherPhone; txtFatherPhone.ForeColor = Color.Black;
-                txtFatherJob.Text = _studentData.FatherJob; txtFatherJob.ForeColor = Color.Black;
-                txtMotherName.Text = _studentData.MotherName; txtMotherName.ForeColor = Color.Black;
-                txtMotherPhone.Text = _studentData.MotherPhone; txtMotherPhone.ForeColor = Color.Black;
-                txtMotherJob.Text = _studentData.MotherJob; txtMotherJob.ForeColor = Color.Black;
+                txtFatherName.Text = _studentData.FatherName;
+                txtFatherPhone.Text = _studentData.FatherPhone;
+                txtFatherJob.Text = _studentData.FatherJob;
+                txtMotherName.Text = _studentData.MotherName;
+                txtMotherPhone.Text = _studentData.MotherPhone;
+                txtMotherJob.Text = _studentData.MotherJob;
 
-                // Hiển thị avatar
-                string avatar = _studentData.Avatar;
-                if (!string.IsNullOrEmpty(avatar) && File.Exists(avatar))
+                // --- SỬA ĐOẠN NÀY ĐỂ LOAD ẢNH ĐÚNG FOLDER ---
+                string avatarFileName = _studentData.Avatar;
+                string folderPath = GetProjectAvatarPath(); // Gọi hàm tìm thư mục gốc
+                string fullPath = Path.Combine(folderPath, avatarFileName ?? "");
+
+                if (!string.IsNullOrEmpty(avatarFileName) && File.Exists(fullPath))
                 {
-                    picAvatar.Image = Image.FromFile(avatar);
+                    picAvatar.Image = Image.FromFile(fullPath);
                 }
                 else
                 {
+                    // Load ảnh mặc định nếu không thấy ảnh riêng
                     string defaultImg = _studentData.Gender == "Male" ? "default_boy.png" : "default_girl.png";
-                    string path = Path.Combine(Application.StartupPath, "Avatars", defaultImg);
-                    if (File.Exists(path)) picAvatar.Image = Image.FromFile(path);
+                    string defaultPath = Path.Combine(folderPath, defaultImg);
+                    if (File.Exists(defaultPath))
+                    {
+                        picAvatar.Image = Image.FromFile(defaultPath);
+                    }
                 }
-                MakeAvatarCircular();
+                // ---------------------------------------------
             }
 
             DisableControls(pnlContent);
@@ -119,10 +99,11 @@ namespace GUI
         {
             foreach (Control c in parent.Controls)
             {
-                if (c is TextBox) ((TextBox)c).ReadOnly = true;
-                else if (c is DateTimePicker) ((DateTimePicker)c).Enabled = false;
-                else if (c is ComboBox) ((ComboBox)c).Enabled = false;
-                else if (c is Button) ((Button)c).Enabled = false;
+                if (c is TextBox t) { t.ReadOnly = true; t.BackColor = Color.White; t.ForeColor = Color.Black; }
+                else if (c is DateTimePicker dt) dt.Enabled = false;
+                else if (c is ComboBox cb) cb.Enabled = false;
+                else if (c is Button b && b.Name.Contains("Gender")) b.Enabled = false;
+
                 if (c.HasChildren) DisableControls(c);
             }
         }
@@ -157,23 +138,57 @@ namespace GUI
 
         private void ApplyRoundedCorners()
         {
+            // Bo tròn các panel input
             Control[] controls = { btnSave, btnCancel, btnGenderMale, btnGenderFemale,
                 pnlInputName, pnlInputDob, pnlInputAddress, pnlInputID, pnlInputClass, pnlInputYear,
                 pnlInputFatherName, pnlInputFatherPhone, pnlInputFatherJob,
                 pnlInputMotherName, pnlInputMotherPhone, pnlInputMotherJob };
-            foreach (var c in controls) SetRoundedRegion(c, 8);
+
+            foreach (var c in controls)
+            {
+                Rectangle bounds = new Rectangle(0, 0, c.Width, c.Height);
+                using (GraphicsPath path = new GraphicsPath())
+                {
+                    int r = 10; // Bán kính bo
+                    path.AddArc(0, 0, r, r, 180, 90);
+                    path.AddArc(bounds.Width - r, 0, r, r, 270, 90);
+                    path.AddArc(bounds.Width - r, bounds.Height - r, r, r, 0, 90);
+                    path.AddArc(0, bounds.Height - r, r, r, 90, 90);
+                    c.Region = new Region(path);
+                }
+            }
+            // Bo tròn panel Avatar
+            Rectangle avtBounds = new Rectangle(0, 0, pnlAvatar.Width, pnlAvatar.Height);
+            using (GraphicsPath path = new GraphicsPath()) { path.AddEllipse(avtBounds); pnlAvatar.Region = new Region(path); }
         }
 
-        private void SetRoundedRegion(Control c, int radius)
+        private string GetProjectAvatarPath()
         {
-            Rectangle bounds = new Rectangle(0, 0, c.Width, c.Height);
-            using (GraphicsPath path = new GraphicsPath())
+            // Bắt đầu từ nơi file .exe đang chạy (bin/Debug/...)
+            string currentDir = Application.StartupPath;
+
+            // Đi ngược lên tối đa 5 cấp cha để tìm thư mục "Avatars"
+            // (Vì cấu trúc thường là: Project/bin/Debug/net6.0/...)
+            for (int i = 0; i < 5; i++)
             {
-                int d = radius * 2;
-                path.AddArc(0, 0, d, d, 180, 90); path.AddArc(bounds.Width - d, 0, d, d, 270, 90);
-                path.AddArc(bounds.Width - d, bounds.Height - d, d, d, 0, 90); path.AddArc(0, bounds.Height - d, d, d, 90, 90);
-                c.Region = new Region(path);
+                // Kiểm tra xem tại cấp này có folder Avatars không
+                string tryPath = Path.Combine(currentDir, "Avatars");
+                if (Directory.Exists(tryPath))
+                {
+                    return tryPath; // Tìm thấy! Trả về đường dẫn này
+                }
+
+                // Nếu không thấy, đi lên 1 cấp cha
+                DirectoryInfo parent = Directory.GetParent(currentDir);
+                if (parent == null) break; // Hết đường lui
+                currentDir = parent.FullName;
             }
+
+            // [DỰ PHÒNG] Nếu tìm mãi không thấy (do bạn chưa tạo folder), 
+            // thì dùng lại đường dẫn cũ và tự tạo folder để không bị lỗi.
+            string fallbackPath = Path.Combine(Application.StartupPath, "Avatars");
+            if (!Directory.Exists(fallbackPath)) Directory.CreateDirectory(fallbackPath);
+            return fallbackPath;
         }
     }
 }

@@ -46,15 +46,15 @@ namespace DAO
             // Query lấy thông tin học sinh và lớp học hiện tại
             // Sử dụng LEFT JOIN để vẫn lấy được HS chưa xếp lớp
             string query = @"
-                SELECT s.student_id, s.user_id, u.fullname, s.dob, s.gender, s.address, 
-                       c.class_id, c.class_name, ay.name AS year_name
-                FROM students s
-                JOIN users u ON s.user_id = u.user_id
-                LEFT JOIN student_class sc ON s.student_id = sc.student_id
-                LEFT JOIN classes c ON sc.class_id = c.class_id
-                LEFT JOIN academic_years ay ON sc.school_year_id = ay.year_id
-                WHERE u.role_id = 'student'
-                ORDER BY s.student_id DESC";
+                        SELECT s.student_id, s.user_id, u.fullname, u.avatar, s.dob, s.gender, s.address, 
+                                c.class_id, c.class_name, ay.name AS year_name
+                        FROM students s
+                        JOIN users u ON s.user_id = u.user_id
+                        LEFT JOIN student_class sc ON s.student_id = sc.student_id
+                        LEFT JOIN classes c ON sc.class_id = c.class_id
+                        LEFT JOIN academic_years ay ON sc.school_year_id = ay.year_id
+                        WHERE u.role_id = 'student'
+                        ORDER BY s.student_id DESC";
 
             DataTable data = DbConnect.ExecuteQuery(query);
             foreach (DataRow row in data.Rows)
@@ -72,7 +72,7 @@ namespace DAO
         {
             List<StudentDTO> list = new List<StudentDTO>();
             string query = @"
-                SELECT s.student_id, s.user_id, u.fullname, s.dob, s.gender, s.address, 
+                SELECT s.student_id, s.user_id, u.fullname, u.avatar, s.dob, s.gender, s.address, 
                        c.class_id, c.class_name, ay.name AS year_name
                 FROM students s
                 JOIN users u ON s.user_id = u.user_id
@@ -220,6 +220,7 @@ namespace DAO
                 StudentID = Convert.ToInt32(row["student_id"]),
                 UserID = Convert.ToInt32(row["user_id"]),
                 FullName = row["fullname"].ToString(),
+                Avatar = row.Table.Columns.Contains("avatar") && row["avatar"] != DBNull.Value ? row["avatar"].ToString() : "",
                 DateOfBirth = row["dob"] != DBNull.Value ? Convert.ToDateTime(row["dob"]) : DateTime.MinValue,
                 Gender = row["gender"].ToString(),
                 Address = row["address"].ToString(),
