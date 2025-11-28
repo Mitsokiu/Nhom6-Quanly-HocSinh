@@ -3,6 +3,7 @@ using DTO;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Windows.Forms;
 
 namespace GUI
@@ -12,13 +13,13 @@ namespace GUI
         private readonly StudentBUS _studentBus = new StudentBUS();
         private readonly TeacherBUS _teacherBus = new TeacherBUS();
         private readonly ErrorProvider _errorProvider = new ErrorProvider();
-
         private readonly int _currentTeacherUserId;
+        private string currentAvatarPath = null;
+        private PictureBox picAvatar;
 
         private readonly Color clrActive = Color.FromArgb(13, 110, 253);
         private readonly Color clrInactive = Color.White;
 
-        // Placeholders
         private const string PH_NAME = "Nhập họ và tên học sinh";
         private const string PH_ADDRESS = "Nhập địa chỉ";
         private const string PH_F_NAME = "Nhập họ tên";
@@ -36,22 +37,90 @@ namespace GUI
             _errorProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
             _errorProvider.ContainerControl = this;
 
-            LoadComboBoxData(); // Load danh sách trước khi gán dữ liệu
+            InitializeAvatarControl();
+            LoadComboBoxData();
             SetupUIForAdd();
 
-            // Events
             btnGenderMale.Click += (s, e) => ToggleGender(true);
             btnGenderFemale.Click += (s, e) => ToggleGender(false);
             btnSave.Click += btnSave_Click;
             btnCancel.Click += (s, e) => this.Close();
-            this.Load += (s, e) => {
+            this.Load += (s, e) =>
+            {
                 ApplyRoundedCorners();
-                // FIX LỖI SCROLLBAR: Đảm bảo focus vào label đầu để không bị nhảy scroll
                 lblHeaderTitle.Focus();
             };
-
-            // FIX LỖI SCROLLBAR: Kích hoạt cuộn chuột trên Panel
             pnlContent.MouseEnter += (s, e) => pnlContent.Focus();
+        }
+
+        private void InitializeAvatarControl()
+        {
+            picAvatar = new PictureBox
+            {
+                Size = new Size(130, 130),
+                Location = new Point(40, 20),
+                SizeMode = PictureBoxSizeMode.Zoom,
+                Cursor = Cursors.Hand,
+                BorderStyle = BorderStyle.None
+            };
+            picAvatar.Click += PicAvatar_Click;
+            MakeAvatarCircular();
+
+            // Ảnh mặc định nam
+            string defaultPath = Path.Combine(Application.StartupPath, "Avatars", "default_boy.png");
+            if (File.Exists(defaultPath))
+                picAvatar.Image = Image.FromFile(defaultPath);
+
+            this.Controls.Add(picAvatar);
+            picAvatar.BringToFront();
+        }
+
+        private void MakeAvatarCircular()
+        {
+            if (picAvatar.Image == null) return;
+
+            using (var bmp = new Bitmap(picAvatar.Width, picAvatar.Height))
+            {
+                using (var g = Graphics.FromImage(bmp))
+                {
+                    g.SmoothingMode = SmoothingMode.AntiAlias;
+                    using (var path = new GraphicsPath())
+                    {
+                        path.AddEllipse(0, 0, picAvatar.Width - 1, picAvatar.Height - 1);
+                        picAvatar.Region = new Region(path);
+                        g.Clear(Color.Transparent);
+                        g.DrawImage(picAvatar.Image, 0, 0, picAvatar.Width, picAvatar.Height);
+                    }
+                }
+            }
+        }
+
+        private void PicAvatar_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "Hình ảnh|*.jpg;*.jpeg;*.png;*.bmp";
+                ofd.Title = "Chọn ảnh đại diện";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    currentAvatarPath = ofd.FileName;
+                    picAvatar.Image = Image.FromFile(currentAvatarPath);
+                    MakeAvatarCircular();
+                }
+            }
+        }
+
+        private string SaveAvatarToServer(string sourcePath)
+        {
+            if (string.IsNullOrEmpty(sourcePath)) return null;
+
+            string folder = Path.Combine(Application.StartupPath, "Avatars");
+            if (!Directory.Exists(folder)) Directory.CreateDirectory(folder);
+
+            string fileName = "avatar_" + DateTime.Now.ToString("yyyyMMddHHmmssfff") + Path.GetExtension(sourcePath);
+            string destPath = Path.Combine(folder, fileName);
+            File.Copy(sourcePath, destPath, true);
+            return "Avatars/" + fileName;
         }
 
         private void SetupUIForAdd()
@@ -65,23 +134,19 @@ namespace GUI
         {
             try
             {
-                // Class
                 var dtClass = _teacherBus.GetHomeroomClass(_currentTeacherUserId);
                 cboClass.DataSource = dtClass;
                 cboClass.DisplayMember = "class_name";
                 cboClass.ValueMember = "class_id";
 
-                // Year
                 var dtYear = _teacherBus.GetCurrentAcademicYear();
                 cboYear.DataSource = dtYear;
                 cboYear.DisplayMember = "name";
                 cboYear.ValueMember = "year_id";
 
-                // Tự động chọn giá trị đầu tiên (Lớp CN hiện tại)
                 if (dtClass.Rows.Count > 0) cboClass.SelectedIndex = 0;
                 if (dtYear.Rows.Count > 0) cboYear.SelectedIndex = 0;
 
-                // Khóa ComboBox nếu là GVCN (chỉ thêm vào lớp mình)
                 cboClass.Enabled = false;
                 cboYear.Enabled = false;
             }
@@ -103,11 +168,8 @@ namespace GUI
                 DateOfBirth = dtpDob.Value,
                 Gender = btnGenderMale.BackColor == clrActive ? "Male" : "Female",
                 Address = address,
-
-                // Lấy ID an toàn
-                ClassID = (cboClass.SelectedValue != null) ? Convert.ToInt32(cboClass.SelectedValue) : 0,
-                YearID = (cboYear.SelectedValue != null) ? Convert.ToInt32(cboYear.SelectedValue) : 0,
-
+                ClassID = cboClass.SelectedValue != null ? Convert.ToInt32(cboClass.SelectedValue) : 0,
+                YearID = cboYear.SelectedValue != null ? Convert.ToInt32(cboYear.SelectedValue) : 0,
                 FatherName = GetText(txtFatherName, PH_F_NAME),
                 FatherPhone = GetText(txtFatherPhone, PH_F_PHONE),
                 FatherJob = GetText(txtFatherJob, PH_F_JOB),
@@ -121,7 +183,24 @@ namespace GUI
 
             if (success)
             {
-                MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string avatarPath = SaveAvatarToServer(currentAvatarPath);
+                if (string.IsNullOrEmpty(avatarPath))
+                {
+                    avatarPath = student.Gender == "Male" ? "Avatars/default_boy.png" : "Avatars/default_girl.png";
+                }
+
+                var user = new UserDTO
+                {
+                    Username = "hs" + DateTime.Now.ToString("yyMMddHHmmss"),
+                    Password = "123456",
+                    Fullname = fullName,
+                    RoleName = "student",
+                    Avatar = avatarPath
+                };
+
+                new UserBUS().AddUser(user);
+
+                MessageBox.Show("Thêm học sinh thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
@@ -131,11 +210,9 @@ namespace GUI
             }
         }
 
-        // Các hàm Helper giữ nguyên
         private string GetText(TextBox txt, string placeholder)
         {
-            if (txt.Text == placeholder) return "";
-            return txt.Text.Trim();
+            return txt.Text == placeholder ? "" : txt.Text.Trim();
         }
 
         private void SetupPlaceholders()

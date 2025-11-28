@@ -29,6 +29,7 @@ namespace DAO
                                 Password = reader.GetString("password"),
                                 Email = reader["email"] != DBNull.Value ? reader.GetString("email") : "",
                                 Phone = reader["phone"] != DBNull.Value ? reader.GetString("phone") : "",
+                                Avatar = reader["avatar"] != DBNull.Value ? reader.GetString("avatar") : "",
                                 CreatedAt = reader["created_at"] != DBNull.Value ? reader.GetDateTime("created_at") : DateTime.MinValue
                             };
                         }
@@ -86,37 +87,28 @@ namespace DAO
             using (var conn = DbConnect.GetConnection())
             {
                 conn.Open();
-                string sql;
+                string sql = @"
+            UPDATE users SET 
+                fullname = @fullname,
+                email = @email,
+                phone = @phone,
+                avatar = @avatar,
+                role_id = @role";
 
                 if (!string.IsNullOrEmpty(user.Password))
-                {
-                    sql = @"
-                        UPDATE users SET 
-                            fullname = @fullname,
-                            email = @email,
-                            phone = @phone,
-                            password = @password,
-                            role_id = @role
-                        WHERE user_id = @userId";
-                }
-                else
-                {
-                    sql = @"
-                        UPDATE users SET 
-                            fullname = @fullname,
-                            email = @email,
-                            phone = @phone,
-                            role_id = @role
-                        WHERE user_id = @userId";
-                }
+                    sql += ", password = @password";
+
+                sql += " WHERE user_id = @userId";
 
                 using (var cmd = new MySqlCommand(sql, conn))
                 {
-                    cmd.Parameters.AddWithValue("@fullname", user.Fullname);
-                    cmd.Parameters.AddWithValue("@email", user.Email);
-                    cmd.Parameters.AddWithValue("@phone", user.Phone);
-                    cmd.Parameters.AddWithValue("@role", user.RoleName); // truyền role_id
+                    cmd.Parameters.AddWithValue("@fullname", user.Fullname ?? "");
+                    cmd.Parameters.AddWithValue("@email", user.Email ?? (object)DBNull.Value);
+                    cmd.Parameters.AddWithValue("@phone", user.Phone ?? (object)DBNull.Value);
+                    cmd.Parameters.AddWithValue("@avatar", user.Avatar ?? (object)DBNull.Value);
+                    cmd.Parameters.AddWithValue("@role", user.RoleName);
                     cmd.Parameters.AddWithValue("@userId", user.UserId);
+
                     if (!string.IsNullOrEmpty(user.Password))
                         cmd.Parameters.AddWithValue("@password", user.Password);
 
@@ -154,41 +146,37 @@ namespace DAO
             {
                 conn.Open();
 
-                // 1. Insert vào bảng users
                 string sql = @"
-            INSERT INTO users(username, password, fullname, email, phone, role_id, created_at)
-            VALUES (@username, @password, @fullname, @email, @phone, @role, NOW())";
+            INSERT INTO users(username, password, fullname, email, phone, avatar, role_id, created_at)
+            VALUES (@username, @password, @fullname, @email, @phone, @avatar, @role, NOW())";
 
                 using (var cmd = new MySqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@username", user.Username);
-                    cmd.Parameters.AddWithValue("@password", user.Password);
+                    cmd.Parameters.AddWithValue("@password", string.IsNullOrEmpty(user.Password) ? "123456" : user.Password);
                     cmd.Parameters.AddWithValue("@fullname", user.Fullname);
-                    cmd.Parameters.AddWithValue("@email", user.Email);
-                    cmd.Parameters.AddWithValue("@phone", user.Phone);
+                    cmd.Parameters.AddWithValue("@email", user.Email ?? (object)DBNull.Value);
+                    cmd.Parameters.AddWithValue("@phone", user.Phone ?? (object)DBNull.Value);
+                    cmd.Parameters.AddWithValue("@avatar", user.Avatar ?? (object)DBNull.Value);
                     cmd.Parameters.AddWithValue("@role", user.RoleName);
 
-                    if (cmd.ExecuteNonQuery() == 0)
-                        return false;
+                    if (cmd.ExecuteNonQuery() == 0) return false;
                 }
 
-                // 2. Lấy user_id vừa tạo
                 int newUserId = 0;
                 using (var cmd = new MySqlCommand("SELECT LAST_INSERT_ID()", conn))
-                {
                     newUserId = Convert.ToInt32(cmd.ExecuteScalar());
-                }
 
-                // 3. Insert theo role
+                // Insert vào bảng con theo role
                 if (user.RoleName == "student")
                 {
-                    string ssql = "INSERT INTO students(user_id) VALUES(@uid)";
-                    using (var cmd = new MySqlCommand(ssql, conn))
+                    using (var cmd = new MySqlCommand("INSERT INTO students(user_id) VALUES(@uid)", conn))
                     {
                         cmd.Parameters.AddWithValue("@uid", newUserId);
                         cmd.ExecuteNonQuery();
                     }
                 }
+
                 else if (user.RoleName == "gvbm" || user.RoleName == "gvcn")
                 {
                     string ssql = "INSERT INTO teachers(user_id) VALUES(@uid)";
