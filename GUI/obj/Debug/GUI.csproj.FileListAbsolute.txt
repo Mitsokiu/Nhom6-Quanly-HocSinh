@@ -319,3 +319,11 @@ D:\GitHub\QLHS\GUI\obj\Debug\GUI.exe
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.pdb
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_GVCN_ThongBao.resources
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.exe.config
+D:\GitHub\QLHS\GUI\bin\Debug\EPPlus.dll
+D:\GitHub\QLHS\GUI\bin\Debug\EPPlus.Interfaces.dll
+D:\GitHub\QLHS\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\GitHub\QLHS\GUI\bin\Debug\System.ComponentModel.Annotations.dll
+D:\GitHub\QLHS\GUI\bin\Debug\System.Security.Cryptography.Xml.dll
+D:\GitHub\QLHS\GUI\bin\Debug\EPPlus.xml
+D:\GitHub\QLHS\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\GitHub\QLHS\GUI\bin\Debug\System.Security.Cryptography.Xml.xml

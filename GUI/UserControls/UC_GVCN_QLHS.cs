@@ -1,10 +1,13 @@
 ﻿using BUS;
 using DTO;
 using GUI;
+using OfficeOpenXml;
+using OfficeOpenXml.Style;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -27,14 +30,13 @@ namespace GUI.UserControls
         // CẤU HÌNH ICON
         private const int ICON_W = 24;
         private const int ICON_H = 24;
-        private const int ICON_GAP = 20; // Khoảng cách rộng hơn cho dễ bấm
+        private const int ICON_GAP = 20;
 
         public UC_GVCN_QLHS(int teacherUserId)
         {
             _teacherUserId = teacherUserId;
             InitializeComponent();
 
-            // 1. Cấu hình bảng
             SetupDataGridView();
 
             this.Load += (s, e) => {
@@ -43,7 +45,6 @@ namespace GUI.UserControls
             };
             this.Resize += (s, e) => CenterPagination();
 
-            // Search Logic
             txtSearch.Text = PLACEHOLDER_TEXT;
             txtSearch.ForeColor = Color.Gray;
             txtSearch.Enter += (s, e) => { if (txtSearch.Text == PLACEHOLDER_TEXT) { txtSearch.Text = ""; txtSearch.ForeColor = Color.Black; } };
@@ -51,10 +52,9 @@ namespace GUI.UserControls
             txtSearch.TextChanged += TxtSearch_TextChanged;
 
             btnAddStudent.Click += BtnAddStudent_Click;
-            btnImportExcel.Click += BtnImportExcel_Click; 
-            btnExportExcel.Click += BtnExportExcel_Click; 
+            btnImportExcel.Click += BtnImportExcel_Click;
+            btnExportExcel.Click += BtnExportExcel_Click;
 
-            // 2. Gán sự kiện vẽ và click cho Grid
             dgvStudents.CellPainting += DgvStudents_CellPainting;
             dgvStudents.CellMouseClick += DgvStudents_CellMouseClick;
 
@@ -65,17 +65,173 @@ namespace GUI.UserControls
             ShowHomeroomClassName();
         }
 
-        // --- SỰ KIỆN MỚI CHO 2 NÚT EXCEL ---
-        private void BtnImportExcel_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Chức năng Nhập Excel đang được phát triển!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            // Sau này bạn sẽ viết code Import ở đây
-        }
-
+        // --- 1. CHỨC NĂNG XUẤT EXCEL (ĐÃ SỬA LICENSE CHO EPPLUS 8) ---
         private void BtnExportExcel_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chức năng Xuất Excel đang được phát triển!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            // Sau này bạn sẽ viết code Export ở đây
+            // SỬA: Cú pháp mới cho EPPlus 8+ (Dùng hàm thay vì gán)
+            ExcelPackage.License.SetNonCommercialPersonal("Loopy");
+
+            try
+            {
+                using (SaveFileDialog sfd = new SaveFileDialog())
+                {
+                    sfd.Filter = "Excel Files (*.xlsx)|*.xlsx";
+                    sfd.FileName = $"DanhSachHocSinh_{DateTime.Now:yyyyMMdd_HHmmss}.xlsx";
+
+                    if (sfd.ShowDialog() == DialogResult.OK)
+                    {
+                        using (var package = new ExcelPackage())
+                        {
+                            var worksheet = package.Workbook.Worksheets.Add("HocSinh");
+
+                            string[] headers = {
+                                "STT", "Mã HS", "Họ và Tên", "Ngày sinh", "Giới tính", "Địa chỉ",
+                                "Họ tên Cha", "SĐT Cha", "Nghề nghiệp Cha",
+                                "Họ tên Mẹ", "SĐT Mẹ", "Nghề nghiệp Mẹ"
+                            };
+
+                            for (int i = 0; i < headers.Length; i++)
+                            {
+                                worksheet.Cells[1, i + 1].Value = headers[i];
+                                worksheet.Cells[1, i + 1].Style.Font.Bold = true;
+                                worksheet.Cells[1, i + 1].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                                worksheet.Cells[1, i + 1].Style.Fill.BackgroundColor.SetColor(Color.LightGreen);
+                                worksheet.Cells[1, i + 1].Style.Border.BorderAround(ExcelBorderStyle.Thin);
+                            }
+
+                            for (int i = 0; i < _studentList.Count; i++)
+                            {
+                                var s = _studentList[i];
+                                int r = i + 2;
+
+                                worksheet.Cells[r, 1].Value = i + 1;
+                                worksheet.Cells[r, 2].Value = s.StudentCode;
+                                worksheet.Cells[r, 3].Value = s.FullName;
+                                worksheet.Cells[r, 4].Value = s.DateOfBirth.ToString("dd/MM/yyyy");
+                                worksheet.Cells[r, 5].Value = s.GenderDisplay;
+                                worksheet.Cells[r, 6].Value = s.Address;
+
+                                worksheet.Cells[r, 7].Value = s.FatherName;
+                                worksheet.Cells[r, 8].Value = s.FatherPhone;
+                                worksheet.Cells[r, 9].Value = s.FatherJob;
+                                worksheet.Cells[r, 10].Value = s.MotherName;
+                                worksheet.Cells[r, 11].Value = s.MotherPhone;
+                                worksheet.Cells[r, 12].Value = s.MotherJob;
+                            }
+
+                            worksheet.Cells.AutoFitColumns();
+                            FileInfo fi = new FileInfo(sfd.FileName);
+                            package.SaveAs(fi);
+                        }
+
+                        MessageBox.Show("Xuất Excel thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi xuất file: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // --- 2. CHỨC NĂNG NHẬP EXCEL (ĐÃ SỬA LICENSE CHO EPPLUS 8) ---
+        private void BtnImportExcel_Click(object sender, EventArgs e)
+        {
+            // SỬA: Cú pháp mới cho EPPlus 8+
+            ExcelPackage.License.SetNonCommercialPersonal("Loopy");
+
+            int classId = _teacherBus.GetCurrentHomeroomClassId(_teacherUserId);
+            if (classId <= 0)
+            {
+                MessageBox.Show("Bạn chưa được phân công chủ nhiệm lớp nào để thêm học sinh!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int yearId = 0;
+            var dtYear = _teacherBus.GetCurrentAcademicYear();
+            if (dtYear != null && dtYear.Rows.Count > 0)
+                yearId = Convert.ToInt32(dtYear.Rows[0]["year_id"]);
+
+            try
+            {
+                using (OpenFileDialog ofd = new OpenFileDialog())
+                {
+                    ofd.Filter = "Excel Files (*.xlsx)|*.xlsx";
+                    if (ofd.ShowDialog() == DialogResult.OK)
+                    {
+                        using (var package = new ExcelPackage(new FileInfo(ofd.FileName)))
+                        {
+                            var worksheet = package.Workbook.Worksheets[0];
+                            int rowCount = worksheet.Dimension.Rows;
+                            int successCount = 0;
+                            int failCount = 0;
+
+                            for (int row = 2; row <= rowCount; row++)
+                            {
+                                try
+                                {
+                                    string fullName = worksheet.Cells[row, 3].Text.Trim();
+                                    if (string.IsNullOrEmpty(fullName)) continue;
+
+                                    string dobStr = worksheet.Cells[row, 4].Text.Trim();
+                                    DateTime dob;
+                                    if (!DateTime.TryParseExact(dobStr, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out dob))
+                                    {
+                                        var val = worksheet.Cells[row, 4].Value;
+                                        if (val is double d) dob = DateTime.FromOADate(d);
+                                        else dob = DateTime.Now;
+                                    }
+
+                                    string genderStr = worksheet.Cells[row, 5].Text.Trim();
+                                    string genderDB = (genderStr.Equals("Nam", StringComparison.OrdinalIgnoreCase)) ? "Male" : "Female";
+                                    string address = worksheet.Cells[row, 6].Text.Trim();
+
+                                    StudentDTO student = new StudentDTO
+                                    {
+                                        FullName = fullName,
+                                        DateOfBirth = dob,
+                                        Gender = genderDB,
+                                        Address = address,
+                                        ClassID = classId,
+                                        YearID = yearId,
+                                        Avatar = "avatar_macdinh.png",
+
+                                        FatherName = worksheet.Cells[row, 7].Text.Trim(),
+                                        FatherPhone = worksheet.Cells[row, 8].Text.Trim(),
+                                        FatherJob = worksheet.Cells[row, 9].Text.Trim(),
+                                        MotherName = worksheet.Cells[row, 10].Text.Trim(),
+                                        MotherPhone = worksheet.Cells[row, 11].Text.Trim(),
+                                        MotherJob = worksheet.Cells[row, 12].Text.Trim()
+                                    };
+
+                                    string error;
+                                    if (_studentBus.AddStudent(student, out error))
+                                    {
+                                        successCount++;
+                                    }
+                                    else
+                                    {
+                                        failCount++;
+                                    }
+                                }
+                                catch
+                                {
+                                    failCount++;
+                                }
+                            }
+
+                            MessageBox.Show($"Đã nhập xong!\n- Thành công: {successCount}\n- Thất bại: {failCount}",
+                                "Kết quả Import", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            LoadDataFromDB();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi đọc file Excel: {ex.Message}\nHãy đảm bảo file không đang được mở.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void ShowHomeroomClassName()
@@ -91,6 +247,7 @@ namespace GUI.UserControls
                 lblTitle.Text = "Chưa được phân công chủ nhiệm";
                 lblSubTitle.Text = "Vui lòng liên hệ Admin.";
                 btnAddStudent.Enabled = false;
+                btnImportExcel.Enabled = false;
             }
         }
 
@@ -125,11 +282,6 @@ namespace GUI.UserControls
             UpdatePagination();
         }
 
-        // =========================================================
-        // PHẦN QUAN TRỌNG: VẼ ICON VÀ XỬ LÝ CLICK
-        // =========================================================
-
-        // 1. Cấu hình bảng (FullRowSelect, Fixed Column Width)
         private void SetupDataGridView()
         {
             dgvStudents.Columns.Clear();
@@ -139,11 +291,8 @@ namespace GUI.UserControls
             dgvStudents.Columns.Add("GioiTinh", "GIỚI TÍNH");
             dgvStudents.Columns.Add("DiaChi", "ĐỊA CHỈ");
 
-            // Cột Action cố định 160px, không AutoSize
             var actionCol = new DataGridViewTextBoxColumn { Name = "Action", HeaderText = "HÀNH ĐỘNG", Width = 160 };
             dgvStudents.Columns.Add(actionCol);
-
-            // Căn giữa tiêu đề cột Action
             dgvStudents.Columns["Action"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvStudents.Columns["MaHS"].Width = 100;
@@ -151,43 +300,34 @@ namespace GUI.UserControls
             dgvStudents.Columns["NgaySinh"].Width = 120;
             dgvStudents.Columns["GioiTinh"].Width = 100;
             dgvStudents.Columns["DiaChi"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvStudents.Columns["Action"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None; // QUAN TRỌNG
+            dgvStudents.Columns["Action"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 
-            // Chọn cả dòng
             dgvStudents.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvStudents.MultiSelect = false;
             dgvStudents.ReadOnly = true;
         }
 
-        // 2. Vẽ Icon (Fix lỗi mất icon khi click)
         private void DgvStudents_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex == dgvStudents.Columns["Action"].Index)
             {
-                e.Handled = true; // Ngăn Grid vẽ mặc định
-
-                // Xác định màu nền: Nếu đang chọn -> Màu Xanh nhạt, Không -> Trắng
+                e.Handled = true;
                 bool isSelected = (e.State & DataGridViewElementStates.Selected) == DataGridViewElementStates.Selected;
                 Color backColor = isSelected ? e.CellStyle.SelectionBackColor : e.CellStyle.BackColor;
 
-                // Vẽ nền
                 using (Brush backBrush = new SolidBrush(backColor))
                 {
                     e.Graphics.FillRectangle(backBrush, e.CellBounds);
                 }
-
-                // Vẽ đường kẻ dưới (để bảng liền mạch)
                 using (Pen gridPen = new Pen(dgvStudents.GridColor))
                 {
                     e.Graphics.DrawLine(gridPen, e.CellBounds.Left, e.CellBounds.Bottom - 1, e.CellBounds.Right, e.CellBounds.Bottom - 1);
                 }
 
-                // Tính toán vị trí Dynamic (để luôn căn giữa ô)
                 int totalWidth = (ICON_W * 3) + (ICON_GAP * 2);
                 int startX = e.CellBounds.X + (e.CellBounds.Width - totalWidth) / 2;
                 int startY = e.CellBounds.Y + (e.CellBounds.Height - ICON_H) / 2;
 
-                // Vẽ 3 icon
                 if (Properties.Resources.view_40 != null)
                     e.Graphics.DrawImage(Properties.Resources.view_40, startX, startY, ICON_W, ICON_H);
 
@@ -199,7 +339,6 @@ namespace GUI.UserControls
             }
         }
 
-        // 3. Xử lý Click (Logic tọa độ khớp 100% với hàm Vẽ)
         private void DgvStudents_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex < 0 || e.ColumnIndex != dgvStudents.Columns["Action"].Index) return;
@@ -211,29 +350,20 @@ namespace GUI.UserControls
             var student = _studentList.FirstOrDefault(s => s.StudentID == studentId);
             if (student == null) return;
 
-            // Tính toán vị trí click
-            int clickX = e.X; // Tọa độ X trong ô
+            int clickX = e.X;
             int cellWidth = dgvStudents.Columns[e.ColumnIndex].Width;
-
             int totalWidth = (ICON_W * 3) + (ICON_GAP * 2);
             int startX = (cellWidth - totalWidth) / 2;
 
-            // Logic Check Click
-            if (clickX >= startX && clickX <= startX + ICON_W) // VIEW
+            if (clickX >= startX && clickX <= startX + ICON_W)
             {
-                using (var frm = new ChiTietHocSinh(_teacherUserId, student))
-                {
-                    frm.ShowDialog();
-                }
+                using (var frm = new ChiTietHocSinh(_teacherUserId, student)) { frm.ShowDialog(); }
             }
-            else if (clickX >= startX + ICON_W + ICON_GAP && clickX <= startX + ICON_W + ICON_GAP + ICON_W) // EDIT
+            else if (clickX >= startX + ICON_W + ICON_GAP && clickX <= startX + ICON_W + ICON_GAP + ICON_W)
             {
-                using (var frm = new SuaHocSinh(_teacherUserId, student))
-                {
-                    if (frm.ShowDialog() == DialogResult.OK) LoadDataFromDB();
-                }
+                using (var frm = new SuaHocSinh(_teacherUserId, student)) { if (frm.ShowDialog() == DialogResult.OK) LoadDataFromDB(); }
             }
-            else if (clickX >= startX + (ICON_W + ICON_GAP) * 2 && clickX <= startX + (ICON_W + ICON_GAP) * 2 + ICON_W) // DELETE
+            else if (clickX >= startX + (ICON_W + ICON_GAP) * 2 && clickX <= startX + (ICON_W + ICON_GAP) * 2 + ICON_W)
             {
                 if (MessageBox.Show($"Bạn có chắc chắn muốn xóa học sinh: {student.FullName}?",
                     "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
@@ -259,9 +389,6 @@ namespace GUI.UserControls
             }
         }
 
-        // =========================================================
-        // PHÂN TRANG & UI HELPER (GIỮ NGUYÊN)
-        // =========================================================
         private void UpdatePagination()
         {
             _totalPages = (int)Math.Ceiling((double)_studentList.Count / _pageSize);

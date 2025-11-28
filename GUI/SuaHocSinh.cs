@@ -18,7 +18,7 @@ namespace GUI
         private readonly int _currentTeacherUserId;
         private readonly StudentDTO _studentData;
 
-        // Biến lưu đường dẫn ảnh tạm thời
+        // Biến lưu đường dẫn ảnh tạm thời khi chọn từ máy
         private string currentAvatarPath = null;
 
         private readonly Color clrActive = Color.FromArgb(13, 110, 253);
@@ -36,29 +36,28 @@ namespace GUI
 
         public SuaHocSinh(int teacherUserId, StudentDTO student)
         {
-            InitializeComponent(); // Designer sẽ khởi tạo picAvatar và lblUpload ở đây
+            InitializeComponent();
             _currentTeacherUserId = teacherUserId;
             _studentData = student;
 
             _errorProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
             _errorProvider.ContainerControl = this;
 
-            // Load dữ liệu
             LoadComboBoxData();
             SetupUIForEdit();
-            SetupEventHandlers(); // Gán sự kiện gọn gàng
+            SetupEventHandlers();
 
             this.Load += (s, e) =>
             {
                 ApplyRoundedCorners();
-                lblHeaderTitle.Focus(); // Bỏ focus khỏi textbox đầu tiên
+                lblHeaderTitle.Focus();
             };
             pnlContent.MouseEnter += (s, e) => pnlContent.Focus();
         }
 
         private void SetupEventHandlers()
         {
-            // Gán sự kiện click cho cả Ảnh và Chữ "Thay đổi ảnh"
+            // Gán sự kiện click cho cả Ảnh và Chữ
             picAvatar.Click += PicAvatar_Click;
             lblUpload.Click += PicAvatar_Click;
 
@@ -78,11 +77,40 @@ namespace GUI
                 {
                     currentAvatarPath = ofd.FileName;
                     picAvatar.Image = Image.FromFile(currentAvatarPath);
-                    lblUpload.Visible = false; // Có ảnh thì ẩn chữ
+                    lblUpload.Visible = false;
+                    MakeAvatarCircular();
                 }
             }
         }
 
+        private void MakeAvatarCircular()
+        {
+            if (picAvatar.Image == null) return;
+            GraphicsPath path = new GraphicsPath();
+            path.AddEllipse(0, 0, picAvatar.Width, picAvatar.Height);
+            picAvatar.Region = new Region(path);
+        }
+
+        // Hàm helper để tìm thư mục Avatars (nằm cùng cấp với folder code)
+        private string GetProjectAvatarPath()
+        {
+            string currentDir = Application.StartupPath;
+            for (int i = 0; i < 5; i++)
+            {
+                string tryPath = Path.Combine(currentDir, "Avatars");
+                if (Directory.Exists(tryPath)) return tryPath;
+
+                DirectoryInfo parent = Directory.GetParent(currentDir);
+                if (parent == null) break;
+                currentDir = parent.FullName;
+            }
+            // Fallback: Tạo tại bin/Debug nếu không tìm thấy
+            string fallbackPath = Path.Combine(Application.StartupPath, "Avatars");
+            if (!Directory.Exists(fallbackPath)) Directory.CreateDirectory(fallbackPath);
+            return fallbackPath;
+        }
+
+        // Lưu ảnh và chỉ trả về TÊN FILE
         private string SaveAvatarToServer(string sourcePath)
         {
             if (string.IsNullOrEmpty(sourcePath)) return null;
@@ -92,8 +120,43 @@ namespace GUI
 
             string fileName = "avatar_" + DateTime.Now.ToString("yyyyMMddHHmmssfff") + Path.GetExtension(sourcePath);
             string destPath = Path.Combine(folder, fileName);
-            File.Copy(sourcePath, destPath, true);
-            return destPath; // Lưu full path hoặc relative tùy DB
+
+            try
+            {
+                File.Copy(sourcePath, destPath, true);
+                return fileName; // Trả về tên file để lưu DB
+            }
+            catch { return null; }
+        }
+
+        // Hàm load ảnh lên giao diện
+        private void LoadAvatarToUI(string avatarFileName)
+        {
+            string folderPath = GetProjectAvatarPath();
+
+            // 1. Reset
+            picAvatar.Image = null;
+            lblUpload.Visible = true;
+
+            // 2. Đường dẫn ảnh riêng và ảnh mặc định
+            string customPath = Path.Combine(folderPath, avatarFileName ?? "");
+            string defaultPath = Path.Combine(folderPath, "avatar_macdinh.png");
+
+            // 3. Ưu tiên load ảnh riêng
+            if (!string.IsNullOrEmpty(avatarFileName) && File.Exists(customPath))
+            {
+                picAvatar.Image = Image.FromFile(customPath);
+                lblUpload.Visible = false;
+            }
+            // 4. Nếu không có, load ảnh mặc định
+            else if (File.Exists(defaultPath))
+            {
+                picAvatar.Image = Image.FromFile(defaultPath);
+                lblUpload.Visible = false;
+            }
+
+            // 5. Bo tròn nếu có ảnh
+            if (picAvatar.Image != null) MakeAvatarCircular();
         }
 
         private void SetupUIForEdit()
@@ -123,33 +186,16 @@ namespace GUI
                 txtMotherPhone.Text = _studentData.MotherPhone;
                 txtMotherJob.Text = _studentData.MotherJob;
 
-                // --- SỬA ĐOẠN LOGIC LOAD ẢNH Ở ĐÂY ---
-                string avatarFileName = _studentData.Avatar;
-                string folderPath = GetProjectAvatarPath(); // Dùng hàm tìm thư mục gốc
-                string fullPath = Path.Combine(folderPath, avatarFileName ?? "");
+                // Load ảnh sử dụng hàm Helper
+                LoadAvatarToUI(_studentData.Avatar);
 
-                // 1. Reset ảnh trước
-                picAvatar.Image = null;
-                lblUpload.Visible = true;
-
-                // 2. Thử load ảnh riêng
-                if (!string.IsNullOrEmpty(avatarFileName) && File.Exists(fullPath))
+                // Nếu chưa có ảnh riêng thì hiện chữ "Thay đổi ảnh" đè lên ảnh mặc định
+                if (string.IsNullOrEmpty(_studentData.Avatar))
                 {
-                    picAvatar.Image = Image.FromFile(fullPath);
-                    lblUpload.Visible = false;
+                    lblUpload.Text = "Thay đổi ảnh";
+                    lblUpload.Visible = true; // Hiện chữ để người dùng biết có thể đổi
+                    lblUpload.BackColor = Color.Transparent; // Trong suốt để thấy avatar_macdinh ở dưới
                 }
-                else
-                {
-                    // 3. Nếu không có, load ảnh mặc định
-                    string defaultImg = _studentData.Gender == "Male" ? "default_boy.png" : "default_girl.png";
-                    string defaultPath = Path.Combine(folderPath, defaultImg);
-                    if (File.Exists(defaultPath))
-                    {
-                        picAvatar.Image = Image.FromFile(defaultPath);
-                        lblUpload.Visible = false;
-                    }
-                }
-                lblUpload.Text = "Thay đổi ảnh";
             }
         }
 
@@ -200,17 +246,21 @@ namespace GUI
                 MotherJob = GetText(txtMotherJob, PH_M_JOB)
             };
 
-            // Logic Avatar: Nếu có chọn ảnh mới -> Upload & Update User
+            // Nếu người dùng chọn ảnh mới
             if (!string.IsNullOrEmpty(currentAvatarPath))
             {
-                string newPath = SaveAvatarToServer(currentAvatarPath);
-                var user = _userBus.GetUserById(_studentData.UserID);
-                if (user != null)
+                string fileName = SaveAvatarToServer(currentAvatarPath);
+                if (fileName != null)
                 {
-                    user.Avatar = newPath;
-                    _userBus.UpdateUser(user);
+                    // Update bảng Users
+                    var user = _userBus.GetUserById(_studentData.UserID);
+                    if (user != null)
+                    {
+                        user.Avatar = fileName; // Chỉ lưu tên file
+                        _userBus.UpdateUser(user);
+                    }
+                    student.Avatar = fileName;
                 }
-                student.Avatar = newPath; // Update local DTO
             }
 
             string error;
@@ -230,24 +280,6 @@ namespace GUI
 
         private string GetText(TextBox txt, string placeholder) => txt.Text == placeholder ? "" : txt.Text.Trim();
 
-        private void SetupPlaceholders()
-        {
-            var list = new (TextBox txt, string ph)[] {
-                (txtName, PH_NAME), (txtAddress, PH_ADDRESS),
-                (txtFatherName, PH_F_NAME), (txtFatherPhone, PH_F_PHONE), (txtFatherJob, PH_F_JOB),
-                (txtMotherName, PH_M_NAME), (txtMotherPhone, PH_M_PHONE), (txtMotherJob, PH_M_JOB)
-            };
-            foreach (var (txt, ph) in list)
-            {
-                if (string.IsNullOrWhiteSpace(txt.Text))
-                {
-                    txt.Text = ph; txt.ForeColor = Color.Gray;
-                }
-                txt.Enter += (s, e) => { if (txt.Text == ph) { txt.Text = ""; txt.ForeColor = Color.Black; } };
-                txt.Leave += (s, e) => { if (string.IsNullOrWhiteSpace(txt.Text)) { txt.Text = ph; txt.ForeColor = Color.Gray; } };
-            }
-        }
-
         private void ToggleGender(bool isMale)
         {
             btnGenderMale.BackColor = isMale ? clrActive : clrInactive;
@@ -255,25 +287,20 @@ namespace GUI
             btnGenderFemale.BackColor = isMale ? clrInactive : clrActive;
             btnGenderFemale.ForeColor = isMale ? Color.Black : Color.White;
 
-            // Nếu chưa chọn ảnh mới và database cũng không có ảnh -> Load ảnh mặc định
+            // Nếu chưa chọn ảnh mới VÀ DB chưa có ảnh -> Load ảnh mặc định
             if (string.IsNullOrEmpty(currentAvatarPath) && string.IsNullOrEmpty(_studentData.Avatar))
             {
-                string imgName = isMale ? "avatar_macdinh.png" : "avatar_macdinh.png";
-
-                // SỬA: Dùng GetProjectAvatarPath thay vì Application.StartupPath
-                string path = Path.Combine(GetProjectAvatarPath(), imgName);
-
+                string path = Path.Combine(GetProjectAvatarPath(), "avatar_macdinh.png");
                 if (File.Exists(path))
                 {
                     picAvatar.Image = Image.FromFile(path);
-                    lblUpload.Visible = false;
+                    lblUpload.Visible = true; // Vẫn hiện chữ để biết có thể đổi
                 }
             }
         }
 
         private void ApplyRoundedCorners()
         {
-            // Bo tròn các panel input
             Control[] controls = { btnSave, btnCancel, btnGenderMale, btnGenderFemale,
                 pnlInputName, pnlInputDob, pnlInputAddress, pnlInputID, pnlInputClass, pnlInputYear,
                 pnlInputFatherName, pnlInputFatherPhone, pnlInputFatherJob,
@@ -284,7 +311,7 @@ namespace GUI
                 Rectangle bounds = new Rectangle(0, 0, c.Width, c.Height);
                 using (GraphicsPath path = new GraphicsPath())
                 {
-                    int r = 10; // Bán kính bo
+                    int r = 10;
                     path.AddArc(0, 0, r, r, 180, 90);
                     path.AddArc(bounds.Width - r, 0, r, r, 270, 90);
                     path.AddArc(bounds.Width - r, bounds.Height - r, r, r, 0, 90);
@@ -292,38 +319,7 @@ namespace GUI
                     c.Region = new Region(path);
                 }
             }
-            // Bo tròn panel Avatar
-            Rectangle avtBounds = new Rectangle(0, 0, pnlAvatar.Width, pnlAvatar.Height);
-            using (GraphicsPath path = new GraphicsPath()) { path.AddEllipse(avtBounds); pnlAvatar.Region = new Region(path); }
-        }
-
-        private string GetProjectAvatarPath()
-        {
-            // Bắt đầu từ nơi file .exe đang chạy (bin/Debug/...)
-            string currentDir = Application.StartupPath;
-
-            // Đi ngược lên tối đa 5 cấp cha để tìm thư mục "Avatars"
-            // (Vì cấu trúc thường là: Project/bin/Debug/net6.0/...)
-            for (int i = 0; i < 5; i++)
-            {
-                // Kiểm tra xem tại cấp này có folder Avatars không
-                string tryPath = Path.Combine(currentDir, "Avatars");
-                if (Directory.Exists(tryPath))
-                {
-                    return tryPath; // Tìm thấy! Trả về đường dẫn này
-                }
-
-                // Nếu không thấy, đi lên 1 cấp cha
-                DirectoryInfo parent = Directory.GetParent(currentDir);
-                if (parent == null) break; // Hết đường lui
-                currentDir = parent.FullName;
-            }
-
-            // [DỰ PHÒNG] Nếu tìm mãi không thấy (do bạn chưa tạo folder), 
-            // thì dùng lại đường dẫn cũ và tự tạo folder để không bị lỗi.
-            string fallbackPath = Path.Combine(Application.StartupPath, "Avatars");
-            if (!Directory.Exists(fallbackPath)) Directory.CreateDirectory(fallbackPath);
-            return fallbackPath;
+            using (GraphicsPath path = new GraphicsPath()) { path.AddEllipse(0, 0, pnlAvatar.Width, pnlAvatar.Height); pnlAvatar.Region = new Region(path); }
         }
     }
 }

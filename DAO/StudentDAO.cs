@@ -1,4 +1,5 @@
 ﻿using DTO;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,6 +12,7 @@ namespace DAO
     public class StudentDAO
     {
         private DbConnect db = new DbConnect();
+        private static readonly Random _random = new Random();
 
         // Hàm lấy ClassID từ UserID
         public int GetClassIdByUserId(int userID)
@@ -93,27 +95,79 @@ namespace DAO
             return list;
         }
 
-        // 3. Thêm mới học sinh
+
+        private int InsertUserSafe(string fullName, string role, string avatar, string phone = "")
+        {
+            int newUserId = 0;
+            bool inserted = false;
+            int retryCount = 0;
+
+            while (!inserted && retryCount < 5)
+            {
+                try
+                {
+                    // Tạo username: hs + 6 số ngẫu nhiên
+                    string prefix = (role == "student") ? "hs" : "ph";
+                    string shortCode = _random.Next(100000, 999999).ToString();
+                    string username = prefix + shortCode;
+
+                    // --- SỬA LỖI Ở ĐÂY: Dùng @param0, @param1... ---
+                    string queryUser = @"INSERT INTO users (username, password, fullname, role_id, avatar, phone) 
+                                         VALUES (@param0, '123456', @param1, @param2, @param3, @param4); 
+                                         SELECT LAST_INSERT_ID();";
+
+                    // Thứ tự tham số: 0:username, 1:fullname, 2:role, 3:avatar, 4:phone
+                    object result = DbConnect.ExecuteScalar(queryUser, new object[] {
+                        username, fullName, role, avatar, phone
+                    });
+
+                    if (result != null)
+                    {
+                        newUserId = Convert.ToInt32(result);
+                        inserted = true;
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    if (ex.Number == 1062) // Duplicate entry
+                        retryCount++;
+                    else
+                        throw;
+                }
+            }
+            return newUserId;
+        }
+
+        // ---------------------------------------------------------
+        // 2. HÀM ADD STUDENT (Gọi hàm trên)
+        // ---------------------------------------------------------
         public bool AddStudent(StudentDTO s)
         {
-            string username = "hs" + DateTime.Now.ToString("yyyyMMddHHmmss");
-            string queryUser = @"INSERT INTO users (username, password, fullname, role_id) VALUES (@param0, '123456', @param1, 'student'); SELECT LAST_INSERT_ID();";
-            object userIdObj = DbConnect.ExecuteScalar(queryUser, new object[] { username, s.FullName });
-            if (userIdObj == null) return false;
-            int newUserId = Convert.ToInt32(userIdObj);
+            // Bước 1: Tạo User Học sinh
+            int newUserId = InsertUserSafe(s.FullName, "student", s.Avatar);
+            if (newUserId <= 0) return false;
 
-            string queryStudent = @"INSERT INTO students (user_id, dob, gender, address) VALUES (@param0, @param1, @param2, @param3); SELECT LAST_INSERT_ID();";
-            object studentIdObj = DbConnect.ExecuteScalar(queryStudent, new object[] { newUserId, s.DateOfBirth.Date, s.Gender, s.Address });
+            // Bước 2: Tạo Student Info (Dùng @param0...)
+            string queryStudent = @"INSERT INTO students (user_id, dob, gender, address) 
+                                    VALUES (@param0, @param1, @param2, @param3); 
+                                    SELECT LAST_INSERT_ID();";
+
+            object studentIdObj = DbConnect.ExecuteScalar(queryStudent, new object[] {
+                newUserId, s.DateOfBirth.Date, s.Gender, s.Address
+            });
+
             if (studentIdObj == null) return false;
             int newStudentId = Convert.ToInt32(studentIdObj);
 
+            // Bước 3: Xếp lớp
             if (s.ClassID > 0 && s.YearID > 0)
             {
-                string queryClass = @"INSERT INTO student_class (student_id, class_id, school_year_id) VALUES (@param0, @param1, @param2)";
+                string queryClass = @"INSERT INTO student_class (student_id, class_id, school_year_id) 
+                                      VALUES (@param0, @param1, @param2)";
                 DbConnect.ExecuteNonQuery(queryClass, new object[] { newStudentId, s.ClassID, s.YearID });
             }
 
-            // Thêm phụ huynh (Code thêm phụ huynh giữ nguyên như cũ của bạn hoặc logic tương tự)
+            // Bước 4: Tạo User Phụ huynh
             AddParent(newStudentId, s.FatherName, s.FatherPhone, s.FatherJob, "Cha");
             AddParent(newStudentId, s.MotherName, s.MotherPhone, s.MotherJob, "Mẹ");
 

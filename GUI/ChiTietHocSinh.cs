@@ -19,19 +19,18 @@ namespace GUI
 
         public ChiTietHocSinh(int teacherUserId, StudentDTO student)
         {
-            InitializeComponent(); // Designer sẽ khởi tạo picAvatar (không có lblUpload cho form xem)
+            InitializeComponent();
             _currentTeacherUserId = teacherUserId;
             _studentData = student;
 
-            // Load dữ liệu
             LoadComboBoxData();
             SetupUIForView();
-            SetupEventHandlers(); // Gán sự kiện gọn gàng
+            SetupEventHandlers();
 
             this.Load += (s, e) =>
             {
                 ApplyRoundedCorners();
-                lblHeaderTitle.Focus(); // Bỏ focus khỏi textbox đầu tiên
+                lblHeaderTitle.Focus();
             };
             pnlContent.MouseEnter += (s, e) => pnlContent.Focus();
         }
@@ -39,6 +38,55 @@ namespace GUI
         private void SetupEventHandlers()
         {
             btnCancel.Click += (s, e) => this.Close();
+        }
+
+        // Hàm helper tìm thư mục Avatars
+        private string GetProjectAvatarPath()
+        {
+            string currentDir = Application.StartupPath;
+            for (int i = 0; i < 5; i++)
+            {
+                string tryPath = Path.Combine(currentDir, "Avatars");
+                if (Directory.Exists(tryPath)) return tryPath;
+
+                DirectoryInfo parent = Directory.GetParent(currentDir);
+                if (parent == null) break;
+                currentDir = parent.FullName;
+            }
+            string fallbackPath = Path.Combine(Application.StartupPath, "Avatars");
+            if (!Directory.Exists(fallbackPath)) Directory.CreateDirectory(fallbackPath);
+            return fallbackPath;
+        }
+
+        // Hàm load ảnh lên giao diện
+        private void LoadAvatarToUI(string avatarFileName)
+        {
+            string folderPath = GetProjectAvatarPath();
+
+            // 1. Đường dẫn ảnh
+            string customPath = Path.Combine(folderPath, avatarFileName ?? "");
+            string defaultPath = Path.Combine(folderPath, "avatar_macdinh.png");
+
+            // 2. Logic ưu tiên: Ảnh riêng -> Ảnh mặc định
+            if (!string.IsNullOrEmpty(avatarFileName) && File.Exists(customPath))
+            {
+                picAvatar.Image = Image.FromFile(customPath);
+            }
+            else if (File.Exists(defaultPath))
+            {
+                picAvatar.Image = Image.FromFile(defaultPath);
+            }
+
+            // 3. Bo tròn
+            if (picAvatar.Image != null) MakeAvatarCircular();
+        }
+
+        private void MakeAvatarCircular()
+        {
+            if (picAvatar.Image == null) return;
+            GraphicsPath path = new GraphicsPath();
+            path.AddEllipse(0, 0, picAvatar.Width, picAvatar.Height);
+            picAvatar.Region = new Region(path);
         }
 
         private void SetupUIForView()
@@ -69,26 +117,8 @@ namespace GUI
                 txtMotherPhone.Text = _studentData.MotherPhone;
                 txtMotherJob.Text = _studentData.MotherJob;
 
-                // --- SỬA ĐOẠN NÀY ĐỂ LOAD ẢNH ĐÚNG FOLDER ---
-                string avatarFileName = _studentData.Avatar;
-                string folderPath = GetProjectAvatarPath(); // Gọi hàm tìm thư mục gốc
-                string fullPath = Path.Combine(folderPath, avatarFileName ?? "");
-
-                if (!string.IsNullOrEmpty(avatarFileName) && File.Exists(fullPath))
-                {
-                    picAvatar.Image = Image.FromFile(fullPath);
-                }
-                else
-                {
-                    // Load ảnh mặc định nếu không thấy ảnh riêng
-                    string defaultImg = _studentData.Gender == "Male" ? "default_boy.png" : "default_girl.png";
-                    string defaultPath = Path.Combine(folderPath, defaultImg);
-                    if (File.Exists(defaultPath))
-                    {
-                        picAvatar.Image = Image.FromFile(defaultPath);
-                    }
-                }
-                // ---------------------------------------------
+                // Load Avatar
+                LoadAvatarToUI(_studentData.Avatar);
             }
 
             DisableControls(pnlContent);
@@ -138,7 +168,6 @@ namespace GUI
 
         private void ApplyRoundedCorners()
         {
-            // Bo tròn các panel input
             Control[] controls = { btnSave, btnCancel, btnGenderMale, btnGenderFemale,
                 pnlInputName, pnlInputDob, pnlInputAddress, pnlInputID, pnlInputClass, pnlInputYear,
                 pnlInputFatherName, pnlInputFatherPhone, pnlInputFatherJob,
@@ -149,7 +178,7 @@ namespace GUI
                 Rectangle bounds = new Rectangle(0, 0, c.Width, c.Height);
                 using (GraphicsPath path = new GraphicsPath())
                 {
-                    int r = 10; // Bán kính bo
+                    int r = 10;
                     path.AddArc(0, 0, r, r, 180, 90);
                     path.AddArc(bounds.Width - r, 0, r, r, 270, 90);
                     path.AddArc(bounds.Width - r, bounds.Height - r, r, r, 0, 90);
@@ -157,38 +186,7 @@ namespace GUI
                     c.Region = new Region(path);
                 }
             }
-            // Bo tròn panel Avatar
-            Rectangle avtBounds = new Rectangle(0, 0, pnlAvatar.Width, pnlAvatar.Height);
-            using (GraphicsPath path = new GraphicsPath()) { path.AddEllipse(avtBounds); pnlAvatar.Region = new Region(path); }
-        }
-
-        private string GetProjectAvatarPath()
-        {
-            // Bắt đầu từ nơi file .exe đang chạy (bin/Debug/...)
-            string currentDir = Application.StartupPath;
-
-            // Đi ngược lên tối đa 5 cấp cha để tìm thư mục "Avatars"
-            // (Vì cấu trúc thường là: Project/bin/Debug/net6.0/...)
-            for (int i = 0; i < 5; i++)
-            {
-                // Kiểm tra xem tại cấp này có folder Avatars không
-                string tryPath = Path.Combine(currentDir, "Avatars");
-                if (Directory.Exists(tryPath))
-                {
-                    return tryPath; // Tìm thấy! Trả về đường dẫn này
-                }
-
-                // Nếu không thấy, đi lên 1 cấp cha
-                DirectoryInfo parent = Directory.GetParent(currentDir);
-                if (parent == null) break; // Hết đường lui
-                currentDir = parent.FullName;
-            }
-
-            // [DỰ PHÒNG] Nếu tìm mãi không thấy (do bạn chưa tạo folder), 
-            // thì dùng lại đường dẫn cũ và tự tạo folder để không bị lỗi.
-            string fallbackPath = Path.Combine(Application.StartupPath, "Avatars");
-            if (!Directory.Exists(fallbackPath)) Directory.CreateDirectory(fallbackPath);
-            return fallbackPath;
+            using (GraphicsPath path = new GraphicsPath()) { path.AddEllipse(0, 0, pnlAvatar.Width, pnlAvatar.Height); pnlAvatar.Region = new Region(path); }
         }
     }
 }
