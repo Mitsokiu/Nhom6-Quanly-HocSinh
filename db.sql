@@ -11,7 +11,7 @@ COLLATE utf8mb4_unicode_ci;
 USE school_management;
 
 -- =====================================
--- 1. USERS (Thêm cột avatar)
+-- 1. USERS (Đã thêm avatar)
 -- =====================================
 CREATE TABLE users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -20,7 +20,7 @@ CREATE TABLE users (
     fullname VARCHAR(100) NOT NULL,
     email VARCHAR(100),
     phone VARCHAR(15),
-    avatar VARCHAR(255) DEFAULT NULL, -- Cột MỚI thêm
+    avatar VARCHAR(255) DEFAULT 'avatar_macdinh.png', -- Mặc định có ảnh
     role_id VARCHAR(50),  -- admin, gvcn, gvbm, student, parent
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
@@ -34,33 +34,33 @@ INSERT INTO users (username, fullname, role_id, email, phone, avatar) VALUES
 ('gv02', 'Nguyễn Văn Hùng (CN 6A2)', 'gvcn', 'hung.nguyen@school.edu.vn', '0909000002', 'teacher_male.png'),
 ('gv03', 'Lê Thị Lan (Anh Văn)', 'gvbm', 'lan.le@school.edu.vn', '0909000003', 'teacher_female.png'),
 
--- 12 Học sinh
-('hs01', 'Nguyễn Minh Khang', 'student', 'hs01@school.edu.vn', '', 'student_boy.png'),
-('hs02', 'Trần Bảo Ngọc', 'student', 'hs02@school.edu.vn', '', 'student_girl.png'),
-('hs03', 'Lê Thị Cẩm Ly', 'student', 'hs03@school.edu.vn', '', 'student_girl.png'),
-('hs04', 'Phạm Văn Đức', 'student', 'hs04@school.edu.vn', '', 'student_boy.png'),
-('hs05', 'Hoàng Thái Tú', 'student', 'hs05@school.edu.vn', '', 'student_boy.png'),
-('hs06', 'Vũ Thị Mai', 'student', 'hs06@school.edu.vn', '', 'student_girl.png'),
-('hs07', 'Đặng Tuấn Anh', 'student', 'hs07@school.edu.vn', '', 'student_boy.png'),
-('hs08', 'Bùi Thị Hoa', 'student', 'hs08@school.edu.vn', '', 'student_girl.png'),
-('hs09', 'Ngô Văn Nam', 'student', 'hs09@school.edu.vn', '', 'student_boy.png'),
-('hs10', 'Đỗ Thị Hạnh', 'student', 'hs10@school.edu.vn', '', 'student_girl.png'),
-('hs11', 'Lý Văn Phúc', 'student', 'hs11@school.edu.vn', '', 'student_boy.png'),
-('hs12', 'Hồ Thị Thu', 'student', 'hs12@school.edu.vn', '', 'student_girl.png'),
+-- 12 Học sinh (Username dạng hs + số ngẫu nhiên để test)
+('hs100001', 'Nguyễn Minh Khang', 'student', 'hs01@school.edu.vn', '', 'student_boy.png'),
+('hs100002', 'Trần Bảo Ngọc', 'student', 'hs02@school.edu.vn', '', 'student_girl.png'),
+('hs100003', 'Lê Thị Cẩm Ly', 'student', 'hs03@school.edu.vn', '', 'student_girl.png'),
+('hs100004', 'Phạm Văn Đức', 'student', 'hs04@school.edu.vn', '', 'student_boy.png'),
+('hs100005', 'Hoàng Thái Tú', 'student', 'hs05@school.edu.vn', '', 'student_boy.png'),
+('hs100006', 'Vũ Thị Mai', 'student', 'hs06@school.edu.vn', '', 'student_girl.png'),
+('hs100007', 'Đặng Tuấn Anh', 'student', 'hs07@school.edu.vn', '', 'student_boy.png'),
+('hs100008', 'Bùi Thị Hoa', 'student', 'hs08@school.edu.vn', '', 'student_girl.png'),
+('hs100009', 'Ngô Văn Nam', 'student', 'hs09@school.edu.vn', '', 'student_boy.png'),
+('hs100010', 'Đỗ Thị Hạnh', 'student', 'hs10@school.edu.vn', '', 'student_girl.png'),
+('hs100011', 'Lý Văn Phúc', 'student', 'hs11@school.edu.vn', '', 'student_boy.png'),
+('hs100012', 'Hồ Thị Thu', 'student', 'hs12@school.edu.vn', '', 'student_girl.png'),
 
 -- 12 Phụ huynh
-('ph01', 'Lê Văn Bố (PH Khang)', 'parent', 'ph01@gmail.com', '0911000001', NULL),
-('ph02', 'Trần Thị Mẹ (PH Ngọc)', 'parent', 'ph02@gmail.com', '0911000002', NULL),
-('ph03', 'Lê Văn Hùng (PH Ly)', 'parent', 'ph03@gmail.com', '0911000003', NULL),
-('ph04', 'Phạm Thị Lan (PH Đức)', 'parent', 'ph04@gmail.com', '0911000004', NULL),
-('ph05', 'Hoàng Văn Cường (PH Tú)', 'parent', 'ph05@gmail.com', '0911000005', NULL),
-('ph06', 'Vũ Văn Long (PH Mai)', 'parent', 'ph06@gmail.com', '0911000006', NULL),
-('ph07', 'Đặng Văn Sơn (PH Anh)', 'parent', 'ph07@gmail.com', '0911000007', NULL),
-('ph08', 'Bùi Văn Tám (PH Hoa)', 'parent', 'ph08@gmail.com', '0911000008', NULL),
-('ph09', 'Ngô Thị Chín (PH Nam)', 'parent', 'ph09@gmail.com', '0911000009', NULL),
-('ph10', 'Đỗ Văn Mười (PH Hạnh)', 'parent', 'ph10@gmail.com', '0911000010', NULL),
-('ph11', 'Lý Thị Một (PH Phúc)', 'parent', 'ph11@gmail.com', '0911000011', NULL),
-('ph12', 'Hồ Văn Hai (PH Thu)', 'parent', 'ph12@gmail.com', '0911000012', NULL);
+('ph100001', 'Lê Văn Bố (PH Khang)', 'parent', 'ph01@gmail.com', '0911000001', NULL),
+('ph100002', 'Trần Thị Mẹ (PH Ngọc)', 'parent', 'ph02@gmail.com', '0911000002', NULL),
+('ph100003', 'Lê Văn Hùng (PH Ly)', 'parent', 'ph03@gmail.com', '0911000003', NULL),
+('ph100004', 'Phạm Thị Lan (PH Đức)', 'parent', 'ph04@gmail.com', '0911000004', NULL),
+('ph100005', 'Hoàng Văn Cường (PH Tú)', 'parent', 'ph05@gmail.com', '0911000005', NULL),
+('ph100006', 'Vũ Văn Long (PH Mai)', 'parent', 'ph06@gmail.com', '0911000006', NULL),
+('ph100007', 'Đặng Văn Sơn (PH Anh)', 'parent', 'ph07@gmail.com', '0911000007', NULL),
+('ph100008', 'Bùi Văn Tám (PH Hoa)', 'parent', 'ph08@gmail.com', '0911000008', NULL),
+('ph100009', 'Ngô Thị Chín (PH Nam)', 'parent', 'ph09@gmail.com', '0911000009', NULL),
+('ph100010', 'Đỗ Văn Mười (PH Hạnh)', 'parent', 'ph10@gmail.com', '0911000010', NULL),
+('ph100011', 'Lý Thị Một (PH Phúc)', 'parent', 'ph11@gmail.com', '0911000011', NULL),
+('ph100012', 'Hồ Văn Hai (PH Thu)', 'parent', 'ph12@gmail.com', '0911000012', NULL);
 
 -- =====================================
 -- 2. PARENTS & STUDENTS
@@ -100,12 +100,11 @@ INSERT INTO students (user_id, dob, gender, address) VALUES
 (15, '2013-10-10', 'Male', 'Quận 8, TP.HCM'),
 (16, '2013-12-05', 'Female', 'Quận 9, TP.HCM');
 
--- Bảng này CẦN THIẾT cho chức năng thêm học sinh
 CREATE TABLE student_parent (
-    student_id INT,
-    parent_id INT,
-    relation VARCHAR(20),
-    PRIMARY KEY(student_id, parent_id),
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT NOT NULL,
+    parent_id INT NOT NULL,
+    relation VARCHAR(50), 
     FOREIGN KEY (student_id) REFERENCES students(student_id) ON DELETE CASCADE,
     FOREIGN KEY (parent_id) REFERENCES parents(parent_id) ON DELETE CASCADE
 );
@@ -115,7 +114,9 @@ INSERT INTO student_parent (student_id, parent_id, relation) VALUES
 (5, 5, 'Cha'), (6, 6, 'Cha'), (7, 7, 'Cha'), (8, 8, 'Cha'),
 (9, 9, 'Mẹ'), (10, 10, 'Cha'), (11, 11, 'Mẹ'), (12, 12, 'Cha');
 
--- Bảng này CẦN THIẾT cho UserDAO (tránh lỗi khi thêm GV)
+-- =====================================
+-- 3. ACADEMIC & TEACHERS
+-- =====================================
 CREATE TABLE teachers (
     teacher_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT UNIQUE NOT NULL,
@@ -123,9 +124,6 @@ CREATE TABLE teachers (
 );
 INSERT INTO teachers (user_id) VALUES (2), (3), (4);
 
--- =====================================
--- 3. ACADEMIC YEARS & SEMESTERS
--- =====================================
 CREATE TABLE academic_years (
     year_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(20) NOT NULL,
@@ -146,7 +144,7 @@ INSERT INTO semesters (year_id, name, start_date, end_date) VALUES
 (1, 'Học kỳ 2', '2026-01-01', '2026-05-30');
 
 -- =====================================
--- 4. CLASSES & ASSIGNMENTS
+-- 4. CLASSES
 -- =====================================
 CREATE TABLE grade_levels (
     grade_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -165,7 +163,6 @@ CREATE TABLE homeroom_assignments (
     assign_id INT AUTO_INCREMENT PRIMARY KEY,
     class_id INT, teacher_id INT, year_id INT, assigned_date DATE
 );
--- Teacher_ID ở đây là ID trong bảng User (theo dữ liệu cũ của bạn)
 INSERT INTO homeroom_assignments (class_id, teacher_id, year_id, assigned_date) VALUES
 (1, 2, 1, '2025-08-01'), 
 (2, 3, 1, '2025-08-01');
@@ -180,7 +177,7 @@ INSERT INTO student_class (student_id, class_id, school_year_id) VALUES
 (7, 2, 1), (8, 2, 1), (9, 2, 1), (10, 2, 1), (11, 2, 1), (12, 2, 1);
 
 -- =====================================
--- 5. SUBJECTS & TEACHING
+-- 5. SUBJECTS & SCHEDULE
 -- =====================================
 CREATE TABLE subjects (
     subject_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -195,13 +192,8 @@ CREATE TABLE teacher_assignments (
     teacher_id INT, subject_id INT, class_id INT, semester_id INT
 );
 INSERT INTO teacher_assignments (teacher_id, subject_id, class_id, semester_id) VALUES
-(2, 1, 1, 1), (2, 2, 1, 1), 
-(3, 1, 2, 1), 
-(4, 3, 1, 1), (4, 3, 2, 1);
+(2, 1, 1, 1), (2, 2, 1, 1), (3, 1, 2, 1), (4, 3, 1, 1), (4, 3, 2, 1);
 
--- =====================================
--- 6. TIMETABLE
--- =====================================
 CREATE TABLE timetable (
     id INT AUTO_INCREMENT PRIMARY KEY,
     class_id INT, subject_id INT, teacher_id INT, semester_id INT,
@@ -209,13 +201,10 @@ CREATE TABLE timetable (
 );
 INSERT INTO timetable (class_id, subject_id, teacher_id, semester_id, day, period, room) VALUES
 (1, 1, 2, 1, 'Mon', 1, '101'), (1, 2, 2, 1, 'Mon', 2, '101'),
-(1, 3, 4, 1, 'Tue', 1, '101'), (1, 1, 2, 1, 'Tue', 2, '101'),
-(1, 4, 2, 1, 'Wed', 1, 'Lab'), (1, 5, 2, 1, 'Wed', 2, 'Lab'),
-(1, 6, 2, 1, 'Thu', 1, '101'), (1, 7, 2, 1, 'Thu', 2, '101'),
-(1, 8, 2, 1, 'Fri', 1, '101'), (1, 9, 2, 1, 'Fri', 2, 'PC1');
+(1, 3, 4, 1, 'Tue', 1, '101'), (1, 1, 2, 1, 'Tue', 2, '101');
 
 -- =====================================
--- 7. SCORES
+-- 6. FINANCE & SCORES
 -- =====================================
 CREATE TABLE scores (
     score_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -225,14 +214,8 @@ CREATE TABLE scores (
     FOREIGN KEY (student_id) REFERENCES students(student_id) ON DELETE CASCADE
 );
 INSERT INTO scores (student_id, assign_id, score_type, score_value) VALUES
-(1, 1, 'oral', 8.5), (1, 1, 'quiz15', 9.0), (1, 1, 'midterm', 8.0),
-(2, 1, 'oral', 7.0), (2, 1, 'quiz15', 6.5), (2, 1, 'midterm', 7.5),
-(3, 1, 'oral', 9.5), (3, 1, 'quiz15', 9.0),
-(4, 1, 'oral', 6.0), (5, 1, 'oral', 8.0), (6, 1, 'oral', 7.5);
+(1, 1, 'oral', 8.5), (1, 1, 'quiz15', 9.0), (1, 1, 'midterm', 8.0);
 
--- =====================================
--- 8. TUITION
--- =====================================
 CREATE TABLE tuition (
     tuition_id INT AUTO_INCREMENT PRIMARY KEY,
     student_id INT, name VARCHAR(255), amount DECIMAL(10,2),
@@ -241,20 +224,10 @@ CREATE TABLE tuition (
 );
 INSERT INTO tuition (student_id, name, amount, semester_id, due_date, status) VALUES
 (1, 'Học phí HK1', 5000000, 1, '2025-09-30', 'paid'),
-(2, 'Học phí HK1', 5000000, 1, '2025-09-30', 'unpaid'),
-(3, 'Học phí HK1', 5000000, 1, '2025-09-30', 'paid'),
-(4, 'Học phí HK1', 5000000, 1, '2025-09-30', 'unpaid'),
-(5, 'Học phí HK1', 5000000, 1, '2025-09-30', 'unpaid'),
-(6, 'Học phí HK1', 5000000, 1, '2025-09-30', 'paid'),
-(7, 'Học phí HK1', 5000000, 1, '2025-09-30', 'unpaid'),
-(8, 'Học phí HK1', 5000000, 1, '2025-09-30', 'unpaid'),
-(9, 'Học phí HK1', 5000000, 1, '2025-09-30', 'paid'),
-(10, 'Học phí HK1', 5000000, 1, '2025-09-30', 'paid'),
-(11, 'Học phí HK1', 5000000, 1, '2025-09-30', 'unpaid'),
-(12, 'Học phí HK1', 5000000, 1, '2025-09-30', 'unpaid');
+(2, 'Học phí HK1', 5000000, 1, '2025-09-30', 'unpaid');
 
 -- =====================================
--- 9. NOTIFICATIONS & SCHOOL INFO
+-- 7. EXTRAS (Comments, Events, Notifications)
 -- =====================================
 CREATE TABLE notifications (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -268,3 +241,22 @@ CREATE TABLE school_info (
     school_name VARCHAR(200), address TEXT, phone VARCHAR(20)
 );
 INSERT INTO school_info VALUES (1, 'THCS Minh Khai', 'Quận 1, TP.HCM', '02822223333');
+
+-- Bảng Comments (Nếu bạn cần dùng sau này)
+CREATE TABLE comments (
+    comment_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    content TEXT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
+-- Bảng Events (Sự kiện)
+CREATE TABLE events (
+    event_id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255),
+    description TEXT,
+    event_date DATETIME
+);
+INSERT INTO events (title, description, event_date) VALUES 
+('Khai giảng', 'Lễ khai giảng năm học mới', '2025-09-05 07:00:00');
