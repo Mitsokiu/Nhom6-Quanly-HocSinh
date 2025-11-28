@@ -3,8 +3,8 @@ using DTO;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace GUI
 {
@@ -13,14 +13,14 @@ namespace GUI
         private readonly StudentBUS _studentBus = new StudentBUS();
         private readonly TeacherBUS _teacherBus = new TeacherBUS();
         private readonly ErrorProvider _errorProvider = new ErrorProvider();
-
         private readonly int _currentTeacherUserId;
         private readonly StudentDTO _studentData;
+        private string currentAvatarPath = null;
+        private PictureBox picAvatar;
 
         private readonly Color clrActive = Color.FromArgb(13, 110, 253);
         private readonly Color clrInactive = Color.White;
 
-        // Placeholders
         private const string PH_NAME = "Nhập họ và tên học sinh";
         private const string PH_ADDRESS = "Nhập địa chỉ";
         private const string PH_F_NAME = "Nhập họ tên";
@@ -39,22 +39,77 @@ namespace GUI
             _errorProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
             _errorProvider.ContainerControl = this;
 
-            LoadComboBoxData(); // Load danh sách trước khi gán dữ liệu
+            InitializeAvatarControl();
+            LoadComboBoxData();
             SetupUIForEdit();
 
-            // Events
             btnGenderMale.Click += (s, e) => ToggleGender(true);
             btnGenderFemale.Click += (s, e) => ToggleGender(false);
             btnSave.Click += btnSave_Click;
             btnCancel.Click += (s, e) => this.Close();
-            this.Load += (s, e) => {
-                ApplyRoundedCorners();
-                // FIX LỖI SCROLLBAR: Đảm bảo focus vào label đầu để không bị nhảy scroll
-                lblHeaderTitle.Focus();
-            };
-
-            // FIX LỖI SCROLLBAR: Kích hoạt cuộn chuột trên Panel
+            this.Load += (s, e) => { ApplyRoundedCorners(); lblHeaderTitle.Focus(); };
             pnlContent.MouseEnter += (s, e) => pnlContent.Focus();
+        }
+
+        private void InitializeAvatarControl()
+        {
+            picAvatar = new PictureBox
+            {
+                Size = new Size(130, 130),
+                Location = new Point(40, 20),
+                SizeMode = PictureBoxSizeMode.Zoom,
+                Cursor = Cursors.Hand,
+                BorderStyle = BorderStyle.None
+            };
+            picAvatar.Click += PicAvatar_Click;
+            MakeAvatarCircular();
+
+            this.Controls.Add(picAvatar);
+            picAvatar.BringToFront();
+        }
+
+        private void MakeAvatarCircular()
+        {
+            if (picAvatar.Image == null) return;
+            using (var bmp = new Bitmap(picAvatar.Width, picAvatar.Height))
+            {
+                using (var g = Graphics.FromImage(bmp))
+                {
+                    g.SmoothingMode = SmoothingMode.AntiAlias;
+                    using (var path = new GraphicsPath())
+                    {
+                        path.AddEllipse(0, 0, picAvatar.Width - 1, picAvatar.Height - 1);
+                        picAvatar.Region = new Region(path);
+                        g.Clear(Color.Transparent);
+                        g.DrawImage(picAvatar.Image, 0, 0, picAvatar.Width, picAvatar.Height);
+                    }
+                }
+            }
+        }
+
+        private void PicAvatar_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "Hình ảnh|*.jpg;*.jpeg;*.png;*.bmp";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    currentAvatarPath = ofd.FileName;
+                    picAvatar.Image = Image.FromFile(currentAvatarPath);
+                    MakeAvatarCircular();
+                }
+            }
+        }
+
+        private string SaveAvatarToServer(string sourcePath)
+        {
+            if (string.IsNullOrEmpty(sourcePath)) return null;
+            string folder = Path.Combine(Application.StartupPath, "Avatars");
+            if (!Directory.Exists(folder)) Directory.CreateDirectory(folder);
+            string fileName = "avatar_" + DateTime.Now.ToString("yyyyMMddHHmmssfff") + Path.GetExtension(sourcePath);
+            string destPath = Path.Combine(folder, fileName);
+            File.Copy(sourcePath, destPath, true);
+            return "Avatars/" + fileName;
         }
 
         private void SetupUIForEdit()
@@ -62,43 +117,43 @@ namespace GUI
             lblHeaderTitle.Text = "Cập nhật Hồ sơ";
             btnSave.Text = "Lưu thay đổi";
 
-            // Đổ dữ liệu
             if (_studentData != null)
             {
                 txtName.Text = _studentData.FullName;
-                txtName.ForeColor = Color.Black; // Reset màu chữ placeholder
-
+                txtName.ForeColor = Color.Black;
                 dtpDob.Value = _studentData.DateOfBirth;
-
                 txtAddress.Text = _studentData.Address;
                 txtAddress.ForeColor = Color.Black;
-
                 txtID.Text = _studentData.StudentCode;
-
                 ToggleGender(_studentData.Gender == "Male");
 
-                // Gán ComboBox
                 if (cboClass.Items.Count > 0) cboClass.SelectedValue = _studentData.ClassID;
-
-                // FIX LỖI NĂM HỌC: Đảm bảo _studentData.YearID có giá trị
-                // Nếu YearID = 0 (do logic cũ chưa lấy), ta fallback lấy theo AcademicYear (Text)
                 if (cboYear.Items.Count > 0)
                 {
-                    // Ưu tiên theo ID
-                    if (_studentData.YearID > 0)
-                        cboYear.SelectedValue = _studentData.YearID;
-                    else
-                        // Fallback theo tên hiển thị
-                        cboYear.Text = _studentData.AcademicYear;
+                    if (_studentData.YearID > 0) cboYear.SelectedValue = _studentData.YearID;
+                    else cboYear.Text = _studentData.AcademicYear;
                 }
 
                 txtFatherName.Text = _studentData.FatherName; txtFatherName.ForeColor = Color.Black;
                 txtFatherPhone.Text = _studentData.FatherPhone; txtFatherPhone.ForeColor = Color.Black;
                 txtFatherJob.Text = _studentData.FatherJob; txtFatherJob.ForeColor = Color.Black;
-
                 txtMotherName.Text = _studentData.MotherName; txtMotherName.ForeColor = Color.Black;
                 txtMotherPhone.Text = _studentData.MotherPhone; txtMotherPhone.ForeColor = Color.Black;
                 txtMotherJob.Text = _studentData.MotherJob; txtMotherJob.ForeColor = Color.Black;
+
+                // Hiển thị avatar hiện tại
+                string avatar = _studentData.Avatar;
+                if (!string.IsNullOrEmpty(avatar) && File.Exists(avatar))
+                {
+                    picAvatar.Image = Image.FromFile(avatar);
+                }
+                else
+                {
+                    string defaultImg = _studentData.Gender == "Male" ? "default_boy.png" : "default_girl.png";
+                    string path = Path.Combine(Application.StartupPath, "Avatars", defaultImg);
+                    if (File.Exists(path)) picAvatar.Image = Image.FromFile(path);
+                }
+                MakeAvatarCircular();
             }
         }
 
@@ -106,19 +161,16 @@ namespace GUI
         {
             try
             {
-                // Class
                 var dtClass = _teacherBus.GetHomeroomClass(_currentTeacherUserId);
                 cboClass.DataSource = dtClass;
                 cboClass.DisplayMember = "class_name";
                 cboClass.ValueMember = "class_id";
 
-                // Year
                 var dtYear = _teacherBus.GetCurrentAcademicYear();
                 cboYear.DataSource = dtYear;
                 cboYear.DisplayMember = "name";
                 cboYear.ValueMember = "year_id";
 
-                // Khóa ComboBox nếu là GVCN (chỉ thêm vào lớp mình)
                 cboClass.Enabled = false;
                 cboYear.Enabled = false;
             }
@@ -142,11 +194,8 @@ namespace GUI
                 DateOfBirth = dtpDob.Value,
                 Gender = btnGenderMale.BackColor == clrActive ? "Male" : "Female",
                 Address = address,
-
-                // Lấy ID an toàn
-                ClassID = (cboClass.SelectedValue != null) ? Convert.ToInt32(cboClass.SelectedValue) : 0,
-                YearID = (cboYear.SelectedValue != null) ? Convert.ToInt32(cboYear.SelectedValue) : 0,
-
+                ClassID = cboClass.SelectedValue != null ? Convert.ToInt32(cboClass.SelectedValue) : 0,
+                YearID = cboYear.SelectedValue != null ? Convert.ToInt32(cboYear.SelectedValue) : 0,
                 FatherName = GetText(txtFatherName, PH_F_NAME),
                 FatherPhone = GetText(txtFatherPhone, PH_F_PHONE),
                 FatherJob = GetText(txtFatherJob, PH_F_JOB),
@@ -160,6 +209,18 @@ namespace GUI
 
             if (success)
             {
+                if (currentAvatarPath != null)
+                {
+                    string newPath = SaveAvatarToServer(currentAvatarPath);
+                    var userBus = new UserBUS();
+                    var user = userBus.GetUserInfo(_studentData.UserID);
+                    if (user != null)
+                    {
+                        user.Avatar = newPath;
+                        userBus.UpdateUser(user);
+                    }
+                }
+
                 MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
@@ -170,11 +231,9 @@ namespace GUI
             }
         }
 
-        // Các hàm Helper (copy từ gốc)
         private string GetText(TextBox txt, string placeholder)
         {
-            if (txt.Text == placeholder) return "";
-            return txt.Text.Trim();
+            return txt.Text == placeholder ? "" : txt.Text.Trim();
         }
 
         private void ToggleGender(bool isMale)
