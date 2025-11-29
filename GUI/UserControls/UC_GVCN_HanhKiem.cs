@@ -24,31 +24,33 @@ namespace GUI.UserControls
         private int totalPages = 1;
         private const string PLACEHOLDER_TEXT = "Tìm kiếm học sinh theo tên hoặc mã số...";
 
+        // CẤU HÌNH ICON (Giống QLHS)
+        private const int ICON_W = 24;
+        private const int ICON_H = 24;
+
         public UC_GVCN_HanhKiem(int teacherIdInput)
         {
             InitializeComponent();
             this.teacherId = teacherIdInput;
 
             SetupDataGridView();
-            this.Load += (s, e) => {
-                SetRoundedRegion(pnlSearchBox, 20);
-                SetRoundedRegion(btnSaveAll, 10);
-                SetRoundedRegion(btnCancel, 10);
-            };
+
+            // Gán sự kiện vẽ icon và click (Giống QLHS)
+            dgvHanhKiem.CellPainting += DgvHanhKiem_CellPainting;
+            dgvHanhKiem.CellMouseClick += DgvHanhKiem_CellMouseClick;
+
+            this.Load += (s, e) => SetRoundedRegion(pnlSearchBox, 20);
             this.Resize += (s, e) => CenterPagination();
 
             LoadSemesters();
-
             cbbHocKy.SelectedIndexChanged += (s, e) => LoadDataFromDB();
 
+            // Search logic
             txtSearch.Text = PLACEHOLDER_TEXT;
             txtSearch.ForeColor = Color.Gray;
             txtSearch.Enter += (s, e) => { if (txtSearch.Text == PLACEHOLDER_TEXT) { txtSearch.Text = ""; txtSearch.ForeColor = Color.Black; } };
             txtSearch.Leave += (s, e) => { if (string.IsNullOrWhiteSpace(txtSearch.Text)) { txtSearch.Text = PLACEHOLDER_TEXT; txtSearch.ForeColor = Color.Gray; } };
             txtSearch.TextChanged += TxtSearch_TextChanged;
-
-            btnSaveAll.Click += BtnSaveAll_Click;
-            btnCancel.Click += (s, e) => LoadDataFromDB();
 
             InitPaginationEvents();
         }
@@ -56,56 +58,112 @@ namespace GUI.UserControls
         private void SetupDataGridView()
         {
             dgvHanhKiem.Columns.Clear();
+            dgvHanhKiem.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
 
-            // --- CẤU HÌNH CHUNG ---
-            dgvHanhKiem.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None; // Tắt chia đều
-            dgvHanhKiem.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            // Style chung
             DataGridViewCellStyle centerStyle = new DataGridViewCellStyle();
             centerStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            // [ĐÃ BỎ CỘT STT Ở ĐÂY]
-
-            // 1. Cột Mã HS (Căn giữa)
-            var colMa = new DataGridViewTextBoxColumn();
-            colMa.Name = "StudentCode";
-            colMa.HeaderText = "MÃ SỐ";
-            colMa.Width = 120;
-            colMa.ReadOnly = true;
-            colMa.DataPropertyName = "StudentCode";
-            dgvHanhKiem.Columns.Add(colMa);
-
-            // 2. Cột Họ Tên (Căn trái - Mặc định)
-            dgvHanhKiem.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                Name = "FullName",
-                HeaderText = "HỌ VÀ TÊN",
-                Width = 300,
-                ReadOnly = true,
-                DataPropertyName = "FullName"
+            // Cột 2: Mã HS
+            dgvHanhKiem.Columns.Add(new DataGridViewTextBoxColumn { 
+                Name = "StudentCode", 
+                HeaderText = "MÃ SỐ", 
+                Width = 150, 
+                ReadOnly = true, 
+                DataPropertyName = "StudentCode" 
             });
 
-            // 3. Cột Hạnh Kiểm (Căn giữa)
-            var colConduct = new DataGridViewComboBoxColumn();
-            colConduct.Name = "Conduct";
-            colConduct.HeaderText = "HẠNH KIỂM";
-            colConduct.Width = 150;
-            colConduct.DataPropertyName = "Conduct";
-            colConduct.Items.AddRange("Tốt", "Khá", "Trung Bình", "Yếu");
-            colConduct.FlatStyle = FlatStyle.Flat;
+            // Cột 3: Họ Tên
+            dgvHanhKiem.Columns.Add(new DataGridViewTextBoxColumn { 
+                Name = "FullName", 
+                HeaderText = "HỌ VÀ TÊN", 
+                Width = 250, 
+                ReadOnly = true, 
+                DataPropertyName = "FullName" 
+            });
 
+            // Cột 4: Hạnh Kiểm (Chuyển thành TextBox ReadOnly, vì sửa trong form con rồi)
+            var colConduct = new DataGridViewTextBoxColumn { 
+                Name = "Conduct", HeaderText = "HẠNH KIỂM", 
+                Width = 150, 
+                ReadOnly = true, 
+                DataPropertyName = "Conduct"
+            };
             dgvHanhKiem.Columns.Add(colConduct);
 
-            // 4. Cột Nhận Xét (Căn trái, Fill hết phần còn lại)
-            var colComment = new DataGridViewTextBoxColumn();
-            colComment.Name = "TeacherComment";
-            colComment.HeaderText = "NHẬN XÉT CỦA GIÁO VIÊN";
-            colComment.DataPropertyName = "TeacherComment";
-            colComment.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            // Cột 5: Nhận Xét
+            var colComment = new DataGridViewTextBoxColumn { 
+                Name = "TeacherComment", 
+                HeaderText = "NHẬN XÉT", 
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill, 
+                ReadOnly = true, 
+                HeaderCell = { Style = centerStyle }, 
+                DataPropertyName = "TeacherComment" 
+            };
             dgvHanhKiem.Columns.Add(colComment);
-            colComment.DefaultCellStyle = centerStyle;
-            colComment.HeaderCell.Style = centerStyle;
-            dgvHanhKiem.EditMode = DataGridViewEditMode.EditOnEnter;
+
+            // Cột 6: HÀNH ĐỘNG (Chứa icon sửa)
+            var colAction = new DataGridViewTextBoxColumn { Name = "Action", HeaderText = "HÀNH ĐỘNG", Width = 200, ReadOnly = true };
+            colAction.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvHanhKiem.Columns.Add(colAction);
+
+            // Cấu hình chọn dòng (Giống QLHS)
+            dgvHanhKiem.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvHanhKiem.MultiSelect = false;
+            dgvHanhKiem.RowTemplate.Height = 50;
         }
+
+        // ==========================================
+        // PHẦN VẼ ICON & CLICK (GIỐNG QLHS 99%)
+        // ==========================================
+        private void DgvHanhKiem_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            // Chỉ vẽ cột Action
+            if (e.RowIndex >= 0 && e.ColumnIndex == dgvHanhKiem.Columns["Action"].Index)
+            {
+                e.Handled = true; // Tự vẽ
+                e.PaintBackground(e.CellBounds, true); // Vẽ nền chuẩn
+
+                // Tính vị trí vẽ icon ở giữa ô
+                int x = e.CellBounds.X + (e.CellBounds.Width - ICON_W) / 2;
+                int y = e.CellBounds.Y + (e.CellBounds.Height - ICON_H) / 2;
+
+                // Vẽ icon bút chì (edit_40 là tên resource trong file QLHS bạn có)
+                if (Properties.Resources.edit_40 != null)
+                {
+                    e.Graphics.DrawImage(Properties.Resources.edit_40, x, y, ICON_W, ICON_H);
+                }
+            }
+        }
+
+        private void DgvHanhKiem_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            // Check click cột Action
+            if (e.RowIndex >= 0 && e.ColumnIndex == dgvHanhKiem.Columns["Action"].Index)
+            {
+                // Lấy DTO của dòng đang chọn
+                var dto = dgvHanhKiem.Rows[e.RowIndex].DataBoundItem as StudentEvaluationDTO;
+
+                if (dto != null)
+                {
+                    // Lấy học kỳ hiện tại
+                    int semesterId = (int)cbbHocKy.SelectedValue;
+
+                    // MỞ FORM CON ĐỂ SỬA
+                    // Truyền DTO và SemesterId sang form con
+                    using (var frm = new XetHanhKiem(dto, semesterId))
+                    {
+                        // Nếu form con trả về OK (Đã lưu) -> Load lại bảng
+                        if (frm.ShowDialog() == DialogResult.OK)
+                        {
+                            LoadDataFromDB();
+                        }
+                    }
+                }
+            }
+        }
+
+        // ... (Các phần LoadData, Pagination, Search bên dưới giữ nguyên) ...
 
         private void LoadSemesters()
         {
@@ -126,7 +184,6 @@ namespace GUI.UserControls
             int semesterId = (int)cbbHocKy.SelectedValue;
 
             fullList = evalBus.GetClassList(teacherId, semesterId);
-
             displayList = new List<StudentEvaluationDTO>(fullList);
             currentPage = 1;
             UpdatePagination();
@@ -140,11 +197,10 @@ namespace GUI.UserControls
 
             var pageData = displayList.Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
 
+            // Dùng BindingList để grid nhận
             dgvHanhKiem.DataSource = new System.ComponentModel.BindingList<StudentEvaluationDTO>(pageData);
 
-            // [ĐÃ BỎ ĐOẠN TÍNH SỐ STT Ở ĐÂY]
-
-            // Ẩn các cột ID
+            // Ẩn cột ID
             if (dgvHanhKiem.Columns["StudentId"] != null) dgvHanhKiem.Columns["StudentId"].Visible = false;
             if (dgvHanhKiem.Columns["ClassId"] != null) dgvHanhKiem.Columns["ClassId"].Visible = false;
 
@@ -168,33 +224,6 @@ namespace GUI.UserControls
             UpdatePagination();
         }
 
-        private void BtnSaveAll_Click(object sender, EventArgs e)
-        {
-            int semesterId = (int)cbbHocKy.SelectedValue;
-            if (evalBus.IsEvaluationLocked(semesterId))
-            {
-                MessageBox.Show("Học kỳ này đã kết thúc. Không thể chỉnh sửa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            int count = 0;
-            foreach (DataGridViewRow row in dgvHanhKiem.Rows)
-            {
-                var dto = row.DataBoundItem as StudentEvaluationDTO;
-                if (dto != null)
-                {
-                    dto.Conduct = row.Cells["Conduct"].Value?.ToString();
-                    dto.TeacherComment = row.Cells["TeacherComment"].Value?.ToString();
-
-                    if (evalBus.SaveEvaluation(dto, semesterId)) count++;
-                }
-            }
-            MessageBox.Show($"Đã lưu thành công cho {count} học sinh (Trang {currentPage})!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        // ============================
-        // LOGIC PHÂN TRANG (GIỮ NGUYÊN)
-        // ============================
         private void RenderPaginationButtons()
         {
             btnPrev.Enabled = currentPage > 1;

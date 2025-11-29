@@ -9,9 +9,6 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblSubTitle;
 
-        // --- 1. KHAI BÁO 2 NÚT MỚI ---
-        private System.Windows.Forms.Button btnSaveAll;
-        private System.Windows.Forms.Button btnCancel;
 
         // Filter & Search
         private System.Windows.Forms.Panel pnlFilter;
@@ -49,8 +46,6 @@
             this.pnlHeader = new System.Windows.Forms.Panel();
 
             // --- 2. KHỞI TẠO NÚT ---
-            this.btnSaveAll = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
 
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -87,8 +82,7 @@
             this.pnlHeader.BackColor = System.Drawing.Color.Transparent;
 
             // --- 3. THÊM NÚT VÀO PANEL ---
-            this.pnlHeader.Controls.Add(this.btnSaveAll);
-            this.pnlHeader.Controls.Add(this.btnCancel);
+
 
             this.pnlHeader.Controls.Add(this.lblSubTitle);
             this.pnlHeader.Controls.Add(this.lblTitle);
@@ -97,40 +91,6 @@
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(1040, 100);
             this.pnlHeader.TabIndex = 0;
-
-            // 
-            // btnSaveAll (Cấu hình Nút Lưu)
-            // 
-            this.btnSaveAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(110)))), ((int)(((byte)(253))))); // Xanh dương
-            this.btnSaveAll.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSaveAll.FlatAppearance.BorderSize = 0;
-            this.btnSaveAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveAll.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnSaveAll.ForeColor = System.Drawing.Color.White;
-            this.btnSaveAll.Location = new System.Drawing.Point(920, 10); // Đặt sát góc phải
-            this.btnSaveAll.Name = "btnSaveAll";
-            this.btnSaveAll.Size = new System.Drawing.Size(120, 40);
-            this.btnSaveAll.TabIndex = 2; // Index cao để tab tới sau cùng
-            this.btnSaveAll.Text = "Lưu tất cả";
-            this.btnSaveAll.UseVisualStyleBackColor = false;
-
-            // 
-            // btnCancel (Cấu hình Nút Hủy)
-            // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224))))); // Xám
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCancel.Location = new System.Drawing.Point(810, 10); // Đặt bên trái nút Lưu
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(100, 40);
-            this.btnCancel.TabIndex = 3;
-            this.btnCancel.Text = "Hủy bỏ";
-            this.btnCancel.UseVisualStyleBackColor = false;
 
             // 
             // lblSubTitle

@@ -107,6 +107,12 @@
     <Compile Include="ChiTietHocSinh.Designer.cs">
       <DependentUpon>ChiTietHocSinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="XetHanhKiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XetHanhKiem.Designer.cs">
+      <DependentUpon>XetHanhKiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -434,6 +440,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_PhuHuynh_Thongtin.resx">
       <DependentUpon>UC_PhuHuynh_Thongtin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XetHanhKiem.resx">
+      <DependentUpon>XetHanhKiem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

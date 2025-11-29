@@ -9,33 +9,34 @@ namespace BUS
     {
         private EvaluationDAO dao = new EvaluationDAO();
 
-        // Lấy danh sách (Gọi từ GUI)
         public List<StudentEvaluationDTO> GetClassList(int teacherId, int semesterId)
         {
             return dao.GetListForEvaluation(teacherId, semesterId);
         }
 
-        // Lưu đánh giá (Gọi từ GUI khi bấm nút Lưu)
+        // [CŨ - Giữ lại nếu muốn dùng cho cách Lưu tất cả]
         public bool SaveEvaluation(StudentEvaluationDTO dto, int semesterId)
         {
-            // Gọi xuống DAO để lưu từng dòng
             return dao.SaveEvaluation(dto.StudentId, dto.ClassId, semesterId, dto.Conduct, dto.TeacherComment);
         }
 
-        // Kiểm tra xem Học kỳ này đã "Khóa sổ" chưa
+        // [MỚI - THÊM HÀM NÀY] Để phục vụ cho Form Sửa Chi Tiết (FormXetHanhKiem)
+        public bool SaveEvaluation(int studentId, int classId, int semesterId, string conduct, string comment)
+        {
+            // Gọi thẳng xuống DAO
+            return dao.SaveEvaluation(studentId, classId, semesterId, conduct, comment);
+        }
+
         public bool IsEvaluationLocked(int semesterId)
         {
             DateTime endDate = dao.GetSemesterEndDate(semesterId);
-
-            // Logic: Cho phép sửa thêm 7 ngày sau khi học kỳ kết thúc
-            // Ví dụ: Học kỳ hết thúc 31/12, thì đến 07/01 vẫn sửa được. Qua ngày đó thì khóa.
             DateTime deadline = endDate.AddDays(7);
 
             if (DateTime.Now > deadline)
             {
-                return true; // Đã quá hạn -> KHÓA
+                return true;
             }
-            return false; // Còn hạn -> MỞ
+            return false;
         }
     }
 }
