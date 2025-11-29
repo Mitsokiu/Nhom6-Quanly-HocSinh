@@ -39,7 +39,7 @@
             // 
             this.panel1.Location = new System.Drawing.Point(25, 84);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1363, 486);
+            this.panel1.Size = new System.Drawing.Size(1363, 665);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -82,7 +82,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "UC_Admin_NamHoc_HocPhi_Bar";
-            this.Size = new System.Drawing.Size(1391, 603);
+            this.Size = new System.Drawing.Size(1391, 762);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 

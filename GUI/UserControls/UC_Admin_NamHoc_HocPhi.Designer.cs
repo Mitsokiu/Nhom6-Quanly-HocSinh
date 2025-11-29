@@ -53,12 +53,12 @@ namespace GUI.UserControls
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtnumber = new System.Windows.Forms.TextBox();
             this.btntail = new System.Windows.Forms.Button();
             this.btnnext = new System.Windows.Forms.Button();
             this.btnback = new System.Windows.Forms.Button();
             this.btnhead = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.lblpage = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -271,7 +271,7 @@ namespace GUI.UserControls
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.txtnumber);
+            this.panel2.Controls.Add(this.lblpage);
             this.panel2.Controls.Add(this.btntail);
             this.panel2.Controls.Add(this.btnnext);
             this.panel2.Controls.Add(this.btnback);
@@ -280,13 +280,6 @@ namespace GUI.UserControls
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(488, 40);
             this.panel2.TabIndex = 17;
-            // 
-            // txtnumber
-            // 
-            this.txtnumber.Location = new System.Drawing.Point(194, 5);
-            this.txtnumber.Name = "txtnumber";
-            this.txtnumber.Size = new System.Drawing.Size(100, 26);
-            this.txtnumber.TabIndex = 4;
             // 
             // btntail
             // 
@@ -338,6 +331,15 @@ namespace GUI.UserControls
             this.label4.TabIndex = 23;
             this.label4.Text = "Quản Lý Học Phí";
             // 
+            // lblpage
+            // 
+            this.lblpage.AutoSize = true;
+            this.lblpage.Location = new System.Drawing.Point(235, 10);
+            this.lblpage.Name = "lblpage";
+            this.lblpage.Size = new System.Drawing.Size(18, 20);
+            this.lblpage.TabIndex = 5;
+            this.lblpage.Text = "1";
+            // 
             // UC_Admin_NamHoc_HocPhi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -382,11 +384,11 @@ namespace GUI.UserControls
         private DataGridViewTextBoxColumn SoTien;
         private DataGridViewTextBoxColumn TrangThai;
         private Panel panel2;
-        private TextBox txtnumber;
         private Button btntail;
         private Button btnnext;
         private Button btnback;
         private Button btnhead;
         private Label label4;
+        private Label lblpage;
     }
 }

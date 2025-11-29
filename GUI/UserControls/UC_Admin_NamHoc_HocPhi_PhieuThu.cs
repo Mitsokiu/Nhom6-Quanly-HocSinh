@@ -1,8 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
+﻿using BUS;
 using DTO;
-using BUS;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace GUI.UserControls
 {
@@ -11,6 +12,12 @@ namespace GUI.UserControls
         private TuitionBUS tuitionBUS = new TuitionBUS();
         private List<TuitionDTO> currentTuitionList = new List<TuitionDTO>();
 
+        private int pageSize = 10;           // số dòng mỗi trang
+        private int currentPage = 1;         // trang hiện tại
+        private int totalPage = 1;           // tổng số trang
+        private List<TuitionDTO> allTuition; // toàn bộ dữ liệu đã lọc trùng
+
+
         public UC_Admin_NamHoc_HocPhi_PhieuThu()
         {
             InitializeComponent();
@@ -18,25 +25,40 @@ namespace GUI.UserControls
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
         }
 
-        // Load dữ liệu từ BUS lên DataGridView
+      
         //private void LoadTuitionData()
         //{
         //    dataGridView1.Rows.Clear();
-        //    currentTuitionList = tuitionBUS.GetAllTuition(); // lưu danh sách DTO
-        //    foreach (var t in currentTuitionList)
+        //    var list = tuitionBUS.GetAllTuition(); // lấy tất cả học phí
+
+        //    // Lọc trùng theo name + Amount + DueDate
+        //    var uniqueList = new List<TuitionDTO>();
+        //    var seen = new HashSet<string>();
+
+        //    foreach (var t in list)
+        //    {
+        //        string key = $"{t.name}_{t.Amount}_{t.DueDate:yyyyMMdd}";
+        //        if (!seen.Contains(key))
+        //        {
+        //            seen.Add(key);
+        //            uniqueList.Add(t);
+        //        }
+        //    }
+
+        //    currentTuitionList = uniqueList; // lưu danh sách đã lọc
+
+        //    foreach (var t in uniqueList)
         //    {
         //        dataGridView1.Rows.Add(t.name ?? "", t.Amount, t.DueDate.ToString("dd/MM/yyyy"));
         //    }
         //}
         private void LoadTuitionData()
         {
-            dataGridView1.Rows.Clear();
-            var list = tuitionBUS.GetAllTuition(); // lấy tất cả học phí
+            var list = tuitionBUS.GetAllTuition();
 
             // Lọc trùng theo name + Amount + DueDate
             var uniqueList = new List<TuitionDTO>();
             var seen = new HashSet<string>();
-
             foreach (var t in list)
             {
                 string key = $"{t.name}_{t.Amount}_{t.DueDate:yyyyMMdd}";
@@ -47,13 +69,37 @@ namespace GUI.UserControls
                 }
             }
 
-            currentTuitionList = uniqueList; // lưu danh sách đã lọc
+            allTuition = uniqueList;
 
-            foreach (var t in uniqueList)
+            totalPage = Math.Max(1, (int)Math.Ceiling(allTuition.Count / (double)pageSize));
+            currentPage = 1;
+
+            LoadPage(currentPage);
+        }
+        private void LoadPage(int page)
+        {
+            dataGridView1.Rows.Clear();
+
+            currentPage = Math.Min(Math.Max(1, page), totalPage);
+
+            int start = (currentPage - 1) * pageSize;
+            var pageData = allTuition.Skip(start).Take(pageSize).ToList();
+
+            foreach (var t in pageData)
             {
                 dataGridView1.Rows.Add(t.name ?? "", t.Amount, t.DueDate.ToString("dd/MM/yyyy"));
             }
+
+            // hiển thị số trang
+           lblpage.Text = $"{currentPage}/{totalPage}";
+
+            // Enable/disable nút
+            btnFirst.Enabled = currentPage > 1;
+            btnPrev.Enabled = currentPage > 1;
+            btnNext.Enabled = currentPage < totalPage;
+            btnLast.Enabled = currentPage < totalPage;
         }
+
 
         // Khi chọn hàng trên DataGridView, hiển thị dữ liệu lên TextBox và DateTimePicker
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -204,6 +250,29 @@ namespace GUI.UserControls
                 }
             }
         }
+
+        private void btnFirst_Click(object sender, EventArgs e)
+        {
+            LoadPage(1);
+        }
+
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            if (currentPage > 1)
+                LoadPage(currentPage - 1);
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if (currentPage < totalPage)
+                LoadPage(currentPage + 1);
+        }
+
+        private void btnLast_Click(object sender, EventArgs e)
+        {
+            LoadPage(totalPage);
+        }
+
         // Các nút khác (tạm để trống hoặc gọi sự kiện riêng)
         private void button1_Click(object sender, EventArgs e)
         {

@@ -44,11 +44,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtnumber = new System.Windows.Forms.TextBox();
             this.btntail = new System.Windows.Forms.Button();
             this.btnnext = new System.Windows.Forms.Button();
             this.btnback = new System.Windows.Forms.Button();
             this.btnhead = new System.Windows.Forms.Button();
+            this.lblpage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -258,7 +258,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.txtnumber);
+            this.panel2.Controls.Add(this.lblpage);
             this.panel2.Controls.Add(this.btntail);
             this.panel2.Controls.Add(this.btnnext);
             this.panel2.Controls.Add(this.btnback);
@@ -267,13 +267,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(488, 40);
             this.panel2.TabIndex = 20;
-            // 
-            // txtnumber
-            // 
-            this.txtnumber.Location = new System.Drawing.Point(194, 5);
-            this.txtnumber.Name = "txtnumber";
-            this.txtnumber.Size = new System.Drawing.Size(100, 26);
-            this.txtnumber.TabIndex = 4;
             // 
             // btntail
             // 
@@ -315,6 +308,15 @@
             this.btnhead.Text = "<<";
             this.btnhead.UseVisualStyleBackColor = false;
             // 
+            // lblpage
+            // 
+            this.lblpage.AutoSize = true;
+            this.lblpage.Location = new System.Drawing.Point(235, 10);
+            this.lblpage.Name = "lblpage";
+            this.lblpage.Size = new System.Drawing.Size(18, 20);
+            this.lblpage.TabIndex = 6;
+            this.lblpage.Text = "1";
+            // 
             // UC_Admin_Class_Phancong
             // 
             this.Controls.Add(this.panel2);
@@ -343,10 +345,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtnumber;
         private System.Windows.Forms.Button btntail;
         private System.Windows.Forms.Button btnnext;
         private System.Windows.Forms.Button btnback;
         private System.Windows.Forms.Button btnhead;
+        private System.Windows.Forms.Label lblpage;
     }
 }

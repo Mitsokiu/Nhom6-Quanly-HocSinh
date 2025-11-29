@@ -55,12 +55,12 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtnumber = new System.Windows.Forms.TextBox();
             this.btntail = new System.Windows.Forms.Button();
             this.btnnext = new System.Windows.Forms.Button();
             this.btnback = new System.Windows.Forms.Button();
             this.btnhead = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.lblpage = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -299,7 +299,7 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.txtnumber);
+            this.panel3.Controls.Add(this.lblpage);
             this.panel3.Controls.Add(this.btntail);
             this.panel3.Controls.Add(this.btnnext);
             this.panel3.Controls.Add(this.btnback);
@@ -308,13 +308,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(488, 40);
             this.panel3.TabIndex = 17;
-            // 
-            // txtnumber
-            // 
-            this.txtnumber.Location = new System.Drawing.Point(194, 5);
-            this.txtnumber.Name = "txtnumber";
-            this.txtnumber.Size = new System.Drawing.Size(100, 26);
-            this.txtnumber.TabIndex = 4;
             // 
             // btntail
             // 
@@ -366,6 +359,15 @@
             this.label6.TabIndex = 20;
             this.label6.Text = "Quản Lý Học Sinh";
             // 
+            // lblpage
+            // 
+            this.lblpage.AutoSize = true;
+            this.lblpage.Location = new System.Drawing.Point(235, 10);
+            this.lblpage.Name = "lblpage";
+            this.lblpage.Size = new System.Drawing.Size(18, 20);
+            this.lblpage.TabIndex = 6;
+            this.lblpage.Text = "1";
+            // 
             // UC_Admin_Student
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -414,11 +416,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Class;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtnumber;
         private System.Windows.Forms.Button btntail;
         private System.Windows.Forms.Button btnnext;
         private System.Windows.Forms.Button btnback;
         private System.Windows.Forms.Button btnhead;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblpage;
     }
 }

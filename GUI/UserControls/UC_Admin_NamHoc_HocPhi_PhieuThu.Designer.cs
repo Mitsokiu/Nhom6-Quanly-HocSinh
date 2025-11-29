@@ -46,12 +46,12 @@ namespace GUI.UserControls
             this.SoTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HanNop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtnumber = new System.Windows.Forms.TextBox();
-            this.btntail = new System.Windows.Forms.Button();
-            this.btnnext = new System.Windows.Forms.Button();
-            this.btnback = new System.Windows.Forms.Button();
-            this.btnhead = new System.Windows.Forms.Button();
+            this.btnLast = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnPrev = new System.Windows.Forms.Button();
+            this.btnFirst = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.lblpage = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -200,62 +200,55 @@ namespace GUI.UserControls
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.txtnumber);
-            this.panel2.Controls.Add(this.btntail);
-            this.panel2.Controls.Add(this.btnnext);
-            this.panel2.Controls.Add(this.btnback);
-            this.panel2.Controls.Add(this.btnhead);
+            this.panel2.Controls.Add(this.lblpage);
+            this.panel2.Controls.Add(this.btnLast);
+            this.panel2.Controls.Add(this.btnNext);
+            this.panel2.Controls.Add(this.btnPrev);
+            this.panel2.Controls.Add(this.btnFirst);
             this.panel2.Location = new System.Drawing.Point(391, 534);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(480, 40);
             this.panel2.TabIndex = 17;
             // 
-            // txtnumber
+            // btnLast
             // 
-            this.txtnumber.Location = new System.Drawing.Point(194, 5);
-            this.txtnumber.Name = "txtnumber";
-            this.txtnumber.Size = new System.Drawing.Size(100, 26);
-            this.txtnumber.TabIndex = 4;
+            this.btnLast.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnLast.Location = new System.Drawing.Point(400, 4);
+            this.btnLast.Name = "btnLast";
+            this.btnLast.Size = new System.Drawing.Size(75, 28);
+            this.btnLast.TabIndex = 3;
+            this.btnLast.Text = ">>";
+            this.btnLast.UseVisualStyleBackColor = false;
             // 
-            // btntail
+            // btnNext
             // 
-            this.btntail.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btntail.Location = new System.Drawing.Point(400, 4);
-            this.btntail.Name = "btntail";
-            this.btntail.Size = new System.Drawing.Size(75, 28);
-            this.btntail.TabIndex = 3;
-            this.btntail.Text = ">>";
-            this.btntail.UseVisualStyleBackColor = false;
+            this.btnNext.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnNext.Location = new System.Drawing.Point(319, 4);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(75, 28);
+            this.btnNext.TabIndex = 2;
+            this.btnNext.Text = ">";
+            this.btnNext.UseVisualStyleBackColor = false;
             // 
-            // btnnext
+            // btnPrev
             // 
-            this.btnnext.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnnext.Location = new System.Drawing.Point(319, 4);
-            this.btnnext.Name = "btnnext";
-            this.btnnext.Size = new System.Drawing.Size(75, 28);
-            this.btnnext.TabIndex = 2;
-            this.btnnext.Text = ">";
-            this.btnnext.UseVisualStyleBackColor = false;
+            this.btnPrev.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnPrev.Location = new System.Drawing.Point(95, 4);
+            this.btnPrev.Name = "btnPrev";
+            this.btnPrev.Size = new System.Drawing.Size(75, 28);
+            this.btnPrev.TabIndex = 1;
+            this.btnPrev.Text = "<";
+            this.btnPrev.UseVisualStyleBackColor = false;
             // 
-            // btnback
+            // btnFirst
             // 
-            this.btnback.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnback.Location = new System.Drawing.Point(95, 4);
-            this.btnback.Name = "btnback";
-            this.btnback.Size = new System.Drawing.Size(75, 28);
-            this.btnback.TabIndex = 1;
-            this.btnback.Text = "<";
-            this.btnback.UseVisualStyleBackColor = false;
-            // 
-            // btnhead
-            // 
-            this.btnhead.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnhead.Location = new System.Drawing.Point(14, 5);
-            this.btnhead.Name = "btnhead";
-            this.btnhead.Size = new System.Drawing.Size(75, 28);
-            this.btnhead.TabIndex = 0;
-            this.btnhead.Text = "<<";
-            this.btnhead.UseVisualStyleBackColor = false;
+            this.btnFirst.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnFirst.Location = new System.Drawing.Point(14, 5);
+            this.btnFirst.Name = "btnFirst";
+            this.btnFirst.Size = new System.Drawing.Size(75, 28);
+            this.btnFirst.TabIndex = 0;
+            this.btnFirst.Text = "<<";
+            this.btnFirst.UseVisualStyleBackColor = false;
             // 
             // label6
             // 
@@ -266,6 +259,15 @@ namespace GUI.UserControls
             this.label6.Size = new System.Drawing.Size(163, 25);
             this.label6.TabIndex = 22;
             this.label6.Text = "Tạo Khoản Thu";
+            // 
+            // lblpage
+            // 
+            this.lblpage.AutoSize = true;
+            this.lblpage.Location = new System.Drawing.Point(207, 11);
+            this.lblpage.Name = "lblpage";
+            this.lblpage.Size = new System.Drawing.Size(18, 20);
+            this.lblpage.TabIndex = 4;
+            this.lblpage.Text = "0";
             // 
             // UC_Admin_NamHoc_HocPhi_PhieuThu
             // 
@@ -305,11 +307,11 @@ namespace GUI.UserControls
         private DataGridViewTextBoxColumn SoTien;
         private DataGridViewTextBoxColumn HanNop;
         private Panel panel2;
-        private TextBox txtnumber;
-        private Button btntail;
-        private Button btnnext;
-        private Button btnback;
-        private Button btnhead;
+        private Button btnLast;
+        private Button btnNext;
+        private Button btnPrev;
+        private Button btnFirst;
         private Label label6;
+        private Label lblpage;
     }
 }

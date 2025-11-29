@@ -54,7 +54,7 @@ namespace GUI.UserControls
             // 
             this.panel1.Location = new System.Drawing.Point(11, 84);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1535, 626);
+            this.panel1.Size = new System.Drawing.Size(1535, 670);
             this.panel1.TabIndex = 3;
             // 
             // panel2
@@ -112,7 +112,7 @@ namespace GUI.UserControls
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "UC_Admin_Namhoc";
-            this.Size = new System.Drawing.Size(1549, 725);
+            this.Size = new System.Drawing.Size(1549, 757);
             this.Load += new System.EventHandler(this.UC_Admin_Namhoc_Load);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);

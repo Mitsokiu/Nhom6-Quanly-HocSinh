@@ -28,16 +28,16 @@ namespace GUI.UserControls
             this.Khoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbBoxGrade = new System.Windows.Forms.ComboBox();
             this.textMa = new System.Windows.Forms.TextBox();
             this.textLop = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtnumber = new System.Windows.Forms.TextBox();
             this.btntail = new System.Windows.Forms.Button();
             this.btnnext = new System.Windows.Forms.Button();
             this.btnback = new System.Windows.Forms.Button();
             this.btnhead = new System.Windows.Forms.Button();
-            this.cbBoxGrade = new System.Windows.Forms.ComboBox();
+            this.lblpage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -110,7 +110,7 @@ namespace GUI.UserControls
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.Size = new System.Drawing.Size(514, 430);
             this.dataGridView1.TabIndex = 11;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
             // 
             // ID
             // 
@@ -150,6 +150,14 @@ namespace GUI.UserControls
             this.panel1.Size = new System.Drawing.Size(362, 430);
             this.panel1.TabIndex = 12;
             // 
+            // cbBoxGrade
+            // 
+            this.cbBoxGrade.FormattingEnabled = true;
+            this.cbBoxGrade.Location = new System.Drawing.Point(88, 65);
+            this.cbBoxGrade.Name = "cbBoxGrade";
+            this.cbBoxGrade.Size = new System.Drawing.Size(241, 28);
+            this.cbBoxGrade.TabIndex = 13;
+            // 
             // textMa
             // 
             this.textMa.Location = new System.Drawing.Point(88, 120);
@@ -176,7 +184,7 @@ namespace GUI.UserControls
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.txtnumber);
+            this.panel2.Controls.Add(this.lblpage);
             this.panel2.Controls.Add(this.btntail);
             this.panel2.Controls.Add(this.btnnext);
             this.panel2.Controls.Add(this.btnback);
@@ -185,13 +193,6 @@ namespace GUI.UserControls
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(489, 37);
             this.panel2.TabIndex = 17;
-            // 
-            // txtnumber
-            // 
-            this.txtnumber.Location = new System.Drawing.Point(194, 5);
-            this.txtnumber.Name = "txtnumber";
-            this.txtnumber.Size = new System.Drawing.Size(100, 26);
-            this.txtnumber.TabIndex = 4;
             // 
             // btntail
             // 
@@ -233,13 +234,14 @@ namespace GUI.UserControls
             this.btnhead.Text = "<<";
             this.btnhead.UseVisualStyleBackColor = false;
             // 
-            // cbBoxGrade
+            // lblpage
             // 
-            this.cbBoxGrade.FormattingEnabled = true;
-            this.cbBoxGrade.Location = new System.Drawing.Point(88, 65);
-            this.cbBoxGrade.Name = "cbBoxGrade";
-            this.cbBoxGrade.Size = new System.Drawing.Size(241, 28);
-            this.cbBoxGrade.TabIndex = 13;
+            this.lblpage.AutoSize = true;
+            this.lblpage.Location = new System.Drawing.Point(235, 8);
+            this.lblpage.Name = "lblpage";
+            this.lblpage.Size = new System.Drawing.Size(18, 20);
+            this.lblpage.TabIndex = 6;
+            this.lblpage.Text = "1";
             // 
             // UC_Admin_Class_KhoiLop
             // 
@@ -272,11 +274,11 @@ namespace GUI.UserControls
         private TextBox textLop;
         private Label label2;
         private Panel panel2;
-        private TextBox txtnumber;
         private Button btntail;
         private Button btnnext;
         private Button btnback;
         private Button btnhead;
         private ComboBox cbBoxGrade;
+        private Label lblpage;
     }
 }

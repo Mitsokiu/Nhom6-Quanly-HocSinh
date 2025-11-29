@@ -1,15 +1,21 @@
-﻿using System;
-using System.Data;
-using System.Windows.Forms;
-using DTO;
-using BUS;
+﻿using BUS;
 using DAO;
+using DTO;
+using System;
+using System.Data;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace GUI
 {
     public partial class UC_Admin_PhanCong_gvcn : UserControl
     {
         private int selectedAssignId = -1;
+
+        private DataTable fullData;
+        private int pageSize = 10;
+        private int currentPage = 1;
+        private int totalPages = 1;
 
         public UC_Admin_PhanCong_gvcn()
         {
@@ -64,22 +70,75 @@ namespace GUI
             dataGridView1.Columns.Add(col);
         }
 
+        //private void LoadData()
+        //{
+        //    dataGridView1.Rows.Clear();
+        //    DataTable dt = HomeroomAssignmentBUS.GetAllAssignments();
+        //    foreach (DataRow row in dt.Rows)
+        //    {
+        //        dataGridView1.Rows.Add(
+        //    row["year_name"],
+        //    row["class_name"],
+        //    row["teacher_name"],
+        //    row["assigned_date"],
+        //    row["assign_id"],      // ẩn để lưu ID
+        //    row["class_id"],       // ẩn
+        //    row["teacher_id"],     // ẩn
+        //    row["year_id"]
+        //    );
+        //    }
+        //}
+
         private void LoadData()
         {
+            fullData = HomeroomAssignmentBUS.GetAllAssignments();
+            totalPages = (int)Math.Ceiling(fullData.Rows.Count / (double)pageSize);
+            if (currentPage > totalPages) currentPage = totalPages == 0 ? 1 : totalPages;
+
+            LoadPage();
+        }
+
+        private void LoadPage()
+        {
             dataGridView1.Rows.Clear();
-            DataTable dt = HomeroomAssignmentBUS.GetAllAssignments();
-            foreach (DataRow row in dt.Rows)
+
+            if (fullData == null || fullData.Rows.Count == 0)
+                return;
+
+            int start = (currentPage - 1) * pageSize;
+            var pageRows = fullData.AsEnumerable().Skip(start).Take(pageSize);
+
+            foreach (var row in pageRows)
             {
                 dataGridView1.Rows.Add(
-            row["year_name"],
-            row["class_name"],
-            row["teacher_name"],
-            row["assigned_date"],
-            row["assign_id"],      // ẩn để lưu ID
-            row["class_id"],       // ẩn
-            row["teacher_id"],     // ẩn
-            row["year_id"]
-            );
+                    row["year_name"],
+                    row["class_name"],
+                    row["teacher_name"],
+                    row["assigned_date"],
+                    row["assign_id"],
+                    row["class_id"],
+                    row["teacher_id"],
+                    row["year_id"]
+                );
+            }
+
+            lbnumpage.Text = $"Trang {currentPage}/{totalPages}";
+        }
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            if (currentPage > 1)
+            {
+                currentPage--;
+                LoadPage();
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if (currentPage < totalPages)
+            {
+                currentPage++;
+                LoadPage();
             }
         }
 
