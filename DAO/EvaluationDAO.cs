@@ -21,7 +21,7 @@ namespace DAO
             string query = @"
                 SELECT 
                     s.student_id,
-                    CONCAT('HS', LPAD(s.student_id, 6, '0')) AS StudentCode,
+                    CONCAT('HS', LPAD(s.student_id, 3, '0')) AS StudentCode,
                     u_student.fullname AS FullName,
                     
                     -- Nếu chưa chấm thì mặc định là 'Tốt', đã chấm thì lấy giá trị cũ

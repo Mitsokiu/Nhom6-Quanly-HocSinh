@@ -12,7 +12,6 @@ namespace GUI.UserControls
 {
     public partial class UC_GVCN_HanhKiem : UserControl
     {
-        // Đã bỏ dấu gạch dưới
         private int teacherId;
         private EvaluationBUS evalBus = new EvaluationBUS();
         private SemesterBUS semBus = new SemesterBUS();
@@ -20,7 +19,6 @@ namespace GUI.UserControls
         private List<StudentEvaluationDTO> fullList = new List<StudentEvaluationDTO>();
         private List<StudentEvaluationDTO> displayList = new List<StudentEvaluationDTO>();
 
-        // Biến phân trang (đã bỏ gạch dưới)
         private int currentPage = 1;
         private const int pageSize = 6;
         private int totalPages = 1;
@@ -29,9 +27,8 @@ namespace GUI.UserControls
         public UC_GVCN_HanhKiem(int teacherIdInput)
         {
             InitializeComponent();
-            this.teacherId = teacherIdInput; // Gán ID
+            this.teacherId = teacherIdInput;
 
-            // UI Init
             SetupDataGridView();
             this.Load += (s, e) => {
                 SetRoundedRegion(pnlSearchBox, 20);
@@ -42,7 +39,6 @@ namespace GUI.UserControls
 
             LoadSemesters();
 
-            // Events
             cbbHocKy.SelectedIndexChanged += (s, e) => LoadDataFromDB();
 
             txtSearch.Text = PLACEHOLDER_TEXT;
@@ -60,65 +56,54 @@ namespace GUI.UserControls
         private void SetupDataGridView()
         {
             dgvHanhKiem.Columns.Clear();
+
+            // --- CẤU HÌNH CHUNG ---
+            dgvHanhKiem.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None; // Tắt chia đều
             dgvHanhKiem.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DataGridViewCellStyle centerStyle = new DataGridViewCellStyle();
             centerStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            // [FIX 2] Tắt chế độ tự chia đều toàn bộ
-            dgvHanhKiem.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
 
-            // 1. Cột STT (Nhỏ)
-            dgvHanhKiem.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                Name = "STT",
-                HeaderText = "STT",
-                Width = 150,  // Cố định 50px
-                ReadOnly = true
-            });
+            // [ĐÃ BỎ CỘT STT Ở ĐÂY]
 
-            // 2. Cột Mã HS (Vừa)
-            dgvHanhKiem.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                Name = "StudentCode",
-                HeaderText = "MÃ HS",
-                Width = 150, // Cố định 100px
-                ReadOnly = true,
-                DataPropertyName = "StudentCode"
-            });
+            // 1. Cột Mã HS (Căn giữa)
+            var colMa = new DataGridViewTextBoxColumn();
+            colMa.Name = "StudentCode";
+            colMa.HeaderText = "MÃ SỐ";
+            colMa.Width = 120;
+            colMa.ReadOnly = true;
+            colMa.DataPropertyName = "StudentCode";
+            dgvHanhKiem.Columns.Add(colMa);
 
-            // 3. Cột Họ Tên (Rộng hơn chút)
+            // 2. Cột Họ Tên (Căn trái - Mặc định)
             dgvHanhKiem.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "FullName",
                 HeaderText = "HỌ VÀ TÊN",
-                Width = 200, // Cố định 200px
+                Width = 300,
                 ReadOnly = true,
                 DataPropertyName = "FullName"
             });
 
-            // 4. Cột Hạnh Kiểm (Vừa)
+            // 3. Cột Hạnh Kiểm (Căn giữa)
             var colConduct = new DataGridViewComboBoxColumn();
             colConduct.Name = "Conduct";
             colConduct.HeaderText = "HẠNH KIỂM";
-            colConduct.Width = 170; // Cố định 150px
+            colConduct.Width = 150;
             colConduct.DataPropertyName = "Conduct";
             colConduct.Items.AddRange("Tốt", "Khá", "Trung Bình", "Yếu");
             colConduct.FlatStyle = FlatStyle.Flat;
-            colConduct.DefaultCellStyle = centerStyle; // Căn giữa chữ trong ComboBox
-            colConduct.HeaderCell.Style = centerStyle;
+
             dgvHanhKiem.Columns.Add(colConduct);
 
-            // 5. Cột Nhận Xét (QUAN TRỌNG: Fill hết phần còn lại)
+            // 4. Cột Nhận Xét (Căn trái, Fill hết phần còn lại)
             var colComment = new DataGridViewTextBoxColumn();
             colComment.Name = "TeacherComment";
             colComment.HeaderText = "NHẬN XÉT CỦA GIÁO VIÊN";
             colComment.DataPropertyName = "TeacherComment";
-
-            colComment.HeaderCell.Style = centerStyle;
-            // Chỉ cột này được Fill
             colComment.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
             dgvHanhKiem.Columns.Add(colComment);
-
+            colComment.DefaultCellStyle = centerStyle;
+            colComment.HeaderCell.Style = centerStyle;
             dgvHanhKiem.EditMode = DataGridViewEditMode.EditOnEnter;
         }
 
@@ -157,11 +142,9 @@ namespace GUI.UserControls
 
             dgvHanhKiem.DataSource = new System.ComponentModel.BindingList<StudentEvaluationDTO>(pageData);
 
-            for (int i = 0; i < dgvHanhKiem.Rows.Count; i++)
-            {
-                dgvHanhKiem.Rows[i].Cells["STT"].Value = ((currentPage - 1) * pageSize + i + 1).ToString();
-            }
+            // [ĐÃ BỎ ĐOẠN TÍNH SỐ STT Ở ĐÂY]
 
+            // Ẩn các cột ID
             if (dgvHanhKiem.Columns["StudentId"] != null) dgvHanhKiem.Columns["StudentId"].Visible = false;
             if (dgvHanhKiem.Columns["ClassId"] != null) dgvHanhKiem.Columns["ClassId"].Visible = false;
 
@@ -210,7 +193,7 @@ namespace GUI.UserControls
         }
 
         // ============================
-        // LOGIC PHÂN TRANG 
+        // LOGIC PHÂN TRANG (GIỮ NGUYÊN)
         // ============================
         private void RenderPaginationButtons()
         {
