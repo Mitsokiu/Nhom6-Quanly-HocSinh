@@ -344,3 +344,5 @@ USE school_management;
 
 ALTER TABLE tuition
 ADD COLUMN description VARCHAR(255) NOT NULL AFTER student_id;
+
+

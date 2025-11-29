@@ -15,3 +15,4 @@ namespace BUS
         public static  DataTable GetClassesByYear(int yearId) => ClassDAO.GetClassesByYear(yearId);
     }
 }
+

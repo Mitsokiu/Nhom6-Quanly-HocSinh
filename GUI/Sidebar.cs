@@ -22,7 +22,7 @@ namespace GUI
         public event EventHandler CauHinhClicked;
         public event EventHandler HomeClicked;
         public event EventHandler QlyNamHocClicked;
-
+       
         private UserDTO currentUser;
 
         public Sidebar()
@@ -61,7 +61,7 @@ namespace GUI
             switch (role?.ToLower())
             {
                 case "admin":
-                    ShowButtons(btnTaiKhoan, btnQlyLop, btnNamhoc,btnHome);
+                    ShowButtons(btnTaiKhoan, btnQlyLop, btnNamhoc,btnHome,btnHocSinh);
                     break;
                 case "gvbm":
                     ShowButtons(btnNhapDiem, btnXemLichDay, btnHome);
@@ -100,8 +100,7 @@ namespace GUI
         private void btnQlyLop_Click(object sender, EventArgs e) => QlyLopClicked?.Invoke(this, EventArgs.Empty);
         private void btnCauHinh_Click(object sender, EventArgs e) => CauHinhClicked?.Invoke(this, EventArgs.Empty);
         private void btnHome_Click(object sender, EventArgs e) => HomeClicked?.Invoke(this, EventArgs.Empty);
-
-        private void btnNamhoc_Click(object sender, EventArgs e) => QlyNamHocClicked?.Invoke(this, EventArgs.Empty);
+         private void btnNamhoc_Click(object sender, EventArgs e) => QlyNamHocClicked?.Invoke(this, EventArgs.Empty);
         // ============================
         // XỬ LÝ ĐĂNG XUẤT
         // ============================

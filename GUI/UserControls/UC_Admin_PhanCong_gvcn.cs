@@ -88,6 +88,13 @@ namespace GUI
             if (e.RowIndex < 0) return;
             DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
 
+            // Nếu dòng là NewRow (dòng trống cuối grid) -> bỏ qua
+            if (row.IsNewRow) return;
+
+            // Kiểm tra cell assign_id có giá trị hợp lệ
+            if (row.Cells["assign_id"].Value == null || row.Cells["assign_id"].Value == DBNull.Value)
+                return;
+
             selectedAssignId = Convert.ToInt32(row.Cells["assign_id"].Value);
             comboBoxYear.SelectedValue = Convert.ToInt32(row.Cells["year_id"].Value);
             comboBoxClass.SelectedValue = Convert.ToInt32(row.Cells["class_id"].Value);

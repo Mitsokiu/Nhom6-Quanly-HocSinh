@@ -56,10 +56,16 @@ namespace DAO
             }
         }
 
+        // Trả về lớp kèm tên khối
         public static List<ClassDTO> GetAllClasses()
         {
             var list = new List<ClassDTO>();
-            string query = "SELECT class_id, class_name, grade_id FROM classes";
+            string query = @"
+                SELECT c.class_id, c.class_name, c.grade_id, g.grade_name
+                FROM classes c
+                JOIN grade_levels g ON c.grade_id = g.grade_id
+                ORDER BY g.grade_id, c.class_name
+            ";
 
             using (var conn = DbConnect.GetConnection())
             {
@@ -73,11 +79,13 @@ namespace DAO
                         {
                             Id = reader.GetInt32("class_id"),
                             ClassName = reader.GetString("class_name"),
-                            GradeId = reader.GetInt32("grade_id")
+                            GradeId = reader.GetInt32("grade_id"),
+                            GradeName = reader.GetString("grade_name")
                         });
                     }
                 }
             }
+
             return list;
         }
 
@@ -94,7 +102,8 @@ namespace DAO
             }
             return false;
         }
-        public  static DataTable GetClassesByYear(int yearId)
+
+        public static DataTable GetClassesByYear(int yearId)
         {
             string sql = @"
                 SELECT DISTINCT c.class_id, c.class_name
@@ -104,6 +113,5 @@ namespace DAO
 
             return DbConnect.ExecuteQuery(sql, new object[] { yearId });
         }
-
     }
 }

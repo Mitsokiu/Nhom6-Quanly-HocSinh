@@ -20,6 +20,7 @@ namespace DTO
         public DateTime DOB { get; set; }
         public DateTime? PaidDate { get; set; }
 
+        public string name { get; set; }
         
     }
 }

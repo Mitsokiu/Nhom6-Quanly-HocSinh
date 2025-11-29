@@ -25,7 +25,7 @@ namespace GUI.UserControls
         //    currentTuitionList = tuitionBUS.GetAllTuition(); // lưu danh sách DTO
         //    foreach (var t in currentTuitionList)
         //    {
-        //        dataGridView1.Rows.Add(t.Description ?? "", t.Amount, t.DueDate.ToString("dd/MM/yyyy"));
+        //        dataGridView1.Rows.Add(t.name ?? "", t.Amount, t.DueDate.ToString("dd/MM/yyyy"));
         //    }
         //}
         private void LoadTuitionData()
@@ -33,13 +33,13 @@ namespace GUI.UserControls
             dataGridView1.Rows.Clear();
             var list = tuitionBUS.GetAllTuition(); // lấy tất cả học phí
 
-            // Lọc trùng theo Description + Amount + DueDate
+            // Lọc trùng theo name + Amount + DueDate
             var uniqueList = new List<TuitionDTO>();
             var seen = new HashSet<string>();
 
             foreach (var t in list)
             {
-                string key = $"{t.Description}_{t.Amount}_{t.DueDate:yyyyMMdd}";
+                string key = $"{t.name}_{t.Amount}_{t.DueDate:yyyyMMdd}";
                 if (!seen.Contains(key))
                 {
                     seen.Add(key);
@@ -51,7 +51,7 @@ namespace GUI.UserControls
 
             foreach (var t in uniqueList)
             {
-                dataGridView1.Rows.Add(t.Description ?? "", t.Amount, t.DueDate.ToString("dd/MM/yyyy"));
+                dataGridView1.Rows.Add(t.name ?? "", t.Amount, t.DueDate.ToString("dd/MM/yyyy"));
             }
         }
 
@@ -71,7 +71,7 @@ namespace GUI.UserControls
         // Thêm học phí cho tất cả học sinh
         private void Button4_Click(object sender, EventArgs e)
         {
-            string description = textBox2.Text;
+            string name = textBox2.Text;
             if (!decimal.TryParse(textBox3.Text, out decimal amount))
             {
                 MessageBox.Show("Số tiền không hợp lệ");
@@ -79,7 +79,7 @@ namespace GUI.UserControls
             }
             DateTime dueDate = dateTimePicker1.Value;
 
-            bool success = tuitionBUS.AddTuitionForAllStudents(description, amount, dueDate);
+            bool success = tuitionBUS.AddTuitionForAllStudents(name, amount, dueDate);
 
             if (success)
             {
@@ -100,7 +100,7 @@ namespace GUI.UserControls
         //    int index = dataGridView1.CurrentRow.Index;
         //    var tuition = currentTuitionList[index]; // lấy DTO từ danh sách
 
-        //    string description = textBox2.Text;
+        //    string name = textBox2.Text;
         //    if (!decimal.TryParse(textBox3.Text, out decimal amount))
         //    {
         //        MessageBox.Show("Số tiền không hợp lệ");
@@ -108,7 +108,7 @@ namespace GUI.UserControls
         //    }
         //    DateTime dueDate = dateTimePicker1.Value;
 
-        //    bool success = tuitionBUS.UpdateTuition(tuition.TuitionId, description, amount, dueDate);
+        //    bool success = tuitionBUS.UpdateTuition(tuition.TuitionId, name, amount, dueDate);
 
         //    if (success)
         //    {
@@ -128,7 +128,7 @@ namespace GUI.UserControls
             int index = dataGridView1.CurrentRow.Index;
             var tuition = currentTuitionList[index]; // DTO từ danh sách
 
-            string description = textBox2.Text;
+            string name = textBox2.Text;
             if (!decimal.TryParse(textBox3.Text, out decimal amount))
             {
                 MessageBox.Show("Số tiền không hợp lệ");
@@ -138,8 +138,8 @@ namespace GUI.UserControls
 
             // Truyền thông tin cũ + mới cho BUS
             bool success = tuitionBUS.UpdateTuition(
-                tuition.Description, tuition.Amount, tuition.DueDate, // thông tin cũ
-                description, amount, dueDate                           // thông tin mới
+                tuition.name, tuition.Amount, tuition.DueDate, // thông tin cũ
+                name, amount, dueDate                           // thông tin mới
             );
 
             if (success)
@@ -190,7 +190,7 @@ namespace GUI.UserControls
             if (confirm == DialogResult.Yes)
             {
                 bool success = tuitionBUS.DeleteTuition(
-                    tuition.Description, tuition.Amount, tuition.DueDate // dùng thông tin cũ để xóa tất cả bản ghi trùng
+                    tuition.name, tuition.Amount, tuition.DueDate // dùng thông tin cũ để xóa tất cả bản ghi trùng
                 );
 
                 if (success)
@@ -216,6 +216,11 @@ namespace GUI.UserControls
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void UC_Admin_NamHoc_HocPhi_PhieuThu_Load(object sender, EventArgs e)
         {
 
         }

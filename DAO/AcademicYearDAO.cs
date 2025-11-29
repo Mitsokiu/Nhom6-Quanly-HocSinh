@@ -58,5 +58,12 @@ namespace DAO
             int result = DbConnect.ExecuteNonQuery(query, new object[] { yearId });
             return result > 0;
         }
+
+        public static DataTable GetAcademicYears()
+        {
+            string sql = "SELECT year_id, name FROM academic_years";
+            return DbConnect.ExecuteQuery(sql, null);
+        }
+
     }
 }

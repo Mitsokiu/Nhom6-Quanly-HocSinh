@@ -97,10 +97,13 @@
   <ItemGroup>
     <Compile Include="AcademicBUS.cs" />
     <Compile Include="ClassBUS.cs" />
+    <Compile Include="GradeBUS.cs" />
     <Compile Include="HomeroomAssignmentBUS.cs" />
+    <Compile Include="NotificationBUS.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SemesterBUS.cs" />
+    <Compile Include="StudentBUS.cs" />
     <Compile Include="subject.cs" />
     <Compile Include="TeacherAssignmentBUS.cs" />
     <Compile Include="TuitionBUS.cs" />

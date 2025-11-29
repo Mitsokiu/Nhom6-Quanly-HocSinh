@@ -12,32 +12,32 @@ namespace DAO
         public bool AddTuitionForAllStudents(TuitionDTO tuition)
         {
             string query = @"
-                INSERT INTO tuition (student_id, description, amount, due_date, status)
+                INSERT INTO tuition (student_id, name, amount, due_date, status)
                 SELECT student_id, @param0, @param1, @param2, 'unpaid'
                 FROM students
             ";
 
-            return DbConnect.ExecuteNonQuery(query, new object[] { tuition.Description, tuition.Amount, tuition.DueDate }) > 0;
+            return DbConnect.ExecuteNonQuery(query, new object[] { tuition.name, tuition.Amount, tuition.DueDate }) > 0;
         }
 
         public bool AddTuitionForStudent(TuitionDTO tuition)
         {
             string query = @"
-                INSERT INTO tuition (student_id, description, amount, due_date, status)
+                INSERT INTO tuition (student_id, name, amount, due_date, status)
                 VALUES (@param0, @param1, @param2, @param3, 'unpaid')
             ";
 
-            return DbConnect.ExecuteNonQuery(query, new object[] { tuition.StudentId, tuition.Description, tuition.Amount, tuition.DueDate }) > 0;
+            return DbConnect.ExecuteNonQuery(query, new object[] { tuition.StudentId, tuition.name, tuition.Amount, tuition.DueDate }) > 0;
         }
 
         public bool UpdateTuition(string oldDesc, decimal oldAmount, DateTime oldDueDate, string newDesc, decimal newAmount, DateTime newDueDate)
         {
             string query = @"
         UPDATE tuition
-        SET description = @param0,
+        SET name = @param0,
             amount = @param1,
             due_date = @param2
-        WHERE description = @param3
+        WHERE name = @param3
           AND amount = @param4
           AND due_date = @param5
     ";
@@ -52,12 +52,12 @@ namespace DAO
         {
                     string query = @"
                 DELETE FROM tuition
-                WHERE description = @param0
+                WHERE name = @param0
                   AND amount = @param1
                   AND due_date = @param2
             ";
                     return DbConnect.ExecuteNonQuery(query, new object[] {
-                tuition.Description, tuition.Amount, tuition.DueDate
+                tuition.name, tuition.Amount, tuition.DueDate
             }) > 0;
         }
 
@@ -78,7 +78,7 @@ namespace DAO
                         {
                             TuitionId = reader.GetInt32("tuition_id"),
                             StudentId = reader.GetInt32("student_id"),
-                            Description = reader.GetString("description"),
+                            name = reader.GetString("name"),
                             Amount = reader.GetDecimal("amount"),
                             DueDate = reader.GetDateTime("due_date"),
                             Status = reader.GetString("status")
@@ -92,9 +92,9 @@ namespace DAO
         public List<TuitionDTO> GetAllTuitionKhoanThu()
         {
             string query = @"
-        SELECT description, amount, due_date
+        SELECT name, amount, due_date
         FROM tuition
-        GROUP BY description, amount, due_date
+        GROUP BY name, amount, due_date
         ORDER BY due_date
     ";
             var list = new List<TuitionDTO>();
@@ -109,7 +109,7 @@ namespace DAO
                     {
                         list.Add(new TuitionDTO
                         {
-                            Description = reader.GetString("description"),
+                            name = reader.GetString("name"),
                             Amount = reader.GetDecimal("amount"),
                             DueDate = reader.GetDateTime("due_date")
                         });
@@ -126,7 +126,7 @@ namespace DAO
         {
             var list = new List<TuitionDTO>();
             string query = @"
-                SELECT t.tuition_id, t.student_id, t.description, t.amount, t.due_date, t.status,
+                SELECT t.tuition_id, t.student_id, t.name, t.amount, t.due_date, t.status,
                        s.dob, u.fullname AS student_name, c.class_name,
                        r.paid_date
                 FROM tuition t
@@ -155,7 +155,7 @@ namespace DAO
                             StudentName = reader.GetString("student_name"),
                             DOB = reader.GetDateTime("dob"),
                             ClassName = reader.GetString("class_name"),
-                            Description = reader.GetString("description"),
+                            name = reader.GetString("name"),
                             Amount = reader.GetDecimal("amount"),
                             DueDate = reader.GetDateTime("due_date"),
                             Status = reader.GetString("status"),
@@ -228,7 +228,7 @@ namespace DAO
                     u.fullname AS Hoten,
                     s.dob AS NgaySinh,
                     c.class_name AS Lop,
-                    t.description AS KhoanThu,
+                    t.name AS KhoanThu,
                     t.amount AS SoTien,
                     t.due_date AS HanNop,
                     t.status AS TrangThai

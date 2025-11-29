@@ -44,21 +44,31 @@
             this.gvcn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayTao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txtnumber = new System.Windows.Forms.TextBox();
+            this.btntail = new System.Windows.Forms.Button();
+            this.btnnext = new System.Windows.Forms.Button();
+            this.btnback = new System.Windows.Forms.Button();
+            this.btnhead = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBoxYear
             // 
             this.comboBoxYear.FormattingEnabled = true;
-            this.comboBoxYear.Location = new System.Drawing.Point(210, 75);
+            this.comboBoxYear.Location = new System.Drawing.Point(125, 13);
             this.comboBoxYear.Name = "comboBoxYear";
-            this.comboBoxYear.Size = new System.Drawing.Size(121, 28);
+            this.comboBoxYear.Size = new System.Drawing.Size(178, 28);
             this.comboBoxYear.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 75);
+            this.label1.Location = new System.Drawing.Point(16, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 20);
             this.label1.TabIndex = 1;
@@ -67,7 +77,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 132);
+            this.label2.Location = new System.Drawing.Point(15, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 20);
             this.label2.TabIndex = 3;
@@ -76,15 +86,15 @@
             // comboBoxClass
             // 
             this.comboBoxClass.FormattingEnabled = true;
-            this.comboBoxClass.Location = new System.Drawing.Point(210, 132);
+            this.comboBoxClass.Location = new System.Drawing.Point(125, 70);
             this.comboBoxClass.Name = "comboBoxClass";
-            this.comboBoxClass.Size = new System.Drawing.Size(121, 28);
+            this.comboBoxClass.Size = new System.Drawing.Size(178, 28);
             this.comboBoxClass.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 198);
+            this.label3.Location = new System.Drawing.Point(16, 136);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 20);
             this.label3.TabIndex = 5;
@@ -93,15 +103,15 @@
             // comboBoxTeacher
             // 
             this.comboBoxTeacher.FormattingEnabled = true;
-            this.comboBoxTeacher.Location = new System.Drawing.Point(210, 198);
+            this.comboBoxTeacher.Location = new System.Drawing.Point(125, 133);
             this.comboBoxTeacher.Name = "comboBoxTeacher";
-            this.comboBoxTeacher.Size = new System.Drawing.Size(121, 28);
+            this.comboBoxTeacher.Size = new System.Drawing.Size(178, 28);
             this.comboBoxTeacher.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(44, 282);
+            this.label4.Location = new System.Drawing.Point(16, 220);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 20);
             this.label4.TabIndex = 7;
@@ -109,40 +119,47 @@
             // 
             // btnadd
             // 
-            this.btnadd.Location = new System.Drawing.Point(36, 394);
+            this.btnadd.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnadd.Location = new System.Drawing.Point(25, 311);
             this.btnadd.Name = "btnadd";
-            this.btnadd.Size = new System.Drawing.Size(75, 23);
+            this.btnadd.Size = new System.Drawing.Size(75, 42);
             this.btnadd.TabIndex = 8;
-            this.btnadd.Text = "button1";
-            this.btnadd.UseVisualStyleBackColor = true;
+            this.btnadd.Text = "Thêm";
+            this.btnadd.UseVisualStyleBackColor = false;
+            this.btnadd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // btnsua
             // 
-            this.btnsua.Location = new System.Drawing.Point(146, 394);
+            this.btnsua.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnsua.Location = new System.Drawing.Point(153, 311);
             this.btnsua.Name = "btnsua";
-            this.btnsua.Size = new System.Drawing.Size(75, 23);
+            this.btnsua.Size = new System.Drawing.Size(75, 42);
             this.btnsua.TabIndex = 9;
-            this.btnsua.Text = "button2";
-            this.btnsua.UseVisualStyleBackColor = true;
+            this.btnsua.Text = "Sửa";
+            this.btnsua.UseVisualStyleBackColor = false;
+            this.btnsua.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // btnxoa
             // 
-            this.btnxoa.Location = new System.Drawing.Point(288, 394);
+            this.btnxoa.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnxoa.Location = new System.Drawing.Point(277, 311);
             this.btnxoa.Name = "btnxoa";
-            this.btnxoa.Size = new System.Drawing.Size(75, 23);
+            this.btnxoa.Size = new System.Drawing.Size(75, 42);
             this.btnxoa.TabIndex = 10;
-            this.btnxoa.Text = "button3";
-            this.btnxoa.UseVisualStyleBackColor = true;
+            this.btnxoa.Text = "Xóa";
+            this.btnxoa.UseVisualStyleBackColor = false;
+            this.btnxoa.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.year,
             this.lop,
             this.gvcn,
             this.NgayTao});
-            this.dataGridView1.Location = new System.Drawing.Point(422, 68);
+            this.dataGridView1.Location = new System.Drawing.Point(400, 68);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
@@ -179,30 +196,114 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(185, 282);
+            this.dateTimePicker1.Location = new System.Drawing.Point(125, 220);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
             this.dateTimePicker1.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(13, 12);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(233, 25);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Phân Công Chủ Nhiệm";
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.comboBoxYear);
+            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.btnxoa);
+            this.panel1.Controls.Add(this.comboBoxClass);
+            this.panel1.Controls.Add(this.btnsua);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.btnadd);
+            this.panel1.Controls.Add(this.comboBoxTeacher);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Location = new System.Drawing.Point(18, 68);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(376, 368);
+            this.panel1.TabIndex = 20;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.txtnumber);
+            this.panel2.Controls.Add(this.btntail);
+            this.panel2.Controls.Add(this.btnnext);
+            this.panel2.Controls.Add(this.btnback);
+            this.panel2.Controls.Add(this.btnhead);
+            this.panel2.Location = new System.Drawing.Point(470, 451);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(488, 40);
+            this.panel2.TabIndex = 21;
+            // 
+            // txtnumber
+            // 
+            this.txtnumber.Location = new System.Drawing.Point(194, 5);
+            this.txtnumber.Name = "txtnumber";
+            this.txtnumber.Size = new System.Drawing.Size(100, 26);
+            this.txtnumber.TabIndex = 4;
+            // 
+            // btntail
+            // 
+            this.btntail.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btntail.Location = new System.Drawing.Point(400, 4);
+            this.btntail.Name = "btntail";
+            this.btntail.Size = new System.Drawing.Size(75, 28);
+            this.btntail.TabIndex = 3;
+            this.btntail.Text = ">>";
+            this.btntail.UseVisualStyleBackColor = false;
+            // 
+            // btnnext
+            // 
+            this.btnnext.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnnext.Location = new System.Drawing.Point(319, 4);
+            this.btnnext.Name = "btnnext";
+            this.btnnext.Size = new System.Drawing.Size(75, 28);
+            this.btnnext.TabIndex = 2;
+            this.btnnext.Text = ">";
+            this.btnnext.UseVisualStyleBackColor = false;
+            // 
+            // btnback
+            // 
+            this.btnback.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnback.Location = new System.Drawing.Point(95, 4);
+            this.btnback.Name = "btnback";
+            this.btnback.Size = new System.Drawing.Size(75, 28);
+            this.btnback.TabIndex = 1;
+            this.btnback.Text = "<";
+            this.btnback.UseVisualStyleBackColor = false;
+            // 
+            // btnhead
+            // 
+            this.btnhead.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnhead.Location = new System.Drawing.Point(14, 4);
+            this.btnhead.Name = "btnhead";
+            this.btnhead.Size = new System.Drawing.Size(75, 28);
+            this.btnhead.TabIndex = 0;
+            this.btnhead.Text = "<<";
+            this.btnhead.UseVisualStyleBackColor = false;
             // 
             // UC_Admin_PhanCong_gvcn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnxoa);
-            this.Controls.Add(this.btnsua);
-            this.Controls.Add(this.btnadd);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBoxTeacher);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBoxClass);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBoxYear);
             this.Name = "UC_Admin_PhanCong_gvcn";
-            this.Size = new System.Drawing.Size(1077, 526);
+            this.Size = new System.Drawing.Size(1077, 516);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,6 +327,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lop;
         private System.Windows.Forms.DataGridViewTextBoxColumn gvcn;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayTao;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox txtnumber;
+        private System.Windows.Forms.Button btntail;
+        private System.Windows.Forms.Button btnnext;
+        private System.Windows.Forms.Button btnback;
+        private System.Windows.Forms.Button btnhead;
     }
 
 

@@ -23,6 +23,7 @@ namespace DAO
                 JOIN classes c ON h.class_id = c.class_id
                 JOIN users u ON h.teacher_id = u.user_id
                 JOIN academic_years y ON h.year_id = y.year_id
+                WHERE u.role_id = 'gvcn'
                 ORDER BY h.assigned_date DESC";
 
             return DbConnect.ExecuteQuery(query); // giữ nguyên ExecuteQuery nếu không cần tham số
