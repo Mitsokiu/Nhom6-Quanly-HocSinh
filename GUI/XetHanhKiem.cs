@@ -12,17 +12,15 @@ namespace GUI
         private int semesterId;
         private EvaluationBUS evalBus = new EvaluationBUS();
 
-        public XetHanhKiem(StudentEvaluationDTO dtoInput, int semesterIdInput)
+        public XetHanhKiem(StudentEvaluationDTO dtoInput, int semesterId)
         {
-            InitializeComponent(); // QUAN TRỌNG: Hàm này gọi code bên Designer
+            InitializeComponent();
 
             this.dto = dtoInput;
-            this.semesterId = semesterIdInput;
+            this.semesterId = semesterId;
 
             LoadData();
 
-            // Gán sự kiện Click
-            // (Nếu muốn gán trong Designer thì double click vào nút ở chế độ Design)
             btnSave.Click += BtnSave_Click;
             btnCancel.Click += (s, e) => this.Close();
         }
@@ -42,7 +40,7 @@ namespace GUI
             }
             else
             {
-                cbbConduct.SelectedIndex = 0; // Mặc định Tốt
+                cbbConduct.SelectedIndex = 0;
             }
 
             txtComment.Text = dto.TeacherComment;
@@ -50,7 +48,6 @@ namespace GUI
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            // Kiểm tra khóa sổ (Gọi BUS)
             if (evalBus.IsEvaluationLocked(semesterId))
             {
                 MessageBox.Show("Học kỳ này đã khóa sổ, không thể chỉnh sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -61,11 +58,10 @@ namespace GUI
             string newConduct = cbbConduct.SelectedItem != null ? cbbConduct.SelectedItem.ToString() : "Tốt";
             string newComment = txtComment.Text.Trim();
 
-            // Gọi BUS lưu
             if (evalBus.SaveEvaluation(dto.StudentId, dto.ClassId, semesterId, newConduct, newComment))
             {
                 MessageBox.Show("Lưu đánh giá thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.DialogResult = DialogResult.OK; // Báo OK để form cha load lại
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             else

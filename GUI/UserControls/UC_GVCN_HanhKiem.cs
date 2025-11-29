@@ -24,7 +24,6 @@ namespace GUI.UserControls
         private int totalPages = 1;
         private const string PLACEHOLDER_TEXT = "Tìm kiếm học sinh theo tên hoặc mã số...";
 
-        // CẤU HÌNH ICON (Giống QLHS)
         private const int ICON_W = 24;
         private const int ICON_H = 24;
 
@@ -35,7 +34,6 @@ namespace GUI.UserControls
 
             SetupDataGridView();
 
-            // Gán sự kiện vẽ icon và click (Giống QLHS)
             dgvHanhKiem.CellPainting += DgvHanhKiem_CellPainting;
             dgvHanhKiem.CellMouseClick += DgvHanhKiem_CellMouseClick;
 
@@ -77,7 +75,7 @@ namespace GUI.UserControls
             dgvHanhKiem.Columns.Add(new DataGridViewTextBoxColumn { 
                 Name = "FullName", 
                 HeaderText = "HỌ VÀ TÊN", 
-                Width = 250, 
+                Width = 330, 
                 ReadOnly = true, 
                 DataPropertyName = "FullName" 
             });
@@ -85,7 +83,7 @@ namespace GUI.UserControls
             // Cột 4: Hạnh Kiểm (Chuyển thành TextBox ReadOnly, vì sửa trong form con rồi)
             var colConduct = new DataGridViewTextBoxColumn { 
                 Name = "Conduct", HeaderText = "HẠNH KIỂM", 
-                Width = 150, 
+                Width = 200, 
                 ReadOnly = true, 
                 DataPropertyName = "Conduct"
             };
@@ -113,9 +111,7 @@ namespace GUI.UserControls
             dgvHanhKiem.RowTemplate.Height = 50;
         }
 
-        // ==========================================
-        // PHẦN VẼ ICON & CLICK (GIỐNG QLHS 99%)
-        // ==========================================
+ 
         private void DgvHanhKiem_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             // Chỉ vẽ cột Action

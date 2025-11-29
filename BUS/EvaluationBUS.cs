@@ -14,16 +14,8 @@ namespace BUS
             return dao.GetListForEvaluation(teacherId, semesterId);
         }
 
-        // [CŨ - Giữ lại nếu muốn dùng cho cách Lưu tất cả]
-        public bool SaveEvaluation(StudentEvaluationDTO dto, int semesterId)
-        {
-            return dao.SaveEvaluation(dto.StudentId, dto.ClassId, semesterId, dto.Conduct, dto.TeacherComment);
-        }
-
-        // [MỚI - THÊM HÀM NÀY] Để phục vụ cho Form Sửa Chi Tiết (FormXetHanhKiem)
         public bool SaveEvaluation(int studentId, int classId, int semesterId, string conduct, string comment)
         {
-            // Gọi thẳng xuống DAO
             return dao.SaveEvaluation(studentId, classId, semesterId, conduct, comment);
         }
 

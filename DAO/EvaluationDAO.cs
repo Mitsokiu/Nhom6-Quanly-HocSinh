@@ -53,7 +53,7 @@ namespace DAO
                                                   AND eval.class_id = c.class_id
                                                   
                 WHERE ha.teacher_id = @param1
-                ORDER BY SUBSTRING_INDEX(u_student.fullname, ' ', -1) ASC"; // Sắp xếp theo Tên (alpha)
+                ORDER BY SUBSTRING_INDEX(u_student.fullname, ' ', -1) ASC";
 
             DataTable dt = DbConnect.ExecuteQuery(query, new object[] { semesterId, teacherId });
 
@@ -82,10 +82,10 @@ namespace DAO
             // Dùng cú pháp đặc biệt của MySQL: Nếu trùng khóa (Student+Class+Semester) thì tự động Update
             string query = @"
                 INSERT INTO student_evaluations (student_id, class_id, semester_id, conduct, teacher_comment)
-                VALUES (@p0, @p1, @p2, @p3, @p4)
+                VALUES (@param0, @param1, @param2, @param3, @param4)
                 ON DUPLICATE KEY UPDATE 
-                    conduct = @p3, 
-                    teacher_comment = @p4";
+                    conduct = @param3, 
+                    teacher_comment = @param4";
 
             return DbConnect.ExecuteNonQuery(query, new object[] { studentId, classId, semesterId, conduct, comment }) > 0;
         }
@@ -93,9 +93,9 @@ namespace DAO
         // 3. Lấy ngày kết thúc học kỳ (Để kiểm tra khóa sổ)
         public DateTime GetSemesterEndDate(int semesterId)
         {
-            string query = "SELECT end_date FROM semesters WHERE semester_id = @id";
+            // SỬA: Dùng @param0 thay vì @id
+            string query = "SELECT end_date FROM semesters WHERE semester_id = @param0";
             object result = DbConnect.ExecuteScalar(query, new object[] { semesterId });
-
             if (result != null && result != DBNull.Value)
             {
                 return Convert.ToDateTime(result);
