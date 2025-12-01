@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -259,6 +259,12 @@
     <Compile Include="UserControls\UC_GVCN_DS.Designer.cs">
       <DependentUpon>UC_GVCN_DS.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UC_GVCN_HanhKiem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_GVCN_HanhKiem.Designer.cs">
+      <DependentUpon>UC_GVCN_HanhKiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UC_GVCN_HocPhi.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -343,6 +349,12 @@
     <Compile Include="UserControls\UC_PhuHuynh_Thongtin.Designer.cs">
       <DependentUpon>UC_PhuHuynh_Thongtin.cs</DependentUpon>
     </Compile>
+    <Compile Include="XetHanhKiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XetHanhKiem.Designer.cs">
+      <DependentUpon>XetHanhKiem.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -411,6 +423,9 @@
     <EmbeddedResource Include="UserControls\UC_GVCN_DS.resx">
       <DependentUpon>UC_GVCN_DS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_GVCN_HanhKiem.resx">
+      <DependentUpon>UC_GVCN_HanhKiem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_GVCN_HocPhi.resx">
       <DependentUpon>UC_GVCN_HocPhi.cs</DependentUpon>
     </EmbeddedResource>
@@ -443,6 +458,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_PhuHuynh_Thongtin.resx">
       <DependentUpon>UC_PhuHuynh_Thongtin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XetHanhKiem.resx">
+      <DependentUpon>XetHanhKiem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
