@@ -380,6 +380,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_HocSinh_TKB.resx">
       <DependentUpon>UC_HocSinh_TKB.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_Home.resx">
       <DependentUpon>UC_Home.cs</DependentUpon>
