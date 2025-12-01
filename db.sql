@@ -251,6 +251,39 @@ CREATE TABLE comments (
     FOREIGN KEY(user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
 
+
+DROP TABLE IF EXISTS `student_evaluations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `student_evaluations` (
+  `evaluation_id` int NOT NULL AUTO_INCREMENT,
+  `student_id` int NOT NULL,
+  `class_id` int NOT NULL,
+  `semester_id` int NOT NULL,
+  `conduct` enum('Tốt','Khá','Trung Bình','Yếu') COLLATE utf8mb4_unicode_ci DEFAULT 'Tốt',
+  `teacher_comment` text COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`evaluation_id`),
+  UNIQUE KEY `unique_eval` (`student_id`,`class_id`,`semester_id`),
+  KEY `class_id` (`class_id`),
+  KEY `semester_id` (`semester_id`),
+  CONSTRAINT `student_evaluations_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`student_id`) ON DELETE CASCADE,
+  CONSTRAINT `student_evaluations_ibfk_2` FOREIGN KEY (`class_id`) REFERENCES `classes` (`class_id`),
+  CONSTRAINT `student_evaluations_ibfk_3` FOREIGN KEY (`semester_id`) REFERENCES `semesters` (`semester_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `student_evaluations`
+--
+
+LOCK TABLES `student_evaluations` WRITE;
+/*!40000 ALTER TABLE `student_evaluations` DISABLE KEYS */;
+INSERT INTO `student_evaluations` VALUES (1,4,1,2,'Tốt',''),(2,1,1,2,'Tốt',''),(3,3,1,2,'Khá',''),(4,6,1,2,'Trung Bình',''),(5,2,1,2,'Yếu',''),(8,4,1,1,'Tốt','');
+/*!40000 ALTER TABLE `student_evaluations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+
 -- Bảng Events (Sự kiện)
 CREATE TABLE events (
     event_id INT AUTO_INCREMENT PRIMARY KEY,
