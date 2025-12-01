@@ -97,6 +97,8 @@
   <ItemGroup>
     <Compile Include="AcademicYearDTO.cs" />
     <Compile Include="ClassDTO.cs" />
+    <Compile Include="currentuser.cs" />
+    <Compile Include="GVBM_TKB_DTO.cs" />
     <Compile Include="HomeroomAssignmentDTO.cs" />
     <Compile Include="NotificationDTO.cs" />
     <Compile Include="Program.cs" />

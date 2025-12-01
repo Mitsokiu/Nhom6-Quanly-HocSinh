@@ -201,3 +201,47 @@ C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\obj\Debug\D
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\obj\Debug\DAO.csproj.CopyComplete
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\obj\Debug\DAO.exe
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\obj\Debug\DAO.pdb
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\DAO.exe.config
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\DAO.exe
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\DAO.pdb
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\BouncyCastle.Cryptography.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\DTO.exe
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\Google.Protobuf.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\K4os.Compression.LZ4.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\K4os.Hash.xxHash.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\MySql.Data.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\System.Buffers.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\System.IO.Pipelines.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\System.Memory.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\System.Numerics.Vectors.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\ZstdSharp.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\DTO.pdb
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\DTO.exe.config
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\BouncyCastle.Cryptography.xml
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\Google.Protobuf.pdb
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\Google.Protobuf.xml
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\K4os.Compression.LZ4.xml
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\K4os.Hash.xxHash.xml
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\MySql.Data.xml
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\System.Buffers.xml
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\System.IO.Pipelines.xml
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\System.Memory.xml
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\System.Numerics.Vectors.xml
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\obj\Debug\DAO.exe.config
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\obj\Debug\DAO.Properties.Resources.resources
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\obj\Debug\DAO.csproj.GenerateResource.cache
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\obj\Debug\DAO.csproj.Up2Date
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\obj\Debug\DAO.exe
+C:\C#\Nhom6-Quanly-HocSinh1\DAO\obj\Debug\DAO.pdb

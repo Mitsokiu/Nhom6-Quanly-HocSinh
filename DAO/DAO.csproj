@@ -99,6 +99,7 @@
     <Compile Include="ClassDAO.cs" />
     <Compile Include="DBconnect.cs" />
     <Compile Include="EvaluationDAO.cs" />
+    <Compile Include="GVBM_TKB_DAO.cs" />
     <Compile Include="HomeroomAssignmentDAO.cs" />
     <Compile Include="NotificationDAO.cs" />
     <Compile Include="Program.cs" />

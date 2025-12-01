@@ -1,6 +1,7 @@
 ﻿using BUS;
 using DAO;
 using DTO;
+using MySqlX.XDevAPI;
 using System;
 using System.Windows.Forms;
 
@@ -42,7 +43,7 @@ namespace GUI
             if (bus.Login(username, password))
             {
                 UserDTO user = bus.GetUserInfo(username);
-               
+                currentuser.CurrentUser = bus.GetUserInfo(username);
                 MainForm main = new MainForm(username);
                 main.FormClosed += (s, args) => this.Show();
                 main.Show();
@@ -50,7 +51,7 @@ namespace GUI
             }
             else
             {
-               
+
                 MessageBox.Show("Sai tài khoản hoặc mật khẩu!", "Đăng nhập thất bại",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
 

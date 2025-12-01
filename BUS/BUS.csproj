@@ -98,6 +98,7 @@
     <Compile Include="AcademicBUS.cs" />
     <Compile Include="ClassBUS.cs" />
     <Compile Include="EvaluationBUS.cs" />
+    <Compile Include="GVBM_TKB_BUS.cs" />
     <Compile Include="HomeroomAssignmentBUS.cs" />
     <Compile Include="NotificationBUS.cs" />
     <Compile Include="Program.cs" />

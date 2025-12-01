@@ -180,3 +180,44 @@ C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DTO\obj\Debug\D
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DTO\obj\Debug\DTO.csproj.CopyComplete
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DTO\obj\Debug\DTO.exe
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DTO\obj\Debug\DTO.pdb
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\DTO.exe.config
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\DTO.exe
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\DTO.pdb
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\BouncyCastle.Cryptography.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\Google.Protobuf.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\K4os.Compression.LZ4.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\K4os.Hash.xxHash.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\MySql.Data.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\System.Buffers.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\System.IO.Pipelines.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\System.Memory.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\System.Numerics.Vectors.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\ZstdSharp.dll
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\BouncyCastle.Cryptography.xml
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\Google.Protobuf.pdb
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\Google.Protobuf.xml
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\K4os.Compression.LZ4.xml
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\K4os.Hash.xxHash.xml
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\MySql.Data.xml
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\System.Buffers.xml
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\System.IO.Pipelines.xml
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\System.Memory.xml
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\System.Numerics.Vectors.xml
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\obj\Debug\DTO.exe.config
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\obj\Debug\DTO.Properties.Resources.resources
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\obj\Debug\DTO.csproj.GenerateResource.cache
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\obj\Debug\DTO.csproj.Up2Date
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\obj\Debug\DTO.exe
+C:\C#\Nhom6-Quanly-HocSinh1\DTO\obj\Debug\DTO.pdb
