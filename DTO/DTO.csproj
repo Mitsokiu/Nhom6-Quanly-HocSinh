@@ -97,15 +97,19 @@
   <ItemGroup>
     <Compile Include="AcademicYearDTO.cs" />
     <Compile Include="ClassDTO.cs" />
+    <Compile Include="currentusercs.cs" />
     <Compile Include="GradeDTO.cs" />
+    <Compile Include="GVBM_TKB_DTO.cs" />
     <Compile Include="HomeroomAssignmentDTO.cs" />
     <Compile Include="NotificationDTO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SemesterDTO.cs" />
     <Compile Include="StudentDTO.cs" />
+    <Compile Include="StudentEvaluationDTO.cs" />
     <Compile Include="subjectDTO.cs" />
     <Compile Include="TeacherAssignments.cs" />
+    <Compile Include="TimetableDTO.cs" />
     <Compile Include="TuitionDTO.cs" />
     <Compile Include="UserDTO.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

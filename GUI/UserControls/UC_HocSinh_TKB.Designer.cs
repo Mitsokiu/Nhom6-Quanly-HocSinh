@@ -1,7 +1,4 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-namespace GUI.UserControls
+﻿namespace GUI.UserControls
 {
     partial class UC_HocSinh_TKB
     {
@@ -9,6 +6,15 @@ namespace GUI.UserControls
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+
+        // Các control giao diện
+        private System.Windows.Forms.Panel panelHeader;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Panel panelWeekWrapper;
+        private System.Windows.Forms.Label lblWeekTitle;
+        public System.Windows.Forms.ComboBox cboWeek;
+        private System.Windows.Forms.Panel panelContainer;
+        private System.Windows.Forms.TableLayoutPanel tblTimetable;
 
         /// <summary> 
         /// Clean up any resources being used.
@@ -31,87 +37,151 @@ namespace GUI.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            Thu2 = new DataGridViewTextBoxColumn();
-            Thu3 = new DataGridViewTextBoxColumn();
-            Thu4 = new DataGridViewTextBoxColumn();
-            Thu5 = new DataGridViewTextBoxColumn();
-            Thu6 = new DataGridViewTextBoxColumn();
-            Thu7 = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            SuspendLayout();
+            this.panelHeader = new System.Windows.Forms.Panel();
+            this.panelWeekWrapper = new System.Windows.Forms.Panel();
+            this.cboWeek = new System.Windows.Forms.ComboBox();
+            this.lblWeekTitle = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.panelContainer = new System.Windows.Forms.Panel();
+            this.tblTimetable = new System.Windows.Forms.TableLayoutPanel();
+            this.panelHeader.SuspendLayout();
+            this.panelWeekWrapper.SuspendLayout();
+            this.panelContainer.SuspendLayout();
+
+            this.SuspendLayout();
             // 
-            // dataGridView1
+            // panelHeader
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Thu2, Thu3, Thu4, Thu5, Thu6, Thu7 });
-            dataGridView1.Location = new Point(20, 15);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(919, 496);
-            dataGridView1.TabIndex = 0;
+            this.panelHeader.Controls.Add(this.panelWeekWrapper);
+            this.panelHeader.Controls.Add(this.lblTitle);
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(20, 20);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(960, 60);
+            this.panelHeader.TabIndex = 0;
             // 
-            // Thu2
+            // panelWeekWrapper
             // 
-            Thu2.HeaderText = "Thứ 2";
-            Thu2.MinimumWidth = 8;
-            Thu2.Name = "Thu2";
-            Thu2.Width = 150;
+            this.panelWeekWrapper.Controls.Add(this.cboWeek);
+            this.panelWeekWrapper.Controls.Add(this.lblWeekTitle);
+            this.panelWeekWrapper.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelWeekWrapper.Location = new System.Drawing.Point(510, 0);
+            this.panelWeekWrapper.Name = "panelWeekWrapper";
+            this.panelWeekWrapper.Size = new System.Drawing.Size(450, 60);
+            this.panelWeekWrapper.TabIndex = 1;
             // 
-            // Thu3
+            // cboWeek
             // 
-            Thu3.HeaderText = "Thứ 3";
-            Thu3.MinimumWidth = 8;
-            Thu3.Name = "Thu3";
-            Thu3.Width = 150;
+            this.cboWeek.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboWeek.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboWeek.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cboWeek.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboWeek.FormattingEnabled = true;
+            this.cboWeek.Location = new System.Drawing.Point(125, 15);
+            this.cboWeek.Name = "cboWeek";
+            this.cboWeek.Size = new System.Drawing.Size(310, 31);
+            this.cboWeek.TabIndex = 1;
             // 
-            // Thu4
+            // lblWeekTitle
             // 
-            Thu4.HeaderText = "Thứ 4";
-            Thu4.MinimumWidth = 8;
-            Thu4.Name = "Thu4";
-            Thu4.Width = 150;
+            this.lblWeekTitle.AutoSize = true;
+            this.lblWeekTitle.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblWeekTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(80)))), ((int)(((byte)(87)))));
+            this.lblWeekTitle.Location = new System.Drawing.Point(16, 18);
+            this.lblWeekTitle.Name = "lblWeekTitle";
+            this.lblWeekTitle.Size = new System.Drawing.Size(108, 23);
+            this.lblWeekTitle.TabIndex = 0;
+            this.lblWeekTitle.Text = "Chọn học kỳ:";
             // 
-            // Thu5
+            // lblTitle
             // 
-            Thu5.HeaderText = "Thứ 5";
-            Thu5.MinimumWidth = 8;
-            Thu5.Name = "Thu5";
-            Thu5.Width = 150;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.lblTitle.Location = new System.Drawing.Point(0, 5);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(263, 46);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "Thời Khóa Biểu";
             // 
-            // Thu6
+            // panelContainer
             // 
-            Thu6.HeaderText = "Thứ 6";
-            Thu6.MinimumWidth = 8;
-            Thu6.Name = "Thu6";
-            Thu6.Width = 150;
+            this.panelContainer.Controls.Add(this.tblTimetable);
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Location = new System.Drawing.Point(20, 80);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.panelContainer.Size = new System.Drawing.Size(960, 500);
+            this.panelContainer.TabIndex = 1;
+            this.panelContainer.AutoScroll = true;
             // 
-            // Thu7
+            // tblTimetable
             // 
-            Thu7.HeaderText = "Thứ 7";
-            Thu7.MinimumWidth = 8;
-            Thu7.Name = "Thu7";
-            Thu7.Width = 150;
+            this.tblTimetable.BackColor = System.Drawing.Color.White;
+            this.tblTimetable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tblTimetable.RowCount = 11;
+            this.tblTimetable.ColumnCount = 7;
+
+            // --- BUNG VÒNG LẶP COLUMN RA THÀNH TỪNG DÒNG ---
+            this.tblTimetable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F)); // Cột Tiết
+            this.tblTimetable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F)); // Thứ 2
+            this.tblTimetable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F)); // Thứ 3
+            this.tblTimetable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F)); // Thứ 4
+            this.tblTimetable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F)); // Thứ 5
+            this.tblTimetable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F)); // Thứ 6
+            this.tblTimetable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F)); // Thứ 7
+
+            this.tblTimetable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblTimetable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(226)))), ((int)(((byte)(230)))));
+            this.tblTimetable.Location = new System.Drawing.Point(0, 10);
+            this.tblTimetable.Name = "tblTimetable";
+
+
+            // --- 2. Row Styles (Viết tường minh 11 dòng) ---
+            // Header
+            this.tblTimetable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+
+            // 10 Tiết học (Mỗi tiết 75px -> Tổng cao ~800px -> Sẽ hiện Scrollbar)
+            this.tblTimetable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F)); // Tiết 1
+            this.tblTimetable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tblTimetable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tblTimetable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tblTimetable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F)); // Tiết 5
+
+            this.tblTimetable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F)); // Tiết 6
+            this.tblTimetable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tblTimetable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tblTimetable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tblTimetable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F)); // Tiết 10
+
+            // Dock Top để nó dãn xuống dưới, không Fill
+            this.tblTimetable.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tblTimetable.Location = new System.Drawing.Point(0, 0);
+            this.tblTimetable.Name = "tblTimetable";
+            this.tblTimetable.Size = new System.Drawing.Size(960, 800);
+            this.tblTimetable.AutoSize = true; // Tự co giãn theo nội dung
+            this.tblTimetable.TabIndex = 0;
             // 
             // UC_HocSinh_TKB
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(dataGridView1);
-            Name = "UC_HocSinh_TKB";
-            Size = new Size(951, 547);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ResumeLayout(false);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.panelContainer);
+            this.Controls.Add(this.panelHeader);
+            this.Name = "UC_HocSinh_TKB";
+            this.Padding = new System.Windows.Forms.Padding(20);
+            this.Size = new System.Drawing.Size(1000, 600);
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
+            this.panelWeekWrapper.ResumeLayout(false);
+            this.panelWeekWrapper.PerformLayout();
+            this.panelContainer.ResumeLayout(false);
+            this.tblTimetable.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
-
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Thu2;
-        private DataGridViewTextBoxColumn Thu3;
-        private DataGridViewTextBoxColumn Thu4;
-        private DataGridViewTextBoxColumn Thu5;
-        private DataGridViewTextBoxColumn Thu6;
-        private DataGridViewTextBoxColumn Thu7;
     }
 }

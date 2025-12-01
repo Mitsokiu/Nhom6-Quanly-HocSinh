@@ -68,6 +68,18 @@ namespace BUS
         public DataTable GetTuitionByYearAndClass(int yearId, int classId) => dao.GetTuitionByYearAndClass(yearId, classId);
         public bool UpdateStatus(int tuitionId, string status) => dao.UpdateStatus(tuitionId, status);
 
+        private TuitionDAO tuitionDAO = new TuitionDAO();
+        private StudentDAO studentDAO = new StudentDAO();
 
+        public List<TuitionDTO> GetTuitionByUser(int userID, int semesterID)
+        {
+            // 1. Từ UserID -> Tìm ra studentID
+            int studentID = studentDAO.GetStudentIdByUserId(userID);
+            if (studentID == -1)
+                return new List<TuitionDTO>(); // Trả về danh sách rỗng nếu không tìm thấy studentID
+
+            // 2. Gọi DAO để lấy danh sách học phí
+            return tuitionDAO.GetTuitionByStudentAndSemester(studentID, semesterID);
+        }
     }
 }

@@ -11,7 +11,8 @@ namespace DTO
         public string Email { get; set; }           // Email
         public string Phone { get; set; }           // Số điện thoại
         public DateTime CreatedAt { get; set; }     // Ngày tạo
-        public string RoleName { get; set; }        // Tên vai trò (admin/teacher/student/parent)
+        public string RoleName { get; set; }
+        public string Avatar { get; set; }// Tên vai trò (admin/teacher/student/parent)
 
         // Optional: Hàm trim dữ liệu (nếu muốn)
         public void TrimAll()

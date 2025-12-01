@@ -122,6 +122,30 @@
     <Compile Include="Sidebar.Designer.cs">
       <DependentUpon>Sidebar.cs</DependentUpon>
     </Compile>
+    <Compile Include="SuaHocSinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuaHocSinh.Designer.cs">
+      <DependentUpon>SuaHocSinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuaThongBao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuaThongBao.Designer.cs">
+      <DependentUpon>SuaThongBao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemHocSinh .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemHocSinh .Designer.cs">
+      <DependentUpon>ThemHocSinh .cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemThongBao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemThongBao.Designer.cs">
+      <DependentUpon>ThemThongBao.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UC_Admin_NamHoc_HocPhi_Bar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -236,6 +260,12 @@
     <Compile Include="UserControls\UC_GVCN_DS.Designer.cs">
       <DependentUpon>UC_GVCN_DS.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UC_GVCN_HanhKiem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_GVCN_HanhKiem.Designer.cs">
+      <DependentUpon>UC_GVCN_HanhKiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UC_GVCN_HocPhi.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -260,11 +290,35 @@
     <Compile Include="UserControls\UC_GVCN_Tbao.Designer.cs">
       <DependentUpon>UC_GVCN_Tbao.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UC_GVCN_ThongBao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_GVCN_ThongBao.Designer.cs">
+      <DependentUpon>UC_GVCN_ThongBao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_HocSinh_ChiTietThongBao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_HocSinh_ChiTietThongBao.Designer.cs">
+      <DependentUpon>UC_HocSinh_ChiTietThongBao.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UC_HocSinh_Diem.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\UC_HocSinh_Diem.Designer.cs">
       <DependentUpon>UC_HocSinh_Diem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_HocSinh_HocPhi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_HocSinh_HocPhi.Designer.cs">
+      <DependentUpon>UC_HocSinh_HocPhi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_HocSinh_ThongBao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_HocSinh_ThongBao.Designer.cs">
+      <DependentUpon>UC_HocSinh_ThongBao.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UC_HocSinh_TKB.cs">
       <SubType>UserControl</SubType>
@@ -301,6 +355,12 @@
     </Compile>
     <Compile Include="UserControls\UC_PhuHuynh_Thongtin.Designer.cs">
       <DependentUpon>UC_PhuHuynh_Thongtin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XetHanhKiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XetHanhKiem.Designer.cs">
+      <DependentUpon>XetHanhKiem.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
@@ -532,6 +592,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\virtual-event.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_40.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -50,6 +50,11 @@ namespace BUS
             return UserDAO.GetAllTeachers();
         }
 
+      
+        public UserDTO GetUserById(int userId)
+        {
+            return dao.GetUserById(userId);
+        }
 
 
     }
