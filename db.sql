@@ -83,6 +83,22 @@ CREATE TABLE academic_years (
 INSERT INTO academic_years (name, start_date, end_date) VALUES
 ('2024-2025', '2024-08-01', '2025-05-30');
 
+DROP TABLE IF EXISTS `attendance`;
+CREATE TABLE `attendance` (
+  `attendance_id` int NOT NULL AUTO_INCREMENT,
+  `student_id` int NOT NULL,
+  `class_id` int NOT NULL,
+  `date` date NOT NULL,
+  `status` enum('absent_permit','absent_no_permit','late') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `note` text COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`attendance_id`),
+  UNIQUE KEY `unique_attendance` (`student_id`,`date`),
+  KEY `class_id` (`class_id`),
+  CONSTRAINT `attendance_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`student_id`) ON DELETE CASCADE,
+  CONSTRAINT `attendance_ibfk_2` FOREIGN KEY (`class_id`) REFERENCES `classes` (`class_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
 CREATE TABLE semesters (
     semester_id INT AUTO_INCREMENT PRIMARY KEY,
     year_id INT NOT NULL,
