@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcademicYearDAO.cs" />
+    <Compile Include="AttendanceDAO.cs" />
     <Compile Include="ClassDAO.cs" />
     <Compile Include="DBconnect.cs" />
     <Compile Include="EvaluationDAO.cs" />

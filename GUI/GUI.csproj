@@ -107,6 +107,12 @@
     <Compile Include="ChiTietHocSinh.Designer.cs">
       <DependentUpon>ChiTietHocSinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UC_GVCN_DiemDanh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_GVCN_DiemDanh.Designer.cs">
+      <DependentUpon>UC_GVCN_DiemDanh.cs</DependentUpon>
+    </Compile>
     <Compile Include="XetHanhKiem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -402,6 +408,9 @@
       <DependentUpon>UC_GVBM_TKB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_GVCN.resx" />
+    <EmbeddedResource Include="UserControls\UC_GVCN_DiemDanh.resx">
+      <DependentUpon>UC_GVCN_DiemDanh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_GVCN_DS.resx">
       <DependentUpon>UC_GVCN_DS.cs</DependentUpon>
     </EmbeddedResource>

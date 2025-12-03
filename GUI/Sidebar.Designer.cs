@@ -36,7 +36,7 @@ namespace GUI
             this.btnXemThongBao = new System.Windows.Forms.Button();
             this.btnXetHanhKiem = new System.Windows.Forms.Button();
             this.btnQuanLyThongBao = new System.Windows.Forms.Button();
-
+            this.btnDiemDanh = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
 
@@ -78,6 +78,7 @@ namespace GUI
             this.flowLayoutPanel1.Controls.Add(this.btnQlyLop);
             this.flowLayoutPanel1.Controls.Add(this.btnNamhoc);
             this.flowLayoutPanel1.Controls.Add(this.btnXetHanhKiem);
+            this.flowLayoutPanel1.Controls.Add(this.btnDiemDanh);
             this.flowLayoutPanel1.Controls.Add(this.btnQuanLyThongBao);
 
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
@@ -230,8 +231,17 @@ namespace GUI
             this.btnXetHanhKiem.Text = "Xét Hạnh kiểm";
             this.btnXetHanhKiem.UseVisualStyleBackColor = true;
             this.btnXetHanhKiem.Click += new System.EventHandler(this.btnXetHanhKiem_Click);
-
-
+            //
+            //btnDiemDanh
+            //
+            this.btnDiemDanh.Image = global::GUI.Properties.Resources.timkiem_24;
+            this.btnDiemDanh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDiemDanh.Name = "btnDiemDanh";
+            this.btnDiemDanh.Size = new System.Drawing.Size(282, 50);
+            this.btnDiemDanh.TabIndex = 15;
+            this.btnDiemDanh.Text = "Điểm danh";
+            this.btnDiemDanh.UseVisualStyleBackColor = true;
+            this.btnDiemDanh.Click += new System.EventHandler(this.btnDiemDanh_Click);
             // 
             // btnDangXuat
             // 
@@ -290,5 +300,6 @@ namespace GUI
         private Button btnXemThongBao;
         private Button btnQuanLyThongBao;
         private Button btnXetHanhKiem;
+        private Button btnDiemDanh;
     }
 }
