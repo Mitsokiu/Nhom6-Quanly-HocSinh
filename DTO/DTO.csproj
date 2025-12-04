@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcademicYearDTO.cs" />
+    <Compile Include="AttendanceDTO.cs" />
     <Compile Include="ClassDTO.cs" />
     <Compile Include="HomeroomAssignmentDTO.cs" />
     <Compile Include="NotificationDTO.cs" />
