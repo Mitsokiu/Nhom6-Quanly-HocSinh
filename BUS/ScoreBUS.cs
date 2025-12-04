@@ -1,0 +1,84 @@
+﻿using DAO;
+using DTO;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BUS
+{
+    public class ScoreBUS
+    {
+        private ScoreDAO scoreDAO = new ScoreDAO();
+        private StudentDAO studentDAO = new StudentDAO();
+        public List<SubjectScoreDTO> GetScoresData(int userId, int semesterId)
+        {
+            int studentId = studentDAO.GetStudentIdByUserId(userId);
+            if (studentId == -1) return new List<SubjectScoreDTO>();
+
+            DataTable rawData = scoreDAO.GetRawScoreData(studentId, semesterId);
+
+            List<SubjectScoreDTO> diemHS = new List<SubjectScoreDTO>();
+            var groupedData = rawData.AsEnumerable().GroupBy(row => row.Field<string>("SubjectName"));
+
+            foreach (var group in groupedData)
+            {
+                SubjectScoreDTO subjectScoreDTO = new SubjectScoreDTO();
+                subjectScoreDTO.SubjectName = group.Key;
+
+                // Lấy các đầu điểm (Parse dữ liệu từ SQL)
+                foreach (var row in group)
+                {
+                    string type = row["score_type"].ToString();
+                    float val = Convert.ToSingle(row["score_value"]);
+
+                    if (type == "oral") subjectScoreDTO.OralScore = val;
+                    else if (type == "quiz15") subjectScoreDTO.FifteenMinScore = val;
+                    else if (type == "quiz45" || type == "midterm") subjectScoreDTO.OnePeriodScore = val;
+                    else if (type == "final") subjectScoreDTO.FinalScore = val;
+                }
+
+                // 4. Tính Điểm Trung Bình
+                subjectScoreDTO.AverageScore = CalculateAverage(subjectScoreDTO);
+
+                diemHS.Add(subjectScoreDTO);
+            }
+            return diemHS;
+        }
+
+        private float? CalculateAverage(SubjectScoreDTO diem)
+        {
+            float tongDiem = 0;
+            int tongHeSo = 0;
+
+            if (diem.OralScore.HasValue)
+            {
+                tongDiem += diem.OralScore.Value * 1;
+                tongHeSo += 1;
+            }
+            if (diem.FifteenMinScore.HasValue)
+            {
+                tongDiem += diem.FifteenMinScore.Value * 1;
+                tongHeSo += 1;
+            }
+            if (diem.OnePeriodScore.HasValue)
+            {
+                tongDiem += diem.OnePeriodScore.Value * 2;
+                tongHeSo += 2;
+            }
+            if (diem.FinalScore.HasValue)
+            {
+                tongDiem += diem.FinalScore.Value * 3;
+                tongHeSo += 3;
+            }
+
+            // Nếu chưa có cột điểm nào thì trả về null (ô trống)
+            if (tongHeSo == 0) return null;
+
+            return (float)Math.Round(tongDiem / tongHeSo, 1);
+        }
+
+    }
+}

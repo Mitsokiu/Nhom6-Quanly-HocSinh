@@ -41,6 +41,8 @@ namespace GUI
             sidebar.HocPhiClicked += Sidebar_HocPhiClicked;
             sidebar.HomeClicked += Sidebar_HomeClicked;
             sidebar.QlyNamHocClicked += Sidebar_QlyNamHocClicked;
+            sidebar.XemThongTinHocSinhClicked += Sidebar_XemThongTinHocSinhClicked;
+            sidebar.DoiMatKhauHSClicked += Sidebar_DoiMatKhauHSClicked;
         }
 
         // =====================
@@ -69,7 +71,7 @@ namespace GUI
 
         private void Sidebar_XemDiemClicked(object sender, EventArgs e)
         {
-            LoadContent(new UC_HocSinh_Diem());
+            LoadContent(new UC_HocSinh_Diem(user.UserId));
         }
 
         private void Sidebar_XemTKBClicked(object sender, EventArgs e)
@@ -118,6 +120,22 @@ namespace GUI
             if (user != null)
             {
                 LoadContent(new UC_HocSinh_HocPhi(user.UserId));
+            }
+        }
+
+        private void Sidebar_XemThongTinHocSinhClicked(object sender, EventArgs e)
+        {
+            if (user != null)
+            {
+                LoadContent(new UC_HocSinh_ThongTin(user.UserId));
+            }
+        }
+
+        private void Sidebar_DoiMatKhauHSClicked(object sender, EventArgs e)
+        {
+            if (user != null)
+            {
+                LoadContent(new UC_HocSinh_DoiMatKhau(user.UserId));
             }
         }
 

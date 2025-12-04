@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -102,7 +102,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SemesterDTO.cs" />
+    <Compile Include="StudentProfileDTO.cs" />
     <Compile Include="subjectDTO.cs" />
+    <Compile Include="SubjectScoreDTO.cs" />
     <Compile Include="TeacherAssignments.cs" />
     <Compile Include="TimetableDTO.cs" />
     <Compile Include="TuitionDTO.cs" />

@@ -1,27 +1,37 @@
-############################
-# Build .NET (mọi tầng)
-############################
+#######################################################
+# 1. THƯ MỤC BUILD & FILE TẠM (QUAN TRỌNG NHẤT)
+# Chặn tất cả thư mục bin và obj ở bất kỳ tầng nào
+#######################################################
+[Bb]in/
+[Oo]bj/
 
-# Ignore mọi thư mục bin & obj ở bất kỳ đâu
-**/bin/
-**/obj/
-
-# Nếu muốn ghi rõ cũng được (không bắt buộc)
-DTO/obj/
-BUS/obj/
-DAO/obj/
-GUI/obj/
-
-############################
-# Visual Studio / VSCode
-############################
-
+#######################################################
+# 2. VISUAL STUDIO (CẤU HÌNH CÁ NHÂN)
+# Đây là nguyên nhân gây ra file .suo trong ảnh của bạn
+#######################################################
 .vs/
-.vs/*
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 
-# VS Code
+#######################################################
+# 3. VISUAL STUDIO CODE
+# Chỉ giữ lại cài đặt chung, bỏ qua cache cá nhân
+#######################################################
 .vscode/*
 !.vscode/settings.json
-!.vscode/extensions.json
-!.vscode/launch.json
 !.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+#######################################################
+# 4. CÁC FILE HỆ THỐNG VÀ KHÁC
+#######################################################
+# Windows thumbnail
+Thumbs.db
+Desktop.ini
+
+# Các file log nếu có
+*.log

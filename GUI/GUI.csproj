@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -247,6 +247,12 @@
     <Compile Include="UserControls\UC_HocSinh_Diem.Designer.cs">
       <DependentUpon>UC_HocSinh_Diem.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UC_HocSinh_DoiMatKhau.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_HocSinh_DoiMatKhau.Designer.cs">
+      <DependentUpon>UC_HocSinh_DoiMatKhau.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UC_HocSinh_HocPhi.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -258,6 +264,12 @@
     </Compile>
     <Compile Include="UserControls\UC_HocSinh_ThongBao.Designer.cs">
       <DependentUpon>UC_HocSinh_ThongBao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_HocSinh_ThongTin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_HocSinh_ThongTin.Designer.cs">
+      <DependentUpon>UC_HocSinh_ThongTin.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UC_HocSinh_TKB.cs">
       <SubType>UserControl</SubType>
@@ -377,6 +389,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_HocSinh_Diem.resx">
       <DependentUpon>UC_HocSinh_Diem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_HocSinh_DoiMatKhau.resx">
+      <DependentUpon>UC_HocSinh_DoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_HocSinh_ThongTin.resx">
+      <DependentUpon>UC_HocSinh_ThongTin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_HocSinh_TKB.resx">
       <DependentUpon>UC_HocSinh_TKB.cs</DependentUpon>

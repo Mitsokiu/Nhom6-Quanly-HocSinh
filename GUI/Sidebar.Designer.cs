@@ -34,7 +34,8 @@ namespace GUI
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnXemThongBao = new System.Windows.Forms.Button();
-
+            this.btnXemThongTinHocSinh = new System.Windows.Forms.Button();
+            this.btnDoiMatKhauHS = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
 
@@ -66,7 +67,7 @@ namespace GUI
             this.flowLayoutPanel1.Controls.Add(this.btnXemDiem);
             this.flowLayoutPanel1.Controls.Add(this.btnHocPhi);
             this.flowLayoutPanel1.Controls.Add(this.btnXemTKB);
-
+            this.flowLayoutPanel1.Controls.Add(this.btnXemThongTinHocSinh);
             // Thêm nút Thông báo vào danh sách (Vị trí này OK vì đã được new ở trên)
             this.flowLayoutPanel1.Controls.Add(this.btnXemThongBao);
 
@@ -75,6 +76,7 @@ namespace GUI
             this.flowLayoutPanel1.Controls.Add(this.btnTinhHinh);
             this.flowLayoutPanel1.Controls.Add(this.btnQlyLop);
             this.flowLayoutPanel1.Controls.Add(this.btnNamhoc);
+            this.flowLayoutPanel1.Controls.Add(this.btnDoiMatKhauHS);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 188);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -205,6 +207,28 @@ namespace GUI
             this.btnNamhoc.Text = "Quản Lý Năm Học";
             this.btnNamhoc.Click += new System.EventHandler(this.btnNamhoc_Click);
             // 
+            // btnXemThongTinHocSinh
+            // 
+            this.btnXemThongTinHocSinh.Image = global::GUI.Properties.Resources.hocsinh_24;
+            this.btnXemThongTinHocSinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXemThongTinHocSinh.Name = "btnXemThongTinHocSinh";
+            this.btnXemThongTinHocSinh.Size = new System.Drawing.Size(282, 50);
+            this.btnXemThongTinHocSinh.TabIndex = 12; // Số thứ tự tab
+            this.btnXemThongTinHocSinh.Text = "Thông tin cá nhân";
+            this.btnXemThongTinHocSinh.UseVisualStyleBackColor = true;
+            this.btnXemThongTinHocSinh.Click += new System.EventHandler(this.btnXemThongTinHocSinh_Click);
+            //
+            //btnDoiMatKhauHS
+            //
+            this.btnDoiMatKhauHS.Image = global::GUI.Properties.Resources.taikhoan_24;
+            this.btnDoiMatKhauHS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDoiMatKhauHS.Name = "btnDoiMatKhauHS";
+            this.btnDoiMatKhauHS.Size = new System.Drawing.Size(282, 50);
+            this.btnDoiMatKhauHS.TabIndex = 13;
+            this.btnDoiMatKhauHS.Text = "Đổi mật khẩu";
+            this.btnDoiMatKhauHS.UseVisualStyleBackColor = true;
+            this.btnDoiMatKhauHS.Click += new System.EventHandler(this.btnDoiMatKhauHS_Click);
+            // 
             // btnDangXuat
             // 
             this.btnDangXuat.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -260,5 +284,7 @@ namespace GUI
         private Button btnHome;
         private Button btnNamhoc;
         private Button btnXemThongBao;
+        private Button btnXemThongTinHocSinh;
+        private Button btnDoiMatKhauHS;
     }
 }
