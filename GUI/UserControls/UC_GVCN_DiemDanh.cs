@@ -27,17 +27,14 @@ namespace GUI.UserControls
             InitializeComponent();
             this.teacherId = teacherIdInput;
 
-            // 1. Cấu hình giao diện (Custom Style)
-            SetupStudentGrid(); // Grid danh sách trái
-            SetupHistoryGrid(); // Grid lịch sử phải
+            SetupStudentGrid(); 
+            SetupHistoryGrid(); 
 
 
-            // 2. Gán sự kiện
             cbbYear.SelectedIndexChanged += (s, e) => LoadData();
             dtpDate.ValueChanged += (s, e) => LoadData();
             LoadSemesters();
 
-            // Khi chọn "Có mặt" -> Tự động xóa trắng ô Ghi chú
             radPresent.CheckedChanged += (s, e) =>
             {
                 if (radPresent.Checked)
@@ -51,7 +48,6 @@ namespace GUI.UserControls
                 }
             };
 
-            // Search
             TxtSearch.Text = PLACEHOLDER_TEXT;
             TxtSearch.ForeColor = Color.Gray;
             TxtSearch.Enter += (s, e) => { if (TxtSearch.Text == PLACEHOLDER_TEXT) { TxtSearch.Text = ""; TxtSearch.ForeColor = Color.Black; } };
@@ -64,7 +60,6 @@ namespace GUI.UserControls
             btnSave.Click += BtnSave_Click;
             btnCancel.Click += (s, e) => ClearDetailPanel();
 
-            // Bo tròn UI
             this.Load += (s, e) =>
             {
                 SetRoundedRegion(pnlSearchBox, 20);
@@ -74,16 +69,12 @@ namespace GUI.UserControls
             };
         }
 
-        // ==========================================
-        // 1. SETUP GRIDVIEW (STYLE GIỐNG HẠNH KIỂM)
-        // ==========================================
         private void SetupStudentGrid()
         {
             dgvStudentList.ReadOnly = true;
             dgvStudentList.Columns.Clear();
             dgvStudentList.AutoGenerateColumns = false;
 
-            // --- STYLE CHUNG (Giữ nguyên) ---
             dgvStudentList.BackgroundColor = Color.White;
             dgvStudentList.BorderStyle = BorderStyle.None;
             dgvStudentList.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -93,11 +84,10 @@ namespace GUI.UserControls
             dgvStudentList.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
             dgvStudentList.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(160, 174, 192);
             dgvStudentList.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            dgvStudentList.ColumnHeadersDefaultCellStyle.Padding = new Padding(5, 0, 0, 0); // Giảm padding chút
+            dgvStudentList.ColumnHeadersDefaultCellStyle.Padding = new Padding(5, 0, 0, 0); 
             dgvStudentList.ColumnHeadersHeight = 45;
             dgvStudentList.ColumnHeadersVisible = true;
 
-            // Row Style
             dgvStudentList.DefaultCellStyle.BackColor = Color.White;
             dgvStudentList.DefaultCellStyle.ForeColor = Color.FromArgb(33, 37, 41);
             dgvStudentList.DefaultCellStyle.Font = new Font("Segoe UI", 10F);
@@ -111,9 +101,7 @@ namespace GUI.UserControls
             dgvStudentList.RowHeadersVisible = false;
             dgvStudentList.AllowUserToAddRows = false;
 
-            // --- CÁC CỘT HIỂN THỊ ---
 
-            // Cột 1: Mã HS (Nhỏ gọn)
             dgvStudentList.Columns.Add(new DataGridViewTextBoxColumn
             {
                 HeaderText = "MÃ SỐ",
@@ -121,7 +109,6 @@ namespace GUI.UserControls
                 Width = 80
             });
 
-            // Cột 2: Họ Tên (Tự giãn)
             dgvStudentList.Columns.Add(new DataGridViewTextBoxColumn
             {
                 HeaderText = "HỌ VÀ TÊN",
@@ -129,7 +116,6 @@ namespace GUI.UserControls
                 AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             });
 
-            // Cột 3: Trạng thái (Căn giữa, để hiện Có mặt/Vắng)
             var colStatus = new DataGridViewTextBoxColumn
             {
                 HeaderText = "TRẠNG THÁI",
@@ -145,40 +131,33 @@ namespace GUI.UserControls
         {
             dgvHistory.Columns.Clear();
             dgvHistory.AutoGenerateColumns = false;
-            dgvHistory.ReadOnly = true; // Chặn sửa
+            dgvHistory.ReadOnly = true; 
 
-            // --- STYLE CHUNG ---
             dgvHistory.BackgroundColor = Color.White;
             dgvHistory.BorderStyle = BorderStyle.None;
             dgvHistory.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvHistory.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dgvHistory.EnableHeadersVisualStyles = false;
 
-            // Header Style
             dgvHistory.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(249, 250, 251);
             dgvHistory.ColumnHeadersDefaultCellStyle.ForeColor = Color.Gray;
             dgvHistory.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
 
-            // [QUAN TRỌNG] Chặn bôi đen Header (Gán màu select trùng màu nền)
             dgvHistory.ColumnHeadersDefaultCellStyle.SelectionBackColor = dgvHistory.ColumnHeadersDefaultCellStyle.BackColor;
 
             dgvHistory.ColumnHeadersHeight = 40;
 
-            // Row Style
             dgvHistory.DefaultCellStyle.Font = new Font("Segoe UI", 10F);
             dgvHistory.RowTemplate.Height = 40;
             dgvHistory.RowHeadersVisible = false;
             dgvHistory.AllowUserToAddRows = false;
 
-            // --- [MỚI] CẤU HÌNH SELECT DÒNG (GIỐNG STUDENT LIST) ---
-            dgvHistory.DefaultCellStyle.SelectionBackColor = Color.FromArgb(243, 244, 246); // Màu xám nhạt khi chọn
-            dgvHistory.DefaultCellStyle.SelectionForeColor = Color.Black; // Chữ màu đen
-            dgvHistory.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // Chọn cả dòng
-            dgvHistory.MultiSelect = false; // Chỉ chọn 1 dòng tại 1 thời điểm
+            dgvHistory.DefaultCellStyle.SelectionBackColor = Color.FromArgb(243, 244, 246);
+            dgvHistory.DefaultCellStyle.SelectionForeColor = Color.Black; 
+            dgvHistory.SelectionMode = DataGridViewSelectionMode.FullRowSelect; 
+            dgvHistory.MultiSelect = false;
 
-            // --- CẤU HÌNH CỘT ---
 
-            // Cột 1: Tên học sinh
             dgvHistory.Columns.Add(new DataGridViewTextBoxColumn
             {
                 HeaderText = "HỌC SINH",
@@ -186,7 +165,6 @@ namespace GUI.UserControls
                 Width = 200
             });
 
-            // Cột 2: Trạng thái
             dgvHistory.Columns.Add(new DataGridViewTextBoxColumn
             {
                 HeaderText = "TRẠNG THÁI",
@@ -194,7 +172,6 @@ namespace GUI.UserControls
                 Width = 200
             });
 
-            // Cột 3: Lý do
             dgvHistory.Columns.Add(new DataGridViewTextBoxColumn
             {
                 HeaderText = "LÝ DO",
@@ -264,13 +241,11 @@ namespace GUI.UserControls
             lblDetailName.Text = $"Điểm danh: {currentStudent.StudentName} ({currentStudent.StudentCode})";
             txtNote.Text = currentStudent.Note;
 
-            // Reset hết trước
             radAbsentPermit.Checked = false;
             radAbsentNoPermit.Checked = false;
             radLate.Checked = false;
             radPresent.Checked = false;
 
-            // Logic tích chọn
             switch (currentStudent.Status)
             {
                 case "absent_permit":
@@ -283,7 +258,6 @@ namespace GUI.UserControls
                     radLate.Checked = true;
                     break;
                 default:
-                    // "present", null, rỗng -> Mặc định tích CÓ MẶT
                     radPresent.Checked = true;
                     break;
             }
@@ -296,17 +270,14 @@ namespace GUI.UserControls
             int semesterId = (int)cbbYear.SelectedValue;
             DateTime date = dtpDate.Value;
 
-            // Gọi hàm mới bên BUS để lấy danh sách vắng trong ngày
             DataTable dtAbsence = attBus.GetDailyAbsenceList(teacherId, semesterId, date);
 
             dgvHistory.DataSource = dtAbsence;
 
-            //lblHistoryTitle.Text = $"Danh sách vắng ngày {date:dd/MM/yyyy} ({dtAbsence.Rows.Count} em)";
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            // Kiểm tra đã chọn học sinh chưa
             if (currentStudent == null)
             {
                 MessageBox.Show("Vui lòng chọn học sinh cần điểm danh!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -315,9 +286,8 @@ namespace GUI.UserControls
 
             DateTime date = dtpDate.Value;
             bool success = false;
-            string message = ""; // Biến chứa nội dung thông báo
+            string message = ""; 
 
-            // TRƯỜNG HỢP 1: Chọn CÓ MẶT -> Xóa khỏi DB (Quy về trạng thái gốc)
             if (radPresent.Checked)
             {
                 success = attBus.DeleteAttendance(currentStudent.StudentId, date);
@@ -328,11 +298,10 @@ namespace GUI.UserControls
                     message = $"Đã cập nhật trạng thái: {currentStudent.StudentName} - CÓ MẶT";
                 }
             }
-            // TRƯỜNG HỢP 2: Chọn VẮNG/TRỄ -> Lưu vào DB
             else
             {
                 string status = "";
-                string statusText = ""; // Để hiện trong thông báo cho đẹp
+                string statusText = ""; 
 
                 if (radAbsentPermit.Checked)
                 {
@@ -350,7 +319,6 @@ namespace GUI.UserControls
                     statusText = "Đi trễ";
                 }
 
-                // Nếu chưa chọn trạng thái nào (dù logic mặc định đã cover, nhưng cứ check cho chắc)
                 if (string.IsNullOrEmpty(status)) return;
 
                 string note = txtNote.Text.Trim();
@@ -364,15 +332,12 @@ namespace GUI.UserControls
                 }
             }
 
-            // XỬ LÝ KẾT QUẢ CUỐI CÙNG
             if (success)
             {
-                // 1. Hiện thông báo thành công (Theo yêu cầu của bạn)
                 MessageBox.Show(message, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // 2. Refresh lại giao diện
-                BindGrid(); // Cập nhật màu sắc bên trái
-                LoadDailyHistory(); // Cập nhật danh sách vắng bên phải
+                BindGrid(); 
+                LoadDailyHistory(); 
             }
             else
             {
@@ -397,7 +362,6 @@ namespace GUI.UserControls
             }
             else
             {
-                // Thêm điều kiện tìm theo StudentCode
                 displayList = fullList.Where(s =>
                     s.StudentName.ToLower().Contains(kw) ||
                     s.StudentCode.ToLower().Contains(kw)
@@ -421,14 +385,12 @@ namespace GUI.UserControls
 
         private void DgvStudentList_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            // Kiểm tra nếu là cột Trạng thái (Index = 2) và giá trị không null
             if (e.ColumnIndex == 2 && e.Value != null)
             {
                 string rawStatus = e.Value.ToString();
                 string statusText = "Có mặt";
-                Color statusColor = Color.Green; // Mặc định xanh lá
+                Color statusColor = Color.Green; 
 
-                // Font chữ mặc định
                 e.CellStyle.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
 
                 switch (rawStatus)
@@ -446,51 +408,33 @@ namespace GUI.UserControls
                         statusColor = Color.Orange;
                         break;
                     default:
-                        // present, null hoặc chuỗi lạ -> Mặc định là Có mặt
                         statusText = "Có mặt";
                         statusColor = Color.Green;
                         break;
                 }
 
-                e.Value = statusText; // Chỉ thay đổi hiển thị, không đổi data gốc
+                e.Value = statusText; 
                 e.CellStyle.ForeColor = statusColor;
-                e.FormattingApplied = true; // Báo cho Grid biết đã xử lý xong
+                e.FormattingApplied = true; 
             }
         }
 
 
         private void LockControls(bool isLocked)
         {
-            // 1. Khóa/Mở nút Lưu
             btnSave.Enabled = !isLocked;
             btnSave.BackColor = isLocked ? Color.Gray : Color.FromArgb(13, 110, 253);
 
-            // 2. Khóa/Mở vùng chọn trạng thái (Radio buttons)
             pnlStatusGroup.Enabled = !isLocked;
-
-            // 3. Khóa/Mở ô ghi chú
-            // (Lưu ý: Nếu đang chọn 'Có mặt' thì nó đã disabled rồi, nên chỉ enable lại nếu không bị khóa)
+ 
             if (isLocked)
             {
                 txtNote.Enabled = false;
             }
             else
             {
-                // Nếu mở khóa, chỉ cho nhập ghi chú nếu KHÔNG phải là có mặt (theo logic cũ của bạn)
                 txtNote.Enabled = !radPresent.Checked;
             }
-
-            // 4. Thông báo visual cho người dùng biết
-          /*  if (isLocked)
-            {
-                lblTitle.Text = "Điểm danh học sinh";
-                lblTitle.ForeColor = Color.Red;
-            }
-            else
-            {
-                lblTitle.Text = "Điểm danh học sinh";
-                lblTitle.ForeColor = Color.Black;
-            }*/
         }
     }
 }
