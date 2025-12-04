@@ -25,10 +25,10 @@ namespace GUI.UserControls
             uc.Dock = DockStyle.Fill;
             panel2.Controls.Add(uc);
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            LoadUserControl(new UC_HocSinh_Diem());
-        }
+       // private void button1_Click(object sender, EventArgs e)
+       //{
+       //     LoadUserControl(new UC_HocSinh_Diem());
+       //}
         private void button2_Click(object sender, EventArgs e)
         {
             LoadUserControl(new UC_PhuHuynh_NhanXet());
