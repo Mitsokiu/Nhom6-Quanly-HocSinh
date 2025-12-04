@@ -42,7 +42,7 @@ namespace GUI
             sidebar.HomeClicked += Sidebar_HomeClicked;
             sidebar.QlyNamHocClicked += Sidebar_QlyNamHocClicked;
             sidebar.XetHanhKiemClicked += Sidebar_XetHanhKiemClicked;
-
+            sidebar.DiemDanhClicked += Sidebar_DiemDanhClicked;
             sidebar.QuanLyThongBaoClicked += Sidebar_QuanLyThongBaoClicked;
         }
 
@@ -108,6 +108,14 @@ namespace GUI
             {
                 LoadContent(new UC_GVCN_HanhKiem(user.UserId));
             }
+        }
+
+        private void Sidebar_DiemDanhClicked(object sender, EventArgs e)
+        {
+            if (user != null)
+            {     
+                LoadContent(new UC_GVCN_DiemDanh(user.UserId));
+            }    
         }
 
         private void Sidebar_TinhHinhClicked(object sender, EventArgs e)

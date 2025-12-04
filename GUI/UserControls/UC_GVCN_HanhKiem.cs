@@ -27,10 +27,10 @@ namespace GUI.UserControls
         private const int ICON_W = 24;
         private const int ICON_H = 24;
 
-        public UC_GVCN_HanhKiem(int teacherIdInput)
+        public UC_GVCN_HanhKiem(int teacherId)
         {
             InitializeComponent();
-            this.teacherId = teacherIdInput;
+            this.teacherId = teacherId;
 
             SetupDataGridView();
 

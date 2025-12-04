@@ -176,6 +176,22 @@ INSERT INTO student_class (student_id, class_id, school_year_id) VALUES
 (1, 1, 1), (2, 1, 1), (3, 1, 1), (4, 1, 1), (5, 1, 1), (6, 1, 1),
 (7, 2, 1), (8, 2, 1), (9, 2, 1), (10, 2, 1), (11, 2, 1), (12, 2, 1);
 
+DROP TABLE IF EXISTS `attendance`;
+CREATE TABLE `attendance` (
+  `attendance_id` int NOT NULL AUTO_INCREMENT,
+  `student_id` int NOT NULL,
+  `class_id` int NOT NULL,
+  `date` date NOT NULL,
+  `status` enum('absent_permit','absent_no_permit','late') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `note` text COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`attendance_id`),
+  UNIQUE KEY `unique_attendance` (`student_id`,`date`),
+  KEY `class_id` (`class_id`),
+  CONSTRAINT `attendance_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`student_id`) ON DELETE CASCADE,
+  CONSTRAINT `attendance_ibfk_2` FOREIGN KEY (`class_id`) REFERENCES `classes` (`class_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
 -- =====================================
 -- 5. SUBJECTS & SCHEDULE
 -- =====================================
@@ -253,8 +269,6 @@ CREATE TABLE comments (
 
 
 DROP TABLE IF EXISTS `student_evaluations`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `student_evaluations` (
   `evaluation_id` int NOT NULL AUTO_INCREMENT,
   `student_id` int NOT NULL,
@@ -270,7 +284,6 @@ CREATE TABLE `student_evaluations` (
   CONSTRAINT `student_evaluations_ibfk_2` FOREIGN KEY (`class_id`) REFERENCES `classes` (`class_id`),
   CONSTRAINT `student_evaluations_ibfk_3` FOREIGN KEY (`semester_id`) REFERENCES `semesters` (`semester_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `student_evaluations`
