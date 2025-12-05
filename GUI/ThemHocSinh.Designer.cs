@@ -51,7 +51,6 @@
             this.pnlInputAddress = new System.Windows.Forms.Panel();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.lblSecAcademic = new System.Windows.Forms.Label();
-            // Đã xóa ID controls ở đây
             this.lblClass = new System.Windows.Forms.Label();
             this.pnlInputClass = new System.Windows.Forms.Panel();
             this.cboClass = new System.Windows.Forms.ComboBox();
@@ -79,6 +78,19 @@
             this.lblMotherJob = new System.Windows.Forms.Label();
             this.pnlInputMotherJob = new System.Windows.Forms.Panel();
             this.txtMotherJob = new System.Windows.Forms.TextBox();
+            this.lblGuardianInfo = new System.Windows.Forms.Label();
+            this.lblGuardianName = new System.Windows.Forms.Label();
+            this.pnlInputGuardianName = new System.Windows.Forms.Panel();
+            this.txtGuardianName = new System.Windows.Forms.TextBox();
+            this.lblGuardianPhone = new System.Windows.Forms.Label();
+            this.pnlInputGuardianPhone = new System.Windows.Forms.Panel();
+            this.txtGuardianPhone = new System.Windows.Forms.TextBox();
+            this.lblGuardianJob = new System.Windows.Forms.Label();
+            this.pnlInputGuardianJob = new System.Windows.Forms.Panel();
+            this.txtGuardianJob = new System.Windows.Forms.TextBox();
+            this.lblGuardianRelation = new System.Windows.Forms.Label();
+            this.pnlInputGuardianRelation = new System.Windows.Forms.Panel();
+            this.txtGuardianRelation = new System.Windows.Forms.TextBox();
             this.pnlHeader.SuspendLayout();
             this.pnlFooter.SuspendLayout();
             this.pnlContent.SuspendLayout();
@@ -96,6 +108,10 @@
             this.pnlInputMotherName.SuspendLayout();
             this.pnlInputMotherPhone.SuspendLayout();
             this.pnlInputMotherJob.SuspendLayout();
+            this.pnlInputGuardianName.SuspendLayout();
+            this.pnlInputGuardianPhone.SuspendLayout();
+            this.pnlInputGuardianJob.SuspendLayout();
+            this.pnlInputGuardianRelation.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlHeader
@@ -173,7 +189,6 @@
             this.pnlContent.Controls.Add(this.lblAddress);
             this.pnlContent.Controls.Add(this.pnlInputAddress);
             this.pnlContent.Controls.Add(this.lblSecAcademic);
-            // Xóa lblID, pnlInputID ở đây
             this.pnlContent.Controls.Add(this.lblClass);
             this.pnlContent.Controls.Add(this.pnlInputClass);
             this.pnlContent.Controls.Add(this.lblYear);
@@ -193,6 +208,15 @@
             this.pnlContent.Controls.Add(this.pnlInputMotherPhone);
             this.pnlContent.Controls.Add(this.lblMotherJob);
             this.pnlContent.Controls.Add(this.pnlInputMotherJob);
+            this.pnlContent.Controls.Add(this.lblGuardianInfo);
+            this.pnlContent.Controls.Add(this.lblGuardianName);
+            this.pnlContent.Controls.Add(this.pnlInputGuardianName);
+            this.pnlContent.Controls.Add(this.lblGuardianPhone);
+            this.pnlContent.Controls.Add(this.pnlInputGuardianPhone);
+            this.pnlContent.Controls.Add(this.lblGuardianJob);
+            this.pnlContent.Controls.Add(this.pnlInputGuardianJob);
+            this.pnlContent.Controls.Add(this.lblGuardianRelation);
+            this.pnlContent.Controls.Add(this.pnlInputGuardianRelation);
             this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContent.Location = new System.Drawing.Point(0, 70);
             this.pnlContent.Name = "pnlContent";
@@ -369,21 +393,21 @@
             this.lblSecAcademic.TabIndex = 11;
             this.lblSecAcademic.Text = "Thông tin học tập";
             // 
-            // lblClass (DỜI VỊ TRÍ)
+            // lblClass
             // 
             this.lblClass.AutoSize = true;
             this.lblClass.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblClass.Location = new System.Drawing.Point(30, 390); // Dời về vị trí cũ của ID
+            this.lblClass.Location = new System.Drawing.Point(30, 390);
             this.lblClass.Name = "lblClass";
             this.lblClass.Size = new System.Drawing.Size(73, 19);
             this.lblClass.TabIndex = 14;
             this.lblClass.Text = "Chọn Lớp";
             // 
-            // pnlInputClass (DỜI VỊ TRÍ)
+            // pnlInputClass
             // 
             this.pnlInputClass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.pnlInputClass.Controls.Add(this.cboClass);
-            this.pnlInputClass.Location = new System.Drawing.Point(30, 415); // Dời về vị trí cũ của ID
+            this.pnlInputClass.Location = new System.Drawing.Point(30, 415);
             this.pnlInputClass.Name = "pnlInputClass";
             this.pnlInputClass.Size = new System.Drawing.Size(300, 45);
             this.pnlInputClass.TabIndex = 15;
@@ -400,21 +424,21 @@
             this.cboClass.Size = new System.Drawing.Size(280, 28);
             this.cboClass.TabIndex = 0;
             // 
-            // lblYear (DỜI VỊ TRÍ)
+            // lblYear
             // 
             this.lblYear.AutoSize = true;
             this.lblYear.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblYear.Location = new System.Drawing.Point(380, 390); // Dời về vị trí cũ của Class
+            this.lblYear.Location = new System.Drawing.Point(380, 390);
             this.lblYear.Name = "lblYear";
             this.lblYear.Size = new System.Drawing.Size(107, 19);
             this.lblYear.TabIndex = 16;
             this.lblYear.Text = "Chọn Năm học";
             // 
-            // pnlInputYear (DỜI VỊ TRÍ)
+            // pnlInputYear
             // 
             this.pnlInputYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.pnlInputYear.Controls.Add(this.cboYear);
-            this.pnlInputYear.Location = new System.Drawing.Point(380, 415); // Dời về vị trí cũ của Class
+            this.pnlInputYear.Location = new System.Drawing.Point(380, 415);
             this.pnlInputYear.Name = "pnlInputYear";
             this.pnlInputYear.Size = new System.Drawing.Size(270, 45);
             this.pnlInputYear.TabIndex = 17;
@@ -445,17 +469,17 @@
             // 
             this.lblFatherInfo.AutoSize = true;
             this.lblFatherInfo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.lblFatherInfo.Location = new System.Drawing.Point(30, 540);
+            this.lblFatherInfo.Location = new System.Drawing.Point(30, 520);
             this.lblFatherInfo.Name = "lblFatherInfo";
-            this.lblFatherInfo.Size = new System.Drawing.Size(268, 20);
+            this.lblFatherInfo.Size = new System.Drawing.Size(126, 20);
             this.lblFatherInfo.TabIndex = 19;
-            this.lblFatherInfo.Text = "Thông tin Cha (hoặc người giám hộ)";
+            this.lblFatherInfo.Text = "1. Thông tin Cha";
             // 
             // lblFatherName
             // 
             this.lblFatherName.AutoSize = true;
             this.lblFatherName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblFatherName.Location = new System.Drawing.Point(30, 580);
+            this.lblFatherName.Location = new System.Drawing.Point(30, 550);
             this.lblFatherName.Name = "lblFatherName";
             this.lblFatherName.Size = new System.Drawing.Size(56, 19);
             this.lblFatherName.TabIndex = 20;
@@ -465,9 +489,9 @@
             // 
             this.pnlInputFatherName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.pnlInputFatherName.Controls.Add(this.txtFatherName);
-            this.pnlInputFatherName.Location = new System.Drawing.Point(30, 605);
+            this.pnlInputFatherName.Location = new System.Drawing.Point(30, 575);
             this.pnlInputFatherName.Name = "pnlInputFatherName";
-            this.pnlInputFatherName.Size = new System.Drawing.Size(480, 45);
+            this.pnlInputFatherName.Size = new System.Drawing.Size(300, 45);
             this.pnlInputFatherName.TabIndex = 21;
             // 
             // txtFatherName
@@ -477,14 +501,14 @@
             this.txtFatherName.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtFatherName.Location = new System.Drawing.Point(10, 12);
             this.txtFatherName.Name = "txtFatherName";
-            this.txtFatherName.Size = new System.Drawing.Size(460, 20);
+            this.txtFatherName.Size = new System.Drawing.Size(280, 20);
             this.txtFatherName.TabIndex = 0;
             // 
             // lblFatherPhone
             // 
             this.lblFatherPhone.AutoSize = true;
             this.lblFatherPhone.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblFatherPhone.Location = new System.Drawing.Point(30, 660);
+            this.lblFatherPhone.Location = new System.Drawing.Point(360, 550);
             this.lblFatherPhone.Name = "lblFatherPhone";
             this.lblFatherPhone.Size = new System.Drawing.Size(98, 19);
             this.lblFatherPhone.TabIndex = 22;
@@ -494,9 +518,9 @@
             // 
             this.pnlInputFatherPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.pnlInputFatherPhone.Controls.Add(this.txtFatherPhone);
-            this.pnlInputFatherPhone.Location = new System.Drawing.Point(30, 685);
+            this.pnlInputFatherPhone.Location = new System.Drawing.Point(360, 575);
             this.pnlInputFatherPhone.Name = "pnlInputFatherPhone";
-            this.pnlInputFatherPhone.Size = new System.Drawing.Size(480, 45);
+            this.pnlInputFatherPhone.Size = new System.Drawing.Size(250, 45);
             this.pnlInputFatherPhone.TabIndex = 23;
             // 
             // txtFatherPhone
@@ -506,14 +530,14 @@
             this.txtFatherPhone.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtFatherPhone.Location = new System.Drawing.Point(10, 12);
             this.txtFatherPhone.Name = "txtFatherPhone";
-            this.txtFatherPhone.Size = new System.Drawing.Size(460, 20);
+            this.txtFatherPhone.Size = new System.Drawing.Size(230, 20);
             this.txtFatherPhone.TabIndex = 0;
             // 
             // lblFatherJob
             // 
             this.lblFatherJob.AutoSize = true;
             this.lblFatherJob.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblFatherJob.Location = new System.Drawing.Point(30, 740);
+            this.lblFatherJob.Location = new System.Drawing.Point(640, 550);
             this.lblFatherJob.Name = "lblFatherJob";
             this.lblFatherJob.Size = new System.Drawing.Size(96, 19);
             this.lblFatherJob.TabIndex = 24;
@@ -523,9 +547,9 @@
             // 
             this.pnlInputFatherJob.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.pnlInputFatherJob.Controls.Add(this.txtFatherJob);
-            this.pnlInputFatherJob.Location = new System.Drawing.Point(30, 765);
+            this.pnlInputFatherJob.Location = new System.Drawing.Point(640, 575);
             this.pnlInputFatherJob.Name = "pnlInputFatherJob";
-            this.pnlInputFatherJob.Size = new System.Drawing.Size(480, 45);
+            this.pnlInputFatherJob.Size = new System.Drawing.Size(300, 45);
             this.pnlInputFatherJob.TabIndex = 25;
             // 
             // txtFatherJob
@@ -535,24 +559,24 @@
             this.txtFatherJob.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtFatherJob.Location = new System.Drawing.Point(10, 12);
             this.txtFatherJob.Name = "txtFatherJob";
-            this.txtFatherJob.Size = new System.Drawing.Size(460, 20);
+            this.txtFatherJob.Size = new System.Drawing.Size(280, 20);
             this.txtFatherJob.TabIndex = 0;
             // 
             // lblMotherInfo
             // 
             this.lblMotherInfo.AutoSize = true;
             this.lblMotherInfo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.lblMotherInfo.Location = new System.Drawing.Point(550, 540);
+            this.lblMotherInfo.Location = new System.Drawing.Point(30, 640);
             this.lblMotherInfo.Name = "lblMotherInfo";
-            this.lblMotherInfo.Size = new System.Drawing.Size(262, 20);
+            this.lblMotherInfo.Size = new System.Drawing.Size(120, 20);
             this.lblMotherInfo.TabIndex = 26;
-            this.lblMotherInfo.Text = "Thông tin Mẹ (hoặc người giám hộ)";
+            this.lblMotherInfo.Text = "2. Thông tin Mẹ";
             // 
             // lblMotherName
             // 
             this.lblMotherName.AutoSize = true;
             this.lblMotherName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblMotherName.Location = new System.Drawing.Point(550, 580);
+            this.lblMotherName.Location = new System.Drawing.Point(30, 670);
             this.lblMotherName.Name = "lblMotherName";
             this.lblMotherName.Size = new System.Drawing.Size(56, 19);
             this.lblMotherName.TabIndex = 27;
@@ -562,9 +586,9 @@
             // 
             this.pnlInputMotherName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.pnlInputMotherName.Controls.Add(this.txtMotherName);
-            this.pnlInputMotherName.Location = new System.Drawing.Point(550, 605);
+            this.pnlInputMotherName.Location = new System.Drawing.Point(30, 695);
             this.pnlInputMotherName.Name = "pnlInputMotherName";
-            this.pnlInputMotherName.Size = new System.Drawing.Size(450, 45);
+            this.pnlInputMotherName.Size = new System.Drawing.Size(300, 45);
             this.pnlInputMotherName.TabIndex = 28;
             // 
             // txtMotherName
@@ -574,14 +598,14 @@
             this.txtMotherName.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtMotherName.Location = new System.Drawing.Point(10, 12);
             this.txtMotherName.Name = "txtMotherName";
-            this.txtMotherName.Size = new System.Drawing.Size(430, 20);
+            this.txtMotherName.Size = new System.Drawing.Size(280, 20);
             this.txtMotherName.TabIndex = 0;
             // 
             // lblMotherPhone
             // 
             this.lblMotherPhone.AutoSize = true;
             this.lblMotherPhone.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblMotherPhone.Location = new System.Drawing.Point(550, 660);
+            this.lblMotherPhone.Location = new System.Drawing.Point(360, 670);
             this.lblMotherPhone.Name = "lblMotherPhone";
             this.lblMotherPhone.Size = new System.Drawing.Size(98, 19);
             this.lblMotherPhone.TabIndex = 29;
@@ -591,9 +615,9 @@
             // 
             this.pnlInputMotherPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.pnlInputMotherPhone.Controls.Add(this.txtMotherPhone);
-            this.pnlInputMotherPhone.Location = new System.Drawing.Point(550, 685);
+            this.pnlInputMotherPhone.Location = new System.Drawing.Point(360, 695);
             this.pnlInputMotherPhone.Name = "pnlInputMotherPhone";
-            this.pnlInputMotherPhone.Size = new System.Drawing.Size(450, 45);
+            this.pnlInputMotherPhone.Size = new System.Drawing.Size(250, 45);
             this.pnlInputMotherPhone.TabIndex = 30;
             // 
             // txtMotherPhone
@@ -603,14 +627,14 @@
             this.txtMotherPhone.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtMotherPhone.Location = new System.Drawing.Point(10, 12);
             this.txtMotherPhone.Name = "txtMotherPhone";
-            this.txtMotherPhone.Size = new System.Drawing.Size(430, 20);
+            this.txtMotherPhone.Size = new System.Drawing.Size(230, 20);
             this.txtMotherPhone.TabIndex = 0;
             // 
             // lblMotherJob
             // 
             this.lblMotherJob.AutoSize = true;
             this.lblMotherJob.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblMotherJob.Location = new System.Drawing.Point(550, 740);
+            this.lblMotherJob.Location = new System.Drawing.Point(640, 670);
             this.lblMotherJob.Name = "lblMotherJob";
             this.lblMotherJob.Size = new System.Drawing.Size(96, 19);
             this.lblMotherJob.TabIndex = 31;
@@ -620,9 +644,9 @@
             // 
             this.pnlInputMotherJob.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.pnlInputMotherJob.Controls.Add(this.txtMotherJob);
-            this.pnlInputMotherJob.Location = new System.Drawing.Point(550, 765);
+            this.pnlInputMotherJob.Location = new System.Drawing.Point(640, 695);
             this.pnlInputMotherJob.Name = "pnlInputMotherJob";
-            this.pnlInputMotherJob.Size = new System.Drawing.Size(450, 45);
+            this.pnlInputMotherJob.Size = new System.Drawing.Size(300, 45);
             this.pnlInputMotherJob.TabIndex = 32;
             // 
             // txtMotherJob
@@ -632,8 +656,134 @@
             this.txtMotherJob.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtMotherJob.Location = new System.Drawing.Point(10, 12);
             this.txtMotherJob.Name = "txtMotherJob";
-            this.txtMotherJob.Size = new System.Drawing.Size(430, 20);
+            this.txtMotherJob.Size = new System.Drawing.Size(280, 20);
             this.txtMotherJob.TabIndex = 0;
+            // 
+            // lblGuardianInfo
+            // 
+            this.lblGuardianInfo.AutoSize = true;
+            this.lblGuardianInfo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.lblGuardianInfo.Location = new System.Drawing.Point(30, 760);
+            this.lblGuardianInfo.Name = "lblGuardianInfo";
+            this.lblGuardianInfo.Size = new System.Drawing.Size(202, 20);
+            this.lblGuardianInfo.TabIndex = 33;
+            this.lblGuardianInfo.Text = "3. Người giám hộ (Nếu có)";
+            // 
+            // lblGuardianName
+            // 
+            this.lblGuardianName.AutoSize = true;
+            this.lblGuardianName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.lblGuardianName.Location = new System.Drawing.Point(30, 790);
+            this.lblGuardianName.Name = "lblGuardianName";
+            this.lblGuardianName.Size = new System.Drawing.Size(56, 19);
+            this.lblGuardianName.TabIndex = 34;
+            this.lblGuardianName.Text = "Họ tên";
+            // 
+            // pnlInputGuardianName
+            // 
+            this.pnlInputGuardianName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.pnlInputGuardianName.Controls.Add(this.txtGuardianName);
+            this.pnlInputGuardianName.Location = new System.Drawing.Point(30, 815);
+            this.pnlInputGuardianName.Name = "pnlInputGuardianName";
+            this.pnlInputGuardianName.Size = new System.Drawing.Size(250, 45);
+            this.pnlInputGuardianName.TabIndex = 35;
+            // 
+            // txtGuardianName
+            // 
+            this.txtGuardianName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.txtGuardianName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtGuardianName.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtGuardianName.Location = new System.Drawing.Point(10, 12);
+            this.txtGuardianName.Name = "txtGuardianName";
+            this.txtGuardianName.Size = new System.Drawing.Size(230, 20);
+            this.txtGuardianName.TabIndex = 0;
+            // 
+            // lblGuardianPhone
+            // 
+            this.lblGuardianPhone.AutoSize = true;
+            this.lblGuardianPhone.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.lblGuardianPhone.Location = new System.Drawing.Point(300, 790);
+            this.lblGuardianPhone.Name = "lblGuardianPhone";
+            this.lblGuardianPhone.Size = new System.Drawing.Size(98, 19);
+            this.lblGuardianPhone.TabIndex = 36;
+            this.lblGuardianPhone.Text = "Số điện thoại";
+            // 
+            // pnlInputGuardianPhone
+            // 
+            this.pnlInputGuardianPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.pnlInputGuardianPhone.Controls.Add(this.txtGuardianPhone);
+            this.pnlInputGuardianPhone.Location = new System.Drawing.Point(300, 815);
+            this.pnlInputGuardianPhone.Name = "pnlInputGuardianPhone";
+            this.pnlInputGuardianPhone.Size = new System.Drawing.Size(200, 45);
+            this.pnlInputGuardianPhone.TabIndex = 37;
+            // 
+            // txtGuardianPhone
+            // 
+            this.txtGuardianPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.txtGuardianPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtGuardianPhone.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtGuardianPhone.Location = new System.Drawing.Point(10, 12);
+            this.txtGuardianPhone.Name = "txtGuardianPhone";
+            this.txtGuardianPhone.Size = new System.Drawing.Size(180, 20);
+            this.txtGuardianPhone.TabIndex = 0;
+            // 
+            // lblGuardianJob
+            // 
+            this.lblGuardianJob.AutoSize = true;
+            this.lblGuardianJob.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.lblGuardianJob.Location = new System.Drawing.Point(520, 790);
+            this.lblGuardianJob.Name = "lblGuardianJob";
+            this.lblGuardianJob.Size = new System.Drawing.Size(96, 19);
+            this.lblGuardianJob.TabIndex = 38;
+            this.lblGuardianJob.Text = "Nghề nghiệp";
+            // 
+            // pnlInputGuardianJob
+            // 
+            this.pnlInputGuardianJob.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.pnlInputGuardianJob.Controls.Add(this.txtGuardianJob);
+            this.pnlInputGuardianJob.Location = new System.Drawing.Point(520, 815);
+            this.pnlInputGuardianJob.Name = "pnlInputGuardianJob";
+            this.pnlInputGuardianJob.Size = new System.Drawing.Size(250, 45);
+            this.pnlInputGuardianJob.TabIndex = 39;
+            // 
+            // txtGuardianJob
+            // 
+            this.txtGuardianJob.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.txtGuardianJob.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtGuardianJob.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtGuardianJob.Location = new System.Drawing.Point(10, 12);
+            this.txtGuardianJob.Name = "txtGuardianJob";
+            this.txtGuardianJob.Size = new System.Drawing.Size(230, 20);
+            this.txtGuardianJob.TabIndex = 0;
+            // 
+            // lblGuardianRelation
+            // 
+            this.lblGuardianRelation.AutoSize = true;
+            this.lblGuardianRelation.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.lblGuardianRelation.Location = new System.Drawing.Point(790, 790);
+            this.lblGuardianRelation.Name = "lblGuardianRelation";
+            this.lblGuardianRelation.Size = new System.Drawing.Size(65, 19);
+            this.lblGuardianRelation.TabIndex = 40;
+            this.lblGuardianRelation.Text = "Quan hệ";
+            // 
+            // pnlInputGuardianRelation
+            // 
+            this.pnlInputGuardianRelation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.pnlInputGuardianRelation.Controls.Add(this.txtGuardianRelation);
+            this.pnlInputGuardianRelation.Location = new System.Drawing.Point(790, 815);
+            this.pnlInputGuardianRelation.Name = "pnlInputGuardianRelation";
+            this.pnlInputGuardianRelation.Size = new System.Drawing.Size(150, 45);
+            this.pnlInputGuardianRelation.TabIndex = 41;
+            // 
+            // txtGuardianRelation
+            // 
+            this.txtGuardianRelation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.txtGuardianRelation.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtGuardianRelation.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtGuardianRelation.Location = new System.Drawing.Point(10, 12);
+            this.txtGuardianRelation.Name = "txtGuardianRelation";
+            this.txtGuardianRelation.Size = new System.Drawing.Size(130, 20);
+            this.txtGuardianRelation.TabIndex = 0;
             // 
             // ThemHocSinh
             // 
@@ -673,6 +823,14 @@
             this.pnlInputMotherPhone.PerformLayout();
             this.pnlInputMotherJob.ResumeLayout(false);
             this.pnlInputMotherJob.PerformLayout();
+            this.pnlInputGuardianName.ResumeLayout(false);
+            this.pnlInputGuardianName.PerformLayout();
+            this.pnlInputGuardianPhone.ResumeLayout(false);
+            this.pnlInputGuardianPhone.PerformLayout();
+            this.pnlInputGuardianJob.ResumeLayout(false);
+            this.pnlInputGuardianJob.PerformLayout();
+            this.pnlInputGuardianRelation.ResumeLayout(false);
+            this.pnlInputGuardianRelation.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -699,7 +857,6 @@
         public System.Windows.Forms.TextBox txtAddress;
         public System.Windows.Forms.Button btnGenderMale;
         public System.Windows.Forms.Button btnGenderFemale;
-        // ĐÃ XÓA ID CONTROLS
         public System.Windows.Forms.Label lblClass;
         public System.Windows.Forms.Panel pnlInputClass;
         public System.Windows.Forms.ComboBox cboClass;
@@ -730,5 +887,19 @@
         private System.Windows.Forms.Label lblMotherName;
         private System.Windows.Forms.Label lblMotherPhone;
         private System.Windows.Forms.Label lblMotherJob;
+        // Các control mới cho Giám hộ
+        private System.Windows.Forms.Label lblGuardianInfo;
+        private System.Windows.Forms.Label lblGuardianName;
+        public System.Windows.Forms.Panel pnlInputGuardianName;
+        public System.Windows.Forms.TextBox txtGuardianName;
+        private System.Windows.Forms.Label lblGuardianPhone;
+        public System.Windows.Forms.Panel pnlInputGuardianPhone;
+        public System.Windows.Forms.TextBox txtGuardianPhone;
+        private System.Windows.Forms.Label lblGuardianJob;
+        public System.Windows.Forms.Panel pnlInputGuardianJob;
+        public System.Windows.Forms.TextBox txtGuardianJob;
+        private System.Windows.Forms.Label lblGuardianRelation;
+        public System.Windows.Forms.Panel pnlInputGuardianRelation;
+        public System.Windows.Forms.TextBox txtGuardianRelation;
     }
 }

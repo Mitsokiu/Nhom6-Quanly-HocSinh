@@ -172,7 +172,6 @@ D:\GitHub\QLHS\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
 D:\GitHub\QLHS\BUS\obj\Debug\BUS.csproj.Up2Date
 D:\GitHub\QLHS\BUS\obj\Debug\BUS.exe
 D:\GitHub\QLHS\BUS\obj\Debug\BUS.pdb
-D:\GitHub\QLHS\BUS\obj\Debug\BUS.exe.config
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\BUS\bin\Debug\BUS.exe.config
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\BUS\bin\Debug\BUS.exe
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\BUS\bin\Debug\BUS.pdb
@@ -219,3 +218,4 @@ C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\BUS\obj\Debug\B
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\BUS\obj\Debug\BUS.csproj.CopyComplete
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\BUS\obj\Debug\BUS.exe
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\BUS\obj\Debug\BUS.pdb
+D:\GitHub\QLHS\BUS\obj\Debug\BUS.exe.config

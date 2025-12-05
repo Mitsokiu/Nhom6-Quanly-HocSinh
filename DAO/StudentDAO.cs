@@ -129,7 +129,56 @@ namespace DAO
                 }
             }
 
+            if (!string.IsNullOrWhiteSpace(s.GuardianName))
+            {
+                int gId = CreateParentAccount(s.GuardianName, s.GuardianPhone, s.GuardianJob);
+                // Lưu mối quan hệ tùy chỉnh (ví dụ: "Bà nội")
+                if (gId > 0) LinkParent(newStudentId, gId, s.GuardianRelation);
+            }
+
             return true;
+        }
+
+        private void LinkParent(int studentId, int parentId, string relation)
+        {
+            DbConnect.ExecuteNonQuery("INSERT INTO student_parent (student_id, parent_id, relation) VALUES (@param0, @param1, @param2)",
+                new object[] { studentId, parentId, relation });
+        }
+
+        private void UpdateOrInsertGuardian(int studentId, string name, string phone, string job, string relation)
+        {
+            // Tìm record phụ huynh KHÔNG phải là Cha hoặc Mẹ
+            string sqlFind = @"SELECT sp.id, p.parent_id, p.user_id 
+                               FROM student_parent sp 
+                               JOIN parents p ON sp.parent_id = p.parent_id 
+                               WHERE sp.student_id = @param0 AND sp.relation NOT IN ('Cha', 'Mẹ') LIMIT 1";
+            DataTable dt = DbConnect.ExecuteQuery(sqlFind, new object[] { studentId });
+
+            if (dt.Rows.Count > 0)
+            {
+                // Đã có -> Update toàn bộ thông tin + quan hệ mới
+                int spId = Convert.ToInt32(dt.Rows[0]["id"]);
+                int pId = Convert.ToInt32(dt.Rows[0]["parent_id"]);
+                int uId = Convert.ToInt32(dt.Rows[0]["user_id"]);
+
+                DbConnect.ExecuteNonQuery("UPDATE users SET fullname=@param0, phone=@param1 WHERE user_id=@param2", new object[] { name, phone, uId });
+                DbConnect.ExecuteNonQuery("UPDATE parents SET job=@param0 WHERE parent_id=@param1", new object[] { job, pId });
+                // Cập nhật lại mối quan hệ (ví dụ sửa từ 'Bà' thành 'Bác')
+                if (!string.IsNullOrEmpty(relation))
+                {
+                    DbConnect.ExecuteNonQuery("UPDATE student_parent SET relation=@param0 WHERE id=@param1", new object[] { relation, spId });
+                }
+            }
+            else if (!string.IsNullOrWhiteSpace(name))
+            {
+                // Chưa có -> Tạo mới
+                int newPId = CreateParentAccount(name, phone, job);
+                if (newPId > 0)
+                {
+                    DbConnect.ExecuteNonQuery("INSERT INTO student_parent (student_id, parent_id, relation) VALUES (@param0, @param1, @param2)",
+                        new object[] { studentId, newPId, relation });
+                }
+            }
         }
 
         // ---------------------------------------------------------
@@ -186,28 +235,34 @@ namespace DAO
 
         private void GetParentInfo(StudentDTO s)
         {
-            string query = @"
-                SELECT sp.relation, u.fullname, u.phone, p.job
-                FROM student_parent sp
-                JOIN parents p ON sp.parent_id = p.parent_id
-                JOIN users u ON p.user_id = u.user_id
-                WHERE sp.student_id = @param0";
-
+            string query = @"SELECT sp.relation, u.fullname, u.phone, p.job 
+                             FROM student_parent sp 
+                             JOIN parents p ON sp.parent_id = p.parent_id 
+                             JOIN users u ON p.user_id = u.user_id 
+                             WHERE sp.student_id = @param0";
             DataTable dt = DbConnect.ExecuteQuery(query, new object[] { s.StudentID });
             foreach (DataRow row in dt.Rows)
             {
                 string rel = row["relation"].ToString();
+                string name = row["fullname"].ToString();
+                string phone = row["phone"].ToString();
+                string job = row["job"].ToString();
+
                 if (rel == "Cha")
                 {
-                    s.FatherName = row["fullname"].ToString();
-                    s.FatherPhone = row["phone"].ToString();
-                    s.FatherJob = row["job"].ToString();
+                    s.FatherName = name; s.FatherPhone = phone; s.FatherJob = job;
                 }
                 else if (rel == "Mẹ")
                 {
-                    s.MotherName = row["fullname"].ToString();
-                    s.MotherPhone = row["phone"].ToString();
-                    s.MotherJob = row["job"].ToString();
+                    s.MotherName = name; s.MotherPhone = phone; s.MotherJob = job;
+                }
+                else
+                {
+                    //  Giám hộ
+                    s.GuardianName = name;
+                    s.GuardianPhone = phone;
+                    s.GuardianJob = job;
+                    s.GuardianRelation = rel;
                 }
             }
         }
@@ -239,6 +294,9 @@ namespace DAO
             UpdateOrInsertParent(s.StudentID, "Cha", s.FatherName, s.FatherPhone, s.FatherJob);
             UpdateOrInsertParent(s.StudentID, "Mẹ", s.MotherName, s.MotherPhone, s.MotherJob);
 
+            // 5. Update Giám hộ (Logic riêng)
+            UpdateOrInsertGuardian(s.StudentID, s.GuardianName, s.GuardianPhone, s.GuardianJob, s.GuardianRelation);
+
             return true;
         }
 
@@ -251,27 +309,20 @@ namespace DAO
 
             if (dt.Rows.Count > 0)
             {
-                // Update
+                // Có rồi -> Update
                 int pId = Convert.ToInt32(dt.Rows[0]["parent_id"]);
                 int uId = Convert.ToInt32(dt.Rows[0]["user_id"]);
-
-                DbConnect.ExecuteNonQuery("UPDATE users SET fullname=@param0, phone=@param1 WHERE user_id=@param2",
-                    new object[] { name, phone, uId });
-
-                DbConnect.ExecuteNonQuery("UPDATE parents SET job=@param0 WHERE parent_id=@param1",
-                    new object[] { job, pId });
+                DbConnect.ExecuteNonQuery("UPDATE users SET fullname=@param0, phone=@param1 WHERE user_id=@param2", new object[] { name, phone, uId });
+                DbConnect.ExecuteNonQuery("UPDATE parents SET job=@param0 WHERE parent_id=@param1", new object[] { job, pId });
             }
             else if (!string.IsNullOrWhiteSpace(name))
             {
-                // Insert
+                // Chưa có -> Tạo mới
                 int newPId = CreateParentAccount(name, phone, job);
                 if (newPId > 0)
                 {
-                    // SỬA: @p0, @p1, @p2 -> @param0, @param1, @param2
-                    DbConnect.ExecuteNonQuery(
-                        "INSERT INTO student_parent (student_id, parent_id, relation) VALUES (@param0, @param1, @param2)",
-                        new object[] { studentId, newPId, relation }
-                    );
+                    DbConnect.ExecuteNonQuery("INSERT INTO student_parent (student_id, parent_id, relation) VALUES (@param0, @param1, @param2)",
+                        new object[] { studentId, newPId, relation });
                 }
             }
         }

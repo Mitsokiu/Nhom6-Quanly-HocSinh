@@ -67,9 +67,13 @@ namespace BUS
 
             bool hasFather = !string.IsNullOrWhiteSpace(s.FatherName);
             bool hasMother = !string.IsNullOrWhiteSpace(s.MotherName);
+            bool hasGuardian = !string.IsNullOrWhiteSpace(s.GuardianName);
 
-            if (!hasFather && !hasMother)
-            { error = "Vui lòng nhập thông tin ít nhất một phụ huynh (cha hoặc mẹ)!"; return false; }
+            if (!hasFather && !hasMother && !hasGuardian)
+            {
+                error = "Vui lòng nhập thông tin ít nhất một người thân (Cha, Mẹ hoặc Người giám hộ)!";
+                return false;
+            }
 
             if (hasFather)
             {
@@ -81,6 +85,11 @@ namespace BUS
             {
                 if (string.IsNullOrWhiteSpace(s.MotherPhone)) { error = "Vui lòng nhập số điện thoại của mẹ!"; return false; }
                 if (string.IsNullOrWhiteSpace(s.MotherJob)) { error = "Vui lòng nhập nghề nghiệp của mẹ!"; return false; }
+            }
+            if (hasGuardian)
+            {
+                if (string.IsNullOrWhiteSpace(s.GuardianPhone)) { error = "Vui lòng nhập SĐT người giám hộ!"; return false; }
+                if (string.IsNullOrWhiteSpace(s.GuardianRelation)) { error = "Vui lòng nhập mối quan hệ với người giám hộ!"; return false; }
             }
 
             return true;

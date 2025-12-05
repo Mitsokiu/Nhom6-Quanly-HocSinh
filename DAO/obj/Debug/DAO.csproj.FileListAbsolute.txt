@@ -157,7 +157,6 @@ D:\GitHub\QLHS\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
 D:\GitHub\QLHS\DAO\obj\Debug\DAO.csproj.Up2Date
 D:\GitHub\QLHS\DAO\obj\Debug\DAO.exe
 D:\GitHub\QLHS\DAO\obj\Debug\DAO.pdb
-D:\GitHub\QLHS\DAO\obj\Debug\DAO.exe.config
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\DAO.exe.config
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\DAO.exe
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\DAO.pdb
@@ -201,3 +200,4 @@ C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\obj\Debug\D
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\obj\Debug\DAO.csproj.CopyComplete
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\obj\Debug\DAO.exe
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\obj\Debug\DAO.pdb
+D:\GitHub\QLHS\DAO\obj\Debug\DAO.exe.config

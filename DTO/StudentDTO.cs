@@ -25,6 +25,11 @@ namespace DTO
         public string MotherPhone { get; set; }
         public string MotherJob { get; set; }
 
+        public string GuardianName { get; set; }
+        public string GuardianPhone { get; set; }
+        public string GuardianJob { get; set; }
+        public string GuardianRelation { get; set; }
+
 
         public string DobDisplay => DateOfBirth.ToString("dd/MM/yyyy");
 

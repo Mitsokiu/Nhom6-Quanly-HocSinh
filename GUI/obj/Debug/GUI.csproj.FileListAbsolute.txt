@@ -317,7 +317,6 @@ D:\GitHub\QLHS\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.csproj.Up2Date
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.exe
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.pdb
-D:\GitHub\QLHS\GUI\obj\Debug\GUI.exe.config
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.AddUser.resources
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.Login.resources
@@ -427,3 +426,4 @@ D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_HocSinh_ThongTin.resources
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.XetHanhKiem.resources
 D:\GitHub\QLHS\GUI\bin\Debug\itextsharp.dll
 D:\GitHub\QLHS\GUI\bin\Debug\itextsharp.xml
+D:\GitHub\QLHS\GUI\obj\Debug\GUI.exe.config
