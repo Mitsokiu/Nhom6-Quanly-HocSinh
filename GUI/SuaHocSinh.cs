@@ -169,7 +169,7 @@ namespace GUI
                 txtName.Text = _studentData.FullName;
                 dtpDob.Value = _studentData.DateOfBirth;
                 txtAddress.Text = _studentData.Address;
-                txtID.Text = _studentData.StudentCode;
+                //txtID.Text = _studentData.StudentCode;
                 ToggleGender(_studentData.Gender == "Male");
 
                 if (cboClass.Items.Count > 0) cboClass.SelectedValue = _studentData.ClassID;
@@ -302,7 +302,7 @@ namespace GUI
         private void ApplyRoundedCorners()
         {
             Control[] controls = { btnSave, btnCancel, btnGenderMale, btnGenderFemale,
-                pnlInputName, pnlInputDob, pnlInputAddress, pnlInputID, pnlInputClass, pnlInputYear,
+                pnlInputName, pnlInputDob, pnlInputAddress, pnlInputClass, pnlInputYear,
                 pnlInputFatherName, pnlInputFatherPhone, pnlInputFatherJob,
                 pnlInputMotherName, pnlInputMotherPhone, pnlInputMotherJob };
 

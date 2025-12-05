@@ -51,9 +51,7 @@
             this.pnlInputAddress = new System.Windows.Forms.Panel();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.lblSecAcademic = new System.Windows.Forms.Label();
-            this.lblID = new System.Windows.Forms.Label();
-            this.pnlInputID = new System.Windows.Forms.Panel();
-            this.txtID = new System.Windows.Forms.TextBox();
+            // Đã xóa ID controls ở đây
             this.lblClass = new System.Windows.Forms.Label();
             this.pnlInputClass = new System.Windows.Forms.Panel();
             this.cboClass = new System.Windows.Forms.ComboBox();
@@ -90,7 +88,6 @@
             this.pnlInputName.SuspendLayout();
             this.pnlInputDob.SuspendLayout();
             this.pnlInputAddress.SuspendLayout();
-            this.pnlInputID.SuspendLayout();
             this.pnlInputClass.SuspendLayout();
             this.pnlInputYear.SuspendLayout();
             this.pnlInputFatherName.SuspendLayout();
@@ -118,9 +115,9 @@
             this.lblHeaderTitle.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
             this.lblHeaderTitle.Location = new System.Drawing.Point(25, 15);
             this.lblHeaderTitle.Name = "lblHeaderTitle";
-            this.lblHeaderTitle.Size = new System.Drawing.Size(213, 37);
+            this.lblHeaderTitle.Size = new System.Drawing.Size(286, 37);
             this.lblHeaderTitle.TabIndex = 0;
-            this.lblHeaderTitle.Text = "Cập nhật Hồ sơ";
+            this.lblHeaderTitle.Text = "Cập nhật Hồ sơ Học sinh";
             // 
             // pnlFooter
             // 
@@ -176,8 +173,7 @@
             this.pnlContent.Controls.Add(this.lblAddress);
             this.pnlContent.Controls.Add(this.pnlInputAddress);
             this.pnlContent.Controls.Add(this.lblSecAcademic);
-            this.pnlContent.Controls.Add(this.lblID);
-            this.pnlContent.Controls.Add(this.pnlInputID);
+            // Xóa lblID, pnlInputID ở đây
             this.pnlContent.Controls.Add(this.lblClass);
             this.pnlContent.Controls.Add(this.pnlInputClass);
             this.pnlContent.Controls.Add(this.lblYear);
@@ -246,7 +242,7 @@
             this.lblUpload.Name = "lblUpload";
             this.lblUpload.Size = new System.Drawing.Size(150, 150);
             this.lblUpload.TabIndex = 0;
-            this.lblUpload.Text = "Thay đổi ảnh";
+            this.lblUpload.Text = "Tải ảnh lên";
             this.lblUpload.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblName
@@ -373,50 +369,21 @@
             this.lblSecAcademic.TabIndex = 11;
             this.lblSecAcademic.Text = "Thông tin học tập";
             // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblID.Location = new System.Drawing.Point(30, 390);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(109, 19);
-            this.lblID.TabIndex = 12;
-            this.lblID.Text = "Mã số học sinh";
-            // 
-            // pnlInputID
-            // 
-            this.pnlInputID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.pnlInputID.Controls.Add(this.txtID);
-            this.pnlInputID.Location = new System.Drawing.Point(30, 415);
-            this.pnlInputID.Name = "pnlInputID";
-            this.pnlInputID.Size = new System.Drawing.Size(300, 45);
-            this.pnlInputID.TabIndex = 13;
-            // 
-            // txtID
-            // 
-            this.txtID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.txtID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtID.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txtID.Location = new System.Drawing.Point(10, 12);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(280, 20);
-            this.txtID.TabIndex = 0;
-            // 
-            // lblClass
+            // lblClass (DỜI VỊ TRÍ)
             // 
             this.lblClass.AutoSize = true;
             this.lblClass.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblClass.Location = new System.Drawing.Point(380, 390);
+            this.lblClass.Location = new System.Drawing.Point(30, 390); // Dời về vị trí cũ của ID
             this.lblClass.Name = "lblClass";
             this.lblClass.Size = new System.Drawing.Size(73, 19);
             this.lblClass.TabIndex = 14;
             this.lblClass.Text = "Chọn Lớp";
             // 
-            // pnlInputClass
+            // pnlInputClass (DỜI VỊ TRÍ)
             // 
             this.pnlInputClass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.pnlInputClass.Controls.Add(this.cboClass);
-            this.pnlInputClass.Location = new System.Drawing.Point(380, 415);
+            this.pnlInputClass.Location = new System.Drawing.Point(30, 415); // Dời về vị trí cũ của ID
             this.pnlInputClass.Name = "pnlInputClass";
             this.pnlInputClass.Size = new System.Drawing.Size(300, 45);
             this.pnlInputClass.TabIndex = 15;
@@ -433,21 +400,21 @@
             this.cboClass.Size = new System.Drawing.Size(280, 28);
             this.cboClass.TabIndex = 0;
             // 
-            // lblYear
+            // lblYear (DỜI VỊ TRÍ)
             // 
             this.lblYear.AutoSize = true;
             this.lblYear.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblYear.Location = new System.Drawing.Point(730, 390);
+            this.lblYear.Location = new System.Drawing.Point(380, 390); // Dời về vị trí cũ của Class
             this.lblYear.Name = "lblYear";
             this.lblYear.Size = new System.Drawing.Size(107, 19);
             this.lblYear.TabIndex = 16;
             this.lblYear.Text = "Chọn Năm học";
             // 
-            // pnlInputYear
+            // pnlInputYear (DỜI VỊ TRÍ)
             // 
             this.pnlInputYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.pnlInputYear.Controls.Add(this.cboYear);
-            this.pnlInputYear.Location = new System.Drawing.Point(730, 415);
+            this.pnlInputYear.Location = new System.Drawing.Point(380, 415); // Dời về vị trí cũ của Class
             this.pnlInputYear.Name = "pnlInputYear";
             this.pnlInputYear.Size = new System.Drawing.Size(270, 45);
             this.pnlInputYear.TabIndex = 17;
@@ -668,7 +635,7 @@
             this.txtMotherJob.Size = new System.Drawing.Size(430, 20);
             this.txtMotherJob.TabIndex = 0;
             // 
-            // SuaHocSinh
+            // ThemHocSinh
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
@@ -676,9 +643,9 @@
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.pnlFooter);
             this.Controls.Add(this.pnlHeader);
-            this.Name = "SuaHocSinh";
+            this.Name = "ThemHocSinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cập nhật Hồ sơ";
+            this.Text = "Thêm Hồ sơ Học sinh";
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             this.pnlFooter.ResumeLayout(false);
@@ -692,8 +659,6 @@
             this.pnlInputDob.ResumeLayout(false);
             this.pnlInputAddress.ResumeLayout(false);
             this.pnlInputAddress.PerformLayout();
-            this.pnlInputID.ResumeLayout(false);
-            this.pnlInputID.PerformLayout();
             this.pnlInputClass.ResumeLayout(false);
             this.pnlInputYear.ResumeLayout(false);
             this.pnlInputFatherName.ResumeLayout(false);
@@ -724,8 +689,8 @@
         public System.Windows.Forms.Label lblSecAcademic;
         public System.Windows.Forms.Label lblSecParents;
         public System.Windows.Forms.Panel pnlAvatar;
-        public System.Windows.Forms.PictureBox picAvatar;
         public System.Windows.Forms.Label lblUpload;
+        public System.Windows.Forms.PictureBox picAvatar;
         public System.Windows.Forms.Panel pnlInputName;
         public System.Windows.Forms.TextBox txtName;
         public System.Windows.Forms.Panel pnlInputDob;
@@ -734,10 +699,11 @@
         public System.Windows.Forms.TextBox txtAddress;
         public System.Windows.Forms.Button btnGenderMale;
         public System.Windows.Forms.Button btnGenderFemale;
-        public System.Windows.Forms.Panel pnlInputID;
-        public System.Windows.Forms.TextBox txtID;
+        // ĐÃ XÓA ID CONTROLS
+        public System.Windows.Forms.Label lblClass;
         public System.Windows.Forms.Panel pnlInputClass;
         public System.Windows.Forms.ComboBox cboClass;
+        public System.Windows.Forms.Label lblYear;
         public System.Windows.Forms.Panel pnlInputYear;
         public System.Windows.Forms.ComboBox cboYear;
         public System.Windows.Forms.Panel pnlInputFatherName;
@@ -756,9 +722,6 @@
         private System.Windows.Forms.Label lblDob;
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.Label lblAddress;
-        private System.Windows.Forms.Label lblID;
-        private System.Windows.Forms.Label lblClass;
-        private System.Windows.Forms.Label lblYear;
         private System.Windows.Forms.Label lblFatherInfo;
         private System.Windows.Forms.Label lblFatherName;
         private System.Windows.Forms.Label lblFatherPhone;

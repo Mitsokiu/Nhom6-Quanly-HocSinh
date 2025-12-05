@@ -243,7 +243,7 @@ namespace GUI
         {
             // Bo tròn các panel input
             Control[] controls = { btnSave, btnCancel, btnGenderMale, btnGenderFemale,
-                pnlInputName, pnlInputDob, pnlInputAddress, pnlInputID, pnlInputClass, pnlInputYear,
+                pnlInputName, pnlInputDob, pnlInputAddress, pnlInputClass, pnlInputYear,
                 pnlInputFatherName, pnlInputFatherPhone, pnlInputFatherJob,
                 pnlInputMotherName, pnlInputMotherPhone, pnlInputMotherJob };
 
