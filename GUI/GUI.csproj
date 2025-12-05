@@ -128,10 +128,10 @@
     <Compile Include="ChiTietHocSinh.Designer.cs">
       <DependentUpon>ChiTietHocSinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_GVCN_DiemDanh.cs">
+    <Compile Include="UserControls\GV\UC_GVCN_DiemDanh.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_GVCN_DiemDanh.Designer.cs">
+    <Compile Include="UserControls\GV\UC_GVCN_DiemDanh.Designer.cs">
       <DependentUpon>UC_GVCN_DiemDanh.cs</DependentUpon>
     </Compile>
     <Compile Include="XetHanhKiem.cs">
@@ -184,166 +184,166 @@
     <Compile Include="ThemThongBao.Designer.cs">
       <DependentUpon>ThemThongBao.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_Admin_PhanCong_gvcn.cs">
+    <Compile Include="UserControls\Admin\UC_Admin_PhanCong_gvcn.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_Admin_PhanCong_gvcn.Designer.cs">
+    <Compile Include="UserControls\Admin\UC_Admin_PhanCong_gvcn.Designer.cs">
       <DependentUpon>UC_Admin_PhanCong_gvcn.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_Admin_Class.cs">
+    <Compile Include="UserControls\Admin\UC_Admin_Class.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_Admin_Class.Designer.cs">
+    <Compile Include="UserControls\Admin\UC_Admin_Class.Designer.cs">
       <DependentUpon>UC_Admin_Class.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_Admin_Class_KhoiLop.cs">
+    <Compile Include="UserControls\Admin\UC_Admin_Class_KhoiLop.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_Admin_Class_KhoiLop.Designer.cs">
+    <Compile Include="UserControls\Admin\UC_Admin_Class_KhoiLop.Designer.cs">
       <DependentUpon>UC_Admin_Class_KhoiLop.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_Admin_Class_Monhoc.cs">
+    <Compile Include="UserControls\Admin\UC_Admin_Class_Monhoc.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_Admin_Class_Monhoc.Designer.cs">
+    <Compile Include="UserControls\Admin\UC_Admin_Class_Monhoc.Designer.cs">
       <DependentUpon>UC_Admin_Class_Monhoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_Admin_Class_Phancong.cs">
+    <Compile Include="UserControls\Admin\UC_Admin_Class_Phancong.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_Admin_Class_Phancong.Designer.cs">
+    <Compile Include="UserControls\Admin\UC_Admin_Class_Phancong.Designer.cs">
       <DependentUpon>UC_Admin_Class_Phancong.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_Admin_Namhoc.cs">
+    <Compile Include="UserControls\Admin\UC_Admin_Namhoc.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_Admin_Namhoc.Designer.cs">
+    <Compile Include="UserControls\Admin\UC_Admin_Namhoc.Designer.cs">
       <DependentUpon>UC_Admin_Namhoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_Admin_Namhoc_HocKi.cs">
+    <Compile Include="UserControls\Admin\UC_Admin_Namhoc_HocKi.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_Admin_Namhoc_HocKi.Designer.cs">
+    <Compile Include="UserControls\Admin\UC_Admin_Namhoc_HocKi.Designer.cs">
       <DependentUpon>UC_Admin_Namhoc_HocKi.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_Admin_NamHoc_HocPhi.cs">
+    <Compile Include="UserControls\Admin\UC_Admin_NamHoc_HocPhi.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_Admin_NamHoc_HocPhi.Designer.cs">
+    <Compile Include="UserControls\Admin\UC_Admin_NamHoc_HocPhi.Designer.cs">
       <DependentUpon>UC_Admin_NamHoc_HocPhi.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_Admin_NamHoc_HocPhi_PhieuThu.cs">
+    <Compile Include="UserControls\Admin\UC_Admin_NamHoc_HocPhi_PhieuThu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_Admin_NamHoc_HocPhi_PhieuThu.Designer.cs">
+    <Compile Include="UserControls\Admin\UC_Admin_NamHoc_HocPhi_PhieuThu.Designer.cs">
       <DependentUpon>UC_Admin_NamHoc_HocPhi_PhieuThu.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_Admin_NamHoc_TKB.cs">
+    <Compile Include="UserControls\Admin\UC_Admin_NamHoc_TKB.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_Admin_NamHoc_TKB.Designer.cs">
+    <Compile Include="UserControls\Admin\UC_Admin_NamHoc_TKB.Designer.cs">
       <DependentUpon>UC_Admin_NamHoc_TKB.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_Admin_User.cs">
+    <Compile Include="UserControls\Admin\UC_Admin_User.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_Admin_User.Designer.cs">
+    <Compile Include="UserControls\Admin\UC_Admin_User.Designer.cs">
       <DependentUpon>UC_Admin_User.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_GVBM.cs">
+    <Compile Include="UserControls\GV\UC_GVBM.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_GVBM.Designer.cs">
+    <Compile Include="UserControls\GV\UC_GVBM.Designer.cs">
       <DependentUpon>UC_GVBM.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_GVBM_Diem.cs">
+    <Compile Include="UserControls\GV\UC_GVBM_Diem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_GVBM_Diem.Designer.cs">
+    <Compile Include="UserControls\GV\UC_GVBM_Diem.Designer.cs">
       <DependentUpon>UC_GVBM_Diem.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_GVBM_TKB.cs">
+    <Compile Include="UserControls\GV\UC_GVBM_TKB.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_GVBM_TKB.Designer.cs">
+    <Compile Include="UserControls\GV\UC_GVBM_TKB.Designer.cs">
       <DependentUpon>UC_GVBM_TKB.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_GVCN_DS.cs">
+    <Compile Include="UserControls\GV\UC_GVCN_DS.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_GVCN_DS.Designer.cs">
+    <Compile Include="UserControls\GV\UC_GVCN_DS.Designer.cs">
       <DependentUpon>UC_GVCN_DS.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_GVCN_HanhKiem.cs">
+    <Compile Include="UserControls\GV\UC_GVCN_HanhKiem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_GVCN_HanhKiem.Designer.cs">
+    <Compile Include="UserControls\GV\UC_GVCN_HanhKiem.Designer.cs">
       <DependentUpon>UC_GVCN_HanhKiem.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_GVCN_HocPhi.cs">
+    <Compile Include="UserControls\GV\UC_GVCN_HocPhi.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_GVCN_HocPhi.Designer.cs">
+    <Compile Include="UserControls\GV\UC_GVCN_HocPhi.Designer.cs">
       <DependentUpon>UC_GVCN_HocPhi.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_GVCN_NS.cs">
+    <Compile Include="UserControls\GV\UC_GVCN_NS.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_GVCN_NS.Designer.cs">
+    <Compile Include="UserControls\GV\UC_GVCN_NS.Designer.cs">
       <DependentUpon>UC_GVCN_NS.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_GVCN_QLHS.cs">
+    <Compile Include="UserControls\GV\UC_GVCN_QLHS.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_GVCN_QLHS.Designer.cs">
+    <Compile Include="UserControls\GV\UC_GVCN_QLHS.Designer.cs">
       <DependentUpon>UC_GVCN_QLHS.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_GVCN_ThongBao.cs">
+    <Compile Include="UserControls\GV\UC_GVCN_ThongBao.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_GVCN_ThongBao.Designer.cs">
+    <Compile Include="UserControls\GV\UC_GVCN_ThongBao.Designer.cs">
       <DependentUpon>UC_GVCN_ThongBao.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_HocSinh_ChiTietThongBao.cs">
+    <Compile Include="UserControls\HS\UC_HocSinh_ChiTietThongBao.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_HocSinh_ChiTietThongBao.Designer.cs">
+    <Compile Include="UserControls\HS\UC_HocSinh_ChiTietThongBao.Designer.cs">
       <DependentUpon>UC_HocSinh_ChiTietThongBao.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_HocSinh_Diem.cs">
+    <Compile Include="UserControls\HS\UC_HocSinh_Diem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_HocSinh_Diem.Designer.cs">
+    <Compile Include="UserControls\HS\UC_HocSinh_Diem.Designer.cs">
       <DependentUpon>UC_HocSinh_Diem.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_HocSinh_DoiMatKhau.cs">
+    <Compile Include="UserControls\HS\UC_HocSinh_DoiMatKhau.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_HocSinh_DoiMatKhau.Designer.cs">
+    <Compile Include="UserControls\HS\UC_HocSinh_DoiMatKhau.Designer.cs">
       <DependentUpon>UC_HocSinh_DoiMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_HocSinh_HocPhi.cs">
+    <Compile Include="UserControls\HS\UC_HocSinh_HocPhi.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_HocSinh_HocPhi.Designer.cs">
+    <Compile Include="UserControls\HS\UC_HocSinh_HocPhi.Designer.cs">
       <DependentUpon>UC_HocSinh_HocPhi.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_HocSinh_ThongBao.cs">
+    <Compile Include="UserControls\HS\UC_HocSinh_ThongBao.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_HocSinh_ThongBao.Designer.cs">
+    <Compile Include="UserControls\HS\UC_HocSinh_ThongBao.Designer.cs">
       <DependentUpon>UC_HocSinh_ThongBao.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_HocSinh_ThongTin.cs">
+    <Compile Include="UserControls\HS\UC_HocSinh_ThongTin.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_HocSinh_ThongTin.Designer.cs">
+    <Compile Include="UserControls\HS\UC_HocSinh_ThongTin.Designer.cs">
       <DependentUpon>UC_HocSinh_ThongTin.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_HocSinh_TKB.cs">
+    <Compile Include="UserControls\HS\UC_HocSinh_TKB.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_HocSinh_TKB.Designer.cs">
+    <Compile Include="UserControls\HS\UC_HocSinh_TKB.Designer.cs">
       <DependentUpon>UC_HocSinh_TKB.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UC_Home.cs">
@@ -404,80 +404,80 @@
     <EmbeddedResource Include="Sidebar.resx">
       <DependentUpon>Sidebar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_Admin_PhanCong_gvcn.resx">
+    <EmbeddedResource Include="UserControls\Admin\UC_Admin_PhanCong_gvcn.resx">
       <DependentUpon>UC_Admin_PhanCong_gvcn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_Admin_Class.resx">
+    <EmbeddedResource Include="UserControls\Admin\UC_Admin_Class.resx">
       <DependentUpon>UC_Admin_Class.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_Admin_Class_KhoiLop.resx">
+    <EmbeddedResource Include="UserControls\Admin\UC_Admin_Class_KhoiLop.resx">
       <DependentUpon>UC_Admin_Class_KhoiLop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_Admin_Class_Monhoc.resx">
+    <EmbeddedResource Include="UserControls\Admin\UC_Admin_Class_Monhoc.resx">
       <DependentUpon>UC_Admin_Class_Monhoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_Admin_Class_Phancong.resx">
+    <EmbeddedResource Include="UserControls\Admin\UC_Admin_Class_Phancong.resx">
       <DependentUpon>UC_Admin_Class_Phancong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_Admin_Namhoc.resx">
+    <EmbeddedResource Include="UserControls\Admin\UC_Admin_Namhoc.resx">
       <DependentUpon>UC_Admin_Namhoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_Admin_Namhoc_HocKi.resx">
+    <EmbeddedResource Include="UserControls\Admin\UC_Admin_Namhoc_HocKi.resx">
       <DependentUpon>UC_Admin_Namhoc_HocKi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_Admin_NamHoc_HocPhi.resx">
+    <EmbeddedResource Include="UserControls\Admin\UC_Admin_NamHoc_HocPhi.resx">
       <DependentUpon>UC_Admin_NamHoc_HocPhi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_Admin_NamHoc_HocPhi_PhieuThu.resx">
+    <EmbeddedResource Include="UserControls\Admin\UC_Admin_NamHoc_HocPhi_PhieuThu.resx">
       <DependentUpon>UC_Admin_NamHoc_HocPhi_PhieuThu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_Admin_NamHoc_TKB.resx">
+    <EmbeddedResource Include="UserControls\Admin\UC_Admin_NamHoc_TKB.resx">
       <DependentUpon>UC_Admin_NamHoc_TKB.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_Admin_User.resx">
+    <EmbeddedResource Include="UserControls\Admin\UC_Admin_User.resx">
       <DependentUpon>UC_Admin_User.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_GVBM.resx">
+    <EmbeddedResource Include="UserControls\GV\UC_GVBM.resx">
       <DependentUpon>UC_GVBM.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_GVBM_Diem.resx">
+    <EmbeddedResource Include="UserControls\GV\UC_GVBM_Diem.resx">
       <DependentUpon>UC_GVBM_Diem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_GVBM_TKB.resx">
+    <EmbeddedResource Include="UserControls\GV\UC_GVBM_TKB.resx">
       <DependentUpon>UC_GVBM_TKB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_GVCN.resx" />
-    <EmbeddedResource Include="UserControls\UC_GVCN_DiemDanh.resx">
+    <EmbeddedResource Include="UserControls\GV\UC_GVCN_DiemDanh.resx">
       <DependentUpon>UC_GVCN_DiemDanh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_GVCN_DS.resx">
+    <EmbeddedResource Include="UserControls\GV\UC_GVCN_DS.resx">
       <DependentUpon>UC_GVCN_DS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_GVCN_HanhKiem.resx">
+    <EmbeddedResource Include="UserControls\GV\UC_GVCN_HanhKiem.resx">
       <DependentUpon>UC_GVCN_HanhKiem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_GVCN_HocPhi.resx">
+    <EmbeddedResource Include="UserControls\GV\UC_GVCN_HocPhi.resx">
       <DependentUpon>UC_GVCN_HocPhi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_GVCN_NS.resx">
+    <EmbeddedResource Include="UserControls\GV\UC_GVCN_NS.resx">
       <DependentUpon>UC_GVCN_NS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_GVCN_QLHS.resx">
+    <EmbeddedResource Include="UserControls\GV\UC_GVCN_QLHS.resx">
       <DependentUpon>UC_GVCN_QLHS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_GVCN_ThongBao.resx">
+    <EmbeddedResource Include="UserControls\GV\UC_GVCN_ThongBao.resx">
       <DependentUpon>UC_GVCN_ThongBao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_HocSinh_Diem.resx">
+    <EmbeddedResource Include="UserControls\HS\UC_HocSinh_Diem.resx">
       <DependentUpon>UC_HocSinh_Diem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_HocSinh_DoiMatKhau.resx">
+    <EmbeddedResource Include="UserControls\HS\UC_HocSinh_DoiMatKhau.resx">
       <DependentUpon>UC_HocSinh_DoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_HocSinh_ThongTin.resx">
+    <EmbeddedResource Include="UserControls\HS\UC_HocSinh_ThongTin.resx">
       <DependentUpon>UC_HocSinh_ThongTin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_HocSinh_TKB.resx">
+    <EmbeddedResource Include="UserControls\HS\UC_HocSinh_TKB.resx">
       <DependentUpon>UC_HocSinh_TKB.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -610,5 +610,6 @@
     <Content Include="Resources\xuatexcel_32.png" />
     <Content Include="Resources\xuatexcel_48.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

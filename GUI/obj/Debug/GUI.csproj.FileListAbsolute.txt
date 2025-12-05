@@ -425,3 +425,5 @@ D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_GVCN_ThongBao.resources
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_HocSinh_DoiMatKhau.resources
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_HocSinh_ThongTin.resources
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.XetHanhKiem.resources
+D:\GitHub\QLHS\GUI\bin\Debug\itextsharp.dll
+D:\GitHub\QLHS\GUI\bin\Debug\itextsharp.xml
