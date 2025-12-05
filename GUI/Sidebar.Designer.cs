@@ -226,7 +226,7 @@ namespace GUI
             //
             //btnXetHanhKiem
             //
-            this.btnXetHanhKiem.Image = global::GUI.Properties.Resources.timkiem_24;
+            this.btnXetHanhKiem.Image = global::GUI.Properties.Resources.xemdiem_24;
             this.btnXetHanhKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXetHanhKiem.Name = "btnXetHanhKiem";
             this.btnXetHanhKiem.Size = new System.Drawing.Size(282, 50);
@@ -237,7 +237,7 @@ namespace GUI
             //
             //btnDiemDanh
             //
-            this.btnDiemDanh.Image = global::GUI.Properties.Resources.timkiem_24;
+            this.btnDiemDanh.Image = global::GUI.Properties.Resources.xinphepvang_24;
             this.btnDiemDanh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDiemDanh.Name = "btnDiemDanh";
             this.btnDiemDanh.Size = new System.Drawing.Size(282, 50);
