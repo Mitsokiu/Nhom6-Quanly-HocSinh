@@ -11,7 +11,8 @@
         private System.Windows.Forms.Button btnAddStudent;
 
         private System.Windows.Forms.Button btnImportExcel;
-        private System.Windows.Forms.Button btnExportExcel; 
+        private System.Windows.Forms.Button btnExportExcel;
+        private System.Windows.Forms.Button btnExportPDF; 
 
         // Search
         private System.Windows.Forms.Panel pnlSearch; // Container chính
@@ -48,6 +49,7 @@
             this.btnAddStudent = new System.Windows.Forms.Button();
             this.btnExportExcel = new System.Windows.Forms.Button(); 
             this.btnImportExcel = new System.Windows.Forms.Button();
+            this.btnExportPDF = new System.Windows.Forms.Button();
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlSearch = new System.Windows.Forms.Panel();
@@ -90,6 +92,7 @@
             // 
             this.pnlHeader.BackColor = System.Drawing.Color.Transparent;
             this.pnlHeader.Controls.Add(this.btnAddStudent);
+            this.pnlHeader.Controls.Add(this.btnExportPDF);
             this.pnlHeader.Controls.Add(this.btnExportExcel); // Add control
             this.pnlHeader.Controls.Add(this.btnImportExcel); // Add control
             this.pnlHeader.Controls.Add(this.lblSubTitle);
@@ -188,6 +191,25 @@
             this.btnImportExcel.Text = " Nhập Excel";
             this.btnImportExcel.UseVisualStyleBackColor = false;
 
+            // 
+            // btnExportPDF (Nút Mới - Màu Đỏ)
+            // 
+            this.btnExportPDF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportPDF.BackColor = System.Drawing.Color.FromArgb(220, 53, 69); // Màu đỏ đặc trưng PDF
+            this.btnExportPDF.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExportPDF.FlatAppearance.BorderSize = 0;
+            this.btnExportPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportPDF.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnExportPDF.ForeColor = System.Drawing.Color.White;
+            this.btnExportPDF.Image = global::GUI.Properties.Resources.pdf_32; // Icon bạn yêu cầu
+            this.btnExportPDF.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExportPDF.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExportPDF.Location = new System.Drawing.Point(400, 10);
+            this.btnExportPDF.Name = "btnExportPDF";
+            this.btnExportPDF.Size = new System.Drawing.Size(150, 40);
+            this.btnExportPDF.TabIndex = 5;
+            this.btnExportPDF.Text = " Xuất PDF";
+            this.btnExportPDF.UseVisualStyleBackColor = false;
             // 
             // pnlSearch (Container)
             // 

@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -54,6 +56,7 @@ namespace GUI.UserControls
             btnAddStudent.Click += BtnAddStudent_Click;
             btnImportExcel.Click += BtnImportExcel_Click;
             btnExportExcel.Click += BtnExportExcel_Click;
+            btnExportPDF.Click += BtnExportPDF_Click;
 
             dgvStudents.CellPainting += DgvStudents_CellPainting;
             dgvStudents.CellMouseClick += DgvStudents_CellMouseClick;
@@ -65,7 +68,7 @@ namespace GUI.UserControls
             ShowHomeroomClassName();
         }
 
-        // --- 1. CHỨC NĂNG XUẤT EXCEL (ĐÃ SỬA LICENSE CHO EPPLUS 8) ---
+        // --- 1. CHỨC NĂNG XUẤT EXCEL---
         private void BtnExportExcel_Click(object sender, EventArgs e)
         {
             // SỬA: Cú pháp mới cho EPPlus 8+ (Dùng hàm thay vì gán)
@@ -134,7 +137,7 @@ namespace GUI.UserControls
             }
         }
 
-        // --- 2. CHỨC NĂNG NHẬP EXCEL (ĐÃ SỬA LICENSE CHO EPPLUS 8) ---
+        // --- 2. CHỨC NĂNG NHẬP EXCEL ---
         private void BtnImportExcel_Click(object sender, EventArgs e)
         {
             // SỬA: Cú pháp mới cho EPPlus 8+
@@ -233,6 +236,171 @@ namespace GUI.UserControls
                 MessageBox.Show($"Lỗi đọc file Excel: {ex.Message}\nHãy đảm bảo file không đang được mở.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void BtnExportPDF_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra dữ liệu
+            if (_studentList == null || _studentList.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu học sinh để xuất!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            {
+                sfd.Filter = "PDF Files (*.pdf)|*.pdf";
+                sfd.FileName = $"DanhSachHocSinh_{DateTime.Now:yyyyMMdd_HHmmss}.pdf";
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        // 1. Tạo Document (Khổ A4 đứng cho danh sách ít cột, hoặc A4 ngang nếu muốn rộng rãi)
+                        //A4 Đứng (PageSize.A4) vì chỉ có 5 cột
+                        Document pdfDoc = new Document(PageSize.A4, 25f, 25f, 30f, 30f);
+                        PdfWriter writer = PdfWriter.GetInstance(pdfDoc, new FileStream(sfd.FileName, FileMode.Create));
+                        pdfDoc.Open();
+
+                        // 2. Cài đặt Font chữ Tiếng Việt (Times New Roman cho chuẩn văn bản hành chính)
+                        string fontPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "times.ttf");
+                        // Fallback nếu không tìm thấy Times New Roman thì dùng Arial
+                        if (!File.Exists(fontPath))
+                            fontPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "arial.ttf");
+
+                        BaseFont bf = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+
+                        // Định nghĩa các style font
+                        iTextSharp.text.Font fontNormal = new iTextSharp.text.Font(bf, 11, iTextSharp.text.Font.NORMAL);
+                        iTextSharp.text.Font fontBold = new iTextSharp.text.Font(bf, 11, iTextSharp.text.Font.BOLD);
+                        iTextSharp.text.Font fontHeaderTitle = new iTextSharp.text.Font(bf, 12, iTextSharp.text.Font.BOLD); // Font Sở/Trường
+                        iTextSharp.text.Font fontTitleHuge = new iTextSharp.text.Font(bf, 16, iTextSharp.text.Font.BOLD);   // Font Tiêu đề chính
+
+                        // 3. TẠO HEADER (SỞ/TRƯỜNG bên trái - QUỐC HIỆU bên phải)
+                        PdfPTable headerTable = new PdfPTable(2);
+                        headerTable.WidthPercentage = 100;
+                        headerTable.SetWidths(new float[] { 50f, 50f }); // Chia đôi màn hình
+                        headerTable.DefaultCell.Border = iTextSharp.text.Rectangle.NO_BORDER; // Không viền
+
+                        // --- Cột Trái: Sở & Trường ---
+                        Paragraph pLeft = new Paragraph();
+                        pLeft.Alignment = Element.ALIGN_CENTER; // Canh giữa TRONG cột trái
+                        pLeft.Add(new Phrase("Sở GD&ĐT Thành phố Hồ Chí Minh\n", fontHeaderTitle));
+                        pLeft.Add(new Phrase("Trường THPT ABC\n", fontBold)); 
+
+                        PdfPCell cellLeft = new PdfPCell(pLeft);
+                        cellLeft.Border = iTextSharp.text.Rectangle.NO_BORDER;
+                        cellLeft.HorizontalAlignment = Element.ALIGN_CENTER;
+                        cellLeft.PaddingTop = 0;
+                        headerTable.AddCell(cellLeft);
+
+                        // --- Cột Phải: Quốc Hiệu & Tiêu Ngữ ---
+                        Paragraph pRight = new Paragraph();
+                        pRight.Alignment = Element.ALIGN_CENTER; // Canh giữa TRONG cột phải
+                        pRight.Add(new Phrase("CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\n", fontHeaderTitle));
+                        pRight.Add(new Phrase("Độc lập - Tự do - Hạnh phúc\n", fontBold));
+                        pRight.Add(new Phrase("---------------------------\n", fontNormal));
+                        pRight.Add(new Phrase($"Ngày xuất: {DateTime.Now:dd/MM/yyyy}", fontNormal)); // Dòng ngày xuất
+
+                        PdfPCell cellRight = new PdfPCell(pRight);
+                        cellRight.Border = iTextSharp.text.Rectangle.NO_BORDER;
+                        cellRight.HorizontalAlignment = Element.ALIGN_CENTER;
+                        cellRight.PaddingTop = 0;
+                        headerTable.AddCell(cellRight);
+
+                        pdfDoc.Add(headerTable);
+
+                        // Khoảng cách
+                        pdfDoc.Add(new Paragraph("\n"));
+
+                        // 4. TIÊU ĐỀ DANH SÁCH
+                        // Lấy tên lớp từ label (bỏ chữ "Quản lý Học sinh - " đi để lấy mỗi tên lớp nếu cần)
+                        string fullTitle = lblTitle.Text.Replace("Quản lý Học sinh - ", "").ToUpper();
+                        if (!fullTitle.Contains("LỚP")) fullTitle = "LỚP " + fullTitle;
+
+                        Paragraph pTitle = new Paragraph($"DANH SÁCH HỌC SINH {fullTitle}", fontTitleHuge);
+                        pTitle.Alignment = Element.ALIGN_CENTER;
+                        pTitle.SpacingAfter = 20f;
+                        pdfDoc.Add(pTitle);
+
+                        // 5. NỘI DUNG BẢNG (STT, Họ tên, Ngày sinh, Giới tính, Ghi chú)
+                        PdfPTable table = new PdfPTable(5);
+                        table.WidthPercentage = 100;
+                        table.SetWidths(new float[] { 8f, 35f, 15f, 12f, 30f }); // STT nhỏ, Tên to, Ghi chú vừa
+
+                        // Header của bảng
+                        string[] colHeaders = { "STT", "Họ và tên", "Ngày sinh", "Giới tính", "Ghi chú" };
+                        foreach (string h in colHeaders)
+                        {
+                            PdfPCell cell = new PdfPCell(new Phrase(h, fontBold));
+                            cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                            cell.VerticalAlignment = Element.ALIGN_MIDDLE;
+                            cell.BackgroundColor = BaseColor.LIGHT_GRAY; // Màu nền xám nhẹ
+                            cell.Padding = 6;
+                            table.AddCell(cell);
+                        }
+
+                        // Dữ liệu
+                        int stt = 1;
+                        foreach (var s in _studentList)
+                        {
+                            // STT
+                            AddCellToTable(table, stt.ToString(), fontNormal, Element.ALIGN_CENTER);
+                            // Họ tên (Canh trái)
+                            AddCellToTable(table, s.FullName, fontNormal, Element.ALIGN_LEFT);
+                            // Ngày sinh
+                            AddCellToTable(table, s.DobDisplay, fontNormal, Element.ALIGN_CENTER);
+                            // Giới tính
+                            AddCellToTable(table, s.GenderDisplay, fontNormal, Element.ALIGN_CENTER);
+                            // Ghi chú (Để trống)
+                            AddCellToTable(table, "", fontNormal, Element.ALIGN_LEFT);
+
+                            stt++;
+                        }
+
+                        pdfDoc.Add(table);
+
+                        // 6. FOOTER (TP.HCM, ngày... tháng... năm...)
+                        pdfDoc.Add(new Paragraph("\n")); // Cách dòng
+
+                        Paragraph pFooter = new Paragraph();
+                        pFooter.Alignment = Element.ALIGN_RIGHT;
+                        pFooter.IndentationRight = 20f; // Thụt lề phải 
+
+                        // Lấy ngày hiện tại
+                        DateTime now = DateTime.Now;
+                        pFooter.Add(new Phrase($"TP.HCM, ngày {now.Day} tháng {now.Month} năm {now.Year}", fontNormal)); // In nghiêng
+
+                        // Có thể thêm dòng ký tên nếu muốn
+                        // pFooter.Add(new Phrase("\nGiáo viên chủ nhiệm", fontBold));
+
+                        pdfDoc.Add(pFooter);
+
+                        pdfDoc.Close();
+
+                        // Mở file ngay sau khi lưu
+                        if (MessageBox.Show("Xuất PDF thành công! Bạn có muốn mở file ngay không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                        {
+                            System.Diagnostics.Process.Start(sfd.FileName);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi xuất PDF: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        /*Hàm tạo table cho PDF*/
+        private void AddCellToTable(PdfPTable table, string text, iTextSharp.text.Font font, int alignment)
+        {
+            PdfPCell cell = new PdfPCell(new Phrase(text ?? "", font));
+            cell.HorizontalAlignment = alignment;
+            cell.VerticalAlignment = Element.ALIGN_MIDDLE;
+            cell.Padding = 5;
+            table.AddCell(cell);
+        }
+
 
         private void ShowHomeroomClassName()
         {
@@ -466,7 +634,7 @@ namespace GUI.UserControls
 
         private void SetRoundedRegion(Control c, int radius)
         {
-            Rectangle bounds = new Rectangle(0, 0, c.Width, c.Height);
+            System.Drawing.Rectangle bounds = new System.Drawing.Rectangle(0, 0, c.Width, c.Height);
             using (GraphicsPath path = new GraphicsPath())
             {
                 int d = radius * 2;
