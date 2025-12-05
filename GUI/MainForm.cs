@@ -43,6 +43,9 @@ namespace GUI
             sidebar.QlyNamHocClicked += Sidebar_QlyNamHocClicked;
             sidebar.XemThongTinHocSinhClicked += Sidebar_XemThongTinHocSinhClicked;
             sidebar.DoiMatKhauHSClicked += Sidebar_DoiMatKhauHSClicked;
+            sidebar.XetHanhKiemClicked += Sidebar_XetHanhKiemClicked;
+            sidebar.DiemDanhClicked += Sidebar_DiemDanhClicked;
+            sidebar.QuanLyThongBaoClicked += Sidebar_QuanLyThongBaoClicked;
         }
 
         // =====================
@@ -91,7 +94,30 @@ namespace GUI
 
         private void Sidebar_HocSinhClicked(object sender, EventArgs e)
         {
-            LoadContent(new UC_GVCN_QLHS());
+            // QUAN TRỌNG: Phải truyền UserId của GVCN đang đăng nhập
+            if (user == null || user.UserId <= 0)
+            {
+                MessageBox.Show("Không xác định được thông tin giáo viên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            LoadContent(new UC_GVCN_QLHS(user.UserId));
+        }
+
+        private void Sidebar_XetHanhKiemClicked(object sender, EventArgs e)
+        {
+            if (user != null)
+            {
+                LoadContent(new UC_GVCN_HanhKiem(user.UserId));
+            }
+        }
+
+        private void Sidebar_DiemDanhClicked(object sender, EventArgs e)
+        {
+            if (user != null)
+            {     
+                LoadContent(new UC_GVCN_DiemDanh(user.UserId));
+            }    
         }
 
         private void Sidebar_TinhHinhClicked(object sender, EventArgs e)
@@ -138,6 +164,14 @@ namespace GUI
                 LoadContent(new UC_HocSinh_DoiMatKhau(user.UserId));
             }
         }
+        private void Sidebar_QuanLyThongBaoClicked(object sender, EventArgs e)
+        {
+            if (user != null)
+            {
+                LoadContent(new UC_GVCN_ThongBao(user.UserId));
+            }
+        }
+
 
         private void OpenNotificationList()
         {

@@ -96,8 +96,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcademicYearDAO.cs" />
+    <Compile Include="AttendanceDAO.cs" />
     <Compile Include="ClassDAO.cs" />
     <Compile Include="DBconnect.cs" />
+    <Compile Include="EvaluationDAO.cs" />
     <Compile Include="HomeroomAssignmentDAO.cs" />
     <Compile Include="NotificationDAO.cs" />
     <Compile Include="Program.cs" />
@@ -107,6 +109,7 @@
     <Compile Include="StudentDAO.cs" />
     <Compile Include="subjectDAO.cs" />
     <Compile Include="TeacherAssignmentDAO.cs" />
+    <Compile Include="TeacherDAO.cs" />
     <Compile Include="TimetableDAO.cs" />
     <Compile Include="TuitionDAO.cs" />
     <Compile Include="UserDAO.cs" />

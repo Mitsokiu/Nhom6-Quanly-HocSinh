@@ -10,6 +10,7 @@ namespace DTO
         public string Fullname { get; set; }        // Họ tên đầy đủ
         public string Email { get; set; }           // Email
         public string Phone { get; set; }           // Số điện thoại
+        public string Avatar { get; set; }
         public DateTime CreatedAt { get; set; }     // Ngày tạo
         public string RoleName { get; set; }        // Tên vai trò (admin/teacher/student/parent)
 
@@ -22,6 +23,7 @@ namespace DTO
             Email = Email?.Trim();
             Phone = Phone?.Trim();
             RoleName = RoleName?.Trim();
+            Avatar = Avatar?.Trim();
         }
     }
 }

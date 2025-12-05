@@ -64,6 +64,9 @@ namespace BUS
             {
                 return "Đã xảy ra lỗi hệ thống, vui lòng thử lại sau.";
             }
+        public UserDTO GetUserById(int userId)
+        {
+            return dao.GetUserById(userId);
         }
 
 

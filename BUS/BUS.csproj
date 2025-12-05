@@ -96,7 +96,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcademicBUS.cs" />
+    <Compile Include="AttendanceBUS.cs" />
     <Compile Include="ClassBUS.cs" />
+    <Compile Include="EvaluationBUS.cs" />
     <Compile Include="HomeroomAssignmentBUS.cs" />
     <Compile Include="NotificationBUS.cs" />
     <Compile Include="Program.cs" />
@@ -106,6 +108,7 @@
     <Compile Include="StudentBUS.cs" />
     <Compile Include="subject.cs" />
     <Compile Include="TeacherAssignmentBUS.cs" />
+    <Compile Include="TeacherBUS.cs" />
     <Compile Include="TimetableBUS.cs" />
     <Compile Include="TuitionBUS.cs" />
     <Compile Include="UserBUS.cs" />

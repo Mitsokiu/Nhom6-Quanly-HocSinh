@@ -83,9 +83,9 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap calendar_20 {
+        internal static System.Drawing.Bitmap avatar_macdinh {
             get {
-                object obj = ResourceManager.GetObject("calendar_20", resourceCulture);
+                object obj = ResourceManager.GetObject("avatar_macdinh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,59 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap delete_20 {
+            get {
+                object obj = ResourceManager.GetObject("delete_20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap delete_40 {
+            get {
+                object obj = ResourceManager.GetObject("delete_40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap diemdanh_24 {
             get {
                 object obj = ResourceManager.GetObject("diemdanh_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_20 {
+            get {
+                object obj = ResourceManager.GetObject("edit_20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_25 {
+            get {
+                object obj = ResourceManager.GetObject("edit_25", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_40 {
+            get {
+                object obj = ResourceManager.GetObject("edit_40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,6 +263,26 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap nhapexcel_32 {
+            get {
+                object obj = ResourceManager.GetObject("nhapexcel_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nhapexcel_48 {
+            get {
+                object obj = ResourceManager.GetObject("nhapexcel_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap nhapngaynghi_24 {
             get {
                 object obj = ResourceManager.GetObject("nhapngaynghi_24", resourceCulture);
@@ -223,9 +293,9 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap sender_20 {
+        internal static System.Drawing.Bitmap search_32 {
             get {
-                object obj = ResourceManager.GetObject("sender_20", resourceCulture);
+                object obj = ResourceManager.GetObject("search_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -256,6 +326,26 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap tinnhan_24 {
             get {
                 object obj = ResourceManager.GetObject("tinnhan_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap view_20 {
+            get {
+                object obj = ResourceManager.GetObject("view_20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap view_40 {
+            get {
+                object obj = ResourceManager.GetObject("view_40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -296,6 +386,26 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap xinphepvang_24 {
             get {
                 object obj = ResourceManager.GetObject("xinphepvang_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap xuatexcel_32 {
+            get {
+                object obj = ResourceManager.GetObject("xuatexcel_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap xuatexcel_48 {
+            get {
+                object obj = ResourceManager.GetObject("xuatexcel_48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
