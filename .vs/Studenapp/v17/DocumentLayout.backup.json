@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "D:\\GitHub\\QLHS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\qlhs\\gui\\properties\\resources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\properties\\resources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\properties\\resources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\usercontrols\\uc_gvcn_qlhs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvcn_qlhs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\qlhs\\gui\\usercontrols\\uc_gvcn_qlhs.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvcn_qlhs.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|DB{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|D:\\GitHub\\QLHS\\db.sql||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|DB{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|solutionrelative:db.sql||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\usercontrols\\uc_admin_phancong_gvcn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_phancong_gvcn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\qlhs\\gui\\usercontrols\\uc_hocsinh_chitietthongbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -67,10 +87,6 @@
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\resources\\calendar_20.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\usercontrols\\uc_gvcn_ds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvcn_ds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -120,10 +136,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\usercontrols\\uc_hocsinh_diem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_hocsinh_diem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\usercontrols\\uc_admin_phancong_gvcn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_phancong_gvcn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\usercontrols\\uc_admin_namhoc_tkb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -226,20 +238,8 @@
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_phancong_gvcn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|DB{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|D:\\GitHub\\QLHS\\db.sql||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|DB{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|solutionrelative:db.sql||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\adduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\adduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\usercontrols\\uc_gvcn_qlhs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvcn_qlhs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\usercontrols\\uc_gvcn_tbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvcn_tbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\usercontrols\\uc_gvcn_hocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -416,6 +416,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|D:\\GitHub\\QLHS\\dto\\classdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|solutionrelative:dto\\classdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\GitHub\\QLHS\\gui\\usercontrols\\uc_gvcn_tbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:gui\\usercontrols\\uc_gvcn_tbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -425,11 +429,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 370,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 37,
               "Title": "UC_HocSinh_TKB.cs [Design]",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_HocSinh_TKB.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_TKB.cs",
@@ -437,12 +441,11 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_TKB.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-17T07:29:26.14Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 32,
               "Title": "UC_HocSinh_ThongBao.Designer.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_HocSinh_ThongBao.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_ThongBao.Designer.cs",
@@ -451,19 +454,19 @@
               "ViewState": "AgIAACAAAAAAAAAAAAD4vzMAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-23T06:28:23.84Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Resources.resx",
-              "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\Properties\\Resources.resx",
-              "RelativeDocumentMoniker": "GUI\\Properties\\Resources.resx",
-              "ToolTip": "D:\\GitHub\\QLHS\\GUI\\Properties\\Resources.resx",
-              "RelativeToolTip": "GUI\\Properties\\Resources.resx",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-12-01T09:10:33.032Z",
+              "DocumentIndex": 3,
+              "Title": "UC_GVCN_QLHS.Designer.cs",
+              "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_GVCN_QLHS.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN_QLHS.Designer.cs",
+              "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_GVCN_QLHS.Designer.cs",
+              "RelativeToolTip": "GUI\\UserControls\\UC_GVCN_QLHS.Designer.cs",
+              "ViewState": "AgIAAPAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T15:57:05.98Z",
               "EditorCaption": ""
             },
             {
@@ -480,7 +483,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 0,
+              "Title": "Resources.resx",
+              "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\Properties\\Resources.resx",
+              "RelativeDocumentMoniker": "GUI\\Properties\\Resources.resx",
+              "ToolTip": "D:\\GitHub\\QLHS\\GUI\\Properties\\Resources.resx",
+              "RelativeToolTip": "GUI\\Properties\\Resources.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-12-01T09:10:33.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
               "Title": ".gitignore",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\.gitignore",
               "RelativeDocumentMoniker": ".gitignore",
@@ -492,7 +507,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 31,
               "Title": "NhanVien.cs",
               "DocumentMoniker": "D:\\Downloads\\Pro_QuanLy\\Pro_QuanLy\\GUI\\NhanVien.cs",
               "RelativeDocumentMoniker": "..\\..\\Downloads\\Pro_QuanLy\\Pro_QuanLy\\GUI\\NhanVien.cs",
@@ -504,7 +519,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 39,
               "Title": "notification_24.png - PNG [24x24, 32 bit, PNG]",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\image\\notification_24.png",
               "RelativeDocumentMoniker": "image\\notification_24.png",
@@ -516,32 +531,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 4,
               "Title": "db.sql",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\db.sql",
               "RelativeDocumentMoniker": "db.sql",
               "ToolTip": "D:\\GitHub\\QLHS\\db.sql",
               "RelativeToolTip": "db.sql",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAvwB4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABoBAAAAAAAAAAAUwDMBAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-11-17T07:47:34.658Z"
+              "WhenOpened": "2025-11-17T07:47:34.658Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "UC_HocSinh_ChiTietThongBao.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.cs",
               "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.cs",
               "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAiwCAAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAAAB4AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-23T07:42:11.075Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 20,
               "Title": "calendar_20.png - PNG [20x20, 32 bit, PNG]",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\Resources\\calendar_20.png",
               "RelativeDocumentMoniker": "GUI\\Resources\\calendar_20.png",
@@ -552,20 +568,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 1,
               "Title": "Resources.Designer.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\Properties\\Resources.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\Properties\\Resources.Designer.cs",
               "ToolTip": "D:\\GitHub\\QLHS\\GUI\\Properties\\Resources.Designer.cs",
               "RelativeToolTip": "GUI\\Properties\\Resources.Designer.cs",
-              "ViewState": "AgIAAPkAAAAAAAAAAAAqwBgAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAO8AAAAAAAAAAAAqwBgAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-25T14:43:35.968Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "UC_HocSinh_ThongBao.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_HocSinh_ThongBao.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_ThongBao.cs",
@@ -573,12 +589,11 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_ThongBao.cs",
               "ViewState": "AgIAAPcAAAAAAAAAAAAIwB0BAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T06:28:43.344Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T06:28:43.344Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "UC_HocSinh_ChiTietThongBao.Designer.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.Designer.cs",
@@ -586,24 +601,22 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.Designer.cs",
               "ViewState": "AgIAACkAAAAAAAAAAAAIwJQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T07:38:00.208Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T07:38:00.208Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 27,
               "Title": "UC_HocSinh_ChiTietThongBao.cs [Design]",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.cs",
               "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.cs [Design]",
               "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T07:37:50.069Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-11-23T07:37:50.069Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 28,
               "Title": "NotificationBUS.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\BUS\\NotificationBUS.cs",
               "RelativeDocumentMoniker": "BUS\\NotificationBUS.cs",
@@ -615,7 +628,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 29,
               "Title": "NotificationDAO.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\DAO\\NotificationDAO.cs",
               "RelativeDocumentMoniker": "DAO\\NotificationDAO.cs",
@@ -627,7 +640,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 30,
               "Title": "NotificationDTO.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\DTO\\NotificationDTO.cs",
               "RelativeDocumentMoniker": "DTO\\NotificationDTO.cs",
@@ -639,7 +652,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 38,
               "Title": "nhapngaynghi_24.png - PNG [24x24, 32 bit, PNG]",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\Resources\\nhapngaynghi_24.png",
               "RelativeDocumentMoniker": "GUI\\Resources\\nhapngaynghi_24.png",
@@ -650,7 +663,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "Sidebar.Designer.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\Sidebar.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\Sidebar.Designer.cs",
@@ -662,19 +675,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "UC_HocSinh_ThongBao.cs [Design]",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_HocSinh_ThongBao.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_ThongBao.cs",
               "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_HocSinh_ThongBao.cs [Design]",
               "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_ThongBao.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T06:23:20.785Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-11-23T06:23:20.785Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "UC_HocSinh_TKB.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_HocSinh_TKB.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_TKB.cs",
@@ -682,12 +694,11 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_TKB.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAuwOEAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T18:00:27.625Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-22T18:00:27.625Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 41,
               "Title": "MainForm.Designer.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\MainForm.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\MainForm.Designer.cs",
@@ -695,12 +706,11 @@
               "RelativeToolTip": "GUI\\MainForm.Designer.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAQwEwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T05:13:49.024Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T05:13:49.024Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "UC_HocSinh_HocPhi.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_HocSinh_HocPhi.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_HocPhi.cs",
@@ -708,12 +718,11 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_HocPhi.cs",
               "ViewState": "AgIAABkAAAAAAAAAAAA5wDAAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T03:18:06.52Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T03:18:06.52Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "TuitionBUS.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\BUS\\TuitionBUS.cs",
               "RelativeDocumentMoniker": "BUS\\TuitionBUS.cs",
@@ -725,7 +734,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 44,
               "Title": "TuitionDAO.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\DAO\\TuitionDAO.cs",
               "RelativeDocumentMoniker": "DAO\\TuitionDAO.cs",
@@ -737,7 +746,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 46,
               "Title": "TuitionDTO.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\DTO\\TuitionDTO.cs",
               "RelativeDocumentMoniker": "DTO\\TuitionDTO.cs",
@@ -749,7 +758,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "UC_HocSinh_HocPhi.Designer.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_HocSinh_HocPhi.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_HocPhi.Designer.cs",
@@ -757,24 +766,22 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_HocPhi.Designer.cs",
               "ViewState": "AgIAAH4AAAAAAAAAAAAYwAAAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T03:17:06.35Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T03:17:06.35Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "UC_HocSinh_HocPhi.cs [Design]",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_HocSinh_HocPhi.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_HocPhi.cs",
               "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_HocSinh_HocPhi.cs [Design]",
               "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_HocPhi.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T03:13:23.536Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-11-23T03:13:23.536Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 49,
               "Title": "TimetableBUS.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\BUS\\TimetableBUS.cs",
               "RelativeDocumentMoniker": "BUS\\TimetableBUS.cs",
@@ -786,7 +793,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 47,
               "Title": "TimetableDAO.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\DAO\\TimetableDAO.cs",
               "RelativeDocumentMoniker": "DAO\\TimetableDAO.cs",
@@ -798,7 +805,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 52,
               "Title": "Login.cs [Design]",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\Login.cs",
               "RelativeDocumentMoniker": "GUI\\Login.cs",
@@ -809,7 +816,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 53,
               "Title": "Login.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\Login.cs",
               "RelativeDocumentMoniker": "GUI\\Login.cs",
@@ -821,7 +828,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 54,
               "Title": "Login.Designer.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\Login.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\Login.Designer.cs",
@@ -833,7 +840,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 50,
               "Title": "StudentBUS.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\BUS\\StudentBUS.cs",
               "RelativeDocumentMoniker": "BUS\\StudentBUS.cs",
@@ -845,7 +852,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 45,
               "Title": "StudentDAO.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\DAO\\StudentDAO.cs",
               "RelativeDocumentMoniker": "DAO\\StudentDAO.cs",
@@ -857,7 +864,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 51,
               "Title": "SemesterBUS.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\BUS\\SemesterBUS.cs",
               "RelativeDocumentMoniker": "BUS\\SemesterBUS.cs",
@@ -869,7 +876,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 57,
               "Title": "UC_HocSinh_TKB.resx",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_HocSinh_TKB.resx",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_TKB.resx",
@@ -877,12 +884,11 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_TKB.resx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-11-22T18:10:26.038Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-22T18:10:26.038Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "UC_HocSinh_TKB.resx",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_HocSinh_TKB.resx",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_TKB.resx",
@@ -890,12 +896,11 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_TKB.resx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-11-22T18:02:23.698Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-22T18:02:23.698Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "UC_HocSinh_TKB.Designer.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_HocSinh_TKB.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_TKB.Designer.cs",
@@ -903,12 +908,11 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_TKB.Designer.cs",
               "ViewState": "AgIAAJoAAAAAAAAAAAAYwHwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T18:00:58.33Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-22T18:00:58.33Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 48,
               "Title": "DBconnect.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\DAO\\DBconnect.cs",
               "RelativeDocumentMoniker": "DAO\\DBconnect.cs",
@@ -920,18 +924,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 2,
               "Title": "UC_GVCN_QLHS.cs [Design]",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_GVCN_QLHS.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN_QLHS.cs",
               "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_GVCN_QLHS.cs [Design]",
               "RelativeToolTip": "GUI\\UserControls\\UC_GVCN_QLHS.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T07:25:36.792Z"
+              "WhenOpened": "2025-11-17T07:25:36.792Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 40,
               "Title": "UC_GVCN_NS.cs [Design]",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_GVCN_NS.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN_NS.cs",
@@ -942,7 +947,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "MainForm.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\MainForm.cs",
               "RelativeDocumentMoniker": "GUI\\MainForm.cs",
@@ -950,24 +955,22 @@
               "RelativeToolTip": "GUI\\MainForm.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAAwFAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T07:38:44.449Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-17T07:38:44.449Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 35,
               "Title": "MainForm.cs [Design]",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\MainForm.cs",
               "RelativeDocumentMoniker": "GUI\\MainForm.cs",
               "ToolTip": "D:\\GitHub\\QLHS\\GUI\\MainForm.cs [Design]",
               "RelativeToolTip": "GUI\\MainForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T11:12:13.953Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-11-17T11:12:13.953Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 59,
               "Title": "AddUser.cs [Design]",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\AddUser.cs",
               "RelativeDocumentMoniker": "GUI\\AddUser.cs",
@@ -978,7 +981,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 104,
               "Title": "UC_GVCN_Tbao.cs [Design]",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_GVCN_Tbao.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN_Tbao.cs",
@@ -989,7 +992,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 26,
               "Title": "Sidebar.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\Sidebar.cs",
               "RelativeDocumentMoniker": "GUI\\Sidebar.cs",
@@ -1001,7 +1004,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 36,
               "Title": "Sidebar.cs [Design]",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\Sidebar.cs",
               "RelativeDocumentMoniker": "GUI\\Sidebar.cs",
@@ -1023,7 +1026,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 33,
               "Title": "UC_HocSinh_Diem.cs [Design]",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_HocSinh_Diem.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_Diem.cs",
@@ -1056,39 +1059,36 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 19,
               "Title": "UC_PhuHuynh_HocPhi.cs [Design]",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_PhuHuynh_HocPhi.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_PhuHuynh_HocPhi.cs",
               "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_PhuHuynh_HocPhi.cs [Design]",
               "RelativeToolTip": "GUI\\UserControls\\UC_PhuHuynh_HocPhi.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T07:29:28.506Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-11-17T07:29:28.506Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
               "Title": "UC_PhuHuynh_NhanXet.cs [Design]",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_PhuHuynh_NhanXet.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_PhuHuynh_NhanXet.cs",
               "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_PhuHuynh_NhanXet.cs [Design]",
               "RelativeToolTip": "GUI\\UserControls\\UC_PhuHuynh_NhanXet.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T11:09:00.697Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-11-17T11:09:00.697Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 18,
               "Title": "UC_PhuHuynh_Thongtin.cs [Design]",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_PhuHuynh_Thongtin.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_PhuHuynh_Thongtin.cs",
               "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_PhuHuynh_Thongtin.cs [Design]",
               "RelativeToolTip": "GUI\\UserControls\\UC_PhuHuynh_Thongtin.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T07:29:30.625Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-11-17T07:29:30.625Z"
             },
             {
               "$type": "Document",
@@ -1114,7 +1114,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 58,
               "Title": "UC_Admin_PhanCong_gvcn.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_PhanCong_gvcn.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_PhanCong_gvcn.cs",
@@ -1122,22 +1122,24 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_Admin_PhanCong_gvcn.cs",
               "ViewState": "AgIAAHIAAAAAAAAAAADwv4IAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T10:40:15.051Z"
+              "WhenOpened": "2025-11-17T10:40:15.051Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 5,
               "Title": "UC_Admin_PhanCong_gvcn.cs [Design]",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_PhanCong_gvcn.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_PhanCong_gvcn.cs",
               "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_PhanCong_gvcn.cs [Design]",
               "RelativeToolTip": "GUI\\UserControls\\UC_Admin_PhanCong_gvcn.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T10:29:32.286Z"
+              "WhenOpened": "2025-11-17T10:29:32.286Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 55,
               "Title": "HomeroomAssignmentDAO.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\DAO\\HomeroomAssignmentDAO.cs",
               "RelativeDocumentMoniker": "DAO\\HomeroomAssignmentDAO.cs",
@@ -1173,7 +1175,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 42,
               "Title": "SemesterDAO.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\DAO\\SemesterDAO.cs",
               "RelativeDocumentMoniker": "DAO\\SemesterDAO.cs",
@@ -1185,7 +1187,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
               "Title": "UserDAO.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\DAO\\UserDAO.cs",
               "RelativeDocumentMoniker": "DAO\\UserDAO.cs",
@@ -1253,7 +1255,8 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_Admin_PhanCong_gvcn.Designer.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAkwOgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T10:40:42.281Z"
+              "WhenOpened": "2025-11-17T10:40:42.281Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1383,7 +1386,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 56,
               "Title": "TeacherAssignmentBUS.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\BUS\\TeacherAssignmentBUS.cs",
               "RelativeDocumentMoniker": "BUS\\TeacherAssignmentBUS.cs",
@@ -1453,7 +1456,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 34,
               "Title": "UC_Admin_NamHoc_TKB.cs [Design]",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_NamHoc_TKB.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_NamHoc_TKB.cs",
@@ -1488,7 +1491,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 43,
               "Title": "SemesterDTO.cs",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\DTO\\SemesterDTO.cs",
               "RelativeDocumentMoniker": "DTO\\SemesterDTO.cs",
@@ -1594,7 +1597,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 21,
               "Title": "UC_GVCN_DS.cs [Design]",
               "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_GVCN_DS.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN_DS.cs",

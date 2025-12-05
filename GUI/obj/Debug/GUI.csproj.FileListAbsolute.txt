@@ -305,7 +305,6 @@ D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_GVCN_DS.resources
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_GVCN_HocPhi.resources
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_GVCN_NS.resources
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_GVCN_QLHS.resources
-D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_GVCN_Tbao.resources
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_HocSinh_Diem.resources
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_HocSinh_TKB.resources
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_Home.resources
@@ -412,3 +411,17 @@ C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\S
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\EPPlus.xml
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\System.Security.Cryptography.Xml.xml
+D:\GitHub\QLHS\GUI\bin\Debug\EPPlus.dll
+D:\GitHub\QLHS\GUI\bin\Debug\EPPlus.Interfaces.dll
+D:\GitHub\QLHS\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\GitHub\QLHS\GUI\bin\Debug\System.ComponentModel.Annotations.dll
+D:\GitHub\QLHS\GUI\bin\Debug\System.Security.Cryptography.Xml.dll
+D:\GitHub\QLHS\GUI\bin\Debug\EPPlus.xml
+D:\GitHub\QLHS\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\GitHub\QLHS\GUI\bin\Debug\System.Security.Cryptography.Xml.xml
+D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_GVCN_DiemDanh.resources
+D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_GVCN_HanhKiem.resources
+D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_GVCN_ThongBao.resources
+D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_HocSinh_DoiMatKhau.resources
+D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_HocSinh_ThongTin.resources
+D:\GitHub\QLHS\GUI\obj\Debug\GUI.XetHanhKiem.resources
