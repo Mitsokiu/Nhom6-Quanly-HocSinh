@@ -2,6 +2,7 @@
 using DTO;
 using System.Data;
 using System;
+using System.Collections.Generic;
 
 namespace BUS
 {
@@ -9,7 +10,10 @@ namespace BUS
     {
         private StudentDAO dao = new StudentDAO();
 
-        public int GetClassIdByUserId(int userId) => dao.GetClassIdByUserId(userId);
+        public int GetClassIdByUserId(int userId)
+        {
+            return dao.GetClassIdByUserId(userId);
+        }
         public List<StudentDTO> GetAllStudents() => dao.GetStudents();
         public List<StudentDTO> SearchStudents(string keyword)
         {

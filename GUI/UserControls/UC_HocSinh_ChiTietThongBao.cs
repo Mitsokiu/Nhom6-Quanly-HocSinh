@@ -27,10 +27,10 @@ namespace GUI.UserControls
             // 2. Sự kiện vẽ bo góc cho khung trắng (Card)
             pnlCard.Paint += PnlCard_Paint;
 
-            picUser.Image = Properties.Resources.sender_20;
-            picCalendar.Image = Properties.Resources.calendar_20;
-            picUser.SizeMode = PictureBoxSizeMode.Zoom;
-            picCalendar.SizeMode = PictureBoxSizeMode.Zoom;
+            //picUser.Image = Properties.Resources.sender_20;
+            //picCalendar.Image = Properties.Resources.calendar_20;
+            //picUser.SizeMode = PictureBoxSizeMode.Zoom;
+            //picCalendar.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
         // Constructor mặc định (để Designer không lỗi)

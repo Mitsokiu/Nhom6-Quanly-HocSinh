@@ -344,7 +344,6 @@ C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\G
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_GVCN_HocPhi.resources
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_GVCN_NS.resources
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_GVCN_QLHS.resources
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_GVCN_Tbao.resources
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_HocSinh_Diem.resources
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_HocSinh_DoiMatKhau.resources
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_HocSinh_ThongTin.resources
@@ -405,3 +404,11 @@ C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\G
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_GVCN_HanhKiem.resources
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_GVCN_ThongBao.resources
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.XetHanhKiem.resources
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\EPPlus.dll
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\System.Security.Cryptography.Xml.dll
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\EPPlus.xml
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\System.Security.Cryptography.Xml.xml
