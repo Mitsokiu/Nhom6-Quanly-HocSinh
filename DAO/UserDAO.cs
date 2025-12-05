@@ -1,4 +1,5 @@
-﻿using DTO;
+﻿using DAO;
+using DTO;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -272,7 +273,6 @@ namespace DAO
         }
 
         public bool CheckPasswordById(int userId, string oldPassword)
-        public UserDTO GetUserById(int userId)
         {
             using (var conn = DbConnect.GetConnection())
             {
@@ -308,32 +308,37 @@ namespace DAO
                 }
             }
         }
-                string query = "SELECT * FROM users WHERE user_id = @userId";
-                using (var cmd = new MySqlCommand(query, conn))
+
+        public UserDTO GetUserById(int userId)
+{
+        using (var conn = DbConnect.GetConnection())
+        {
+        conn.Open();
+        string query = "SELECT * FROM users WHERE user_id = @userId";
+        using (var cmd = new MySqlCommand(query, conn))
+        {
+            cmd.Parameters.AddWithValue("@userId", userId);
+            using (var reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
                 {
-                    cmd.Parameters.AddWithValue("@userId", userId);
-                    using (var reader = cmd.ExecuteReader())
+                    return new UserDTO
                     {
-                        if (reader.Read())
-                        {
-                            return new UserDTO
-                            {
-                                UserId = reader.GetInt32("user_id"),
-                                Username = reader.GetString("username"),
-                                Fullname = reader.GetString("fullname"),
-                                RoleName = reader["role_id"] != DBNull.Value ? reader.GetString("role_id") : "",
-                                Password = reader.GetString("password"),
-                                Email = reader["email"] != DBNull.Value ? reader.GetString("email") : "",
-                                Phone = reader["phone"] != DBNull.Value ? reader.GetString("phone") : "",
-                                Avatar = reader["avatar"] != DBNull.Value ? reader.GetString("avatar") : "",
-                                CreatedAt = reader["created_at"] != DBNull.Value ? reader.GetDateTime("created_at") : DateTime.MinValue
-                            };
-                        }
-                    }
+                        UserId = reader.GetInt32("user_id"),
+                        Username = reader.GetString("username"),
+                        Fullname = reader.GetString("fullname"),
+                        RoleName = reader["role_id"] != DBNull.Value ? reader.GetString("role_id") : "",
+                        Password = reader.GetString("password"),
+                        Email = reader["email"] != DBNull.Value ? reader.GetString("email") : "",
+                        Phone = reader["phone"] != DBNull.Value ? reader.GetString("phone") : "",
+                        Avatar = reader["avatar"] != DBNull.Value ? reader.GetString("avatar") : "",
+                        CreatedAt = reader["created_at"] != DBNull.Value ? reader.GetDateTime("created_at") : DateTime.MinValue
+                    };
                 }
             }
-            return null;
         }
-
+    }
+    return null;
+}
     }
 }

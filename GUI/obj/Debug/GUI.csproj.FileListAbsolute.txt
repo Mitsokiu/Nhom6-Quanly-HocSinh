@@ -401,3 +401,7 @@ C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\S
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.csproj.CopyComplete
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.exe
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.pdb
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_GVCN_DiemDanh.resources
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_GVCN_HanhKiem.resources
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_GVCN_ThongBao.resources
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.XetHanhKiem.resources
