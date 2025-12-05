@@ -7,7 +7,6 @@ namespace DAO
 {
     public class ScoreDAO
     {
-        // Hàm lấy dữ liệu thô (Dọc) từ Database
         public DataTable GetRawScoreData(int studentId, int semesterId)
         {
             string query = @"SELECT sub.name AS SubjectName,

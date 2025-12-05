@@ -7,16 +7,11 @@ namespace DAO
 {
     public class EvaluationDAO
     {
-        // 1. Lấy danh sách học sinh lớp chủ nhiệm + Hạnh kiểm cũ
         public List<StudentEvaluationDTO> GetListForEvaluation(int teacherId, int semesterId)
         {
             List<StudentEvaluationDTO> list = new List<StudentEvaluationDTO>();
 
-            // SQL Logic:
-            // - Tìm năm học dựa vào semesterId.
-            // - Tìm lớp mà GV (teacherId) chủ nhiệm trong năm đó.
-            // - Lấy danh sách học sinh lớp đó.
-            // - LEFT JOIN bảng đánh giá để lấy kết quả cũ (nếu có).
+
 
             string query = @"
                 SELECT 
@@ -76,10 +71,8 @@ namespace DAO
             return list;
         }
 
-        // 2. Lưu đánh giá (Insert hoặc Update)
         public bool SaveEvaluation(int studentId, int classId, int semesterId, string conduct, string comment)
         {
-            // Dùng cú pháp đặc biệt của MySQL: Nếu trùng khóa (Student+Class+Semester) thì tự động Update
             string query = @"
                 INSERT INTO student_evaluations (student_id, class_id, semester_id, conduct, teacher_comment)
                 VALUES (@param0, @param1, @param2, @param3, @param4)
@@ -90,10 +83,8 @@ namespace DAO
             return DbConnect.ExecuteNonQuery(query, new object[] { studentId, classId, semesterId, conduct, comment }) > 0;
         }
 
-        // 3. Lấy ngày kết thúc học kỳ (Để kiểm tra khóa sổ)
         public DateTime GetSemesterEndDate(int semesterId)
         {
-            // SỬA: Dùng @param0 thay vì @id
             string query = "SELECT end_date FROM semesters WHERE semester_id = @param0";
             object result = DbConnect.ExecuteScalar(query, new object[] { semesterId });
             if (result != null && result != DBNull.Value)

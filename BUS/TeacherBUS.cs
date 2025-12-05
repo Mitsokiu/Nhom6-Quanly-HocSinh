@@ -22,7 +22,6 @@ namespace BUS
             return dao.GetHomeroomClassId(teacherUserId);
         }
 
-        // Hàm lấy ID năm học hiện tại (dùng cho StudentDAO khi thêm học sinh)
         public int GetCurrentYearId()
         {
             return dao.GetCurrentYearId();

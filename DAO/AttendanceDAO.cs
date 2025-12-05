@@ -7,13 +7,11 @@ namespace DAO
 {
     public class AttendanceDAO
     {
-        // 1. Lấy danh sách học sinh + Trạng thái điểm danh (SỬA LẠI THAM SỐ)
         public List<AttendanceDTO> GetAttendanceList(int teacherId, DateTime date, int semesterId)
         {
             List<AttendanceDTO> list = new List<AttendanceDTO>();
             string dateStr = date.ToString("yyyy-MM-dd");
 
-            // Thứ tự tham số truyền vào DbConnect: [0]=semesterId, [1]=dateStr, [2]=teacherId
             string query = @"
                 SELECT 
                     s.student_id,
@@ -65,10 +63,8 @@ namespace DAO
             return list;
         }
 
-        // 2. Lưu điểm danh (SỬA LẠI THAM SỐ)
         public bool SaveAttendance(int studentId, int classId, DateTime date, string status, string note)
         {
-            // Thứ tự tham số: [0]=sid, [1]=cid, [2]=date, [3]=status, [4]=note
             string query = @"
                 INSERT INTO attendance (student_id, class_id, date, status, note)
                 VALUES (@param0, @param1, @param2, @param3, @param4)
@@ -85,10 +81,8 @@ namespace DAO
             }) > 0;
         }
 
-        // 3. Lấy tên lớp chủ nhiệm (SỬA LẠI THAM SỐ)
         public string GetClassName(int teacherId, int semesterId)
         {
-            // Thứ tự: [0]=semesterId, [1]=teacherId
             string query = @"
                 SELECT c.class_name 
                 FROM homeroom_assignments ha
@@ -102,10 +96,8 @@ namespace DAO
             return "...";
         }
 
-        // 4. Lấy lịch sử (SỬA LẠI THAM SỐ)
         public DataTable GetStudentHistory(int studentId)
         {
-            // Thứ tự: [0]=studentId
             string query = @"
                 SELECT 
                 DATE_FORMAT(date, '%d/%m/%Y') AS DateFormatted,
@@ -124,17 +116,14 @@ namespace DAO
             return DbConnect.ExecuteQuery(query, new object[] { studentId });
         }
 
-        // 5. Xóa điểm danh (SỬA LẠI THAM SỐ)
         public bool DeleteAttendance(int studentId, DateTime date)
         {
-            // Thứ tự: [0]=studentId, [1]=date
             string query = "DELETE FROM attendance WHERE student_id = @param0 AND date = @param1";
             return DbConnect.ExecuteNonQuery(query, new object[] { studentId, date.ToString("yyyy-MM-dd") }) > 0;
         }
 
         public DataTable GetDailyAbsenceList(int teacherId, int semesterId, DateTime date)
         {
-            // Query này nối bảng để tìm lớp của giáo viên, sau đó tìm những ai vắng trong ngày đó
             string query = @"
                 SELECT 
                     u.fullname AS StudentName,

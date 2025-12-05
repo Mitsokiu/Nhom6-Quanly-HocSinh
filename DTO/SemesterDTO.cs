@@ -11,7 +11,6 @@ namespace DTO
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
 
-        // Property phụ để hiển thị trên ComboBox
         public string DisplayName => $"{SemesterName} - Năm học {YearName}";
     }
 }

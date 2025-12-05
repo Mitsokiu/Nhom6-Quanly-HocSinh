@@ -28,7 +28,6 @@ namespace BUS
                 SubjectScoreDTO subjectScoreDTO = new SubjectScoreDTO();
                 subjectScoreDTO.SubjectName = group.Key;
 
-                // Lấy các đầu điểm (Parse dữ liệu từ SQL)
                 foreach (var row in group)
                 {
                     string type = row["score_type"].ToString();
@@ -40,7 +39,6 @@ namespace BUS
                     else if (type == "final") subjectScoreDTO.FinalScore = val;
                 }
 
-                // 4. Tính Điểm Trung Bình
                 subjectScoreDTO.AverageScore = CalculateAverage(subjectScoreDTO);
 
                 diemHS.Add(subjectScoreDTO);
@@ -74,7 +72,6 @@ namespace BUS
                 tongHeSo += 3;
             }
 
-            // Nếu chưa có cột điểm nào thì trả về null (ô trống)
             if (tongHeSo == 0) return null;
 
             return (float)Math.Round(tongDiem / tongHeSo, 1);
