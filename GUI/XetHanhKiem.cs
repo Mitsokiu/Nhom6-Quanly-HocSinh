@@ -27,7 +27,6 @@ namespace GUI
 
         private void LoadData()
         {
-            // Đổ dữ liệu từ DTO vào Form
             lblName.Text = dto.FullName;
             lblInfo.Text = $"Mã số: {dto.StudentCode}";
 
@@ -54,7 +53,6 @@ namespace GUI
                 return;
             }
 
-            // Lấy dữ liệu mới
             string newConduct = cbbConduct.SelectedItem != null ? cbbConduct.SelectedItem.ToString() : "Tốt";
             string newComment = txtComment.Text.Trim();
 

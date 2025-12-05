@@ -116,6 +116,15 @@ namespace BUS
                 profile.TeacherName = row["gvcn_name"].ToString();
                 profile.TeacherPhone = row["gvcn_phone"].ToString();
 
+                if (row.Table.Columns.Contains("avatar") && row["avatar"] != DBNull.Value)
+                {
+                    profile.Avatar = row["avatar"].ToString();
+                }
+                else
+                {
+                    profile.Avatar = "";
+                }
+
                 DataTable dtParents = dao.GetStudentParents(sId);
                 foreach (DataRow pRow in dtParents.Rows)
                 {

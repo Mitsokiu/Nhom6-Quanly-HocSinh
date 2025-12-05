@@ -11,7 +11,6 @@ namespace GUI.UserControls
         private int loggedInUserId;
         private UserBUS userBUS = new UserBUS();
         private ErrorProvider errorProvider;
-        // Màu viền nhẹ (Xám nhạt)
         private Color borderColor = Color.FromArgb(210, 210, 210);
 
         public UC_HocSinh_DoiMatKhau(int userId)
@@ -20,18 +19,16 @@ namespace GUI.UserControls
             this.loggedInUserId = userId;
 
             errorProvider = new ErrorProvider();
-            errorProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;// Tắt nhấp nháy cho đỡ rối mắt
+            errorProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
 
             this.Resize += UC_HocSinh_DoiMatKhau_Resize;
 
-            // Gọi hàm làm đẹp
             StyleComponents();
             AddEvents();
         }
 
         private void UC_HocSinh_DoiMatKhau_Resize(object sender, EventArgs e)
         {
-            // Căn giữa màn hình
             if (pnlCard != null)
             {
                 pnlCard.Location = new Point(
@@ -43,17 +40,13 @@ namespace GUI.UserControls
 
         private void StyleComponents()
         {
-            // 1. Bo tròn + Tô viền cho Card (SỬA Ở ĐÂY)
             StyleCardWithBorder(pnlCard, 20);
 
-            // 2. Icon tròn
             MakeCircular(pnlIconWrapper);
 
-            // 3. Nút bấm
             MakeRounded(btnLuu, 10);
             MakeRounded(btnHuy, 10);
 
-            // 4. Textbox cao hơn cho đẹp
             StyleTextBox(txtMatKhauCu);
             StyleTextBox(txtMatKhauMoi);
             StyleTextBox(txtNhapLaiMoi);
@@ -65,7 +58,6 @@ namespace GUI.UserControls
             tb.Height = 35;
         }
 
-        // --- HÀM MỚI: Vừa bo tròn, vừa vẽ viền ---
         private void StyleCardWithBorder(Control control, int radius)
         {
             control.Paint += (sender, e) =>
@@ -75,25 +67,22 @@ namespace GUI.UserControls
 
                 e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
 
-                // 1. Cắt bo tròn (Region)
                 Rectangle rect = new Rectangle(0, 0, ctrl.Width, ctrl.Height);
                 using (GraphicsPath path = GetRoundedPath(rect, radius))
                 {
                     ctrl.Region = new Region(path);
                 }
 
-                // 2. Vẽ viền màu (DrawPath)
-                // Vẽ lùi vào 1px để không bị mất nét do Region cắt
+              
                 Rectangle rectBorder = new Rectangle(0, 0, ctrl.Width - 1, ctrl.Height - 1);
                 using (GraphicsPath pathBorder = GetRoundedPath(rectBorder, radius))
-                using (Pen pen = new Pen(borderColor, 1)) // <-- Màu viền nhẹ ở đây
+                using (Pen pen = new Pen(borderColor, 1)) 
                 {
                     e.Graphics.DrawPath(pen, pathBorder);
                 }
             };
         }
 
-        // Hàm cũ: Chỉ bo tròn (dùng cho nút bấm)
         private void MakeRounded(Control control, int radius)
         {
             control.Paint += (sender, e) =>
@@ -160,7 +149,6 @@ namespace GUI.UserControls
                 }
                 else
                 {
-                    // Các lỗi chung khác thì hiện MessageBox
                     MessageBox.Show(result, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             };

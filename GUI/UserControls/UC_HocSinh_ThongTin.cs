@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Windows.Forms;
 
 namespace GUI.UserControls
@@ -15,24 +16,19 @@ namespace GUI.UserControls
         private int loggedInUserId;
 
 
-        // --- BẢNG MÀU ---
         private readonly Color clrBackground = Color.FromArgb(245, 247, 250);
         private readonly Color clrCard = Color.White;
-        private readonly Color clrTextMain = Color.FromArgb(17, 24, 39);      // Màu chữ nội dung (Đậm)
+        private readonly Color clrTextMain = Color.FromArgb(17, 24, 39);      
 
-        // [YÊU CẦU 1] Giữ màu xám ban đầu (không đổi sang đen)
         private readonly Color clrTextLabel = Color.FromArgb(75, 85, 99);
 
         private readonly Color clrInputBg = Color.FromArgb(243, 244, 246);
         private readonly Color clrBorder = Color.FromArgb(180, 180, 180);
 
-        // [YÊU CẦU 2] Chiều cao ô text tăng lên một xíu (36px là vừa đẹp, mặc định chỉ tầm 22px)
         private const int INPUT_HEIGHT = 36;
 
-        // --- FONT ---
         private readonly Font fontTitle = new Font("Segoe UI", 16, FontStyle.Bold);
 
-        // [YÊU CẦU 1] Thêm FontStyle.Bold để in đậm label
         private readonly Font fontLabel = new Font("Segoe UI", 11, FontStyle.Bold);
 
         private readonly Font fontInput = new Font("Segoe UI", 12, FontStyle.Regular);
@@ -42,23 +38,20 @@ namespace GUI.UserControls
             InitializeComponent();
             this.loggedInUserId = userId;
             SetupModernUI();
-            LoadRealData();
+            LoadData();
 
-            // Tự động căn giữa khi resize form
             this.Resize += (s, e) => CenterAllPanels();
         }
 
-        private void LoadRealData()
+        private void LoadData()
         {
             StudentProfileDTO profile = studentBUS.GetStudentProfile(loggedInUserId);
-
+            LoadStudentAvatar(profile.Avatar, profile.Gender);
             if (profile == null) return;
 
-            // --- Thông tin học sinh ---
             tbMaHS.Text = profile.StudentCode;
             tbHoTen.Text = profile.FullName;
 
-            // Xử lý DateOfBirth: Kiểm tra null trước khi hiển thị
             tbNgaySinh.Text = profile.DateOfBirth.HasValue
                               ? profile.DateOfBirth.Value.ToString("dd/MM/yyyy")
                               : "";
@@ -67,46 +60,103 @@ namespace GUI.UserControls
             tbLop.Text = profile.ClassName;
             tbNienKhoa.Text = profile.SchoolYear;
 
-            // --- Thông tin GVCN ---
             tbGVCN.Text = profile.TeacherName;       
             tbSDTGVCN.Text = profile.TeacherPhone;   
 
-            // --- Thông tin Liên hệ ---
             tbDiaChi.Text = profile.Address;
             tbSDTHS.Text = profile.Phone;
             tbEmail.Text = profile.Email;
 
-            // --- Thông tin Cha ---
             tbHoTenCha.Text = profile.FatherName;
             tbSDTCha.Text = profile.FatherPhone;
             tbNgheNghiepCha.Text = profile.FatherJob;
             tbEmailCha.Text = profile.FatherEmail;
 
-            // --- Thông tin Mẹ ---
             if (tbHoTenMe != null) tbHoTenMe.Text = profile.MotherName;
             tbNgheNghiepMe.Text = profile.MotherJob;
             tbSDTMe.Text = profile.MotherPhone;
             if (tbEmailMe != null) tbEmailMe.Text = profile.MotherEmail;
         }
 
+        private void LoadStudentAvatar(string avatarFileName, string genderText)
+        {
+            try
+            {
+                string folderPath = GetProjectAvatarPath();
+                string defaultImg = (genderText == "Nam" || genderText == "Male") ? "student_boy.png" : "student_girl.png";
+
+                string targetFile = defaultImg;
+                if (!string.IsNullOrEmpty(avatarFileName))
+                {
+                    targetFile = avatarFileName;
+                }
+
+                string fullPath = Path.Combine(folderPath, targetFile);
+
+                if (!File.Exists(fullPath))
+                {
+                    fullPath = Path.Combine(folderPath, defaultImg);
+                }
+
+                if (File.Exists(fullPath))
+                {
+                    if (pictureBox1.Image != null) pictureBox1.Image.Dispose();
+
+                    pictureBox1.Image = Image.FromFile(fullPath);
+                    MakeAvatarCircular();
+                }
+            }
+            catch (Exception)
+            {
+                // Nếu lỗi quá thì bỏ qua
+            }
+        }
+
+        private string GetProjectAvatarPath()
+        {
+            string currentDir = Application.StartupPath;
+            for (int i = 0; i < 5; i++)
+            {
+                string tryPath = Path.Combine(currentDir, "Avatars");
+                if (Directory.Exists(tryPath)) return tryPath;
+
+                DirectoryInfo parent = Directory.GetParent(currentDir);
+                if (parent == null) break;
+                currentDir = parent.FullName;
+            }
+            return Path.Combine(Application.StartupPath, "Avatars");
+        }
+
+        private void MakeAvatarCircular()
+        {
+            if (pictureBox1.Image == null) return;
+
+            GraphicsPath path = new GraphicsPath();
+            path.AddEllipse(0, 0, pictureBox1.Width, pictureBox1.Height);
+            pictureBox1.Region = new Region(path);
+        }
+
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            MakeAvatarCircular();
+        }
+
         private void SetupModernUI()
         {
             this.BackColor = clrBackground;
 
-            // 1. Style Card (Khung)
             StyleCard(pCaNhan);
             StyleCard(pLienHe);
             StyleCard(panel1);
 
-            // 2. Avatar
             if (pictureBox1 != null)
             {
-                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                pictureBox1.BorderStyle = BorderStyle.FixedSingle;
+                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom; 
+                pictureBox1.BorderStyle = BorderStyle.None;
             }
 
-            // 3. [QUAN TRỌNG] Làm to Textbox
-            // Phải dùng List gom lại rồi mới xử lý để tránh lỗi
+
             List<TextBox> listTextBox = new List<TextBox>();
             FindTextBoxesRecursive(this, listTextBox);
             foreach (var tb in listTextBox)
@@ -114,28 +164,23 @@ namespace GUI.UserControls
                 UpgradeTextBox(tb);
             }
 
-            // 4. Style Label (Màu xám + In đậm)
             StyleAllLabels(this);
 
-            // 5. Style Tiêu đề lớn
             StyleTitle(lbTitle);
             StyleTitle(lbTitle1);
             StyleTitle(lbTitle2);
 
-            // 6. Thanh kẻ ngang
             if (panel2 != null) panel2.BackColor = Color.FromArgb(220, 220, 220);
 
             CenterAllPanels();
         }
 
-        // --- LOGIC LÀM TO TEXTBOX ---
         private void FindTextBoxesRecursive(Control parent, List<TextBox> result)
         {
             foreach (Control c in parent.Controls)
             {
                 if (c is TextBox tb)
                 {
-                    // Chỉ lấy những cái chưa xử lý
                     if (c.Tag == null || c.Tag.ToString() != "Upgraded")
                     {
                         result.Add(tb);
@@ -152,33 +197,28 @@ namespace GUI.UserControls
         {
             if (tb.Parent == null) return;
 
-            // Tạo Panel bọc ngoài để tăng chiều cao
             Panel pnlWrapper = new Panel();
-            pnlWrapper.Size = new Size(tb.Width, INPUT_HEIGHT); // Set chiều cao 36px
+            pnlWrapper.Size = new Size(tb.Width, INPUT_HEIGHT); 
             pnlWrapper.Location = tb.Location;
             pnlWrapper.BackColor = clrInputBg;
             pnlWrapper.Tag = "Wrapper";
 
-            // Setup TextBox bên trong
             tb.BorderStyle = BorderStyle.None;
             tb.BackColor = clrInputBg;
             tb.ForeColor = clrTextMain;
             tb.Font = fontInput;
             tb.Tag = "Upgraded";
 
-            // Căn giữa TextBox theo chiều dọc trong Panel wrapper
             int yPos = (pnlWrapper.Height - tb.Height) / 2;
-            tb.Location = new Point(10, yPos); // Padding trái 10px
+            tb.Location = new Point(10, yPos);
             tb.Width = pnlWrapper.Width - 15;
 
-            // Đổi cha của TextBox sang Panel mới
             Control originalParent = tb.Parent;
             originalParent.Controls.Add(pnlWrapper);
             pnlWrapper.Controls.Add(tb);
 
             pnlWrapper.BringToFront();
         }
-        // ---------------------------
 
         private void StyleAllLabels(Control parent)
         {
@@ -186,11 +226,10 @@ namespace GUI.UserControls
             {
                 if (c is Label lb)
                 {
-                    // Trừ các tiêu đề lớn ra
                     if (lb.Name != "lbTitle" && lb.Name != "lbTitle1" && lb.Name != "lbTitle2")
                     {
-                        lb.ForeColor = clrTextLabel; // Vẫn màu Xám
-                        lb.Font = fontLabel;         // Nhưng là Bold
+                        lb.ForeColor = clrTextLabel; 
+                        lb.Font = fontLabel;         
                     }
                 }
                 else if (c is Panel) StyleAllLabels(c);
@@ -218,7 +257,7 @@ namespace GUI.UserControls
 
             p.Paint += (s, e) => {
                 Panel pnl = s as Panel;
-                float penWidth = 1.0f; // Viền nét mảnh 1px
+                float penWidth = 1.0f; 
                 float cornerRadius = 15.0f;
 
                 e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;

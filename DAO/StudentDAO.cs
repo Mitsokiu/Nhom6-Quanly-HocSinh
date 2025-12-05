@@ -44,7 +44,7 @@ namespace DAO
         {
             string query = @"
                 SELECT 
-                    s.student_id, u.fullname, u.email, u.phone, 
+                    s.student_id, u.fullname, u.email, u.phone, u.avatar,
                     s.dob, s.gender, s.address, 
                     c.class_name, ay.name AS school_year,
                     teacher.fullname AS gvcn_name, teacher.phone AS gvcn_phone

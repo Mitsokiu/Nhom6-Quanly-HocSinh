@@ -165,7 +165,6 @@
 
         #endregion
 
-        // Khai báo biến (Public hoặc Private tùy chỉnh)
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.Label lblTitleConduct;

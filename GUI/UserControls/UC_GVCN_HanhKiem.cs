@@ -43,7 +43,6 @@ namespace GUI.UserControls
             LoadSemesters();
             cbbHocKy.SelectedIndexChanged += (s, e) => LoadDataFromDB();
 
-            // Search logic
             txtSearch.Text = PLACEHOLDER_TEXT;
             txtSearch.ForeColor = Color.Gray;
             txtSearch.Enter += (s, e) => { if (txtSearch.Text == PLACEHOLDER_TEXT) { txtSearch.Text = ""; txtSearch.ForeColor = Color.Black; } };
@@ -58,11 +57,9 @@ namespace GUI.UserControls
             dgvHanhKiem.Columns.Clear();
             dgvHanhKiem.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
 
-            // Style chung
             DataGridViewCellStyle centerStyle = new DataGridViewCellStyle();
             centerStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            // Cột 2: Mã HS
             dgvHanhKiem.Columns.Add(new DataGridViewTextBoxColumn { 
                 Name = "StudentCode", 
                 HeaderText = "MÃ SỐ", 
@@ -71,7 +68,6 @@ namespace GUI.UserControls
                 DataPropertyName = "StudentCode" 
             });
 
-            // Cột 3: Họ Tên
             dgvHanhKiem.Columns.Add(new DataGridViewTextBoxColumn { 
                 Name = "FullName", 
                 HeaderText = "HỌ VÀ TÊN", 
@@ -80,7 +76,6 @@ namespace GUI.UserControls
                 DataPropertyName = "FullName" 
             });
 
-            // Cột 4: Hạnh Kiểm (Chuyển thành TextBox ReadOnly, vì sửa trong form con rồi)
             var colConduct = new DataGridViewTextBoxColumn { 
                 Name = "Conduct", HeaderText = "HẠNH KIỂM", 
                 Width = 200, 
@@ -89,7 +84,6 @@ namespace GUI.UserControls
             };
             dgvHanhKiem.Columns.Add(colConduct);
 
-            // Cột 5: Nhận Xét
             var colComment = new DataGridViewTextBoxColumn { 
                 Name = "TeacherComment", 
                 HeaderText = "NHẬN XÉT", 
@@ -100,12 +94,10 @@ namespace GUI.UserControls
             };
             dgvHanhKiem.Columns.Add(colComment);
 
-            // Cột 6: HÀNH ĐỘNG (Chứa icon sửa)
             var colAction = new DataGridViewTextBoxColumn { Name = "Action", HeaderText = "HÀNH ĐỘNG", Width = 200, ReadOnly = true };
             colAction.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvHanhKiem.Columns.Add(colAction);
 
-            // Cấu hình chọn dòng (Giống QLHS)
             dgvHanhKiem.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvHanhKiem.MultiSelect = false;
             dgvHanhKiem.RowTemplate.Height = 50;
@@ -114,17 +106,14 @@ namespace GUI.UserControls
  
         private void DgvHanhKiem_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            // Chỉ vẽ cột Action
             if (e.RowIndex >= 0 && e.ColumnIndex == dgvHanhKiem.Columns["Action"].Index)
             {
-                e.Handled = true; // Tự vẽ
-                e.PaintBackground(e.CellBounds, true); // Vẽ nền chuẩn
+                e.Handled = true; 
+                e.PaintBackground(e.CellBounds, true); 
 
-                // Tính vị trí vẽ icon ở giữa ô
                 int x = e.CellBounds.X + (e.CellBounds.Width - ICON_W) / 2;
                 int y = e.CellBounds.Y + (e.CellBounds.Height - ICON_H) / 2;
 
-                // Vẽ icon bút chì (edit_40 là tên resource trong file QLHS bạn có)
                 if (Properties.Resources.edit_40 != null)
                 {
                     e.Graphics.DrawImage(Properties.Resources.edit_40, x, y, ICON_W, ICON_H);
@@ -134,22 +123,17 @@ namespace GUI.UserControls
 
         private void DgvHanhKiem_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            // Check click cột Action
             if (e.RowIndex >= 0 && e.ColumnIndex == dgvHanhKiem.Columns["Action"].Index)
             {
-                // Lấy DTO của dòng đang chọn
                 var dto = dgvHanhKiem.Rows[e.RowIndex].DataBoundItem as StudentEvaluationDTO;
 
                 if (dto != null)
                 {
-                    // Lấy học kỳ hiện tại
                     int semesterId = (int)cbbHocKy.SelectedValue;
 
-                    // MỞ FORM CON ĐỂ SỬA
-                    // Truyền DTO và SemesterId sang form con
+                   
                     using (var frm = new XetHanhKiem(dto, semesterId))
                     {
-                        // Nếu form con trả về OK (Đã lưu) -> Load lại bảng
                         if (frm.ShowDialog() == DialogResult.OK)
                         {
                             LoadDataFromDB();
@@ -159,7 +143,6 @@ namespace GUI.UserControls
             }
         }
 
-        // ... (Các phần LoadData, Pagination, Search bên dưới giữ nguyên) ...
 
         private void LoadSemesters()
         {
@@ -193,10 +176,8 @@ namespace GUI.UserControls
 
             var pageData = displayList.Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
 
-            // Dùng BindingList để grid nhận
             dgvHanhKiem.DataSource = new System.ComponentModel.BindingList<StudentEvaluationDTO>(pageData);
 
-            // Ẩn cột ID
             if (dgvHanhKiem.Columns["StudentId"] != null) dgvHanhKiem.Columns["StudentId"].Visible = false;
             if (dgvHanhKiem.Columns["ClassId"] != null) dgvHanhKiem.Columns["ClassId"].Visible = false;
 
