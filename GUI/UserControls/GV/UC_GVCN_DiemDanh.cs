@@ -197,7 +197,22 @@ namespace GUI.UserControls
         private void LoadData()
         {
             if (cbbYear.SelectedValue == null) return;
-            int semesterId = (int)cbbYear.SelectedValue;
+
+            // 2. KHẮC PHỤC LỖI: Kiểm tra xem SelectedValue có phải là DTO không
+            // (Xảy ra khi ValueMember chưa kịp map trong quá trình khởi tạo)
+            if (cbbYear.SelectedValue is SemesterDTO) return;
+
+            int semesterId;
+            try
+            {
+                semesterId = Convert.ToInt32(cbbYear.SelectedValue);
+            }
+            catch
+            {
+                // Nếu không convert được thì thoát để tránh crash app
+                return;
+            }
+
             DateTime date = dtpDate.Value;
 
             bool isLocked = attBus.IsAttendanceLocked(date);
@@ -210,7 +225,7 @@ namespace GUI.UserControls
             displayList = new List<AttendanceDTO>(fullList);
 
             BindGrid();
-            ClearDetailPanel(); 
+            ClearDetailPanel();
 
             LoadDailyHistory();
         }
