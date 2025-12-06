@@ -36,6 +36,7 @@ namespace GUI.UserControls
 
             dgvHanhKiem.CellPainting += DgvHanhKiem_CellPainting;
             dgvHanhKiem.CellMouseClick += DgvHanhKiem_CellMouseClick;
+            dgvHanhKiem.CellFormatting += DgvHanhKiem_CellFormatting;
 
             this.Load += (s, e) => SetRoundedRegion(pnlSearchBox, 20);
             this.Resize += (s, e) => CenterPagination();
@@ -52,11 +53,31 @@ namespace GUI.UserControls
             InitPaginationEvents();
         }
 
+        private void DgvHanhKiem_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var dto = dgvHanhKiem.Rows[e.RowIndex].DataBoundItem as StudentEvaluationDTO;
+                if (dto == null) return;
+
+                if (!dto.IsSaved)
+                {
+                    e.CellStyle.ForeColor = Color.Gray;
+                    e.CellStyle.Font = new Font(dgvHanhKiem.Font, FontStyle.Italic);    
+                }
+                else
+                {
+                    e.CellStyle.ForeColor = Color.Black;
+                    e.CellStyle.Font = new Font(dgvHanhKiem.Font, FontStyle.Regular);
+                }
+            }
+        }
+
         private void SetupDataGridView()
         {
             dgvHanhKiem.Columns.Clear();
             dgvHanhKiem.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
-
+            dgvHanhKiem.AutoGenerateColumns = false;
             DataGridViewCellStyle centerStyle = new DataGridViewCellStyle();
             centerStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 

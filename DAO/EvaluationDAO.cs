@@ -19,30 +19,23 @@ namespace DAO
                     CONCAT('HS', LPAD(s.student_id, 3, '0')) AS StudentCode,
                     u_student.fullname AS FullName,
                     
-                    -- Nếu chưa chấm thì mặc định là 'Tốt', đã chấm thì lấy giá trị cũ
                     IFNULL(eval.conduct, 'Tốt') AS Conduct, 
                     
-                    -- Nếu chưa nhận xét thì để trống
-                    IFNULL(eval.teacher_comment, '') AS TeacherComment,
-                    
-                    c.class_id
-                
+                    IFNULL(eval.teacher_comment, '') AS TeacherComment, c.class_id,
+
+                    CASE WHEN eval.student_id IS NOT NULL THEN 1 ELSE 0 END AS IsSaved
                 FROM homeroom_assignments ha
                 
-                -- 1. Xác định Năm học từ Học kỳ
                 JOIN semesters sem ON sem.semester_id = @param0 
                                    AND ha.year_id = sem.year_id
                 
-                -- 2. Tìm lớp chủ nhiệm
                 JOIN classes c ON ha.class_id = c.class_id
                 
-                -- 3. Tìm học sinh trong lớp đó (đúng năm học)
                 JOIN student_class sc ON sc.class_id = c.class_id 
                                       AND sc.school_year_id = sem.year_id
                 JOIN students s ON sc.student_id = s.student_id
                 JOIN users u_student ON s.user_id = u_student.user_id
                 
-                -- 4. Lấy kết quả đánh giá cũ (nếu có)
                 LEFT JOIN student_evaluations eval ON eval.student_id = s.student_id 
                                                   AND eval.semester_id = @param0
                                                   AND eval.class_id = c.class_id
@@ -64,6 +57,7 @@ namespace DAO
                 dto.TeacherComment = row["TeacherComment"].ToString();
 
                 dto.ClassId = Convert.ToInt32(row["class_id"]);
+                dto.IsSaved = Convert.ToInt32(row["IsSaved"]) == 1;
 
                 list.Add(dto);
             }
@@ -83,15 +77,20 @@ namespace DAO
             return DbConnect.ExecuteNonQuery(query, new object[] { studentId, classId, semesterId, conduct, comment }) > 0;
         }
 
-        public DateTime GetSemesterEndDate(int semesterId)
+        public SemesterDurationDTO GetSemesterDuration(int semesterId)
         {
-            string query = "SELECT end_date FROM semesters WHERE semester_id = @param0";
-            object result = DbConnect.ExecuteScalar(query, new object[] { semesterId });
-            if (result != null && result != DBNull.Value)
+            string query = "SELECT start_date, end_date FROM semesters WHERE semester_id = @param0";
+            DataTable dt = DbConnect.ExecuteQuery(query, new object[] { semesterId });
+
+            if (dt.Rows.Count > 0)
             {
-                return Convert.ToDateTime(result);
+                return new SemesterDurationDTO
+                {
+                    StartDate = Convert.ToDateTime(dt.Rows[0]["start_date"]),
+                    EndDate = Convert.ToDateTime(dt.Rows[0]["end_date"])
+                };
             }
-            return DateTime.MinValue;
+            return null;
         }
     }
 }

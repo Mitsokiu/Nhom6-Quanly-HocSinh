@@ -10,5 +10,6 @@ namespace DTO
         public string TeacherComment { get; set; }
         public int StudentId { get; set; }
         public int ClassId { get; set; }
+        public bool IsSaved { get; set; }
     }
 }

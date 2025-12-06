@@ -95,7 +95,7 @@
             this.lblTitleComment.Name = "lblTitleComment";
             this.lblTitleComment.Size = new System.Drawing.Size(166, 19);
             this.lblTitleComment.TabIndex = 4;
-            this.lblTitleComment.Text = "Nhận xét của giáo viên:";
+            this.lblTitleComment.Text = "Nhận xét của giáo viên (*):";
             // 
             // txtComment
             // 

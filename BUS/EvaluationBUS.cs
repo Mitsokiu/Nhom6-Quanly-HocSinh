@@ -19,16 +19,31 @@ namespace BUS
             return dao.SaveEvaluation(studentId, classId, semesterId, conduct, comment);
         }
 
+        public string GetLockStatus(int semesterId)
+        {
+            var duration = dao.GetSemesterDuration(semesterId);
+            if (duration == null) return "Unknown";
+
+            DateTime now = DateTime.Now;
+            DateTime deadline = duration.EndDate.AddDays(7); 
+
+            if (now < duration.StartDate)
+            {
+                return "Future"; 
+            }
+
+            if (now > deadline)
+            {
+                return "Past"; 
+            }
+
+            return "Open";
+        }
+
         public bool IsEvaluationLocked(int semesterId)
         {
-            DateTime endDate = dao.GetSemesterEndDate(semesterId);
-            DateTime deadline = endDate.AddDays(7);
-
-            if (DateTime.Now > deadline)
-            {
-                return true;
-            }
-            return false;
+            string status = GetLockStatus(semesterId);
+            return status != "Open"; 
         }
     }
 }

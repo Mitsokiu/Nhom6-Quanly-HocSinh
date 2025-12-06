@@ -430,3 +430,8 @@ D:\GitHub\QLHS\GUI\obj\Debug\GUI.exe.config
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.ChiTietHocSinh.resources
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.SuaHocSinh.resources
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.ThemHocSinh.resources
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\itextsharp.dll
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\itextsharp.xml
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.ChiTietHocSinh.resources
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.SuaHocSinh.resources
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.ThemHocSinh.resources
