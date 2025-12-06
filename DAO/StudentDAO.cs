@@ -33,15 +33,26 @@ namespace DAO
         // ---------------------------------------------------------
         // 2. TẠO TÀI KHOẢN PHỤ HUYNH 
         // ---------------------------------------------------------
-        private int CreateParentAccount(string fullname, string phone, string job)
+        private int CreateParentAccount(string fullname, string phone, string job, string desiredUsername = null)
         {
             if (string.IsNullOrWhiteSpace(fullname)) return -1;
 
-            string username = "ph" + (string.IsNullOrWhiteSpace(phone) ? DateTime.Now.Ticks.ToString() : phone);
+            string username;
+
+            if (!string.IsNullOrEmpty(desiredUsername))
+            {
+                // Dùng username được yêu cầu (ví dụ: ph6a101)
+                username = desiredUsername;
+            }
+            else
+            {
+                // Logic cũ: Nếu không chỉ định thì lấy ph + sđt
+                username = "ph" + (string.IsNullOrWhiteSpace(phone) ? DateTime.Now.Ticks.ToString() : phone);
+            }
 
             string sqlUser = @"INSERT INTO users (username, password, fullname, phone, role_id) 
-                               VALUES (@param0, '123456', @param1, @param2, 'parent'); 
-                               SELECT LAST_INSERT_ID();";
+                       VALUES (@param0, '123456', @param1, @param2, 'parent'); 
+                       SELECT LAST_INSERT_ID();";
 
             object userRes = null;
             try
@@ -50,8 +61,11 @@ namespace DAO
             }
             catch (MySqlException ex)
             {
-                if (ex.Number == 1062) // Trùng username
+                if (ex.Number == 1062) // Lỗi trùng username (Duplicate entry)
                 {
+                    // Nếu trùng (ví dụ đã tạo cho Cha rồi, giờ tạo cho Mẹ cùng username), 
+                    // ta thêm đuôi ngẫu nhiên hoặc hậu tố để phân biệt.
+                    // Ví dụ: ph6a101 -> ph6a101_23
                     username += "_" + new Random().Next(10, 99);
                     userRes = DbConnect.ExecuteScalar(sqlUser, new object[] { username, fullname, phone });
                 }
@@ -73,11 +87,17 @@ namespace DAO
         public bool AddStudent(StudentDTO s)
         {
             // A. Tạo User Học sinh
-            string hsUsername = GenerateStudentUsername(s.ClassID);
+            string hsUsername = GenerateStudentUsername(s.ClassID); // Ví dụ: hs6a101
+
+            // --- LOGIC MỚI: TẠO USERNAME CHO PHỤ HUYNH ---
+            // Cắt bỏ 2 ký tự đầu "hs" và thay bằng "ph"
+            // Ví dụ: hs6a101 -> ph6a101
+            string phUsernameBase = "ph" + hsUsername.Substring(2);
+            // ---------------------------------------------
 
             string sqlUserHS = @"INSERT INTO users (username, password, fullname, role_id, avatar, phone) 
-                                 VALUES (@param0, '123456', @param1, 'student', @param2, ''); 
-                                 SELECT LAST_INSERT_ID();";
+                         VALUES (@param0, '123456', @param1, 'student', @param2, ''); 
+                         SELECT LAST_INSERT_ID();";
 
             object resUserHS = DbConnect.ExecuteScalar(sqlUserHS, new object[] { hsUsername, s.FullName, s.Avatar });
             if (resUserHS == null) return false;
@@ -85,11 +105,11 @@ namespace DAO
 
             // B. Tạo Student Profile
             string sqlStudent = @"INSERT INTO students (user_id, dob, gender, address) 
-                                  VALUES (@param0, @param1, @param2, @param3); 
-                                  SELECT LAST_INSERT_ID();";
+                          VALUES (@param0, @param1, @param2, @param3); 
+                          SELECT LAST_INSERT_ID();";
             object resStudent = DbConnect.ExecuteScalar(sqlStudent, new object[] {
-                hsUserId, s.DateOfBirth, s.Gender, s.Address
-            });
+        hsUserId, s.DateOfBirth, s.Gender, s.Address
+    });
 
             if (resStudent == null) return false;
             int newStudentId = Convert.ToInt32(resStudent);
@@ -104,10 +124,13 @@ namespace DAO
             }
 
             // D. Xử lý Phụ huynh
+            // Truyền phUsernameBase vào hàm CreateParentAccount
+
             // -- Cha --
             if (!string.IsNullOrWhiteSpace(s.FatherName))
             {
-                int fatherId = CreateParentAccount(s.FatherName, s.FatherPhone, s.FatherJob);
+                // Người đầu tiên sẽ lấy đúng username ph6a101
+                int fatherId = CreateParentAccount(s.FatherName, s.FatherPhone, s.FatherJob, phUsernameBase);
                 if (fatherId > 0)
                 {
                     DbConnect.ExecuteNonQuery(
@@ -119,7 +142,8 @@ namespace DAO
             // -- Mẹ --
             if (!string.IsNullOrWhiteSpace(s.MotherName))
             {
-                int motherId = CreateParentAccount(s.MotherName, s.MotherPhone, s.MotherJob);
+                // Nếu đã có cha (đã dùng ph6a101), thì mẹ sẽ tự động được thêm đuôi (vd: ph6a101_55) nhờ logic try-catch
+                int motherId = CreateParentAccount(s.MotherName, s.MotherPhone, s.MotherJob, phUsernameBase);
                 if (motherId > 0)
                 {
                     DbConnect.ExecuteNonQuery(
@@ -129,10 +153,10 @@ namespace DAO
                 }
             }
 
+            // -- Giám hộ --
             if (!string.IsNullOrWhiteSpace(s.GuardianName))
             {
-                int gId = CreateParentAccount(s.GuardianName, s.GuardianPhone, s.GuardianJob);
-                // Lưu mối quan hệ tùy chỉnh (ví dụ: "Bà nội")
+                int gId = CreateParentAccount(s.GuardianName, s.GuardianPhone, s.GuardianJob, phUsernameBase);
                 if (gId > 0) LinkParent(newStudentId, gId, s.GuardianRelation);
             }
 

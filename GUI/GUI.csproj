@@ -385,6 +385,9 @@
     <EmbeddedResource Include="AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChiTietHocSinh.resx">
+      <DependentUpon>ChiTietHocSinh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -403,6 +406,12 @@
     </Compile>
     <EmbeddedResource Include="Sidebar.resx">
       <DependentUpon>Sidebar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuaHocSinh.resx">
+      <DependentUpon>SuaHocSinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemHocSinh.resx">
+      <DependentUpon>ThemHocSinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Admin\UC_Admin_PhanCong_gvcn.resx">
       <DependentUpon>UC_Admin_PhanCong_gvcn.cs</DependentUpon>

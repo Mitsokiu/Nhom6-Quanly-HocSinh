@@ -119,10 +119,9 @@
             this.pnlHeader.BackColor = System.Drawing.Color.White;
             this.pnlHeader.Controls.Add(this.lblHeaderTitle);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHeader.Height = 70;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(1100, 70);
+            this.pnlHeader.Size = new System.Drawing.Size(1130, 70);
             this.pnlHeader.TabIndex = 0;
             // 
             // lblHeaderTitle
@@ -131,7 +130,7 @@
             this.lblHeaderTitle.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
             this.lblHeaderTitle.Location = new System.Drawing.Point(25, 15);
             this.lblHeaderTitle.Name = "lblHeaderTitle";
-            this.lblHeaderTitle.Size = new System.Drawing.Size(286, 37);
+            this.lblHeaderTitle.Size = new System.Drawing.Size(409, 46);
             this.lblHeaderTitle.TabIndex = 0;
             this.lblHeaderTitle.Text = "Cập nhật Hồ sơ Học sinh";
             // 
@@ -141,10 +140,9 @@
             this.pnlFooter.Controls.Add(this.btnSave);
             this.pnlFooter.Controls.Add(this.btnCancel);
             this.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlFooter.Height = 80;
-            this.pnlFooter.Location = new System.Drawing.Point(0, 770);
+            this.pnlFooter.Location = new System.Drawing.Point(0, 834);
             this.pnlFooter.Name = "pnlFooter";
-            this.pnlFooter.Size = new System.Drawing.Size(1100, 80);
+            this.pnlFooter.Size = new System.Drawing.Size(1130, 80);
             this.pnlFooter.TabIndex = 1;
             // 
             // btnSave
@@ -221,7 +219,7 @@
             this.pnlContent.Location = new System.Drawing.Point(0, 70);
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Padding = new System.Windows.Forms.Padding(0, 0, 0, 50);
-            this.pnlContent.Size = new System.Drawing.Size(1100, 700);
+            this.pnlContent.Size = new System.Drawing.Size(1130, 764);
             this.pnlContent.TabIndex = 2;
             // 
             // lblSecPersonal
@@ -230,7 +228,7 @@
             this.lblSecPersonal.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.lblSecPersonal.Location = new System.Drawing.Point(30, 20);
             this.lblSecPersonal.Name = "lblSecPersonal";
-            this.lblSecPersonal.Size = new System.Drawing.Size(171, 25);
+            this.lblSecPersonal.Size = new System.Drawing.Size(221, 32);
             this.lblSecPersonal.TabIndex = 0;
             this.lblSecPersonal.Text = "Thông tin cá nhân";
             // 
@@ -275,7 +273,7 @@
             this.lblName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblName.Location = new System.Drawing.Point(250, 60);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(74, 19);
+            this.lblName.Size = new System.Drawing.Size(87, 23);
             this.lblName.TabIndex = 2;
             this.lblName.Text = "Họ và tên";
             // 
@@ -295,7 +293,7 @@
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtName.Location = new System.Drawing.Point(10, 12);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(330, 20);
+            this.txtName.Size = new System.Drawing.Size(330, 25);
             this.txtName.TabIndex = 0;
             // 
             // lblDob
@@ -304,7 +302,7 @@
             this.lblDob.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblDob.Location = new System.Drawing.Point(650, 60);
             this.lblDob.Name = "lblDob";
-            this.lblDob.Size = new System.Drawing.Size(76, 19);
+            this.lblDob.Size = new System.Drawing.Size(89, 23);
             this.lblDob.TabIndex = 4;
             this.lblDob.Text = "Ngày sinh";
             // 
@@ -323,7 +321,7 @@
             this.dtpDob.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDob.Location = new System.Drawing.Point(10, 10);
             this.dtpDob.Name = "dtpDob";
-            this.dtpDob.Size = new System.Drawing.Size(330, 27);
+            this.dtpDob.Size = new System.Drawing.Size(330, 32);
             this.dtpDob.TabIndex = 0;
             // 
             // lblGender
@@ -332,7 +330,7 @@
             this.lblGender.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblGender.Location = new System.Drawing.Point(250, 140);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(65, 19);
+            this.lblGender.Size = new System.Drawing.Size(80, 23);
             this.lblGender.TabIndex = 6;
             this.lblGender.Text = "Giới tính";
             // 
@@ -360,7 +358,7 @@
             this.lblAddress.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblAddress.Location = new System.Drawing.Point(250, 220);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(132, 19);
+            this.lblAddress.Size = new System.Drawing.Size(159, 23);
             this.lblAddress.TabIndex = 9;
             this.lblAddress.Text = "Địa chỉ thường trú";
             // 
@@ -380,7 +378,7 @@
             this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtAddress.Location = new System.Drawing.Point(10, 12);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(730, 20);
+            this.txtAddress.Size = new System.Drawing.Size(730, 25);
             this.txtAddress.TabIndex = 0;
             // 
             // lblSecAcademic
@@ -389,7 +387,7 @@
             this.lblSecAcademic.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.lblSecAcademic.Location = new System.Drawing.Point(30, 330);
             this.lblSecAcademic.Name = "lblSecAcademic";
-            this.lblSecAcademic.Size = new System.Drawing.Size(170, 25);
+            this.lblSecAcademic.Size = new System.Drawing.Size(217, 32);
             this.lblSecAcademic.TabIndex = 11;
             this.lblSecAcademic.Text = "Thông tin học tập";
             // 
@@ -399,7 +397,7 @@
             this.lblClass.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblClass.Location = new System.Drawing.Point(30, 390);
             this.lblClass.Name = "lblClass";
-            this.lblClass.Size = new System.Drawing.Size(73, 19);
+            this.lblClass.Size = new System.Drawing.Size(87, 23);
             this.lblClass.TabIndex = 14;
             this.lblClass.Text = "Chọn Lớp";
             // 
@@ -421,7 +419,7 @@
             this.cboClass.FormattingEnabled = true;
             this.cboClass.Location = new System.Drawing.Point(10, 8);
             this.cboClass.Name = "cboClass";
-            this.cboClass.Size = new System.Drawing.Size(280, 28);
+            this.cboClass.Size = new System.Drawing.Size(280, 33);
             this.cboClass.TabIndex = 0;
             // 
             // lblYear
@@ -430,7 +428,7 @@
             this.lblYear.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblYear.Location = new System.Drawing.Point(380, 390);
             this.lblYear.Name = "lblYear";
-            this.lblYear.Size = new System.Drawing.Size(107, 19);
+            this.lblYear.Size = new System.Drawing.Size(127, 23);
             this.lblYear.TabIndex = 16;
             this.lblYear.Text = "Chọn Năm học";
             // 
@@ -452,7 +450,7 @@
             this.cboYear.FormattingEnabled = true;
             this.cboYear.Location = new System.Drawing.Point(10, 8);
             this.cboYear.Name = "cboYear";
-            this.cboYear.Size = new System.Drawing.Size(250, 28);
+            this.cboYear.Size = new System.Drawing.Size(250, 33);
             this.cboYear.TabIndex = 0;
             // 
             // lblSecParents
@@ -461,7 +459,7 @@
             this.lblSecParents.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.lblSecParents.Location = new System.Drawing.Point(30, 480);
             this.lblSecParents.Name = "lblSecParents";
-            this.lblSecParents.Size = new System.Drawing.Size(262, 25);
+            this.lblSecParents.Size = new System.Drawing.Size(337, 32);
             this.lblSecParents.TabIndex = 18;
             this.lblSecParents.Text = "Thông tin liên hệ Phụ huynh";
             // 
@@ -471,7 +469,7 @@
             this.lblFatherInfo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.lblFatherInfo.Location = new System.Drawing.Point(30, 520);
             this.lblFatherInfo.Name = "lblFatherInfo";
-            this.lblFatherInfo.Size = new System.Drawing.Size(126, 20);
+            this.lblFatherInfo.Size = new System.Drawing.Size(158, 25);
             this.lblFatherInfo.TabIndex = 19;
             this.lblFatherInfo.Text = "1. Thông tin Cha";
             // 
@@ -481,7 +479,7 @@
             this.lblFatherName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblFatherName.Location = new System.Drawing.Point(30, 550);
             this.lblFatherName.Name = "lblFatherName";
-            this.lblFatherName.Size = new System.Drawing.Size(56, 19);
+            this.lblFatherName.Size = new System.Drawing.Size(64, 23);
             this.lblFatherName.TabIndex = 20;
             this.lblFatherName.Text = "Họ tên";
             // 
@@ -501,7 +499,7 @@
             this.txtFatherName.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtFatherName.Location = new System.Drawing.Point(10, 12);
             this.txtFatherName.Name = "txtFatherName";
-            this.txtFatherName.Size = new System.Drawing.Size(280, 20);
+            this.txtFatherName.Size = new System.Drawing.Size(280, 25);
             this.txtFatherName.TabIndex = 0;
             // 
             // lblFatherPhone
@@ -510,7 +508,7 @@
             this.lblFatherPhone.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblFatherPhone.Location = new System.Drawing.Point(360, 550);
             this.lblFatherPhone.Name = "lblFatherPhone";
-            this.lblFatherPhone.Size = new System.Drawing.Size(98, 19);
+            this.lblFatherPhone.Size = new System.Drawing.Size(116, 23);
             this.lblFatherPhone.TabIndex = 22;
             this.lblFatherPhone.Text = "Số điện thoại";
             // 
@@ -530,7 +528,7 @@
             this.txtFatherPhone.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtFatherPhone.Location = new System.Drawing.Point(10, 12);
             this.txtFatherPhone.Name = "txtFatherPhone";
-            this.txtFatherPhone.Size = new System.Drawing.Size(230, 20);
+            this.txtFatherPhone.Size = new System.Drawing.Size(230, 25);
             this.txtFatherPhone.TabIndex = 0;
             // 
             // lblFatherJob
@@ -539,7 +537,7 @@
             this.lblFatherJob.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblFatherJob.Location = new System.Drawing.Point(640, 550);
             this.lblFatherJob.Name = "lblFatherJob";
-            this.lblFatherJob.Size = new System.Drawing.Size(96, 19);
+            this.lblFatherJob.Size = new System.Drawing.Size(114, 23);
             this.lblFatherJob.TabIndex = 24;
             this.lblFatherJob.Text = "Nghề nghiệp";
             // 
@@ -559,7 +557,7 @@
             this.txtFatherJob.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtFatherJob.Location = new System.Drawing.Point(10, 12);
             this.txtFatherJob.Name = "txtFatherJob";
-            this.txtFatherJob.Size = new System.Drawing.Size(280, 20);
+            this.txtFatherJob.Size = new System.Drawing.Size(280, 25);
             this.txtFatherJob.TabIndex = 0;
             // 
             // lblMotherInfo
@@ -568,7 +566,7 @@
             this.lblMotherInfo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.lblMotherInfo.Location = new System.Drawing.Point(30, 640);
             this.lblMotherInfo.Name = "lblMotherInfo";
-            this.lblMotherInfo.Size = new System.Drawing.Size(120, 20);
+            this.lblMotherInfo.Size = new System.Drawing.Size(153, 25);
             this.lblMotherInfo.TabIndex = 26;
             this.lblMotherInfo.Text = "2. Thông tin Mẹ";
             // 
@@ -578,7 +576,7 @@
             this.lblMotherName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblMotherName.Location = new System.Drawing.Point(30, 670);
             this.lblMotherName.Name = "lblMotherName";
-            this.lblMotherName.Size = new System.Drawing.Size(56, 19);
+            this.lblMotherName.Size = new System.Drawing.Size(64, 23);
             this.lblMotherName.TabIndex = 27;
             this.lblMotherName.Text = "Họ tên";
             // 
@@ -598,7 +596,7 @@
             this.txtMotherName.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtMotherName.Location = new System.Drawing.Point(10, 12);
             this.txtMotherName.Name = "txtMotherName";
-            this.txtMotherName.Size = new System.Drawing.Size(280, 20);
+            this.txtMotherName.Size = new System.Drawing.Size(280, 25);
             this.txtMotherName.TabIndex = 0;
             // 
             // lblMotherPhone
@@ -607,7 +605,7 @@
             this.lblMotherPhone.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblMotherPhone.Location = new System.Drawing.Point(360, 670);
             this.lblMotherPhone.Name = "lblMotherPhone";
-            this.lblMotherPhone.Size = new System.Drawing.Size(98, 19);
+            this.lblMotherPhone.Size = new System.Drawing.Size(116, 23);
             this.lblMotherPhone.TabIndex = 29;
             this.lblMotherPhone.Text = "Số điện thoại";
             // 
@@ -627,7 +625,7 @@
             this.txtMotherPhone.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtMotherPhone.Location = new System.Drawing.Point(10, 12);
             this.txtMotherPhone.Name = "txtMotherPhone";
-            this.txtMotherPhone.Size = new System.Drawing.Size(230, 20);
+            this.txtMotherPhone.Size = new System.Drawing.Size(230, 25);
             this.txtMotherPhone.TabIndex = 0;
             // 
             // lblMotherJob
@@ -636,7 +634,7 @@
             this.lblMotherJob.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblMotherJob.Location = new System.Drawing.Point(640, 670);
             this.lblMotherJob.Name = "lblMotherJob";
-            this.lblMotherJob.Size = new System.Drawing.Size(96, 19);
+            this.lblMotherJob.Size = new System.Drawing.Size(114, 23);
             this.lblMotherJob.TabIndex = 31;
             this.lblMotherJob.Text = "Nghề nghiệp";
             // 
@@ -656,7 +654,7 @@
             this.txtMotherJob.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtMotherJob.Location = new System.Drawing.Point(10, 12);
             this.txtMotherJob.Name = "txtMotherJob";
-            this.txtMotherJob.Size = new System.Drawing.Size(280, 20);
+            this.txtMotherJob.Size = new System.Drawing.Size(280, 25);
             this.txtMotherJob.TabIndex = 0;
             // 
             // lblGuardianInfo
@@ -665,7 +663,7 @@
             this.lblGuardianInfo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.lblGuardianInfo.Location = new System.Drawing.Point(30, 760);
             this.lblGuardianInfo.Name = "lblGuardianInfo";
-            this.lblGuardianInfo.Size = new System.Drawing.Size(202, 20);
+            this.lblGuardianInfo.Size = new System.Drawing.Size(249, 25);
             this.lblGuardianInfo.TabIndex = 33;
             this.lblGuardianInfo.Text = "3. Người giám hộ (Nếu có)";
             // 
@@ -675,7 +673,7 @@
             this.lblGuardianName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblGuardianName.Location = new System.Drawing.Point(30, 790);
             this.lblGuardianName.Name = "lblGuardianName";
-            this.lblGuardianName.Size = new System.Drawing.Size(56, 19);
+            this.lblGuardianName.Size = new System.Drawing.Size(64, 23);
             this.lblGuardianName.TabIndex = 34;
             this.lblGuardianName.Text = "Họ tên";
             // 
@@ -695,7 +693,7 @@
             this.txtGuardianName.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtGuardianName.Location = new System.Drawing.Point(10, 12);
             this.txtGuardianName.Name = "txtGuardianName";
-            this.txtGuardianName.Size = new System.Drawing.Size(230, 20);
+            this.txtGuardianName.Size = new System.Drawing.Size(230, 25);
             this.txtGuardianName.TabIndex = 0;
             // 
             // lblGuardianPhone
@@ -704,7 +702,7 @@
             this.lblGuardianPhone.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblGuardianPhone.Location = new System.Drawing.Point(300, 790);
             this.lblGuardianPhone.Name = "lblGuardianPhone";
-            this.lblGuardianPhone.Size = new System.Drawing.Size(98, 19);
+            this.lblGuardianPhone.Size = new System.Drawing.Size(116, 23);
             this.lblGuardianPhone.TabIndex = 36;
             this.lblGuardianPhone.Text = "Số điện thoại";
             // 
@@ -724,7 +722,7 @@
             this.txtGuardianPhone.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtGuardianPhone.Location = new System.Drawing.Point(10, 12);
             this.txtGuardianPhone.Name = "txtGuardianPhone";
-            this.txtGuardianPhone.Size = new System.Drawing.Size(180, 20);
+            this.txtGuardianPhone.Size = new System.Drawing.Size(180, 25);
             this.txtGuardianPhone.TabIndex = 0;
             // 
             // lblGuardianJob
@@ -733,7 +731,7 @@
             this.lblGuardianJob.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblGuardianJob.Location = new System.Drawing.Point(520, 790);
             this.lblGuardianJob.Name = "lblGuardianJob";
-            this.lblGuardianJob.Size = new System.Drawing.Size(96, 19);
+            this.lblGuardianJob.Size = new System.Drawing.Size(114, 23);
             this.lblGuardianJob.TabIndex = 38;
             this.lblGuardianJob.Text = "Nghề nghiệp";
             // 
@@ -753,7 +751,7 @@
             this.txtGuardianJob.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtGuardianJob.Location = new System.Drawing.Point(10, 12);
             this.txtGuardianJob.Name = "txtGuardianJob";
-            this.txtGuardianJob.Size = new System.Drawing.Size(230, 20);
+            this.txtGuardianJob.Size = new System.Drawing.Size(230, 25);
             this.txtGuardianJob.TabIndex = 0;
             // 
             // lblGuardianRelation
@@ -762,7 +760,7 @@
             this.lblGuardianRelation.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblGuardianRelation.Location = new System.Drawing.Point(790, 790);
             this.lblGuardianRelation.Name = "lblGuardianRelation";
-            this.lblGuardianRelation.Size = new System.Drawing.Size(65, 19);
+            this.lblGuardianRelation.Size = new System.Drawing.Size(76, 23);
             this.lblGuardianRelation.TabIndex = 40;
             this.lblGuardianRelation.Text = "Quan hệ";
             // 
@@ -782,18 +780,18 @@
             this.txtGuardianRelation.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtGuardianRelation.Location = new System.Drawing.Point(10, 12);
             this.txtGuardianRelation.Name = "txtGuardianRelation";
-            this.txtGuardianRelation.Size = new System.Drawing.Size(130, 20);
+            this.txtGuardianRelation.Size = new System.Drawing.Size(130, 25);
             this.txtGuardianRelation.TabIndex = 0;
             // 
-            // ThemHocSinh
+            // SuaHocSinh
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1100, 850);
+            this.ClientSize = new System.Drawing.Size(1130, 914);
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.pnlFooter);
             this.Controls.Add(this.pnlHeader);
-            this.Name = "ThemHocSinh";
+            this.Name = "SuaHocSinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm Hồ sơ Học sinh";
             this.pnlHeader.ResumeLayout(false);
