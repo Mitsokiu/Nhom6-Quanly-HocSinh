@@ -95,7 +95,7 @@ namespace GUI
 
                 errorProvider.SetIconPadding(txtComment, 5);
 
-                txtComment.Focus(); 
+                txtComment.Focus();
                 return;
             }
             else
