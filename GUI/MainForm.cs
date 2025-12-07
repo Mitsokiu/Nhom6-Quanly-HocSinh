@@ -1,6 +1,7 @@
 ﻿using BUS;
 using DTO;
 using GUI.UserControls;
+using GUI.UserControls.Admin;
 using System;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
@@ -46,6 +47,7 @@ namespace GUI
             sidebar.XetHanhKiemClicked += Sidebar_XetHanhKiemClicked;
             sidebar.DiemDanhClicked += Sidebar_DiemDanhClicked;
             sidebar.QuanLyThongBaoClicked += Sidebar_QuanLyThongBaoClicked;
+            sidebar.PhanCongGiangDayClicked += Sidebar_PhanCongGiangDayClicked;
         }
 
         // =====================
@@ -102,6 +104,11 @@ namespace GUI
             }
 
             LoadContent(new UC_GVCN_QLHS(user.UserId));
+        }
+
+        private void Sidebar_PhanCongGiangDayClicked(object sender, EventArgs e)
+        {
+            LoadContent(new UC_Admin_PhanCongGiangDay());
         }
 
         private void Sidebar_XetHanhKiemClicked(object sender, EventArgs e)

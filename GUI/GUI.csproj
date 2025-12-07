@@ -128,6 +128,12 @@
     <Compile Include="ChiTietHocSinh.Designer.cs">
       <DependentUpon>ChiTietHocSinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Admin\UC_Admin_PhanCongGiangDay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Admin\UC_Admin_PhanCongGiangDay.Designer.cs">
+      <DependentUpon>UC_Admin_PhanCongGiangDay.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\GV\UC_GVCN_DiemDanh.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -412,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ThemHocSinh.resx">
       <DependentUpon>ThemHocSinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Admin\UC_Admin_PhanCongGiangDay.resx">
+      <DependentUpon>UC_Admin_PhanCongGiangDay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Admin\UC_Admin_PhanCong_gvcn.resx">
       <DependentUpon>UC_Admin_PhanCong_gvcn.cs</DependentUpon>

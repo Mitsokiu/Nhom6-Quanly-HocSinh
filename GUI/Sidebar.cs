@@ -28,6 +28,7 @@ namespace GUI
         public event EventHandler QuanLyThongBaoClicked;
         public event EventHandler XetHanhKiemClicked;
         public event EventHandler DiemDanhClicked;
+        public event EventHandler PhanCongGiangDayClicked;
         private UserDTO currentUser;
 
         public Sidebar()
@@ -66,7 +67,7 @@ namespace GUI
             switch (role?.ToLower())
             {
                 case "admin":
-                    ShowButtons(btnTaiKhoan, btnQlyLop, btnNamhoc,btnHome);
+                    ShowButtons(btnTaiKhoan, btnQlyLop, btnNamhoc,btnHome, btnPhanCongGiangDay);
                     break;
                 case "gvbm":
                     ShowButtons(btnNhapDiem, btnXemLichDay, btnHome);
@@ -110,8 +111,8 @@ namespace GUI
 
         private void btnXemThongTinHocSinh_Click(object sender, EventArgs e) => XemThongTinHocSinhClicked?.Invoke(this, EventArgs.Empty);
         private void btnDoiMatKhauHS_Click(object sender, EventArgs e) => DoiMatKhauHSClicked?.Invoke(this, EventArgs.Empty);
-        
 
+        private void btnPhanCongGiangDay_Click(object sender, EventArgs e) => PhanCongGiangDayClicked?.Invoke(this, EventArgs.Empty);
         private void btnXetHanhKiem_Click(object sender, EventArgs e) => XetHanhKiemClicked?.Invoke(this, EventArgs.Empty);
         private void btnDiemDanh_Click(object sender, EventArgs e) => DiemDanhClicked?.Invoke(this, EventArgs.Empty);
         private void btnQuanLyThongBao_Click(object sender, EventArgs e) => QuanLyThongBaoClicked?.Invoke(this, EventArgs.Empty);

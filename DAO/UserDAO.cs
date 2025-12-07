@@ -249,7 +249,7 @@ namespace DAO
         public static List<UserDTO> GetAllTeachers()
         {
             var list = new List<UserDTO>();
-            string query = "SELECT user_id, fullname, username, role_name FROM users WHERE role_name = 'Teacher'";
+            string query = "SELECT * FROM users WHERE role_id IN ('gvcn', 'gvbm')";
 
             using (var conn = DbConnect.GetConnection())
             {
@@ -264,7 +264,7 @@ namespace DAO
                             UserId = reader.GetInt32("user_id"),
                             Fullname = reader.GetString("fullname"),
                             Username = reader.GetString("username"),
-                            RoleName = reader.GetString("role_name")
+                            RoleName = reader.GetString("role_id")
                         });
                     }
                 }

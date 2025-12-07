@@ -19,8 +19,7 @@ namespace DAO
                 ta.teacher_id,
                 u.fullname AS teacher_name,
                 ta.semester_id,
-                sem.name AS semester_name,
-                ta.periods
+                sem.name AS semester_name
             FROM teacher_assignments ta
             JOIN classes c ON ta.class_id = c.class_id
             JOIN subjects s ON ta.subject_id = s.subject_id
@@ -35,7 +34,7 @@ namespace DAO
 
         public static bool AddAssignment(TeacherAssignmentDTO dto)
         {
-            string query = "INSERT INTO teacher_assignments (teacher_id, subject_id, class_id, semester_id, periods) VALUES (@param0,@param1,@param2,@param3,@param4)";
+            string query = "INSERT INTO teacher_assignments (teacher_id, subject_id, class_id, semester_id) VALUES (@param0,@param1,@param2,@param3)";
             int result = DbConnect.ExecuteNonQuery(query, new object[] { dto.TeacherId, dto.SubjectId, dto.ClassId, dto.SemesterId, dto.Periods });
             return result > 0;
         }

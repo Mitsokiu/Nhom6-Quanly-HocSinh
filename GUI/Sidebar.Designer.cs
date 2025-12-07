@@ -31,6 +31,7 @@ namespace GUI
             this.btnTinhHinh = new System.Windows.Forms.Button();
             this.btnQlyLop = new System.Windows.Forms.Button();
             this.btnNamhoc = new System.Windows.Forms.Button();
+            this.btnPhanCongGiangDay = new System.Windows.Forms.Button();
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnXemThongBao = new System.Windows.Forms.Button();
@@ -79,6 +80,7 @@ namespace GUI
             this.flowLayoutPanel1.Controls.Add(this.btnTinhHinh);
             this.flowLayoutPanel1.Controls.Add(this.btnQlyLop);
             this.flowLayoutPanel1.Controls.Add(this.btnNamhoc);
+            this.flowLayoutPanel1.Controls.Add(this.btnPhanCongGiangDay);
             this.flowLayoutPanel1.Controls.Add(this.btnDoiMatKhauHS);
             this.flowLayoutPanel1.Controls.Add(this.btnXetHanhKiem);
             this.flowLayoutPanel1.Controls.Add(this.btnDiemDanh);
@@ -213,7 +215,17 @@ namespace GUI
             this.btnNamhoc.TabIndex = 10;
             this.btnNamhoc.Text = "Quản Lý Năm Học";
             this.btnNamhoc.Click += new System.EventHandler(this.btnNamhoc_Click);
-
+            // 
+            // btnPhanCongGiangDay
+            // 
+            this.btnPhanCongGiangDay.Image = global::GUI.Properties.Resources.xemlichday_24; // Dùng icon lịch dạy
+            this.btnPhanCongGiangDay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPhanCongGiangDay.Name = "btnPhanCongGiangDay";
+            this.btnPhanCongGiangDay.Size = new System.Drawing.Size(282, 50);
+            this.btnPhanCongGiangDay.TabIndex = 16;
+            this.btnPhanCongGiangDay.Text = "Phân công giảng dạy";
+            this.btnPhanCongGiangDay.UseVisualStyleBackColor = true;
+            this.btnPhanCongGiangDay.Click += new System.EventHandler(this.btnPhanCongGiangDay_Click);
             // btnQuanLyThongBao
             this.btnQuanLyThongBao.Image = global::GUI.Properties.Resources.tinnhan_24; // Dùng tạm icon tin nhắn hoặc icon khác
             this.btnQuanLyThongBao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -328,5 +340,6 @@ namespace GUI
         private Button btnQuanLyThongBao;
         private Button btnXetHanhKiem;
         private Button btnDiemDanh;
+        private Button btnPhanCongGiangDay;
     }
 }
