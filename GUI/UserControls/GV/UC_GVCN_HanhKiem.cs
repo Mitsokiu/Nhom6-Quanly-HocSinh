@@ -379,7 +379,7 @@ namespace GUI.UserControls
                 return;
             }
 
-            ExcelPackage.License.SetNonCommercialPersonal("Loopy");
+            ExcelPackage.License.SetNonCommercialPersonal("name");
 
             try
             {
