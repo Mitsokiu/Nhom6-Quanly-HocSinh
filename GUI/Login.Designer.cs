@@ -77,12 +77,11 @@
             this.lblTitle.BackColor = System.Drawing.Color.White;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblTitle.Location = new System.Drawing.Point(138, 63);
+            this.lblTitle.Location = new System.Drawing.Point(128, 58);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(190, 38);
+            this.lblTitle.Size = new System.Drawing.Size(127, 38);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "ABC SCHOOL";
-
+            this.lblTitle.Text = "SCHOOL";
             // 
             // lblUser
             // 

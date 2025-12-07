@@ -10,11 +10,13 @@ namespace GUI
 {
     public partial class MainForm : Form
     {
+        private UserDTO user;
+        private UC_HocSinh_ThongBao ucThongBaoList;
         public MainForm(string username) // Truyền vai trò từ form đăng nhập
         {
             InitializeComponent();
             LoadContent(new UC_Home()); // Mặc định load trang Home
-            UserDTO user = new UserBUS().GetUserInfo(username);
+            user = new UserBUS().GetUserInfo(username);
             if (user != null)
             {
                 // Truyền role vào sidebar
@@ -24,7 +26,7 @@ namespace GUI
                 sidebar.SetUserInfo(user);
             }
 
-
+          
           
             // Gắn sự kiện từ Sidebar (đúng tên event mới)
             sidebar.TaiKhoanClicked += Sidebar_TaiKhoanClicked;
@@ -34,11 +36,18 @@ namespace GUI
             sidebar.XemTKBClicked += Sidebar_XemTKBClicked;
             sidebar.XemLichDayClicked += Sidebar_XemLichDayClicked;
             sidebar.HocSinhClicked += Sidebar_HocSinhClicked;
-            sidebar.TinhHinhClicked += Sidebar_TinhHinhClicked;
+            
             sidebar.QlyLopClicked += Sidebar_QlyLopClicked;
             
             sidebar.HomeClicked += Sidebar_HomeClicked;
             sidebar.QlyNamHocClicked += Sidebar_QlyNamHocClicked;
+            sidebar.QlyHocSinhAdminClicked += Sidebar_QlyHocSinhAdminClicked;
+            sidebar.ThongKeClicked += Sidebar_ThongKeClicked;
+            sidebar.HSinforClicked += Sidebar_HSinforClicked;
+            sidebar.DoiMk += Sidebar_DoiMk;
+            sidebar.XetHanhKiemClicked += Sidebar_XetHanhKiemClicked;
+            sidebar.qlyThongBaoClicked += Sidebar_qlyThongBaoClicked;
+            sidebar.XemThongBaoClicked += (s, e) => OpenNotificationList();
         }
 
         // =====================
@@ -67,17 +76,23 @@ namespace GUI
 
         private void Sidebar_XemDiemClicked(object sender, EventArgs e)
         {
-            LoadContent(new UC_HocSinh_Diem());
+            LoadContent(new UC_HocSinh_Diem(user.UserId));
         }
 
         private void Sidebar_HocPhiClicked(object sender, EventArgs e)
         {
-            LoadContent(new UC_PhuHuynh_HocPhi());
+            LoadContent(new UC_HocSinh_HocPhi(user.UserId));
         }
 
         private void Sidebar_XemTKBClicked(object sender, EventArgs e)
         {
-            LoadContent(new UC_HocSinh_TKB());
+            
+            LoadContent(new UC_HocSinh_TKB(user.UserId));
+        }
+        private void Sidebar_HSinforClicked(object sender, EventArgs e)
+        {
+            
+            LoadContent(new UC_HocSinh_ThongTin(user.UserId));
         }
 
         private void Sidebar_XemLichDayClicked(object sender, EventArgs e)
@@ -87,13 +102,18 @@ namespace GUI
 
         private void Sidebar_HocSinhClicked(object sender, EventArgs e)
         {
-            LoadContent(new UC_GVCN_QLHS());
+            // QUAN TRỌNG: Phải truyền UserId của GVCN đang đăng nhập
+            if (user == null || user.UserId <= 0)
+            {
+                MessageBox.Show("Không xác định được thông tin giáo viên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+          
+            LoadContent(new UC_GVCN_QLHS(user.UserId));
+           
         }
 
-        private void Sidebar_TinhHinhClicked(object sender, EventArgs e)
-        {
-            LoadContent(new UC_PhuHuynh_Thongtin());
-        }
+    
 
         private void Sidebar_QlyLopClicked(object sender, EventArgs e)
         {
@@ -109,6 +129,62 @@ namespace GUI
         private void Sidebar_QlyNamHocClicked(object sender, EventArgs e)
         {
             LoadContent(new UC_Admin_Namhoc());
+        }
+
+        private void Sidebar_QlyHocSinhAdminClicked(object sender, EventArgs e)
+        {
+            LoadContent(new UC_Admin_Student());
+        }
+        private void Sidebar_ThongKeClicked(object sender, EventArgs e)
+        {
+            LoadContent(new UC_Admin_ThongKe());
+        }
+
+        private void Sidebar_DoiMk(object sender, EventArgs e)
+        {
+            LoadContent(new UC_HocSinh_DoiMatKhau(user.UserId));
+        }
+
+        private void Sidebar_XetHanhKiemClicked(object sender, EventArgs e)
+        {
+            LoadContent(new UC_GVCN_HanhKiem(user.UserId));
+        }
+        private void Sidebar_qlyThongBaoClicked(object sender, EventArgs e)
+        {
+            LoadContent(new UC_GVCN_ThongBao(user.UserId));
+        }
+
+        private void OpenNotificationList()
+        {
+            // Nếu chưa có thì tạo mới
+            if (ucThongBaoList == null)
+            {
+                ucThongBaoList = new UC_HocSinh_ThongBao();
+
+                // QUAN TRỌNG: Đăng ký sự kiện "Khi bấm vào 1 dòng -> Mở trang chi tiết"
+                ucThongBaoList.DetailClicked += (s, dto) =>
+                {
+                    OpenNotificationDetail(dto);
+                };
+            }
+
+            // Hiển thị lên Panel chính
+            LoadContent(ucThongBaoList);
+        }
+
+        // Hàm mở trang chi tiết
+        private void OpenNotificationDetail(NotificationDTO dto)
+        {
+            // Tạo trang chi tiết và truyền dữ liệu vào
+            var ucDetail = new UC_HocSinh_ChiTietThongBao(dto);
+
+            // Đăng ký sự kiện "Khi bấm nút Back -> Quay lại danh sách"
+            ucDetail.BackClicked += (s, e) =>
+            {
+                OpenNotificationList(); // Quay lại list cũ
+            };
+
+            LoadContent(ucDetail);
         }
 
         // =====================

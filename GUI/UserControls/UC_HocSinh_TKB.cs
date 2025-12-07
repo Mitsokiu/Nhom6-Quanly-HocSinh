@@ -100,8 +100,11 @@ namespace GUI.UserControls
                 cboWeek.SelectedIndexChanged -= CboWeek_SelectedIndexChanged;
                 cboWeek.SelectedIndexChanged += CboWeek_SelectedIndexChanged;
 
+
                 // Chọn mặc định và Tải dữ liệu ngay lập tức ---
-                cboWeek.SelectedIndex = 0;
+
+                cboWeek.SelectedValue = 1;
+
 
                 if (cboWeek.SelectedValue != null && int.TryParse(cboWeek.SelectedValue.ToString(), out int firstSemesterId))
                 {
@@ -216,17 +219,14 @@ namespace GUI.UserControls
                 Dock = DockStyle.Fill,
                 TextAlign = ContentAlignment.MiddleCenter, // Căn giữa tuyệt đối
 
-                // SỬA 1: Giảm font xuống 8.5F để chữ "Tiết 10" và giờ không bị rớt dòng lung tung
                 Font = new Font("Segoe UI", 8.5F, FontStyle.Bold),
 
-                // SỬA 2: Màu xám đậm (nhìn sang hơn màu đen tuyền)
                 ForeColor = Color.FromArgb(64, 64, 64),
 
-                // SỬA 3: Nền xám nhẹ để phân biệt cột mốc thời gian
                 BackColor = Color.WhiteSmoke,
 
-                Margin = new Padding(1), // Tạo viền trắng mỏng xung quanh
-                AutoSize = false // QUAN TRỌNG: Ngăn label tự co giãn gây vỡ layout
+                Margin = new Padding(1),
+                AutoSize = false
             };
 
             this.tblTimetable.Controls.Add(lbl, col, row);

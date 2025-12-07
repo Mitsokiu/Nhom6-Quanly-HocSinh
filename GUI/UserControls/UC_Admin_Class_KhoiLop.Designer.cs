@@ -33,11 +33,11 @@ namespace GUI.UserControls
             this.textLop = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblpage = new System.Windows.Forms.Label();
             this.btntail = new System.Windows.Forms.Button();
             this.btnnext = new System.Windows.Forms.Button();
             this.btnback = new System.Windows.Forms.Button();
             this.btnhead = new System.Windows.Forms.Button();
-            this.lblpage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -69,7 +69,7 @@ namespace GUI.UserControls
             // 
             // btn_them
             // 
-            this.btn_them.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btn_them.BackColor = System.Drawing.Color.Lime;
             this.btn_them.Location = new System.Drawing.Point(3, 364);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(75, 44);
@@ -79,7 +79,7 @@ namespace GUI.UserControls
             // 
             // btn_sua
             // 
-            this.btn_sua.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btn_sua.BackColor = System.Drawing.Color.Lime;
             this.btn_sua.Location = new System.Drawing.Point(141, 364);
             this.btn_sua.Name = "btn_sua";
             this.btn_sua.Size = new System.Drawing.Size(75, 44);
@@ -89,7 +89,7 @@ namespace GUI.UserControls
             // 
             // btn_xoa
             // 
-            this.btn_xoa.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btn_xoa.BackColor = System.Drawing.Color.Lime;
             this.btn_xoa.Location = new System.Drawing.Point(254, 364);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.Size = new System.Drawing.Size(75, 44);
@@ -176,6 +176,7 @@ namespace GUI.UserControls
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Green;
             this.label2.Location = new System.Drawing.Point(3, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(186, 25);
@@ -194,9 +195,18 @@ namespace GUI.UserControls
             this.panel2.Size = new System.Drawing.Size(489, 37);
             this.panel2.TabIndex = 17;
             // 
+            // lblpage
+            // 
+            this.lblpage.AutoSize = true;
+            this.lblpage.Location = new System.Drawing.Point(235, 8);
+            this.lblpage.Name = "lblpage";
+            this.lblpage.Size = new System.Drawing.Size(18, 20);
+            this.lblpage.TabIndex = 6;
+            this.lblpage.Text = "1";
+            // 
             // btntail
             // 
-            this.btntail.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btntail.BackColor = System.Drawing.Color.Lime;
             this.btntail.Location = new System.Drawing.Point(400, 4);
             this.btntail.Name = "btntail";
             this.btntail.Size = new System.Drawing.Size(75, 28);
@@ -206,7 +216,7 @@ namespace GUI.UserControls
             // 
             // btnnext
             // 
-            this.btnnext.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnnext.BackColor = System.Drawing.Color.Lime;
             this.btnnext.Location = new System.Drawing.Point(319, 4);
             this.btnnext.Name = "btnnext";
             this.btnnext.Size = new System.Drawing.Size(75, 28);
@@ -216,7 +226,7 @@ namespace GUI.UserControls
             // 
             // btnback
             // 
-            this.btnback.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnback.BackColor = System.Drawing.Color.Lime;
             this.btnback.Location = new System.Drawing.Point(95, 4);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(75, 28);
@@ -226,22 +236,13 @@ namespace GUI.UserControls
             // 
             // btnhead
             // 
-            this.btnhead.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnhead.BackColor = System.Drawing.Color.Lime;
             this.btnhead.Location = new System.Drawing.Point(14, 4);
             this.btnhead.Name = "btnhead";
             this.btnhead.Size = new System.Drawing.Size(75, 28);
             this.btnhead.TabIndex = 0;
             this.btnhead.Text = "<<";
             this.btnhead.UseVisualStyleBackColor = false;
-            // 
-            // lblpage
-            // 
-            this.lblpage.AutoSize = true;
-            this.lblpage.Location = new System.Drawing.Point(235, 8);
-            this.lblpage.Name = "lblpage";
-            this.lblpage.Size = new System.Drawing.Size(18, 20);
-            this.lblpage.TabIndex = 6;
-            this.lblpage.Text = "1";
             // 
             // UC_Admin_Class_KhoiLop
             // 

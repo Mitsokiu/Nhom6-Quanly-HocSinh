@@ -51,11 +51,11 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblpage = new System.Windows.Forms.Label();
             this.btntail = new System.Windows.Forms.Button();
             this.btnnext = new System.Windows.Forms.Button();
             this.btnback = new System.Windows.Forms.Button();
             this.btnhead = new System.Windows.Forms.Button();
-            this.lblpage = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -83,7 +83,7 @@
             // 
             // btndel
             // 
-            this.btndel.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btndel.BackColor = System.Drawing.Color.Lime;
             this.btndel.Location = new System.Drawing.Point(230, 437);
             this.btndel.Name = "btndel";
             this.btndel.Size = new System.Drawing.Size(83, 49);
@@ -94,7 +94,7 @@
             // 
             // btnupdate
             // 
-            this.btnupdate.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnupdate.BackColor = System.Drawing.Color.Lime;
             this.btnupdate.Location = new System.Drawing.Point(120, 437);
             this.btnupdate.Name = "btnupdate";
             this.btnupdate.Size = new System.Drawing.Size(83, 49);
@@ -105,7 +105,7 @@
             // 
             // btnadd
             // 
-            this.btnadd.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnadd.BackColor = System.Drawing.Color.Lime;
             this.btnadd.Location = new System.Drawing.Point(19, 437);
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(83, 49);
@@ -255,6 +255,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Green;
             this.label6.Location = new System.Drawing.Point(3, 14);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(162, 25);
@@ -272,46 +273,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(488, 40);
             this.panel3.TabIndex = 22;
-            // 
-            // btntail
-            // 
-            this.btntail.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btntail.Location = new System.Drawing.Point(400, 4);
-            this.btntail.Name = "btntail";
-            this.btntail.Size = new System.Drawing.Size(75, 28);
-            this.btntail.TabIndex = 3;
-            this.btntail.Text = ">>";
-            this.btntail.UseVisualStyleBackColor = false;
-            // 
-            // btnnext
-            // 
-            this.btnnext.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnnext.Location = new System.Drawing.Point(319, 4);
-            this.btnnext.Name = "btnnext";
-            this.btnnext.Size = new System.Drawing.Size(75, 28);
-            this.btnnext.TabIndex = 2;
-            this.btnnext.Text = ">";
-            this.btnnext.UseVisualStyleBackColor = false;
-            // 
-            // btnback
-            // 
-            this.btnback.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnback.Location = new System.Drawing.Point(95, 4);
-            this.btnback.Name = "btnback";
-            this.btnback.Size = new System.Drawing.Size(75, 28);
-            this.btnback.TabIndex = 1;
-            this.btnback.Text = "<";
-            this.btnback.UseVisualStyleBackColor = false;
-            // 
-            // btnhead
-            // 
-            this.btnhead.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnhead.Location = new System.Drawing.Point(14, 4);
-            this.btnhead.Name = "btnhead";
-            this.btnhead.Size = new System.Drawing.Size(75, 28);
-            this.btnhead.TabIndex = 0;
-            this.btnhead.Text = "<<";
-            this.btnhead.UseVisualStyleBackColor = false;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // lblpage
             // 
@@ -321,6 +283,46 @@
             this.lblpage.Size = new System.Drawing.Size(18, 20);
             this.lblpage.TabIndex = 6;
             this.lblpage.Text = "1";
+            // 
+            // btntail
+            // 
+            this.btntail.BackColor = System.Drawing.Color.Lime;
+            this.btntail.Location = new System.Drawing.Point(400, 4);
+            this.btntail.Name = "btntail";
+            this.btntail.Size = new System.Drawing.Size(75, 28);
+            this.btntail.TabIndex = 3;
+            this.btntail.Text = ">>";
+            this.btntail.UseVisualStyleBackColor = false;
+            // 
+            // btnnext
+            // 
+            this.btnnext.BackColor = System.Drawing.Color.Lime;
+            this.btnnext.Location = new System.Drawing.Point(319, 4);
+            this.btnnext.Name = "btnnext";
+            this.btnnext.Size = new System.Drawing.Size(75, 28);
+            this.btnnext.TabIndex = 2;
+            this.btnnext.Text = ">";
+            this.btnnext.UseVisualStyleBackColor = false;
+            // 
+            // btnback
+            // 
+            this.btnback.BackColor = System.Drawing.Color.Lime;
+            this.btnback.Location = new System.Drawing.Point(95, 4);
+            this.btnback.Name = "btnback";
+            this.btnback.Size = new System.Drawing.Size(75, 28);
+            this.btnback.TabIndex = 1;
+            this.btnback.Text = "<";
+            this.btnback.UseVisualStyleBackColor = false;
+            // 
+            // btnhead
+            // 
+            this.btnhead.BackColor = System.Drawing.Color.Lime;
+            this.btnhead.Location = new System.Drawing.Point(14, 4);
+            this.btnhead.Name = "btnhead";
+            this.btnhead.Size = new System.Drawing.Size(75, 28);
+            this.btnhead.TabIndex = 0;
+            this.btnhead.Text = "<<";
+            this.btnhead.UseVisualStyleBackColor = false;
             // 
             // UC_Admin_ThongBao
             // 

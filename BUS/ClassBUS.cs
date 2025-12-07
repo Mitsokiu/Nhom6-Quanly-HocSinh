@@ -13,6 +13,7 @@ namespace BUS
         public static void DeleteClass(int id) => ClassDAO.DeleteClass(id);
         public static List<ClassDTO> GetAllClasses() => ClassDAO.GetAllClasses();
         public static  DataTable GetClassesByYear(int yearId) => ClassDAO.GetClassesByYear(yearId);
+
     }
 }
 

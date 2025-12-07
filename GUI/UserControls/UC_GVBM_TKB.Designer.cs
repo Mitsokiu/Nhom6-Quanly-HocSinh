@@ -7,13 +7,6 @@ namespace GUI.UserControls
     partial class UC_GVBM_TKB
     {
         private System.ComponentModel.IContainer components = null;
-        private ComboBox cbSemester;
-        private Label lblSemester;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Thu;
-        private DataGridViewTextBoxColumn Tiet;
-        private DataGridViewTextBoxColumn Lop;
-        private DataGridViewTextBoxColumn Phong;
 
         protected override void Dispose(bool disposing)
         {
@@ -27,112 +20,153 @@ namespace GUI.UserControls
         #region Component Designer generated code
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbBoxnamhoc = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBoxhk = new System.Windows.Forms.ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Thu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tiet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Phong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbSemester = new System.Windows.Forms.ComboBox();
-            this.lblSemester = new System.Windows.Forms.Label();
+            this.Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Class = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sub = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Period = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.cbBoxnamhoc);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.comboBoxhk);
+            this.panel1.Location = new System.Drawing.Point(3, 18);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(297, 643);
+            this.panel1.TabIndex = 0;
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(12, 26);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(94, 23);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Năm Học";
+            // 
+            // cbBoxnamhoc
+            // 
+            this.cbBoxnamhoc.Location = new System.Drawing.Point(112, 21);
+            this.cbBoxnamhoc.Name = "cbBoxnamhoc";
+            this.cbBoxnamhoc.Size = new System.Drawing.Size(167, 28);
+            this.cbBoxnamhoc.TabIndex = 19;
+            this.cbBoxnamhoc.SelectedIndexChanged += new System.EventHandler(this.CbBoxnamhoc_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(12, 73);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(100, 23);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "HocKI";
+            // 
+            // comboBoxhk
+            // 
+            this.comboBoxhk.Location = new System.Drawing.Point(112, 70);
+            this.comboBoxhk.Name = "comboBoxhk";
+            this.comboBoxhk.Size = new System.Drawing.Size(164, 28);
+            this.comboBoxhk.TabIndex = 17;
+            this.comboBoxhk.SelectedIndexChanged += new System.EventHandler(this.ComboBoxhk_SelectedIndexChanged);
+            this.comboBoxhk.SelectedValueChanged += new System.EventHandler(this.ComboBoxhk_SelectedValueChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Location = new System.Drawing.Point(323, 18);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(831, 643);
+            this.panel2.TabIndex = 1;
+            // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Thu,
-            this.Tiet,
-            this.Lop,
-            this.Phong});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.GridColor = System.Drawing.Color.LightGray;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 65);
+            this.Day,
+            this.Class,
+            this.Sub,
+            this.Period,
+            this.Room});
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 92;
-            this.dataGridView1.RowTemplate.Height = 32;
-            this.dataGridView1.Size = new System.Drawing.Size(1450, 760);
-            this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(821, 625);
+            this.dataGridView1.TabIndex = 0;
             // 
-            // Thu
+            // Day
             // 
-            this.Thu.FillWeight = 20F;
-            this.Thu.HeaderText = "Thứ";
-            this.Thu.MinimumWidth = 11;
-            this.Thu.Name = "Thu";
+            this.Day.HeaderText = "Thứ";
+            this.Day.MinimumWidth = 8;
+            this.Day.Name = "Day";
+            this.Day.Width = 150;
             // 
-            // Tiet
+            // Class
             // 
-            this.Tiet.FillWeight = 20F;
-            this.Tiet.HeaderText = "Tiết";
-            this.Tiet.MinimumWidth = 11;
-            this.Tiet.Name = "Tiet";
+            this.Class.HeaderText = "Lớp";
+            this.Class.MinimumWidth = 8;
+            this.Class.Name = "Class";
+            this.Class.Width = 150;
             // 
-            // Lop
+            // Sub
             // 
-            this.Lop.FillWeight = 30F;
-            this.Lop.HeaderText = "Lớp";
-            this.Lop.MinimumWidth = 11;
-            this.Lop.Name = "Lop";
+            this.Sub.HeaderText = "Môn";
+            this.Sub.MinimumWidth = 8;
+            this.Sub.Name = "Sub";
+            this.Sub.Width = 150;
             // 
-            // Phong
+            // Period
             // 
-            this.Phong.FillWeight = 30F;
-            this.Phong.HeaderText = "Phòng";
-            this.Phong.MinimumWidth = 11;
-            this.Phong.Name = "Phong";
+            this.Period.HeaderText = "Tiết";
+            this.Period.MinimumWidth = 8;
+            this.Period.Name = "Period";
+            this.Period.Width = 150;
             // 
-            // cbSemester
+            // Room
             // 
-            this.cbSemester.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSemester.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbSemester.Location = new System.Drawing.Point(246, 14);
-            this.cbSemester.Name = "cbSemester";
-            this.cbSemester.Size = new System.Drawing.Size(503, 49);
-            this.cbSemester.TabIndex = 1;
-            this.cbSemester.SelectedIndexChanged += new System.EventHandler(this.cbSemester_SelectedIndexChanged);
-            // 
-            // lblSemester
-            // 
-            this.lblSemester.AutoSize = true;
-            this.lblSemester.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.lblSemester.Location = new System.Drawing.Point(20, 18);
-            this.lblSemester.Name = "lblSemester";
-            this.lblSemester.Size = new System.Drawing.Size(220, 45);
-            this.lblSemester.TabIndex = 0;
-            this.lblSemester.Text = "Chọn học kỳ:";
+            this.Room.HeaderText = "Phòng";
+            this.Room.MinimumWidth = 8;
+            this.Room.Name = "Room";
+            this.Room.Width = 150;
             // 
             // UC_GVBM_TKB
             // 
-            this.Controls.Add(this.lblSemester);
-            this.Controls.Add(this.cbSemester);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Name = "UC_GVBM_TKB";
-            this.Size = new System.Drawing.Size(1485, 837);
+            this.Size = new System.Drawing.Size(1219, 837);
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
         #endregion
+
+        private Panel panel1;
+        private Panel panel2;
+        private Label label7;
+        private ComboBox cbBoxnamhoc;
+        private Label label5;
+        private ComboBox comboBoxhk;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn Day;
+        private DataGridViewTextBoxColumn Class;
+        private DataGridViewTextBoxColumn Sub;
+        private DataGridViewTextBoxColumn Period;
+        private DataGridViewTextBoxColumn Room;
     }
 }

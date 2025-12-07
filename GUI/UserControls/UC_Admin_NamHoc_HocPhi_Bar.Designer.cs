@@ -55,24 +55,26 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(163, 12);
+            this.button2.BackColor = System.Drawing.Color.Lime;
+            this.button2.Location = new System.Drawing.Point(164, 12);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(186, 30);
+            this.button2.Size = new System.Drawing.Size(186, 51);
             this.button2.TabIndex = 1;
             this.button2.Text = "Thiết Lập Khoảng Thu";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(3, 15);
+            this.button1.BackColor = System.Drawing.Color.Lime;
+            this.button1.Location = new System.Drawing.Point(3, 12);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 27);
+            this.button1.Size = new System.Drawing.Size(155, 51);
             this.button1.TabIndex = 0;
             this.button1.Text = "Quản Lý Học Phí";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // UC_Admin_NamHoc_HocPhi_Bar

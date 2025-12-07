@@ -44,9 +44,7 @@
             this.labelAddr = new System.Windows.Forms.Label();
             this.labelClass = new System.Windows.Forms.Label();
             this.labelYear = new System.Windows.Forms.Label();
-            this.labelGrade = new System.Windows.Forms.Label();
             this.cbBoxYear = new System.Windows.Forms.ComboBox();
-            this.cbBoxGrade = new System.Windows.Forms.ComboBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtAddr = new System.Windows.Forms.TextBox();
             this.cbBoxClass = new System.Windows.Forms.ComboBox();
@@ -54,13 +52,14 @@
             this.dateTimePickerDOB = new System.Windows.Forms.DateTimePicker();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnxuat = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblpage = new System.Windows.Forms.Label();
             this.btntail = new System.Windows.Forms.Button();
             this.btnnext = new System.Windows.Forms.Button();
             this.btnback = new System.Windows.Forms.Button();
             this.btnhead = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.lblpage = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -145,7 +144,7 @@
             // labelName
             // 
             this.labelName.AutoSize = true;
-            this.labelName.Location = new System.Drawing.Point(14, 91);
+            this.labelName.Location = new System.Drawing.Point(14, 55);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(36, 20);
             this.labelName.TabIndex = 1;
@@ -154,7 +153,7 @@
             // labelDOB
             // 
             this.labelDOB.AutoSize = true;
-            this.labelDOB.Location = new System.Drawing.Point(14, 149);
+            this.labelDOB.Location = new System.Drawing.Point(14, 113);
             this.labelDOB.Name = "labelDOB";
             this.labelDOB.Size = new System.Drawing.Size(81, 20);
             this.labelDOB.TabIndex = 2;
@@ -163,7 +162,7 @@
             // labelGender
             // 
             this.labelGender.AutoSize = true;
-            this.labelGender.Location = new System.Drawing.Point(13, 209);
+            this.labelGender.Location = new System.Drawing.Point(13, 173);
             this.labelGender.Name = "labelGender";
             this.labelGender.Size = new System.Drawing.Size(71, 20);
             this.labelGender.TabIndex = 3;
@@ -172,7 +171,7 @@
             // labelAddr
             // 
             this.labelAddr.AutoSize = true;
-            this.labelAddr.Location = new System.Drawing.Point(14, 246);
+            this.labelAddr.Location = new System.Drawing.Point(14, 210);
             this.labelAddr.Name = "labelAddr";
             this.labelAddr.Size = new System.Drawing.Size(60, 20);
             this.labelAddr.TabIndex = 4;
@@ -181,7 +180,7 @@
             // labelClass
             // 
             this.labelClass.AutoSize = true;
-            this.labelClass.Location = new System.Drawing.Point(14, 297);
+            this.labelClass.Location = new System.Drawing.Point(14, 261);
             this.labelClass.Name = "labelClass";
             this.labelClass.Size = new System.Drawing.Size(36, 20);
             this.labelClass.TabIndex = 5;
@@ -197,15 +196,6 @@
             this.labelYear.TabIndex = 6;
             this.labelYear.Text = "Niên Khóa";
             // 
-            // labelGrade
-            // 
-            this.labelGrade.AutoSize = true;
-            this.labelGrade.Location = new System.Drawing.Point(14, 48);
-            this.labelGrade.Name = "labelGrade";
-            this.labelGrade.Size = new System.Drawing.Size(40, 20);
-            this.labelGrade.TabIndex = 7;
-            this.labelGrade.Text = "Khối";
-            // 
             // cbBoxYear
             // 
             this.cbBoxYear.FormattingEnabled = true;
@@ -215,24 +205,16 @@
             this.cbBoxYear.TabIndex = 8;
             this.cbBoxYear.SelectedIndexChanged += new System.EventHandler(this.cbBoxYear_SelectedIndexChanged);
             // 
-            // cbBoxGrade
-            // 
-            this.cbBoxGrade.FormattingEnabled = true;
-            this.cbBoxGrade.Location = new System.Drawing.Point(127, 48);
-            this.cbBoxGrade.Name = "cbBoxGrade";
-            this.cbBoxGrade.Size = new System.Drawing.Size(196, 28);
-            this.cbBoxGrade.TabIndex = 9;
-            // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(123, 91);
+            this.txtName.Location = new System.Drawing.Point(123, 55);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(200, 26);
             this.txtName.TabIndex = 11;
             // 
             // txtAddr
             // 
-            this.txtAddr.Location = new System.Drawing.Point(123, 246);
+            this.txtAddr.Location = new System.Drawing.Point(123, 210);
             this.txtAddr.Name = "txtAddr";
             this.txtAddr.Size = new System.Drawing.Size(200, 26);
             this.txtAddr.TabIndex = 12;
@@ -240,7 +222,7 @@
             // cbBoxClass
             // 
             this.cbBoxClass.FormattingEnabled = true;
-            this.cbBoxClass.Location = new System.Drawing.Point(123, 297);
+            this.cbBoxClass.Location = new System.Drawing.Point(123, 261);
             this.cbBoxClass.Name = "cbBoxClass";
             this.cbBoxClass.Size = new System.Drawing.Size(200, 28);
             this.cbBoxClass.TabIndex = 13;
@@ -251,22 +233,22 @@
             this.cbBoxGender.Items.AddRange(new object[] {
             "Male",
             "FeMale"});
-            this.cbBoxGender.Location = new System.Drawing.Point(123, 209);
+            this.cbBoxGender.Location = new System.Drawing.Point(123, 173);
             this.cbBoxGender.Name = "cbBoxGender";
             this.cbBoxGender.Size = new System.Drawing.Size(200, 28);
             this.cbBoxGender.TabIndex = 14;
             // 
             // dateTimePickerDOB
             // 
-            this.dateTimePickerDOB.Location = new System.Drawing.Point(123, 149);
+            this.dateTimePickerDOB.Location = new System.Drawing.Point(123, 113);
             this.dateTimePickerDOB.Name = "dateTimePickerDOB";
             this.dateTimePickerDOB.Size = new System.Drawing.Size(200, 26);
             this.dateTimePickerDOB.TabIndex = 15;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnUpdate.Location = new System.Drawing.Point(99, 390);
+            this.btnUpdate.BackColor = System.Drawing.Color.Lime;
+            this.btnUpdate.Location = new System.Drawing.Point(18, 356);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(95, 52);
             this.btnUpdate.TabIndex = 16;
@@ -277,15 +259,14 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnxuat);
             this.panel1.Controls.Add(this.btnUpdate);
             this.panel1.Controls.Add(this.dateTimePickerDOB);
             this.panel1.Controls.Add(this.cbBoxGender);
             this.panel1.Controls.Add(this.cbBoxClass);
             this.panel1.Controls.Add(this.txtAddr);
             this.panel1.Controls.Add(this.txtName);
-            this.panel1.Controls.Add(this.cbBoxGrade);
             this.panel1.Controls.Add(this.cbBoxYear);
-            this.panel1.Controls.Add(this.labelGrade);
             this.panel1.Controls.Add(this.labelYear);
             this.panel1.Controls.Add(this.labelClass);
             this.panel1.Controls.Add(this.labelAddr);
@@ -296,6 +277,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(349, 545);
             this.panel1.TabIndex = 0;
+            // 
+            // btnxuat
+            // 
+            this.btnxuat.BackColor = System.Drawing.Color.Lime;
+            this.btnxuat.Location = new System.Drawing.Point(150, 356);
+            this.btnxuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnxuat.Name = "btnxuat";
+            this.btnxuat.Size = new System.Drawing.Size(120, 49);
+            this.btnxuat.TabIndex = 19;
+            this.btnxuat.Text = "Xuất Excel";
+            this.btnxuat.UseVisualStyleBackColor = false;
+            this.btnxuat.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // panel3
             // 
@@ -309,10 +302,19 @@
             this.panel3.Size = new System.Drawing.Size(488, 40);
             this.panel3.TabIndex = 17;
             // 
+            // lblpage
+            // 
+            this.lblpage.AutoSize = true;
+            this.lblpage.Location = new System.Drawing.Point(235, 10);
+            this.lblpage.Name = "lblpage";
+            this.lblpage.Size = new System.Drawing.Size(18, 20);
+            this.lblpage.TabIndex = 6;
+            this.lblpage.Text = "1";
+            // 
             // btntail
             // 
-            this.btntail.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btntail.Location = new System.Drawing.Point(400, 4);
+            this.btntail.BackColor = System.Drawing.Color.Lime;
+            this.btntail.Location = new System.Drawing.Point(400, 6);
             this.btntail.Name = "btntail";
             this.btntail.Size = new System.Drawing.Size(75, 28);
             this.btntail.TabIndex = 3;
@@ -321,7 +323,7 @@
             // 
             // btnnext
             // 
-            this.btnnext.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnnext.BackColor = System.Drawing.Color.Lime;
             this.btnnext.Location = new System.Drawing.Point(319, 4);
             this.btnnext.Name = "btnnext";
             this.btnnext.Size = new System.Drawing.Size(75, 28);
@@ -331,7 +333,7 @@
             // 
             // btnback
             // 
-            this.btnback.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnback.BackColor = System.Drawing.Color.Lime;
             this.btnback.Location = new System.Drawing.Point(95, 4);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(75, 28);
@@ -341,7 +343,7 @@
             // 
             // btnhead
             // 
-            this.btnhead.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnhead.BackColor = System.Drawing.Color.Lime;
             this.btnhead.Location = new System.Drawing.Point(14, 4);
             this.btnhead.Name = "btnhead";
             this.btnhead.Size = new System.Drawing.Size(75, 28);
@@ -353,20 +355,12 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Green;
             this.label6.Location = new System.Drawing.Point(3, 11);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(188, 25);
             this.label6.TabIndex = 20;
             this.label6.Text = "Quản Lý Học Sinh";
-            // 
-            // lblpage
-            // 
-            this.lblpage.AutoSize = true;
-            this.lblpage.Location = new System.Drawing.Point(235, 10);
-            this.lblpage.Name = "lblpage";
-            this.lblpage.Size = new System.Drawing.Size(18, 20);
-            this.lblpage.TabIndex = 6;
-            this.lblpage.Text = "1";
             // 
             // UC_Admin_Student
             // 
@@ -399,9 +393,7 @@
         private System.Windows.Forms.Label labelAddr;
         private System.Windows.Forms.Label labelClass;
         private System.Windows.Forms.Label labelYear;
-        private System.Windows.Forms.Label labelGrade;
         private System.Windows.Forms.ComboBox cbBoxYear;
-        private System.Windows.Forms.ComboBox cbBoxGrade;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtAddr;
         private System.Windows.Forms.ComboBox cbBoxClass;
@@ -422,5 +414,6 @@
         private System.Windows.Forms.Button btnhead;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblpage;
+        private System.Windows.Forms.Button btnxuat;
     }
 }

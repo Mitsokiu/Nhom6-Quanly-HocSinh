@@ -1,91 +1,148 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
+﻿using BUS;
 using DTO;
-using BUS;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Windows.Forms;
 
 namespace GUI.UserControls
 {
     public partial class UC_GVBM_TKB : UserControl
     {
-        private GVBM_TKB_BUS bus;
-        private SemesterBUS semesterBUS;
+        private int selectedAssignId = -1;
+        private AcademicYearBUS yearBUS = new AcademicYearBUS();
+        private SemesterBUS semesterBUS = new SemesterBUS();
+
 
         public UC_GVBM_TKB()
         {
             InitializeComponent();
-            bus = new GVBM_TKB_BUS();
-            semesterBUS = new SemesterBUS();
+            LoadYears();
+           
+            LoadTimetableForTeacher(Session.UserId, 1); // Load lịch trống ban đầu
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            
 
-            LoadSemesterCombo();
+
+
         }
 
-        private void LoadSemesterCombo()
+        //===========================
+        // 1. Load danh sách năm học
+        //===========================
+        private void LoadYears()
         {
-            try
-            {
-                List<SemesterDTO> semesters = semesterBUS.GetAllSemesters();
-                if (semesters.Count == 0)
-                {
-                    MessageBox.Show("Chưa có dữ liệu học kỳ!");
-                    return;
-                }
+            DataTable dt = yearBUS.GetAllYear();
+            if (dt == null) return;
 
-                cbSemester.DataSource = semesters;
-                cbSemester.DisplayMember = "DisplayName";  // Hiển thị: Học kỳ 1 - Năm học 2024-2025
-                cbSemester.ValueMember = "SemesterId";
-                cbSemester.SelectedIndex = 0; // Mặc định chọn học kỳ đầu
+            DataRow dr = dt.NewRow();
+            dr["year_id"] = 0;
+            dr["name"] = "-- Chọn năm --";
+            dt.Rows.InsertAt(dr, 0);
 
-                // Load TKB cho học kỳ đầu tiên
-                LoadSelectedSemesterTimetable();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi tải danh sách học kỳ: " + ex.Message, "Lỗi");
-            }
+            cbBoxnamhoc.DisplayMember = "name";
+            cbBoxnamhoc.ValueMember = "year_id";
+            cbBoxnamhoc.DataSource = dt;
         }
 
-        private void cbSemester_SelectedIndexChanged(object sender, EventArgs e)
+        //==================================================
+        // 2. Khi chọn năm → load học kỳ của năm đó
+        //==================================================
+        private void CbBoxnamhoc_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadSelectedSemesterTimetable();
-        }
+            if (cbBoxnamhoc.SelectedValue == null) return;
 
-        private void LoadSelectedSemesterTimetable()
-        {
-            try
+            int yearId = Convert.ToInt32(cbBoxnamhoc.SelectedValue);
+
+            if (yearId == 0)
             {
-                var user = currentuser.CurrentUser;
-                if (user == null)
-                {
-                    MessageBox.Show("Chưa đăng nhập hoặc currentuser null!");
-                    return;
-                }
-
-                if (cbSemester.SelectedValue == null || !int.TryParse(cbSemester.SelectedValue.ToString(), out int semesterID))
-                {
-                    return;
-                }
-
-                int teacherID = user.UserId;
+                LoadSemestersEmpty();
                 dataGridView1.Rows.Clear();
-
-                List<GVBM_TKB_DTO> list = bus.GetTimetableByTeacher(teacherID, semesterID);
-
-                if (list.Count == 0)
-                {
-                    MessageBox.Show("Không có dữ liệu thời khóa biểu cho giáo viên này.", "Thông báo");
-                    return;
-                }
-
-                foreach (var tkb in list)
-                {
-                    dataGridView1.Rows.Add(tkb.Day, tkb.Period, tkb.ClassName, tkb.Room);
-                }
+                return;
             }
-            catch (Exception ex)
+
+            LoadSemestersByYear(yearId);
+            
+        }
+
+        private void LoadSemestersByYear(int yearId)
+        {
+            var list = semesterBUS.GetSemestersByYearId(yearId);
+
+            
+            comboBoxhk.DataSource = list;
+            comboBoxhk.DisplayMember = "SemesterName";
+            comboBoxhk.ValueMember = "SemesterId";
+           
+            // Chọn học kỳ mặc định đầu tiên
+            if (comboBoxhk.Items.Count > 0)
+                comboBoxhk.SelectedIndex = 0;
+
+           
+            
+        }
+
+
+        private void LoadSemestersEmpty()
+        {
+            comboBoxhk.DataSource = null;
+            comboBoxhk.Items.Clear();
+        }
+
+        private void ComboBoxhk_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxhk.SelectedValue == null) return;
+
+            if (!int.TryParse(comboBoxhk.SelectedValue.ToString(), out int semesterId))
+                return;
+
+            // Lấy teacherId từ user đang đăng nhập
+            int teacherId = Session.TeacherId;
+            if (teacherId <= 0) return;
+             MessageBox.Show("click");
+            LoadTimetableForTeacher(teacherId, semesterId);
+
+        }
+       
+
+        private void ComboBoxhk_SelectedValueChanged(object sender, EventArgs e)
+                {
+                    if (comboBoxhk.SelectedValue == null) return;
+                    if (!int.TryParse(comboBoxhk.SelectedValue.ToString(), out int semesterId)) return;
+
+                    int teacherId = Session.TeacherId;
+                    if (teacherId <= 0) return;
+
+                    LoadTimetableForTeacher(teacherId, semesterId);
+                     MessageBox.Show("click");
+
+        }
+
+
+        private void LoadTimetableForTeacher(int teacherId, int semesterId)
+        {
+            dataGridView1.Rows.Clear();
+
+            TimetableBUS timetableBUS = new TimetableBUS();
+            DataTable dt = timetableBUS.GetTimetableByTeacherAndSemester(teacherId, semesterId);
+            MessageBox.Show($"TeacherId = {Session.UserId}");
+
+
+            foreach (DataRow row in dt.Rows)
             {
-                MessageBox.Show("Lỗi khi load thời khóa biểu: " + ex.Message, "Lỗi");
+                dataGridView1.Rows.Add(
+                    row["day"].ToString(),
+                    row["Class"].ToString(),
+                    row["Subject"].ToString(),
+
+                    row["period"].ToString(),
+                  
+                    row["Room"].ToString()
+                );
             }
         }
+
+
     }
 }
+

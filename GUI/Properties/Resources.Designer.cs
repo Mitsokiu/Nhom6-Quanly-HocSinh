@@ -273,9 +273,39 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap nhapexcel_32 {
+            get {
+                object obj = ResourceManager.GetObject("nhapexcel_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap nhapngaynghi_24 {
             get {
                 object obj = ResourceManager.GetObject("nhapngaynghi_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pdf_32 {
+            get {
+                object obj = ResourceManager.GetObject("pdf_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search__1_ {
+            get {
+                object obj = ResourceManager.GetObject("search (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -343,6 +373,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap view_40 {
+            get {
+                object obj = ResourceManager.GetObject("view_40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap virtual_event {
             get {
                 object obj = ResourceManager.GetObject("virtual-event", resourceCulture);
@@ -386,6 +426,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap xinphepvang_24 {
             get {
                 object obj = ResourceManager.GetObject("xinphepvang_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap xuatexcel_32 {
+            get {
+                object obj = ResourceManager.GetObject("xuatexcel_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -48,13 +48,13 @@ namespace GUI.UserControls
             this.NgayBatDau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayKetThuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblpage = new System.Windows.Forms.Label();
             this.btntail = new System.Windows.Forms.Button();
             this.btnnext = new System.Windows.Forms.Button();
             this.btnback = new System.Windows.Forms.Button();
             this.btnhead = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblpage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -94,7 +94,7 @@ namespace GUI.UserControls
             // 
             // btnDelete
             // 
-            this.btnDelete.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnDelete.BackColor = System.Drawing.Color.Lime;
             this.btnDelete.Location = new System.Drawing.Point(276, 300);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
@@ -105,7 +105,7 @@ namespace GUI.UserControls
             // 
             // btnUpdate
             // 
-            this.btnUpdate.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnUpdate.BackColor = System.Drawing.Color.Lime;
             this.btnUpdate.Location = new System.Drawing.Point(161, 299);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
@@ -116,7 +116,7 @@ namespace GUI.UserControls
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.button4.BackColor = System.Drawing.Color.Lime;
             this.button4.Location = new System.Drawing.Point(38, 299);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
@@ -217,9 +217,18 @@ namespace GUI.UserControls
             this.panel1.Size = new System.Drawing.Size(488, 40);
             this.panel1.TabIndex = 28;
             // 
+            // lblpage
+            // 
+            this.lblpage.AutoSize = true;
+            this.lblpage.Location = new System.Drawing.Point(235, 10);
+            this.lblpage.Name = "lblpage";
+            this.lblpage.Size = new System.Drawing.Size(18, 20);
+            this.lblpage.TabIndex = 6;
+            this.lblpage.Text = "1";
+            // 
             // btntail
             // 
-            this.btntail.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btntail.BackColor = System.Drawing.Color.Lime;
             this.btntail.Location = new System.Drawing.Point(400, 4);
             this.btntail.Name = "btntail";
             this.btntail.Size = new System.Drawing.Size(75, 28);
@@ -229,7 +238,7 @@ namespace GUI.UserControls
             // 
             // btnnext
             // 
-            this.btnnext.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnnext.BackColor = System.Drawing.Color.Lime;
             this.btnnext.Location = new System.Drawing.Point(319, 4);
             this.btnnext.Name = "btnnext";
             this.btnnext.Size = new System.Drawing.Size(75, 28);
@@ -239,7 +248,7 @@ namespace GUI.UserControls
             // 
             // btnback
             // 
-            this.btnback.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnback.BackColor = System.Drawing.Color.Lime;
             this.btnback.Location = new System.Drawing.Point(95, 4);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(75, 28);
@@ -249,7 +258,7 @@ namespace GUI.UserControls
             // 
             // btnhead
             // 
-            this.btnhead.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnhead.BackColor = System.Drawing.Color.Lime;
             this.btnhead.Location = new System.Drawing.Point(14, 4);
             this.btnhead.Name = "btnhead";
             this.btnhead.Size = new System.Drawing.Size(75, 28);
@@ -261,6 +270,7 @@ namespace GUI.UserControls
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Green;
             this.label5.Location = new System.Drawing.Point(8, 13);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(164, 25);
@@ -285,15 +295,6 @@ namespace GUI.UserControls
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(402, 370);
             this.panel2.TabIndex = 30;
-            // 
-            // lblpage
-            // 
-            this.lblpage.AutoSize = true;
-            this.lblpage.Location = new System.Drawing.Point(235, 10);
-            this.lblpage.Name = "lblpage";
-            this.lblpage.Size = new System.Drawing.Size(18, 20);
-            this.lblpage.TabIndex = 6;
-            this.lblpage.Text = "1";
             // 
             // UC_Admin_Namhoc_Hocki
             // 

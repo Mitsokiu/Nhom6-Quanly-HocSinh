@@ -31,7 +31,7 @@ namespace GUI.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_add = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -56,14 +56,14 @@ namespace GUI.UserControls
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayTao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_search = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtnumber = new System.Windows.Forms.TextBox();
             this.btntail = new System.Windows.Forms.Button();
             this.btnnext = new System.Windows.Forms.Button();
             this.btnback = new System.Windows.Forms.Button();
             this.btnhead = new System.Windows.Forms.Button();
-            this.txtnumber = new System.Windows.Forms.TextBox();
+            this.btn_search = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -71,7 +71,7 @@ namespace GUI.UserControls
             // 
             // btn_add
             // 
-            this.btn_add.BackColor = System.Drawing.Color.Silver;
+            this.btn_add.BackColor = System.Drawing.Color.Lime;
             this.btn_add.Location = new System.Drawing.Point(0, 407);
             this.btn_add.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_add.Name = "btn_add";
@@ -116,7 +116,7 @@ namespace GUI.UserControls
             // 
             // btn_xoa
             // 
-            this.btn_xoa.BackColor = System.Drawing.Color.Silver;
+            this.btn_xoa.BackColor = System.Drawing.Color.Lime;
             this.btn_xoa.Location = new System.Drawing.Point(211, 407);
             this.btn_xoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_xoa.Name = "btn_xoa";
@@ -128,7 +128,7 @@ namespace GUI.UserControls
             // 
             // btn_sua
             // 
-            this.btn_sua.BackColor = System.Drawing.Color.Silver;
+            this.btn_sua.BackColor = System.Drawing.Color.Lime;
             this.btn_sua.Location = new System.Drawing.Point(104, 407);
             this.btn_sua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_sua.Name = "btn_sua";
@@ -243,14 +243,14 @@ namespace GUI.UserControls
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Taikhoan,
@@ -317,18 +317,6 @@ namespace GUI.UserControls
             this.NgayTao.Name = "NgayTao";
             this.NgayTao.Width = 150;
             // 
-            // btn_search
-            // 
-            this.btn_search.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btn_search.Location = new System.Drawing.Point(829, 20);
-            this.btn_search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(85, 35);
-            this.btn_search.TabIndex = 12;
-            this.btn_search.Text = "Seach";
-            this.btn_search.UseVisualStyleBackColor = false;
-            this.btn_search.Click += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(374, 24);
@@ -352,9 +340,16 @@ namespace GUI.UserControls
             this.panel1.TabIndex = 16;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // txtnumber
+            // 
+            this.txtnumber.Location = new System.Drawing.Point(194, 5);
+            this.txtnumber.Name = "txtnumber";
+            this.txtnumber.Size = new System.Drawing.Size(100, 26);
+            this.txtnumber.TabIndex = 4;
+            // 
             // btntail
             // 
-            this.btntail.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btntail.BackColor = System.Drawing.Color.Lime;
             this.btntail.Location = new System.Drawing.Point(400, 4);
             this.btntail.Name = "btntail";
             this.btntail.Size = new System.Drawing.Size(75, 28);
@@ -365,7 +360,7 @@ namespace GUI.UserControls
             // 
             // btnnext
             // 
-            this.btnnext.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnnext.BackColor = System.Drawing.Color.Lime;
             this.btnnext.Location = new System.Drawing.Point(319, 4);
             this.btnnext.Name = "btnnext";
             this.btnnext.Size = new System.Drawing.Size(75, 28);
@@ -376,7 +371,7 @@ namespace GUI.UserControls
             // 
             // btnback
             // 
-            this.btnback.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnback.BackColor = System.Drawing.Color.Lime;
             this.btnback.Location = new System.Drawing.Point(95, 4);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(75, 28);
@@ -387,7 +382,7 @@ namespace GUI.UserControls
             // 
             // btnhead
             // 
-            this.btnhead.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnhead.BackColor = System.Drawing.Color.Lime;
             this.btnhead.Location = new System.Drawing.Point(14, 4);
             this.btnhead.Name = "btnhead";
             this.btnhead.Size = new System.Drawing.Size(75, 28);
@@ -396,12 +391,19 @@ namespace GUI.UserControls
             this.btnhead.UseVisualStyleBackColor = false;
             this.btnhead.Click += new System.EventHandler(this.btnhead_Click);
             // 
-            // txtnumber
+            // btn_search
             // 
-            this.txtnumber.Location = new System.Drawing.Point(194, 5);
-            this.txtnumber.Name = "txtnumber";
-            this.txtnumber.Size = new System.Drawing.Size(100, 26);
-            this.txtnumber.TabIndex = 4;
+            this.btn_search.BackColor = System.Drawing.Color.Lime;
+            this.btn_search.Image = global::GUI.Properties.Resources.search__1_;
+            this.btn_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_search.Location = new System.Drawing.Point(829, 20);
+            this.btn_search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(116, 35);
+            this.btn_search.TabIndex = 12;
+            this.btn_search.Text = "Seach";
+            this.btn_search.UseVisualStyleBackColor = false;
+            this.btn_search.Click += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // UC_Admin_User
             // 

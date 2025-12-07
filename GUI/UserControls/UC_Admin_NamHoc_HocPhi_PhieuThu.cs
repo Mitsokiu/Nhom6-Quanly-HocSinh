@@ -1,4 +1,5 @@
 ﻿using BUS;
+using ClosedXML.Excel;
 using DTO;
 using System;
 using System.Collections.Generic;
@@ -271,6 +272,97 @@ namespace GUI.UserControls
         private void btnLast_Click(object sender, EventArgs e)
         {
             LoadPage(totalPage);
+        }
+
+
+
+        private void ExportToExcel(DataGridView dgv)
+        {
+            if (dgv.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu để xuất.");
+                return;
+            }
+
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Excel File (*.xlsx)|*.xlsx";
+            sfd.FileName = "DanhSachHocPhi.xlsx";
+
+            if (sfd.ShowDialog() != DialogResult.OK)
+                return;
+
+            try
+            {
+                using (var wb = new XLWorkbook())
+                {
+                    var ws = wb.Worksheets.Add("HocPhi");
+
+                    int colIndex = 1;
+
+                    // Tiêu đề cột
+                    foreach (DataGridViewColumn col in dgv.Columns)
+                    {
+                        if (!col.Visible) continue;
+
+                        var cell = ws.Cell(1, colIndex);
+                        cell.Value = col.HeaderText;
+                        cell.Style.Font.Bold = true;
+                        cell.Style.Fill.BackgroundColor = XLColor.LightGray;
+                        cell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+                        cell.Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
+
+                        colIndex++;
+                    }
+
+                    // Dữ liệu
+                    int rowIndex = 2;
+                    foreach (DataGridViewRow row in dgv.Rows)
+                    {
+                        if (row.IsNewRow) continue;
+
+                        colIndex = 1;
+
+                        foreach (DataGridViewColumn col in dgv.Columns)
+                        {
+                            if (!col.Visible) continue;
+
+                            var cell = ws.Cell(rowIndex, colIndex);
+                            var value = row.Cells[col.Index].Value;
+
+                            // Format ngày
+                            if (value is DateTime dt)
+                            {
+                                cell.Value = dt;
+                                cell.Style.DateFormat.Format = "dd/MM/yyyy";
+                            }
+                            else
+                            {
+                                cell.Value = value?.ToString();
+                            }
+
+                            cell.Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
+
+                            colIndex++;
+                        }
+
+                        rowIndex++;
+                    }
+
+                    ws.Columns().AdjustToContents();
+
+                    wb.SaveAs(sfd.FileName);
+                }
+
+                MessageBox.Show("Xuất Excel thành công.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xuất Excel: " + ex.Message);
+            }
+        }
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            ExportToExcel(dataGridView1);
         }
 
         // Các nút khác (tạm để trống hoặc gọi sự kiện riêng)

@@ -264,7 +264,8 @@ namespace GUI.UserControls
                 cboSemester.SelectedIndexChanged += CboSemester_SelectedIndexChanged;
 
                 // --- Chọn cái đầu tiên và ÉP BUỘC TẢI DỮ LIỆU NGAY ---
-                cboSemester.SelectedIndex = 0;
+                //cboSemester.SelectedIndex = 0;
+                cboSemester.SelectedValue = 1;
 
                 // Lấy ID của cái đầu tiên để load luôn
                 int firstSemesterId = semesters[0].SemesterId;

@@ -32,6 +32,7 @@ namespace GUI.UserControls
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnxuat = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,12 +54,12 @@ namespace GUI.UserControls
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblpage = new System.Windows.Forms.Label();
             this.btntail = new System.Windows.Forms.Button();
             this.btnnext = new System.Windows.Forms.Button();
             this.btnback = new System.Windows.Forms.Button();
             this.btnhead = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.lblpage = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -67,6 +68,7 @@ namespace GUI.UserControls
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnxuat);
             this.panel1.Controls.Add(this.comboBox3);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
@@ -86,6 +88,18 @@ namespace GUI.UserControls
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1373, 421);
             this.panel1.TabIndex = 0;
+            // 
+            // btnxuat
+            // 
+            this.btnxuat.BackColor = System.Drawing.Color.Lime;
+            this.btnxuat.Location = new System.Drawing.Point(203, 341);
+            this.btnxuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnxuat.Name = "btnxuat";
+            this.btnxuat.Size = new System.Drawing.Size(120, 49);
+            this.btnxuat.TabIndex = 18;
+            this.btnxuat.Text = "Xuất Excel";
+            this.btnxuat.UseVisualStyleBackColor = false;
+            this.btnxuat.Click += new System.EventHandler(this.buttonExport_Click);
             // 
             // comboBox3
             // 
@@ -153,8 +167,8 @@ namespace GUI.UserControls
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button3.Location = new System.Drawing.Point(93, 339);
+            this.button3.BackColor = System.Drawing.Color.Lime;
+            this.button3.Location = new System.Drawing.Point(44, 341);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(120, 49);
@@ -281,9 +295,18 @@ namespace GUI.UserControls
             this.panel2.Size = new System.Drawing.Size(488, 40);
             this.panel2.TabIndex = 17;
             // 
+            // lblpage
+            // 
+            this.lblpage.AutoSize = true;
+            this.lblpage.Location = new System.Drawing.Point(235, 10);
+            this.lblpage.Name = "lblpage";
+            this.lblpage.Size = new System.Drawing.Size(18, 20);
+            this.lblpage.TabIndex = 5;
+            this.lblpage.Text = "1";
+            // 
             // btntail
             // 
-            this.btntail.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btntail.BackColor = System.Drawing.Color.Lime;
             this.btntail.Location = new System.Drawing.Point(400, 4);
             this.btntail.Name = "btntail";
             this.btntail.Size = new System.Drawing.Size(75, 28);
@@ -293,8 +316,8 @@ namespace GUI.UserControls
             // 
             // btnnext
             // 
-            this.btnnext.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnnext.Location = new System.Drawing.Point(319, 4);
+            this.btnnext.BackColor = System.Drawing.Color.Lime;
+            this.btnnext.Location = new System.Drawing.Point(319, 6);
             this.btnnext.Name = "btnnext";
             this.btnnext.Size = new System.Drawing.Size(75, 28);
             this.btnnext.TabIndex = 2;
@@ -303,7 +326,7 @@ namespace GUI.UserControls
             // 
             // btnback
             // 
-            this.btnback.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnback.BackColor = System.Drawing.Color.Lime;
             this.btnback.Location = new System.Drawing.Point(95, 4);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(75, 28);
@@ -313,8 +336,8 @@ namespace GUI.UserControls
             // 
             // btnhead
             // 
-            this.btnhead.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnhead.Location = new System.Drawing.Point(14, 4);
+            this.btnhead.BackColor = System.Drawing.Color.Lime;
+            this.btnhead.Location = new System.Drawing.Point(14, 6);
             this.btnhead.Name = "btnhead";
             this.btnhead.Size = new System.Drawing.Size(75, 28);
             this.btnhead.TabIndex = 0;
@@ -325,20 +348,12 @@ namespace GUI.UserControls
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Green;
             this.label4.Location = new System.Drawing.Point(3, 13);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(175, 25);
             this.label4.TabIndex = 23;
             this.label4.Text = "Quản Lý Học Phí";
-            // 
-            // lblpage
-            // 
-            this.lblpage.AutoSize = true;
-            this.lblpage.Location = new System.Drawing.Point(235, 10);
-            this.lblpage.Name = "lblpage";
-            this.lblpage.Size = new System.Drawing.Size(18, 20);
-            this.lblpage.TabIndex = 5;
-            this.lblpage.Text = "1";
             // 
             // UC_Admin_NamHoc_HocPhi
             // 
@@ -390,5 +405,6 @@ namespace GUI.UserControls
         private Button btnhead;
         private Label label4;
         private Label lblpage;
+        private Button btnxuat;
     }
 }

@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Data;
+using System.Windows.Forms;
+
 
 namespace DAO
 {
     public class TeacherDAO
     {
-        // 1. Lấy ID năm học hiện tại (Dựa vào ngày hôm nay)
+        // 1. Lấy ID năm học hiện tại(Dựa vào ngày hôm nay)
         public int GetCurrentYearId()
         {
             string sql = "SELECT year_id FROM academic_years WHERE @param0 BETWEEN start_date AND end_date";
@@ -16,11 +18,24 @@ namespace DAO
 
             return -1; // Không tìm thấy năm học phù hợp
         }
+        //public int GetCurrentYearId()
+        //{
+        //    string sql = "SELECT year_id FROM academic_years WHERE start_date <= @param0 AND end_date >= @param0";
+        //    DataTable dt = DbConnect.ExecuteQuery(sql, new object[] { DateTime.Today });
+
+        //    if (dt.Rows.Count > 0 && dt.Rows[0]["year_id"] != DBNull.Value)
+        //        return Convert.ToInt32(dt.Rows[0]["year_id"]);
+
+        //    return -1; // Không tìm thấy năm học phù hợp
+        //}
+
 
         // 2. Lấy ID lớp mà giáo viên đang chủ nhiệm trong năm học hiện tại
         public int GetHomeroomClassId(int teacherUserId)
         {
-            int yearId = GetCurrentYearId();
+           
+            //int yearId = GetCurrentYearId();
+            int yearId = 1;
             if (yearId == -1) return -1;
 
             string sql = @"SELECT class_id 
@@ -37,6 +52,7 @@ namespace DAO
         {
             int classId = GetHomeroomClassId(teacherUserId);
             // Nếu không chủ nhiệm lớp nào, trả về bảng rỗng
+           
             if (classId <= 0) return new DataTable();
 
             string sql = "SELECT class_id, class_name FROM classes WHERE class_id = @param0";
@@ -49,5 +65,23 @@ namespace DAO
             string sql = "SELECT year_id, name FROM academic_years WHERE @param0 BETWEEN start_date AND end_date";
             return DbConnect.ExecuteQuery(sql, new object[] { DateTime.Today });
         }
+
+
+        public DataTable GetHomeroomClassByTeacherAndYear(int teacherUserId, int yearId)
+        {
+            if (yearId <= 0) return new DataTable();
+
+            string sql = @"
+                SELECT c.class_id, c.class_name
+                FROM homeroom_assignments ha
+                INNER JOIN classes c ON ha.class_id = c.class_id
+                WHERE ha.teacher_id = @param0 AND ha.year_id = @param1
+                LIMIT 1";
+
+            DataTable dt = DbConnect.ExecuteQuery(sql, new object[] { teacherUserId, yearId });
+            return dt;
+        }
     }
+
+
 }

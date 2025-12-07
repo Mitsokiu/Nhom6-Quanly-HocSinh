@@ -47,11 +47,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbnumpage = new System.Windows.Forms.Label();
             this.btntail = new System.Windows.Forms.Button();
             this.btnnext = new System.Windows.Forms.Button();
             this.btnback = new System.Windows.Forms.Button();
             this.btnhead = new System.Windows.Forms.Button();
-            this.lbnumpage = new System.Windows.Forms.Label();
+            this.btnxuat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -64,6 +65,7 @@
             this.comboBoxYear.Name = "comboBoxYear";
             this.comboBoxYear.Size = new System.Drawing.Size(178, 28);
             this.comboBoxYear.TabIndex = 0;
+            this.comboBoxYear.SelectedIndexChanged += new System.EventHandler(this.ComboBoxYear_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -119,7 +121,7 @@
             // 
             // btnadd
             // 
-            this.btnadd.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnadd.BackColor = System.Drawing.Color.Lime;
             this.btnadd.Location = new System.Drawing.Point(25, 311);
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(75, 42);
@@ -130,7 +132,7 @@
             // 
             // btnsua
             // 
-            this.btnsua.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnsua.BackColor = System.Drawing.Color.Lime;
             this.btnsua.Location = new System.Drawing.Point(153, 311);
             this.btnsua.Name = "btnsua";
             this.btnsua.Size = new System.Drawing.Size(75, 42);
@@ -141,7 +143,7 @@
             // 
             // btnxoa
             // 
-            this.btnxoa.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnxoa.BackColor = System.Drawing.Color.Lime;
             this.btnxoa.Location = new System.Drawing.Point(277, 311);
             this.btnxoa.Name = "btnxoa";
             this.btnxoa.Size = new System.Drawing.Size(75, 42);
@@ -165,6 +167,7 @@
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(641, 368);
             this.dataGridView1.TabIndex = 11;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
             // 
             // year
             // 
@@ -205,6 +208,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Green;
             this.label6.Location = new System.Drawing.Point(13, 12);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(233, 25);
@@ -242,46 +246,6 @@
             this.panel2.Size = new System.Drawing.Size(488, 40);
             this.panel2.TabIndex = 21;
             // 
-            // btntail
-            // 
-            this.btntail.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btntail.Location = new System.Drawing.Point(400, 4);
-            this.btntail.Name = "btntail";
-            this.btntail.Size = new System.Drawing.Size(75, 28);
-            this.btntail.TabIndex = 3;
-            this.btntail.Text = ">>";
-            this.btntail.UseVisualStyleBackColor = false;
-            // 
-            // btnnext
-            // 
-            this.btnnext.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnnext.Location = new System.Drawing.Point(319, 4);
-            this.btnnext.Name = "btnnext";
-            this.btnnext.Size = new System.Drawing.Size(75, 28);
-            this.btnnext.TabIndex = 2;
-            this.btnnext.Text = ">";
-            this.btnnext.UseVisualStyleBackColor = false;
-            // 
-            // btnback
-            // 
-            this.btnback.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnback.Location = new System.Drawing.Point(95, 4);
-            this.btnback.Name = "btnback";
-            this.btnback.Size = new System.Drawing.Size(75, 28);
-            this.btnback.TabIndex = 1;
-            this.btnback.Text = "<";
-            this.btnback.UseVisualStyleBackColor = false;
-            // 
-            // btnhead
-            // 
-            this.btnhead.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnhead.Location = new System.Drawing.Point(14, 4);
-            this.btnhead.Name = "btnhead";
-            this.btnhead.Size = new System.Drawing.Size(75, 28);
-            this.btnhead.TabIndex = 0;
-            this.btnhead.Text = "<<";
-            this.btnhead.UseVisualStyleBackColor = false;
-            // 
             // lbnumpage
             // 
             this.lbnumpage.AutoSize = true;
@@ -291,10 +255,63 @@
             this.lbnumpage.TabIndex = 4;
             this.lbnumpage.Text = "1";
             // 
+            // btntail
+            // 
+            this.btntail.BackColor = System.Drawing.Color.Lime;
+            this.btntail.Location = new System.Drawing.Point(400, 4);
+            this.btntail.Name = "btntail";
+            this.btntail.Size = new System.Drawing.Size(75, 28);
+            this.btntail.TabIndex = 3;
+            this.btntail.Text = ">>";
+            this.btntail.UseVisualStyleBackColor = false;
+            // 
+            // btnnext
+            // 
+            this.btnnext.BackColor = System.Drawing.Color.Lime;
+            this.btnnext.Location = new System.Drawing.Point(319, 4);
+            this.btnnext.Name = "btnnext";
+            this.btnnext.Size = new System.Drawing.Size(75, 28);
+            this.btnnext.TabIndex = 2;
+            this.btnnext.Text = ">";
+            this.btnnext.UseVisualStyleBackColor = false;
+            // 
+            // btnback
+            // 
+            this.btnback.BackColor = System.Drawing.Color.Lime;
+            this.btnback.Location = new System.Drawing.Point(95, 4);
+            this.btnback.Name = "btnback";
+            this.btnback.Size = new System.Drawing.Size(75, 28);
+            this.btnback.TabIndex = 1;
+            this.btnback.Text = "<";
+            this.btnback.UseVisualStyleBackColor = false;
+            // 
+            // btnhead
+            // 
+            this.btnhead.BackColor = System.Drawing.Color.Lime;
+            this.btnhead.Location = new System.Drawing.Point(14, 4);
+            this.btnhead.Name = "btnhead";
+            this.btnhead.Size = new System.Drawing.Size(75, 28);
+            this.btnhead.TabIndex = 0;
+            this.btnhead.Text = "<<";
+            this.btnhead.UseVisualStyleBackColor = false;
+            // 
+            // btnxuat
+            // 
+            this.btnxuat.BackColor = System.Drawing.Color.Lime;
+            this.btnxuat.Location = new System.Drawing.Point(921, 12);
+            this.btnxuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnxuat.Name = "btnxuat";
+            this.btnxuat.Size = new System.Drawing.Size(120, 49);
+            this.btnxuat.TabIndex = 22;
+            this.btnxuat.Text = "Xuất Excel";
+            this.btnxuat.UseVisualStyleBackColor = false;
+            this.btnxuat.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // UC_Admin_PhanCong_gvcn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnxuat);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label6);
@@ -337,6 +354,7 @@
         private System.Windows.Forms.Button btnback;
         private System.Windows.Forms.Button btnhead;
         private System.Windows.Forms.Label lbnumpage;
+        private System.Windows.Forms.Button btnxuat;
     }
 
 

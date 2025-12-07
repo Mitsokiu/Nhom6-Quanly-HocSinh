@@ -13,6 +13,12 @@ namespace BUS
         {
             return StudentDAO.GetStudents(yearId, classId);
         }
+
+        public static DataTable GetStudentById(int studentId, int yearId)
+        {
+            return StudentDAO.GetStudentById(studentId, yearId);
+        }
+
         public static bool UpdateStudent(StudentDTO student)
         {
             return DAO.StudentDAO.UpdateStudent(student);
@@ -95,5 +101,6 @@ namespace BUS
 
             return true;
         }
+
     }
 }

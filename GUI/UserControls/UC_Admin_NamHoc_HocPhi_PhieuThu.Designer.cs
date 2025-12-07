@@ -46,12 +46,13 @@ namespace GUI.UserControls
             this.SoTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HanNop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblpage = new System.Windows.Forms.Label();
             this.btnLast = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrev = new System.Windows.Forms.Button();
             this.btnFirst = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.lblpage = new System.Windows.Forms.Label();
+            this.btnxuat = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -94,8 +95,8 @@ namespace GUI.UserControls
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button6.Location = new System.Drawing.Point(249, 322);
+            this.button6.BackColor = System.Drawing.Color.Lime;
+            this.button6.Location = new System.Drawing.Point(249, 407);
             this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(101, 53);
@@ -106,8 +107,8 @@ namespace GUI.UserControls
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button5.Location = new System.Drawing.Point(134, 322);
+            this.button5.BackColor = System.Drawing.Color.Lime;
+            this.button5.Location = new System.Drawing.Point(134, 407);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(87, 53);
@@ -118,8 +119,8 @@ namespace GUI.UserControls
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button4.Location = new System.Drawing.Point(4, 322);
+            this.button4.BackColor = System.Drawing.Color.Lime;
+            this.button4.Location = new System.Drawing.Point(4, 407);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(77, 53);
@@ -210,9 +211,18 @@ namespace GUI.UserControls
             this.panel2.Size = new System.Drawing.Size(480, 40);
             this.panel2.TabIndex = 17;
             // 
+            // lblpage
+            // 
+            this.lblpage.AutoSize = true;
+            this.lblpage.Location = new System.Drawing.Point(207, 11);
+            this.lblpage.Name = "lblpage";
+            this.lblpage.Size = new System.Drawing.Size(18, 20);
+            this.lblpage.TabIndex = 4;
+            this.lblpage.Text = "0";
+            // 
             // btnLast
             // 
-            this.btnLast.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnLast.BackColor = System.Drawing.Color.Lime;
             this.btnLast.Location = new System.Drawing.Point(400, 4);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(75, 28);
@@ -222,7 +232,7 @@ namespace GUI.UserControls
             // 
             // btnNext
             // 
-            this.btnNext.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnNext.BackColor = System.Drawing.Color.Lime;
             this.btnNext.Location = new System.Drawing.Point(319, 4);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 28);
@@ -232,7 +242,7 @@ namespace GUI.UserControls
             // 
             // btnPrev
             // 
-            this.btnPrev.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnPrev.BackColor = System.Drawing.Color.Lime;
             this.btnPrev.Location = new System.Drawing.Point(95, 4);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(75, 28);
@@ -242,7 +252,7 @@ namespace GUI.UserControls
             // 
             // btnFirst
             // 
-            this.btnFirst.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnFirst.BackColor = System.Drawing.Color.Lime;
             this.btnFirst.Location = new System.Drawing.Point(14, 5);
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(75, 28);
@@ -254,25 +264,30 @@ namespace GUI.UserControls
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Green;
             this.label6.Location = new System.Drawing.Point(3, 14);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(163, 25);
             this.label6.TabIndex = 22;
             this.label6.Text = "Tạo Khoản Thu";
             // 
-            // lblpage
+            // btnxuat
             // 
-            this.lblpage.AutoSize = true;
-            this.lblpage.Location = new System.Drawing.Point(207, 11);
-            this.lblpage.Name = "lblpage";
-            this.lblpage.Size = new System.Drawing.Size(18, 20);
-            this.lblpage.TabIndex = 4;
-            this.lblpage.Text = "0";
+            this.btnxuat.BackColor = System.Drawing.Color.Lime;
+            this.btnxuat.Location = new System.Drawing.Point(770, -2);
+            this.btnxuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnxuat.Name = "btnxuat";
+            this.btnxuat.Size = new System.Drawing.Size(120, 49);
+            this.btnxuat.TabIndex = 23;
+            this.btnxuat.Text = "Xuất Excel";
+            this.btnxuat.UseVisualStyleBackColor = false;
+            this.btnxuat.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // UC_Admin_NamHoc_HocPhi_PhieuThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnxuat);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridView1);
@@ -313,5 +328,6 @@ namespace GUI.UserControls
         private Button btnFirst;
         private Label label6;
         private Label lblpage;
+        private Button btnxuat;
     }
 }

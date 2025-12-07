@@ -14,6 +14,11 @@ namespace DTO
 
         public int YearId { get; set; }
 
+        public string GuardianName { get; set; }
+        public string GuardianPhone { get; set; }
+        public string GuardianJob { get; set; }
+        public string GuardianRelation { get; set; }
+
 
         // Thông tin cá nhân (Map với bảng students & users)
         public int StudentID { get; set; }
@@ -49,6 +54,9 @@ namespace DTO
 
         // Hiển thị giới tính tiếng Việt (Nếu DB lưu tiếng Anh)
         public string GenderDisplay => (Gender == "Male") ? "Nam" : "Nữ";
+
+        public DateTime CreatedDate { get; set; }
+        public int Count { get; set; }
     }
 
 }

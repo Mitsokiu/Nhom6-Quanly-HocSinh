@@ -57,6 +57,49 @@ namespace DAO
             return dt;
         }
 
+        public static DataTable GetStudentById(int studentId, int yearId)
+        {
+            DataTable dt = new DataTable();
+
+            using (var conn = DbConnect.GetConnection())
+            {
+                conn.Open();
+                string sql = @"
+            SELECT 
+                s.student_id AS Id,
+                u.fullname AS Ten,
+                s.dob AS NgaySinh,
+                s.gender AS GioiTinh,
+                s.address AS DiaChi,
+                c.class_name AS Lop
+            FROM students s
+            JOIN users u ON u.user_id = s.user_id
+            LEFT JOIN student_class sc 
+                   ON sc.student_id = s.student_id
+                  AND sc.school_year_id = @year_id
+            LEFT JOIN classes c 
+                   ON c.class_id = sc.class_id
+            WHERE s.student_id = @student_id
+            LIMIT 1
+        ";
+
+                using (var cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@student_id", studentId);
+                    cmd.Parameters.AddWithValue("@year_id", yearId);
+
+                    using (var da = new MySqlDataAdapter(cmd))
+                    {
+                        da.Fill(dt);
+                    }
+                }
+            }
+
+            return dt;
+        }
+
+
+
         public static bool UpdateStudent(StudentDTO student)
         {
             try
@@ -90,10 +133,12 @@ namespace DAO
                     if (student.ClassId > 0 && student.YearId > 0)
                     {
                         string sqlClass = @"
-                    INSERT INTO student_class (student_id, class_id, school_year_id)
-                    VALUES (@Id, @ClassId, @YearId)
-                    ON DUPLICATE KEY UPDATE class_id = @ClassId
-                ";
+                        UPDATE student_class
+                        SET class_id = @ClassId
+                        WHERE student_id = @Id AND school_year_id = @YearId
+                    ";
+
+                        
 
                         using (var cmdClass = new MySqlCommand(sqlClass, conn))
                         {
@@ -140,36 +185,77 @@ namespace DAO
             return -1;
         }
 
-        
+
 
         // 1. Lấy toàn bộ danh sách học sinh (Kèm Lớp và Năm học)
+        //public List<StudentDTO> GetStudents()
+        //{
+        //    List<StudentDTO> list = new List<StudentDTO>();
+
+        //    // Query lấy thông tin học sinh và lớp học hiện tại
+        //    // Sử dụng LEFT JOIN để vẫn lấy được HS chưa xếp lớp
+        //    string query = @"
+        //                SELECT s.student_id, s.user_id, u.fullname, s.dob, s.gender, s.address, 
+        //                        c.class_id, c.class_name, ay.name AS year_name
+        //                FROM students s
+        //                JOIN users u ON s.user_id = u.user_id
+        //                LEFT JOIN student_class sc ON s.student_id = sc.student_id
+        //                LEFT JOIN classes c ON sc.class_id = c.class_id
+        //                LEFT JOIN academic_years ay ON sc.school_year_id = ay.year_id
+        //                WHERE u.role_id = 'student'
+        //                ORDER BY s.student_id DESC";
+
+        //    DataTable data = DbConnect.ExecuteQuery(query);
+        //    //foreach (DataRow row in data.Rows)
+        //    //{
+        //    //    StudentDTO student = MapDataRowToStudent(row);
+        //    //    // Gọi hàm lấy thêm thông tin phụ huynh
+        //    //    GetParentInfo(student);
+        //    //    list.Add(student);
+        //    //}
+        //    return list;
+        //}
+
         public List<StudentDTO> GetStudents()
         {
             List<StudentDTO> list = new List<StudentDTO>();
 
-            // Query lấy thông tin học sinh và lớp học hiện tại
-            // Sử dụng LEFT JOIN để vẫn lấy được HS chưa xếp lớp
             string query = @"
-                        SELECT s.student_id, s.user_id, u.fullname, u.avatar, s.dob, s.gender, s.address, 
-                                c.class_id, c.class_name, ay.name AS year_name
-                        FROM students s
-                        JOIN users u ON s.user_id = u.user_id
-                        LEFT JOIN student_class sc ON s.student_id = sc.student_id
-                        LEFT JOIN classes c ON sc.class_id = c.class_id
-                        LEFT JOIN academic_years ay ON sc.school_year_id = ay.year_id
-                        WHERE u.role_id = 'student'
-                        ORDER BY s.student_id DESC";
+        SELECT s.student_id, s.user_id, u.fullname, s.dob, s.gender, s.address, 
+               c.class_id, c.class_name, ay.name AS year_name
+        FROM students s
+        JOIN users u ON s.user_id = u.user_id
+        LEFT JOIN student_class sc ON s.student_id = sc.student_id
+        LEFT JOIN classes c ON sc.class_id = c.class_id
+        LEFT JOIN academic_years ay ON sc.school_year_id = ay.year_id
+        WHERE u.role_id = 'student'
+        ORDER BY s.student_id DESC";
 
             DataTable data = DbConnect.ExecuteQuery(query);
-            foreach (DataRow row in data.Rows)
-            {
-                StudentDTO student = MapDataRowToStudent(row);
-                // Gọi hàm lấy thêm thông tin phụ huynh
-                GetParentInfo(student);
-                list.Add(student);
-            }
+
+          
+                foreach (DataRow row in data.Rows)
+                {
+                    StudentDTO student = new StudentDTO
+                    {
+                        StudentID = Convert.ToInt32(row["student_id"]),
+                        UserID = Convert.ToInt32(row["user_id"]),
+                        FullName = row["fullname"].ToString(),
+                        DateOfBirth = row["dob"] == DBNull.Value ? DateTime.MinValue : Convert.ToDateTime(row["dob"]),
+                        Gender = row["gender"].ToString(),
+                        Address = row["address"].ToString(),
+                        ClassID = row["class_id"] == DBNull.Value ? 0 : Convert.ToInt32(row["class_id"]),
+                        ClassName = row["class_name"].ToString(),
+                        AcademicYear = row["year_name"].ToString()
+                    };
+                    list.Add(student);
+                }
+
+
+             
             return list;
         }
+
 
         // 2. Tìm kiếm học sinh
         public List<StudentDTO> SearchStudents(string keyword)

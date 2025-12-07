@@ -16,7 +16,7 @@ namespace GUI.UserControls
         {
             InitializeComponent();
             //LoadUserControl(new UC_Admin_Class_KhoiLop());
-            LoadUserControl(new UC_Admin_Student());
+            LoadUserControl(new UC_Admin_Class_KhoiLop());
         }
         private void LoadUserControl(UserControl uc)
         {

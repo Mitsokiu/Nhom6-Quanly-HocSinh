@@ -39,7 +39,6 @@ namespace GUI.UserControls
             this.CuoiKi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tb = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,24 +115,10 @@ namespace GUI.UserControls
             this.comboBox1.TabIndex = 1;
             this.comboBox1.Text = "Năm Học";
             // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "HK1",
-            "HK2"});
-            this.comboBox2.Location = new System.Drawing.Point(20, 85);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(164, 28);
-            this.comboBox2.TabIndex = 2;
-            this.comboBox2.Text = "Học Kì";
-            // 
             // UC_HocSinh_Diem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -154,6 +139,5 @@ namespace GUI.UserControls
         private DataGridViewTextBoxColumn CuoiKi;
         private DataGridViewTextBoxColumn Tb;
         private ComboBox comboBox1;
-        private ComboBox comboBox2;
     }
 }

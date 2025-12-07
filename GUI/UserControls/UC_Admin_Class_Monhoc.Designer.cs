@@ -104,7 +104,7 @@ namespace GUI.UserControls
             // 
             // btnXoa
             // 
-            this.btnXoa.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnXoa.BackColor = System.Drawing.Color.Lime;
             this.btnXoa.Location = new System.Drawing.Point(273, 385);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
@@ -116,7 +116,7 @@ namespace GUI.UserControls
             // 
             // btnSua
             // 
-            this.btnSua.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnSua.BackColor = System.Drawing.Color.Lime;
             this.btnSua.Location = new System.Drawing.Point(147, 385);
             this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSua.Name = "btnSua";
@@ -128,7 +128,7 @@ namespace GUI.UserControls
             // 
             // btnThem
             // 
-            this.btnThem.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnThem.BackColor = System.Drawing.Color.Lime;
             this.btnThem.Location = new System.Drawing.Point(20, 385);
             this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThem.Name = "btnThem";
@@ -174,6 +174,7 @@ namespace GUI.UserControls
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Green;
             this.label3.Location = new System.Drawing.Point(3, 10);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(188, 25);

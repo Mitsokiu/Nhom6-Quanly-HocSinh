@@ -178,6 +178,9 @@ namespace GUI.UserControls
                 dateTimePicker1.Value = DateTime.Now; 
         }
 
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }

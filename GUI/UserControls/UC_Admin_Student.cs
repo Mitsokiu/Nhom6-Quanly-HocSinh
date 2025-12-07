@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClosedXML.Excel;
+using System.IO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GUI.UserControls
@@ -24,21 +26,14 @@ namespace GUI.UserControls
             InitializeComponent();
            
             LoadYears();
-            
-            LoadGrade();
+            LoadAllClasses();
+
+
 
         }
 
       
 
-        private void LoadGrade()
-        {
-            var dt = GradeBUS.GetAll();
-
-            cbBoxGrade.DataSource = dt;
-            cbBoxGrade.DisplayMember = "grade_name"; // Hiển thị tên khối
-            cbBoxGrade.ValueMember = "grade_id";     // Giá trị là ID
-        }
 
         private void LoadYears()
         {
@@ -72,9 +67,6 @@ namespace GUI.UserControls
 
             if (yearId == 0) return; // Nếu chọn "-- Chọn năm --"
 
-            // Load danh sách lớp của năm học vào ComboBox lớp
-            LoadClassesByYear(yearId);
-
             // Load danh sách học sinh theo năm học (tất cả lớp)
             LoadStudentGridByYear(yearId);
         }
@@ -107,20 +99,32 @@ namespace GUI.UserControls
 
 
 
-       
 
 
-        private void LoadClassesByYear(int yearId)
+
+
+        private void LoadAllClasses()
         {
             try
             {
-                DataTable dt = ClassBUS.GetClassesByYear(yearId) ?? new DataTable();
+                var list = ClassBUS.GetAllClasses() ?? new List<ClassDTO>();
+
+                // Tạo DataTable để bind vào ComboBox
+                DataTable dt = new DataTable();
+                dt.Columns.Add("class_id", typeof(int));
+                dt.Columns.Add("class_name", typeof(string));
 
                 // Thêm lựa chọn "Tất cả"
                 DataRow dr = dt.NewRow();
                 dr["class_id"] = 0;
                 dr["class_name"] = "-- Tất cả lớp --";
-                dt.Rows.InsertAt(dr, 0);
+                dt.Rows.Add(dr);
+
+                // Thêm danh sách lớp
+                foreach (var c in list)
+                {
+                    dt.Rows.Add(c.Id, c.ClassName);
+                }
 
                 cbBoxClass.DisplayMember = "class_name";
                 cbBoxClass.ValueMember = "class_id";
@@ -191,6 +195,61 @@ namespace GUI.UserControls
                     LoadStudentGridByYear(yearId);
             }
         }
+
+        private void ExportToExcel(DataGridView dgv)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Excel File (*.xlsx)|*.xlsx";
+            sfd.FileName = "DanhSachHocSinh.xlsx";
+
+            if (sfd.ShowDialog() != DialogResult.OK)
+                return;
+
+            using (var wb = new XLWorkbook())
+            {
+                var ws = wb.Worksheets.Add("Students");
+
+                int colIndex = 1;
+
+                foreach (DataGridViewColumn col in dgv.Columns)
+                {
+                    if (!col.Visible) continue; // bỏ cột ẩn
+                    ws.Cell(1, colIndex).Value = col.HeaderText;
+                    ws.Cell(1, colIndex).Style.Font.Bold = true;
+                    colIndex++;
+                }
+
+                int rowIndex = 2;
+
+                foreach (DataGridViewRow row in dgv.Rows)
+                {
+                    if (row.IsNewRow) continue;
+
+                    colIndex = 1;
+
+                    foreach (DataGridViewColumn col in dgv.Columns)
+                    {
+                        if (!col.Visible) continue;
+                        ws.Cell(rowIndex, colIndex).Value = row.Cells[col.Name].Value?.ToString();
+                        colIndex++;
+                    }
+
+                    rowIndex++;
+                }
+
+                ws.Columns().AdjustToContents();
+
+                wb.SaveAs(sfd.FileName);
+            }
+
+            MessageBox.Show("Xuất Excel thành công");
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            ExportToExcel(dataGridView1);
+        }
+
 
 
 

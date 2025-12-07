@@ -22,7 +22,14 @@ namespace GUI
         public event EventHandler CauHinhClicked;
         public event EventHandler HomeClicked;
         public event EventHandler QlyNamHocClicked;
-       
+        public event EventHandler QlyHocSinhAdminClicked;
+        public event EventHandler ThongKeClicked;
+        public event EventHandler HSinforClicked;
+        public event EventHandler DoiMk;
+        public event EventHandler XetHanhKiemClicked;
+        public event EventHandler qlyThongBaoClicked;
+        public event EventHandler XemThongBaoClicked;
+
         private UserDTO currentUser;
 
         public Sidebar()
@@ -61,18 +68,18 @@ namespace GUI
             switch (role?.ToLower())
             {
                 case "admin":
-                    ShowButtons(btnTaiKhoan, btnQlyLop, btnNamhoc,btnHome,btnHocSinh);
+                    ShowButtons(btnTaiKhoan, btnQlyLop, btnNamhoc,btnHome,btnhocsinhadmin,btnThongKe);
                     break;
                 case "gvbm":
                     ShowButtons(btnNhapDiem, btnXemLichDay, btnHome);
                     break;
                 case "gvcn":
-                    ShowButtons(btnHocSinh, btnNhapDiem, btnXemLichDay, btnHome);
+                    ShowButtons(btnHocSinh, btnXetHanhKiem,btnHome,btnQuanLyThongBao);
                     break;
                 
                   
                 case "student":
-                    ShowButtons(btnXemDiem, btnXemTKB, btnHome, btnHocPhi, btnTinhHinh);
+                    ShowButtons(btnXemDiem, btnXemTKB, btnHome, btnHocPhi, btninfor,btnDoiMatKhauHS,btnXemThongBao);
                     break;
                 default:
                     ShowButtons(btnHome);
@@ -96,11 +103,24 @@ namespace GUI
         private void btnXemTKB_Click(object sender, EventArgs e) => XemTKBClicked?.Invoke(this, EventArgs.Empty);
         private void btnXemLichDay_Click(object sender, EventArgs e) => XemLichDayClicked?.Invoke(this, EventArgs.Empty);
         private void btnHocSinh_Click(object sender, EventArgs e) => HocSinhClicked?.Invoke(this, EventArgs.Empty);
+        private void btnhocsinhadmin_Click(object sender, EventArgs e) => QlyHocSinhAdminClicked?.Invoke(this, EventArgs.Empty);
+
         private void btnTinhHinh_Click(object sender, EventArgs e) => TinhHinhClicked?.Invoke(this, EventArgs.Empty);
         private void btnQlyLop_Click(object sender, EventArgs e) => QlyLopClicked?.Invoke(this, EventArgs.Empty);
         private void btnCauHinh_Click(object sender, EventArgs e) => CauHinhClicked?.Invoke(this, EventArgs.Empty);
         private void btnHome_Click(object sender, EventArgs e) => HomeClicked?.Invoke(this, EventArgs.Empty);
-         private void btnNamhoc_Click(object sender, EventArgs e) => QlyNamHocClicked?.Invoke(this, EventArgs.Empty);
+        private void btnNamhoc_Click(object sender, EventArgs e) => QlyNamHocClicked?.Invoke(this, EventArgs.Empty);
+        private void btnThongKe_Click(object sender, EventArgs e) => ThongKeClicked?.Invoke(this, EventArgs.Empty);
+        private void btnHSinfor_Click(object sender, EventArgs e) => HSinforClicked?.Invoke(this, EventArgs.Empty);
+
+        private void btnDoiMatKhauHS_Click(object sender, EventArgs e) => DoiMk?.Invoke(this, EventArgs.Empty);
+
+        private void btnXetHanhKiem_Click(object sender, EventArgs e) => XetHanhKiemClicked?.Invoke(this, EventArgs.Empty);
+
+        private void btnQuanLyThongBao_Click(object sender, EventArgs e) => qlyThongBaoClicked?.Invoke(this, EventArgs.Empty);
+       
+        private void btnXemThongBao_Click(object sender, EventArgs e) => XemThongBaoClicked?.Invoke(this, EventArgs.Empty);
+
         // ============================
         // XỬ LÝ ĐĂNG XUẤT
         // ============================

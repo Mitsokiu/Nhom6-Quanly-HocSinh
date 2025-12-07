@@ -2,6 +2,8 @@
 using System.Data;
 using System.Windows.Forms;
 using BUS;
+using ClosedXML.Excel;
+using System.IO;
 
 namespace GUI.UserControls
 {
@@ -207,5 +209,54 @@ namespace GUI.UserControls
                 MessageBox.Show("Lỗi cập nhật: " + ex.Message);
             }
         }
+        private void ExportToExcel(DataGridView dgv)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Excel File (*.xlsx)|*.xlsx";
+            sfd.FileName = "HocPhi.xlsx";
+
+            if (sfd.ShowDialog() != DialogResult.OK)
+                return;
+
+            using (var wb = new XLWorkbook())
+            {
+                var ws = wb.Worksheets.Add("HocPhi");
+
+                // Ghi header
+                int colIndex = 1;
+                foreach (DataGridViewColumn col in dgv.Columns)
+                {
+                    if (!col.Visible) continue;
+                    ws.Cell(1, colIndex).Value = col.HeaderText;
+                    colIndex++;
+                }
+
+                // Ghi data
+                int rowIndex = 2;
+                foreach (DataGridViewRow row in dgv.Rows)
+                {
+                    if (row.IsNewRow) continue;
+                    colIndex = 1;
+
+                    foreach (DataGridViewColumn col in dgv.Columns)
+                    {
+                        if (!col.Visible) continue;
+                        ws.Cell(rowIndex, colIndex).Value = row.Cells[col.Name].Value?.ToString();
+                        colIndex++;
+                    }
+
+                    rowIndex++;
+                }
+
+                wb.SaveAs(sfd.FileName);
+            }
+
+            MessageBox.Show("Xuất Excel thành công");
+        }
+        private void buttonExport_Click(object sender, EventArgs e)
+        {
+            ExportToExcel(dataGridView1);
+        }
+
     }
 }
