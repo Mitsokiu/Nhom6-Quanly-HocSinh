@@ -3,6 +3,7 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 
 namespace DAO
 {
@@ -113,5 +114,41 @@ namespace DAO
 
             return DbConnect.ExecuteQuery(sql, new object[] { yearId });
         }
+
+        public static List<ClassDTO> GetAllClass()
+        {
+            string query = @"
+        SELECT c.class_id, c.class_name, c.grade_id, g.grade_name
+        FROM classes c
+        JOIN grade_levels g ON c.grade_id = g.grade_id
+    ";
+
+            DataTable dt = new DataTable();
+            using (var conn = DbConnect.GetConnection())
+            {
+                conn.Open();
+                using (var cmd = new MySqlCommand(query, conn))
+                using (var adapter = new MySqlDataAdapter(cmd))
+                {
+                    adapter.Fill(dt);
+                }
+            }
+
+            // Dùng LINQ to Objects để chuyển DataTable sang List<ClassDTO> và sắp xếp
+            var list = dt.AsEnumerable()
+                         .Select(row => new ClassDTO
+                         {
+                             Id = row.Field<int>("class_id"),
+                             ClassName = row.Field<string>("class_name"),
+                             GradeId = row.Field<int>("grade_id"),
+                             GradeName = row.Field<string>("grade_name")
+                         })
+                         .OrderBy(c => c.GradeId)
+                         .ThenBy(c => c.ClassName)
+                         .ToList();
+
+            return list;
+        }
+
     }
 }

@@ -30,10 +30,10 @@ namespace GUI.UserControls
         {
             LoadUserControl(new UC_GVBM_Diem());
         }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            LoadUserControl(new UC_GVBM_TKB());
-        }
+        //private void button2_Click(object sender, EventArgs e)
+        //{
+        //    LoadUserControl(new UC_GVBM_TKB(user.UserID));
+        //}
 
 
     }

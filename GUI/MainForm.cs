@@ -97,7 +97,7 @@ namespace GUI
 
         private void Sidebar_XemLichDayClicked(object sender, EventArgs e)
         {
-            LoadContent(new UC_GVBM_TKB());
+            LoadContent(new UC_GVBM_TKB(user.UserId));
         }
 
         private void Sidebar_HocSinhClicked(object sender, EventArgs e)
