@@ -1,5 +1,6 @@
 ﻿using DTO;
 using System;
+using System.Drawing; // Thêm thư viện này để dùng Color
 using System.Linq;
 using System.Windows.Forms;
 
@@ -30,7 +31,13 @@ namespace GUI
         public event EventHandler DiemDanhClicked;
         public event EventHandler QlyKhoiClicked;
         public event EventHandler QlyMonClicked;
+        
         private UserDTO currentUser;
+
+        // Màu sắc cho trạng thái Active và Normal
+        private Color activeColor = Color.PowderBlue; // Màu khi được chọn
+        private Color normalColor = Color.White;      // Màu mặc định
+        private Color hoverColor = Color.WhiteSmoke;  // Màu khi di chuột (nếu cần)
 
         public Sidebar()
         {
@@ -40,6 +47,66 @@ namespace GUI
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.WrapContents = false;
             flowLayoutPanel1.AutoScroll = true;
+
+            // Xử lý giao diện (Bỏ viền, chỉnh width để bỏ scroll ngang)
+            SetupButtons();
+        }
+
+        // ============================
+        // HÀM CẤU HÌNH GIAO DIỆN NÚT
+        // ============================
+        private void SetupButtons()
+        {
+            // Tính toán chiều rộng nút để không hiện Scrollbar ngang
+            // Trừ đi khoảng 25px (độ rộng thanh cuộn dọc)
+            int buttonWidth = flowLayoutPanel1.Width - SystemInformation.VerticalScrollBarWidth - 5;
+
+            // Duyệt qua tất cả control trong FlowLayoutPanel
+            foreach (Control ctrl in flowLayoutPanel1.Controls)
+            {
+                if (ctrl is Button btn)
+                {
+                    ConfigureButton(btn, buttonWidth);
+                }
+            }
+
+            // Cấu hình riêng cho btnHome (vì nó nằm ngoài FlowLayoutPanel)
+            ConfigureButton(btnHome, 0); // 0 nghĩa là giữ nguyên width cũ
+        }
+
+        private void ConfigureButton(Button btn, int width)
+        {
+            btn.FlatStyle = FlatStyle.Flat;
+            btn.FlatAppearance.BorderSize = 0; // Bỏ viền
+            btn.BackColor = normalColor;
+            
+            // Chỉnh lại kích thước để tránh thanh cuộn ngang
+            if (width > 0)
+            {
+                btn.Width = width;
+                btn.Margin = new Padding(0, 0, 0, 0); // Bỏ margin để sát lề
+            }
+        }
+
+        // ============================
+        // HÀM ĐỔI MÀU NÚT (HIGHLIGHT)
+        // ============================
+        private void HighlightButton(object sender)
+        {
+            if (sender is Button clickedBtn)
+            {
+                // 1. Reset màu tất cả các nút trong FlowPanel
+                foreach (Control ctrl in flowLayoutPanel1.Controls)
+                {
+                    if (ctrl is Button btn) btn.BackColor = normalColor;
+                }
+                
+                // 2. Reset màu btnHome
+                btnHome.BackColor = normalColor;
+
+                // 3. Đổi màu nút được click
+                clickedBtn.BackColor = activeColor;
+            }
         }
 
         // ============================
@@ -68,7 +135,7 @@ namespace GUI
             switch (role?.ToLower())
             {
                 case "admin":
-                    ShowButtons(btnTaiKhoan, btnQlyLop, btnQlyMon, btnQlyKhoi,btnNamhoc,btnHome);
+                    ShowButtons(btnTaiKhoan, btnQlyLop, btnQlyMon, btnQlyKhoi, btnNamhoc, btnHome);
                     break;
                 case "gvbm":
                     ShowButtons(btnNhapDiem, btnXemLichDay, btnHome);
@@ -76,10 +143,8 @@ namespace GUI
                 case "gvcn":
                     ShowButtons(btnHocSinh, btnNhapDiem, btnXemLichDay, btnHome, btnQuanLyThongBao, btnXetHanhKiem, btnDiemDanh);
                     break;
-                
-                  
                 case "student":
-                    ShowButtons(btnXemThongTinHocSinh, btnDoiMatKhauHS, btnXemDiem, btnXemTKB, btnHome, btnHocPhi, btnTinhHinh, btnXemThongBao  );
+                    ShowButtons(btnXemThongTinHocSinh, btnDoiMatKhauHS, btnXemDiem, btnXemTKB, btnHome, btnHocPhi, btnTinhHinh, btnXemThongBao);
                     break;
                 default:
                     ShowButtons(btnHome);
@@ -94,31 +159,29 @@ namespace GUI
         }
 
         // ============================
-        // XỬ LÝ CLICK NÚT
+        // XỬ LÝ CLICK NÚT (ĐÃ THÊM HIGHLIGHT)
         // ============================
-        private void btnTaiKhoan_Click(object sender, EventArgs e) => TaiKhoanClicked?.Invoke(this, EventArgs.Empty);
-        private void btnNhapDiem_Click(object sender, EventArgs e) => NhapDiemClicked?.Invoke(this, EventArgs.Empty);
-        private void btnXemDiem_Click(object sender, EventArgs e) => XemDiemClicked?.Invoke(this, EventArgs.Empty);
-        private void btnXemTKB_Click(object sender, EventArgs e) => XemTKBClicked?.Invoke(this, EventArgs.Empty);
-        private void btnXemThongBao_Click(object sender, EventArgs e) => XemThongBaoClicked?.Invoke(this, EventArgs.Empty);
-        private void btnXemLichDay_Click(object sender, EventArgs e) => XemLichDayClicked?.Invoke(this, EventArgs.Empty);
-        private void btnHocSinh_Click(object sender, EventArgs e) => HocSinhClicked?.Invoke(this, EventArgs.Empty);
-        private void btnTinhHinh_Click(object sender, EventArgs e) => TinhHinhClicked?.Invoke(this, EventArgs.Empty);
-        private void btnQlyLop_Click(object sender, EventArgs e) => QlyLopClicked?.Invoke(this, EventArgs.Empty);
-        private void btnQlyKhoi_Click(object sender, EventArgs e) => QlyKhoiClicked?.Invoke(this, EventArgs.Empty);
-        private void btnQlyMon_Click(object sender, EventArgs e) => QlyMonClicked?.Invoke(this, EventArgs.Empty);
-        private void btnCauHinh_Click(object sender, EventArgs e) => CauHinhClicked?.Invoke(this, EventArgs.Empty);
-        private void btnHome_Click(object sender, EventArgs e) => HomeClicked?.Invoke(this, EventArgs.Empty);
-        private void btnHocPhi_Click(object sender, EventArgs e) => HocPhiClicked?.Invoke(this, EventArgs.Empty);
-        private void btnNamhoc_Click(object sender, EventArgs e) => QlyNamHocClicked?.Invoke(this, EventArgs.Empty);
+        private void btnTaiKhoan_Click(object sender, EventArgs e) { HighlightButton(sender); TaiKhoanClicked?.Invoke(this, EventArgs.Empty); }
+        private void btnNhapDiem_Click(object sender, EventArgs e) { HighlightButton(sender); NhapDiemClicked?.Invoke(this, EventArgs.Empty); }
+        private void btnXemDiem_Click(object sender, EventArgs e) { HighlightButton(sender); XemDiemClicked?.Invoke(this, EventArgs.Empty); }
+        private void btnXemTKB_Click(object sender, EventArgs e) { HighlightButton(sender); XemTKBClicked?.Invoke(this, EventArgs.Empty); }
+        private void btnXemThongBao_Click(object sender, EventArgs e) { HighlightButton(sender); XemThongBaoClicked?.Invoke(this, EventArgs.Empty); }
+        private void btnXemLichDay_Click(object sender, EventArgs e) { HighlightButton(sender); XemLichDayClicked?.Invoke(this, EventArgs.Empty); }
+        private void btnHocSinh_Click(object sender, EventArgs e) { HighlightButton(sender); HocSinhClicked?.Invoke(this, EventArgs.Empty); }
+        private void btnTinhHinh_Click(object sender, EventArgs e) { HighlightButton(sender); TinhHinhClicked?.Invoke(this, EventArgs.Empty); }
+        private void btnQlyLop_Click(object sender, EventArgs e) { HighlightButton(sender); QlyLopClicked?.Invoke(this, EventArgs.Empty); }
+        private void btnQlyKhoi_Click(object sender, EventArgs e) { HighlightButton(sender); QlyKhoiClicked?.Invoke(this, EventArgs.Empty); }
+        private void btnQlyMon_Click(object sender, EventArgs e) { HighlightButton(sender); QlyMonClicked?.Invoke(this, EventArgs.Empty); }
+        private void btnCauHinh_Click(object sender, EventArgs e) { HighlightButton(sender); CauHinhClicked?.Invoke(this, EventArgs.Empty); }
+        private void btnHome_Click(object sender, EventArgs e) { HighlightButton(sender); HomeClicked?.Invoke(this, EventArgs.Empty); }
+        private void btnHocPhi_Click(object sender, EventArgs e) { HighlightButton(sender); HocPhiClicked?.Invoke(this, EventArgs.Empty); }
+        private void btnNamhoc_Click(object sender, EventArgs e) { HighlightButton(sender); QlyNamHocClicked?.Invoke(this, EventArgs.Empty); }
+        private void btnXemThongTinHocSinh_Click(object sender, EventArgs e) { HighlightButton(sender); XemThongTinHocSinhClicked?.Invoke(this, EventArgs.Empty); }
+        private void btnDoiMatKhauHS_Click(object sender, EventArgs e) { HighlightButton(sender); DoiMatKhauHSClicked?.Invoke(this, EventArgs.Empty); }
+        private void btnXetHanhKiem_Click(object sender, EventArgs e) { HighlightButton(sender); XetHanhKiemClicked?.Invoke(this, EventArgs.Empty); }
+        private void btnDiemDanh_Click(object sender, EventArgs e) { HighlightButton(sender); DiemDanhClicked?.Invoke(this, EventArgs.Empty); }
+        private void btnQuanLyThongBao_Click(object sender, EventArgs e) { HighlightButton(sender); QuanLyThongBaoClicked?.Invoke(this, EventArgs.Empty); }
 
-        private void btnXemThongTinHocSinh_Click(object sender, EventArgs e) => XemThongTinHocSinhClicked?.Invoke(this, EventArgs.Empty);
-        private void btnDoiMatKhauHS_Click(object sender, EventArgs e) => DoiMatKhauHSClicked?.Invoke(this, EventArgs.Empty);
-        
-
-        private void btnXetHanhKiem_Click(object sender, EventArgs e) => XetHanhKiemClicked?.Invoke(this, EventArgs.Empty);
-        private void btnDiemDanh_Click(object sender, EventArgs e) => DiemDanhClicked?.Invoke(this, EventArgs.Empty);
-        private void btnQuanLyThongBao_Click(object sender, EventArgs e) => QuanLyThongBaoClicked?.Invoke(this, EventArgs.Empty);
         // ============================
         // XỬ LÝ ĐĂNG XUẤT
         // ============================
