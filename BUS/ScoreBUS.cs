@@ -6,13 +6,16 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAO;
+using DTO;
 
 namespace BUS
 {
-    public class ScoreBUS
+   public class ScoreBUS
     {
-        private ScoreDAO scoreDAO = new ScoreDAO();
+        private ScoreDAO dao = new ScoreDAO();
         private StudentDAO studentDAO = new StudentDAO();
+        private ScoreDAO scoreDAO = new ScoreDAO();
         public List<SubjectScoreDTO> GetScoresData(int userId, int semesterId)
         {
             int studentId = studentDAO.GetStudentIdByUserId(userId);
@@ -46,6 +49,29 @@ namespace BUS
             return diemHS;
         }
 
+        public List<ScoreDTO> GetScoresByAssignment(int assignId)
+        {
+            DataTable dt = dao.GetScoresDataTable(assignId);
+
+            List<ScoreDTO> scores = new List<ScoreDTO>();
+            foreach (DataRow row in dt.Rows)
+            {
+                scores.Add(new ScoreDTO
+                {
+                    StudentId = Convert.ToInt32(row["student_id"]),
+                    StudentName = row["StudentName"].ToString(),
+                    ScoreType = row["ScoreType"]?.ToString(),
+                    ScoreValue = row["ScoreValue"] != DBNull.Value ? (float?)Convert.ToSingle(row["ScoreValue"]) : null
+                });
+            }
+            return scores;
+        }
+
+        public void UpdateScore(int studentId, int assignId, string scoreType, float scoreValue)
+        {
+            dao.UpsertScore(studentId, assignId, scoreType, scoreValue);
+        }
+
         private float? CalculateAverage(SubjectScoreDTO diem)
         {
             float tongDiem = 0;
@@ -76,6 +102,5 @@ namespace BUS
 
             return (float)Math.Round(tongDiem / tongHeSo, 1);
         }
-
     }
 }

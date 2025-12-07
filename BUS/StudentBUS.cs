@@ -1,8 +1,9 @@
 ﻿using DAO;
 using DTO;
-using System.Data;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Windows.Forms;
 
 namespace BUS
 {
@@ -10,10 +11,27 @@ namespace BUS
     {
         private StudentDAO dao = new StudentDAO();
 
+        public static DataTable GetStudents(int yearId, int classId)
+        {
+            return StudentDAO.GetStudents(yearId, classId);
+        }
+
+        public static DataTable GetStudentById(int studentId, int yearId)
+        {
+            return StudentDAO.GetStudentById(studentId, yearId);
+        }
+
+        public static bool UpdateStudent(StudentDTO student)
+        {
+            return DAO.StudentDAO.UpdateStudent(student);
+        }
+        private StudentDAO dao = new StudentDAO();
         public int GetClassIdByUserId(int userId)
         {
             return dao.GetClassIdByUserId(userId);
         }
+
+       
         public List<StudentDTO> GetAllStudents() => dao.GetStudents();
         public List<StudentDTO> SearchStudents(string keyword)
         {

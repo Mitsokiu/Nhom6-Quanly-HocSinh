@@ -26,7 +26,7 @@ namespace GUI
                 sidebar.SetUserInfo(user);
             }
 
-
+          
           
             // Gắn sự kiện từ Sidebar (đúng tên event mới)
             sidebar.TaiKhoanClicked += Sidebar_TaiKhoanClicked;
@@ -36,7 +36,7 @@ namespace GUI
             sidebar.XemThongBaoClicked += Sidebar_XemThongBaoClicked;
             sidebar.XemLichDayClicked += Sidebar_XemLichDayClicked;
             sidebar.HocSinhClicked += Sidebar_HocSinhClicked;
-            sidebar.TinhHinhClicked += Sidebar_TinhHinhClicked;
+            
             sidebar.QlyLopClicked += Sidebar_QlyLopClicked;
             sidebar.HocPhiClicked += Sidebar_HocPhiClicked;
             sidebar.HomeClicked += Sidebar_HomeClicked;
@@ -46,6 +46,13 @@ namespace GUI
             sidebar.XetHanhKiemClicked += Sidebar_XetHanhKiemClicked;
             sidebar.DiemDanhClicked += Sidebar_DiemDanhClicked;
             sidebar.QuanLyThongBaoClicked += Sidebar_QuanLyThongBaoClicked;
+            sidebar.QlyHocSinhAdminClicked += Sidebar_QlyHocSinhAdminClicked;
+            sidebar.ThongKeClicked += Sidebar_ThongKeClicked;
+            sidebar.HSinforClicked += Sidebar_HSinforClicked;
+            sidebar.DoiMk += Sidebar_DoiMk;
+            sidebar.XetHanhKiemClicked += Sidebar_XetHanhKiemClicked;
+            sidebar.qlyThongBaoClicked += Sidebar_qlyThongBaoClicked;
+            sidebar.XemThongBaoClicked += (s, e) => OpenNotificationList();
         }
 
         // =====================
@@ -77,6 +84,11 @@ namespace GUI
             LoadContent(new UC_HocSinh_Diem(user.UserId));
         }
 
+        private void Sidebar_HocPhiClicked(object sender, EventArgs e)
+        {
+            LoadContent(new UC_HocSinh_HocPhi(user.UserId));
+        }
+
         private void Sidebar_XemTKBClicked(object sender, EventArgs e)
         {
             LoadContent(new UC_HocSinh_TKB(user.UserId));
@@ -85,6 +97,13 @@ namespace GUI
         private void Sidebar_XemThongBaoClicked(object sender, EventArgs e)
         {
             OpenNotificationList();
+            
+            LoadContent(new UC_HocSinh_TKB(user.UserId));
+        }
+        private void Sidebar_HSinforClicked(object sender, EventArgs e)
+        {
+            
+            LoadContent(new UC_HocSinh_ThongTin(user.UserId));
         }
 
         private void Sidebar_XemLichDayClicked(object sender, EventArgs e)
@@ -120,10 +139,7 @@ namespace GUI
             }    
         }
 
-        private void Sidebar_TinhHinhClicked(object sender, EventArgs e)
-        {
-            LoadContent(new UC_PhuHuynh_Thongtin());
-        }
+    
 
         private void Sidebar_QlyLopClicked(object sender, EventArgs e)
         {
@@ -172,6 +188,29 @@ namespace GUI
             }
         }
 
+
+        private void Sidebar_QlyHocSinhAdminClicked(object sender, EventArgs e)
+        {
+            LoadContent(new UC_Admin_Student());
+        }
+        private void Sidebar_ThongKeClicked(object sender, EventArgs e)
+        {
+            LoadContent(new UC_Admin_ThongKe());
+        }
+
+        private void Sidebar_DoiMk(object sender, EventArgs e)
+        {
+            LoadContent(new UC_HocSinh_DoiMatKhau(user.UserId));
+        }
+
+        private void Sidebar_XetHanhKiemClicked(object sender, EventArgs e)
+        {
+            LoadContent(new UC_GVCN_HanhKiem(user.UserId));
+        }
+        private void Sidebar_qlyThongBaoClicked(object sender, EventArgs e)
+        {
+            LoadContent(new UC_GVCN_ThongBao(user.UserId));
+        }
 
         private void OpenNotificationList()
         {

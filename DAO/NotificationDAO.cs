@@ -58,7 +58,6 @@ namespace DAO
             }
             return list;
         }
-
         // Lấy danh sách cho Học sinh (TargetRole = 'student')
         // Hàm này phục vụ cho BUS: GetNotificationsForStudent
         public List<NotificationDTO> GetNotificationsByTargetRole(string role)
