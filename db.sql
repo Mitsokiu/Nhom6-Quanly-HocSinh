@@ -787,3 +787,92 @@ LEFT JOIN parents p ON sp.parent_id = p.parent_id
 LEFT JOIN users u_pa ON p.user_id = u_pa.user_id
 
 GROUP BY s.student_id, u_st.fullname;
+
+
+USE school_management_c;
+
+-- =================================================================================
+-- PHẦN 6: TẠO THỜI KHÓA BIỂU CHI TIẾT (Cho Lớp 6A1 - Student 1)
+-- =================================================================================
+
+-- 6.1. Bổ sung môn "Sinh hoạt lớp" (SHL) để xếp vào tiết cuối tuần cho GVCN
+INSERT INTO subjects (name) VALUES ('Sinh hoạt lớp');
+
+-- 6.2. Đảm bảo phân công chuyên môn đầy đủ cho lớp 6A1
+-- (Trước đó ta mới chỉ assign Math, Physics cho Class 1. Giờ assign thêm để xếp TKB không bị lỗi logic)
+INSERT INTO teacher_assignments (teacher_id, subject_id, class_id, semester_id, periods) VALUES
+(13, 3, 1, 1, 2), -- GVBM3 dạy Hóa cho 6A1
+(14, 4, 1, 1, 3), -- GVBM4 dạy Anh cho 6A1
+(15, 5, 1, 1, 2), -- GVBM5 dạy Sử cho 6A1
+(11, (SELECT subject_id FROM subjects WHERE name='Sinh hoạt lớp'), 1, 1, 1); -- GVCN1 dạy SHL
+
+-- 6.3. Xóa TKB cũ của lớp 6A1 (nếu có) để tránh trùng lặp
+DELETE FROM timetable WHERE class_id = 1 AND semester_id = 1;
+
+-- 6.4. CHÈN DỮ LIỆU THỜI KHÓA BIỂU (Full tuần cho Student 1)
+-- Giả định: 
+-- Class ID = 1 (6A1)
+-- Semester ID = 1 (HK1)
+-- Teacher 11 (Math/GVCN), 12 (Lý), 13 (Hóa), 14 (Anh), 15 (Sử)
+
+INSERT INTO timetable (class_id, semester_id, day, period, subject_id, teacher_id, room) VALUES
+-- THỨ 2 (Chào cờ, Toán, Toán, Anh, Anh)
+(1, 1, 'Mon', 1, (SELECT subject_id FROM subjects WHERE name='Math'), 11, 'P.101'),
+(1, 1, 'Mon', 2, (SELECT subject_id FROM subjects WHERE name='Math'), 11, 'P.101'),
+(1, 1, 'Mon', 3, (SELECT subject_id FROM subjects WHERE name='English'), 14, 'P.101'),
+(1, 1, 'Mon', 4, (SELECT subject_id FROM subjects WHERE name='English'), 14, 'P.101'),
+
+-- THỨ 3 (Lý, Lý, Sử, Hóa)
+(1, 1, 'Tue', 1, (SELECT subject_id FROM subjects WHERE name='Physics'), 12, 'Lab 1'),
+(1, 1, 'Tue', 2, (SELECT subject_id FROM subjects WHERE name='Physics'), 12, 'Lab 1'),
+(1, 1, 'Tue', 3, (SELECT subject_id FROM subjects WHERE name='History'), 15, 'P.101'),
+(1, 1, 'Tue', 4, (SELECT subject_id FROM subjects WHERE name='Chemistry'), 13, 'Lab 2'),
+
+-- THỨ 4 (Toán, Toán, Anh, Sử)
+(1, 1, 'Wed', 1, (SELECT subject_id FROM subjects WHERE name='Math'), 11, 'P.101'),
+(1, 1, 'Wed', 2, (SELECT subject_id FROM subjects WHERE name='Math'), 11, 'P.101'),
+(1, 1, 'Wed', 3, (SELECT subject_id FROM subjects WHERE name='English'), 14, 'P.101'),
+(1, 1, 'Wed', 4, (SELECT subject_id FROM subjects WHERE name='History'), 15, 'P.101'),
+
+-- THỨ 5 (Hóa, Hóa, Lý, Tự học)
+(1, 1, 'Thu', 1, (SELECT subject_id FROM subjects WHERE name='Chemistry'), 13, 'Lab 2'),
+(1, 1, 'Thu', 2, (SELECT subject_id FROM subjects WHERE name='Chemistry'), 13, 'Lab 2'),
+(1, 1, 'Thu', 3, (SELECT subject_id FROM subjects WHERE name='Physics'), 12, 'Lab 1'),
+-- Tiết 4 trống
+
+-- THỨ 6 (Toán, Sử, Anh, Sinh Hoạt Lớp)
+(1, 1, 'Fri', 1, (SELECT subject_id FROM subjects WHERE name='Math'), 11, 'P.101'),
+(1, 1, 'Fri', 2, (SELECT subject_id FROM subjects WHERE name='History'), 15, 'P.101'),
+(1, 1, 'Fri', 3, (SELECT subject_id FROM subjects WHERE name='English'), 14, 'P.101'),
+(1, 1, 'Fri', 4, (SELECT subject_id FROM subjects WHERE name='Sinh hoạt lớp'), 11, 'P.101');
+
+
+-- =================================================================================
+-- QUERY KIỂM TRA (TEST)
+-- =================================================================================
+
+-- 1. Xem TKB của Student 1 (Theo lớp 6A1)
+SELECT 
+    t.day AS Thu,
+    t.period AS Tiet,
+    s.name AS Mon_Hoc,
+    u.fullname AS Giao_Vien,
+    t.room AS Phong
+FROM timetable t
+JOIN subjects s ON t.subject_id = s.subject_id
+JOIN users u ON t.teacher_id = u.user_id
+WHERE t.class_id = 1 
+ORDER BY FIELD(t.day, 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'), t.period;
+
+-- 2. Xem TKB của GVCN (Teacher ID 11 - Dạy Toán và SHL)
+SELECT 
+    t.day AS Thu,
+    t.period AS Tiet,
+    c.class_name AS Lop_Day,
+    s.name AS Mon_Day,
+    t.room AS Phong
+FROM timetable t
+JOIN classes c ON t.class_id = c.class_id
+JOIN subjects s ON t.subject_id = s.subject_id
+WHERE t.teacher_id = 11
+ORDER BY FIELD(t.day, 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'), t.period;
