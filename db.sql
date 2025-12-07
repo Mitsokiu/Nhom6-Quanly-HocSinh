@@ -434,25 +434,25 @@ INSERT INTO scores (student_id, assign_id, score_type, score_value) VALUES
 
 -- HS1 (Lớp 6A1)
 
-(1, 2, 'oral', 8.0), (1, 2, 'quiz15', 7.5), (1, 2, 'midterm', 8.0), (1, 2, 'final', 8.5),
+(1, 2, 'oral', 8.0), (1, 2, 'quiz15', 7.5), (1, 2, 'quiz45', 8.0), (1, 2, 'final', 8.5),
 
 -- HS2 (Lớp 6A1)
 
-(2, 1, 'oral', 6.0), (2, 1, 'quiz15', 5.0), (2, 1, 'midterm', 6.5), (2, 1, 'final', 7.0),
+(2, 1, 'oral', 6.0), (2, 1, 'quiz15', 5.0), (2, 1, 'quiz45', 6.5), (2, 1, 'final', 7.0),
 
-(2, 2, 'oral', 9.0), (2, 2, 'quiz15', 9.5), (2, 2, 'midterm', 9.0), (2, 2, 'final', 9.5),
+(2, 2, 'oral', 9.0), (2, 2, 'quiz15', 9.5), (2, 2, 'quiz45', 9.0), (2, 2, 'final', 9.5),
 
 -- HS3, HS4, HS5 (Các lớp khác)
 
-(3, 3, 'oral', 7.0), (3, 3, 'quiz15', 7.5), (3, 3, 'midterm', 8.0),
+(3, 3, 'oral', 7.0), (3, 3, 'quiz15', 7.5), (3, 3, 'quiz45', 8.0),
 
-(3, 4, 'oral', 5.0), (3, 4, 'quiz15', 4.5), (3, 4, 'midterm', 5.0), (3, 4, 'final', 6.0),
+(3, 4, 'oral', 5.0), (3, 4, 'quiz15', 4.5), (3, 4, 'quiz45', 5.0), (3, 4, 'final', 6.0),
 
-(4, 3, 'oral', 9.5), (4, 3, 'quiz15', 10.0), (4, 3, 'midterm', 9.5), (4, 3, 'final', 10.0),
+(4, 3, 'oral', 9.5), (4, 3, 'quiz15', 10.0), (4, 3, 'quiz45', 9.5), (4, 3, 'final', 10.0),
 
-(4, 4, 'oral', 8.0), (4, 4, 'quiz15', 8.0), (4, 4, 'midterm', 8.5), (4, 4, 'final', 9.0),
+(4, 4, 'oral', 8.0), (4, 4, 'quiz15', 8.0), (4, 4, 'quiz45', 8.5), (4, 4, 'final', 9.0),
 
-(5, 5, 'oral', 8.0), (5, 5, 'quiz15', 8.5), (5, 5, 'midterm', 8.0), (5, 5, 'final', 9.0);
+(5, 5, 'oral', 8.0), (5, 5, 'quiz15', 8.5), (5, 5, 'quiz45', 8.0), (5, 5, 'final', 9.0);
 
 
 
@@ -582,11 +582,11 @@ AND NOT EXISTS (SELECT 1 FROM scores sc WHERE sc.student_id = s.student_id AND s
 
 
 
--- 3.3. Điểm Giữa Kỳ / 1 Tiết (midterm)
+-- 3.3. Điểm Giữa Kỳ / 1 Tiết (quiz45)
 
 INSERT INTO scores (student_id, assign_id, score_type, score_value)
 
-SELECT s.student_id, ta.assign_id, 'midterm', FLOOR(5 + (RAND() * 5))
+SELECT s.student_id, ta.assign_id, 'quiz45', FLOOR(5 + (RAND() * 5))
 
 FROM student_class s
 
@@ -594,7 +594,7 @@ JOIN teacher_assignments ta ON s.class_id = ta.class_id
 
 WHERE s.class_id = 1
 
-AND NOT EXISTS (SELECT 1 FROM scores sc WHERE sc.student_id = s.student_id AND sc.assign_id = ta.assign_id AND sc.score_type = 'midterm');
+AND NOT EXISTS (SELECT 1 FROM scores sc WHERE sc.student_id = s.student_id AND sc.assign_id = ta.assign_id AND sc.score_type = 'quiz45');
 
 
 
@@ -1006,7 +1006,7 @@ WHERE u_s.username REGEXP '^student(9|1[0-5])$';
 -- PHẦN 9: SINH ĐIỂM VÀ HỌC PHÍ
 -- =================================================================================
 
--- 9.1. Điểm (Oral, Quiz15, Midterm, Final)
+-- 9.1. Điểm (Oral, Quiz15, quiz45, Final)
 INSERT INTO scores (student_id, assign_id, score_type, score_value)
 SELECT s.student_id, ta.assign_id, 'oral', ROUND(6 + (RAND() * 4), 1)
 FROM student_class s JOIN teacher_assignments ta ON s.class_id = ta.class_id
@@ -1018,9 +1018,9 @@ FROM student_class s JOIN teacher_assignments ta ON s.class_id = ta.class_id
 WHERE s.class_id = 1 AND s.student_id NOT IN (SELECT student_id FROM scores WHERE score_type='quiz15');
 
 INSERT INTO scores (student_id, assign_id, score_type, score_value)
-SELECT s.student_id, ta.assign_id, 'midterm', ROUND(5 + (RAND() * 5), 1)
+SELECT s.student_id, ta.assign_id, 'quiz45', ROUND(5 + (RAND() * 5), 1)
 FROM student_class s JOIN teacher_assignments ta ON s.class_id = ta.class_id
-WHERE s.class_id = 1 AND s.student_id NOT IN (SELECT student_id FROM scores WHERE score_type='midterm');
+WHERE s.class_id = 1 AND s.student_id NOT IN (SELECT student_id FROM scores WHERE score_type='quiz45');
 
 INSERT INTO scores (student_id, assign_id, score_type, score_value)
 SELECT s.student_id, ta.assign_id, 'final', ROUND(5 + (RAND() * 5), 1)
