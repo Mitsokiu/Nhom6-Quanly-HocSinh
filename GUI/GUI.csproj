@@ -128,6 +128,12 @@
     <Compile Include="ChiTietHocSinh.Designer.cs">
       <DependentUpon>ChiTietHocSinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Admin\UC_Admin_QuanLyLopHoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Admin\UC_Admin_QuanLyLopHoc.Designer.cs">
+      <DependentUpon>UC_Admin_QuanLyLopHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\GV\UC_GVCN_DiemDanh.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -442,6 +448,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Admin\UC_Admin_NamHoc_TKB.resx">
       <DependentUpon>UC_Admin_NamHoc_TKB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Admin\UC_Admin_QuanLyLopHoc.resx">
+      <DependentUpon>UC_Admin_QuanLyLopHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Admin\UC_Admin_User.resx">
       <DependentUpon>UC_Admin_User.cs</DependentUpon>

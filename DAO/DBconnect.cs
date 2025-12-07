@@ -6,7 +6,7 @@ namespace DAO
 {
     public class DbConnect
     {
-        private static string connectionString = "Server=localhost;Database=school_management;User ID=root;Password=123456;";
+        private static string connectionString = "Server=localhost;Database=school_management;User ID=root;Password=congthuan;";
         public DbConnect()
         {
         }

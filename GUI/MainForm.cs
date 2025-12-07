@@ -1,6 +1,7 @@
 ﻿using BUS;
 using DTO;
 using GUI.UserControls;
+using GUI.UserControls.Admin;
 using System;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
@@ -127,7 +128,7 @@ namespace GUI
 
         private void Sidebar_QlyLopClicked(object sender, EventArgs e)
         {
-            LoadContent(new UC_Admin_Class());
+            LoadContent(new UC_Admin_QuanLyLopHoc());
         }
 
        

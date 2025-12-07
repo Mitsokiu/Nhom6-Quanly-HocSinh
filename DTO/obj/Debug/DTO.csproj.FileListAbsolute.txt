@@ -180,3 +180,4 @@ C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DTO\obj\Debug\D
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DTO\obj\Debug\DTO.csproj.CopyComplete
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DTO\obj\Debug\DTO.exe
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DTO\obj\Debug\DTO.pdb
+D:\GitHub\QLHS\DTO\obj\Debug\DTO.exe.config
