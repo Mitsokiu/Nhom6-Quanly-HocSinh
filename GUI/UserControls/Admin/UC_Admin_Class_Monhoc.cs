@@ -87,10 +87,5 @@ namespace GUI.UserControls
                 MessageBox.Show("Xóa thất bại!");
             }
         }
-
-        private void UC_Admin_Class_Monhoc_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

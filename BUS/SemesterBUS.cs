@@ -11,10 +11,5 @@ namespace BUS
         {
             return dao.GetAllSemesters();
         }
-
-        public List<SemesterDTO> GetSemestersByYearId(int yearId)
-        {
-            return dao.GetSemestersByYearId(yearId);
-        }
     }
 }

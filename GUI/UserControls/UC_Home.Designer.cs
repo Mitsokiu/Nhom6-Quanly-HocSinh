@@ -31,71 +31,45 @@ namespace GUI.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
-            this.labeltitle = new System.Windows.Forms.Label();
-            this.labelmes = new System.Windows.Forms.Label();
-            this.labeldate = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            label1 = new Label();
+            label2 = new Label();
+            SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(38, 67);
+            label1.Name = "label1";
+            label1.Size = new Size(84, 25);
+            label1.TabIndex = 0;
+            label1.Text = "HIHIHIHI";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(25, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(206, 38);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "🏫 Thông Báo";
-            // 
-            // labeltitle
-            // 
-            this.labeltitle.AutoSize = true;
-            this.labeltitle.Location = new System.Drawing.Point(187, 70);
-            this.labeltitle.Name = "labeltitle";
-            this.labeltitle.Size = new System.Drawing.Size(64, 20);
-            this.labeltitle.TabIndex = 2;
-            this.labeltitle.Text = "Tiêu Đề";
-            // 
-            // labelmes
-            // 
-            this.labelmes.AutoSize = true;
-            this.labelmes.Location = new System.Drawing.Point(384, 70);
-            this.labelmes.Name = "labelmes";
-            this.labelmes.Size = new System.Drawing.Size(75, 20);
-            this.labelmes.TabIndex = 3;
-            this.labelmes.Text = "Nội Dung";
-            // 
-            // labeldate
-            // 
-            this.labeldate.AutoSize = true;
-            this.labeldate.Location = new System.Drawing.Point(38, 70);
-            this.labeldate.Name = "labeldate";
-            this.labeldate.Size = new System.Drawing.Size(74, 20);
-            this.labeldate.TabIndex = 4;
-            this.labeldate.Text = "Ngày Gửi";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            label2.Location = new Point(28, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(206, 38);
+            label2.TabIndex = 1;
+            label2.Text = "🏫 Thông Báo";
             // 
             // UC_Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.Controls.Add(this.labeldate);
-            this.Controls.Add(this.labelmes);
-            this.Controls.Add(this.labeltitle);
-            this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "UC_Home";
-            this.Size = new System.Drawing.Size(1041, 457);
-            this.Load += new System.EventHandler(this.UC_Home_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Name = "UC_Home";
+            Size = new Size(823, 400);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
         private Label label2;
-        private Label labeltitle;
-        private Label labelmes;
-        private Label labeldate;
     }
 }

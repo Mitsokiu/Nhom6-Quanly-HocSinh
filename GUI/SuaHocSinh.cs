@@ -92,10 +92,6 @@ namespace GUI
             picAvatar.Region = new Region(path);
         }
 
-<<<<<<< HEAD
-=======
-        // Hàm helper để tìm thư mục Avatars (nằm cùng cấp với folder code)
->>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c
         private string GetProjectAvatarPath()
         {
             string currentDir = Application.StartupPath;
@@ -103,24 +99,15 @@ namespace GUI
             {
                 string tryPath = Path.Combine(currentDir, "Avatars");
                 if (Directory.Exists(tryPath)) return tryPath;
-<<<<<<< HEAD
-=======
-
->>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c
                 DirectoryInfo parent = Directory.GetParent(currentDir);
                 if (parent == null) break;
                 currentDir = parent.FullName;
             }
-<<<<<<< HEAD
-=======
-            // Fallback: Tạo tại bin/Debug nếu không tìm thấy
->>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c
             string fallbackPath = Path.Combine(Application.StartupPath, "Avatars");
             if (!Directory.Exists(fallbackPath)) Directory.CreateDirectory(fallbackPath);
             return fallbackPath;
         }
 
-<<<<<<< HEAD
         private string SaveAvatarToServer(string sourcePath)
         {
             if (string.IsNullOrEmpty(sourcePath)) return null;
@@ -131,28 +118,10 @@ namespace GUI
             {
                 File.Copy(sourcePath, destPath, true);
                 return fileName;
-=======
-        // Lưu ảnh và chỉ trả về TÊN FILE
-        private string SaveAvatarToServer(string sourcePath)
-        {
-            if (string.IsNullOrEmpty(sourcePath)) return null;
-
-            string folder = GetProjectAvatarPath();
-            if (!Directory.Exists(folder)) Directory.CreateDirectory(folder);
-
-            string fileName = "avatar_" + DateTime.Now.ToString("yyyyMMddHHmmssfff") + Path.GetExtension(sourcePath);
-            string destPath = Path.Combine(folder, fileName);
-
-            try
-            {
-                File.Copy(sourcePath, destPath, true);
-                return fileName; // Trả về tên file để lưu DB
->>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c
             }
             catch { return null; }
         }
 
-<<<<<<< HEAD
         private void LoadAvatarToUI(string avatarFileName)
         {
             string folderPath = GetProjectAvatarPath();
@@ -162,41 +131,16 @@ namespace GUI
             picAvatar.Image = null;
             lblUpload.Visible = true;
 
-=======
-        // Hàm load ảnh lên giao diện
-        private void LoadAvatarToUI(string avatarFileName)
-        {
-            string folderPath = GetProjectAvatarPath();
-
-            // 1. Reset
-            picAvatar.Image = null;
-            lblUpload.Visible = true;
-
-            // 2. Đường dẫn ảnh riêng và ảnh mặc định
-            string customPath = Path.Combine(folderPath, avatarFileName ?? "");
-            string defaultPath = Path.Combine(folderPath, "avatar_macdinh.png");
-
-            // 3. Ưu tiên load ảnh riêng
->>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c
             if (!string.IsNullOrEmpty(avatarFileName) && File.Exists(customPath))
             {
                 picAvatar.Image = Image.FromFile(customPath);
                 lblUpload.Visible = false;
             }
-<<<<<<< HEAD
-=======
-            // 4. Nếu không có, load ảnh mặc định
->>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c
             else if (File.Exists(defaultPath))
             {
                 picAvatar.Image = Image.FromFile(defaultPath);
                 lblUpload.Visible = false;
             }
-<<<<<<< HEAD
-=======
-
-            // 5. Bo tròn nếu có ảnh
->>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c
             if (picAvatar.Image != null) MakeAvatarCircular();
         }
 
@@ -210,10 +154,6 @@ namespace GUI
                 txtName.Text = _studentData.FullName;
                 dtpDob.Value = _studentData.DateOfBirth;
                 txtAddress.Text = _studentData.Address;
-<<<<<<< HEAD
-=======
-                txtID.Text = _studentData.StudentCode;
->>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c
                 ToggleGender(_studentData.Gender == "Male");
 
                 if (cboClass.Items.Count > 0) cboClass.SelectedValue = _studentData.ClassID;
@@ -223,10 +163,7 @@ namespace GUI
                     else cboYear.Text = _studentData.AcademicYear;
                 }
 
-<<<<<<< HEAD
                 // Load thông tin Cha Mẹ
-=======
->>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c
                 txtFatherName.Text = _studentData.FatherName;
                 txtFatherPhone.Text = _studentData.FatherPhone;
                 txtFatherJob.Text = _studentData.FatherJob;
@@ -234,7 +171,6 @@ namespace GUI
                 txtMotherPhone.Text = _studentData.MotherPhone;
                 txtMotherJob.Text = _studentData.MotherJob;
 
-<<<<<<< HEAD
                 // Load thông tin Giám hộ (Mới)
                 txtGuardianName.Text = _studentData.GuardianName;
                 txtGuardianPhone.Text = _studentData.GuardianPhone;
@@ -267,19 +203,6 @@ namespace GUI
                 txt.Enter += (s, e) => { if (txt.Text == ph) { txt.Text = ""; txt.ForeColor = Color.Black; } };
                 txt.Leave += (s, e) => { if (string.IsNullOrWhiteSpace(txt.Text)) { txt.Text = ph; txt.ForeColor = Color.Gray; } };
             }
-=======
-                // Load ảnh sử dụng hàm Helper
-                LoadAvatarToUI(_studentData.Avatar);
-
-                // Nếu chưa có ảnh riêng thì hiện chữ "Thay đổi ảnh" đè lên ảnh mặc định
-                if (string.IsNullOrEmpty(_studentData.Avatar))
-                {
-                    lblUpload.Text = "Thay đổi ảnh";
-                    lblUpload.Visible = true; // Hiện chữ để người dùng biết có thể đổi
-                    lblUpload.BackColor = Color.Transparent; // Trong suốt để thấy avatar_macdinh ở dưới
-                }
-            }
->>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c
         }
 
         private void LoadComboBoxData()
@@ -287,24 +210,10 @@ namespace GUI
             try
             {
                 var dtClass = _teacherBus.GetHomeroomClass(_currentTeacherUserId);
-<<<<<<< HEAD
                 cboClass.DataSource = dtClass; cboClass.DisplayMember = "class_name"; cboClass.ValueMember = "class_id";
                 var dtYear = _teacherBus.GetCurrentAcademicYear();
                 cboYear.DataSource = dtYear; cboYear.DisplayMember = "name"; cboYear.ValueMember = "year_id";
                 cboClass.Enabled = false; cboYear.Enabled = false;
-=======
-                cboClass.DataSource = dtClass;
-                cboClass.DisplayMember = "class_name";
-                cboClass.ValueMember = "class_id";
-
-                var dtYear = _teacherBus.GetCurrentAcademicYear();
-                cboYear.DataSource = dtYear;
-                cboYear.DisplayMember = "name";
-                cboYear.ValueMember = "year_id";
-
-                cboClass.Enabled = false;
-                cboYear.Enabled = false;
->>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c
             }
             catch { }
         }
@@ -331,7 +240,6 @@ namespace GUI
                 FatherName = GetText(txtFatherName, PH_F_NAME),
                 FatherPhone = GetText(txtFatherPhone, PH_F_PHONE),
                 FatherJob = GetText(txtFatherJob, PH_F_JOB),
-<<<<<<< HEAD
                 // Mẹ
                 MotherName = GetText(txtMotherName, PH_M_NAME),
                 MotherPhone = GetText(txtMotherPhone, PH_M_PHONE),
@@ -345,31 +253,13 @@ namespace GUI
                 Avatar = _studentData.Avatar // Giữ avatar cũ nếu ko đổi
             };
 
-=======
-                MotherName = GetText(txtMotherName, PH_M_NAME),
-                MotherPhone = GetText(txtMotherPhone, PH_M_PHONE),
-                MotherJob = GetText(txtMotherJob, PH_M_JOB)
-            };
-
-            // Nếu người dùng chọn ảnh mới
->>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c
             if (!string.IsNullOrEmpty(currentAvatarPath))
             {
                 string fileName = SaveAvatarToServer(currentAvatarPath);
                 if (fileName != null)
                 {
-<<<<<<< HEAD
                     var user = _userBus.GetUserById(_studentData.UserID);
                     if (user != null) { user.Avatar = fileName; _userBus.UpdateUser(user); }
-=======
-                    // Update bảng Users
-                    var user = _userBus.GetUserById(_studentData.UserID);
-                    if (user != null)
-                    {
-                        user.Avatar = fileName; // Chỉ lưu tên file
-                        _userBus.UpdateUser(user);
-                    }
->>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c
                     student.Avatar = fileName;
                 }
             }
@@ -398,39 +288,21 @@ namespace GUI
             btnGenderFemale.BackColor = isMale ? clrInactive : clrActive;
             btnGenderFemale.ForeColor = isMale ? Color.Black : Color.White;
 
-<<<<<<< HEAD
             if (string.IsNullOrEmpty(currentAvatarPath) && string.IsNullOrEmpty(_studentData.Avatar))
             {
                 string path = Path.Combine(GetProjectAvatarPath(), "avatar_macdinh.png");
                 if (File.Exists(path)) { picAvatar.Image = Image.FromFile(path); lblUpload.Visible = true; }
-=======
-            // Nếu chưa chọn ảnh mới VÀ DB chưa có ảnh -> Load ảnh mặc định
-            if (string.IsNullOrEmpty(currentAvatarPath) && string.IsNullOrEmpty(_studentData.Avatar))
-            {
-                string path = Path.Combine(GetProjectAvatarPath(), "avatar_macdinh.png");
-                if (File.Exists(path))
-                {
-                    picAvatar.Image = Image.FromFile(path);
-                    lblUpload.Visible = true; // Vẫn hiện chữ để biết có thể đổi
-                }
->>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c
             }
         }
 
         private void ApplyRoundedCorners()
         {
             Control[] controls = { btnSave, btnCancel, btnGenderMale, btnGenderFemale,
-<<<<<<< HEAD
                 pnlInputName, pnlInputDob, pnlInputAddress, pnlInputClass, pnlInputYear,
                 pnlInputFatherName, pnlInputFatherPhone, pnlInputFatherJob,
                 pnlInputMotherName, pnlInputMotherPhone, pnlInputMotherJob,
                 pnlInputGuardianName, pnlInputGuardianPhone, pnlInputGuardianJob, pnlInputGuardianRelation // Thêm mới
             };
-=======
-                pnlInputName, pnlInputDob, pnlInputAddress, pnlInputID, pnlInputClass, pnlInputYear,
-                pnlInputFatherName, pnlInputFatherPhone, pnlInputFatherJob,
-                pnlInputMotherName, pnlInputMotherPhone, pnlInputMotherJob };
->>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c
 
             foreach (var c in controls)
             {
@@ -438,15 +310,8 @@ namespace GUI
                 using (GraphicsPath path = new GraphicsPath())
                 {
                     int r = 10;
-<<<<<<< HEAD
                     path.AddArc(0, 0, r, r, 180, 90); path.AddArc(bounds.Width - r, 0, r, r, 270, 90);
                     path.AddArc(bounds.Width - r, bounds.Height - r, r, r, 0, 90); path.AddArc(0, bounds.Height - r, r, r, 90, 90);
-=======
-                    path.AddArc(0, 0, r, r, 180, 90);
-                    path.AddArc(bounds.Width - r, 0, r, r, 270, 90);
-                    path.AddArc(bounds.Width - r, bounds.Height - r, r, r, 0, 90);
-                    path.AddArc(0, bounds.Height - r, r, r, 90, 90);
->>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c
                     c.Region = new Region(path);
                 }
             }

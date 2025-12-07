@@ -31,255 +31,236 @@ namespace GUI.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.HocSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KhoanThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DaThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ConNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
+            groupBox1 = new GroupBox();
+            dateTimePicker1 = new DateTimePicker();
+            textBox6 = new TextBox();
+            textBox4 = new TextBox();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            button1 = new Button();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            groupBox2 = new GroupBox();
+            dataGridView1 = new DataGridView();
+            HocSinh = new DataGridViewTextBoxColumn();
+            KhoanThu = new DataGridViewTextBoxColumn();
+            SoTien = new DataGridViewTextBoxColumn();
+            DaThu = new DataGridViewTextBoxColumn();
+            NgayThu = new DataGridViewTextBoxColumn();
+            ConNo = new DataGridViewTextBoxColumn();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(26, 16);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(347, 494);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông Tinh";
+            groupBox1.Controls.Add(dateTimePicker1);
+            groupBox1.Controls.Add(textBox6);
+            groupBox1.Controls.Add(textBox4);
+            groupBox1.Controls.Add(textBox3);
+            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Location = new Point(29, 20);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(386, 617);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Thông Tinh";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(116, 266);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(226, 26);
-            this.dateTimePicker1.TabIndex = 13;
+            dateTimePicker1.Location = new Point(129, 332);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(251, 31);
+            dateTimePicker1.TabIndex = 13;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(116, 310);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(218, 26);
-            this.textBox6.TabIndex = 12;
+            textBox6.Location = new Point(129, 387);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(242, 31);
+            textBox6.TabIndex = 12;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(116, 227);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(226, 26);
-            this.textBox4.TabIndex = 10;
+            textBox4.Location = new Point(129, 284);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(251, 31);
+            textBox4.TabIndex = 10;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(116, 162);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(226, 26);
-            this.textBox3.TabIndex = 9;
+            textBox3.Location = new Point(129, 202);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(251, 31);
+            textBox3.TabIndex = 9;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(116, 112);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(226, 26);
-            this.textBox2.TabIndex = 8;
+            textBox2.Location = new Point(129, 140);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(251, 31);
+            textBox2.TabIndex = 8;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(116, 61);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(226, 26);
-            this.textBox1.TabIndex = 7;
+            textBox1.Location = new Point(129, 76);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(251, 31);
+            textBox1.TabIndex = 7;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(29, 415);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 27);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Cập Nhật";
-            this.button1.UseVisualStyleBackColor = true;
+            button1.Location = new Point(32, 519);
+            button1.Name = "button1";
+            button1.Size = new Size(112, 34);
+            button1.TabIndex = 6;
+            button1.Text = "Cập Nhật";
+            button1.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 310);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 20);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Còn Nợ";
+            label6.AutoSize = true;
+            label6.Location = new Point(20, 387);
+            label6.Name = "label6";
+            label6.Size = new Size(73, 25);
+            label6.TabIndex = 5;
+            label6.Text = "Còn Nợ";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 266);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 20);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Ngày Thu";
+            label5.AutoSize = true;
+            label5.Location = new Point(20, 332);
+            label5.Name = "label5";
+            label5.Size = new Size(88, 25);
+            label5.TabIndex = 4;
+            label5.Text = "Ngày Thu";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 227);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Đã Thu";
+            label4.AutoSize = true;
+            label4.Location = new Point(20, 284);
+            label4.Name = "label4";
+            label4.Size = new Size(68, 25);
+            label4.TabIndex = 3;
+            label4.Text = "Đã Thu";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 164);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Số Tiền";
+            label3.AutoSize = true;
+            label3.Location = new Point(20, 205);
+            label3.Name = "label3";
+            label3.Size = new Size(70, 25);
+            label3.TabIndex = 2;
+            label3.Text = "Số Tiền";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 112);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Khoản Thu";
+            label2.AutoSize = true;
+            label2.Location = new Point(20, 140);
+            label2.Name = "label2";
+            label2.Size = new Size(96, 25);
+            label2.TabIndex = 1;
+            label2.Text = "Khoản Thu";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Học Sinh";
+            label1.AutoSize = true;
+            label1.Location = new Point(20, 79);
+            label1.Name = "label1";
+            label1.Size = new Size(83, 25);
+            label1.TabIndex = 0;
+            label1.Text = "Học Sinh";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(379, 16);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(874, 494);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Danh Sách";
+            groupBox2.Controls.Add(dataGridView1);
+            groupBox2.Location = new Point(421, 20);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(971, 617);
+            groupBox2.TabIndex = 1;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Danh Sách";
             // 
             // dataGridView1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.HocSinh,
-            this.KhoanThu,
-            this.SoTien,
-            this.DaThu,
-            this.NgayThu,
-            this.ConNo});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 24);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(860, 450);
-            this.dataGridView1.TabIndex = 0;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { HocSinh, KhoanThu, SoTien, DaThu, NgayThu, ConNo });
+            dataGridView1.Location = new Point(0, 30);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 62;
+            dataGridView1.Size = new Size(955, 563);
+            dataGridView1.TabIndex = 0;
             // 
             // HocSinh
             // 
-            this.HocSinh.HeaderText = "Học Sinh";
-            this.HocSinh.MinimumWidth = 8;
-            this.HocSinh.Name = "HocSinh";
-            this.HocSinh.Width = 150;
+            HocSinh.HeaderText = "Học Sinh";
+            HocSinh.MinimumWidth = 8;
+            HocSinh.Name = "HocSinh";
+            HocSinh.Width = 150;
             // 
             // KhoanThu
             // 
-            this.KhoanThu.HeaderText = "Khoản Thu";
-            this.KhoanThu.MinimumWidth = 8;
-            this.KhoanThu.Name = "KhoanThu";
-            this.KhoanThu.Width = 150;
+            KhoanThu.HeaderText = "Khoản Thu";
+            KhoanThu.MinimumWidth = 8;
+            KhoanThu.Name = "KhoanThu";
+            KhoanThu.Width = 150;
             // 
             // SoTien
             // 
-            this.SoTien.HeaderText = "Số Tiền";
-            this.SoTien.MinimumWidth = 8;
-            this.SoTien.Name = "SoTien";
-            this.SoTien.Width = 150;
+            SoTien.HeaderText = "Số Tiền";
+            SoTien.MinimumWidth = 8;
+            SoTien.Name = "SoTien";
+            SoTien.Width = 150;
             // 
             // DaThu
             // 
-            this.DaThu.HeaderText = "Đã Thu";
-            this.DaThu.MinimumWidth = 8;
-            this.DaThu.Name = "DaThu";
-            this.DaThu.Width = 150;
+            DaThu.HeaderText = "Đã Thu";
+            DaThu.MinimumWidth = 8;
+            DaThu.Name = "DaThu";
+            DaThu.Width = 150;
             // 
             // NgayThu
             // 
-            this.NgayThu.HeaderText = "Ngày Thu";
-            this.NgayThu.MinimumWidth = 8;
-            this.NgayThu.Name = "NgayThu";
-            this.NgayThu.Width = 150;
+            NgayThu.HeaderText = "Ngày Thu";
+            NgayThu.MinimumWidth = 8;
+            NgayThu.Name = "NgayThu";
+            NgayThu.Width = 150;
             // 
             // ConNo
             // 
-            this.ConNo.HeaderText = "Còn Nợ";
-            this.ConNo.MinimumWidth = 8;
-            this.ConNo.Name = "ConNo";
-            this.ConNo.Width = 150;
+            ConNo.HeaderText = "Còn Nợ";
+            ConNo.MinimumWidth = 8;
+            ConNo.Name = "ConNo";
+            ConNo.Width = 150;
             // 
             // UC_GVCN_HocPhi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "UC_GVCN_HocPhi";
-            this.Size = new System.Drawing.Size(1282, 538);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(groupBox2);
+            Controls.Add(groupBox1);
+            Name = "UC_GVCN_HocPhi";
+            Size = new Size(1424, 673);
+            Load += UC_GVCN_HocPhi_Load;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

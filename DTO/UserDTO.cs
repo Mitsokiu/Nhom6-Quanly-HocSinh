@@ -12,12 +12,7 @@ namespace DTO
         public string Phone { get; set; }           // Số điện thoại
         public string Avatar { get; set; }
         public DateTime CreatedAt { get; set; }     // Ngày tạo
-        public string RoleName { get; set; }
-        public string RoleId { get; set; }   // role_id
-        public string Avatar { get; set; }// Tên vai trò (admin/teacher/student/parent)
-
-
-
+        public string RoleName { get; set; }        // Tên vai trò (admin/teacher/student/parent)
 
         // Optional: Hàm trim dữ liệu (nếu muốn)
         public void TrimAll()

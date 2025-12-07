@@ -85,10 +85,5 @@ namespace GUI.UserControls
                     LoadData();
             }
         }
-
-        private void txtnumber_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

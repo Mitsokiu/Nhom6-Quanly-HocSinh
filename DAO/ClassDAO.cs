@@ -2,7 +2,6 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.Data;
 
 namespace DAO
 {
@@ -56,16 +55,10 @@ namespace DAO
             }
         }
 
-        // Trả về lớp kèm tên khối
         public static List<ClassDTO> GetAllClasses()
         {
             var list = new List<ClassDTO>();
-            string query = @"
-                SELECT c.class_id, c.class_name, c.grade_id, g.grade_name
-                FROM classes c
-                JOIN grade_levels g ON c.grade_id = g.grade_id
-                ORDER BY g.grade_id, c.class_name
-            ";
+            string query = "SELECT class_id, class_name, grade_id FROM classes";
 
             using (var conn = DbConnect.GetConnection())
             {
@@ -79,39 +72,30 @@ namespace DAO
                         {
                             Id = reader.GetInt32("class_id"),
                             ClassName = reader.GetString("class_name"),
-                            GradeId = reader.GetInt32("grade_id"),
-                            GradeName = reader.GetString("grade_name")
+                            GradeId = reader.GetInt32("grade_id")
                         });
                     }
                 }
             }
-
             return list;
         }
 
-        // Kiểm tra lớp theo tên và grade_id
         public static bool ExistsClass(string className, int gradeId)
         {
-            string sql = "SELECT COUNT(*) FROM classes WHERE class_name=@param0 AND grade_id=@param1";
-            object[] parameters = { className, gradeId };
-            DataTable dt = DbConnect.ExecuteQuery(sql, parameters);
-            if (dt.Rows.Count > 0)
+            string query = "SELECT COUNT(*) FROM classes WHERE class_name = @name AND grade_id = @grade";
+
+            using (var conn = DbConnect.GetConnection())
             {
-                int count = Convert.ToInt32(dt.Rows[0][0]);
-                return count > 0;
+                conn.Open();
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@name", className);
+                    cmd.Parameters.AddWithValue("@grade", gradeId);
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    return count > 0; // true nếu đã tồn tại
+                }
             }
-            return false;
         }
 
-        public static DataTable GetClassesByYear(int yearId)
-        {
-            string sql = @"
-                SELECT DISTINCT c.class_id, c.class_name
-                FROM classes c
-                JOIN student_class sc ON sc.class_id = c.class_id
-                WHERE sc.school_year_id = @param0";
-
-            return DbConnect.ExecuteQuery(sql, new object[] { yearId });
-        }
     }
 }

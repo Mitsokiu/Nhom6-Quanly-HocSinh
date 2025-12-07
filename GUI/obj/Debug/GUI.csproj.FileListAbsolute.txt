@@ -238,7 +238,6 @@ C:\Code\qlyhocsinh\GUI\obj\Debug\GUI.csproj.Up2Date
 C:\Code\qlyhocsinh\GUI\obj\Debug\GUI.exe
 C:\Code\qlyhocsinh\GUI\obj\Debug\GUI.pdb
 C:\Code\qlyhocsinh\GUI\obj\Debug\GUI.UC_Admin_PhanCong_gvcn.resources
-<<<<<<< HEAD
 D:\GitHub\QLHS\GUI\bin\Debug\GUI.exe.config
 D:\GitHub\QLHS\GUI\bin\Debug\GUI.exe
 D:\GitHub\QLHS\GUI\bin\Debug\GUI.pdb
@@ -318,200 +317,12 @@ D:\GitHub\QLHS\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.csproj.Up2Date
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.exe
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.pdb
-=======
-C:\Code\qlyhocsinh\GUI\obj\Debug\GUI.UserControls.UC_Admin_NamHoc_HocPhi_Bar.resources
-C:\Code\qlyhocsinh\GUI\obj\Debug\GUI.UserControls.UC_Admin_ThongBao.resources
-C:\Code\qlyhocsinh\GUI\obj\Debug\GUI.UserControls.UC_Admin_Student.resources
-C:\Code\qlyhocsinh\GUI\obj\Debug\GUI.UserControls.UC_Admin_ThongKe.resources
-C:\Code\qlyhsmerge\GUI\bin\Debug\GUI.exe.config
-C:\Code\qlyhsmerge\GUI\bin\Debug\GUI.exe
-C:\Code\qlyhsmerge\GUI\bin\Debug\GUI.pdb
-C:\Code\qlyhsmerge\GUI\bin\Debug\BouncyCastle.Cryptography.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\BUS.exe
-C:\Code\qlyhsmerge\GUI\bin\Debug\DAO.exe
-C:\Code\qlyhsmerge\GUI\bin\Debug\DTO.exe
-C:\Code\qlyhsmerge\GUI\bin\Debug\Google.Protobuf.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\K4os.Compression.LZ4.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\K4os.Compression.LZ4.Streams.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\K4os.Hash.xxHash.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\MySql.Data.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\System.Buffers.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\System.Configuration.ConfigurationManager.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\System.IO.Pipelines.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\System.Memory.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\System.Numerics.Vectors.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\ZstdSharp.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\BUS.pdb
-C:\Code\qlyhsmerge\GUI\bin\Debug\BUS.exe.config
-C:\Code\qlyhsmerge\GUI\bin\Debug\DAO.pdb
-C:\Code\qlyhsmerge\GUI\bin\Debug\DAO.exe.config
-C:\Code\qlyhsmerge\GUI\bin\Debug\DTO.pdb
-C:\Code\qlyhsmerge\GUI\bin\Debug\DTO.exe.config
-C:\Code\qlyhsmerge\GUI\bin\Debug\BouncyCastle.Cryptography.xml
-C:\Code\qlyhsmerge\GUI\bin\Debug\Google.Protobuf.pdb
-C:\Code\qlyhsmerge\GUI\bin\Debug\Google.Protobuf.xml
-C:\Code\qlyhsmerge\GUI\bin\Debug\K4os.Compression.LZ4.xml
-C:\Code\qlyhsmerge\GUI\bin\Debug\K4os.Compression.LZ4.Streams.xml
-C:\Code\qlyhsmerge\GUI\bin\Debug\K4os.Hash.xxHash.xml
-C:\Code\qlyhsmerge\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-C:\Code\qlyhsmerge\GUI\bin\Debug\MySql.Data.xml
-C:\Code\qlyhsmerge\GUI\bin\Debug\System.Buffers.xml
-C:\Code\qlyhsmerge\GUI\bin\Debug\System.Configuration.ConfigurationManager.xml
-C:\Code\qlyhsmerge\GUI\bin\Debug\System.IO.Pipelines.xml
-C:\Code\qlyhsmerge\GUI\bin\Debug\System.Memory.xml
-C:\Code\qlyhsmerge\GUI\bin\Debug\System.Numerics.Vectors.xml
-C:\Code\qlyhsmerge\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Code\qlyhsmerge\GUI\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.exe.config
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.AddUser.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.Login.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.MainForm.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.Properties.Resources.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.Sidebar.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UserControls.UC_Admin_NamHoc_HocPhi_Bar.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UC_Admin_PhanCong_gvcn.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UserControls.UC_Admin_Class.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UserControls.UC_Admin_Class_KhoiLop.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UserControls.UC_Admin_Class_Monhoc.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UserControls.UC_Admin_Class_Phancong.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UserControls.UC_Admin_Namhoc.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UserControls.UC_Admin_Namhoc_Hocki.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UserControls.UC_Admin_NamHoc_HocPhi.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UserControls.UC_Admin_NamHoc_HocPhi_PhieuThu.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UserControls.UC_Admin_NamHoc_TKB.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UserControls.UC_Admin_Student.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UserControls.UC_Admin_ThongBao.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UserControls.UC_Admin_ThongKe.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UserControls.UC_Admin_User.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UserControls.UC_GVBM.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UserControls.UC_GVBM_Diem.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UserControls.UC_GVBM_TKB.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UserControls.UC_GVCN.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UserControls.UC_GVCN_DS.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UserControls.UC_GVCN_HocPhi.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UserControls.UC_GVCN_NS.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UserControls.UC_GVCN_QLHS.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UserControls.UC_GVCN_Tbao.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UserControls.UC_HocSinh_Diem.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UserControls.UC_HocSinh_TKB.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UserControls.UC_Home.resources
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.csproj.Up2Date
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.exe
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.pdb
-C:\Code\qlyhsmerge\GUI\bin\Debug\ClosedXML.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\ClosedXML.Parser.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\DocumentFormat.OpenXml.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\DocumentFormat.OpenXml.Framework.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\ExcelNumberFormat.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\Microsoft.Bcl.HashCode.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\RBush.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\SixLabors.Fonts.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\ClosedXML.pdb
-C:\Code\qlyhsmerge\GUI\bin\Debug\ClosedXML.xml
-C:\Code\qlyhsmerge\GUI\bin\Debug\ClosedXML.Parser.xml
-C:\Code\qlyhsmerge\GUI\bin\Debug\DocumentFormat.OpenXml.xml
-C:\Code\qlyhsmerge\GUI\bin\Debug\DocumentFormat.OpenXml.Framework.xml
-C:\Code\qlyhsmerge\GUI\bin\Debug\ExcelNumberFormat.xml
-C:\Code\qlyhsmerge\GUI\bin\Debug\Microsoft.Bcl.HashCode.xml
-C:\Code\qlyhsmerge\GUI\bin\Debug\RBush.xml
-C:\Code\qlyhsmerge\GUI\bin\Debug\SixLabors.Fonts.xml
-C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UserControls.UC_HocSinh_ThongTin.resources
-C:\Code\qlyhsmerge\GUI\bin\Debug\EPPlus.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\EPPlus.Interfaces.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\itextsharp.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\System.ComponentModel.Annotations.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\System.Security.Cryptography.Xml.dll
-C:\Code\qlyhsmerge\GUI\bin\Debug\EPPlus.xml
-C:\Code\qlyhsmerge\GUI\bin\Debug\itextsharp.xml
-C:\Code\qlyhsmerge\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
-C:\Code\qlyhsmerge\GUI\bin\Debug\System.Security.Cryptography.Xml.xml
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\GUI.exe.config
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\GUI.exe
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\GUI.pdb
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\BouncyCastle.Cryptography.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\BUS.exe
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\ClosedXML.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\ClosedXML.Parser.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\DAO.exe
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\DocumentFormat.OpenXml.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\DocumentFormat.OpenXml.Framework.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\DTO.exe
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\EPPlus.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\EPPlus.Interfaces.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\ExcelNumberFormat.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\Google.Protobuf.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\itextsharp.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\K4os.Compression.LZ4.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\K4os.Compression.LZ4.Streams.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\K4os.Hash.xxHash.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\Microsoft.Bcl.HashCode.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\MySql.Data.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\RBush.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\SixLabors.Fonts.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\System.Buffers.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\System.ComponentModel.Annotations.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\System.Configuration.ConfigurationManager.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\System.IO.Pipelines.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\System.Memory.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\System.Security.Cryptography.Xml.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\ZstdSharp.dll
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\BUS.pdb
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\BUS.exe.config
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\DAO.pdb
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\DAO.exe.config
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\DTO.pdb
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\DTO.exe.config
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\BouncyCastle.Cryptography.xml
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\ClosedXML.pdb
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\ClosedXML.xml
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\ClosedXML.Parser.xml
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\DocumentFormat.OpenXml.xml
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\DocumentFormat.OpenXml.Framework.xml
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\EPPlus.xml
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\ExcelNumberFormat.xml
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\Google.Protobuf.pdb
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\Google.Protobuf.xml
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\itextsharp.xml
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\K4os.Compression.LZ4.xml
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\K4os.Compression.LZ4.Streams.xml
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\K4os.Hash.xxHash.xml
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\Microsoft.Bcl.HashCode.xml
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\MySql.Data.xml
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\RBush.xml
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\SixLabors.Fonts.xml
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\System.Buffers.xml
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\System.Configuration.ConfigurationManager.xml
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\System.IO.Pipelines.xml
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\System.Memory.xml
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\System.Security.Cryptography.Xml.xml
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\System.Threading.Tasks.Extensions.xml
->>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.AddUser.resources
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.Login.resources
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.MainForm.resources
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.Properties.Resources.resources
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.Sidebar.resources
-<<<<<<< HEAD
-=======
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_Admin_NamHoc_HocPhi_Bar.resources
->>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UC_Admin_PhanCong_gvcn.resources
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_Admin_Class.resources
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_Admin_Class_KhoiLop.resources
@@ -522,12 +333,6 @@ C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\G
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_Admin_NamHoc_HocPhi.resources
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_Admin_NamHoc_HocPhi_PhieuThu.resources
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_Admin_NamHoc_TKB.resources
-<<<<<<< HEAD
-=======
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_Admin_Student.resources
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_Admin_ThongBao.resources
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_Admin_ThongKe.resources
->>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_Admin_User.resources
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_GVBM.resources
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_GVBM_Diem.resources
@@ -537,7 +342,6 @@ C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\G
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_GVCN_HocPhi.resources
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_GVCN_NS.resources
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_GVCN_QLHS.resources
-<<<<<<< HEAD
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_HocSinh_Diem.resources
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_HocSinh_DoiMatKhau.resources
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_HocSinh_ThongTin.resources
@@ -631,15 +435,3 @@ C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\bin\Debug\i
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.ChiTietHocSinh.resources
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.SuaHocSinh.resources
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.ThemHocSinh.resources
-=======
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_GVCN_Tbao.resources
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_HocSinh_Diem.resources
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_HocSinh_ThongTin.resources
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_HocSinh_TKB.resources
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.UserControls.UC_Home.resources
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.csproj.CopyComplete
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.exe
-C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\GUI\obj\Debug\GUI.pdb
->>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c

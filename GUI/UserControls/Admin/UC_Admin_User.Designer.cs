@@ -31,7 +31,6 @@ namespace GUI.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_add = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -49,6 +48,8 @@ namespace GUI.UserControls
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btn_search = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.Taikhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,26 +57,17 @@ namespace GUI.UserControls
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayTao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txtnumber = new System.Windows.Forms.TextBox();
-            this.btntail = new System.Windows.Forms.Button();
-            this.btnnext = new System.Windows.Forms.Button();
-            this.btnback = new System.Windows.Forms.Button();
-            this.btnhead = new System.Windows.Forms.Button();
-            this.btn_search = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_add
             // 
-            this.btn_add.BackColor = System.Drawing.Color.Lime;
-            this.btn_add.Location = new System.Drawing.Point(0, 407);
+            this.btn_add.BackColor = System.Drawing.Color.Silver;
+            this.btn_add.Location = new System.Drawing.Point(1131, 28);
             this.btn_add.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(101, 42);
+            this.btn_add.Size = new System.Drawing.Size(101, 27);
             this.btn_add.TabIndex = 10;
             this.btn_add.Text = "Them";
             this.btn_add.UseVisualStyleBackColor = false;
@@ -84,17 +76,14 @@ namespace GUI.UserControls
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 11);
+            this.label1.Location = new System.Drawing.Point(30, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(192, 25);
+            this.label1.Size = new System.Drawing.Size(79, 20);
             this.label1.TabIndex = 15;
-            this.label1.Text = "Quản Lý tài Khoản";
+            this.label1.Text = "Thong Tin";
             // 
             // panel2
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.btn_add);
             this.panel2.Controls.Add(this.btn_xoa);
             this.panel2.Controls.Add(this.btn_sua);
             this.panel2.Controls.Add(this.Text_mail);
@@ -116,11 +105,11 @@ namespace GUI.UserControls
             // 
             // btn_xoa
             // 
-            this.btn_xoa.BackColor = System.Drawing.Color.Lime;
-            this.btn_xoa.Location = new System.Drawing.Point(211, 407);
+            this.btn_xoa.BackColor = System.Drawing.Color.Silver;
+            this.btn_xoa.Location = new System.Drawing.Point(211, 422);
             this.btn_xoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_xoa.Name = "btn_xoa";
-            this.btn_xoa.Size = new System.Drawing.Size(101, 42);
+            this.btn_xoa.Size = new System.Drawing.Size(101, 27);
             this.btn_xoa.TabIndex = 5;
             this.btn_xoa.Text = "Xoa";
             this.btn_xoa.UseVisualStyleBackColor = false;
@@ -128,11 +117,11 @@ namespace GUI.UserControls
             // 
             // btn_sua
             // 
-            this.btn_sua.BackColor = System.Drawing.Color.Lime;
-            this.btn_sua.Location = new System.Drawing.Point(104, 407);
+            this.btn_sua.BackColor = System.Drawing.Color.Silver;
+            this.btn_sua.Location = new System.Drawing.Point(12, 422);
             this.btn_sua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_sua.Name = "btn_sua";
-            this.btn_sua.Size = new System.Drawing.Size(101, 42);
+            this.btn_sua.Size = new System.Drawing.Size(101, 27);
             this.btn_sua.TabIndex = 4;
             this.btn_sua.Text = "Sua";
             this.btn_sua.UseVisualStyleBackColor = false;
@@ -214,7 +203,7 @@ namespace GUI.UserControls
             "gvcn",
             "gvbm",
             "parent"});
-            this.combo_role.Location = new System.Drawing.Point(148, 232);
+            this.combo_role.Location = new System.Drawing.Point(117, 235);
             this.combo_role.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.combo_role.Name = "combo_role";
             this.combo_role.Size = new System.Drawing.Size(164, 28);
@@ -242,15 +231,6 @@ namespace GUI.UserControls
             // 
             // dataGridView1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Taikhoan,
@@ -267,6 +247,25 @@ namespace GUI.UserControls
             this.dataGridView1.Size = new System.Drawing.Size(1117, 465);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // btn_search
+            // 
+            this.btn_search.Location = new System.Drawing.Point(543, 14);
+            this.btn_search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(101, 27);
+            this.btn_search.TabIndex = 12;
+            this.btn_search.Text = "Seach";
+            this.btn_search.UseVisualStyleBackColor = true;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(202, 14);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(336, 26);
+            this.txtSearch.TabIndex = 11;
+            this.txtSearch.Text = "Search";
             // 
             // Taikhoan
             // 
@@ -317,99 +316,11 @@ namespace GUI.UserControls
             this.NgayTao.Name = "NgayTao";
             this.NgayTao.Width = 150;
             // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(374, 24);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(422, 26);
-            this.txtSearch.TabIndex = 11;
-            this.txtSearch.Text = "Search";
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged_1);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.txtnumber);
-            this.panel1.Controls.Add(this.btntail);
-            this.panel1.Controls.Add(this.btnnext);
-            this.panel1.Controls.Add(this.btnback);
-            this.panel1.Controls.Add(this.btnhead);
-            this.panel1.Location = new System.Drawing.Point(651, 541);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(488, 40);
-            this.panel1.TabIndex = 16;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // txtnumber
-            // 
-            this.txtnumber.Location = new System.Drawing.Point(194, 5);
-            this.txtnumber.Name = "txtnumber";
-            this.txtnumber.Size = new System.Drawing.Size(100, 26);
-            this.txtnumber.TabIndex = 4;
-            // 
-            // btntail
-            // 
-            this.btntail.BackColor = System.Drawing.Color.Lime;
-            this.btntail.Location = new System.Drawing.Point(400, 4);
-            this.btntail.Name = "btntail";
-            this.btntail.Size = new System.Drawing.Size(75, 28);
-            this.btntail.TabIndex = 3;
-            this.btntail.Text = ">>";
-            this.btntail.UseVisualStyleBackColor = false;
-            this.btntail.Click += new System.EventHandler(this.btntail_Click);
-            // 
-            // btnnext
-            // 
-            this.btnnext.BackColor = System.Drawing.Color.Lime;
-            this.btnnext.Location = new System.Drawing.Point(319, 4);
-            this.btnnext.Name = "btnnext";
-            this.btnnext.Size = new System.Drawing.Size(75, 28);
-            this.btnnext.TabIndex = 2;
-            this.btnnext.Text = ">";
-            this.btnnext.UseVisualStyleBackColor = false;
-            this.btnnext.Click += new System.EventHandler(this.btnnext_Click);
-            // 
-            // btnback
-            // 
-            this.btnback.BackColor = System.Drawing.Color.Lime;
-            this.btnback.Location = new System.Drawing.Point(95, 4);
-            this.btnback.Name = "btnback";
-            this.btnback.Size = new System.Drawing.Size(75, 28);
-            this.btnback.TabIndex = 1;
-            this.btnback.Text = "<";
-            this.btnback.UseVisualStyleBackColor = false;
-            this.btnback.Click += new System.EventHandler(this.btnback_Click);
-            // 
-            // btnhead
-            // 
-            this.btnhead.BackColor = System.Drawing.Color.Lime;
-            this.btnhead.Location = new System.Drawing.Point(14, 4);
-            this.btnhead.Name = "btnhead";
-            this.btnhead.Size = new System.Drawing.Size(75, 28);
-            this.btnhead.TabIndex = 0;
-            this.btnhead.Text = "<<";
-            this.btnhead.UseVisualStyleBackColor = false;
-            this.btnhead.Click += new System.EventHandler(this.btnhead_Click);
-            // 
-            // btn_search
-            // 
-            this.btn_search.BackColor = System.Drawing.Color.Lime;
-            this.btn_search.Image = global::GUI.Properties.Resources.search__1_;
-            this.btn_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_search.Location = new System.Drawing.Point(829, 20);
-            this.btn_search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(116, 35);
-            this.btn_search.TabIndex = 12;
-            this.btn_search.Text = "Seach";
-            this.btn_search.UseVisualStyleBackColor = false;
-            this.btn_search.Click += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
             // UC_Admin_User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btn_add);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridView1);
@@ -422,8 +333,6 @@ namespace GUI.UserControls
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -457,11 +366,5 @@ namespace GUI.UserControls
         private DataGridViewTextBoxColumn SDT;
         private DataGridViewTextBoxColumn Role;
         private DataGridViewTextBoxColumn NgayTao;
-        private Panel panel1;
-        private Button btntail;
-        private Button btnnext;
-        private Button btnback;
-        private Button btnhead;
-        private TextBox txtnumber;
     }
 }

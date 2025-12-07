@@ -118,59 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="hocsinh_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hocsinh_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="taikhoan_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\taikhoan_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="HocKi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HocKi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="xemlichday_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\xemlichday_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="anhnenLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\anhnenLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-user-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-user-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pdf_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pdf_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="tinnhan_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tinnhan_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="nhapdiem_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\nhapdiem_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dangxuat_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dangxuat_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="teacher1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\teacher1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="nhapdiem_241" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nhapdiem_241.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="virtual-event" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\virtual-event.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="xinphepvang_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\xinphepvang_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="diemdanh_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\diemdanh_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="nhapdiem_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\nhapdiem_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="nhapngaynghi_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\nhapngaynghi_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="teacher" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\teacher.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="view_40" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\view_40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="nhapexcel_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\nhapexcel_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="xemtkb_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\xemtkb_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="anhnen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\anhnen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,31 +136,54 @@
   <data name="timkiem_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\timkiem_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HocLuc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HocLuc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-person-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-person-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="xemtkb_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\xemtkb_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="nhapdiem_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nhapdiem_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="nhapdiem_28" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\nhapdiem_28.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="diemdanh_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\diemdanh_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-analytics-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-analytics-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="nhapngaynghi_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nhapngaynghi_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dangxuat_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dangxuat_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="taikhoan_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\taikhoan_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="nhapdiem_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\nhapdiem_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="xinphepvang_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\xinphepvang_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-user-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-user-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="xemlichday_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\xemlichday_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nhapdiem_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nhapdiem_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="xemdiem_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\xemdiem_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="nhapdiem_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nhapdiem_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hocphi_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hocphi_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hocsinh_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hocsinh_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nhapdiem_28" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nhapdiem_28.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="anhnenLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\anhnenLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="lophoc_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lophoc_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
   <data name="view_20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\view_20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -214,38 +195,19 @@
   </data>
   <data name="edit_25" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit_25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
-  <data name="xuatexcel_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\xuatexcel_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="job" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\job.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="khoilop" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\khoilop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c
   </data>
   <data name="edit_40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit_40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
   <data name="delete_40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete_40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="view_40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\view_40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
-  <data name="icons8-person-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-person-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hocphi_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hocphi_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c
   </data>
   <data name="search_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
   <data name="xuatexcel_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\xuatexcel_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -254,15 +216,5 @@
   </data>
   <data name="pdf_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pdf_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
-  <data name="nhapdiem_241" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\nhapdiem_241.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="delete_40" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\delete_40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="search (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\search (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c
   </data>
 </root>

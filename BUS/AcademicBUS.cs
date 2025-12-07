@@ -2,8 +2,6 @@
 using DTO;
 using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Windows.Forms;
 
 namespace BUS
 {
@@ -11,8 +9,7 @@ namespace BUS
     {
         public static List<AcademicYearDTO> GetAllYears() => AcademicYearDAO.GetAllYears();
 
-
-
+       
         public static bool AddYear(AcademicYearDTO year)
         {
             if (year.StartDate > year.EndDate)
@@ -33,10 +30,10 @@ namespace BUS
             DateTime midDate = year.StartDate.AddDays(halfDays);
 
             // Học kỳ 1
-            SemesterDAO.AddSemester(newYearId, "HK1", year.StartDate, midDate);
+            SemesterDAO.AddSemester(newYearId,"HK1", year.StartDate, midDate);
 
             // Học kỳ 2
-            SemesterDAO.AddSemester(newYearId, "HK2", midDate.AddDays(1), year.EndDate);
+            SemesterDAO.AddSemester(newYearId,"HK2" ,midDate.AddDays(1), year.EndDate);
 
             return true;
         }
@@ -48,16 +45,5 @@ namespace BUS
         }
 
         public static bool DeleteYear(int yearId) => AcademicYearDAO.DeleteYear(yearId);
-
-
-        public DataTable GetAllYear() => AcademicYearDAO.GetAllYear();
-
-
-        public static DataTable GetAcademicYears()
-        {
-            return AcademicYearDAO.GetAcademicYears();
-        }
-
-
     }
 }

@@ -31,65 +31,59 @@ namespace GUI.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
+            panel1 = new Panel();
+            button2 = new Button();
+            button1 = new Button();
+            panel2 = new Panel();
+            panel1.SuspendLayout();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(3, 10);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1334, 54);
-            this.panel1.TabIndex = 0;
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(button1);
+            panel1.Location = new Point(3, 12);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1482, 67);
+            panel1.TabIndex = 0;
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Lime;
-            this.button2.Location = new System.Drawing.Point(270, 12);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(220, 40);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Xem TKB";
-            this.button2.UseVisualStyleBackColor = false;
+            button2.Location = new Point(300, 15);
+            button2.Name = "button2";
+            button2.Size = new Size(201, 34);
+            button2.TabIndex = 1;
+            button2.Text = "Xem TKB";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Lime;
-            this.button1.Location = new System.Drawing.Point(22, 12);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(225, 40);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Quản Lý Điểm Số";
-            this.button1.UseVisualStyleBackColor = false;
+            button1.Location = new Point(24, 15);
+            button1.Name = "button1";
+            button1.Size = new Size(250, 34);
+            button1.TabIndex = 0;
+            button1.Text = "Quản Lý Điểm Số";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(14, 84);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1338, 398);
-            this.panel2.TabIndex = 1;
+            panel2.Location = new Point(15, 105);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1487, 497);
+            panel2.TabIndex = 1;
             // 
             // UC_GVBM
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "UC_GVBM";
-            this.Size = new System.Drawing.Size(1354, 500);
-            this.panel1.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            Name = "UC_GVBM";
+            Size = new Size(1505, 625);
+            panel1.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion

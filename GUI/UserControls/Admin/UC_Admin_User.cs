@@ -1,9 +1,8 @@
-﻿using BUS;
-using DTO;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
+using DTO;
+using BUS;
 
 namespace GUI.UserControls
 {
@@ -11,12 +10,6 @@ namespace GUI.UserControls
     {
         private UserBUS userBUS = new UserBUS();
         private int selectedUserId = -1; // Lưu user đang chọn
-
-        private int pageSize = 10;          // số dòng mỗi trang
-        private int currentPage = 1;        // trang hiện tại
-        private int totalPage = 1;          // tổng số trang
-        private List<UserDTO> allUsers;     // toàn bộ dữ liệu nguồn
-
 
         public UC_Admin_User()
         {
@@ -26,36 +19,21 @@ namespace GUI.UserControls
         private void UC_Admin_User_Load(object sender, EventArgs e)
         {
             LoadUserData();
-
         }
 
-        
+        // =========================
+        // Load dữ liệu lên DataGridView
+        // =========================
         private void LoadUserData()
         {
-            allUsers = userBUS.GetAllUsers();
-
-            totalPage = (int)Math.Ceiling(allUsers.Count / (double)pageSize);
-
-            currentPage = 1;
-
-            LoadPage(currentPage);
-        }
-        private void LoadPage(int page)
-        {
             dataGridView1.Rows.Clear();
+            List<UserDTO> users = userBUS.GetAllUsers();
 
-            int start = (page - 1) * pageSize;
-
-            var pageData = allUsers
-                .Skip(start)
-                .Take(pageSize)
-                .ToList();
-
-            foreach (var user in pageData)
+            foreach (var user in users)
             {
                 dataGridView1.Rows.Add(
                     user.Username,
-                    "*****",
+                    "*****", // Ẩn mật khẩu
                     user.Fullname,
                     user.Email,
                     user.Phone,
@@ -63,9 +41,6 @@ namespace GUI.UserControls
                     user.CreatedAt != DateTime.MinValue ? user.CreatedAt.ToString("yyyy-MM-dd") : ""
                 );
             }
-
-            // hiển thị số trang: vd "1/5"
-            txtnumber.Text = $"{currentPage}/{totalPage}";
         }
 
         // =========================
@@ -183,71 +158,36 @@ namespace GUI.UserControls
         }
 
 
-     
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadGrid(userBUS.SearchUsers(txtSearch.Text.Trim()));
+        }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string kw = txtSearch.Text.Trim();
-
-            allUsers = userBUS.SearchUsers(kw);
-
-            totalPage = (int)Math.Ceiling(allUsers.Count / (double)pageSize);
-
-            currentPage = 1;
-
-            LoadPage(currentPage);
-        }
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            allUsers = userBUS.SearchUsers(txtSearch.Text.Trim());
-
-            totalPage = (int)Math.Ceiling(allUsers.Count / (double)pageSize);
-
-            currentPage = 1;
-
-            LoadPage(currentPage);
+            LoadGrid(userBUS.SearchUsers(kw));
         }
 
-
-       
-
-        private void btnhead_Click(object sender, EventArgs e)
+        private void LoadGrid(List<UserDTO> users)
         {
-            currentPage = 1;
-            LoadPage(currentPage);
-        }
+            dataGridView1.Rows.Clear();
 
-        private void btnback_Click(object sender, EventArgs e)
-        {
-            if (currentPage > 1)
+            foreach (var user in users)
             {
-                currentPage--;
-                LoadPage(currentPage);
+                dataGridView1.Rows.Add(
+                    user.Username,
+                    user.Password,
+                    user.Fullname,
+                    user.Email,
+                    user.Phone,
+                    user.CreatedAt.ToString("yyyy-MM-dd"),
+                    user.RoleName
+                );
             }
         }
 
-        private void btnnext_Click(object sender, EventArgs e)
-        {
-            if (currentPage < totalPage)
-            {
-                currentPage++;
-                LoadPage(currentPage);
-            }
-        }
 
-        private void btntail_Click(object sender, EventArgs e)
-        {
-            currentPage = totalPage;
-            LoadPage(currentPage);
-        }
 
-        private void txtSearch_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

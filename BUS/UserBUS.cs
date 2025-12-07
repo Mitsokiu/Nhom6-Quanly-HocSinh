@@ -50,12 +50,6 @@ namespace BUS
             return UserDAO.GetAllTeachers();
         }
 
-      
-        public UserDTO GetUserById(int userId)
-        {
-            return dao.GetUserById(userId);
-        }
-
         public string ChangePassword(int userId, string oldPass, string newPass)
         {
             if (!dao.CheckPasswordById(userId, oldPass))
@@ -70,37 +64,10 @@ namespace BUS
             {
                 return "Đã xảy ra lỗi hệ thống, vui lòng thử lại sau.";
             }
-        }
-
-
-        public int GetTotalUsers()
+        } 
+        public UserDTO GetUserById(int userId)
         {
-            return UserDAO.GetTotalUsers();
+                return dao.GetUserById(userId);
         }
-
-        public int GetTotalStudents()
-        {
-            return UserDAO.GetTotalStudents();
-        }
-
-        public int GetTotalTeachers()
-        {
-            return UserDAO.GetTotalTeachers();
-        }
-
-        public int GetTotalGVCN()
-        {
-            return UserDAO.GetTotalGVCN();
-        }
-
-        public int GetTotalGVBM()
-        {
-            return UserDAO.GetTotalGVBM();
-        }
-
-        public List<StudentDTO> GetStudentStatsByDate()
-        {
-            return dao.GetStudentStatsByDate();
-        }
-    }
+    } 
 }
