@@ -3,7 +3,6 @@ using DTO;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace GUI
 {
@@ -12,7 +11,7 @@ namespace GUI
         private StudentEvaluationDTO dto;
         private int semesterId;
         private EvaluationBUS evalBus = new EvaluationBUS();
-
+        private ErrorProvider errorProvider = new ErrorProvider();
         public XetHanhKiem(StudentEvaluationDTO dtoInput, int semesterId)
         {
             InitializeComponent();
@@ -20,15 +19,22 @@ namespace GUI
             this.dto = dtoInput;
             this.semesterId = semesterId;
 
+            errorProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
+            errorProvider.ContainerControl = this;
+            txtComment.TextChanged += (s, e) => {
+                if (!string.IsNullOrWhiteSpace(txtComment.Text))
+                {
+                    errorProvider.SetError(txtComment, "");
+                }
+            };
             LoadData();
-
+            CheckLockStatus();
             btnSave.Click += BtnSave_Click;
             btnCancel.Click += (s, e) => this.Close();
         }
 
         private void LoadData()
         {
-            // Đổ dữ liệu từ DTO vào Form
             lblName.Text = dto.FullName;
             lblInfo.Text = $"Mã số: {dto.StudentCode}";
 
@@ -47,6 +53,31 @@ namespace GUI
             txtComment.Text = dto.TeacherComment;
         }
 
+        private void CheckLockStatus()
+        {
+            string status = evalBus.GetLockStatus(semesterId);
+
+            if (status != "Open")
+            {
+                cbbConduct.Enabled = false;
+                txtComment.ReadOnly = true;
+                txtComment.BackColor = System.Drawing.Color.White;
+                btnSave.Visible = false;
+                btnCancel.Text = "Đóng";
+
+                if (status == "Future")
+                {
+                    this.Text = "Chi tiết Hạnh kiểm (Chưa diễn ra)";
+                    lblTitleComment.Text = "Nhận xét (Học kỳ chưa bắt đầu, chỉ được xem):";
+                }
+                else if (status == "Past")
+                {
+                    this.Text = "Chi tiết Hạnh kiểm (Đã khóa sổ)";
+                    lblTitleComment.Text = "Nhận xét (Đã hết hạn chỉnh sửa):";
+                }
+            }
+        }
+
         private void BtnSave_Click(object sender, EventArgs e)
         {
             if (evalBus.IsEvaluationLocked(semesterId))
@@ -55,9 +86,22 @@ namespace GUI
                 return;
             }
 
-            // Lấy dữ liệu mới
             string newConduct = cbbConduct.SelectedItem != null ? cbbConduct.SelectedItem.ToString() : "Tốt";
             string newComment = txtComment.Text.Trim();
+
+            if (string.IsNullOrEmpty(newComment))
+            {
+                errorProvider.SetError(txtComment, "Vui lòng nhập nhận xét để lưu vào sổ.");
+
+                errorProvider.SetIconPadding(txtComment, 5);
+
+                txtComment.Focus();
+                return;
+            }
+            else
+            {
+                errorProvider.SetError(txtComment, "");
+            }
 
             if (evalBus.SaveEvaluation(dto.StudentId, dto.ClassId, semesterId, newConduct, newComment))
             {

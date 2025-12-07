@@ -1,7 +1,7 @@
 ﻿-- ======================
 -- DATABASE
 -- ======================
-CREATE DATABASE IF NOT EXISTS school_management_b
+CREATE DATABASE IF NOT EXISTS school_management_c
 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE school_management_b;
 
@@ -111,7 +111,8 @@ CREATE TABLE student_evaluations (
     teacher_comment TEXT,
     FOREIGN KEY (student_id) REFERENCES students(student_id),
     FOREIGN KEY (class_id) REFERENCES classes(class_id),
-    FOREIGN KEY (semester_id) REFERENCES semesters(semester_id)
+    FOREIGN KEY (semester_id) REFERENCES semesters(semester_id),
+    UNIQUE KEY unique_eval (student_id, class_id, semester_id)
 );
 
 CREATE TABLE student_class (
@@ -231,8 +232,8 @@ INSERT INTO academic_years (name,start_date,end_date) VALUES
 
 -- SEMESTERS
 INSERT INTO semesters (year_id,name,start_date,end_date) VALUES
-(1,'HK1','2024-09-01','2024-12-31'),
-(1,'HK2','2025-01-01','2025-05-31');
+(1,'HK1','2025-09-01','2025-12-31'),
+(1,'HK2','2026-01-01','2026-05-31');
 
 -- SUBJECTS
 INSERT INTO subjects(name) VALUES
