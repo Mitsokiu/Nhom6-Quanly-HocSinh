@@ -3,7 +3,7 @@
 -- ======================
 CREATE DATABASE IF NOT EXISTS school_management_c
 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE school_management_b;
+USE school_management_c;
 
 -- ======================
 -- TABLES
