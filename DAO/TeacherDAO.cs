@@ -49,5 +49,23 @@ namespace DAO
             string sql = "SELECT year_id, name FROM academic_years WHERE @param0 BETWEEN start_date AND end_date";
             return DbConnect.ExecuteQuery(sql, new object[] { DateTime.Today });
         }
+
+
+        public DataTable GetHomeroomClassByTeacherAndYear(int teacherUserId, int yearId)
+        {
+            if (yearId <= 0) return new DataTable();
+
+            string sql = @"
+                SELECT c.class_id, c.class_name
+                FROM homeroom_assignments ha
+                INNER JOIN classes c ON ha.class_id = c.class_id
+                WHERE ha.teacher_id = @param0 AND ha.year_id = @param1
+                LIMIT 1";
+
+            DataTable dt = DbConnect.ExecuteQuery(sql, new object[] { teacherUserId, yearId });
+            return dt;
+        }
     }
+
+
 }

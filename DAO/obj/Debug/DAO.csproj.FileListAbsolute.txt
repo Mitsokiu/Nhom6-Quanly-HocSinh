@@ -114,6 +114,7 @@ C:\Code\qlyhocsinh\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
 C:\Code\qlyhocsinh\DAO\obj\Debug\DAO.csproj.Up2Date
 C:\Code\qlyhocsinh\DAO\obj\Debug\DAO.exe
 C:\Code\qlyhocsinh\DAO\obj\Debug\DAO.pdb
+<<<<<<< HEAD
 D:\GitHub\QLHS\DAO\bin\Debug\DAO.exe.config
 D:\GitHub\QLHS\DAO\bin\Debug\DAO.exe
 D:\GitHub\QLHS\DAO\bin\Debug\DAO.pdb
@@ -157,41 +158,169 @@ D:\GitHub\QLHS\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
 D:\GitHub\QLHS\DAO\obj\Debug\DAO.csproj.Up2Date
 D:\GitHub\QLHS\DAO\obj\Debug\DAO.exe
 D:\GitHub\QLHS\DAO\obj\Debug\DAO.pdb
+=======
+C:\Code\qlyhsmerge\DAO\bin\Debug\DAO.exe.config
+C:\Code\qlyhsmerge\DAO\bin\Debug\DAO.exe
+C:\Code\qlyhsmerge\DAO\bin\Debug\DAO.pdb
+C:\Code\qlyhsmerge\DAO\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\DTO.exe
+C:\Code\qlyhsmerge\DAO\bin\Debug\Google.Protobuf.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\K4os.Compression.LZ4.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\K4os.Hash.xxHash.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\MySql.Data.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\System.Buffers.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\System.IO.Pipelines.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\System.Memory.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\System.Numerics.Vectors.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\ZstdSharp.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\DTO.pdb
+C:\Code\qlyhsmerge\DAO\bin\Debug\DTO.exe.config
+C:\Code\qlyhsmerge\DAO\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Code\qlyhsmerge\DAO\bin\Debug\Google.Protobuf.pdb
+C:\Code\qlyhsmerge\DAO\bin\Debug\Google.Protobuf.xml
+C:\Code\qlyhsmerge\DAO\bin\Debug\K4os.Compression.LZ4.xml
+C:\Code\qlyhsmerge\DAO\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Code\qlyhsmerge\DAO\bin\Debug\K4os.Hash.xxHash.xml
+C:\Code\qlyhsmerge\DAO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Code\qlyhsmerge\DAO\bin\Debug\MySql.Data.xml
+C:\Code\qlyhsmerge\DAO\bin\Debug\System.Buffers.xml
+C:\Code\qlyhsmerge\DAO\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Code\qlyhsmerge\DAO\bin\Debug\System.IO.Pipelines.xml
+C:\Code\qlyhsmerge\DAO\bin\Debug\System.Memory.xml
+C:\Code\qlyhsmerge\DAO\bin\Debug\System.Numerics.Vectors.xml
+C:\Code\qlyhsmerge\DAO\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Code\qlyhsmerge\DAO\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Code\qlyhsmerge\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache
+C:\Code\qlyhsmerge\DAO\obj\Debug\DAO.exe.config
+C:\Code\qlyhsmerge\DAO\obj\Debug\DAO.Properties.Resources.resources
+C:\Code\qlyhsmerge\DAO\obj\Debug\DAO.csproj.GenerateResource.cache
+C:\Code\qlyhsmerge\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+C:\Code\qlyhsmerge\DAO\obj\Debug\DAO.csproj.Up2Date
+C:\Code\qlyhsmerge\DAO\obj\Debug\DAO.exe
+C:\Code\qlyhsmerge\DAO\obj\Debug\DAO.pdb
+C:\Code\qlyhsmerge\DAO\bin\Debug\ClosedXML.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\ClosedXML.Parser.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\DocumentFormat.OpenXml.Framework.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\ExcelNumberFormat.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\Microsoft.Bcl.HashCode.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\RBush.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\SixLabors.Fonts.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\ClosedXML.pdb
+C:\Code\qlyhsmerge\DAO\bin\Debug\ClosedXML.xml
+C:\Code\qlyhsmerge\DAO\bin\Debug\ClosedXML.Parser.xml
+C:\Code\qlyhsmerge\DAO\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Code\qlyhsmerge\DAO\bin\Debug\DocumentFormat.OpenXml.Framework.xml
+C:\Code\qlyhsmerge\DAO\bin\Debug\ExcelNumberFormat.xml
+C:\Code\qlyhsmerge\DAO\bin\Debug\Microsoft.Bcl.HashCode.xml
+C:\Code\qlyhsmerge\DAO\bin\Debug\RBush.xml
+C:\Code\qlyhsmerge\DAO\bin\Debug\SixLabors.Fonts.xml
+C:\Code\qlyhsmerge\DAO\bin\Debug\EPPlus.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\EPPlus.Interfaces.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\itextsharp.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\System.Security.Cryptography.Xml.dll
+C:\Code\qlyhsmerge\DAO\bin\Debug\EPPlus.xml
+C:\Code\qlyhsmerge\DAO\bin\Debug\itextsharp.xml
+C:\Code\qlyhsmerge\DAO\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Code\qlyhsmerge\DAO\bin\Debug\System.Security.Cryptography.Xml.xml
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\obj\Debug\DAO.Properties.Resources.resources
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\obj\Debug\DAO.csproj.GenerateResource.cache
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\obj\Debug\DAO.exe
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\obj\Debug\DAO.pdb
+>>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\DAO.exe.config
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\DAO.exe
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\DAO.pdb
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\BouncyCastle.Cryptography.dll
+<<<<<<< HEAD
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\DTO.exe
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\Google.Protobuf.dll
+=======
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\ClosedXML.dll
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\ClosedXML.Parser.dll
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\DocumentFormat.OpenXml.Framework.dll
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\DTO.exe
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\EPPlus.dll
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\ExcelNumberFormat.dll
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\Google.Protobuf.dll
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\itextsharp.dll
+>>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\K4os.Compression.LZ4.dll
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\K4os.Compression.LZ4.Streams.dll
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\K4os.Hash.xxHash.dll
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+<<<<<<< HEAD
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\MySql.Data.dll
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\System.Buffers.dll
+=======
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\Microsoft.Bcl.HashCode.dll
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\MySql.Data.dll
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\RBush.dll
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\SixLabors.Fonts.dll
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\System.Buffers.dll
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\System.ComponentModel.Annotations.dll
+>>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\System.Configuration.ConfigurationManager.dll
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\System.IO.Pipelines.dll
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\System.Memory.dll
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+<<<<<<< HEAD
+=======
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\System.Security.Cryptography.Xml.dll
+>>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\System.Threading.Tasks.Extensions.dll
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\ZstdSharp.dll
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\DTO.pdb
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\DTO.exe.config
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\BouncyCastle.Cryptography.xml
+<<<<<<< HEAD
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\Google.Protobuf.pdb
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\Google.Protobuf.xml
+=======
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\ClosedXML.pdb
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\ClosedXML.xml
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\ClosedXML.Parser.xml
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\DocumentFormat.OpenXml.Framework.xml
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\EPPlus.xml
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\ExcelNumberFormat.xml
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\Google.Protobuf.pdb
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\Google.Protobuf.xml
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\itextsharp.xml
+>>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\K4os.Compression.LZ4.xml
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\K4os.Compression.LZ4.Streams.xml
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\K4os.Hash.xxHash.xml
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+<<<<<<< HEAD
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\MySql.Data.xml
+=======
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\Microsoft.Bcl.HashCode.xml
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\MySql.Data.xml
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\RBush.xml
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\SixLabors.Fonts.xml
+>>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\System.Buffers.xml
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\System.Configuration.ConfigurationManager.xml
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\System.IO.Pipelines.xml
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\System.Memory.xml
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+<<<<<<< HEAD
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\obj\Debug\DAO.Properties.Resources.resources
@@ -201,3 +330,8 @@ C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\obj\Debug\D
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\obj\Debug\DAO.exe
 C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\obj\Debug\DAO.pdb
 D:\GitHub\QLHS\DAO\obj\Debug\DAO.exe.config
+=======
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\System.Security.Cryptography.Xml.xml
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\user\Desktop\Code\visual studio\C#\Nhom6-Quanly-HocSinh\DAO\obj\Debug\DAO.csproj.CopyComplete
+>>>>>>> e8a5a59be4f82ec19209538edbb5956a0924c27c

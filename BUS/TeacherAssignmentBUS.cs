@@ -25,5 +25,11 @@ namespace BUS
         {
             return TeacherAssignmentDAO.DeleteAssignment(assignId);
         }
+
+        public static DataTable GetAssignmentsBySemester(int semesterId)
+        {
+            return TeacherAssignmentDAO.GetAssignmentsBySemester(semesterId);
+        }
+
     }
 }
