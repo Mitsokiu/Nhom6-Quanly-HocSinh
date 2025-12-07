@@ -876,3 +876,255 @@ JOIN classes c ON t.class_id = c.class_id
 JOIN subjects s ON t.subject_id = s.subject_id
 WHERE t.teacher_id = 11
 ORDER BY FIELD(t.day, 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'), t.period;
+
+USE school_management_c;
+
+-- =================================================================================
+-- KHẮC PHỤC LỖI 1175: TẮT CHẾ ĐỘ SAFE UPDATE
+-- =================================================================================
+SET SQL_SAFE_UPDATES = 0;
+
+-- =================================================================================
+-- BƯỚC 0: DỌN DẸP DỮ LIỆU CŨ/LỖI (TỪ STUDENT 9 TRỞ ĐI)
+-- =================================================================================
+-- Xóa bảng liên kết phụ huynh
+DELETE FROM student_parent 
+WHERE student_id IN (SELECT student_id FROM students WHERE user_id IN (SELECT user_id FROM users WHERE username REGEXP '^student(9|1[0-8])$'));
+
+-- Xóa bảng điểm
+DELETE FROM scores 
+WHERE student_id IN (SELECT student_id FROM students WHERE user_id IN (SELECT user_id FROM users WHERE username REGEXP '^student(9|1[0-8])$'));
+
+-- Xóa bảng học phí (Đây là chỗ bị lỗi lúc nãy)
+DELETE FROM tuition 
+WHERE student_id IN (SELECT student_id FROM students WHERE user_id IN (SELECT user_id FROM users WHERE username REGEXP '^student(9|1[0-8])$'));
+
+-- Xóa bảng phân lớp
+DELETE FROM student_class 
+WHERE student_id IN (SELECT student_id FROM students WHERE user_id IN (SELECT user_id FROM users WHERE username REGEXP '^student(9|1[0-8])$'));
+
+-- Xóa phụ huynh (Xóa theo user_id để tránh lỗi ràng buộc khóa ngoại)
+DELETE FROM parents 
+WHERE user_id IN (SELECT user_id FROM users WHERE username REGEXP '^parent(9|1[0-8])_');
+
+-- Xóa học sinh
+DELETE FROM students 
+WHERE user_id IN (SELECT user_id FROM users WHERE username REGEXP '^student(9|1[0-8])$');
+
+-- Cuối cùng là xóa tài khoản Users
+DELETE FROM users WHERE username REGEXP '^student(9|1[0-8])$';
+DELETE FROM users WHERE username REGEXP '^parent(9|1[0-8])_';
+
+
+-- =================================================================================
+-- PHẦN 7: THÊM 7 HỌC SINH MỚI (STUDENT 9 -> 15) CHO LỚP 6A1
+-- =================================================================================
+
+-- 7.1. Tạo User cho 7 học sinh
+INSERT INTO users (username, password, fullname, email, phone, role_id) VALUES
+('student9', '123', 'Pham Van I', 'st9@mail.com', '0911111119', 'student'),
+('student10', '123', 'Do Thi K', 'st10@mail.com', '0911111120', 'student'),
+('student11', '123', 'Hoang Van L', 'st11@mail.com', '0911111121', 'student'),
+('student12', '123', 'Ngo Thi M', 'st12@mail.com', '0911111122', 'student'),
+('student13', '123', 'Vu Van N', 'st13@mail.com', '0911111123', 'student'),
+('student14', '123', 'Duong Thi O', 'st14@mail.com', '0911111124', 'student'),
+('student15', '123', 'Ly Van P', 'st15@mail.com', '0911111125', 'student');
+
+-- 7.2. Tạo thông tin chi tiết (Students table)
+INSERT INTO students (user_id, dob, gender, address)
+SELECT user_id, '2010-02-10', 'Male', 'Quan 1, HCM' FROM users WHERE username = 'student9' UNION ALL
+SELECT user_id, '2010-03-15', 'Female', 'Quan 3, HCM' FROM users WHERE username = 'student10' UNION ALL
+SELECT user_id, '2010-04-20', 'Male', 'Thu Duc, HCM' FROM users WHERE username = 'student11' UNION ALL
+SELECT user_id, '2010-05-25', 'Female', 'Binh Thanh, HCM' FROM users WHERE username = 'student12' UNION ALL
+SELECT user_id, '2010-06-30', 'Male', 'Go Vap, HCM' FROM users WHERE username = 'student13' UNION ALL
+SELECT user_id, '2010-07-05', 'Female', 'Tan Binh, HCM' FROM users WHERE username = 'student14' UNION ALL
+SELECT user_id, '2010-08-10', 'Male', 'Phu Nhuan, HCM' FROM users WHERE username = 'student15';
+
+-- 7.3. Xếp 7 học sinh này vào lớp 6A1 (Class ID = 1)
+INSERT INTO student_class (student_id, class_id, school_year_id)
+SELECT student_id, 1, 1 
+FROM students 
+WHERE user_id IN (SELECT user_id FROM users WHERE username REGEXP '^student(9|1[0-5])$');
+
+
+-- =================================================================================
+-- PHẦN 8: THÊM PHỤ HUYNH CHO 7 HỌC SINH NÀY
+-- =================================================================================
+
+-- 8.1. Tạo User Phụ huynh (7 Cha, 7 Mẹ)
+INSERT INTO users (username, password, fullname, email, phone, role_id) VALUES
+-- Parent HS 9
+('parent9_dad', '123', 'Cha HS 9', 'dad9@mail.com', '0999000009', 'parent'),
+('parent9_mom', '123', 'Me HS 9', 'mom9@mail.com', '0999111009', 'parent'),
+-- Parent HS 10
+('parent10_dad', '123', 'Cha HS 10', 'dad10@mail.com', '0999000010', 'parent'),
+('parent10_mom', '123', 'Me HS 10', 'mom10@mail.com', '0999111010', 'parent'),
+-- Parent HS 11
+('parent11_dad', '123', 'Cha HS 11', 'dad11@mail.com', '0999000011', 'parent'),
+('parent11_mom', '123', 'Me HS 11', 'mom11@mail.com', '0999111011', 'parent'),
+-- Parent HS 12
+('parent12_dad', '123', 'Cha HS 12', 'dad12@mail.com', '0999000012', 'parent'),
+('parent12_mom', '123', 'Me HS 12', 'mom12@mail.com', '0999111012', 'parent'),
+-- Parent HS 13
+('parent13_dad', '123', 'Cha HS 13', 'dad13@mail.com', '0999000013', 'parent'),
+('parent13_mom', '123', 'Me HS 13', 'mom13@mail.com', '0999111013', 'parent'),
+-- Parent HS 14
+('parent14_dad', '123', 'Cha HS 14', 'dad14@mail.com', '0999000014', 'parent'),
+('parent14_mom', '123', 'Me HS 14', 'mom14@mail.com', '0999111014', 'parent'),
+-- Parent HS 15
+('parent15_dad', '123', 'Cha HS 15', 'dad15@mail.com', '0999000015', 'parent'),
+('parent15_mom', '123', 'Me HS 15', 'mom15@mail.com', '0999111015', 'parent');
+
+-- 8.2. Thêm vào bảng Parents (Chỉ lấy đúng những user vừa tạo)
+INSERT INTO parents (user_id, job)
+SELECT user_id, 'Phụ huynh tự do'
+FROM users 
+WHERE username IN (
+    'parent9_dad', 'parent9_mom',
+    'parent10_dad', 'parent10_mom',
+    'parent11_dad', 'parent11_mom',
+    'parent12_dad', 'parent12_mom',
+    'parent13_dad', 'parent13_mom',
+    'parent14_dad', 'parent14_mom',
+    'parent15_dad', 'parent15_mom'
+);
+
+-- 8.3. Liên kết Student - Parent
+INSERT INTO student_parent (student_id, parent_id, relation)
+SELECT 
+    s.student_id, 
+    p.parent_id,
+    CASE WHEN u_p.username LIKE '%_dad' THEN 'Cha' ELSE 'Mẹ' END
+FROM students s
+JOIN users u_s ON s.user_id = u_s.user_id
+JOIN users u_p ON u_p.username LIKE CONCAT(u_s.username, '_%')
+JOIN parents p ON p.user_id = u_p.user_id
+WHERE u_s.username REGEXP '^student(9|1[0-5])$';
+
+
+-- =================================================================================
+-- PHẦN 9: SINH ĐIỂM VÀ HỌC PHÍ
+-- =================================================================================
+
+-- 9.1. Điểm (Oral, Quiz15, Midterm, Final)
+INSERT INTO scores (student_id, assign_id, score_type, score_value)
+SELECT s.student_id, ta.assign_id, 'oral', ROUND(6 + (RAND() * 4), 1)
+FROM student_class s JOIN teacher_assignments ta ON s.class_id = ta.class_id
+WHERE s.class_id = 1 AND s.student_id NOT IN (SELECT student_id FROM scores WHERE score_type='oral');
+
+INSERT INTO scores (student_id, assign_id, score_type, score_value)
+SELECT s.student_id, ta.assign_id, 'quiz15', ROUND(5 + (RAND() * 5), 1)
+FROM student_class s JOIN teacher_assignments ta ON s.class_id = ta.class_id
+WHERE s.class_id = 1 AND s.student_id NOT IN (SELECT student_id FROM scores WHERE score_type='quiz15');
+
+INSERT INTO scores (student_id, assign_id, score_type, score_value)
+SELECT s.student_id, ta.assign_id, 'midterm', ROUND(5 + (RAND() * 5), 1)
+FROM student_class s JOIN teacher_assignments ta ON s.class_id = ta.class_id
+WHERE s.class_id = 1 AND s.student_id NOT IN (SELECT student_id FROM scores WHERE score_type='midterm');
+
+INSERT INTO scores (student_id, assign_id, score_type, score_value)
+SELECT s.student_id, ta.assign_id, 'final', ROUND(5 + (RAND() * 5), 1)
+FROM student_class s JOIN teacher_assignments ta ON s.class_id = ta.class_id
+WHERE s.class_id = 1 AND s.student_id NOT IN (SELECT student_id FROM scores WHERE score_type='final');
+
+-- 9.2. Học phí
+INSERT INTO tuition (student_id, description, name, amount, semester_id, due_date, status)
+SELECT s.student_id, 'Học phí HK1', 'Tuition HK1', 2000000, 1, '2024-10-01', 'unpaid'
+FROM students s JOIN users u ON s.user_id = u.user_id
+WHERE u.username REGEXP '^student(9|1[0-5])$';
+
+-- =================================================================================
+-- BẬT LẠI CHẾ ĐỘ SAFE UPDATE (QUAN TRỌNG ĐỂ BẢO VỆ DB SAU NÀY)
+-- =================================================================================
+SET SQL_SAFE_UPDATES = 1;
+
+-- =================================================================================
+-- KIỂM TRA LẠI
+-- =================================================================================
+SELECT 
+    s.student_id,
+    u_st.fullname AS Hoc_Sinh,
+    MAX(CASE WHEN sp.relation = 'Cha' THEN u_pa.fullname END) AS Cha,
+    MAX(CASE WHEN sp.relation = 'Mẹ' THEN u_pa.fullname END) AS Me
+FROM students s
+JOIN users u_st ON s.user_id = u_st.user_id
+LEFT JOIN student_parent sp ON s.student_id = sp.student_id
+LEFT JOIN parents p ON sp.parent_id = p.parent_id
+LEFT JOIN users u_pa ON p.user_id = u_pa.user_id
+WHERE u_st.username REGEXP '^student(9|1[0-5])$'
+GROUP BY s.student_id, u_st.fullname;
+
+USE school_management_c;
+
+-- =================================================================================
+-- BỔ SUNG PHỤ HUYNH CHO HỌC SINH TỪ 9 ĐẾN 15 (CHẠY RỜI)
+-- =================================================================================
+
+-- BƯỚC 1: TẠO TÀI KHOẢN USER CHO 14 PHỤ HUYNH (7 CHA, 7 MẸ)
+-- Dùng INSERT IGNORE để nếu lỡ có user nào trùng thì bỏ qua, không báo lỗi đỏ
+INSERT IGNORE INTO users (username, password, fullname, email, phone, role_id) VALUES
+-- Parent HS 9
+('parent9_dad', '123', 'Cha HS 9', 'dad9@mail.com', '0999000009', 'parent'),
+('parent9_mom', '123', 'Me HS 9', 'mom9@mail.com', '0999111009', 'parent'),
+-- Parent HS 10
+('parent10_dad', '123', 'Cha HS 10', 'dad10@mail.com', '0999000010', 'parent'),
+('parent10_mom', '123', 'Me HS 10', 'mom10@mail.com', '0999111010', 'parent'),
+-- Parent HS 11
+('parent11_dad', '123', 'Cha HS 11', 'dad11@mail.com', '0999000011', 'parent'),
+('parent11_mom', '123', 'Me HS 11', 'mom11@mail.com', '0999111011', 'parent'),
+-- Parent HS 12
+('parent12_dad', '123', 'Cha HS 12', 'dad12@mail.com', '0999000012', 'parent'),
+('parent12_mom', '123', 'Me HS 12', 'mom12@mail.com', '0999111012', 'parent'),
+-- Parent HS 13
+('parent13_dad', '123', 'Cha HS 13', 'dad13@mail.com', '0999000013', 'parent'),
+('parent13_mom', '123', 'Me HS 13', 'mom13@mail.com', '0999111013', 'parent'),
+-- Parent HS 14
+('parent14_dad', '123', 'Cha HS 14', 'dad14@mail.com', '0999000014', 'parent'),
+('parent14_mom', '123', 'Me HS 14', 'mom14@mail.com', '0999111014', 'parent'),
+-- Parent HS 15
+('parent15_dad', '123', 'Cha HS 15', 'dad15@mail.com', '0999000015', 'parent'),
+('parent15_mom', '123', 'Me HS 15', 'mom15@mail.com', '0999111015', 'parent');
+
+-- BƯỚC 2: TẠO PROFILE TRONG BẢNG PARENTS
+-- Chỉ lấy những user có tên 'parent9...' -> 'parent15...' và chưa có trong bảng parents
+INSERT INTO parents (user_id, job)
+SELECT user_id, 'Phụ huynh (Bổ sung)'
+FROM users 
+WHERE username REGEXP '^parent(9|1[0-5])_(dad|mom)$'
+AND user_id NOT IN (SELECT user_id FROM parents);
+
+-- BƯỚC 3: LIÊN KẾT HỌC SINH VỚI PHỤ HUYNH
+-- Tự động ghép: student9 sẽ nhận parent9_dad và parent9_mom làm cha mẹ
+INSERT INTO student_parent (student_id, parent_id, relation)
+SELECT 
+    s.student_id, 
+    p.parent_id,
+    CASE WHEN u_p.username LIKE '%_dad' THEN 'Cha' ELSE 'Mẹ' END
+FROM students s
+JOIN users u_s ON s.user_id = u_s.user_id
+-- Kỹ thuật nối chuỗi: tìm user phụ huynh có tên bắt đầu bằng tên học sinh + dấu gạch dưới
+-- Ví dụ: student9 sẽ khớp với parent9_dad
+JOIN users u_p ON u_p.username LIKE CONCAT(REPLACE(u_s.username, 'student', 'parent'), '_%')
+JOIN parents p ON p.user_id = u_p.user_id
+WHERE u_s.username REGEXP '^student(9|1[0-5])$'
+-- Dòng này để đảm bảo không insert trùng nếu đã có liên kết rồi
+AND NOT EXISTS (
+    SELECT 1 FROM student_parent sp 
+    WHERE sp.student_id = s.student_id AND sp.parent_id = p.parent_id
+);
+
+-- =================================================================================
+-- KIỂM TRA LẠI KẾT QUẢ
+-- =================================================================================
+SELECT 
+    u_st.username AS Tai_Khoan_HS,
+    u_st.fullname AS Ten_Hoc_Sinh,
+    MAX(CASE WHEN sp.relation = 'Cha' THEN u_pa.fullname END) AS Ten_Cha,
+    MAX(CASE WHEN sp.relation = 'Mẹ' THEN u_pa.fullname END) AS Ten_Me
+FROM students s
+JOIN users u_st ON s.user_id = u_st.user_id
+LEFT JOIN student_parent sp ON s.student_id = sp.student_id
+LEFT JOIN parents p ON sp.parent_id = p.parent_id
+LEFT JOIN users u_pa ON p.user_id = u_pa.user_id
+WHERE u_st.username REGEXP '^student(9|1[0-5])$'
+GROUP BY s.student_id, u_st.username, u_st.fullname;
