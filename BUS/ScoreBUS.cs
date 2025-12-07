@@ -77,5 +77,14 @@ namespace BUS
             return (float)Math.Round(tongDiem / tongHeSo, 1);
         }
 
+        public DataTable GetScoresByAssignId(int assignId)
+        {
+            return scoreDAO.GetScoresByAssignId(assignId);
+        }
+
+        public bool AddOrUpdateScore(ScoreDTO s)
+        {
+            return scoreDAO.AddOrUpdateScore(s);
+        }
     }
 }

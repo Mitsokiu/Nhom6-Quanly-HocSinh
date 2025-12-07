@@ -157,5 +157,10 @@ namespace BUS
             }
             return profile;
         }
+
+        public List<StudentDTO> GetStudentsByClassID(int classId)
+        {
+            return dao.GetStudentsByClassID(classId);
+        }
     }
 }

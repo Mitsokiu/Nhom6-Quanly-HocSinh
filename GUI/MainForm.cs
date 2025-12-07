@@ -71,7 +71,7 @@ namespace GUI
 
         private void Sidebar_NhapDiemClicked(object sender, EventArgs e)
         {
-            LoadContent(new UC_GVBM_Diem());
+            LoadContent(new UC_GVBM_Diem(user.UserId));
         }
 
         private void Sidebar_XemDiemClicked(object sender, EventArgs e)

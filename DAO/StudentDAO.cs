@@ -451,5 +451,28 @@ namespace DAO
                 AcademicYear = row.Table.Columns.Contains("year_name") && row["year_name"] != DBNull.Value ? row["year_name"].ToString() : ""
             };
         }
+
+        public List<StudentDTO> GetStudentsByClassID(int classId)
+        {
+            List<StudentDTO> list = new List<StudentDTO>();
+            string query = @"
+                SELECT s.student_id, s.user_id, u.fullname, s.dob, s.gender
+                FROM student_class sc
+                JOIN students s ON sc.student_id = s.student_id
+                JOIN users u ON s.user_id = u.user_id
+                WHERE sc.class_id = @param0
+                ORDER BY SUBSTRING_INDEX(u.fullname, ' ', -1) ASC, u.fullname ASC"; 
+
+            DataTable data = DbConnect.ExecuteQuery(query, new object[] { classId });
+            foreach (DataRow row in data.Rows)
+            {
+                list.Add(new StudentDTO
+                {
+                    StudentID = Convert.ToInt32(row["student_id"]),
+                    FullName = row["fullname"].ToString(),
+                });
+            }
+            return list;
+        }
     }
 }
