@@ -77,18 +77,32 @@ namespace DAO
         }
 
         // 2. Lưu đánh giá (Insert hoặc Update)
+        //public bool SaveEvaluation(int studentId, int classId, int semesterId, string conduct, string comment)
+        //{
+        //    // Dùng cú pháp đặc biệt của MySQL: Nếu trùng khóa (Student+Class+Semester) thì tự động Update
+        //    string query = @"
+        //        INSERT INTO student_evaluations (student_id, class_id, semester_id, conduct, teacher_comment)
+        //        VALUES (@param0, @param1, @param2, @param3, @param4)
+        //        ON DUPLICATE KEY UPDATE 
+        //            conduct = @param3, 
+        //            teacher_comment = @param4";
+
+        //    return DbConnect.ExecuteNonQuery(query, new object[] { studentId, classId, semesterId, conduct, comment }) > 0;
+        //}
         public bool SaveEvaluation(int studentId, int classId, int semesterId, string conduct, string comment)
         {
-            // Dùng cú pháp đặc biệt của MySQL: Nếu trùng khóa (Student+Class+Semester) thì tự động Update
             string query = @"
-                INSERT INTO student_evaluations (student_id, class_id, semester_id, conduct, teacher_comment)
-                VALUES (@param0, @param1, @param2, @param3, @param4)
-                ON DUPLICATE KEY UPDATE 
-                    conduct = @param3, 
-                    teacher_comment = @param4";
+        UPDATE student_evaluations
+        SET conduct = @param3,
+            teacher_comment = @param4
+        WHERE student_id = @param0
+          AND class_id = @param1
+          AND semester_id = @param2";
 
+            // Trả về true nếu có ít nhất 1 dòng bị ảnh hưởng
             return DbConnect.ExecuteNonQuery(query, new object[] { studentId, classId, semesterId, conduct, comment }) > 0;
         }
+
 
         // 3. Lấy ngày kết thúc học kỳ (Để kiểm tra khóa sổ)
         public DateTime GetSemesterEndDate(int semesterId)
@@ -101,6 +115,22 @@ namespace DAO
                 return Convert.ToDateTime(result);
             }
             return DateTime.MinValue;
+        }
+
+        public SemesterDurationDTO GetSemesterDuration(int semesterId)
+        {
+            string query = "SELECT start_date, end_date FROM semesters WHERE semester_id = @param0";
+            DataTable dt = DbConnect.ExecuteQuery(query, new object[] { semesterId });
+
+            if (dt.Rows.Count > 0)
+            {
+                return new SemesterDurationDTO
+                {
+                    StartDate = Convert.ToDateTime(dt.Rows[0]["start_date"]),
+                    EndDate = Convert.ToDateTime(dt.Rows[0]["end_date"])
+                };
+            }
+            return null;
         }
     }
 }

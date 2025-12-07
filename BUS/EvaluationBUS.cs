@@ -30,5 +30,28 @@ namespace BUS
             }
             return false;
         }
+
+
+        public string GetLockStatus(int semesterId)
+        {
+            var duration = dao.GetSemesterDuration(semesterId);
+            if (duration == null) return "Unknown";
+
+            DateTime now = DateTime.Now;
+            DateTime deadline = duration.EndDate.AddDays(7);
+
+            if (now < duration.StartDate)
+            {
+                return "Future";
+            }
+
+            if (now > deadline)
+            {
+                return "Past";
+            }
+
+            return "Open";
+        }
+
     }
 }

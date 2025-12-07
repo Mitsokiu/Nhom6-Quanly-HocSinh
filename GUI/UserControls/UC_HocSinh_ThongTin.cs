@@ -2,7 +2,6 @@
 using DTO;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
@@ -39,65 +38,44 @@ namespace GUI.UserControls
             InitializeComponent();
             this.loggedInUserId = userId;
             SetupModernUI();
-            //LoadData();
-            LoadData(1,userId);
+            LoadData();
+
             this.Resize += (s, e) => CenterAllPanels();
         }
 
-        //private void LoadData()
-        //{
-        //    StudentProfileDTO profile = studentBUS.GetStudentProfile(loggedInUserId);
-        //    LoadStudentAvatar(profile.Avatar, profile.Gender);
-        //    if (profile == null) return;
-
-        //    tbMaHS.Text = profile.StudentCode;
-        //    tbHoTen.Text = profile.FullName;
-
-        //    tbNgaySinh.Text = profile.DateOfBirth.HasValue
-        //                      ? profile.DateOfBirth.Value.ToString("dd/MM/yyyy")
-        //                      : "";
-
-        //    tbGioiTinh.Text = profile.Gender;
-        //    tbLop.Text = profile.ClassName;
-        //    tbNienKhoa.Text = profile.SchoolYear;
-
-        //    tbGVCN.Text = profile.TeacherName;
-        //    tbSDTGVCN.Text = profile.TeacherPhone;
-
-        //    tbDiaChi.Text = profile.Address;
-        //    tbSDTHS.Text = profile.Phone;
-        //    tbEmail.Text = profile.Email;
-
-        //    tbHoTenCha.Text = profile.FatherName;
-        //    tbSDTCha.Text = profile.FatherPhone;
-        //    tbNgheNghiepCha.Text = profile.FatherJob;
-        //    tbEmailCha.Text = profile.FatherEmail;
-
-        //    if (tbHoTenMe != null) tbHoTenMe.Text = profile.MotherName;
-        //    tbNgheNghiepMe.Text = profile.MotherJob;
-        //    tbSDTMe.Text = profile.MotherPhone;
-        //    if (tbEmailMe != null) tbEmailMe.Text = profile.MotherEmail;
-        //}
-        private void LoadData(int studentId, int yearId)
+        private void LoadData()
         {
-            DataTable dt = StudentBUS.GetStudentById(studentId, yearId);
+            StudentProfileDTO profile = studentBUS.GetStudentProfile(loggedInUserId);
+            LoadStudentAvatar(profile.Avatar, profile.Gender);
+            if (profile == null) return;
 
-            if (dt == null || dt.Rows.Count == 0)
-                return;
+            tbMaHS.Text = profile.StudentCode;
+            tbHoTen.Text = profile.FullName;
 
-            DataRow r = dt.Rows[0];
+            tbNgaySinh.Text = profile.DateOfBirth.HasValue
+                              ? profile.DateOfBirth.Value.ToString("dd/MM/yyyy")
+                              : "";
 
-            tbMaHS.Text = studentId.ToString();
+            tbGioiTinh.Text = profile.Gender;
+            tbLop.Text = profile.ClassName;
+            tbNienKhoa.Text = profile.SchoolYear;
 
-            tbHoTen.Text = r["Ten"]?.ToString();
+            tbGVCN.Text = profile.TeacherName;
+            tbSDTGVCN.Text = profile.TeacherPhone;
 
-            tbNgaySinh.Text = r["NgaySinh"] != DBNull.Value
-                               ? Convert.ToDateTime(r["NgaySinh"]).ToString("dd/MM/yyyy")
-                               : "";
+            tbDiaChi.Text = profile.Address;
+            tbSDTHS.Text = profile.Phone;
+            tbEmail.Text = profile.Email;
 
-            tbGioiTinh.Text = r["GioiTinh"]?.ToString();
-            tbDiaChi.Text = r["DiaChi"]?.ToString();
-            tbLop.Text = r["Lop"]?.ToString();
+            tbHoTenCha.Text = profile.FatherName;
+            tbSDTCha.Text = profile.FatherPhone;
+            tbNgheNghiepCha.Text = profile.FatherJob;
+            tbEmailCha.Text = profile.FatherEmail;
+
+            if (tbHoTenMe != null) tbHoTenMe.Text = profile.MotherName;
+            tbNgheNghiepMe.Text = profile.MotherJob;
+            tbSDTMe.Text = profile.MotherPhone;
+            if (tbEmailMe != null) tbEmailMe.Text = profile.MotherEmail;
         }
 
         private void LoadStudentAvatar(string avatarFileName, string genderText)
@@ -312,14 +290,5 @@ namespace GUI.UserControls
             lb.Font = fontTitle;
         }
 
-        private void pCaNhan_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

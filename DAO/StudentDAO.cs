@@ -11,7 +11,7 @@ namespace DAO
     public class StudentDAO
     {
         private static readonly Random _random = new Random();
-
+        //private StudentDAO dao = new StudentDAO();
         public static DataTable GetStudents(int yearId, int classId)
         {
 
@@ -498,6 +498,132 @@ namespace DAO
                     s.MotherJob = row["job"].ToString();
                 }
             }
+        }
+        public DataTable GetStudentMainInfo(int userId)
+        {
+            string query = @"
+                SELECT 
+                    s.student_id, u.fullname, u.email, u.phone,
+                    s.dob, s.gender, s.address, 
+                    c.class_name, ay.name AS school_year,
+                    teacher.fullname AS gvcn_name, teacher.phone AS gvcn_phone
+                FROM users u
+                JOIN students s ON u.user_id = s.user_id
+                LEFT JOIN student_class sc ON s.student_id = sc.student_id
+                LEFT JOIN classes c ON sc.class_id = c.class_id
+                LEFT JOIN academic_years ay ON sc.school_year_id = ay.year_id
+                LEFT JOIN homeroom_assignments ha ON c.class_id = ha.class_id AND ha.year_id = ay.year_id
+                LEFT JOIN users teacher ON ha.teacher_id = teacher.user_id
+                WHERE u.user_id = @param0
+                ORDER BY ay.start_date DESC 
+                LIMIT 1";
+
+            return DbConnect.ExecuteQuery(query, new object[] { userId });
+        }
+        // ---------------------------------------------------------
+        // LẤY DANH SÁCH
+        // ---------------------------------------------------------
+        public List<StudentDTO> GetStudentss()
+        {
+            List<StudentDTO> list = new List<StudentDTO>();
+            string query = @"
+                SELECT s.student_id, s.user_id, u.fullname, u.avatar,s.dob, s.gender, s.address, 
+                       c.class_id, c.class_name, ay.name AS year_name
+                FROM students s
+                JOIN users u ON s.user_id = u.user_id
+                LEFT JOIN student_class sc ON s.student_id = sc.student_id
+                LEFT JOIN classes c ON sc.class_id = c.class_id
+                LEFT JOIN academic_years ay ON sc.school_year_id = ay.year_id
+                WHERE u.role_id = 'student'
+                ORDER BY SUBSTRING_INDEX(u.fullname, ' ', -1) ASC, u.fullname ASC";
+
+            DataTable data = DbConnect.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                StudentDTO student = MapDataRowToStudent(row);
+                GetParentInfo(student);
+                list.Add(student);
+            }
+            return list;
+        }
+
+        public DataTable GetStudentParents(int studentId)
+        {
+            string query = @"
+                SELECT 
+                    p_user.fullname, p_user.phone, p_user.email, 
+                    p.job, sp.relation
+                FROM student_parent sp
+                JOIN parents p ON sp.parent_id = p.parent_id
+                JOIN users p_user ON p.user_id = p_user.user_id
+                WHERE sp.student_id = @param0";
+
+            return DbConnect.ExecuteQuery(query, new object[] { studentId });
+        }
+
+        public StudentProfileDTO GetStudentProfile(int userId)
+        {
+            StudentProfileDTO profile = new StudentProfileDTO();
+
+            DataTable dtMain = GetStudentMainInfo(userId);
+
+            if (dtMain.Rows.Count > 0)
+            {
+                DataRow row = dtMain.Rows[0];
+                int sId = Convert.ToInt32(row["student_id"]);
+
+                profile.StudentId = sId;
+                profile.StudentCode = "HS" + sId.ToString("D6");
+                profile.FullName = row["fullname"].ToString();
+                profile.Email = row["email"].ToString();
+                profile.Phone = row["phone"].ToString();
+                profile.Address = row["address"].ToString();
+
+                string genderRaw = row["gender"].ToString();
+                profile.Gender = (genderRaw == "Male") ? "Nam" : "Nữ";
+
+                if (row["dob"] != DBNull.Value)
+                    profile.DateOfBirth = Convert.ToDateTime(row["dob"]);
+
+                profile.ClassName = row["class_name"].ToString();
+                profile.SchoolYear = row["school_year"].ToString();
+
+                profile.TeacherName = row["gvcn_name"].ToString();
+                profile.TeacherPhone = row["gvcn_phone"].ToString();
+
+                if (row.Table.Columns.Contains("avatar") && row["avatar"] != DBNull.Value)
+                {
+                    profile.Avatar = row["avatar"].ToString();
+                }
+                else
+                {
+                    profile.Avatar = "";
+                }
+
+
+
+                DataTable dtParents = GetStudentParents(sId);
+                foreach (DataRow pRow in dtParents.Rows)
+                {
+                    string relation = pRow["relation"].ToString().Trim();
+
+                    if (relation.Equals("Cha", StringComparison.OrdinalIgnoreCase))
+                    {
+                        profile.FatherName = pRow["fullname"].ToString();
+                        profile.FatherPhone = pRow["phone"].ToString();
+                        profile.FatherEmail = pRow["email"].ToString();
+                        profile.FatherJob = pRow["job"].ToString();
+                    }
+                    else if (relation.Equals("Mẹ", StringComparison.OrdinalIgnoreCase))
+                    {
+                        profile.MotherName = pRow["fullname"].ToString();
+                        profile.MotherPhone = pRow["phone"].ToString();
+                        profile.MotherEmail = pRow["email"].ToString();
+                        profile.MotherJob = pRow["job"].ToString();
+                    }
+                }
+            }
+            return profile;
         }
 
     }

@@ -187,7 +187,7 @@ namespace GUI.UserControls
             cbbHocKy.ValueMember = "SemesterId";
             if (semesters.Count > 0)
             {
-                cbbHocKy.SelectedIndex = 0;
+                cbbHocKy.SelectedIndex = 1;
                 LoadDataFromDB();
             }
         }

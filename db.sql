@@ -1,9 +1,9 @@
 ﻿-- ======================
 -- DATABASE
 -- ======================
-CREATE DATABASE IF NOT EXISTS school_management_b
+CREATE DATABASE IF NOT EXISTS school_management_c
 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE school_management_b;
+USE school_management_c;
 
 -- ======================
 -- TABLES
@@ -227,12 +227,12 @@ INSERT INTO classes (class_name,grade_id) VALUES
 
 -- ACADEMIC YEARS
 INSERT INTO academic_years (name,start_date,end_date) VALUES
-('2024-2025','2024-09-01','2025-05-31');
+('2024-2025','2025-09-01','2026-05-31');
 
 -- SEMESTERS
 INSERT INTO semesters (year_id,name,start_date,end_date) VALUES
-(1,'HK1','2024-09-01','2024-12-31'),
-(1,'HK2','2025-01-01','2025-05-31');
+(1,'HK1','2025-09-01','2026-12-31'),
+(1,'HK2','2026-05-01','2026-08-31');
 
 -- SUBJECTS
 INSERT INTO subjects(name) VALUES
@@ -314,3 +314,33 @@ ADD CONSTRAINT teacher_assignments_ibfk_1
 FOREIGN KEY (teacher_id)
 REFERENCES users(user_id)
 ON DELETE CASCADE;
+
+
+CREATE TABLE parents (
+    parent_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT UNIQUE NOT NULL,
+    job VARCHAR(100),
+    FOREIGN KEY(user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
+20:11:12	INSERT INTO parents (user_id, job) VALUES (22, 'Nội trợ'), (23, 'Lái xe'), (24, 'Kế toán'),	Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 4	0.000 sec
+
+
+
+CREATE TABLE student_parent (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT NOT NULL,
+    parent_id INT NOT NULL,
+    relation VARCHAR(50), 
+    FOREIGN KEY (student_id) REFERENCES students(student_id) ON DELETE CASCADE,
+    FOREIGN KEY (parent_id) REFERENCES parents(parent_id) ON DELETE CASCADE
+);
+
+INSERT INTO student_parent (student_id, parent_id, relation) VALUES
+(1, 13 ,'Cha'), (2, 14, 'Mẹ'), (3, 15, 'Cha');
+
+INSERT INTO users (username, password, fullname, email, phone, role_id, created_at)
+VALUES
+('parent1', 'hashed_password1', 'Nguyen Van A', 'parent1@example.com', '0912345678', 'parent', NOW()),
+('parent2', 'hashed_password2', 'Tran Thi B', 'parent2@example.com', '0987654321', 'parent', NOW()),
+('parent3', 'hashed_password3', 'Le Van C', 'parent3@example.com', '0901122334', 'parent', NOW());
