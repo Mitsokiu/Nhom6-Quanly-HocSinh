@@ -38,10 +38,9 @@ namespace BUS
                     else if (type == "quiz15") subjectScoreDTO.FifteenMinScore = val;
                     else if (type == "quiz45" || type == "midterm") subjectScoreDTO.OnePeriodScore = val;
                     else if (type == "final") subjectScoreDTO.FinalScore = val;
-                    else if (type == "ave") subjectScoreDTO.AverageScore = val;
                 }
 
-            
+                subjectScoreDTO.AverageScore = CalculateAverage(subjectScoreDTO);
 
                 diemHS.Add(subjectScoreDTO);
             }
@@ -70,6 +69,36 @@ namespace BUS
         {
             dao.UpsertScore(studentId, assignId, scoreType, scoreValue);
         }
-       
+
+        private float? CalculateAverage(SubjectScoreDTO diem)
+        {
+            float tongDiem = 0;
+            int tongHeSo = 0;
+
+            if (diem.OralScore.HasValue)
+            {
+                tongDiem += diem.OralScore.Value * 1;
+                tongHeSo += 1;
+            }
+            if (diem.FifteenMinScore.HasValue)
+            {
+                tongDiem += diem.FifteenMinScore.Value * 1;
+                tongHeSo += 1;
+            }
+            if (diem.OnePeriodScore.HasValue)
+            {
+                tongDiem += diem.OnePeriodScore.Value * 2;
+                tongHeSo += 2;
+            }
+            if (diem.FinalScore.HasValue)
+            {
+                tongDiem += diem.FinalScore.Value * 3;
+                tongHeSo += 3;
+            }
+
+            if (tongHeSo == 0) return null;
+
+            return (float)Math.Round(tongDiem / tongHeSo, 1);
+        }
     }
 }
