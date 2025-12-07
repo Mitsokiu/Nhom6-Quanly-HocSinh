@@ -15,7 +15,7 @@ namespace GUI.UserControls
         public UC_Admin_Class()
         {
             InitializeComponent();
-            LoadUserControl(new UC_Admin_Class_KhoiLop());
+            //LoadUserControl(new UC_Admin_Class_KhoiLop());
         }
         private void LoadUserControl(UserControl uc)
         {
@@ -25,7 +25,7 @@ namespace GUI.UserControls
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            LoadUserControl(new UC_Admin_Class_KhoiLop());
+            //LoadUserControl(new UC_Admin_Class_KhoiLop());
         }
 
         private void button2_Click(object sender, EventArgs e)

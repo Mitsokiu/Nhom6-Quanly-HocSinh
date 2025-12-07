@@ -202,12 +202,6 @@
     <Compile Include="UserControls\Admin\UC_Admin_Class.Designer.cs">
       <DependentUpon>UC_Admin_Class.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Admin\UC_Admin_Class_KhoiLop.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\Admin\UC_Admin_Class_KhoiLop.Designer.cs">
-      <DependentUpon>UC_Admin_Class_KhoiLop.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\Admin\UC_Admin_Class_Monhoc.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -424,9 +418,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Admin\UC_Admin_Class.resx">
       <DependentUpon>UC_Admin_Class.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Admin\UC_Admin_Class_KhoiLop.resx">
-      <DependentUpon>UC_Admin_Class_KhoiLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Admin\UC_Admin_Class_Monhoc.resx">
       <DependentUpon>UC_Admin_Class_Monhoc.cs</DependentUpon>

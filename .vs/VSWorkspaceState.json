@@ -1,7 +1,14 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\BUS",
+    "\\DAO",
+    "\\DTO",
+    "\\GUI",
+    "\\GUI\\UserControls",
+    "\\GUI\\UserControls\\Admin",
+    "\\GUI\\UserControls\\HS"
   ],
-  "SelectedNode": "\\QuanLyHocSinh.sln",
-  "PreviewInSolutionExplorer": false
+  "SelectedNode": "\\GUI\\UserControls\\Admin\\UC_Admin_QuanLyLopHoc.cs",
+  "PreviewInSolutionExplorer": true
 }
