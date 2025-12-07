@@ -187,7 +187,7 @@ namespace GUI.UserControls
             cbbHocKy.ValueMember = "SemesterId";
             if (semesters.Count > 0)
             {
-                cbbHocKy.SelectedIndex = 1;
+                cbbHocKy.SelectedIndex = 0;
                 LoadDataFromDB();
             }
         }
@@ -379,7 +379,7 @@ namespace GUI.UserControls
                 return;
             }
 
-            ExcelPackage.License.SetNonCommercialPersonal("Loopy");
+            ExcelPackage.License.SetNonCommercialPersonal("name");
 
             try
             {

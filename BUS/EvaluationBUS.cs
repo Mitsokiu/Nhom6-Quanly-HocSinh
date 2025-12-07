@@ -19,19 +19,6 @@ namespace BUS
             return dao.SaveEvaluation(studentId, classId, semesterId, conduct, comment);
         }
 
-        public bool IsEvaluationLocked(int semesterId)
-        {
-            DateTime endDate = dao.GetSemesterEndDate(semesterId);
-            DateTime deadline = endDate.AddDays(7);
-
-            if (DateTime.Now > deadline)
-            {
-                return true;
-            }
-            return false;
-        }
-
-
         public string GetLockStatus(int semesterId)
         {
             var duration = dao.GetSemesterDuration(semesterId);
@@ -53,5 +40,10 @@ namespace BUS
             return "Open";
         }
 
+        public bool IsEvaluationLocked(int semesterId)
+        {
+            string status = GetLockStatus(semesterId);
+            return status != "Open";
+        }
     }
 }

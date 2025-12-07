@@ -111,7 +111,8 @@ CREATE TABLE student_evaluations (
     teacher_comment TEXT,
     FOREIGN KEY (student_id) REFERENCES students(student_id),
     FOREIGN KEY (class_id) REFERENCES classes(class_id),
-    FOREIGN KEY (semester_id) REFERENCES semesters(semester_id)
+    FOREIGN KEY (semester_id) REFERENCES semesters(semester_id),
+    UNIQUE KEY unique_eval (student_id, class_id, semester_id)
 );
 
 CREATE TABLE student_class (
