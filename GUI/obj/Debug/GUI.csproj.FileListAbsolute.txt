@@ -346,9 +346,6 @@ D:\GitHub\QLHS\GUI\obj\Debug\GUI.Sidebar.resources
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.SuaHocSinh.resources
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.ThemHocSinh.resources
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.UC_Admin_PhanCong_gvcn.resources
-D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_Admin_Class.resources
-D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_Admin_Class_Monhoc.resources
-D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_Admin_Class_Phancong.resources
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_Admin_Namhoc.resources
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_Admin_Namhoc_Hocki.resources
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_Admin_NamHoc_HocPhi.resources
@@ -435,3 +432,5 @@ D:\GitHub\QLHS\GUI\obj\Debug\GUI.csproj.Up2Date
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.exe
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.pdb
 D:\GitHub\QLHS\GUI\obj\Debug\GUI.exe.config
+D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.Admin.UC_Admin_QuanLyKhoi.resources
+D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.Admin.UC_Admin_QuanLyMonHoc.resources

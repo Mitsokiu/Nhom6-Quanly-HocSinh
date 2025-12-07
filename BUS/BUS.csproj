@@ -107,7 +107,7 @@
     <Compile Include="ScoreBUS.cs" />
     <Compile Include="SemesterBUS.cs" />
     <Compile Include="StudentBUS.cs" />
-    <Compile Include="subject.cs" />
+    <Compile Include="SubjectBUS.cs" />
     <Compile Include="TeacherAssignmentBUS.cs" />
     <Compile Include="TeacherBUS.cs" />
     <Compile Include="TimetableBUS.cs" />

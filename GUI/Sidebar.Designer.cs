@@ -30,6 +30,8 @@ namespace GUI
             this.btnHocSinh = new System.Windows.Forms.Button();
             this.btnTinhHinh = new System.Windows.Forms.Button();
             this.btnQlyLop = new System.Windows.Forms.Button();
+            this.btnQlyMon = new System.Windows.Forms.Button();
+            this.btnQlyKhoi = new System.Windows.Forms.Button();
             this.btnNamhoc = new System.Windows.Forms.Button();
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
@@ -78,6 +80,8 @@ namespace GUI
             this.flowLayoutPanel1.Controls.Add(this.btnHocSinh);
             this.flowLayoutPanel1.Controls.Add(this.btnTinhHinh);
             this.flowLayoutPanel1.Controls.Add(this.btnQlyLop);
+            this.flowLayoutPanel1.Controls.Add(this.btnQlyKhoi);
+            this.flowLayoutPanel1.Controls.Add(this.btnQlyMon);
             this.flowLayoutPanel1.Controls.Add(this.btnNamhoc);
             this.flowLayoutPanel1.Controls.Add(this.btnDoiMatKhauHS);
             this.flowLayoutPanel1.Controls.Add(this.btnXetHanhKiem);
@@ -202,6 +206,27 @@ namespace GUI
             this.btnQlyLop.TabIndex = 8;
             this.btnQlyLop.Text = "Qly Lớp, Môn học";
             this.btnQlyLop.Click += new System.EventHandler(this.btnQlyLop_Click);
+
+            // 4. CẤU HÌNH NÚT QUẢN LÝ KHỐI
+            this.btnQlyKhoi.Image = global::GUI.Properties.Resources.timkiem_24; // Dùng tạm icon giống QlyLop
+            this.btnQlyKhoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQlyKhoi.Name = "btnQlyKhoi";
+            this.btnQlyKhoi.Size = new System.Drawing.Size(282, 50);
+            this.btnQlyKhoi.TabIndex = 20;
+            this.btnQlyKhoi.Text = "Quản lý Khối";
+            this.btnQlyKhoi.UseVisualStyleBackColor = true;
+            this.btnQlyKhoi.Click += new System.EventHandler(this.btnQlyKhoi_Click);
+
+            // 5. CẤU HÌNH NÚT QUẢN LÝ MÔN
+            this.btnQlyMon.Image = global::GUI.Properties.Resources.timkiem_24; // Dùng tạm icon giống QlyLop
+            this.btnQlyMon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQlyMon.Name = "btnQlyMon";
+            this.btnQlyMon.Size = new System.Drawing.Size(282, 50);
+            this.btnQlyMon.TabIndex = 21;
+            this.btnQlyMon.Text = "Quản lý Môn học";
+            this.btnQlyMon.UseVisualStyleBackColor = true;
+            this.btnQlyMon.Click += new System.EventHandler(this.btnQlyMon_Click);
+
             // 
             // btnNamhoc
             // 
@@ -319,6 +344,8 @@ namespace GUI
         private Button btnHocSinh;
         private Button btnTinhHinh;
         private Button btnQlyLop;
+        private Button btnQlyKhoi;
+        private Button btnQlyMon;
         private Button btnDangXuat;
         private Button btnHome;
         private Button btnNamhoc;

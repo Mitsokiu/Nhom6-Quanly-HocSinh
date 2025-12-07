@@ -108,7 +108,7 @@
     <Compile Include="StudentDTO.cs" />
     <Compile Include="StudentEvaluationDTO.cs" />
     <Compile Include="StudentProfileDTO.cs" />
-    <Compile Include="subjectDTO.cs" />
+    <Compile Include="SubjectDTO.cs" />
     <Compile Include="SubjectScoreDTO.cs" />
     <Compile Include="TeacherAssignments.cs" />
     <Compile Include="TimetableDTO.cs" />

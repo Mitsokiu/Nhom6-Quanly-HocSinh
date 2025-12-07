@@ -28,6 +28,8 @@ namespace GUI
         public event EventHandler QuanLyThongBaoClicked;
         public event EventHandler XetHanhKiemClicked;
         public event EventHandler DiemDanhClicked;
+        public event EventHandler QlyKhoiClicked;
+        public event EventHandler QlyMonClicked;
         private UserDTO currentUser;
 
         public Sidebar()
@@ -66,7 +68,7 @@ namespace GUI
             switch (role?.ToLower())
             {
                 case "admin":
-                    ShowButtons(btnTaiKhoan, btnQlyLop, btnNamhoc,btnHome);
+                    ShowButtons(btnTaiKhoan, btnQlyLop, btnQlyMon, btnQlyKhoi,btnNamhoc,btnHome);
                     break;
                 case "gvbm":
                     ShowButtons(btnNhapDiem, btnXemLichDay, btnHome);
@@ -103,6 +105,8 @@ namespace GUI
         private void btnHocSinh_Click(object sender, EventArgs e) => HocSinhClicked?.Invoke(this, EventArgs.Empty);
         private void btnTinhHinh_Click(object sender, EventArgs e) => TinhHinhClicked?.Invoke(this, EventArgs.Empty);
         private void btnQlyLop_Click(object sender, EventArgs e) => QlyLopClicked?.Invoke(this, EventArgs.Empty);
+        private void btnQlyKhoi_Click(object sender, EventArgs e) => QlyKhoiClicked?.Invoke(this, EventArgs.Empty);
+        private void btnQlyMon_Click(object sender, EventArgs e) => QlyMonClicked?.Invoke(this, EventArgs.Empty);
         private void btnCauHinh_Click(object sender, EventArgs e) => CauHinhClicked?.Invoke(this, EventArgs.Empty);
         private void btnHome_Click(object sender, EventArgs e) => HomeClicked?.Invoke(this, EventArgs.Empty);
         private void btnHocPhi_Click(object sender, EventArgs e) => HocPhiClicked?.Invoke(this, EventArgs.Empty);

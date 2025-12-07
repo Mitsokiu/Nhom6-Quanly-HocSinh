@@ -1,10 +1,6 @@
 ﻿using DTO;
 using MySql.Data.MySqlClient;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAO
 {
@@ -13,7 +9,7 @@ namespace DAO
         public List<GradeDTO> GetListGrade()
         {
             List<GradeDTO> list = new List<GradeDTO>();
-            string query = "SELECT grade_id, grade_name FROM grade_levels";
+            string query = "SELECT grade_id, grade_name FROM grade_levels ORDER BY grade_name";
             using (var conn = DbConnect.GetConnection())
             {
                 conn.Open();
@@ -31,6 +27,50 @@ namespace DAO
                 }
             }
             return list;
+        }
+
+        // --- THÊM CÁC HÀM NÀY ---
+        public bool Insert(GradeDTO g)
+        {
+            string query = "INSERT INTO grade_levels(grade_name) VALUES(@name)";
+            using (var conn = DbConnect.GetConnection())
+            {
+                conn.Open();
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@name", g.Name);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+
+        public bool Update(GradeDTO g)
+        {
+            string query = "UPDATE grade_levels SET grade_name=@name WHERE grade_id=@id";
+            using (var conn = DbConnect.GetConnection())
+            {
+                conn.Open();
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@name", g.Name);
+                    cmd.Parameters.AddWithValue("@id", g.Id);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+
+        public bool Delete(int id)
+        {
+            string query = "DELETE FROM grade_levels WHERE grade_id=@id";
+            using (var conn = DbConnect.GetConnection())
+            {
+                conn.Open();
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
         }
     }
 }

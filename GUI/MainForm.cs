@@ -39,6 +39,8 @@ namespace GUI
             sidebar.HocSinhClicked += Sidebar_HocSinhClicked;
             sidebar.TinhHinhClicked += Sidebar_TinhHinhClicked;
             sidebar.QlyLopClicked += Sidebar_QlyLopClicked;
+            sidebar.QlyKhoiClicked += Sidebar_QlyKhoiClicked;
+            sidebar.QlyMonClicked += Sidebar_QlyMonClicked;
             sidebar.HocPhiClicked += Sidebar_HocPhiClicked;
             sidebar.HomeClicked += Sidebar_HomeClicked;
             sidebar.QlyNamHocClicked += Sidebar_QlyNamHocClicked;
@@ -131,7 +133,17 @@ namespace GUI
             LoadContent(new UC_Admin_QuanLyLopHoc());
         }
 
-       
+        private void Sidebar_QlyKhoiClicked(object sender, EventArgs e)
+        {
+            LoadContent(new UC_Admin_QuanLyKhoi());
+        }
+
+        private void Sidebar_QlyMonClicked(object sender, EventArgs e)
+        {
+            LoadContent(new UC_Admin_QuanLyMonHoc());
+        }
+
+
         private void Sidebar_HomeClicked(object sender, EventArgs e)
         {
             LoadContent(new UC_Home());

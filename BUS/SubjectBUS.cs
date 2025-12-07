@@ -1,6 +1,7 @@
 ﻿using DAO;
 using DTO;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BUS
 {
@@ -15,31 +16,25 @@ namespace BUS
 
         public bool Add(SubjectDTO s)
         {
-            if (string.IsNullOrWhiteSpace(s.SubjectId) || string.IsNullOrWhiteSpace(s.SubjectName))
-                return false;
+            if (string.IsNullOrWhiteSpace(s.SubjectName)) return false;
+
+            // Check trùng tên
+            var list = GetAll();
+            if (list.Any(x => x.SubjectName.ToLower() == s.SubjectName.Trim().ToLower())) return false;
 
             return dao.Insert(s);
         }
 
         public bool Update(SubjectDTO s)
         {
-            if (string.IsNullOrWhiteSpace(s.SubjectId) || string.IsNullOrWhiteSpace(s.SubjectName))
-                return false;
-
+            if (s.SubjectId <= 0 || string.IsNullOrWhiteSpace(s.SubjectName)) return false;
             return dao.Update(s);
         }
 
-        public bool Delete(string id)
+        public bool Delete(int id)
         {
-            if (string.IsNullOrWhiteSpace(id))
-                return false;
-
+            if (id <= 0) return false;
             return dao.Delete(id);
-        }
-
-        public static List<ClassDTO> GetAllClasses()
-        {
-            return ClassDAO.GetAllClasses();
         }
     }
 }

@@ -128,11 +128,23 @@
     <Compile Include="ChiTietHocSinh.Designer.cs">
       <DependentUpon>ChiTietHocSinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Admin\UC_Admin_QuanLyKhoi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Admin\UC_Admin_QuanLyKhoi.Designer.cs">
+      <DependentUpon>UC_Admin_QuanLyKhoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Admin\UC_Admin_QuanLyLopHoc.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\Admin\UC_Admin_QuanLyLopHoc.Designer.cs">
       <DependentUpon>UC_Admin_QuanLyLopHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Admin\UC_Admin_QuanLyMonHoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Admin\UC_Admin_QuanLyMonHoc.Designer.cs">
+      <DependentUpon>UC_Admin_QuanLyMonHoc.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\GV\UC_GVCN_DiemDanh.cs">
       <SubType>UserControl</SubType>
@@ -195,24 +207,6 @@
     </Compile>
     <Compile Include="UserControls\Admin\UC_Admin_PhanCong_gvcn.Designer.cs">
       <DependentUpon>UC_Admin_PhanCong_gvcn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Admin\UC_Admin_Class.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\Admin\UC_Admin_Class.Designer.cs">
-      <DependentUpon>UC_Admin_Class.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Admin\UC_Admin_Class_Monhoc.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\Admin\UC_Admin_Class_Monhoc.Designer.cs">
-      <DependentUpon>UC_Admin_Class_Monhoc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Admin\UC_Admin_Class_Phancong.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\Admin\UC_Admin_Class_Phancong.Designer.cs">
-      <DependentUpon>UC_Admin_Class_Phancong.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Admin\UC_Admin_Namhoc.cs">
       <SubType>UserControl</SubType>
@@ -416,15 +410,6 @@
     <EmbeddedResource Include="UserControls\Admin\UC_Admin_PhanCong_gvcn.resx">
       <DependentUpon>UC_Admin_PhanCong_gvcn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Admin\UC_Admin_Class.resx">
-      <DependentUpon>UC_Admin_Class.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Admin\UC_Admin_Class_Monhoc.resx">
-      <DependentUpon>UC_Admin_Class_Monhoc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Admin\UC_Admin_Class_Phancong.resx">
-      <DependentUpon>UC_Admin_Class_Phancong.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Admin\UC_Admin_Namhoc.resx">
       <DependentUpon>UC_Admin_Namhoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -440,8 +425,14 @@
     <EmbeddedResource Include="UserControls\Admin\UC_Admin_NamHoc_TKB.resx">
       <DependentUpon>UC_Admin_NamHoc_TKB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Admin\UC_Admin_QuanLyKhoi.resx">
+      <DependentUpon>UC_Admin_QuanLyKhoi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Admin\UC_Admin_QuanLyLopHoc.resx">
       <DependentUpon>UC_Admin_QuanLyLopHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Admin\UC_Admin_QuanLyMonHoc.resx">
+      <DependentUpon>UC_Admin_QuanLyMonHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Admin\UC_Admin_User.resx">
       <DependentUpon>UC_Admin_User.cs</DependentUpon>
