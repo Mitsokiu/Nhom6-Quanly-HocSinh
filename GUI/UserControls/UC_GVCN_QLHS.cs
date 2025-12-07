@@ -454,7 +454,7 @@ namespace GUI.UserControls
                     e.Graphics.DrawLine(gridPen, e.CellBounds.Left, e.CellBounds.Bottom - 1, e.CellBounds.Right, e.CellBounds.Bottom - 1);
                 }
 
-                int totalWidth = (ICON_W * 3) + (ICON_GAP * 2);
+                int totalWidth = ICON_W;
                 int startX = e.CellBounds.X + (e.CellBounds.Width - totalWidth) / 2;
                 int startY = e.CellBounds.Y + (e.CellBounds.Height - ICON_H) / 2;
 
@@ -482,7 +482,7 @@ namespace GUI.UserControls
 
             int clickX = e.X;
             int cellWidth = dgvStudents.Columns[e.ColumnIndex].Width;
-            int totalWidth = (ICON_W * 3) + (ICON_GAP * 2);
+            int totalWidth = ICON_W;
             int startX = (cellWidth - totalWidth) / 2;
 
             if (clickX >= startX && clickX <= startX + ICON_W)
@@ -508,7 +508,7 @@ namespace GUI.UserControls
             //            MessageBox.Show("Xóa thất bại! Dữ liệu đang được sử dụng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //        }
             //   }
-           // }
+            // }
         }
 
         private void BtnAddStudent_Click(object sender, EventArgs e)
