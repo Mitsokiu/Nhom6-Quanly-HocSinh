@@ -175,7 +175,6 @@ namespace DAO
             return -1; // Trả về -1 nếu không tìm thấy
         }
 
-        // Hàm lấy StudentID từ UserID
         public int GetStudentIdByUserId(int userID)
         {
             String query = "SELECT student_id FROM students WHERE user_id = @param0";
