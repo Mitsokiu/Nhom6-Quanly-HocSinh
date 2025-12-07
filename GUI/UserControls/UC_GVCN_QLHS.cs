@@ -66,6 +66,8 @@ namespace GUI.UserControls
 
             InitPaginationEvents();
             ShowHomeroomClassName();
+            btnAddStudent.Visible = false;
+
         }
 
         // --- 1. CHỨC NĂNG XUẤT EXCEL (CẬP NHẬT ĐẦY ĐỦ THÔNG TIN CHA/MẸ/GH) ---
@@ -459,11 +461,11 @@ namespace GUI.UserControls
                 if (Properties.Resources.view_40 != null)
                     e.Graphics.DrawImage(Properties.Resources.view_40, startX, startY, ICON_W, ICON_H);
 
-                if (Properties.Resources.edit_40 != null)
-                    e.Graphics.DrawImage(Properties.Resources.edit_40, startX + ICON_W + ICON_GAP, startY, ICON_W, ICON_H);
+            //    if (Properties.Resources.edit_40 != null)
+            //        e.Graphics.DrawImage(Properties.Resources.edit_40, startX + ICON_W + ICON_GAP, startY, ICON_W, ICON_H);
 
-                if (Properties.Resources.delete_40 != null)
-                    e.Graphics.DrawImage(Properties.Resources.delete_40, startX + (ICON_W + ICON_GAP) * 2, startY, ICON_W, ICON_H);
+            //    if (Properties.Resources.delete_40 != null)
+            //        e.Graphics.DrawImage(Properties.Resources.delete_40, startX + (ICON_W + ICON_GAP) * 2, startY, ICON_W, ICON_H);
             }
         }
 
@@ -487,26 +489,26 @@ namespace GUI.UserControls
             {
                 using (var frm = new ChiTietHocSinh(_teacherUserId, student)) { frm.ShowDialog(); }
             }
-            else if (clickX >= startX + ICON_W + ICON_GAP && clickX <= startX + ICON_W + ICON_GAP + ICON_W)
-            {
-                using (var frm = new SuaHocSinh(_teacherUserId, student)) { if (frm.ShowDialog() == DialogResult.OK) LoadDataFromDB(); }
-            }
-            else if (clickX >= startX + (ICON_W + ICON_GAP) * 2 && clickX <= startX + (ICON_W + ICON_GAP) * 2 + ICON_W)
-            {
-                if (MessageBox.Show($"Bạn có chắc chắn muốn xóa học sinh: {student.FullName}?",
-                    "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                {
-                    if (_studentBus.DeleteStudent(studentId))
-                    {
-                        MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadDataFromDB();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Xóa thất bại! Dữ liệu đang được sử dụng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
+            //else if (clickX >= startX + ICON_W + ICON_GAP && clickX <= startX + ICON_W + ICON_GAP + ICON_W)
+            //{
+            //    using (var frm = new SuaHocSinh(_teacherUserId, student)) { if (frm.ShowDialog() == DialogResult.OK) LoadDataFromDB(); }
+            //}
+            //else if (clickX >= startX + (ICON_W + ICON_GAP) * 2 && clickX <= startX + (ICON_W + ICON_GAP) * 2 + ICON_W)
+            //{
+            //    if (MessageBox.Show($"Bạn có chắc chắn muốn xóa học sinh: {student.FullName}?",
+            //        "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            //    {
+            //        if (_studentBus.DeleteStudent(studentId))
+            //        {
+            //            MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //            LoadDataFromDB();
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("Xóa thất bại! Dữ liệu đang được sử dụng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        }
+            //   }
+           // }
         }
 
         private void BtnAddStudent_Click(object sender, EventArgs e)

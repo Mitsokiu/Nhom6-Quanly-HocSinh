@@ -527,7 +527,7 @@ namespace DAO
         {
             List<StudentDTO> list = new List<StudentDTO>();
             string query = @"
-                SELECT s.student_id, s.user_id, u.fullname, u.avatar,s.dob, s.gender, s.address, 
+                SELECT s.student_id, s.user_id, u.fullname,s.dob, s.gender, s.address, 
                        c.class_id, c.class_name, ay.name AS year_name
                 FROM students s
                 JOIN users u ON s.user_id = u.user_id

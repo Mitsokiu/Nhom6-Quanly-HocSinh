@@ -80,7 +80,7 @@ namespace GUI.UserControls
             this.comboBoxhk.Size = new System.Drawing.Size(164, 28);
             this.comboBoxhk.TabIndex = 17;
             this.comboBoxhk.SelectedIndexChanged += new System.EventHandler(this.ComboBoxhk_SelectedIndexChanged);
-            this.comboBoxhk.SelectedValueChanged += new System.EventHandler(this.ComboBoxhk_SelectedValueChanged);
+          //  this.comboBoxhk.SelectedValueChanged += new System.EventHandler(this.ComboBoxhk_SelectedValueChanged);
             // 
             // panel2
             // 

@@ -316,18 +316,17 @@ REFERENCES users(user_id)
 ON DELETE CASCADE;
 
 
-CREATE TABLE parents (
+CREATE TABLE IF NOT EXISTS parents (
     parent_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT UNIQUE NOT NULL,
     job VARCHAR(100),
     FOREIGN KEY(user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
 
-20:11:12	INSERT INTO parents (user_id, job) VALUES (22, 'Nội trợ'), (23, 'Lái xe'), (24, 'Kế toán'),	Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 4	0.000 sec
 
 
 
-CREATE TABLE student_parent (
+CREATE TABLE IF NOT EXISTS student_parent (
     id INT AUTO_INCREMENT PRIMARY KEY,
     student_id INT NOT NULL,
     parent_id INT NOT NULL,
@@ -336,11 +335,21 @@ CREATE TABLE student_parent (
     FOREIGN KEY (parent_id) REFERENCES parents(parent_id) ON DELETE CASCADE
 );
 
-INSERT INTO student_parent (student_id, parent_id, relation) VALUES
-(1, 13 ,'Cha'), (2, 14, 'Mẹ'), (3, 15, 'Cha');
+INSERT INTO users (username, password, fullname, email, phone, role_id, created_at) VALUES
+('parent1', '123', 'Nguyen Van A (PH HS1)', 'parent1@example.com', '0912345678', 'parent', NOW()),
+('parent2', '123', 'Tran Thi B (PH HS2)', 'parent2@example.com', '0987654321', 'parent', NOW()),
+('parent3', '123', 'Le Van C (PH HS3)', 'parent3@example.com', '0901122334', 'parent', NOW());
 
-INSERT INTO users (username, password, fullname, email, phone, role_id, created_at)
-VALUES
-('parent1', 'hashed_password1', 'Nguyen Van A', 'parent1@example.com', '0912345678', 'parent', NOW()),
-('parent2', 'hashed_password2', 'Tran Thi B', 'parent2@example.com', '0987654321', 'parent', NOW()),
-('parent3', 'hashed_password3', 'Le Van C', 'parent3@example.com', '0901122334', 'parent', NOW());
+-- 4. Thêm dữ liệu vào bảng Parents
+-- Lấy user_id 21, 22, 23 vừa tạo ở bước 3 để nạp vào
+INSERT INTO parents (user_id, job) VALUES 
+(21, 'Kỹ sư'),    -- Sẽ sinh ra parent_id = 1
+(22, 'Bác sĩ'),    -- Sẽ sinh ra parent_id = 2
+(23, 'Giáo viên'); -- Sẽ sinh ra parent_id = 3
+
+-- 5. Thêm mối quan hệ vào student_parent
+-- Dùng parent_id 1, 2, 3 (không phải 13, 14, 15)
+INSERT INTO student_parent (student_id, parent_id, relation) VALUES
+(1, 1, 'Cha'),  -- Học sinh 1 là con của Parent 1 (user 21)
+(2, 2, 'Mẹ'),   -- Học sinh 2 là con của Parent 2 (user 22)
+(3, 3, 'Cha');  -- Học sinh 3 là con của Parent 3 (user 23)
