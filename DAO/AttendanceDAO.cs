@@ -26,18 +26,14 @@ namespace DAO
 
                 FROM homeroom_assignments ha
                 
-                -- 1. Tìm Năm học từ SemesterID (@param0)
                 JOIN semesters sem ON sem.semester_id = @param0 AND ha.year_id = sem.year_id
                 
-                -- 2. Tìm Lớp chủ nhiệm
                 JOIN classes c ON ha.class_id = c.class_id
                 
-                -- 3. Lấy danh sách học sinh
                 JOIN student_class sc ON sc.class_id = c.class_id AND sc.school_year_id = sem.year_id
                 JOIN students s ON sc.student_id = s.student_id
                 JOIN users u ON s.user_id = u.user_id
 
-                -- 4. LEFT JOIN bảng Điểm danh theo Date (@param1)
                 LEFT JOIN attendance att ON att.student_id = s.student_id AND att.date = @param1
 
                 WHERE ha.teacher_id = @param2 -- TeacherID

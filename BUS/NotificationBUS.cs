@@ -109,7 +109,7 @@ public class NotificationBUS
         return dao.UpdateNotification(noti);
     }
 
-    
+
 
 
     // Tương thích ngược nếu code cũ còn gọi tên hàm này
@@ -138,5 +138,5 @@ public class NotificationBUS
         }
         return true;
     }
-    
+
 }
