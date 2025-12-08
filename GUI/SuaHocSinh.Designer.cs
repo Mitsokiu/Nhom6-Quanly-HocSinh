@@ -225,6 +225,7 @@
             // 
             // picAvatar
             // 
+            this.picAvatar.Image = global::GUI.Properties.Resources.icons8_person_96;
             this.picAvatar.BackColor = System.Drawing.Color.Transparent;
             this.picAvatar.Controls.Add(this.lblUpload);
             this.picAvatar.Cursor = System.Windows.Forms.Cursors.Hand;

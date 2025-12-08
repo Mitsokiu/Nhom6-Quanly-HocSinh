@@ -95,7 +95,7 @@
             this.lblTitleComment.Name = "lblTitleComment";
             this.lblTitleComment.Size = new System.Drawing.Size(166, 19);
             this.lblTitleComment.TabIndex = 4;
-            this.lblTitleComment.Text = "Nhận xét của giáo viên:";
+            this.lblTitleComment.Text = "Nhận xét của giáo viên (*):";
             // 
             // txtComment
             // 
@@ -165,7 +165,6 @@
 
         #endregion
 
-        // Khai báo biến (Public hoặc Private tùy chỉnh)
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.Label lblTitleConduct;

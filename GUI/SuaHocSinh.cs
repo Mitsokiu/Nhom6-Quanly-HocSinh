@@ -136,7 +136,7 @@ namespace GUI
             string folderPath = GetProjectAvatarPath();
 
             // 1. Reset
-            picAvatar.Image = null;
+            picAvatar.Image = Properties.Resources.icons8_person_96;
             lblUpload.Visible = true;
 
             // 2. Đường dẫn ảnh riêng và ảnh mặc định
