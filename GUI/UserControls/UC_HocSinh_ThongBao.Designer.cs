@@ -18,6 +18,8 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnPage1;
         private System.Windows.Forms.Button btnPage2;
+        private System.Windows.Forms.Button btnPage3;
+        private System.Windows.Forms.Button btnPageLast;
         private System.Windows.Forms.Label lblDots;
 
         protected override void Dispose(bool disposing)
@@ -38,6 +40,8 @@
             this.btnPrev = new System.Windows.Forms.Button();
             this.btnPage1 = new System.Windows.Forms.Button();
             this.btnPage2 = new System.Windows.Forms.Button();
+            this.btnPage3 = new System.Windows.Forms.Button();      
+            this.btnPageLast = new System.Windows.Forms.Button();
             this.lblDots = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
             this.panelHeader.SuspendLayout();
