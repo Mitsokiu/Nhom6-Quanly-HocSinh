@@ -1,556 +1,391 @@
-﻿using BUS;
-using DTO;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Windows.Forms;
-using OfficeOpenXml;
-using OfficeOpenXml.Style;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
-using System.IO;
-
-namespace GUI.UserControls
+﻿namespace GUI.UserControls
 {
-    public partial class UC_GVCN_HanhKiem : UserControl
+    partial class UC_GVCN_HanhKiem
     {
-        private int teacherId;
-        private EvaluationBUS evalBus = new EvaluationBUS();
-        private SemesterBUS semBus = new SemesterBUS();
+        private System.ComponentModel.IContainer components = null;
 
-        private List<StudentEvaluationDTO> fullList = new List<StudentEvaluationDTO>();
-        private List<StudentEvaluationDTO> displayList = new List<StudentEvaluationDTO>();
+        // Header
+        private System.Windows.Forms.Panel pnlHeader;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblSubTitle;
 
-        private int currentPage = 1;
-        private const int pageSize = 6;
-        private int totalPages = 1;
-        private const string PLACEHOLDER_TEXT = "Tìm kiếm học sinh theo tên hoặc mã số...";
 
-        private const int ICON_W = 24;
-        private const int ICON_H = 24;
+        // Filter & Search
+        private System.Windows.Forms.Panel pnlFilter;
+        private System.Windows.Forms.Panel pnlSearchBox;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.PictureBox picSearchIcon;
+        private System.Windows.Forms.ComboBox cbbHocKy;
+        private System.Windows.Forms.Label lblHocKy;
 
-        public UC_GVCN_HanhKiem(int teacherId)
+        // Data Grid
+        private System.Windows.Forms.Panel pnlContent;
+        private System.Windows.Forms.DataGridView dgvHanhKiem;
+
+        // Pagination
+        private System.Windows.Forms.Panel pnlPagination;
+        private System.Windows.Forms.Button btnPrev;
+        private System.Windows.Forms.Button btnPage1;
+        private System.Windows.Forms.Button btnPage2;
+        private System.Windows.Forms.Button btnPage3;
+        private System.Windows.Forms.Label lblDots;
+        private System.Windows.Forms.Button btnPageLast;
+        private System.Windows.Forms.Button btnNext;
+
+        protected override void Dispose(bool disposing)
         {
-            InitializeComponent();
-            this.teacherId = teacherId;
-
-            SetupDataGridView();
-
-            dgvHanhKiem.CellPainting += DgvHanhKiem_CellPainting;
-            dgvHanhKiem.CellMouseClick += DgvHanhKiem_CellMouseClick;
-            dgvHanhKiem.CellFormatting += DgvHanhKiem_CellFormatting;
-
-            btnExportExcel.Click += BtnExportExcel_Click;
-            btnImportExcel.Click += BtnImportExcel_Click;
-            btnExportPDF.Click += BtnExportPDF_Click;
-
-            this.Load += (s, e) => SetRoundedRegion(pnlSearchBox, 20);
-            this.Resize += (s, e) => CenterPagination();
-
-            LoadSemesters();
-            cbbHocKy.SelectedIndexChanged += (s, e) => LoadDataFromDB();
-
-            txtSearch.Text = PLACEHOLDER_TEXT;
-            txtSearch.ForeColor = Color.Gray;
-            txtSearch.Enter += (s, e) => { if (txtSearch.Text == PLACEHOLDER_TEXT) { txtSearch.Text = ""; txtSearch.ForeColor = Color.Black; } };
-            txtSearch.Leave += (s, e) => { if (string.IsNullOrWhiteSpace(txtSearch.Text)) { txtSearch.Text = PLACEHOLDER_TEXT; txtSearch.ForeColor = Color.Gray; } };
-            txtSearch.TextChanged += TxtSearch_TextChanged;
-
-            InitPaginationEvents();
+            if (disposing && (components != null)) components.Dispose();
+            base.Dispose(disposing);
         }
 
-        private void DgvHanhKiem_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void InitializeComponent()
         {
-            if (e.RowIndex >= 0)
-            {
-                var dto = dgvHanhKiem.Rows[e.RowIndex].DataBoundItem as StudentEvaluationDTO;
-                if (dto == null) return;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.pnlHeader = new System.Windows.Forms.Panel();
+            this.lblSubTitle = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.pnlFilter = new System.Windows.Forms.Panel();
+            this.cbbHocKy = new System.Windows.Forms.ComboBox();
+            this.lblHocKy = new System.Windows.Forms.Label();
+            this.pnlSearchBox = new System.Windows.Forms.Panel();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.picSearchIcon = new System.Windows.Forms.PictureBox();
+            this.pnlContent = new System.Windows.Forms.Panel();
+            this.dgvHanhKiem = new System.Windows.Forms.DataGridView();
+            this.pnlPagination = new System.Windows.Forms.Panel();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnPageLast = new System.Windows.Forms.Button();
+            this.lblDots = new System.Windows.Forms.Label();
+            this.btnPage3 = new System.Windows.Forms.Button();
+            this.btnPage2 = new System.Windows.Forms.Button();
+            this.btnPage1 = new System.Windows.Forms.Button();
+            this.btnPrev = new System.Windows.Forms.Button();
+            this.btnExportPDF = new System.Windows.Forms.Button();
+            this.btnExportExcel = new System.Windows.Forms.Button();
+            this.btnImportExcel = new System.Windows.Forms.Button();
+            this.pnlHeader.SuspendLayout();
+            this.pnlFilter.SuspendLayout();
+            this.pnlSearchBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearchIcon)).BeginInit();
+            this.pnlContent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHanhKiem)).BeginInit();
+            this.pnlPagination.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // pnlHeader
+            // 
+            this.pnlHeader.BackColor = System.Drawing.Color.Transparent;
+            this.pnlHeader.Controls.Add(this.btnExportPDF);
+            this.pnlHeader.Controls.Add(this.btnExportExcel);
+            this.pnlHeader.Controls.Add(this.btnImportExcel);
+            this.pnlHeader.Controls.Add(this.lblSubTitle);
+            this.pnlHeader.Controls.Add(this.lblTitle);
+            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHeader.Location = new System.Drawing.Point(30, 30);
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.Size = new System.Drawing.Size(1040, 100);
+            this.pnlHeader.TabIndex = 0;
+            // 
+            // lblSubTitle
+            // 
+            this.lblSubTitle.AutoSize = true;
+            this.lblSubTitle.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.lblSubTitle.ForeColor = System.Drawing.Color.Gray;
+            this.lblSubTitle.Location = new System.Drawing.Point(5, 55);
+            this.lblSubTitle.Name = "lblSubTitle";
+            this.lblSubTitle.Size = new System.Drawing.Size(374, 20);
+            this.lblSubTitle.TabIndex = 2;
+            this.lblSubTitle.Text = "Cập nhật hạnh kiểm và nhận xét cho học sinh trong lớp.";
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.lblTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(312, 45);
+            this.lblTitle.TabIndex = 3;
+            this.lblTitle.Text = "Phê Hạnh kiểm Lớp";
+            // 
+            // pnlFilter
+            // 
+            this.pnlFilter.BackColor = System.Drawing.Color.Transparent;
+            this.pnlFilter.Controls.Add(this.cbbHocKy);
+            this.pnlFilter.Controls.Add(this.lblHocKy);
+            this.pnlFilter.Controls.Add(this.pnlSearchBox);
+            this.pnlFilter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlFilter.Location = new System.Drawing.Point(30, 130);
+            this.pnlFilter.Name = "pnlFilter";
+            this.pnlFilter.Size = new System.Drawing.Size(1040, 60);
+            this.pnlFilter.TabIndex = 1;
+            // 
+            // cbbHocKy
+            // 
+            this.cbbHocKy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbbHocKy.BackColor = System.Drawing.Color.White;
+            this.cbbHocKy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbHocKy.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.cbbHocKy.FormattingEnabled = true;
+            this.cbbHocKy.Location = new System.Drawing.Point(805, 14);
+            this.cbbHocKy.Name = "cbbHocKy";
+            this.cbbHocKy.Size = new System.Drawing.Size(232, 28);
+            this.cbbHocKy.TabIndex = 0;
+            // 
+            // lblHocKy
+            // 
+            this.lblHocKy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblHocKy.AutoSize = true;
+            this.lblHocKy.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.lblHocKy.Location = new System.Drawing.Point(735, 19);
+            this.lblHocKy.Name = "lblHocKy";
+            this.lblHocKy.Size = new System.Drawing.Size(60, 19);
+            this.lblHocKy.TabIndex = 1;
+            this.lblHocKy.Text = "Học kỳ:";
+            // 
+            // pnlSearchBox
+            // 
+            this.pnlSearchBox.BackColor = System.Drawing.Color.White;
+            this.pnlSearchBox.Controls.Add(this.txtSearch);
+            this.pnlSearchBox.Controls.Add(this.picSearchIcon);
+            this.pnlSearchBox.Location = new System.Drawing.Point(0, 10);
+            this.pnlSearchBox.Name = "pnlSearchBox";
+            this.pnlSearchBox.Size = new System.Drawing.Size(400, 40);
+            this.pnlSearchBox.TabIndex = 0;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtSearch.ForeColor = System.Drawing.Color.Gray;
+            this.txtSearch.Location = new System.Drawing.Point(45, 10);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(340, 20);
+            this.txtSearch.TabIndex = 0;
+            this.txtSearch.Text = "Tìm kiếm học sinh...";
+            // 
+            // picSearchIcon
+            // 
+            this.picSearchIcon.Image = global::GUI.Properties.Resources.search_32;
+            this.picSearchIcon.Location = new System.Drawing.Point(10, 8);
+            this.picSearchIcon.Name = "picSearchIcon";
+            this.picSearchIcon.Size = new System.Drawing.Size(24, 24);
+            this.picSearchIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSearchIcon.TabIndex = 1;
+            this.picSearchIcon.TabStop = false;
+            // 
+            // pnlContent
+            // 
+            this.pnlContent.Controls.Add(this.dgvHanhKiem);
+            this.pnlContent.Controls.Add(this.pnlPagination);
+            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContent.Location = new System.Drawing.Point(30, 190);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.pnlContent.Size = new System.Drawing.Size(1040, 480);
+            this.pnlContent.TabIndex = 2;
+            // 
+            // dgvHanhKiem
+            // 
+            this.dgvHanhKiem.AllowUserToAddRows = false;
+            this.dgvHanhKiem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHanhKiem.BackgroundColor = System.Drawing.Color.White;
+            this.dgvHanhKiem.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvHanhKiem.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvHanhKiem.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
+            this.dgvHanhKiem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvHanhKiem.ColumnHeadersHeight = 45;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHanhKiem.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvHanhKiem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvHanhKiem.EnableHeadersVisualStyles = false;
+            this.dgvHanhKiem.Location = new System.Drawing.Point(0, 10);
+            this.dgvHanhKiem.Name = "dgvHanhKiem";
+            this.dgvHanhKiem.RowHeadersVisible = false;
+            this.dgvHanhKiem.RowTemplate.Height = 55;
+            this.dgvHanhKiem.Size = new System.Drawing.Size(1040, 410);
+            this.dgvHanhKiem.TabIndex = 0;
+            // 
+            // pnlPagination
+            // 
+            this.pnlPagination.Controls.Add(this.btnNext);
+            this.pnlPagination.Controls.Add(this.btnPageLast);
+            this.pnlPagination.Controls.Add(this.lblDots);
+            this.pnlPagination.Controls.Add(this.btnPage3);
+            this.pnlPagination.Controls.Add(this.btnPage2);
+            this.pnlPagination.Controls.Add(this.btnPage1);
+            this.pnlPagination.Controls.Add(this.btnPrev);
+            this.pnlPagination.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlPagination.Location = new System.Drawing.Point(0, 420);
+            this.pnlPagination.Name = "pnlPagination";
+            this.pnlPagination.Size = new System.Drawing.Size(1040, 60);
+            this.pnlPagination.TabIndex = 1;
+            // 
+            // btnNext
+            // 
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Location = new System.Drawing.Point(0, 0);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(35, 35);
+            this.btnNext.TabIndex = 0;
+            this.btnNext.Text = ">";
+            // 
+            // btnPageLast
+            // 
+            this.btnPageLast.FlatAppearance.BorderSize = 0;
+            this.btnPageLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPageLast.Location = new System.Drawing.Point(0, 0);
+            this.btnPageLast.Name = "btnPageLast";
+            this.btnPageLast.Size = new System.Drawing.Size(35, 35);
+            this.btnPageLast.TabIndex = 1;
+            // 
+            // lblDots
+            // 
+            this.lblDots.AutoSize = true;
+            this.lblDots.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lblDots.Location = new System.Drawing.Point(0, 0);
+            this.lblDots.Name = "lblDots";
+            this.lblDots.Size = new System.Drawing.Size(19, 21);
+            this.lblDots.TabIndex = 2;
+            this.lblDots.Text = "...";
+            // 
+            // btnPage3
+            // 
+            this.btnPage3.FlatAppearance.BorderSize = 0;
+            this.btnPage3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPage3.Location = new System.Drawing.Point(0, 0);
+            this.btnPage3.Name = "btnPage3";
+            this.btnPage3.Size = new System.Drawing.Size(35, 35);
+            this.btnPage3.TabIndex = 3;
+            // 
+            // btnPage2
+            // 
+            this.btnPage2.FlatAppearance.BorderSize = 0;
+            this.btnPage2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPage2.Location = new System.Drawing.Point(0, 0);
+            this.btnPage2.Name = "btnPage2";
+            this.btnPage2.Size = new System.Drawing.Size(35, 35);
+            this.btnPage2.TabIndex = 4;
+            // 
+            // btnPage1
+            // 
+            this.btnPage1.FlatAppearance.BorderSize = 0;
+            this.btnPage1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPage1.Location = new System.Drawing.Point(0, 0);
+            this.btnPage1.Name = "btnPage1";
+            this.btnPage1.Size = new System.Drawing.Size(35, 35);
+            this.btnPage1.TabIndex = 5;
+            // 
+            // btnPrev
+            // 
+            this.btnPrev.FlatAppearance.BorderSize = 0;
+            this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrev.Location = new System.Drawing.Point(0, 0);
+            this.btnPrev.Name = "btnPrev";
+            this.btnPrev.Size = new System.Drawing.Size(35, 35);
+            this.btnPrev.TabIndex = 6;
+            this.btnPrev.Text = "<";
+            // 
+            // btnExportPDF
+            // 
+            this.btnExportPDF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportPDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            this.btnExportPDF.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExportPDF.FlatAppearance.BorderSize = 0;
+            this.btnExportPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportPDF.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnExportPDF.ForeColor = System.Drawing.Color.White;
+            this.btnExportPDF.Image = global::GUI.Properties.Resources.pdf_32;
+            this.btnExportPDF.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExportPDF.Location = new System.Drawing.Point(567, 10);
+            this.btnExportPDF.Name = "btnExportPDF";
+            this.btnExportPDF.Size = new System.Drawing.Size(150, 40);
+            this.btnExportPDF.TabIndex = 8;
+            this.btnExportPDF.Text = " Xuất PDF";
+            this.btnExportPDF.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExportPDF.UseVisualStyleBackColor = false;
+            // 
+            // btnExportExcel
+            // 
+            this.btnExportExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btnExportExcel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExportExcel.FlatAppearance.BorderSize = 0;
+            this.btnExportExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportExcel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnExportExcel.ForeColor = System.Drawing.Color.White;
+            this.btnExportExcel.Image = global::GUI.Properties.Resources.xuatexcel_32;
+            this.btnExportExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExportExcel.Location = new System.Drawing.Point(887, 10);
+            this.btnExportExcel.Name = "btnExportExcel";
+            this.btnExportExcel.Size = new System.Drawing.Size(150, 40);
+            this.btnExportExcel.TabIndex = 6;
+            this.btnExportExcel.Text = " Xuất Excel";
+            this.btnExportExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExportExcel.UseVisualStyleBackColor = false;
+            // 
+            // btnImportExcel
+            // 
+            this.btnImportExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImportExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btnImportExcel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImportExcel.FlatAppearance.BorderSize = 0;
+            this.btnImportExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImportExcel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnImportExcel.ForeColor = System.Drawing.Color.White;
+            this.btnImportExcel.Image = global::GUI.Properties.Resources.nhapexcel_32;
+            this.btnImportExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImportExcel.Location = new System.Drawing.Point(727, 10);
+            this.btnImportExcel.Name = "btnImportExcel";
+            this.btnImportExcel.Size = new System.Drawing.Size(150, 40);
+            this.btnImportExcel.TabIndex = 7;
+            this.btnImportExcel.Text = " Nhập Excel";
+            this.btnImportExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnImportExcel.UseVisualStyleBackColor = false;
+            // 
+            // UC_GVCN_HanhKiem
+            // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.Controls.Add(this.pnlContent);
+            this.Controls.Add(this.pnlFilter);
+            this.Controls.Add(this.pnlHeader);
+            this.Name = "UC_GVCN_HanhKiem";
+            this.Padding = new System.Windows.Forms.Padding(30);
+            this.Size = new System.Drawing.Size(1100, 700);
+            this.pnlHeader.ResumeLayout(false);
+            this.pnlHeader.PerformLayout();
+            this.pnlFilter.ResumeLayout(false);
+            this.pnlFilter.PerformLayout();
+            this.pnlSearchBox.ResumeLayout(false);
+            this.pnlSearchBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearchIcon)).EndInit();
+            this.pnlContent.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHanhKiem)).EndInit();
+            this.pnlPagination.ResumeLayout(false);
+            this.pnlPagination.PerformLayout();
+            this.ResumeLayout(false);
 
-                if (!dto.IsSaved)
-                {
-                    e.CellStyle.ForeColor = Color.Gray;
-                    e.CellStyle.Font = new System.Drawing.Font(dgvHanhKiem.Font, FontStyle.Italic);
-                }
-                else
-                {
-                    e.CellStyle.ForeColor = Color.Black;
-                    e.CellStyle.Font = new System.Drawing.Font(dgvHanhKiem.Font, FontStyle.Regular);
-                }
-            }
         }
 
-        private void SetupDataGridView()
-        {
-            dgvHanhKiem.Columns.Clear();
-            dgvHanhKiem.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
-            dgvHanhKiem.AutoGenerateColumns = false;
-            DataGridViewCellStyle centerStyle = new DataGridViewCellStyle();
-            centerStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            dgvHanhKiem.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                Name = "StudentCode",
-                HeaderText = "MÃ SỐ",
-                Width = 150,
-                ReadOnly = true,
-                DataPropertyName = "StudentCode"
-            });
-
-            dgvHanhKiem.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                Name = "FullName",
-                HeaderText = "HỌ VÀ TÊN",
-                Width = 330,
-                ReadOnly = true,
-                DataPropertyName = "FullName"
-            });
-
-            var colConduct = new DataGridViewTextBoxColumn
-            {
-                Name = "Conduct",
-                HeaderText = "HẠNH KIỂM",
-                Width = 200,
-                ReadOnly = true,
-                DataPropertyName = "Conduct"
-            };
-            dgvHanhKiem.Columns.Add(colConduct);
-
-            var colComment = new DataGridViewTextBoxColumn
-            {
-                Name = "TeacherComment",
-                HeaderText = "NHẬN XÉT",
-                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
-                ReadOnly = true,
-                HeaderCell = { Style = centerStyle },
-                DataPropertyName = "TeacherComment"
-            };
-            dgvHanhKiem.Columns.Add(colComment);
-
-            var colAction = new DataGridViewTextBoxColumn { Name = "Action", HeaderText = "HÀNH ĐỘNG", Width = 200, ReadOnly = true };
-            colAction.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvHanhKiem.Columns.Add(colAction);
-
-            dgvHanhKiem.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvHanhKiem.MultiSelect = false;
-            dgvHanhKiem.RowTemplate.Height = 50;
-        }
-
-
-        private void DgvHanhKiem_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.ColumnIndex == dgvHanhKiem.Columns["Action"].Index)
-            {
-                e.Handled = true;
-                e.PaintBackground(e.CellBounds, true);
-
-                int x = e.CellBounds.X + (e.CellBounds.Width - ICON_W) / 2;
-                int y = e.CellBounds.Y + (e.CellBounds.Height - ICON_H) / 2;
-
-                if (Properties.Resources.edit_40 != null)
-                {
-                    e.Graphics.DrawImage(Properties.Resources.edit_40, x, y, ICON_W, ICON_H);
-                }
-            }
-        }
-
-        private void DgvHanhKiem_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.ColumnIndex == dgvHanhKiem.Columns["Action"].Index)
-            {
-                var dto = dgvHanhKiem.Rows[e.RowIndex].DataBoundItem as StudentEvaluationDTO;
-
-                if (dto != null)
-                {
-                    int semesterId = (int)cbbHocKy.SelectedValue;
-
-
-                    using (var frm = new XetHanhKiem(dto, semesterId))
-                    {
-                        if (frm.ShowDialog() == DialogResult.OK)
-                        {
-                            LoadDataFromDB();
-                        }
-                    }
-                }
-            }
-        }
-
-
-        private void LoadSemesters()
-        {
-            List<SemesterDTO> semesters = semBus.GetAllSemesters();
-            cbbHocKy.DataSource = semesters;
-            cbbHocKy.DisplayMember = "DisplayName";
-            cbbHocKy.ValueMember = "SemesterId";
-            if (semesters.Count > 0)
-            {
-                cbbHocKy.SelectedIndex = 1;
-                LoadDataFromDB();
-            }
-        }
-
-        private void LoadDataFromDB()
-        {
-            if (cbbHocKy.SelectedValue == null) return;
-            int semesterId = (int)cbbHocKy.SelectedValue;
-
-            fullList = evalBus.GetClassList(teacherId, semesterId);
-            displayList = new List<StudentEvaluationDTO>(fullList);
-            currentPage = 1;
-            UpdatePagination();
-        }
-
-        private void UpdatePagination()
-        {
-            totalPages = (int)Math.Ceiling((double)displayList.Count / pageSize);
-            if (totalPages == 0) totalPages = 1;
-            if (currentPage > totalPages) currentPage = totalPages;
-
-            var pageData = displayList.Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
-
-            dgvHanhKiem.DataSource = new System.ComponentModel.BindingList<StudentEvaluationDTO>(pageData);
-
-            if (dgvHanhKiem.Columns["StudentId"] != null) dgvHanhKiem.Columns["StudentId"].Visible = false;
-            if (dgvHanhKiem.Columns["ClassId"] != null) dgvHanhKiem.Columns["ClassId"].Visible = false;
-
-            RenderPaginationButtons();
-        }
-
-        private void TxtSearch_TextChanged(object sender, EventArgs e)
-        {
-            string kw = txtSearch.Text.Trim().ToLower();
-            if (kw == PLACEHOLDER_TEXT.ToLower() || string.IsNullOrWhiteSpace(kw))
-            {
-                displayList = new List<StudentEvaluationDTO>(fullList);
-            }
-            else
-            {
-                displayList = fullList.Where(s =>
-                    s.FullName.ToLower().Contains(kw) ||
-                    s.StudentCode.ToLower().Contains(kw)).ToList();
-            }
-            currentPage = 1;
-            UpdatePagination();
-        }
-
-        private void RenderPaginationButtons()
-        {
-            btnPrev.Enabled = currentPage > 1;
-            btnNext.Enabled = currentPage < totalPages;
-            btnPage1.Visible = btnPage2.Visible = btnPage3.Visible = btnPageLast.Visible = lblDots.Visible = false;
-
-            if (totalPages <= 4)
-            {
-                for (int i = 1; i <= totalPages; i++)
-                {
-                    Button btn = i == 1 ? btnPage1 : i == 2 ? btnPage2 : i == 3 ? btnPage3 : btnPageLast;
-                    SetupBtn(btn, i);
-                }
-            }
-            else
-            {
-                SetupBtn(btnPage1, 1);
-                int mid = currentPage <= 2 ? 2 : (currentPage >= totalPages - 1 ? totalPages - 1 : currentPage);
-                SetupBtn(btnPage2, mid);
-                if (mid + 1 < totalPages) SetupBtn(btnPage3, mid + 1);
-                lblDots.Visible = true;
-                SetupBtn(btnPageLast, totalPages);
-            }
-            HighlightBtn(btnPage1); HighlightBtn(btnPage2); HighlightBtn(btnPage3); HighlightBtn(btnPageLast);
-            CenterPagination();
-        }
-
-        private void CenterPagination()
-        {
-            if (pnlPagination.Width == 0) return;
-            int totalW = 0, gap = 5, btnW = 35;
-            var ctls = new Control[] { btnPrev, btnPage1, btnPage2, btnPage3, lblDots, btnPageLast, btnNext };
-            foreach (var c in ctls.Where(c => c.Visible)) totalW += c == lblDots ? 20 : btnW + gap;
-
-            int x = (pnlPagination.Width - totalW) / 2;
-            int y = (pnlPagination.Height - 35) / 2;
-            foreach (var c in ctls.Where(c => c.Visible))
-            {
-                c.Location = new Point(x, c == lblDots ? y + 5 : y);
-                x += c == lblDots ? 20 + gap : btnW + gap;
-            }
-        }
-
-        private void SetupBtn(Button b, int p) { b.Visible = true; b.Text = p.ToString(); b.Tag = p; }
-        private void HighlightBtn(Button b)
-        {
-            if (!b.Visible) return;
-            bool active = (int)b.Tag == currentPage;
-            b.BackColor = active ? Color.FromArgb(13, 110, 253) : Color.White;
-            b.ForeColor = active ? Color.White : Color.Black;
-        }
-        private void InitPaginationEvents()
-        {
-            EventHandler ck = (s, e) => { currentPage = (int)((Button)s).Tag; UpdatePagination(); };
-            btnPage1.Click += ck; btnPage2.Click += ck; btnPage3.Click += ck; btnPageLast.Click += ck;
-            btnPrev.Click += (s, e) => { if (currentPage > 1) { currentPage--; UpdatePagination(); } };
-            btnNext.Click += (s, e) => { if (currentPage < totalPages) { currentPage++; UpdatePagination(); } };
-        }
-
-        private void SetRoundedRegion(Control c, int radius)
-        {
-            System.Drawing.Rectangle bounds = new System.Drawing.Rectangle(0, 0, c.Width, c.Height);
-            using (GraphicsPath path = new GraphicsPath())
-            {
-                int d = radius * 2;
-                path.AddArc(0, 0, d, d, 180, 90); path.AddArc(bounds.Width - d, 0, d, d, 270, 90);
-                path.AddArc(bounds.Width - d, bounds.Height - d, d, d, 0, 90); path.AddArc(0, bounds.Height - d, d, d, 90, 90);
-                c.Region = new Region(path);
-            }
-        }
-
-        private void BtnExportExcel_Click(object sender, EventArgs e)
-        {
-            if (fullList == null || fullList.Count == 0)
-            {
-                MessageBox.Show("Không có dữ liệu để xuất!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            ExcelPackage.License.SetNonCommercialPersonal("Hanhkiem");
-
-            try
-            {
-                using (SaveFileDialog sfd = new SaveFileDialog())
-                {
-                    sfd.Filter = "Excel Files (*.xlsx)|*.xlsx";
-                    string hkName = cbbHocKy.Text.Replace(" ", "");
-                    sfd.FileName = $"HanhKiem_{hkName}_{DateTime.Now:yyyyMMdd}.xlsx";
-
-                    if (sfd.ShowDialog() == DialogResult.OK)
-                    {
-                        using (var package = new ExcelPackage())
-                        {
-                            var worksheet = package.Workbook.Worksheets.Add("HanhKiem");
-
-                            string[] headers = { "STT", "Mã Số", "Họ và Tên", "Hạnh Kiểm", "Nhận Xét" };
-                            for (int i = 0; i < headers.Length; i++)
-                            {
-                                var cell = worksheet.Cells[1, i + 1];
-                                cell.Value = headers[i];
-                                cell.Style.Font.Bold = true;
-                                cell.Style.Fill.PatternType = ExcelFillStyle.Solid;
-                                cell.Style.Fill.BackgroundColor.SetColor(Color.LightBlue);
-                                cell.Style.Border.BorderAround(ExcelBorderStyle.Thin);
-                                cell.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-                            }
-
-                            for (int i = 0; i < fullList.Count; i++)
-                            {
-                                var item = fullList[i];
-                                int r = i + 2;
-
-                                worksheet.Cells[r, 1].Value = i + 1;
-                                worksheet.Cells[r, 2].Value = item.StudentCode;
-                                worksheet.Cells[r, 3].Value = item.FullName;
-                                worksheet.Cells[r, 4].Value = item.Conduct;
-                                worksheet.Cells[r, 5].Value = item.TeacherComment;
-                            }
-
-                            worksheet.Cells.AutoFitColumns();
-
-                            package.SaveAs(new FileInfo(sfd.FileName));
-                        }
-                        MessageBox.Show("Xuất Excel thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi xuất Excel: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void BtnImportExcel_Click(object sender, EventArgs e)
-        {
-            int semesterId = (int)cbbHocKy.SelectedValue;
-            if (evalBus.IsEvaluationLocked(semesterId))
-            {
-                MessageBox.Show("Học kỳ này đã khóa sổ hoặc chưa diễn ra. Không thể nhập dữ liệu!",
-                                "Đã khóa", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            ExcelPackage.License.SetNonCommercialPersonal("Loopy");
-
-            try
-            {
-                using (OpenFileDialog ofd = new OpenFileDialog())
-                {
-                    ofd.Filter = "Excel Files (*.xlsx)|*.xlsx";
-                    if (ofd.ShowDialog() == DialogResult.OK)
-                    {
-                        using (var package = new ExcelPackage(new FileInfo(ofd.FileName)))
-                        {
-                            var worksheet = package.Workbook.Worksheets[0];
-                            int rowCount = worksheet.Dimension.Rows;
-                            int successCount = 0;
-                            int failCount = 0;
-
-                            for (int row = 2; row <= rowCount; row++)
-                            {
-                                try
-                                {
-                                    string code = worksheet.Cells[row, 2].Text.Trim();
-                                    string conduct = worksheet.Cells[row, 4].Text.Trim();
-                                    string comment = worksheet.Cells[row, 5].Text.Trim();
-
-                                    if (string.IsNullOrEmpty(code)) continue;
-
-                                    var student = fullList.FirstOrDefault(s => s.StudentCode.Equals(code, StringComparison.OrdinalIgnoreCase));
-
-                                    if (student != null)
-                                    {
-
-                                        if (string.IsNullOrEmpty(conduct)) conduct = "Tốt";
-
-                                        bool result = evalBus.SaveEvaluation(student.StudentId, student.ClassId, semesterId, conduct, comment);
-                                        if (result) successCount++;
-                                        else failCount++;
-                                    }
-                                    else
-                                    {
-                                        failCount++;
-                                    }
-                                }
-                                catch
-                                {
-                                    failCount++;
-                                }
-                            }
-
-                            MessageBox.Show($"Đã nhập xong!\n- Cập nhật thành công: {successCount}\n- Thất bại/Không tìm thấy HS: {failCount}",
-                                "Kết quả Import", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            LoadDataFromDB();
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Lỗi đọc file Excel: {ex.Message}\nVui lòng đảm bảo file đúng mẫu (Cột 2 là Mã Số).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void BtnExportPDF_Click(object sender, EventArgs e)
-        {
-            if (fullList == null || fullList.Count == 0)
-            {
-                MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            using (SaveFileDialog sfd = new SaveFileDialog())
-            {
-                sfd.Filter = "PDF Files (*.pdf)|*.pdf";
-                string hkName = cbbHocKy.Text.Replace(" ", "");
-                sfd.FileName = $"BaoCaoHanhKiem_{hkName}_{DateTime.Now:yyyyMMdd}.pdf";
-
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    try
-                    {
-                        Document pdfDoc = new Document(PageSize.A4, 25f, 25f, 30f, 30f);
-                        PdfWriter.GetInstance(pdfDoc, new FileStream(sfd.FileName, FileMode.Create));
-                        pdfDoc.Open();
-
-                        string fontPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "times.ttf");
-                        if (!File.Exists(fontPath)) fontPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "arial.ttf");
-
-                        BaseFont bf = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
-                        iTextSharp.text.Font fontBold = new iTextSharp.text.Font(bf, 11, iTextSharp.text.Font.BOLD);
-                        iTextSharp.text.Font fontNormal = new iTextSharp.text.Font(bf, 11, iTextSharp.text.Font.NORMAL);
-                        iTextSharp.text.Font fontTitle = new iTextSharp.text.Font(bf, 16, iTextSharp.text.Font.BOLD);
-
-                        PdfPTable headerTable = new PdfPTable(2);
-                        headerTable.WidthPercentage = 100;
-                        headerTable.SetWidths(new float[] { 40f, 60f });
-
-                        Paragraph pLeft = new Paragraph("TRƯỜNG THPT ABC\nĐOÀN TNCS HỒ CHÍ MINH", fontBold);
-                        pLeft.Alignment = Element.ALIGN_CENTER;
-
-                        Paragraph pRight = new Paragraph("CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\nĐộc lập - Tự do - Hạnh phúc", fontBold);
-                        pRight.Alignment = Element.ALIGN_CENTER;
-
-                        PdfPCell cellLeft = new PdfPCell(pLeft) { Border = iTextSharp.text.Rectangle.NO_BORDER, HorizontalAlignment = Element.ALIGN_CENTER };
-                        PdfPCell cellRight = new PdfPCell(pRight) { Border = iTextSharp.text.Rectangle.NO_BORDER, HorizontalAlignment = Element.ALIGN_CENTER };
-
-                        headerTable.AddCell(cellLeft);
-                        headerTable.AddCell(cellRight);
-                        pdfDoc.Add(headerTable);
-                        pdfDoc.Add(new Paragraph("\n"));
-
-                        Paragraph title = new Paragraph($"BẢNG TỔNG HỢP HẠNH KIỂM - {cbbHocKy.Text.ToUpper()}", fontTitle);
-                        title.Alignment = Element.ALIGN_CENTER;
-                        title.SpacingAfter = 20f;
-                        pdfDoc.Add(title);
-
-
-                        PdfPTable table = new PdfPTable(5);
-                        table.WidthPercentage = 100;
-                        table.SetWidths(new float[] { 8f, 15f, 30f, 15f, 32f });
-
-                        string[] headers = { "STT", "Mã Số", "Họ và Tên", "Hạnh Kiểm", "Nhận Xét" };
-                        foreach (string h in headers)
-                        {
-                            PdfPCell cell = new PdfPCell(new Phrase(h, fontBold));
-                            cell.HorizontalAlignment = Element.ALIGN_CENTER;
-                            cell.VerticalAlignment = Element.ALIGN_MIDDLE;
-                            cell.BackgroundColor = BaseColor.LIGHT_GRAY;
-                            cell.Padding = 5;
-                            table.AddCell(cell);
-                        }
-
-                        for (int i = 0; i < fullList.Count; i++)
-                        {
-                            var item = fullList[i];
-                            AddCell(table, (i + 1).ToString(), fontNormal, Element.ALIGN_CENTER);
-                            AddCell(table, item.StudentCode, fontNormal, Element.ALIGN_CENTER);
-                            AddCell(table, item.FullName, fontNormal, Element.ALIGN_LEFT);
-                            AddCell(table, item.Conduct, fontNormal, Element.ALIGN_CENTER);
-                            AddCell(table, item.TeacherComment, fontNormal, Element.ALIGN_LEFT);
-                        }
-
-                        pdfDoc.Add(table);
-
-                        Paragraph footer = new Paragraph($"\nTP.HCM, ngày {DateTime.Now.Day} tháng {DateTime.Now.Month} năm {DateTime.Now.Year}", fontNormal);
-                        footer.Alignment = Element.ALIGN_RIGHT;
-                        footer.IndentationRight = 20;
-                        pdfDoc.Add(footer);
-
-                        Paragraph kyTen = new Paragraph("Giáo viên chủ nhiệm\n\n\n\n", fontBold);
-                        kyTen.Alignment = Element.ALIGN_RIGHT;
-                        kyTen.IndentationRight = 40;
-                        pdfDoc.Add(kyTen);
-
-                        pdfDoc.Close();
-
-                        System.Diagnostics.Process.Start(sfd.FileName);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Lỗi xuất PDF: " + ex.Message);
-                    }
-                }
-            }
-        }
-
-        private void AddCell(PdfPTable table, string text, iTextSharp.text.Font font, int align)
-        {
-            PdfPCell cell = new PdfPCell(new Phrase(text ?? "", font));
-            cell.HorizontalAlignment = align;
-            cell.VerticalAlignment = Element.ALIGN_MIDDLE;
-            cell.Padding = 5;
-            table.AddCell(cell);
-        }
+        private System.Windows.Forms.Button btnExportPDF;
+        private System.Windows.Forms.Button btnExportExcel;
+        private System.Windows.Forms.Button btnImportExcel;
     }
 }
