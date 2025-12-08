@@ -124,6 +124,7 @@ namespace GUI.UserControls
                 MessageBox.Show("Số tiền không hợp lệ");
                 return;
             }
+            MessageBox.Show(amount.ToString(),name);
             DateTime dueDate = dateTimePicker1.Value;
 
             bool success = tuitionBUS.AddTuitionForAllStudents(name, amount, dueDate);
@@ -200,21 +201,60 @@ namespace GUI.UserControls
             }
         }
 
-   
+        private void button6_Click(object sender, EventArgs e)
+        {
+            // Lấy giá trị từ TextBox
+            string name = textBox2.Text.Trim();
+           
+            DateTime dueDate;
+
+            if (string.IsNullOrEmpty(name) ||
+                
+                !DateTime.TryParse(dateTimePicker1.Text.Trim(), out dueDate))
+            {
+                MessageBox.Show("Vui lòng chon dong can xoa.");
+                return;
+            }
+
+            var confirm = MessageBox.Show("Bạn có chắc muốn xóa?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (confirm != DialogResult.Yes) return;
+
+            bool success = tuitionBUS.DeleteTuition(new TuitionDTO
+            {
+                name = name,
+               
+                DueDate = dueDate
+            });
+
+            if (success)
+            {
+                MessageBox.Show("Xóa thành công");
+                LoadTuitionData(); // Reload lại dữ liệu
+            }
+            else
+            {
+                MessageBox.Show("Xóa thất bại");
+            }
+        }
 
 
-        // Xóa học phí
+
+
+
         //private void button6_Click(object sender, EventArgs e)
         //{
         //    if (dataGridView1.CurrentRow == null) return;
 
         //    int index = dataGridView1.CurrentRow.Index;
-        //    var tuition = currentTuitionList[index]; // lấy DTO từ danh sách
+        //    var tuition = currentTuitionList[index]; // DTO từ danh sách
 
         //    var confirm = MessageBox.Show("Bạn có chắc muốn xóa?", "Xác nhận", MessageBoxButtons.YesNo);
         //    if (confirm == DialogResult.Yes)
         //    {
-        //        bool success = tuitionBUS.DeleteTuition(tuition.TuitionId);
+        //        bool success = tuitionBUS.DeleteTuition(
+        //            tuition.name, tuition.Amount, tuition.DueDate // dùng thông tin cũ để xóa tất cả bản ghi trùng
+        //        );
+
         //        if (success)
         //        {
         //            MessageBox.Show("Xóa thành công");
@@ -226,42 +266,17 @@ namespace GUI.UserControls
         //        }
         //    }
         //}
-        private void button6_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.CurrentRow == null) return;
 
-            int index = dataGridView1.CurrentRow.Index;
-            var tuition = currentTuitionList[index]; // DTO từ danh sách
+        //private void btnFirst_Click(object sender, EventArgs e)
+        //{
+        //    LoadPage(1);
+        //}
 
-            var confirm = MessageBox.Show("Bạn có chắc muốn xóa?", "Xác nhận", MessageBoxButtons.YesNo);
-            if (confirm == DialogResult.Yes)
-            {
-                bool success = tuitionBUS.DeleteTuition(
-                    tuition.name, tuition.Amount, tuition.DueDate // dùng thông tin cũ để xóa tất cả bản ghi trùng
-                );
-
-                if (success)
-                {
-                    MessageBox.Show("Xóa thành công");
-                    LoadTuitionData();
-                }
-                else
-                {
-                    MessageBox.Show("Xóa thất bại");
-                }
-            }
-        }
-
-        private void btnFirst_Click(object sender, EventArgs e)
-        {
-            LoadPage(1);
-        }
-
-        private void btnPrev_Click(object sender, EventArgs e)
-        {
-            if (currentPage > 1)
-                LoadPage(currentPage - 1);
-        }
+        //private void btnPrev_Click(object sender, EventArgs e)
+        //{
+        //    if (currentPage > 1)
+        //        LoadPage(currentPage - 1);
+        //}
 
         private void btnNext_Click(object sender, EventArgs e)
         {

@@ -48,6 +48,8 @@ namespace GUI
             sidebar.XetHanhKiemClicked += Sidebar_XetHanhKiemClicked;
             sidebar.qlyThongBaoClicked += Sidebar_qlyThongBaoClicked;
             sidebar.XemThongBaoClicked += (s, e) => OpenNotificationList();
+            sidebar.DiemDanhClicked += Sidebar_DiemDanhClicked;
+
         }
 
         // =====================
@@ -185,6 +187,10 @@ namespace GUI
             };
 
             LoadContent(ucDetail);
+        }
+        private void Sidebar_DiemDanhClicked(object sender, EventArgs e)
+        {
+            LoadContent(new UC_GVCN_DiemDanh(user.UserId));
         }
 
         // =====================

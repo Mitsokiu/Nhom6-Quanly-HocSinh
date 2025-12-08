@@ -1,11 +1,15 @@
 ﻿using BUS;
 using DAO;
 using DTO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -247,6 +251,167 @@ namespace GUI.UserControls
             }
         }
 
+
+        private void BtnExportExcel_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu để xuất!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            ExcelPackage.License.SetNonCommercialPersonal("Loopy");
+
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            {
+                sfd.Filter = "Excel Files (*.xlsx)|*.xlsx";
+                sfd.FileName = $"BangDiem_{DateTime.Now:yyyyMMdd}.xlsx";
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    using (var package = new ExcelPackage())
+                    {
+                        var ws = package.Workbook.Worksheets.Add("BangDiem");
+
+                        // Thêm header
+                        for (int c = 0; c < dataGridView1.Columns.Count; c++)
+                        {
+                            ws.Cells[1, c + 1].Value = dataGridView1.Columns[c].HeaderText;
+                            ws.Cells[1, c + 1].Style.Font.Bold = true;
+                            ws.Cells[1, c + 1].Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+                            ws.Cells[1, c + 1].Style.Fill.BackgroundColor.SetColor(Color.LightGray);
+                        }
+
+                        // Thêm dữ liệu
+                        for (int r = 0; r < dataGridView1.Rows.Count; r++)
+                        {
+                            for (int c = 0; c < dataGridView1.Columns.Count; c++)
+                            {
+                                ws.Cells[r + 2, c + 1].Value = dataGridView1.Rows[r].Cells[c].Value;
+                            }
+                        }
+
+                        ws.Cells.AutoFitColumns();
+                        package.SaveAs(new FileInfo(sfd.FileName));
+                    }
+
+                    MessageBox.Show("Xuất Excel thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+        private void BtnExportPDF_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu để xuất!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            {
+                sfd.Filter = "PDF Files (*.pdf)|*.pdf";
+                sfd.FileName = $"BangDiem_{DateTime.Now:yyyyMMdd}.pdf";
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        Document doc = new Document(PageSize.A4, 25, 25, 30, 30);
+                        PdfWriter.GetInstance(doc, new FileStream(sfd.FileName, FileMode.Create));
+                        doc.Open();
+
+                        BaseFont bf = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+                        iTextSharp.text.Font fontHeader = new iTextSharp.text.Font(bf, 12, iTextSharp.text.Font.BOLD);
+                        iTextSharp.text.Font fontNormal = new iTextSharp.text.Font(bf, 12, iTextSharp.text.Font.NORMAL);
+
+                        Paragraph title = new Paragraph("BẢNG ĐIỂM", new iTextSharp.text.Font(bf, 16, iTextSharp.text.Font.BOLD));
+                        title.Alignment = Element.ALIGN_CENTER;
+                        title.SpacingAfter = 15f;
+                        doc.Add(title);
+
+                        PdfPTable table = new PdfPTable(dataGridView1.Columns.Count);
+                        table.WidthPercentage = 100;
+
+                        // Header
+                        foreach (DataGridViewColumn col in dataGridView1.Columns)
+                        {
+                            PdfPCell cell = new PdfPCell(new Phrase(col.HeaderText, fontHeader));
+                            cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                            cell.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(cell);
+                        }
+
+                        // Dữ liệu
+                        foreach (DataGridViewRow row in dataGridView1.Rows)
+                        {
+                            foreach (DataGridViewCell cell in row.Cells)
+                            {
+                                PdfPCell pdfCell = new PdfPCell(new Phrase(cell.Value?.ToString() ?? "", fontNormal));
+                                pdfCell.HorizontalAlignment = Element.ALIGN_CENTER;
+                                table.AddCell(pdfCell);
+                            }
+                        }
+
+                        doc.Add(table);
+                        doc.Close();
+
+                        System.Diagnostics.Process.Start(sfd.FileName);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi xuất PDF: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void BtnImportExcel_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "Excel Files (*.xlsx)|*.xlsx|All Files (*.*)|*.*";
+                if (ofd.ShowDialog() != DialogResult.OK) return;
+
+                try
+                {
+                    var fileInfo = new FileInfo(ofd.FileName);
+                    using (var package = new OfficeOpenXml.ExcelPackage(fileInfo))
+                    {
+                        var ws = package.Workbook.Worksheets[0]; // lấy sheet đầu tiên
+                        dataGridView1.Rows.Clear();
+                        dataGridView1.Columns.Clear();
+
+                        int colCount = ws.Dimension.End.Column;
+                        int rowCount = ws.Dimension.End.Row;
+
+                        // Tạo header
+                        for (int c = 1; c <= colCount; c++)
+                        {
+                            dataGridView1.Columns.Add("col" + c, ws.Cells[1, c].Text);
+                        }
+
+                        // Thêm dữ liệu
+                        for (int r = 2; r <= rowCount; r++)
+                        {
+                            int rowIndex = dataGridView1.Rows.Add();
+                            for (int c = 1; c <= colCount; c++)
+                            {
+                                dataGridView1.Rows[rowIndex].Cells[c - 1].Value = ws.Cells[r, c].Text;
+                            }
+                        }
+                    }
+
+                    MessageBox.Show("Import Excel thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi import Excel: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+
+
         private void txtQuiz15_TextChanged(object sender, EventArgs e)
         {
 
@@ -258,6 +423,11 @@ namespace GUI.UserControls
         }
 
         private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UC_GVBM_Diem_Load(object sender, EventArgs e)
         {
 
         }

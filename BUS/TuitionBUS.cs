@@ -43,16 +43,22 @@ namespace BUS
         }
 
         // Xóa tất cả học sinh có cùng khoản học phí
-        public bool DeleteTuition(string description, decimal amount, DateTime dueDate)
+        //public bool DeleteTuition(string description, decimal amount, DateTime dueDate)
+        //{
+        //    TuitionDTO t = new TuitionDTO
+        //    {
+        //        Description = description,
+        //        Amount = amount,
+        //        DueDate = dueDate
+        //    };
+        //    return dao.DeleteTuition(t);
+        //}
+
+        public bool DeleteTuition(TuitionDTO tuition)
         {
-            TuitionDTO t = new TuitionDTO
-            {
-                Description = description,
-                Amount = amount,
-                DueDate = dueDate
-            };
-            return dao.DeleteTuition(t);
+            return tuitionDAO.DeleteTuition(tuition.name, tuition.DueDate);
         }
+
 
         public List<TuitionDTO> GetAllTuitionWithStudentInfo(int schoolYearId)
         {

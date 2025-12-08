@@ -240,6 +240,59 @@ namespace GUI.UserControls
             LoadPage(currentPage);
         }
 
+        private void btnImportExcel_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Excel Files|*.xlsx;*.xls";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+                ImportUsersFromExcel(filePath);
+            }
+        }
+        private void ImportUsersFromExcel(string filePath)
+        {
+            try
+            {
+                using (var workbook = new ClosedXML.Excel.XLWorkbook(filePath))
+                {
+                    var worksheet = workbook.Worksheet(1); // sheet đầu tiên
+                    var rows = worksheet.RangeUsed().RowsUsed().Skip(1); // bỏ header
+
+                    List<UserDTO> usersToAdd = new List<UserDTO>();
+
+                    foreach (var row in rows)
+                    {
+                        UserDTO user = new UserDTO
+                        {
+                            Username = row.Cell(1).GetString().Trim(),
+                            Password = row.Cell(2).GetString().Trim(),
+                            Fullname = row.Cell(3).GetString().Trim(),
+                            Email = row.Cell(4).GetString().Trim(),
+                            Phone = row.Cell(5).GetString().Trim(),
+                            RoleName = row.Cell(6).GetString().Trim()
+                        };
+
+                        usersToAdd.Add(user);
+                    }
+
+                    // Gọi BUS để thêm vào database
+                    foreach (var user in usersToAdd)
+                    {
+                        userBUS.AddUser(user); // đảm bảo hàm AddUser trong BUS có xử lý username trùng
+                    }
+
+                    MessageBox.Show("Import thành công!");
+                    LoadUserData();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi import: " + ex.Message);
+            }
+        }
+
+
         private void txtSearch_TextChanged_1(object sender, EventArgs e)
         {
 

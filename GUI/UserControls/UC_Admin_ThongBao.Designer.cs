@@ -56,6 +56,7 @@
             this.btnnext = new System.Windows.Forms.Button();
             this.btnback = new System.Windows.Forms.Button();
             this.btnhead = new System.Windows.Forms.Button();
+            this.btnxuatpdf = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -324,10 +325,21 @@
             this.btnhead.Text = "<<";
             this.btnhead.UseVisualStyleBackColor = false;
             // 
+            // btnxuatpdf
+            // 
+            this.btnxuatpdf.Location = new System.Drawing.Point(972, 29);
+            this.btnxuatpdf.Name = "btnxuatpdf";
+            this.btnxuatpdf.Size = new System.Drawing.Size(124, 34);
+            this.btnxuatpdf.TabIndex = 23;
+            this.btnxuatpdf.Text = "Xuất PDF";
+            this.btnxuatpdf.UseVisualStyleBackColor = true;
+            this.btnxuatpdf.Click += new System.EventHandler(this.BtnExportPDF_Selected_Click);
+            // 
             // UC_Admin_ThongBao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnxuatpdf);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel2);
@@ -374,5 +386,6 @@
         private System.Windows.Forms.Button btnback;
         private System.Windows.Forms.Button btnhead;
         private System.Windows.Forms.Label lblpage;
+        private System.Windows.Forms.Button btnxuatpdf;
     }
 }

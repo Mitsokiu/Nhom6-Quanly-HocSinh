@@ -168,3 +168,9 @@ C:\Code\qlyhsmerge\DTO\bin\Debug\EPPlus.xml
 C:\Code\qlyhsmerge\DTO\bin\Debug\itextsharp.xml
 C:\Code\qlyhsmerge\DTO\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
 C:\Code\qlyhsmerge\DTO\bin\Debug\System.Security.Cryptography.Xml.xml
+C:\Code\qlyhsmerge\DTO\bin\Debug\EntityFramework.dll
+C:\Code\qlyhsmerge\DTO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Code\qlyhsmerge\DTO\bin\Debug\MySql.Data.EntityFramework.dll
+C:\Code\qlyhsmerge\DTO\bin\Debug\EntityFramework.xml
+C:\Code\qlyhsmerge\DTO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Code\qlyhsmerge\DTO\bin\Debug\MySql.Data.EntityFramework.xml

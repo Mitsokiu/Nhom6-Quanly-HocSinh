@@ -29,6 +29,7 @@ namespace GUI
         public event EventHandler XetHanhKiemClicked;
         public event EventHandler qlyThongBaoClicked;
         public event EventHandler XemThongBaoClicked;
+        public event EventHandler DiemDanhClicked;
 
         private UserDTO currentUser;
 
@@ -74,7 +75,7 @@ namespace GUI
                     ShowButtons(btnNhapDiem, btnXemLichDay, btnHome);
                     break;
                 case "gvcn":
-                    ShowButtons(btnHocSinh, btnXetHanhKiem,btnHome,btnQuanLyThongBao);
+                    ShowButtons(btnHocSinh, btnXetHanhKiem,btnHome,btnQuanLyThongBao,btnDiemDanh);
                     break;
                 
                   
@@ -119,8 +120,10 @@ namespace GUI
 
         private void btnQuanLyThongBao_Click(object sender, EventArgs e) => qlyThongBaoClicked?.Invoke(this, EventArgs.Empty);
        
+       
         private void btnXemThongBao_Click(object sender, EventArgs e) => XemThongBaoClicked?.Invoke(this, EventArgs.Empty);
 
+        private void btnDiemDanh_Click(object sender, EventArgs e) => DiemDanhClicked?.Invoke(this, EventArgs.Empty);
         // ============================
         // XỬ LÝ ĐĂNG XUẤT
         // ============================

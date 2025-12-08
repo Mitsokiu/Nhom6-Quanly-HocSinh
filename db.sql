@@ -353,3 +353,47 @@ INSERT INTO student_parent (student_id, parent_id, relation) VALUES
 (1, 1, 'Cha'),  -- Học sinh 1 là con của Parent 1 (user 21)
 (2, 2, 'Mẹ'),   -- Học sinh 2 là con của Parent 2 (user 22)
 (3, 3, 'Cha');  -- Học sinh 3 là con của Parent 3 (user 23)
+
+DROP TABLE IF EXISTS `attendance`;
+CREATE TABLE `attendance` (
+  `attendance_id` int NOT NULL AUTO_INCREMENT,
+  `student_id` int NOT NULL,
+  `class_id` int NOT NULL,
+  `date` date NOT NULL,
+  `status` enum('absent_permit','absent_no_permit','late') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `note` text COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`attendance_id`),
+  UNIQUE KEY `unique_attendance` (`student_id`,`date`),
+  KEY `class_id` (`class_id`),
+  CONSTRAINT `attendance_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`student_id`) ON DELETE CASCADE,
+  CONSTRAINT `attendance_ibfk_2` FOREIGN KEY (`class_id`) REFERENCES `classes` (`class_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+ALTER TABLE attendance
+ADD UNIQUE KEY uq_attendance_student_class_date (student_id, class_id, date);
+
+ALTER TABLE student_class
+ADD UNIQUE KEY uq_student_year (student_id, school_year_id);
+
+ALTER TABLE student_evaluations
+DROP FOREIGN KEY student_evaluations_ibfk_1;
+
+ALTER TABLE student_evaluations
+ADD CONSTRAINT student_evaluations_ibfk_1_cascade
+FOREIGN KEY (student_id) REFERENCES students(student_id)
+ON DELETE CASCADE
+ON UPDATE CASCADE;
+
+ALTER TABLE tuition
+DROP FOREIGN KEY tuition_ibfk_1;
+
+ALTER TABLE tuition
+ADD CONSTRAINT tuition_ibfk_1_cascade
+FOREIGN KEY (student_id) REFERENCES students(student_id)
+ON DELETE CASCADE
+ON UPDATE CASCADE;
+
+
+ALTER TABLE users
+ADD CONSTRAINT unique_username UNIQUE (username);
+

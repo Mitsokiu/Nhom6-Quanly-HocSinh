@@ -4,5 +4,6 @@
     {
         public string SubjectId { get; set; }
         public string SubjectName { get; set; }
+        public int subid { get; set; }  
     }
 }

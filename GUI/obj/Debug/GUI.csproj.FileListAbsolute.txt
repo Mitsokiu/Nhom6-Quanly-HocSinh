@@ -351,3 +351,10 @@ C:\Code\qlyhsmerge\GUI\bin\Debug\EPPlus.xml
 C:\Code\qlyhsmerge\GUI\bin\Debug\itextsharp.xml
 C:\Code\qlyhsmerge\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
 C:\Code\qlyhsmerge\GUI\bin\Debug\System.Security.Cryptography.Xml.xml
+C:\Code\qlyhsmerge\GUI\obj\Debug\GUI.UserControls.UC_GVCN_DiemDanh.resources
+C:\Code\qlyhsmerge\GUI\bin\Debug\EntityFramework.dll
+C:\Code\qlyhsmerge\GUI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Code\qlyhsmerge\GUI\bin\Debug\MySql.Data.EntityFramework.dll
+C:\Code\qlyhsmerge\GUI\bin\Debug\EntityFramework.xml
+C:\Code\qlyhsmerge\GUI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Code\qlyhsmerge\GUI\bin\Debug\MySql.Data.EntityFramework.xml

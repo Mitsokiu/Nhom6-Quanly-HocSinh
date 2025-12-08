@@ -290,6 +290,24 @@ namespace DAO
                             cmd.Parameters.AddWithValue("@uid", newUserId);
                             cmd.ExecuteNonQuery();
                         }
+
+                        // Lấy student_id vừa tạo
+                        int studentId;
+                        using (var cmd = new MySqlCommand("SELECT LAST_INSERT_ID()", conn))
+                        {
+                            studentId = Convert.ToInt32(cmd.ExecuteScalar());
+                        }
+
+                                // Thêm vào student_class
+                                  string sqlClass = @"
+                        INSERT INTO student_class(student_id, class_id, school_year_id)
+                        VALUES(@StudentId, NUll, 1)";
+                                    using (var cmdClass = new MySqlCommand(sqlClass, conn))
+                                {
+                                    cmdClass.Parameters.AddWithValue("@StudentId", studentId);
+                            cmdClass.ExecuteNonQuery();
+                        }
+
                     }
                     else if (user.RoleName == "gvbm" || user.RoleName == "gvcn")
                     {

@@ -4,21 +4,43 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Windows.Forms;
 
 namespace DAO
 {
     public class TuitionDAO
     {
+        //public bool AddTuitionForAllStudents(TuitionDTO tuition)
+        //{
+        //    string query = @"
+        //        INSERT INTO tuition (student_id, name, amount, due_date, status)
+        //        SELECT student_id, @param0, @param1, @param2, 'unpaid'
+        //        FROM students
+        //    ";
+
+        //    return DbConnect.ExecuteNonQuery(query, new object[] { tuition.name, tuition.Amount, tuition.DueDate }) > 0;
+        //}
+
         public bool AddTuitionForAllStudents(TuitionDTO tuition)
         {
             string query = @"
-                INSERT INTO tuition (student_id, name, amount, due_date, status)
-                SELECT student_id, @param0, @param1, @param2, 'unpaid'
-                FROM students
-            ";
+        INSERT INTO tuition (student_id, description,name, amount, semester_id, due_date, status)
+        SELECT student_id, @param0, @param1, @param2, @param3, @param4, 'unpaid'
+        FROM students
+        WHERE student_id IS NOT NULL
+    ";
 
-            return DbConnect.ExecuteNonQuery(query, new object[] { tuition.name, tuition.Amount, tuition.DueDate }) > 0;
+            object[] parameters = {
+        tuition.name ?? "",
+        tuition.Description ?? "",
+        tuition.Amount,
+        tuition.SemesterId > 0 ? tuition.SemesterId : 1,
+        tuition.DueDate
+    };
+
+            return DbConnect.ExecuteNonQuery(query, parameters) > 0;
         }
+
 
         public bool AddTuitionForStudent(TuitionDTO tuition)
         {
@@ -48,17 +70,41 @@ namespace DAO
     }) > 0;
         }
 
-        public bool DeleteTuition(TuitionDTO tuition)
+        //public bool DeleteTuition(TuitionDTO tuition)
+        //{
+        //            string query = @"
+        //        DELETE FROM tuition
+        //        WHERE name = @param0
+        //          AND amount = @param1
+        //          AND due_date = @param2
+        //    ";
+        //            return DbConnect.ExecuteNonQuery(query, new object[] {
+        //        tuition.name, tuition.Amount, tuition.DueDate
+        //    }) > 0;
+        //}
+
+        public bool DeleteTuition(string name, DateTime dueDate)
         {
-                    string query = @"
-                DELETE FROM tuition
-                WHERE name = @param0
-                  AND amount = @param1
-                  AND due_date = @param2
-            ";
-                    return DbConnect.ExecuteNonQuery(query, new object[] {
-                tuition.name, tuition.Amount, tuition.DueDate
-            }) > 0;
+            string query = @"
+        DELETE FROM tuition
+        WHERE name = @name
+          
+          AND due_date = @dueDate
+    ";
+
+            using (var conn = DbConnect.GetConnection())
+            {
+                conn.Open();
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@name", name);
+                  
+                    cmd.Parameters.AddWithValue("@dueDate", dueDate);
+
+                    int rows = cmd.ExecuteNonQuery();
+                    return rows > 0;
+                }
+            }
         }
 
         public List<TuitionDTO> GetAllTuition()

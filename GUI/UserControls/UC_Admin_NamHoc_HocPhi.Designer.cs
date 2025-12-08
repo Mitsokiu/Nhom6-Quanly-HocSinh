@@ -60,6 +60,7 @@ namespace GUI.UserControls
             this.btnback = new System.Windows.Forms.Button();
             this.btnhead = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnxuatexcel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -355,10 +356,22 @@ namespace GUI.UserControls
             this.label4.TabIndex = 23;
             this.label4.Text = "Quản Lý Học Phí";
             // 
+            // btnxuatexcel
+            // 
+            this.btnxuatexcel.BackColor = System.Drawing.Color.Lime;
+            this.btnxuatexcel.Location = new System.Drawing.Point(1265, 2);
+            this.btnxuatexcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnxuatexcel.Name = "btnxuatexcel";
+            this.btnxuatexcel.Size = new System.Drawing.Size(101, 41);
+            this.btnxuatexcel.TabIndex = 52;
+            this.btnxuatexcel.Text = "Xuất Excel";
+            this.btnxuatexcel.UseVisualStyleBackColor = false;
+            // 
             // UC_Admin_NamHoc_HocPhi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnxuatexcel);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -406,5 +419,6 @@ namespace GUI.UserControls
         private Label label4;
         private Label lblpage;
         private Button btnxuat;
+        private Button btnxuatexcel;
     }
 }

@@ -172,6 +172,13 @@ namespace GUI.UserControls
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (selectedStudentId == 0) return; // chưa chọn dòng
+            int classId = cbBoxClass.SelectedValue != null ? Convert.ToInt32(cbBoxClass.SelectedValue) : 0;
+            if (classId == 0)
+            {
+                MessageBox.Show("Vui lòng chọn lớp hợp lệ!");
+                return;
+            }
+     
 
             StudentDTO student = new StudentDTO
             {

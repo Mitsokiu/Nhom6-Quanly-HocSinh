@@ -24,7 +24,9 @@ namespace DTO
 
         public int TuitionID { get; set; }
         public string FeeName { get; set; }
-       
+
+        public int SemesterId { get; set; }
+
 
         //Properties phụ để hiển thị lên DataGridView
         public string StatusDisplay => (Status == "Paid") ? "Đã thanh toán" : "Chưa thanh toán";

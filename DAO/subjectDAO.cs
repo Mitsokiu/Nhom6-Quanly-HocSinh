@@ -1,7 +1,8 @@
 ﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
-
+using System.Linq;
 namespace DAO
 {
     public class SubjectDAO
@@ -45,6 +46,29 @@ namespace DAO
             int result = DbConnect.ExecuteNonQuery(query, new object[] { id });
             return result > 0;
         }
-        
+
+
+
+
+
+        public List<SubjectDTO> GetAll_LinqObjects()
+        {
+            DataTable dt = DbConnect.ExecuteQuery("SELECT subject_id, name FROM subjects");
+
+            // Chuyển DataTable sang List<SubjectDTO>
+            var list = (from DataRow row in dt.Rows
+                        select new SubjectDTO
+                        {
+                            subid = Convert.ToInt32(row["subid"]),
+                            SubjectName = row["name"].ToString()
+                        }).ToList();
+
+            // Ví dụ: lọc tên môn có chữ "Math" và sắp xếp
+            var filtered = list.Where(s => s.SubjectName.Contains("Math"))
+                               .OrderBy(s => s.SubjectName)
+                               .ToList();
+
+            return filtered;
+        }
     }
 }

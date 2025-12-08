@@ -1,9 +1,12 @@
 ﻿using DTO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -177,6 +180,74 @@ namespace GUI.UserControls
             else
                 dateTimePicker1.Value = DateTime.Now; 
         }
+
+
+        private void BtnExportPDF_Selected_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null)
+            {
+                MessageBox.Show("Vui lòng chọn thông báo!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            {
+                sfd.Filter = "PDF Files (*.pdf)|*.pdf";
+                sfd.FileName = $"ThongBao_{DateTime.Now:yyyyMMdd}.pdf";
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        Document doc = new Document(PageSize.A4, 25, 25, 30, 30);
+                        PdfWriter.GetInstance(doc, new FileStream(sfd.FileName, FileMode.Create));
+                        doc.Open();
+
+                        var bf = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+                        var font = new iTextSharp.text.Font(bf, 12, iTextSharp.text.Font.NORMAL);
+                        var fontBold = new iTextSharp.text.Font(bf, 12, iTextSharp.text.Font.BOLD);
+
+                        Paragraph title = new Paragraph("THÔNG BÁO", fontBold);
+                        title.Alignment = Element.ALIGN_CENTER;
+                        title.SpacingAfter = 10f;
+                        doc.Add(title);
+
+                        PdfPTable table = new PdfPTable(2);
+                        table.WidthPercentage = 100;
+                        table.SetWidths(new float[] { 25f, 75f });
+
+                        // Lấy dữ liệu từ DataGridView và TextBox
+                        string target = dataGridView1.CurrentRow.Cells["Target"].Value?.ToString() ?? "";
+                        string header = textBoxtitle.Text.Trim();
+                        string message = textBoxmes.Text.Trim();
+                        string createdAt = dateTimePicker1.Value.ToString("dd/MM/yyyy");
+
+                        // Thêm các dòng
+                        table.AddCell(new PdfPCell(new Phrase("Người nhận", fontBold)) { Padding = 5 });
+                        table.AddCell(new PdfPCell(new Phrase(target, font)) { Padding = 5 });
+
+                        table.AddCell(new PdfPCell(new Phrase("Tiêu đề", fontBold)) { Padding = 5 });
+                        table.AddCell(new PdfPCell(new Phrase(header, font)) { Padding = 5 });
+
+                        table.AddCell(new PdfPCell(new Phrase("Nội dung", fontBold)) { Padding = 5 });
+                        table.AddCell(new PdfPCell(new Phrase(message, font)) { Padding = 5 });
+
+                        table.AddCell(new PdfPCell(new Phrase("Ngày tạo", fontBold)) { Padding = 5 });
+                        table.AddCell(new PdfPCell(new Phrase(createdAt, font)) { Padding = 5 });
+
+                        doc.Add(table);
+
+                        doc.Close();
+                        System.Diagnostics.Process.Start(sfd.FileName);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi xuất PDF: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {

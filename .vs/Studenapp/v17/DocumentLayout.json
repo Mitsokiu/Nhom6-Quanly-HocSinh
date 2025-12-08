@@ -3,43 +3,295 @@
   "WorkspaceRootPath": "C:\\Code\\qlyhsmerge\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|C:\\Code\\qlyhsmerge\\bus\\userbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|solutionrelative:bus\\userbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|C:\\Code\\qlyhsmerge\\dao\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|solutionrelative:dao\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_gvbm_diem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvbm_diem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|c:\\code\\qlyhsmerge\\dao\\subjectdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|solutionrelative:dao\\subjectdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|C:\\Code\\qlyhsmerge\\dto\\subjectdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|solutionrelative:dto\\subjectdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|C:\\Code\\qlyhsmerge\\dto\\classdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|solutionrelative:dto\\classdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|c:\\code\\qlyhsmerge\\gui\\usercontrols\\uc_gvbm_tkb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvbm_tkb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_hocsinh_chitietthongbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_hocsinh_chitietthongbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_phancong_gvcn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_phancong_gvcn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_gvbm_tkb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvbm_tkb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|c:\\code\\qlyhsmerge\\bus\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|solutionrelative:bus\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|c:\\code\\qlyhsmerge\\gui\\usercontrols\\uc_hocsinh_diem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_hocsinh_diem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|c:\\code\\qlyhsmerge\\dto\\schooldbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|solutionrelative:dto\\schooldbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|c:\\code\\qlyhsmerge\\gui\\usercontrols\\uc_gvbm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvbm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|c:\\code\\qlyhsmerge\\dao\\classdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|solutionrelative:dao\\classdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|c:\\code\\qlyhsmerge\\dao\\studentdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|c:\\code\\qlyhsmerge\\dto\\class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|solutionrelative:dto\\class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|c:\\code\\qlyhsmerge\\bus\\attendancebus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|solutionrelative:bus\\attendancebus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|c:\\code\\qlyhsmerge\\dto\\notificationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|solutionrelative:dto\\notificationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|C:\\Code\\qlyhsmerge\\bus\\evaluationbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|solutionrelative:bus\\evaluationbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|c:\\code\\qlyhsmerge\\dto\\gradedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|solutionrelative:dto\\gradedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|c:\\code\\qlyhsmerge\\dto\\gradelevel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|solutionrelative:dto\\gradelevel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|C:\\Code\\qlyhsmerge\\dao\\dbconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|solutionrelative:dao\\dbconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|c:\\code\\qlyhsmerge\\bus\\subject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|solutionrelative:bus\\subject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|c:\\code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_class_monhoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_class_monhoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_thongbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_thongbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_class_monhoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_class_monhoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_namhoc_hocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc_hocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_namhoc_hocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc_hocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_namhoc_hocphi_phieuthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc_hocphi_phieuthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_namhoc_hocphi_phieuthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc_hocphi_phieuthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_gvbm_diem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvbm_diem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|c:\\code\\qlyhsmerge\\bus\\tuitionbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|solutionrelative:bus\\tuitionbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|c:\\code\\qlyhsmerge\\dao\\tuitiondao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|solutionrelative:dao\\tuitiondao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_namhoc_hocki.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc_hocki.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|c:\\code\\qlyhsmerge\\dto\\tuitiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|solutionrelative:dto\\tuitiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|c:\\code\\qlyhsmerge\\dao\\attendancedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|solutionrelative:dao\\attendancedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|DB{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|C:\\Code\\qlyhsmerge\\db.sql||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|DB{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|solutionrelative:db.sql||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|C:\\Code\\qlyhsmerge\\dao\\studentdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|solutionrelative:dao\\studentdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|c:\\code\\qlyhsmerge\\gui\\usercontrols\\uc_hocsinh_chitietthongbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_hocsinh_chitietthongbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|c:\\code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_class_khoilop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_class_khoilop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_class_khoilop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_class_khoilop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\suahocsinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\suahocsinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\suathongbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\suathongbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|c:\\code\\qlyhsmerge\\dto\\attendancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|solutionrelative:dto\\attendancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|c:\\code\\qlyhsmerge\\dto\\academicyeardto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|solutionrelative:dto\\academicyeardto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_gvbm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvbm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_thongbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_thongbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_phancong_gvcn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_phancong_gvcn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_namhoc_tkb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc_tkb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_namhoc_hocphi_bar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc_hocphi_bar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_namhoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|c:\\code\\qlyhsmerge\\gui\\usercontrols\\uc_home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|c:\\code\\qlyhsmerge\\gui\\usercontrols\\uc_gvcn_diemdanh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvcn_diemdanh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|c:\\code\\qlyhsmerge\\gui\\usercontrols\\uc_gvcn_diemdanh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvcn_diemdanh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_gvcn_qlhs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvcn_qlhs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_gvcn_ns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvcn_ns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_gvcn_hocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvcn_hocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_hocsinh_thongbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_hocsinh_thongbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_hocsinh_thongtin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_hocsinh_thongtin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_hocsinh_chitietthongbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_hocsinh_chitietthongbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|c:\\code\\qlyhsmerge\\gui\\usercontrols\\uc_gvbm_tkb.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_hocsinh_tkb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_hocsinh_tkb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_hocsinh_hocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_hocsinh_hocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_gvbm_tkb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvbm_tkb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_gvcn.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvcn.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|c:\\code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\sidebar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\sidebar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\sidebar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\sidebar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|c:\\code\\qlyhsmerge\\gui\\usercontrols\\uc_gvcn_diemdanh.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvcn_diemdanh.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_hocsinh_diem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_hocsinh_diem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_gvbm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvbm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_gvbm_tkb.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvbm_tkb.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -55,28 +307,8 @@
       "RelativeMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|solutionrelative:dao\\timetabledao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|C:\\Code\\qlyhsmerge\\dao\\classdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|solutionrelative:dao\\classdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|c:\\code\\qlyhsmerge\\bus\\classbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|solutionrelative:bus\\classbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_gvcn_qlhs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvcn_qlhs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_gvcn_qlhs.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvcn_qlhs.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|C:\\Code\\qlyhsmerge\\dao\\dbconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|solutionrelative:dao\\dbconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|DB{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|C:\\Code\\qlyhsmerge\\db.sql||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|DB{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|solutionrelative:db.sql||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|C:\\Code\\qlyhsmerge\\bus\\studentbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -91,10 +323,6 @@
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\chitiethocsinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_phancong_gvcn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_phancong_gvcn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_gvcn_hanhkiem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvcn_hanhkiem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -105,14 +333,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_hocsinh_thongtin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_hocsinh_thongtin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_hocsinh_thongtin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_hocsinh_thongtin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_hocsinh_tkb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_hocsinh_tkb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_gvcn_hanhkiem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -135,88 +355,20 @@
       "RelativeMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|solutionrelative:dto\\semesterdurationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|C:\\Code\\qlyhsmerge\\bus\\evaluationbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|solutionrelative:bus\\evaluationbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_gvcn_hanhkiem.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvcn_hanhkiem.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_gvcn_hocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvcn_hocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|C:\\Code\\qlyhsmerge\\dao\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|solutionrelative:dao\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_class_khoilop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_class_khoilop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_class_monhoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_class_monhoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_class_phancong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_class_phancong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_namhoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_namhoc_hocki.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc_hocki.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_namhoc_hocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc_hocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_namhoc_hocphi_phieuthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc_hocphi_phieuthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_namhoc_hocphi_phieuthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc_hocphi_phieuthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_phancong_gvcn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_phancong_gvcn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_namhoc_tkb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc_tkb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_namhoc_hocphi_bar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc_hocphi_bar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_namhoc_hocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc_hocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|C:\\Code\\qlyhsmerge\\dao\\homeroomassignmentdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|solutionrelative:dao\\homeroomassignmentdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|C:\\Code\\qlyhsmerge\\bus\\userbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|solutionrelative:bus\\userbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_thongke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -239,32 +391,8 @@
       "RelativeMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|solutionrelative:dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_thongbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_thongbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_thongbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_thongbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_gvbm_diem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvbm_diem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_gvcn.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvcn.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_gvbm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvbm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_admin_namhoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -283,26 +411,6 @@
       "RelativeMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|solutionrelative:bus\\timetablebus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_gvbm_diem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvbm_diem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|C:\\Code\\qlyhsmerge\\dto\\classdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|solutionrelative:dto\\classdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\sidebar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\sidebar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\sidebar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\sidebar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_hocsinh_thongbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_hocsinh_thongbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_gvcn_thongbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvcn_thongbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -319,14 +427,6 @@
       "RelativeMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|solutionrelative:bus\\teacherbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\suathongbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\suathongbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\suahocsinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\suahocsinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\chitiethocsinh.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\chitiethocsinh.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -339,16 +439,8 @@
       "RelativeMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|solutionrelative:dto\\studentprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_gvcn_ns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvcn_ns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_gvcn_ds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_gvcn_ds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Code\\qlyhsmerge\\packages\\EPPlus.8.3.1\\readme.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -375,10 +467,6 @@
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_hocsinh_hocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_hocsinh_hocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_hocsinh_hocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_hocsinh_hocphi.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_hocsinh_hocphi.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -395,10 +483,6 @@
       "RelativeMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|solutionrelative:dto\\subjectscoredtocs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|C:\\Code\\qlyhsmerge\\dto\\subjectdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F61EA1CE-E116-47AC-AB8B-92579E06BC94}|DTO\\DTO.csproj|solutionrelative:dto\\subjectdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|C:\\Code\\qlyhsmerge\\gui\\usercontrols\\uc_hocsinh_tkb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_hocsinh_tkb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -410,129 +494,91 @@
       "DocumentGroups": [
         {
           "DockedWidth": 370,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "UC_HocSinh_ThongTin.cs",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_ThongTin.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_ThongTin.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_ThongTin.cs",
-              "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_ThongTin.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwDQAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T13:29:44.402Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "StudentDAO.cs",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DAO\\StudentDAO.cs",
-              "RelativeDocumentMoniker": "DAO\\StudentDAO.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\DAO\\StudentDAO.cs",
-              "RelativeToolTip": "DAO\\StudentDAO.cs",
-              "ViewState": "AgIAAGUCAAAAAAAAAAAkwHECAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T13:36:35.335Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "StudentBUS.cs",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\BUS\\StudentBUS.cs",
-              "RelativeDocumentMoniker": "BUS\\StudentBUS.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\BUS\\StudentBUS.cs",
-              "RelativeToolTip": "BUS\\StudentBUS.cs",
-              "ViewState": "AgIAAIEAAAAAAAAAAAAgwJ8AAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T13:32:56.963Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "UC_GVCN_QLHS.cs",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_QLHS.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN_QLHS.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_QLHS.cs",
-              "RelativeToolTip": "GUI\\UserControls\\UC_GVCN_QLHS.cs",
-              "ViewState": "AgIAAEwCAAAAAAAAAAAqwGMCAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T14:47:06.991Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 20,
-              "Title": "ChiTietHocSinh.cs",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\ChiTietHocSinh.cs",
-              "RelativeDocumentMoniker": "GUI\\ChiTietHocSinh.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\ChiTietHocSinh.cs",
-              "RelativeToolTip": "GUI\\ChiTietHocSinh.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Title": "UC_Admin_Class_Monhoc.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Class_Monhoc.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_Class_Monhoc.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Class_Monhoc.cs",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_Class_Monhoc.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T00:30:52.361Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "TimetableDAO.cs",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DAO\\TimetableDAO.cs",
-              "RelativeDocumentMoniker": "DAO\\TimetableDAO.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\DAO\\TimetableDAO.cs",
-              "RelativeToolTip": "DAO\\TimetableDAO.cs",
-              "ViewState": "AgIAAIIBAAAAAAAAAAAAAIoBAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T12:38:39.826Z",
+              "WhenOpened": "2025-12-08T02:07:59.201Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "UC_GVBM_TKB.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVBM_TKB.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVBM_TKB.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVBM_TKB.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_GVBM_TKB.cs [Design]",
+              "Title": "subjectDAO.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DAO\\subjectDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\subjectDAO.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\DAO\\subjectDAO.cs",
+              "RelativeToolTip": "DAO\\subjectDAO.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAzwEMAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T05:25:20.96Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UC_GVBM_TKB.cs",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVBM_TKB.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVBM_TKB.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVBM_TKB.cs",
-              "RelativeToolTip": "GUI\\UserControls\\UC_GVBM_TKB.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAH8AAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T15:22:24.21Z",
+              "WhenOpened": "2025-12-08T02:23:20.253Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainForm.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\MainForm.cs",
-              "RelativeDocumentMoniker": "GUI\\MainForm.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\MainForm.cs [Design]",
-              "RelativeToolTip": "GUI\\MainForm.cs [Design]",
+              "DocumentIndex": 4,
+              "Title": "subjectDTO.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DTO\\subjectDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\subjectDTO.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\DTO\\subjectDTO.cs",
+              "RelativeToolTip": "DTO\\subjectDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T12:33:44.408Z",
+              "WhenOpened": "2025-12-06T13:11:01.181Z",
               "IsPinned": true,
-              "EditorCaption": " [Design]"
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ClassDTO.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DTO\\ClassDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\ClassDTO.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\DTO\\ClassDTO.cs",
+              "RelativeToolTip": "DTO\\ClassDTO.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAA6wAkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T05:15:07.841Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "GradeDTO.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DTO\\GradeDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\GradeDTO.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\DTO\\GradeDTO.cs",
+              "RelativeToolTip": "DTO\\GradeDTO.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T02:54:38.002Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\BUS\\App.config",
+              "RelativeDocumentMoniker": "BUS\\App.config",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\BUS\\App.config",
+              "RelativeToolTip": "BUS\\App.config",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAACcAAADGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-12-08T03:18:11.664Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -548,7 +594,874 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "UserBUS.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\BUS\\UserBUS.cs",
+              "RelativeDocumentMoniker": "BUS\\UserBUS.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\BUS\\UserBUS.cs",
+              "RelativeToolTip": "BUS\\UserBUS.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T14:08:37.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserDAO.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DAO\\UserDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\UserDAO.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\DAO\\UserDAO.cs",
+              "RelativeToolTip": "DAO\\UserDAO.cs",
+              "ViewState": "AgIAAFoBAAAAAAAAAAAAAGsBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T14:09:20.885Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UC_GVBM_Diem.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVBM_Diem.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVBM_Diem.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVBM_Diem.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_GVBM_Diem.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T13:05:39.665Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ClassDAO.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DAO\\ClassDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\ClassDAO.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\DAO\\ClassDAO.cs",
+              "RelativeToolTip": "DAO\\ClassDAO.cs",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAYwIoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T02:43:36.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SchoolDbContext.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DTO\\SchoolDbContext.cs",
+              "RelativeDocumentMoniker": "DTO\\SchoolDbContext.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\DTO\\SchoolDbContext.cs",
+              "RelativeToolTip": "DTO\\SchoolDbContext.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAA+wAsAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T03:04:24.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UC_Admin_PhanCong_gvcn.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_PhanCong_gvcn.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_PhanCong_gvcn.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_PhanCong_gvcn.cs",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_PhanCong_gvcn.cs",
+              "ViewState": "AgIAAB4BAAAAAAAAAAAUwCgBAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T09:37:07.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UC_HocSinh_ChiTietThongBao.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.cs",
+              "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAIwAwAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T15:37:14.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UC_GVBM_TKB.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVBM_TKB.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVBM_TKB.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVBM_TKB.cs",
+              "RelativeToolTip": "GUI\\UserControls\\UC_GVBM_TKB.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T15:22:24.21Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AttendanceBUS.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\BUS\\AttendanceBUS.cs",
+              "RelativeDocumentMoniker": "BUS\\AttendanceBUS.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\BUS\\AttendanceBUS.cs",
+              "RelativeToolTip": "BUS\\AttendanceBUS.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T21:52:46.321Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Class.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DTO\\Class.cs",
+              "RelativeDocumentMoniker": "DTO\\Class.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\DTO\\Class.cs",
+              "RelativeToolTip": "DTO\\Class.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAkwA0AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T02:59:42.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "GradeLevel.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DTO\\GradeLevel.cs",
+              "RelativeDocumentMoniker": "DTO\\GradeLevel.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\DTO\\GradeLevel.cs",
+              "RelativeToolTip": "DTO\\GradeLevel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T03:00:19.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "NotificationDTO.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DTO\\NotificationDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\NotificationDTO.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\DTO\\NotificationDTO.cs",
+              "RelativeToolTip": "DTO\\NotificationDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T03:21:27.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "EvaluationBUS.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\BUS\\EvaluationBUS.cs",
+              "RelativeDocumentMoniker": "BUS\\EvaluationBUS.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\BUS\\EvaluationBUS.cs",
+              "RelativeToolTip": "BUS\\EvaluationBUS.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAUwDYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T12:03:45.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "DBconnect.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DAO\\DBconnect.cs",
+              "RelativeDocumentMoniker": "DAO\\DBconnect.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\DAO\\DBconnect.cs",
+              "RelativeToolTip": "DAO\\DBconnect.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAgwFIAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T12:36:18.419Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "subject.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\BUS\\subject.cs",
+              "RelativeDocumentMoniker": "BUS\\subject.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\BUS\\subject.cs",
+              "RelativeToolTip": "BUS\\subject.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwA8AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T02:23:12.347Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "UC_Admin_ThongBao.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_ThongBao.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_ThongBao.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_ThongBao.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_ThongBao.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T05:25:50.925Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "UC_Admin_NamHoc_HocPhi.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi.cs",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi.cs",
+              "ViewState": "AgIAAAABAAAAAAAAAAAAAAcBAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T09:36:14.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "UC_GVBM_Diem.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVBM_Diem.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVBM_Diem.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVBM_Diem.cs",
+              "RelativeToolTip": "GUI\\UserControls\\UC_GVBM_Diem.cs",
+              "ViewState": "AgIAAKMBAAAAAAAAAAA9wLMBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T13:05:42.266Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "UC_Admin_NamHoc_HocPhi.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T13:20:44.327Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "TuitionDAO.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DAO\\TuitionDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\TuitionDAO.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\DAO\\TuitionDAO.cs",
+              "RelativeToolTip": "DAO\\TuitionDAO.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAAGQAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T00:40:47.326Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "UC_Admin_NamHoc_HocPhi_PhieuThu.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T05:15:41.622Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "TuitionBUS.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\BUS\\TuitionBUS.cs",
+              "RelativeDocumentMoniker": "BUS\\TuitionBUS.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\BUS\\TuitionBUS.cs",
+              "RelativeToolTip": "BUS\\TuitionBUS.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAvwDoAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T22:51:32.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "UC_Admin_ThongBao.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_ThongBao.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_ThongBao.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_ThongBao.cs",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_ThongBao.cs",
+              "ViewState": "AgIAAN8AAAAAAAAAAAAAAO4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T06:22:31.78Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "UC_Admin_NamHoc_HocPhi_PhieuThu.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs",
+              "ViewState": "AgIAAOUAAAAAAAAAAADwv+EAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T09:42:32.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "UC_Admin_Namhoc_HocKi.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Namhoc_HocKi.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_Namhoc_HocKi.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Namhoc_HocKi.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_Namhoc_HocKi.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T06:09:23.014Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "UC_Admin_Class_Monhoc.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Class_Monhoc.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_Class_Monhoc.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Class_Monhoc.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_Class_Monhoc.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T06:16:36.183Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "AttendanceDAO.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DAO\\AttendanceDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\AttendanceDAO.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\DAO\\AttendanceDAO.cs",
+              "RelativeToolTip": "DAO\\AttendanceDAO.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAqwFAAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T21:53:18.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "TuitionDTO.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DTO\\TuitionDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\TuitionDTO.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\DTO\\TuitionDTO.cs",
+              "RelativeToolTip": "DTO\\TuitionDTO.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAA6wBsAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T00:58:02.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "UC_GVCN_DiemDanh.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_DiemDanh.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN_DiemDanh.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_DiemDanh.cs",
+              "RelativeToolTip": "GUI\\UserControls\\UC_GVCN_DiemDanh.cs",
+              "ViewState": "AgIAAC8BAAAAAAAAAAAIwHIBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T21:49:51.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "UC_Admin_User.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_User.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_User.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_User.cs",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_User.cs",
+              "ViewState": "AgIAAPUAAAAAAAAAAAAmwP4AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T22:04:15.374Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "UC_Admin_User.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_User.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_User.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_User.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_User.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T06:12:11.548Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 77,
+              "Title": "StudentBUS.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\BUS\\StudentBUS.cs",
+              "RelativeDocumentMoniker": "BUS\\StudentBUS.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\BUS\\StudentBUS.cs",
+              "RelativeToolTip": "BUS\\StudentBUS.cs",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAgwJ8AAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T13:32:56.963Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "StudentDAO.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DAO\\StudentDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\StudentDAO.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\DAO\\StudentDAO.cs",
+              "RelativeToolTip": "DAO\\StudentDAO.cs",
+              "ViewState": "AgIAABgBAAAAAAAAAAAqwJQAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T13:36:35.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "db.sql",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\db.sql",
+              "RelativeDocumentMoniker": "db.sql",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\db.sql",
+              "RelativeToolTip": "db.sql",
+              "ViewState": "AgIAAIMBAAAAAAAAAAAYwI4BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-12-07T10:22:42.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "UC_Admin_Class_KhoiLop.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Class_KhoiLop.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_Class_KhoiLop.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Class_KhoiLop.cs",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_Class_KhoiLop.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T22:55:24.533Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "SuaThongBao.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\SuaThongBao.cs",
+              "RelativeDocumentMoniker": "GUI\\SuaThongBao.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\SuaThongBao.cs [Design]",
+              "RelativeToolTip": "GUI\\SuaThongBao.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T00:34:17.809Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "UC_Admin_Student.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Student.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_Student.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Student.cs",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_Student.cs",
+              "ViewState": "AgIAALgAAAAAAAAAAAAcwMQAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T09:41:21.388Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "SuaHocSinh.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\SuaHocSinh.cs",
+              "RelativeDocumentMoniker": "GUI\\SuaHocSinh.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\SuaHocSinh.cs [Design]",
+              "RelativeToolTip": "GUI\\SuaHocSinh.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T00:34:16.253Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "UC_Admin_Class_KhoiLop.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Class_KhoiLop.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_Class_KhoiLop.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Class_KhoiLop.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_Class_KhoiLop.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T06:07:44.24Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "AttendanceDTO.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DTO\\AttendanceDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\AttendanceDTO.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\DTO\\AttendanceDTO.cs",
+              "RelativeToolTip": "DTO\\AttendanceDTO.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAswBAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T21:54:07.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "AcademicYearDTO.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DTO\\AcademicYearDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\AcademicYearDTO.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\DTO\\AcademicYearDTO.cs",
+              "RelativeToolTip": "DTO\\AcademicYearDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T22:51:10.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "UC_GVBM.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVBM.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVBM.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVBM.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_GVBM.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T06:14:07.213Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "UC_Admin_NamHoc_HocPhi_Bar.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_Bar.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_Bar.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_Bar.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_Bar.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T06:10:01.573Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "UC_Admin_PhanCong_gvcn.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_PhanCong_gvcn.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_PhanCong_gvcn.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_PhanCong_gvcn.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_PhanCong_gvcn.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T05:25:54.371Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "UC_Admin_NamHoc_TKB.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_NamHoc_TKB.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_NamHoc_TKB.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_NamHoc_TKB.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_NamHoc_TKB.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T05:15:42.482Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "UC_Admin_Namhoc.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Namhoc.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_Namhoc.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Namhoc.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_Namhoc.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T05:15:22.556Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "UC_Admin_Class.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Class.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_Class.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Class.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_Class.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T05:15:20.58Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "UC_Home.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Home.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Home.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Home.cs",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Home.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T22:32:26.406Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "UC_GVCN_DiemDanh.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_DiemDanh.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN_DiemDanh.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_DiemDanh.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_GVCN_DiemDanh.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T21:49:39.044Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "UC_GVCN_HocPhi.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_HocPhi.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN_HocPhi.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_HocPhi.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_GVCN_HocPhi.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T06:20:47.356Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "UC_GVCN_NS.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_NS.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN_NS.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_NS.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_GVCN_NS.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T14:57:47.513Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "UC_Home.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Home.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Home.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Home.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Home.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T14:54:42.416Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "UC_GVCN_QLHS.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_QLHS.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN_QLHS.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_QLHS.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_GVCN_QLHS.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T14:46:51.936Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "UC_HocSinh_ThongBao.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_ThongBao.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_ThongBao.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_ThongBao.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_ThongBao.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T13:20:47.849Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "UC_HocSinh_ThongTin.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_ThongTin.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_ThongTin.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_ThongTin.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_ThongTin.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T13:29:13.073Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "UC_HocSinh_ChiTietThongBao.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T13:28:43.063Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "UC_HocSinh_TKB.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_TKB.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_TKB.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_TKB.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_TKB.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T12:36:56.507Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "UC_HocSinh_HocPhi.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_HocPhi.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_HocPhi.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_HocPhi.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_HocPhi.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T13:20:49.584Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "UC_GVBM_TKB.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVBM_TKB.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVBM_TKB.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVBM_TKB.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_GVBM_TKB.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T05:25:20.96Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "UC_GVCN.resx",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN.resx",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN.resx",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN.resx",
+              "RelativeToolTip": "GUI\\UserControls\\UC_GVCN.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-12-07T06:16:15.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "MainForm.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\MainForm.cs",
+              "RelativeDocumentMoniker": "GUI\\MainForm.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\MainForm.cs [Design]",
+              "RelativeToolTip": "GUI\\MainForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T12:33:44.408Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "Sidebar.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\Sidebar.cs",
+              "RelativeDocumentMoniker": "GUI\\Sidebar.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\Sidebar.cs",
+              "RelativeToolTip": "GUI\\Sidebar.cs",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAAwH0AAAB1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T13:48:34.374Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\MainForm.cs",
+              "RelativeDocumentMoniker": "GUI\\MainForm.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\MainForm.cs",
+              "RelativeToolTip": "GUI\\MainForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T12:33:46.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "Sidebar.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\Sidebar.cs",
+              "RelativeDocumentMoniker": "GUI\\Sidebar.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\Sidebar.cs [Design]",
+              "RelativeToolTip": "GUI\\Sidebar.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T13:48:32.907Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "UC_GVCN_QLHS.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_QLHS.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN_QLHS.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_QLHS.cs",
+              "RelativeToolTip": "GUI\\UserControls\\UC_GVCN_QLHS.cs",
+              "ViewState": "AgIAAEwCAAAAAAAAAAAqwGMCAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T14:47:06.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 78,
+              "Title": "ChiTietHocSinh.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\ChiTietHocSinh.cs",
+              "RelativeDocumentMoniker": "GUI\\ChiTietHocSinh.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\ChiTietHocSinh.cs",
+              "RelativeToolTip": "GUI\\ChiTietHocSinh.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T00:30:52.361Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 75,
+              "Title": "TimetableDAO.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DAO\\TimetableDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\TimetableDAO.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\DAO\\TimetableDAO.cs",
+              "RelativeToolTip": "DAO\\TimetableDAO.cs",
+              "ViewState": "AgIAAIIBAAAAAAAAAAAAAIoBAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T12:38:39.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "UC_HocSinh_ThongTin.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_ThongTin.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_ThongTin.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_ThongTin.cs",
+              "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_ThongTin.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwDQAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T13:29:44.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "UC_GVCN_DiemDanh.Designer.cs",
+              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_DiemDanh.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN_DiemDanh.Designer.cs",
+              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_DiemDanh.Designer.cs",
+              "RelativeToolTip": "GUI\\UserControls\\UC_GVCN_DiemDanh.Designer.cs",
+              "ViewState": "AgIAADUCAAAAAAAAAAAowFECAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T21:50:03.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
               "Title": "UC_HocSinh_Diem.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_Diem.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_Diem.cs",
@@ -561,59 +1474,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UC_HocSinh_ChiTietThongBao.cs",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.cs",
-              "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T15:37:14.427Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ClassDAO.cs",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DAO\\ClassDAO.cs",
-              "RelativeDocumentMoniker": "DAO\\ClassDAO.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\DAO\\ClassDAO.cs",
-              "RelativeToolTip": "DAO\\ClassDAO.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAADkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T01:32:54.849Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "DBconnect.cs",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DAO\\DBconnect.cs",
-              "RelativeDocumentMoniker": "DAO\\DBconnect.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\DAO\\DBconnect.cs",
-              "RelativeToolTip": "DAO\\DBconnect.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAwB8AAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T12:36:18.419Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainForm.cs",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\MainForm.cs",
-              "RelativeDocumentMoniker": "GUI\\MainForm.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\MainForm.cs",
-              "RelativeToolTip": "GUI\\MainForm.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAQwGQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T12:33:46.331Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 71,
               "Title": "UC_GVBM.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVBM.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVBM.cs",
@@ -626,20 +1487,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ClassBUS.cs",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\BUS\\ClassBUS.cs",
-              "RelativeDocumentMoniker": "BUS\\ClassBUS.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\BUS\\ClassBUS.cs",
-              "RelativeToolTip": "BUS\\ClassBUS.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T15:13:58.915Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 76,
               "Title": "UC_GVCN_QLHS.Designer.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_QLHS.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN_QLHS.Designer.cs",
@@ -652,32 +1500,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UC_HocSinh_ChiTietThongBao.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_ChiTietThongBao.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T13:28:43.063Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "db.sql",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\db.sql",
-              "RelativeDocumentMoniker": "db.sql",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\db.sql",
-              "RelativeToolTip": "db.sql",
-              "ViewState": "AgIAAEoBAAAAAAAAAAAYwGIBAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-12-07T10:22:42.691Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 72,
               "Title": "UC_GVBM_TKB.Designer.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVBM_TKB.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVBM_TKB.Designer.cs",
@@ -690,64 +1513,43 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "UC_GVCN_QLHS.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_QLHS.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN_QLHS.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_QLHS.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_GVCN_QLHS.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T14:46:51.936Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "UC_Admin_PhanCong_gvcn.cs",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_PhanCong_gvcn.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_PhanCong_gvcn.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_PhanCong_gvcn.cs",
-              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_PhanCong_gvcn.cs",
-              "ViewState": "AgIAAB4BAAAAAAAAAAAiwCgBAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T09:37:07.52Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 79,
               "Title": "ChiTietHocSinh.cs [Design]",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\ChiTietHocSinh.cs",
               "RelativeDocumentMoniker": "GUI\\ChiTietHocSinh.cs",
               "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\ChiTietHocSinh.cs [Design]",
               "RelativeToolTip": "GUI\\ChiTietHocSinh.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T00:30:30.058Z"
+              "WhenOpened": "2025-12-07T00:30:30.058Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 80,
               "Title": "UC_GVCN_HanhKiem.cs [Design]",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_HanhKiem.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN_HanhKiem.cs",
               "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_HanhKiem.cs [Design]",
               "RelativeToolTip": "GUI\\UserControls\\UC_GVCN_HanhKiem.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T14:37:49.077Z"
+              "WhenOpened": "2025-12-06T14:37:49.077Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 81,
               "Title": "UC_GVCN_DS.cs [Design]",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_DS.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN_DS.cs",
               "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_DS.cs [Design]",
               "RelativeToolTip": "GUI\\UserControls\\UC_GVCN_DS.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T14:37:46.963Z"
+              "WhenOpened": "2025-12-06T14:37:46.963Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 82,
               "Title": "UC_HocSinh_ThongTin.Designer.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_ThongTin.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_ThongTin.Designer.cs",
@@ -760,7 +1562,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 83,
               "Title": "UC_GVCN_HanhKiem.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_HanhKiem.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN_HanhKiem.cs",
@@ -768,11 +1570,12 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_GVCN_HanhKiem.cs",
               "ViewState": "AgIAALEAAAAAAAAAAAAqwL0AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T15:32:56.931Z"
+              "WhenOpened": "2025-12-06T15:32:56.931Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 84,
               "Title": "XetHanhKiem.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\XetHanhKiem.cs",
               "RelativeDocumentMoniker": "GUI\\XetHanhKiem.cs",
@@ -780,11 +1583,12 @@
               "RelativeToolTip": "GUI\\XetHanhKiem.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAQwHUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T11:59:47.39Z"
+              "WhenOpened": "2025-12-07T11:59:47.39Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 86,
               "Title": "EvaluationDAO.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DAO\\EvaluationDAO.cs",
               "RelativeDocumentMoniker": "DAO\\EvaluationDAO.cs",
@@ -792,11 +1596,12 @@
               "RelativeToolTip": "DAO\\EvaluationDAO.cs",
               "ViewState": "AgIAAFUAAAAAAAAAAAAwwF4AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T12:03:42.245Z"
+              "WhenOpened": "2025-12-07T12:03:42.245Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 92,
               "Title": "UC_Admin_ThongKe.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_ThongKe.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_ThongKe.cs",
@@ -804,69 +1609,24 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_Admin_ThongKe.cs",
               "ViewState": "AgIAADQAAAAAAAAAAAAiwDsAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T06:30:09.845Z"
+              "WhenOpened": "2025-12-07T06:30:09.845Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "UserDAO.cs",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DAO\\UserDAO.cs",
-              "RelativeDocumentMoniker": "DAO\\UserDAO.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\DAO\\UserDAO.cs",
-              "RelativeToolTip": "DAO\\UserDAO.cs",
-              "ViewState": "AgIAAK0AAAAAAAAAAAAAwLYAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T14:09:20.885Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "UC_HocSinh_TKB.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_TKB.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_TKB.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_TKB.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_TKB.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T12:36:56.507Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "UC_HocSinh_ThongTin.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_ThongTin.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_ThongTin.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_ThongTin.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_ThongTin.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T13:29:13.073Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 85,
               "Title": "XetHanhKiem.cs [Design]",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\XetHanhKiem.cs",
               "RelativeDocumentMoniker": "GUI\\XetHanhKiem.cs",
               "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\XetHanhKiem.cs [Design]",
               "RelativeToolTip": "GUI\\XetHanhKiem.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T11:59:45.808Z"
+              "WhenOpened": "2025-12-07T11:59:45.808Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "EvaluationBUS.cs",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\BUS\\EvaluationBUS.cs",
-              "RelativeDocumentMoniker": "BUS\\EvaluationBUS.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\BUS\\EvaluationBUS.cs",
-              "RelativeToolTip": "BUS\\EvaluationBUS.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAUwDYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T12:03:45.127Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 87,
               "Title": "SemesterDurationDTO.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DTO\\SemesterDurationDTO.cs",
               "RelativeDocumentMoniker": "DTO\\SemesterDurationDTO.cs",
@@ -874,11 +1634,12 @@
               "RelativeToolTip": "DTO\\SemesterDurationDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T12:05:22.514Z"
+              "WhenOpened": "2025-12-07T12:05:22.514Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 88,
               "Title": "UC_GVCN_HanhKiem.Designer.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_HanhKiem.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN_HanhKiem.Designer.cs",
@@ -886,202 +1647,36 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_GVCN_HanhKiem.Designer.cs",
               "ViewState": "AgIAAP0AAAAAAAAAAAAUwIABAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T15:33:14.281Z"
+              "WhenOpened": "2025-12-06T15:33:14.281Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "UC_GVCN_HocPhi.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_HocPhi.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN_HocPhi.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_HocPhi.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_GVCN_HocPhi.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T06:20:47.356Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "UC_Admin_Student.cs",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Student.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_Student.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Student.cs",
-              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_Student.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAiwBwAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T09:41:21.388Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 89,
               "Title": "UC_Admin_Student.cs [Design]",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Student.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_Student.cs",
               "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Student.cs [Design]",
               "RelativeToolTip": "GUI\\UserControls\\UC_Admin_Student.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T05:25:52.016Z"
+              "WhenOpened": "2025-12-07T05:25:52.016Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
-              "Title": "UC_Admin_NamHoc_HocPhi.cs",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi.cs",
-              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi.cs",
-              "ViewState": "AgIAAKUAAAAAAAAAAAAIwAkAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T09:36:14.397Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 53,
-              "Title": "UserBUS.cs",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\BUS\\UserBUS.cs",
-              "RelativeDocumentMoniker": "BUS\\UserBUS.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\BUS\\UserBUS.cs",
-              "RelativeToolTip": "BUS\\UserBUS.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAiwGcAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T14:08:37.046Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "UC_Admin_Class.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Class.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_Class.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Class.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_Class.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T05:15:20.58Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "UC_Admin_Class_KhoiLop.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Class_KhoiLop.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_Class_KhoiLop.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Class_KhoiLop.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_Class_KhoiLop.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T06:07:44.24Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "UC_Admin_Class_Monhoc.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Class_Monhoc.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_Class_Monhoc.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Class_Monhoc.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_Class_Monhoc.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T06:16:36.183Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 90,
               "Title": "UC_Admin_Class_Phancong.cs [Design]",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Class_Phancong.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_Class_Phancong.cs",
               "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Class_Phancong.cs [Design]",
               "RelativeToolTip": "GUI\\UserControls\\UC_Admin_Class_Phancong.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T05:15:45.472Z"
+              "WhenOpened": "2025-12-07T05:15:45.472Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "UC_Admin_Namhoc.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Namhoc.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_Namhoc.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Namhoc.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_Namhoc.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T05:15:22.556Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "UC_Admin_Namhoc_HocKi.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Namhoc_HocKi.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_Namhoc_HocKi.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Namhoc_HocKi.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_Namhoc_HocKi.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T06:09:23.014Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "UC_Admin_NamHoc_HocPhi.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T13:20:44.327Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "UC_Admin_NamHoc_HocPhi_PhieuThu.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T05:15:41.622Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "UC_Admin_NamHoc_HocPhi_PhieuThu.cs",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs",
-              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs",
-              "ViewState": "AgIAAFwBAAAAAAAAAAAUwG4BAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T09:42:32.829Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "UC_Admin_PhanCong_gvcn.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_PhanCong_gvcn.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_PhanCong_gvcn.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_PhanCong_gvcn.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_PhanCong_gvcn.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T05:25:54.371Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "UC_Admin_NamHoc_TKB.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_NamHoc_TKB.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_NamHoc_TKB.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_NamHoc_TKB.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_NamHoc_TKB.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T05:15:42.482Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
-              "Title": "UC_Admin_NamHoc_HocPhi_Bar.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_Bar.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_Bar.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_Bar.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_Bar.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T06:10:01.573Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 91,
               "Title": "HomeroomAssignmentDAO.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DAO\\HomeroomAssignmentDAO.cs",
               "RelativeDocumentMoniker": "DAO\\HomeroomAssignmentDAO.cs",
@@ -1089,22 +1684,24 @@
               "RelativeToolTip": "DAO\\HomeroomAssignmentDAO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T09:35:34.932Z"
+              "WhenOpened": "2025-12-07T09:35:34.932Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 94,
               "Title": "UC_Admin_ThongKe.cs [Design]",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_ThongKe.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_ThongKe.cs",
               "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_ThongKe.cs [Design]",
               "RelativeToolTip": "GUI\\UserControls\\UC_Admin_ThongKe.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T05:47:11.303Z"
+              "WhenOpened": "2025-12-07T05:47:11.303Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 93,
               "Title": "UC_Admin_ThongKe.Designer.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_ThongKe.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_ThongKe.Designer.cs",
@@ -1112,11 +1709,12 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_Admin_ThongKe.Designer.cs",
               "ViewState": "AgIAAF4AAAAAAAAAAAAEwGgAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T06:30:22.207Z"
+              "WhenOpened": "2025-12-07T06:30:22.207Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 95,
               "Title": "StudentDTO.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DTO\\StudentDTO.cs",
               "RelativeDocumentMoniker": "DTO\\StudentDTO.cs",
@@ -1124,11 +1722,12 @@
               "RelativeToolTip": "DTO\\StudentDTO.cs",
               "ViewState": "AgIAADQAAAAAAAAAAAAAADoAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T15:26:33.256Z"
+              "WhenOpened": "2025-12-06T15:26:33.256Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 96,
               "Title": "UserDTO.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DTO\\UserDTO.cs",
               "RelativeDocumentMoniker": "DTO\\UserDTO.cs",
@@ -1136,11 +1735,12 @@
               "RelativeToolTip": "DTO\\UserDTO.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAA5wBIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T15:25:48.478Z"
+              "WhenOpened": "2025-12-06T15:25:48.478Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 99,
               "Title": "UC_Admin_Class_Phancong.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Class_Phancong.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_Class_Phancong.cs",
@@ -1148,11 +1748,12 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_Admin_Class_Phancong.cs",
               "ViewState": "AgIAAHIBAAAAAAAAAAAAAHwBAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T05:33:08.317Z"
+              "WhenOpened": "2025-12-07T05:33:08.317Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 100,
               "Title": "TeacherAssignmentDAO.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DAO\\TeacherAssignmentDAO.cs",
               "RelativeDocumentMoniker": "DAO\\TeacherAssignmentDAO.cs",
@@ -1160,91 +1761,24 @@
               "RelativeToolTip": "DAO\\TeacherAssignmentDAO.cs",
               "ViewState": "AgIAAG8AAAAAAAAAAAAqwIQAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T05:33:25.695Z"
+              "WhenOpened": "2025-12-07T05:33:25.695Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
-              "Title": "UC_Admin_ThongBao.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_ThongBao.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_ThongBao.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_ThongBao.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_ThongBao.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T05:25:50.925Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 97,
               "Title": "Login.cs [Design]",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\Login.cs",
               "RelativeDocumentMoniker": "GUI\\Login.cs",
               "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\Login.cs [Design]",
               "RelativeToolTip": "GUI\\Login.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T05:14:00.755Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 61,
-              "Title": "UC_Admin_ThongBao.cs",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_ThongBao.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_ThongBao.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_ThongBao.cs",
-              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_ThongBao.cs",
-              "ViewState": "AgIAAKYAAAAAAAAAAAAMwLYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T06:22:31.78Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 62,
-              "Title": "UC_Admin_User.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_User.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_User.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_User.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_User.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T06:12:11.548Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 63,
-              "Title": "UC_GVBM_Diem.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVBM_Diem.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVBM_Diem.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVBM_Diem.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_GVBM_Diem.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T13:05:39.665Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 64,
-              "Title": "UC_GVCN.resx",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN.resx",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN.resx",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN.resx",
-              "RelativeToolTip": "GUI\\UserControls\\UC_GVCN.resx",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-12-07T06:16:15.317Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 65,
-              "Title": "UC_GVBM.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVBM.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVBM.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVBM.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_GVBM.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T06:14:07.213Z",
+              "WhenOpened": "2025-12-07T05:14:00.755Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 98,
               "Title": "UC_Admin_Namhoc.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Admin_Namhoc.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_Namhoc.cs",
@@ -1252,11 +1786,12 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_Admin_Namhoc.cs",
               "ViewState": "AgIAACUAAAAAAAAAAAApwC0AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T05:46:06.148Z"
+              "WhenOpened": "2025-12-07T05:46:06.148Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 101,
               "Title": "TimetableBUS.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\BUS\\TimetableBUS.cs",
               "RelativeDocumentMoniker": "BUS\\TimetableBUS.cs",
@@ -1264,34 +1799,12 @@
               "RelativeToolTip": "BUS\\TimetableBUS.cs",
               "ViewState": "AgIAAHEAAAAAAAAAAAAUwIUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T12:37:57.964Z"
+              "WhenOpened": "2025-12-06T12:37:57.964Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
-              "Title": "Sidebar.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\Sidebar.cs",
-              "RelativeDocumentMoniker": "GUI\\Sidebar.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\Sidebar.cs [Design]",
-              "RelativeToolTip": "GUI\\Sidebar.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T13:48:32.907Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 73,
-              "Title": "Sidebar.cs",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\Sidebar.cs",
-              "RelativeDocumentMoniker": "GUI\\Sidebar.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\Sidebar.cs",
-              "RelativeToolTip": "GUI\\Sidebar.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAwHkAAAB7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T13:48:34.374Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 102,
               "Title": "UC_GVCN_ThongBao.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_ThongBao.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN_ThongBao.cs",
@@ -1299,57 +1812,24 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_GVCN_ThongBao.cs",
               "ViewState": "AgIAAAUBAAAAAAAAAAA1wBkBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T02:37:56.871Z"
+              "WhenOpened": "2025-12-07T02:37:56.871Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
-              "Title": "UC_GVBM_Diem.cs",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVBM_Diem.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVBM_Diem.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVBM_Diem.cs",
-              "RelativeToolTip": "GUI\\UserControls\\UC_GVBM_Diem.cs",
-              "ViewState": "AgIAAPsAAAAAAAAAAAAEwAUBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T13:05:42.266Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 71,
-              "Title": "ClassDTO.cs",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DTO\\ClassDTO.cs",
-              "RelativeDocumentMoniker": "DTO\\ClassDTO.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\DTO\\ClassDTO.cs",
-              "RelativeToolTip": "DTO\\ClassDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T05:15:07.841Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 74,
-              "Title": "UC_HocSinh_ThongBao.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_ThongBao.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_ThongBao.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_ThongBao.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_ThongBao.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T13:20:47.849Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 103,
               "Title": "UC_GVCN_ThongBao.cs [Design]",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_ThongBao.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN_ThongBao.cs",
               "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_ThongBao.cs [Design]",
               "RelativeToolTip": "GUI\\UserControls\\UC_GVCN_ThongBao.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T13:28:44.148Z"
+              "WhenOpened": "2025-12-06T13:28:44.148Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 104,
               "Title": "TeacherDAO.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DAO\\TeacherDAO.cs",
               "RelativeDocumentMoniker": "DAO\\TeacherDAO.cs",
@@ -1357,11 +1837,12 @@
               "RelativeToolTip": "DAO\\TeacherDAO.cs",
               "ViewState": "AgIAAC4AAAAAAAAAAAAcwDYAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T01:32:58.039Z"
+              "WhenOpened": "2025-12-07T01:32:58.039Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 105,
               "Title": "TeacherBUS.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\BUS\\TeacherBUS.cs",
               "RelativeDocumentMoniker": "BUS\\TeacherBUS.cs",
@@ -1369,33 +1850,12 @@
               "RelativeToolTip": "BUS\\TeacherBUS.cs",
               "ViewState": "AgIAABkAAAAAAAAAAAA7wCUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T01:32:48.706Z"
+              "WhenOpened": "2025-12-07T01:32:48.706Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
-              "Title": "SuaThongBao.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\SuaThongBao.cs",
-              "RelativeDocumentMoniker": "GUI\\SuaThongBao.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\SuaThongBao.cs [Design]",
-              "RelativeToolTip": "GUI\\SuaThongBao.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T00:34:17.809Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 80,
-              "Title": "SuaHocSinh.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\SuaHocSinh.cs",
-              "RelativeDocumentMoniker": "GUI\\SuaHocSinh.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\SuaHocSinh.cs [Design]",
-              "RelativeToolTip": "GUI\\SuaHocSinh.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T00:34:16.253Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 81,
+              "DocumentIndex": 106,
               "Title": "ChiTietHocSinh.Designer.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\ChiTietHocSinh.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\ChiTietHocSinh.Designer.cs",
@@ -1403,11 +1863,12 @@
               "RelativeToolTip": "GUI\\ChiTietHocSinh.Designer.cs",
               "ViewState": "AgIAAGEDAAAAAAAAAAAqwHIDAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T00:31:05.483Z"
+              "WhenOpened": "2025-12-07T00:31:05.483Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 107,
               "Title": "StudentEvaluationDTO.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DTO\\StudentEvaluationDTO.cs",
               "RelativeDocumentMoniker": "DTO\\StudentEvaluationDTO.cs",
@@ -1415,11 +1876,12 @@
               "RelativeToolTip": "DTO\\StudentEvaluationDTO.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAUwA0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T15:34:19.515Z"
+              "WhenOpened": "2025-12-06T15:34:19.515Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 83,
+              "DocumentIndex": 108,
               "Title": "StudentProfileDTO.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DTO\\StudentProfileDTO.cs",
               "RelativeDocumentMoniker": "DTO\\StudentProfileDTO.cs",
@@ -1427,22 +1889,12 @@
               "RelativeToolTip": "DTO\\StudentProfileDTO.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAAAB8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T13:31:50.887Z"
+              "WhenOpened": "2025-12-06T13:31:50.887Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 84,
-              "Title": "UC_GVCN_NS.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_NS.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN_NS.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_NS.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_GVCN_NS.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T14:57:47.513Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 85,
+              "DocumentIndex": 109,
               "Title": "UC_GVCN_DS.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_GVCN_DS.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_GVCN_DS.cs",
@@ -1450,22 +1902,12 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_GVCN_DS.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T14:57:41.541Z"
+              "WhenOpened": "2025-12-06T14:57:41.541Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 86,
-              "Title": "UC_Home.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Home.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Home.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_Home.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_Home.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T14:54:42.416Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 87,
+              "DocumentIndex": 110,
               "Title": "readme.txt",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\packages\\EPPlus.8.3.1\\readme.txt",
               "RelativeDocumentMoniker": "packages\\EPPlus.8.3.1\\readme.txt",
@@ -1473,11 +1915,12 @@
               "RelativeToolTip": "packages\\EPPlus.8.3.1\\readme.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-12-06T14:51:34.031Z"
+              "WhenOpened": "2025-12-06T14:51:34.031Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 88,
+              "DocumentIndex": 111,
               "Title": "UC_HocSinh_Diem.cs [Design]",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_Diem.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_Diem.cs",
@@ -1489,7 +1932,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 89,
+              "DocumentIndex": 112,
               "Title": "UC_HocSinh_DoiMatKhau.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_DoiMatKhau.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_DoiMatKhau.cs",
@@ -1497,11 +1940,12 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_DoiMatKhau.cs",
               "ViewState": "AgIAAJAAAAAAAAAAAAAvwI8AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T14:07:18.315Z"
+              "WhenOpened": "2025-12-06T14:07:18.315Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 91,
+              "DocumentIndex": 114,
               "Title": "UC_HocSinh_DoiMatKhau.Designer.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_DoiMatKhau.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_DoiMatKhau.Designer.cs",
@@ -1509,33 +1953,24 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_DoiMatKhau.Designer.cs",
               "ViewState": "AgIAAMYAAAAAAAAAAAAswNwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T14:07:46.891Z"
+              "WhenOpened": "2025-12-06T14:07:46.891Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 90,
+              "DocumentIndex": 113,
               "Title": "UC_HocSinh_DoiMatKhau.cs [Design]",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_DoiMatKhau.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_DoiMatKhau.cs",
               "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_DoiMatKhau.cs [Design]",
               "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_DoiMatKhau.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T14:07:04.503Z"
+              "WhenOpened": "2025-12-06T14:07:04.503Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 93,
-              "Title": "UC_HocSinh_HocPhi.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_HocPhi.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_HocPhi.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_HocPhi.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_HocPhi.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T13:20:49.584Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 92,
+              "DocumentIndex": 115,
               "Title": "UC_HocSinh_HocPhi.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_HocPhi.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_HocPhi.cs",
@@ -1543,11 +1978,12 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_HocPhi.cs",
               "ViewState": "AgIAAAkBAAAAAAAAAAAcwBMBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T13:21:03.268Z"
+              "WhenOpened": "2025-12-06T13:21:03.268Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 95,
+              "DocumentIndex": 117,
               "Title": "ScoreBUS.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\BUS\\ScoreBUS.cs",
               "RelativeDocumentMoniker": "BUS\\ScoreBUS.cs",
@@ -1555,11 +1991,12 @@
               "RelativeToolTip": "BUS\\ScoreBUS.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAswCwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T13:13:09.36Z"
+              "WhenOpened": "2025-12-06T13:13:09.36Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 94,
+              "DocumentIndex": 116,
               "Title": "UC_HocSinh_HocPhi.Designer.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_HocPhi.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_HocPhi.Designer.cs",
@@ -1567,11 +2004,12 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_HocPhi.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T13:21:00.321Z"
+              "WhenOpened": "2025-12-06T13:21:00.321Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 96,
+              "DocumentIndex": 118,
               "Title": "ScoreDAO.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DAO\\ScoreDAO.cs",
               "RelativeDocumentMoniker": "DAO\\ScoreDAO.cs",
@@ -1579,11 +2017,12 @@
               "RelativeToolTip": "DAO\\ScoreDAO.cs",
               "ViewState": "AgIAADkAAAAAAAAAAAAswEYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T13:06:28.179Z"
+              "WhenOpened": "2025-12-06T13:06:28.179Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 97,
+              "DocumentIndex": 119,
               "Title": "SubjectScoreDTOcs.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DTO\\SubjectScoreDTOcs.cs",
               "RelativeDocumentMoniker": "DTO\\SubjectScoreDTOcs.cs",
@@ -1591,23 +2030,12 @@
               "RelativeToolTip": "DTO\\SubjectScoreDTOcs.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T13:11:34.678Z"
+              "WhenOpened": "2025-12-06T13:11:34.678Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 98,
-              "Title": "subjectDTO.cs",
-              "DocumentMoniker": "C:\\Code\\qlyhsmerge\\DTO\\subjectDTO.cs",
-              "RelativeDocumentMoniker": "DTO\\subjectDTO.cs",
-              "ToolTip": "C:\\Code\\qlyhsmerge\\DTO\\subjectDTO.cs",
-              "RelativeToolTip": "DTO\\subjectDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T13:11:01.181Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 99,
+              "DocumentIndex": 120,
               "Title": "UC_HocSinh_TKB.cs",
               "DocumentMoniker": "C:\\Code\\qlyhsmerge\\GUI\\UserControls\\UC_HocSinh_TKB.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_HocSinh_TKB.cs",
@@ -1615,7 +2043,8 @@
               "RelativeToolTip": "GUI\\UserControls\\UC_HocSinh_TKB.cs",
               "ViewState": "AgIAAF4AAAAAAAAAAAAcwGgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T12:37:00.924Z"
+              "WhenOpened": "2025-12-06T12:37:00.924Z",
+              "EditorCaption": ""
             }
           ]
         },

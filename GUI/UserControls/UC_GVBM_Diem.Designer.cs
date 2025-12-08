@@ -63,7 +63,9 @@ namespace GUI.UserControls
             this.txtave = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.btnxuat = new System.Windows.Forms.Button();
+            this.btnxuatpdf = new System.Windows.Forms.Button();
+            this.btnxuatexcel = new System.Windows.Forms.Button();
+            this.btnimportexcel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -378,22 +380,49 @@ namespace GUI.UserControls
             this.label10.Text = "Cập Nhật Điểm";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
-            // btnxuat
+            // btnxuatpdf
             // 
-            this.btnxuat.BackColor = System.Drawing.Color.Lime;
-            this.btnxuat.Location = new System.Drawing.Point(1344, 22);
-            this.btnxuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnxuat.Name = "btnxuat";
-            this.btnxuat.Size = new System.Drawing.Size(120, 49);
-            this.btnxuat.TabIndex = 47;
-            this.btnxuat.Text = "Xuất Excel";
-            this.btnxuat.UseVisualStyleBackColor = false;
+            this.btnxuatpdf.BackColor = System.Drawing.Color.Lime;
+            this.btnxuatpdf.Location = new System.Drawing.Point(1233, 30);
+            this.btnxuatpdf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnxuatpdf.Name = "btnxuatpdf";
+            this.btnxuatpdf.Size = new System.Drawing.Size(101, 41);
+            this.btnxuatpdf.TabIndex = 48;
+            this.btnxuatpdf.Text = "Xuất PDF";
+            this.btnxuatpdf.UseVisualStyleBackColor = false;
+            this.btnxuatpdf.Click += new System.EventHandler(this.BtnExportPDF_Click);
+            // 
+            // btnxuatexcel
+            // 
+            this.btnxuatexcel.BackColor = System.Drawing.Color.Lime;
+            this.btnxuatexcel.Location = new System.Drawing.Point(1363, 30);
+            this.btnxuatexcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnxuatexcel.Name = "btnxuatexcel";
+            this.btnxuatexcel.Size = new System.Drawing.Size(101, 41);
+            this.btnxuatexcel.TabIndex = 49;
+            this.btnxuatexcel.Text = "Xuất Excel";
+            this.btnxuatexcel.UseVisualStyleBackColor = false;
+            this.btnxuatexcel.Click += new System.EventHandler(this.BtnExportExcel_Click);
+            // 
+            // btnimportexcel
+            // 
+            this.btnimportexcel.BackColor = System.Drawing.Color.Lime;
+            this.btnimportexcel.Location = new System.Drawing.Point(1096, 30);
+            this.btnimportexcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnimportexcel.Name = "btnimportexcel";
+            this.btnimportexcel.Size = new System.Drawing.Size(101, 41);
+            this.btnimportexcel.TabIndex = 50;
+            this.btnimportexcel.Text = "Nhập Excel";
+            this.btnimportexcel.UseVisualStyleBackColor = false;
+            this.btnimportexcel.Click += new System.EventHandler(this.BtnImportExcel_Click);
             // 
             // UC_GVBM_Diem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnxuat);
+            this.Controls.Add(this.btnimportexcel);
+            this.Controls.Add(this.btnxuatexcel);
+            this.Controls.Add(this.btnxuatpdf);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -401,6 +430,7 @@ namespace GUI.UserControls
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UC_GVBM_Diem";
             this.Size = new System.Drawing.Size(1476, 535);
+            this.Load += new System.EventHandler(this.UC_GVBM_Diem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -445,6 +475,8 @@ namespace GUI.UserControls
         private Label label10;
         private TextBox txtave;
         private Label label11;
-        private Button btnxuat;
+        private Button btnxuatpdf;
+        private Button btnxuatexcel;
+        private Button btnimportexcel;
     }
 }
