@@ -6,23 +6,17 @@ using System.Data;
 
 namespace DAO
 {
-    /// <summary>
-    /// TimetableDAO - truy xuất DB cho thời khoá biểu.
-    /// Có thể cấu hình nguồn bảng giáo viên (users hoặc teachers) để giữ tương thích.
-    /// Yêu cầu: lớp DbConnect với các helper ExecuteQuery/ExecuteNonQuery/ExecuteScalar giống dự án của bạn.
-    /// </summary>
+    
     public class TimetableDAO
     {
         private DbConnect db = new DbConnect();
 
-        // Nếu dự án của bạn có bảng teachers riêng, chuyển sang Teachers; nếu giáo viên lưu ở users, chọn Users.
         public enum TeacherSource
         {
             Users,
             Teachers
         }
 
-        // Mặc định: Users (thường an toàn). Bạn có thể set từ nơi khác nếu cần.
         public static TeacherSource TeacherTable = TeacherSource.Users;
 
         #region Basic CRUD + Helpers

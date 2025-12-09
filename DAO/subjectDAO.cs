@@ -55,7 +55,6 @@ namespace DAO
         {
             DataTable dt = DbConnect.ExecuteQuery("SELECT subject_id, name FROM subjects");
 
-            // Chuyển DataTable sang List<SubjectDTO>
             var list = (from DataRow row in dt.Rows
                         select new SubjectDTO
                         {
@@ -63,7 +62,6 @@ namespace DAO
                             SubjectName = row["name"].ToString()
                         }).ToList();
 
-            // Ví dụ: lọc tên môn có chữ "Math" và sắp xếp
             var filtered = list.Where(s => s.SubjectName.Contains("Math"))
                                .OrderBy(s => s.SubjectName)
                                .ToList();

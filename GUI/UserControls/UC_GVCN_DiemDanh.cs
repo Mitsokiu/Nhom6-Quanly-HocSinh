@@ -207,8 +207,6 @@ namespace GUI.UserControls
         {
             if (cbbYear.SelectedValue == null) return;
 
-            // 2. KHẮC PHỤC LỖI: Kiểm tra xem SelectedValue có phải là DTO không
-            // (Xảy ra khi ValueMember chưa kịp map trong quá trình khởi tạo)
             if (cbbYear.SelectedValue is SemesterDTO) return;
 
             int semesterId;
@@ -218,7 +216,6 @@ namespace GUI.UserControls
             }
             catch
             {
-                // Nếu không convert được thì thoát để tránh crash app
                 return;
             }
 
@@ -744,7 +741,6 @@ namespace GUI.UserControls
             cell.Padding = 5;
             table.AddCell(cell);
         }
-
 
     }
 }

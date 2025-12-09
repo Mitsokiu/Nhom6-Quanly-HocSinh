@@ -40,8 +40,8 @@
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -50,7 +50,6 @@
             this.lblHocKy = new System.Windows.Forms.Label();
             this.pnlSearchBox = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.picSearchIcon = new System.Windows.Forms.PictureBox();
             this.pnlContent = new System.Windows.Forms.Panel();
             this.dgvHanhKiem = new System.Windows.Forms.DataGridView();
             this.pnlPagination = new System.Windows.Forms.Panel();
@@ -61,16 +60,17 @@
             this.btnPage2 = new System.Windows.Forms.Button();
             this.btnPage1 = new System.Windows.Forms.Button();
             this.btnPrev = new System.Windows.Forms.Button();
+            this.picSearchIcon = new System.Windows.Forms.PictureBox();
             this.btnExportPDF = new System.Windows.Forms.Button();
             this.btnExportExcel = new System.Windows.Forms.Button();
             this.btnImportExcel = new System.Windows.Forms.Button();
             this.pnlHeader.SuspendLayout();
             this.pnlFilter.SuspendLayout();
             this.pnlSearchBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSearchIcon)).BeginInit();
             this.pnlContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHanhKiem)).BeginInit();
             this.pnlPagination.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearchIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlHeader
@@ -94,7 +94,7 @@
             this.lblSubTitle.ForeColor = System.Drawing.Color.Gray;
             this.lblSubTitle.Location = new System.Drawing.Point(5, 55);
             this.lblSubTitle.Name = "lblSubTitle";
-            this.lblSubTitle.Size = new System.Drawing.Size(374, 20);
+            this.lblSubTitle.Size = new System.Drawing.Size(548, 30);
             this.lblSubTitle.TabIndex = 2;
             this.lblSubTitle.Text = "Cập nhật hạnh kiểm và nhận xét cho học sinh trong lớp.";
             // 
@@ -105,7 +105,7 @@
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(312, 45);
+            this.lblTitle.Size = new System.Drawing.Size(468, 65);
             this.lblTitle.TabIndex = 3;
             this.lblTitle.Text = "Phê Hạnh kiểm Lớp";
             // 
@@ -128,9 +128,9 @@
             this.cbbHocKy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbHocKy.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.cbbHocKy.FormattingEnabled = true;
-            this.cbbHocKy.Location = new System.Drawing.Point(805, 14);
+            this.cbbHocKy.Location = new System.Drawing.Point(741, 14);
             this.cbbHocKy.Name = "cbbHocKy";
-            this.cbbHocKy.Size = new System.Drawing.Size(232, 28);
+            this.cbbHocKy.Size = new System.Drawing.Size(296, 38);
             this.cbbHocKy.TabIndex = 0;
             // 
             // lblHocKy
@@ -138,9 +138,9 @@
             this.lblHocKy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHocKy.AutoSize = true;
             this.lblHocKy.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblHocKy.Location = new System.Drawing.Point(735, 19);
+            this.lblHocKy.Location = new System.Drawing.Point(663, 18);
             this.lblHocKy.Name = "lblHocKy";
-            this.lblHocKy.Size = new System.Drawing.Size(60, 19);
+            this.lblHocKy.Size = new System.Drawing.Size(82, 28);
             this.lblHocKy.TabIndex = 1;
             this.lblHocKy.Text = "Học kỳ:";
             // 
@@ -151,7 +151,7 @@
             this.pnlSearchBox.Controls.Add(this.picSearchIcon);
             this.pnlSearchBox.Location = new System.Drawing.Point(0, 10);
             this.pnlSearchBox.Name = "pnlSearchBox";
-            this.pnlSearchBox.Size = new System.Drawing.Size(400, 40);
+            this.pnlSearchBox.Size = new System.Drawing.Size(468, 40);
             this.pnlSearchBox.TabIndex = 0;
             // 
             // txtSearch
@@ -161,19 +161,9 @@
             this.txtSearch.ForeColor = System.Drawing.Color.Gray;
             this.txtSearch.Location = new System.Drawing.Point(45, 10);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(340, 20);
+            this.txtSearch.Size = new System.Drawing.Size(420, 30);
             this.txtSearch.TabIndex = 0;
             this.txtSearch.Text = "Tìm kiếm học sinh...";
-            // 
-            // picSearchIcon
-            // 
-            this.picSearchIcon.Image = global::GUI.Properties.Resources.search_32;
-            this.picSearchIcon.Location = new System.Drawing.Point(10, 8);
-            this.picSearchIcon.Name = "picSearchIcon";
-            this.picSearchIcon.Size = new System.Drawing.Size(24, 24);
-            this.picSearchIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSearchIcon.TabIndex = 1;
-            this.picSearchIcon.TabStop = false;
             // 
             // pnlContent
             // 
@@ -194,29 +184,30 @@
             this.dgvHanhKiem.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvHanhKiem.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvHanhKiem.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
-            this.dgvHanhKiem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
+            this.dgvHanhKiem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvHanhKiem.ColumnHeadersHeight = 45;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHanhKiem.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHanhKiem.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvHanhKiem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHanhKiem.EnableHeadersVisualStyles = false;
             this.dgvHanhKiem.Location = new System.Drawing.Point(0, 10);
             this.dgvHanhKiem.Name = "dgvHanhKiem";
             this.dgvHanhKiem.RowHeadersVisible = false;
+            this.dgvHanhKiem.RowHeadersWidth = 62;
             this.dgvHanhKiem.RowTemplate.Height = 55;
             this.dgvHanhKiem.Size = new System.Drawing.Size(1040, 410);
             this.dgvHanhKiem.TabIndex = 0;
@@ -261,7 +252,7 @@
             this.lblDots.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lblDots.Location = new System.Drawing.Point(0, 0);
             this.lblDots.Name = "lblDots";
-            this.lblDots.Size = new System.Drawing.Size(19, 21);
+            this.lblDots.Size = new System.Drawing.Size(29, 32);
             this.lblDots.TabIndex = 2;
             this.lblDots.Text = "...";
             // 
@@ -302,6 +293,16 @@
             this.btnPrev.TabIndex = 6;
             this.btnPrev.Text = "<";
             // 
+            // picSearchIcon
+            // 
+            this.picSearchIcon.Image = global::GUI.Properties.Resources.search_32;
+            this.picSearchIcon.Location = new System.Drawing.Point(10, 8);
+            this.picSearchIcon.Name = "picSearchIcon";
+            this.picSearchIcon.Size = new System.Drawing.Size(24, 24);
+            this.picSearchIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSearchIcon.TabIndex = 1;
+            this.picSearchIcon.TabStop = false;
+            // 
             // btnExportPDF
             // 
             this.btnExportPDF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -313,7 +314,7 @@
             this.btnExportPDF.ForeColor = System.Drawing.Color.White;
             this.btnExportPDF.Image = global::GUI.Properties.Resources.pdf_32;
             this.btnExportPDF.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportPDF.Location = new System.Drawing.Point(567, 10);
+            this.btnExportPDF.Location = new System.Drawing.Point(530, 10);
             this.btnExportPDF.Name = "btnExportPDF";
             this.btnExportPDF.Size = new System.Drawing.Size(150, 40);
             this.btnExportPDF.TabIndex = 8;
@@ -332,9 +333,9 @@
             this.btnExportExcel.ForeColor = System.Drawing.Color.White;
             this.btnExportExcel.Image = global::GUI.Properties.Resources.xuatexcel_32;
             this.btnExportExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportExcel.Location = new System.Drawing.Point(887, 10);
+            this.btnExportExcel.Location = new System.Drawing.Point(873, 10);
             this.btnExportExcel.Name = "btnExportExcel";
-            this.btnExportExcel.Size = new System.Drawing.Size(150, 40);
+            this.btnExportExcel.Size = new System.Drawing.Size(164, 40);
             this.btnExportExcel.TabIndex = 6;
             this.btnExportExcel.Text = " Xuất Excel";
             this.btnExportExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -351,9 +352,9 @@
             this.btnImportExcel.ForeColor = System.Drawing.Color.White;
             this.btnImportExcel.Image = global::GUI.Properties.Resources.nhapexcel_32;
             this.btnImportExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImportExcel.Location = new System.Drawing.Point(727, 10);
+            this.btnImportExcel.Location = new System.Drawing.Point(686, 10);
             this.btnImportExcel.Name = "btnImportExcel";
-            this.btnImportExcel.Size = new System.Drawing.Size(150, 40);
+            this.btnImportExcel.Size = new System.Drawing.Size(181, 40);
             this.btnImportExcel.TabIndex = 7;
             this.btnImportExcel.Text = " Nhập Excel";
             this.btnImportExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -375,11 +376,11 @@
             this.pnlFilter.PerformLayout();
             this.pnlSearchBox.ResumeLayout(false);
             this.pnlSearchBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSearchIcon)).EndInit();
             this.pnlContent.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHanhKiem)).EndInit();
             this.pnlPagination.ResumeLayout(false);
             this.pnlPagination.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearchIcon)).EndInit();
             this.ResumeLayout(false);
 
         }

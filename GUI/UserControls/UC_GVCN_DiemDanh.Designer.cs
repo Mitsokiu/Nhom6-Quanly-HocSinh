@@ -121,16 +121,16 @@
             this.panel1.Controls.Add(this.lblSemester);
             this.panel1.Controls.Add(this.dtpDate);
             this.panel1.Controls.Add(this.cbbYear);
-            this.panel1.Location = new System.Drawing.Point(7, 45);
+            this.panel1.Location = new System.Drawing.Point(7, 34);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(905, 35);
+            this.panel1.Size = new System.Drawing.Size(905, 43);
             this.panel1.TabIndex = 7;
             // 
             // lblClassTitle
             // 
             this.lblClassTitle.AutoSize = true;
             this.lblClassTitle.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblClassTitle.Location = new System.Drawing.Point(305, 7);
+            this.lblClassTitle.Location = new System.Drawing.Point(391, 11);
             this.lblClassTitle.Name = "lblClassTitle";
             this.lblClassTitle.Size = new System.Drawing.Size(52, 28);
             this.lblClassTitle.TabIndex = 3;
@@ -141,7 +141,7 @@
             this.lblClassName.AutoSize = true;
             this.lblClassName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblClassName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(110)))), ((int)(((byte)(253)))));
-            this.lblClassName.Location = new System.Drawing.Point(330, 8);
+            this.lblClassName.Location = new System.Drawing.Point(449, 11);
             this.lblClassName.Name = "lblClassName";
             this.lblClassName.Size = new System.Drawing.Size(27, 28);
             this.lblClassName.TabIndex = 4;
@@ -151,7 +151,7 @@
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblDate.Location = new System.Drawing.Point(563, 8);
+            this.lblDate.Location = new System.Drawing.Point(574, 10);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(67, 28);
             this.lblDate.TabIndex = 5;
@@ -161,7 +161,7 @@
             // 
             this.lblSemester.AutoSize = true;
             this.lblSemester.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblSemester.Location = new System.Drawing.Point(-3, 5);
+            this.lblSemester.Location = new System.Drawing.Point(9, 10);
             this.lblSemester.Name = "lblSemester";
             this.lblSemester.Size = new System.Drawing.Size(102, 28);
             this.lblSemester.TabIndex = 1;
@@ -172,7 +172,7 @@
             this.dtpDate.CustomFormat = "dd/MM/yyyy";
             this.dtpDate.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDate.Location = new System.Drawing.Point(657, 2);
+            this.dtpDate.Location = new System.Drawing.Point(655, 6);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(150, 34);
             this.dtpDate.TabIndex = 6;
@@ -181,16 +181,16 @@
             // 
             this.cbbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbYear.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbYear.Location = new System.Drawing.Point(96, 5);
+            this.cbbYear.Location = new System.Drawing.Point(117, 7);
             this.cbbYear.Name = "cbbYear";
-            this.cbbYear.Size = new System.Drawing.Size(208, 36);
+            this.cbbYear.Size = new System.Drawing.Size(268, 36);
             this.cbbYear.TabIndex = 2;
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblTitle.Location = new System.Drawing.Point(-3, -10);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(395, 54);
             this.lblTitle.TabIndex = 0;
@@ -252,7 +252,7 @@
             // 
             this.lblListTitle.AutoSize = true;
             this.lblListTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblListTitle.Location = new System.Drawing.Point(15, 15);
+            this.lblListTitle.Location = new System.Drawing.Point(13, 3);
             this.lblListTitle.Name = "lblListTitle";
             this.lblListTitle.Size = new System.Drawing.Size(233, 32);
             this.lblListTitle.TabIndex = 0;
@@ -349,7 +349,6 @@
             this.pnlDetailCard.Controls.Add(this.pnlStatusGroup);
             this.pnlDetailCard.Controls.Add(this.lblNote);
             this.pnlDetailCard.Controls.Add(this.txtNote);
-            this.pnlDetailCard.Controls.Add(this.btnCancel);
             this.pnlDetailCard.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlDetailCard.Location = new System.Drawing.Point(0, 0);
             this.pnlDetailCard.Name = "pnlDetailCard";
@@ -365,7 +364,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(735, 280);
+            this.btnSave.Location = new System.Drawing.Point(738, 280);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(140, 40);
             this.btnSave.TabIndex = 7;
@@ -386,7 +385,7 @@
             // 
             this.lblStatusTitle.AutoSize = true;
             this.lblStatusTitle.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblStatusTitle.Location = new System.Drawing.Point(20, 70);
+            this.lblStatusTitle.Location = new System.Drawing.Point(20, 64);
             this.lblStatusTitle.Name = "lblStatusTitle";
             this.lblStatusTitle.Size = new System.Drawing.Size(215, 28);
             this.lblStatusTitle.TabIndex = 1;
@@ -427,7 +426,7 @@
             // 
             this.radAbsentNoPermit.AutoSize = true;
             this.radAbsentNoPermit.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.radAbsentNoPermit.Location = new System.Drawing.Point(378, 5);
+            this.radAbsentNoPermit.Location = new System.Drawing.Point(358, 5);
             this.radAbsentNoPermit.Name = "radAbsentNoPermit";
             this.radAbsentNoPermit.Size = new System.Drawing.Size(191, 32);
             this.radAbsentNoPermit.TabIndex = 2;
@@ -437,7 +436,7 @@
             // 
             this.radLate.AutoSize = true;
             this.radLate.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.radLate.Location = new System.Drawing.Point(720, 3);
+            this.radLate.Location = new System.Drawing.Point(584, 3);
             this.radLate.Name = "radLate";
             this.radLate.Size = new System.Drawing.Size(85, 32);
             this.radLate.TabIndex = 3;
@@ -497,7 +496,7 @@
             this.btnExportPDF.ForeColor = System.Drawing.Color.White;
             this.btnExportPDF.Image = global::GUI.Properties.Resources.pdf_32;
             this.btnExportPDF.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportPDF.Location = new System.Drawing.Point(990, 4);
+            this.btnExportPDF.Location = new System.Drawing.Point(927, 2);
             this.btnExportPDF.Name = "btnExportPDF";
             this.btnExportPDF.Size = new System.Drawing.Size(150, 40);
             this.btnExportPDF.TabIndex = 11;
@@ -516,9 +515,9 @@
             this.btnExportExcel.ForeColor = System.Drawing.Color.White;
             this.btnExportExcel.Image = global::GUI.Properties.Resources.xuatexcel_32;
             this.btnExportExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportExcel.Location = new System.Drawing.Point(1310, 4);
+            this.btnExportExcel.Location = new System.Drawing.Point(1265, 4);
             this.btnExportExcel.Name = "btnExportExcel";
-            this.btnExportExcel.Size = new System.Drawing.Size(150, 40);
+            this.btnExportExcel.Size = new System.Drawing.Size(195, 40);
             this.btnExportExcel.TabIndex = 9;
             this.btnExportExcel.Text = " Xuất Excel";
             this.btnExportExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -535,9 +534,9 @@
             this.btnImportExcel.ForeColor = System.Drawing.Color.White;
             this.btnImportExcel.Image = global::GUI.Properties.Resources.nhapexcel_32;
             this.btnImportExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImportExcel.Location = new System.Drawing.Point(1150, 4);
+            this.btnImportExcel.Location = new System.Drawing.Point(1083, 3);
             this.btnImportExcel.Name = "btnImportExcel";
-            this.btnImportExcel.Size = new System.Drawing.Size(150, 40);
+            this.btnImportExcel.Size = new System.Drawing.Size(176, 40);
             this.btnImportExcel.TabIndex = 10;
             this.btnImportExcel.Text = " Nhập Excel";
             this.btnImportExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

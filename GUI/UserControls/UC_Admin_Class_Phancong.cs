@@ -378,71 +378,7 @@ namespace GUI.UserControls
         }
 
 
-        //private void BtnCreateTimetable_Click(object sender, EventArgs e)
-        //{
-        //    // Xác nhận xóa dữ liệu cũ
-        //    DialogResult confirm = MessageBox.Show(
-        //        "Việc tạo TKB mới sẽ xóa toàn bộ dữ liệu cũ. Bạn có muốn tiếp tục?",
-        //        "Xác nhận",
-        //        MessageBoxButtons.YesNo,
-        //        MessageBoxIcon.Warning
-        //    );
-
-        //    if (confirm != DialogResult.Yes) return;
-
-        //    try
-        //    {
-        //        // 1. Xóa tất cả dữ liệu cũ trong bảng timetable
-        //        string deleteQuery = "DELETE FROM timetable";
-        //        DbConnect.ExecuteNonQuery(deleteQuery);
-
-        //        // 2. Duyệt DataGridView để tạo các bản ghi mới
-        //        foreach (DataGridViewRow row in dataGridView1.Rows)
-        //        {
-        //            if (row.IsNewRow) continue;
-
-        //            int classId = Convert.ToInt32(row.Cells["class_id"].Value);
-        //            int subjectId = Convert.ToInt32(row.Cells["subject_id"].Value);
-        //            int teacherId = Convert.ToInt32(row.Cells["teacher_id"].Value);
-        //            int semesterId = Convert.ToInt32(row.Cells["semester_id"].Value);
-        //            int periods = Convert.ToInt32(row.Cells["periods"].Value);
-
-        //            for (int i = 1; i <= periods; i++)
-        //            {
-        //                string day = GetDayByIndex(i); // Mon->Tue->Wed...
-
-        //                string insertQuery = @"
-        //            INSERT INTO timetable (class_id, subject_id, teacher_id, semester_id, day, period, room)
-        //            VALUES (@param0,@param1,@param2,@param3,@param4,@param5,NULL)
-        //        ";
-
-        //                DbConnect.ExecuteNonQuery(insertQuery,
-        //                    new object[]
-        //                    {
-        //                classId,
-        //                subjectId,
-        //                teacherId,
-        //                semesterId,
-        //                day,
-        //                i
-        //                    });
-        //            }
-        //        }
-
-        //        MessageBox.Show("Tạo TKB mới thành công!");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Lỗi khi tạo TKB: " + ex.Message);
-        //    }
-        //}
-
-        //// Hàm tuần tự ngày từ 1 -> Mon, 2 -> Tue ...
-        //private string GetDayByIndex(int index)
-        //{
-        //    string[] days = { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
-        //    return days[(index - 1) % days.Length];
-        //}
+        
 
         private void BtnCreateTimetable_Click(object sender, EventArgs e)
         {

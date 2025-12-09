@@ -98,7 +98,7 @@
             this.btnExportPDF.ForeColor = System.Drawing.Color.White;
             this.btnExportPDF.Image = global::GUI.Properties.Resources.pdf_32;
             this.btnExportPDF.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportPDF.Location = new System.Drawing.Point(731, 10);
+            this.btnExportPDF.Location = new System.Drawing.Point(719, 10);
             this.btnExportPDF.Name = "btnExportPDF";
             this.btnExportPDF.Size = new System.Drawing.Size(150, 40);
             this.btnExportPDF.TabIndex = 5;
@@ -117,9 +117,9 @@
             this.btnExportExcel.ForeColor = System.Drawing.Color.White;
             this.btnExportExcel.Image = global::GUI.Properties.Resources.xuatexcel_32;
             this.btnExportExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportExcel.Location = new System.Drawing.Point(887, 10);
+            this.btnExportExcel.Location = new System.Drawing.Point(875, 10);
             this.btnExportExcel.Name = "btnExportExcel";
-            this.btnExportExcel.Size = new System.Drawing.Size(150, 40);
+            this.btnExportExcel.Size = new System.Drawing.Size(162, 40);
             this.btnExportExcel.TabIndex = 3;
             this.btnExportExcel.Text = " Xuất Excel";
             this.btnExportExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -132,7 +132,7 @@
             this.lblSubTitle.ForeColor = System.Drawing.Color.Gray;
             this.lblSubTitle.Location = new System.Drawing.Point(5, 55);
             this.lblSubTitle.Name = "lblSubTitle";
-            this.lblSubTitle.Size = new System.Drawing.Size(300, 20);
+            this.lblSubTitle.Size = new System.Drawing.Size(439, 30);
             this.lblSubTitle.TabIndex = 1;
             this.lblSubTitle.Text = "Xem, tìm kiếm và quản lý thông tin học sinh.";
             // 
@@ -143,7 +143,7 @@
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(273, 45);
+            this.lblTitle.Size = new System.Drawing.Size(409, 65);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Quản lý Học sinh";
             // 
@@ -210,7 +210,7 @@
             this.txtSearch.ForeColor = System.Drawing.Color.Gray;
             this.txtSearch.Location = new System.Drawing.Point(45, 10);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(340, 20);
+            this.txtSearch.Size = new System.Drawing.Size(340, 30);
             this.txtSearch.TabIndex = 0;
             this.txtSearch.Text = "Tìm kiếm học sinh...";
             // 
@@ -266,6 +266,7 @@
             this.dgvStudents.Location = new System.Drawing.Point(0, 10);
             this.dgvStudents.Name = "dgvStudents";
             this.dgvStudents.RowHeadersVisible = false;
+            this.dgvStudents.RowHeadersWidth = 62;
             this.dgvStudents.RowTemplate.Height = 55;
             this.dgvStudents.Size = new System.Drawing.Size(1040, 410);
             this.dgvStudents.TabIndex = 0;
@@ -310,7 +311,7 @@
             this.lblDots.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lblDots.Location = new System.Drawing.Point(0, 0);
             this.lblDots.Name = "lblDots";
-            this.lblDots.Size = new System.Drawing.Size(19, 21);
+            this.lblDots.Size = new System.Drawing.Size(29, 32);
             this.lblDots.TabIndex = 2;
             this.lblDots.Text = "...";
             // 

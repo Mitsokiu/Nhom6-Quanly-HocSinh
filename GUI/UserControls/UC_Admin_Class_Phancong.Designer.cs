@@ -70,7 +70,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(321, 92);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(822, 389);
+            this.dataGridView1.Size = new System.Drawing.Size(822, 531);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -259,7 +259,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(3, 92);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(312, 389);
+            this.panel1.Size = new System.Drawing.Size(312, 531);
             this.panel1.TabIndex = 19;
             // 
             // label7
@@ -284,7 +284,7 @@
             this.panel2.Controls.Add(this.btnnext);
             this.panel2.Controls.Add(this.btnback);
             this.panel2.Controls.Add(this.btnhead);
-            this.panel2.Location = new System.Drawing.Point(492, 487);
+            this.panel2.Location = new System.Drawing.Point(501, 629);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(488, 40);
             this.panel2.TabIndex = 20;
@@ -357,7 +357,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dataGridView1);
             this.Name = "UC_Admin_Class_Phancong";
-            this.Size = new System.Drawing.Size(1242, 548);
+            this.Size = new System.Drawing.Size(1242, 696);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

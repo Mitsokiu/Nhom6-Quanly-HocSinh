@@ -333,7 +333,6 @@ namespace DAO
             }
             catch (MySqlException ex)
             {
-                // Bắt lỗi MySQL cụ thể để thông báo thân thiện hơn.
                 switch (ex.Number)
                 {
                     case 1062: // Duplicate entry

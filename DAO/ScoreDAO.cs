@@ -14,7 +14,7 @@ namespace DAO
         {
             string query = @"
         SELECT 
-            sc.score_id,                 -- Thêm cột score_id
+            sc.score_id,               
             s.student_id,
             u.fullname AS StudentName,
             c.class_name AS ClassName,
@@ -49,7 +49,7 @@ namespace DAO
         assignId,
         scoreType,
         scoreValue,
-        scoreValue   // cho ON DUPLICATE KEY UPDATE
+        scoreValue   
             };
 
             DbConnect.ExecuteNonQuery(query, parameters);

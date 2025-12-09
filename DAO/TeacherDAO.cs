@@ -7,7 +7,6 @@ namespace DAO
 {
     public class TeacherDAO
     {
-        // 1. Lấy ID năm học hiện tại(Dựa vào ngày hôm nay)
         public int GetCurrentYearId()
         {
             string sql = "SELECT year_id FROM academic_years WHERE @param0 BETWEEN start_date AND end_date";
@@ -16,7 +15,7 @@ namespace DAO
             if (dt.Rows.Count > 0)
                 return Convert.ToInt32(dt.Rows[0]["year_id"]);
 
-            return -1; // Không tìm thấy năm học phù hợp
+            return -1; 
         }
         //public int GetCurrentYearId()
         //{
@@ -30,7 +29,6 @@ namespace DAO
         //}
 
 
-        // 2. Lấy ID lớp mà giáo viên đang chủ nhiệm trong năm học hiện tại
         public int GetHomeroomClassId(int teacherUserId)
         {
            
@@ -47,11 +45,9 @@ namespace DAO
             return dt.Rows.Count > 0 ? Convert.ToInt32(dt.Rows[0]["class_id"]) : -1;
         }
 
-        // 3. Lấy thông tin lớp chủ nhiệm (để đổ vào ComboBox)
         public DataTable GetHomeroomClass(int teacherUserId)
         {
             int classId = GetHomeroomClassId(teacherUserId);
-            // Nếu không chủ nhiệm lớp nào, trả về bảng rỗng
            
             if (classId <= 0) return new DataTable();
 
@@ -59,7 +55,6 @@ namespace DAO
             return DbConnect.ExecuteQuery(sql, new object[] { classId });
         }
 
-        // 4. Lấy thông tin năm học hiện tại (để đổ vào ComboBox)
         public DataTable GetCurrentAcademicYear()
         {
             string sql = "SELECT year_id, name FROM academic_years WHERE @param0 BETWEEN start_date AND end_date";

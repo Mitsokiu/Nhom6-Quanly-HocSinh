@@ -52,11 +52,11 @@ namespace GUI.UserControls
             this.mottiet,
             this.CuoiKi,
             this.Tb});
-            this.dataGridView1.Location = new System.Drawing.Point(180, 12);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.dataGridView1.Location = new System.Drawing.Point(270, 18);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(672, 326);
+            this.dataGridView1.Size = new System.Drawing.Size(1008, 502);
             this.dataGridView1.TabIndex = 0;
             // 
             // MonHoc
@@ -108,22 +108,22 @@ namespace GUI.UserControls
             "2022-2023",
             "2024-2025",
             "2025-2026"});
-            this.comboBox1.Location = new System.Drawing.Point(13, 21);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.comboBox1.Location = new System.Drawing.Point(20, 32);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(111, 21);
+            this.comboBox1.Size = new System.Drawing.Size(201, 28);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.Text = "Học Kỳ - Năm Học";
             // 
             // UC_HocSinh_Diem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UC_HocSinh_Diem";
-            this.Size = new System.Drawing.Size(824, 352);
+            this.Size = new System.Drawing.Size(1236, 542);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

@@ -505,6 +505,9 @@
     <EmbeddedResource Include="UserControls\UC_GVCN_DS.resx">
       <DependentUpon>UC_GVCN_DS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_GVCN_HanhKiem.resx">
+      <DependentUpon>UC_GVCN_HanhKiem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_GVCN_HocPhi.resx">
       <DependentUpon>UC_GVCN_HocPhi.cs</DependentUpon>
     </EmbeddedResource>
