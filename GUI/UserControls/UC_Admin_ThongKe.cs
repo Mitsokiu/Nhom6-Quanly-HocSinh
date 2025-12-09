@@ -28,6 +28,7 @@ namespace GUI.UserControls
             LoadDashboard();
             LoadCharts();
             LoadStudentLineChart();
+            LoadStudentChart(1);
 
 
         }
@@ -57,7 +58,7 @@ namespace GUI.UserControls
         private void LoadStudentLineChart()
         {
             var stats = userBus.GetStudentStatsByDate();
-            MessageBox.Show("Số dòng: " + stats.Count);
+           
             chart1.Series.Clear();
             chart1.ChartAreas[0].AxisX.Interval = 1;
 
@@ -77,6 +78,47 @@ namespace GUI.UserControls
             chart1.Series.Add(series);
         }
 
+
+        private void LoadStudentChart(int currentYearId)
+        {
+            // 1. Lấy dữ liệu từ BUS
+            DataTable dtStudentCount = StudentBUS.GetStudentCountByClass(currentYearId);
+
+            // 2. Xóa dữ liệu cũ và thiết lập biểu đồ
+            chart3.Series.Clear();
+            chart3.Titles.Clear();
+
+            // Thêm tiêu đề
+            chart3.Titles.Add("Biểu Đồ So Sánh Số Lượng Học Sinh Theo Lớp");
+
+            // 3. Tạo Series (chuỗi dữ liệu) cho biểu đồ cột
+            Series series = new Series("Số lượng Học Sinh")
+            {
+                ChartType = SeriesChartType.Column,
+                IsValueShownAsLabel = true // Hiển thị giá trị trên cột
+            };
+
+            // 4. Đổ dữ liệu từ DataTable vào Series
+            if (dtStudentCount.Rows.Count > 0)
+            {
+                foreach (DataRow row in dtStudentCount.Rows)
+                {
+                    string className = row["ClassName"].ToString();
+                    int studentCount = Convert.ToInt32(row["StudentCount"]);
+
+                    // Thêm điểm dữ liệu (Tên lớp là trục X, Số lượng là trục Y)
+                    series.Points.AddXY(className, studentCount);
+                }
+            }
+            else
+            {
+                // Xử lý trường hợp không có dữ liệu
+                series.Points.AddXY("Không có dữ liệu", 0);
+            }
+
+            // 5. Thêm Series vào Chart control
+            chart3.Series.Add(series);
+        }
 
 
 

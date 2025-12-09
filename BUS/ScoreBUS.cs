@@ -58,6 +58,8 @@ namespace BUS
                 {
                     StudentId = Convert.ToInt32(row["student_id"]),
                     StudentName = row["StudentName"].ToString(),
+                    ClassName = row["ClassName"].ToString(),
+
                     ScoreType = row["ScoreType"]?.ToString(),
                     ScoreValue = row["ScoreValue"] != DBNull.Value ? (float?)Convert.ToSingle(row["ScoreValue"]) : null
                 });

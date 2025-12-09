@@ -20,6 +20,8 @@ namespace GUI.UserControls
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             teacherId = userid;
+            dataGridView1.AllowUserToAddRows = false;
+
 
             LoadYears();
         }

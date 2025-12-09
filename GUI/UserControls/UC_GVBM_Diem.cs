@@ -25,6 +25,11 @@ namespace GUI.UserControls
         private AcademicYearBUS yearBUS = new AcademicYearBUS();
         private SemesterBUS semesterBUS = new SemesterBUS();
         private int currentAssignId = 1; // hoặc giá trị mặc định bạn muốn
+        List<ScoreDTO> allScores;
+        int pageSize = 40;
+        int currentPage = 1;
+        int totalPage = 1;
+
 
 
 
@@ -112,30 +117,95 @@ namespace GUI.UserControls
             comboBoxhk.SelectedValue = 1;
         }
 
+        //private void LoadScoresToGrid(int assignId)
+        //{
+        //    List<ScoreDTO> scores = scoreBUS.GetScoresByAssignment(assignId);
+
+        //    dataGridView1.Columns.Clear();
+        //    dataGridView1.Rows.Clear();
+
+        //    // Cột ẩn score_id tổng hợp (để tham chiếu nếu muốn)
+        //    DataGridViewColumn colScoreId = new DataGridViewTextBoxColumn();
+        //    colScoreId.Name = "ScoreID";
+        //    colScoreId.Visible = false;
+        //    dataGridView1.Columns.Add(colScoreId);
+
+        //    // Các cột hiển thị
+        //    dataGridView1.Columns.Add("StudentID", "Student ID");
+        //    dataGridView1.Columns.Add("StudentName", "Học Sinh");
+        //    dataGridView1.Columns.Add("ClassName", "Lớp");
+
+        //    string[] scoreTypes = { "oral", "quiz15", "quiz45", "midterm", "final" ,"ave"};
+        //    foreach (var type in scoreTypes)
+        //        dataGridView1.Columns.Add(type, type.ToUpper());
+
+        //    // Nhóm theo học sinh
+        //    var students = scores.GroupBy(s => new { s.StudentId, s.StudentName, s.ClassName });
+
+        //    foreach (var student in students)
+        //    {
+        //        int rowIndex = dataGridView1.Rows.Add();
+        //        var row = dataGridView1.Rows[rowIndex];
+
+        //        row.Cells["StudentID"].Value = student.Key.StudentId;
+        //        row.Cells["StudentName"].Value = student.Key.StudentName;
+        //        row.Cells["ClassName"].Value = student.Key.ClassName;
+
+        //        foreach (var score in student)
+        //        {
+        //            if (!string.IsNullOrEmpty(score.ScoreType))
+        //            {
+        //                row.Cells[score.ScoreType].Value = score.ScoreValue?.ToString("0.0");
+
+        //                // Lưu score_id đầu tiên (hoặc bạn có thể tạo 1 cột ẩn riêng cho mỗi loại điểm)
+        //                if (row.Cells["ScoreID"].Value == null && score.ScoreId.HasValue)
+        //                    row.Cells["ScoreID"].Value = score.ScoreId.Value;
+        //            }
+        //        }
+        //    }
+
+        //    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        //}
+
         private void LoadScoresToGrid(int assignId)
         {
-            List<ScoreDTO> scores = scoreBUS.GetScoresByAssignment(assignId);
+            allScores = scoreBUS.GetScoresByAssignment(assignId);
 
+            totalPage = (int)Math.Ceiling(allScores.Count / (double)pageSize);
+            if (totalPage == 0) totalPage = 1;
+
+            currentPage = 1;
+
+            LoadScorePage(currentPage);
+        }
+        private void LoadScorePage(int page)
+        {
             dataGridView1.Columns.Clear();
             dataGridView1.Rows.Clear();
 
-            // Cột ẩn score_id tổng hợp (để tham chiếu nếu muốn)
+            int start = (page - 1) * pageSize;
+
+            var pageData = allScores
+                .Skip(start)
+                .Take(pageSize)
+                .ToList();
+
             DataGridViewColumn colScoreId = new DataGridViewTextBoxColumn();
             colScoreId.Name = "ScoreID";
             colScoreId.Visible = false;
             dataGridView1.Columns.Add(colScoreId);
 
-            // Các cột hiển thị
             dataGridView1.Columns.Add("StudentID", "Student ID");
+            dataGridView1.Columns["StudentID"].Visible = false;
             dataGridView1.Columns.Add("StudentName", "Học Sinh");
             dataGridView1.Columns.Add("ClassName", "Lớp");
 
-            string[] scoreTypes = { "oral", "quiz15", "quiz45", "midterm", "final" ,"ave"};
+            string[] scoreTypes = { "oral", "quiz15", "quiz45", "midterm", "final", "ave" };
             foreach (var type in scoreTypes)
                 dataGridView1.Columns.Add(type, type.ToUpper());
 
-            // Nhóm theo học sinh
-            var students = scores.GroupBy(s => new { s.StudentId, s.StudentName, s.ClassName });
+            var students = pageData
+                .GroupBy(s => new { s.StudentId, s.StudentName, s.ClassName });
 
             foreach (var student in students)
             {
@@ -152,7 +222,6 @@ namespace GUI.UserControls
                     {
                         row.Cells[score.ScoreType].Value = score.ScoreValue?.ToString("0.0");
 
-                        // Lưu score_id đầu tiên (hoặc bạn có thể tạo 1 cột ẩn riêng cho mỗi loại điểm)
                         if (row.Cells["ScoreID"].Value == null && score.ScoreId.HasValue)
                             row.Cells["ScoreID"].Value = score.ScoreId.Value;
                     }
@@ -160,10 +229,12 @@ namespace GUI.UserControls
             }
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            txtnumber.Text = $"{currentPage}/{totalPage}";
         }
 
-            
-        
+
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
@@ -409,6 +480,35 @@ namespace GUI.UserControls
                 }
             }
         }
+
+        private void btnFirst_Click(object sender, EventArgs e)
+        {
+            currentPage = 1;
+            LoadScorePage(currentPage);
+        }
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            if (currentPage > 1)
+            {
+                currentPage--;
+                LoadScorePage(currentPage);
+            }
+        }
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if (currentPage < totalPage)
+            {
+                currentPage++;
+                LoadScorePage(currentPage);
+            }
+        }
+        private void btnLast_Click(object sender, EventArgs e)
+        {
+            currentPage = totalPage;
+            LoadScorePage(currentPage);
+        }
+
+
 
 
 

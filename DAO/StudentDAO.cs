@@ -596,5 +596,41 @@ namespace DAO
             return profile;
         }
 
+
+
+        // Thêm hàm này vào lớp StudentDAO
+        public static DataTable GetStudentCountByClass(int yearId)
+        {
+            DataTable dt = new DataTable();
+            string sql = @"
+        SELECT
+            c.class_name AS ClassName,
+            COUNT(sc.student_id) AS StudentCount
+        FROM
+            classes c
+        JOIN
+            student_class sc ON c.class_id = sc.class_id
+        WHERE
+            sc.school_year_id = @year_id
+        GROUP BY
+            c.class_id, c.class_name
+        ORDER BY
+            c.class_name;
+    ";
+
+            using (var conn = DbConnect.GetConnection())
+            {
+                conn.Open();
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@year_id", yearId);
+                    using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+                    {
+                        da.Fill(dt);
+                    }
+                }
+            }
+            return dt;
+        }
     }
 }

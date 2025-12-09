@@ -2,12 +2,19 @@
 using DAO;
 using DTO;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace GUI.UserControls
 {
     public partial class UC_Admin_Class_KhoiLop : UserControl
     {
+        private int pageSize = 10;          // số dòng mỗi trang
+        private int currentPage = 1;        // trang hiện tại
+        private int totalPage = 1;
+        List<ClassDTO> allClasses;   // tổng số trang
+
         public UC_Admin_Class_KhoiLop()
         {
             InitializeComponent();
@@ -32,16 +39,53 @@ namespace GUI.UserControls
             dataGridView1.Columns["grade_id"].Visible = false;
         }
 
+        //private void LoadData()
+        //{
+        //    dataGridView1.Rows.Clear();
+        //    var list = ClassBUS.GetAllClasses();
+        //    foreach (var c in list)
+        //    {
+        //        // Thứ tự: ID lớp, tên khối, tên lớp, ID khối (ẩn)
+        //        dataGridView1.Rows.Add(c.Id, c.GradeName, c.ClassName, c.GradeId);
+        //    }
+        //    ResetForm();
+        //}
+
         private void LoadData()
         {
-            dataGridView1.Rows.Clear();
-            var list = ClassBUS.GetAllClasses();
-            foreach (var c in list)
-            {
-                // Thứ tự: ID lớp, tên khối, tên lớp, ID khối (ẩn)
-                dataGridView1.Rows.Add(c.Id, c.GradeName, c.ClassName, c.GradeId);
-            }
+            allClasses = ClassBUS.GetAllClasses();
+
+            totalPage = (int)Math.Ceiling(allClasses.Count / (double)pageSize);
+            if (totalPage == 0) totalPage = 1;
+
+            currentPage = 1;
+
+            LoadPage(currentPage);
             ResetForm();
+        }
+
+        private void LoadPage(int page)
+        {
+            dataGridView1.Rows.Clear();
+
+            int start = (page - 1) * pageSize;
+
+            var pageData = allClasses
+                .Skip(start)
+                .Take(pageSize)
+                .ToList();
+
+            foreach (var c in pageData)
+            {
+                dataGridView1.Rows.Add(
+                    c.Id,
+                    c.GradeName,
+                    c.ClassName,
+                    c.GradeId
+                );
+            }
+
+            lblpage.Text = $"{currentPage}/{totalPage}";
         }
 
         private void LoadGrade()

@@ -165,5 +165,12 @@ namespace BUS
             }
             return profile;
         }
+
+        // Thêm hàm này vào lớp StudentBUS
+        public static DataTable GetStudentCountByClass(int yearId)
+        {
+            // Gọi hàm từ StudentDAO để lấy dữ liệu thống kê
+            return StudentDAO.GetStudentCountByClass(yearId);
+        }
     }
 }

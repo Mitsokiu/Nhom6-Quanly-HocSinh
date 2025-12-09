@@ -15,11 +15,17 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GUI.UserControls
 {
+ 
     public partial class UC_Admin_Student : UserControl
     {
         private AcademicYearBUS yearBUS = new AcademicYearBUS();
         private ClassBUS classBUS = new ClassBUS();
         private int selectedStudentId = 0;
+        DataTable allStudents;
+        int pageSize = 20;
+        int currentPage = 1;
+        int totalPage = 1;
+
 
         public UC_Admin_Student()
         {
@@ -77,7 +83,7 @@ namespace GUI.UserControls
             if (yearId == 0) return; // Nếu chọn "-- Chọn năm --"
 
             // Lấy tất cả học sinh của năm học (tất cả lớp)
-            DataTable dt = StudentBUS.GetStudents(yearId,0);
+            DataTable dt = StudentBUS.GetStudents(yearId, 0);
 
             // Tắt tự động tạo cột
             dataGridView1.AutoGenerateColumns = false;
@@ -97,8 +103,41 @@ namespace GUI.UserControls
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
+        //private void LoadStudentGridByYear(int yearId)
+        //{
+        //    if (yearId == 0) return;
+
+        //    allStudents = StudentBUS.GetStudents(yearId, 0);
+
+        //    totalPage = (int)Math.Ceiling(allStudents.Rows.Count / (double)pageSize);
+        //    if (totalPage == 0) totalPage = 1;
+
+        //    currentPage = 1;
+
+        //    LoadPage(currentPage);
+        //}
 
 
+        private void LoadPage(int page)
+        {
+            dataGridView1.AutoGenerateColumns = false;
+
+            int start = (page - 1) * pageSize;
+
+            DataTable pageTable = allStudents.Clone(); // Tạo bảng rỗng cùng schema
+
+            var rows = allStudents.AsEnumerable()
+                                  .Skip(start)
+                                  .Take(pageSize)
+                                  .ToList();
+
+            foreach (var row in rows)
+                pageTable.ImportRow(row);
+
+            dataGridView1.DataSource = pageTable;
+
+           lblpage.Text = $"{currentPage}/{totalPage}";
+        }
 
 
 
@@ -257,6 +296,33 @@ namespace GUI.UserControls
             ExportToExcel(dataGridView1);
         }
 
+
+        private void btnFirst_Click(object sender, EventArgs e)
+        {
+            currentPage = 1;
+            LoadPage(currentPage);
+        }
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            if (currentPage > 1)
+            {
+                currentPage--;
+                LoadPage(currentPage);
+            }
+        }
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if (currentPage < totalPage)
+            {
+                currentPage++;
+                LoadPage(currentPage);
+            }
+        }
+        private void btnLast_Click(object sender, EventArgs e)
+        {
+            currentPage = totalPage;
+            LoadPage(currentPage);
+        }
 
 
 

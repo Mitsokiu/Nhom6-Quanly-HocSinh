@@ -31,6 +31,7 @@ namespace GUI.UserControls
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button4 = new System.Windows.Forms.Button();
             this.txtMid = new System.Windows.Forms.TextBox();
             this.txtFinal = new System.Windows.Forms.TextBox();
@@ -73,7 +74,7 @@ namespace GUI.UserControls
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.Lime;
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.button4.Location = new System.Drawing.Point(196, 326);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
@@ -182,7 +183,16 @@ namespace GUI.UserControls
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(323, 75);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
@@ -268,7 +278,7 @@ namespace GUI.UserControls
             this.panel1.Controls.Add(this.btnnext);
             this.panel1.Controls.Add(this.btnback);
             this.panel1.Controls.Add(this.btnhead);
-            this.panel1.Location = new System.Drawing.Point(539, 457);
+            this.panel1.Location = new System.Drawing.Point(976, 461);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(488, 40);
             this.panel1.TabIndex = 44;
@@ -282,43 +292,47 @@ namespace GUI.UserControls
             // 
             // btntail
             // 
-            this.btntail.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btntail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btntail.Location = new System.Drawing.Point(400, 4);
             this.btntail.Name = "btntail";
             this.btntail.Size = new System.Drawing.Size(75, 28);
             this.btntail.TabIndex = 3;
             this.btntail.Text = ">>";
             this.btntail.UseVisualStyleBackColor = false;
+            this.btntail.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // btnnext
             // 
-            this.btnnext.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnnext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnnext.Location = new System.Drawing.Point(319, 4);
             this.btnnext.Name = "btnnext";
             this.btnnext.Size = new System.Drawing.Size(75, 28);
             this.btnnext.TabIndex = 2;
             this.btnnext.Text = ">";
             this.btnnext.UseVisualStyleBackColor = false;
+            this.btnnext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnback
             // 
-            this.btnback.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnback.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnback.Location = new System.Drawing.Point(95, 4);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(75, 28);
             this.btnback.TabIndex = 1;
             this.btnback.Text = "<";
             this.btnback.UseVisualStyleBackColor = false;
+            this.btnback.Click += new System.EventHandler(this.btnPrev_Click);
             // 
             // btnhead
             // 
-            this.btnhead.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnhead.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnhead.Location = new System.Drawing.Point(14, 4);
             this.btnhead.Name = "btnhead";
             this.btnhead.Size = new System.Drawing.Size(75, 28);
             this.btnhead.TabIndex = 0;
             this.btnhead.Text = "<<";
             this.btnhead.UseVisualStyleBackColor = false;
+            this.btnhead.Click += new System.EventHandler(this.btnFirst_Click);
             // 
             // panel2
             // 
@@ -372,17 +386,18 @@ namespace GUI.UserControls
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.label10.Location = new System.Drawing.Point(3, 14);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(158, 25);
+            this.label10.Size = new System.Drawing.Size(219, 32);
             this.label10.TabIndex = 46;
             this.label10.Text = "Cập Nhật Điểm";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // btnxuatpdf
             // 
-            this.btnxuatpdf.BackColor = System.Drawing.Color.Lime;
+            this.btnxuatpdf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnxuatpdf.Location = new System.Drawing.Point(1233, 30);
             this.btnxuatpdf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnxuatpdf.Name = "btnxuatpdf";
@@ -394,7 +409,7 @@ namespace GUI.UserControls
             // 
             // btnxuatexcel
             // 
-            this.btnxuatexcel.BackColor = System.Drawing.Color.Lime;
+            this.btnxuatexcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnxuatexcel.Location = new System.Drawing.Point(1363, 30);
             this.btnxuatexcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnxuatexcel.Name = "btnxuatexcel";
@@ -406,7 +421,7 @@ namespace GUI.UserControls
             // 
             // btnimportexcel
             // 
-            this.btnimportexcel.BackColor = System.Drawing.Color.Lime;
+            this.btnimportexcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnimportexcel.Location = new System.Drawing.Point(1096, 30);
             this.btnimportexcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnimportexcel.Name = "btnimportexcel";

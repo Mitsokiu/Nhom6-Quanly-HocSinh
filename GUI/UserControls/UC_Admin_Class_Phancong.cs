@@ -1,9 +1,10 @@
-﻿using System;
-using System.Data;
-using System.Windows.Forms;
-using DTO;
-using BUS;
+﻿using BUS;
 using DAO;
+using DTO;
+using System;
+using System.Data;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace GUI.UserControls
 {
@@ -12,6 +13,10 @@ namespace GUI.UserControls
         private int selectedAssignId = -1;
         private AcademicYearBUS yearBUS = new AcademicYearBUS();
         private SemesterBUS semesterBUS = new SemesterBUS();
+        DataTable allAssignments;
+        int pageSize = 10;
+        int currentPage = 1;
+        int totalPage = 1;
 
         public UC_Admin_Class_Phancong()
         {
@@ -94,11 +99,11 @@ namespace GUI.UserControls
             LoadAssignmentsBySemester(semesterId);
         }
 
-        private void LoadAssignmentsBySemester(int semesterId)
-        {
-            DataTable dt = TeacherAssignmentBUS.GetAssignmentsBySemester(semesterId);
-            LoadAssignmentsToGrid(dt);
-        }
+        //private void LoadAssignmentsBySemester(int semesterId)
+        //{
+        //    DataTable dt = TeacherAssignmentBUS.GetAssignmentsBySemester(semesterId);
+        //    LoadAssignmentsToGrid(dt);
+        //}
 
         //===========================================================
         // Hàm chung load vào DataGridView
@@ -123,6 +128,50 @@ namespace GUI.UserControls
                 );
             }
         }
+
+
+        private void LoadAssignmentsBySemester(int semesterId)
+        {
+            allAssignments = TeacherAssignmentBUS.GetAssignmentsBySemester(semesterId);
+
+            totalPage = (int)Math.Ceiling(allAssignments.Rows.Count / (double)pageSize);
+            if (totalPage == 0) totalPage = 1;
+
+            currentPage = 1;
+
+            LoadPage(currentPage);
+        }
+        private void LoadPage(int page)
+        {
+            dataGridView1.Rows.Clear();
+
+            int start = (page - 1) * pageSize;
+
+            var rows = allAssignments
+                .AsEnumerable()
+                .Skip(start)
+                .Take(pageSize)
+                .ToList();
+
+            foreach (DataRow row in rows)
+            {
+                dataGridView1.Rows.Add(
+                    row["class_name"],
+                    row["subject_name"],
+                    row["teacher_name"],
+                    row["semester_name"],
+                    row["periods"],
+                    row["class_id"],
+                    row["subject_id"],
+                    row["teacher_id"],
+                    row["semester_id"],
+                    row["assign_id"]
+                );
+            }
+
+            lblpage.Text = $"{currentPage}/{totalPage}";
+        }
+
 
         //===========================================================
         // Combobox cố định: lớp - môn - gv
@@ -402,5 +451,39 @@ namespace GUI.UserControls
             }
         }
 
+
+        private void btnFirst_Click(object sender, EventArgs e)
+        {
+            currentPage = 1;
+            LoadPage(currentPage);
+        }
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            if (currentPage > 1)
+            {
+                currentPage--;
+                LoadPage(currentPage);
+            }
+        }
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if (currentPage < totalPage)
+            {
+                currentPage++;
+                LoadPage(currentPage);
+            }
+        }
+        private void btnLast_Click(object sender, EventArgs e)
+        {
+            currentPage = totalPage;
+            LoadPage(currentPage);
+        }
+
+
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -20,9 +20,9 @@ namespace GUI.UserControls
         }
         private void LoadUserControl(UserControl uc)
         {
-            panel1.Controls.Clear();
+            panel_Content.Controls.Clear();
             uc.Dock = DockStyle.Fill;
-            panel1.Controls.Add(uc);
+           panel_Content.Controls.Add(uc);
         }
         private void button1_Click(object sender, EventArgs e)
         {

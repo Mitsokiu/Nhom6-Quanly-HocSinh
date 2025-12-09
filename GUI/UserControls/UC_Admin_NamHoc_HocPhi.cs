@@ -26,7 +26,7 @@ namespace GUI.UserControls
             comboBox3.SelectedIndexChanged += comboBox3_SelectedIndexChanged;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             dataGridView1.CellClick += dataGridView1_CellClick;
-            button3.Click += button3_Click;
+            btnback.Click += button3_Click;
 
             // Các setup DataGridView: bind tên cột với DataPropertyName
             SetupDataGridViewColumns();

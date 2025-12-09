@@ -12,7 +12,7 @@ namespace GUI.UserControls
             InitializeComponent();
             LoadData();
             dataGridView1.CellClick += DataGridView1_CellClick;
-            button4.Click += BtnAdd_Click;
+            btnAdd.Click += BtnAdd_Click;
             btnUpdate.Click += BtnUpdate_Click;
             btnDelete.Click += BtnDelete_Click;
         }

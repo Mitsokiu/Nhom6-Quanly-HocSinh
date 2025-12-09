@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.comboBoxYear = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -35,9 +36,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxTeacher = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnadd = new System.Windows.Forms.Button();
-            this.btnsua = new System.Windows.Forms.Button();
-            this.btnxoa = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.year = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lop = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +44,9 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnxoa = new System.Windows.Forms.Button();
+            this.btnsua = new System.Windows.Forms.Button();
+            this.btnadd = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbnumpage = new System.Windows.Forms.Label();
             this.btntail = new System.Windows.Forms.Button();
@@ -119,48 +120,24 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Ngày Tạo";
             // 
-            // btnadd
-            // 
-            this.btnadd.BackColor = System.Drawing.Color.Lime;
-            this.btnadd.Location = new System.Drawing.Point(25, 311);
-            this.btnadd.Name = "btnadd";
-            this.btnadd.Size = new System.Drawing.Size(75, 42);
-            this.btnadd.TabIndex = 8;
-            this.btnadd.Text = "Thêm";
-            this.btnadd.UseVisualStyleBackColor = false;
-            this.btnadd.Click += new System.EventHandler(this.BtnAdd_Click);
-            // 
-            // btnsua
-            // 
-            this.btnsua.BackColor = System.Drawing.Color.Lime;
-            this.btnsua.Location = new System.Drawing.Point(153, 311);
-            this.btnsua.Name = "btnsua";
-            this.btnsua.Size = new System.Drawing.Size(75, 42);
-            this.btnsua.TabIndex = 9;
-            this.btnsua.Text = "Sửa";
-            this.btnsua.UseVisualStyleBackColor = false;
-            this.btnsua.Click += new System.EventHandler(this.BtnUpdate_Click);
-            // 
-            // btnxoa
-            // 
-            this.btnxoa.BackColor = System.Drawing.Color.Lime;
-            this.btnxoa.Location = new System.Drawing.Point(277, 311);
-            this.btnxoa.Name = "btnxoa";
-            this.btnxoa.Size = new System.Drawing.Size(75, 42);
-            this.btnxoa.TabIndex = 10;
-            this.btnxoa.Text = "Xóa";
-            this.btnxoa.UseVisualStyleBackColor = false;
-            this.btnxoa.Click += new System.EventHandler(this.BtnDelete_Click);
-            // 
             // dataGridView1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(70)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.year,
             this.lop,
             this.gvcn,
             this.NgayTao});
+            this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(400, 68);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
@@ -208,7 +185,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Green;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(70)))), ((int)(((byte)(102)))));
             this.label6.Location = new System.Drawing.Point(13, 12);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(233, 25);
@@ -217,22 +194,65 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnxoa);
+            this.panel1.Controls.Add(this.btnsua);
+            this.panel1.Controls.Add(this.btnadd);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.comboBoxYear);
             this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.btnxoa);
             this.panel1.Controls.Add(this.comboBoxClass);
-            this.panel1.Controls.Add(this.btnsua);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.btnadd);
             this.panel1.Controls.Add(this.comboBoxTeacher);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(18, 68);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(376, 368);
+            this.panel1.Size = new System.Drawing.Size(376, 415);
             this.panel1.TabIndex = 20;
+            // 
+            // btnxoa
+            // 
+            this.btnxoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            this.btnxoa.FlatAppearance.BorderSize = 0;
+            this.btnxoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnxoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnxoa.ForeColor = System.Drawing.Color.White;
+            this.btnxoa.Location = new System.Drawing.Point(279, 283);
+            this.btnxoa.Name = "btnxoa";
+            this.btnxoa.Size = new System.Drawing.Size(83, 41);
+            this.btnxoa.TabIndex = 15;
+            this.btnxoa.Text = "🗑️ Xóa";
+            this.btnxoa.UseVisualStyleBackColor = false;
+            // 
+            // btnsua
+            // 
+            this.btnsua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.btnsua.FlatAppearance.BorderSize = 0;
+            this.btnsua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsua.ForeColor = System.Drawing.Color.White;
+            this.btnsua.Location = new System.Drawing.Point(144, 283);
+            this.btnsua.Name = "btnsua";
+            this.btnsua.Size = new System.Drawing.Size(114, 41);
+            this.btnsua.TabIndex = 14;
+            this.btnsua.Text = "📝 Sửa";
+            this.btnsua.UseVisualStyleBackColor = false;
+            // 
+            // btnadd
+            // 
+            this.btnadd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btnadd.FlatAppearance.BorderSize = 0;
+            this.btnadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnadd.ForeColor = System.Drawing.Color.White;
+            this.btnadd.Location = new System.Drawing.Point(11, 283);
+            this.btnadd.Name = "btnadd";
+            this.btnadd.Size = new System.Drawing.Size(108, 41);
+            this.btnadd.TabIndex = 13;
+            this.btnadd.Text = "➕ Thêm";
+            this.btnadd.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -241,63 +261,66 @@
             this.panel2.Controls.Add(this.btnnext);
             this.panel2.Controls.Add(this.btnback);
             this.panel2.Controls.Add(this.btnhead);
-            this.panel2.Location = new System.Drawing.Point(470, 451);
+            this.panel2.Location = new System.Drawing.Point(400, 442);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(488, 40);
+            this.panel2.Size = new System.Drawing.Size(641, 40);
             this.panel2.TabIndex = 21;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // lbnumpage
             // 
             this.lbnumpage.AutoSize = true;
-            this.lbnumpage.Location = new System.Drawing.Point(234, 12);
+            this.lbnumpage.Location = new System.Drawing.Point(471, 8);
             this.lbnumpage.Name = "lbnumpage";
             this.lbnumpage.Size = new System.Drawing.Size(18, 20);
             this.lbnumpage.TabIndex = 4;
             this.lbnumpage.Text = "1";
+            this.lbnumpage.Click += new System.EventHandler(this.lbnumpage_Click);
             // 
             // btntail
             // 
-            this.btntail.BackColor = System.Drawing.Color.Lime;
-            this.btntail.Location = new System.Drawing.Point(400, 4);
+            this.btntail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(103)))), ((int)(((byte)(174)))));
+            this.btntail.Location = new System.Drawing.Point(586, 4);
             this.btntail.Name = "btntail";
-            this.btntail.Size = new System.Drawing.Size(75, 28);
+            this.btntail.Size = new System.Drawing.Size(52, 28);
             this.btntail.TabIndex = 3;
             this.btntail.Text = ">>";
             this.btntail.UseVisualStyleBackColor = false;
             // 
             // btnnext
             // 
-            this.btnnext.BackColor = System.Drawing.Color.Lime;
-            this.btnnext.Location = new System.Drawing.Point(319, 4);
+            this.btnnext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(103)))), ((int)(((byte)(174)))));
+            this.btnnext.Location = new System.Drawing.Point(528, 4);
             this.btnnext.Name = "btnnext";
-            this.btnnext.Size = new System.Drawing.Size(75, 28);
+            this.btnnext.Size = new System.Drawing.Size(52, 28);
             this.btnnext.TabIndex = 2;
             this.btnnext.Text = ">";
             this.btnnext.UseVisualStyleBackColor = false;
             // 
             // btnback
             // 
-            this.btnback.BackColor = System.Drawing.Color.Lime;
-            this.btnback.Location = new System.Drawing.Point(95, 4);
+            this.btnback.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(103)))), ((int)(((byte)(174)))));
+            this.btnback.Location = new System.Drawing.Point(387, 4);
             this.btnback.Name = "btnback";
-            this.btnback.Size = new System.Drawing.Size(75, 28);
+            this.btnback.Size = new System.Drawing.Size(50, 28);
             this.btnback.TabIndex = 1;
             this.btnback.Text = "<";
             this.btnback.UseVisualStyleBackColor = false;
             // 
             // btnhead
             // 
-            this.btnhead.BackColor = System.Drawing.Color.Lime;
-            this.btnhead.Location = new System.Drawing.Point(14, 4);
+            this.btnhead.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(103)))), ((int)(((byte)(174)))));
+            this.btnhead.Location = new System.Drawing.Point(331, 4);
             this.btnhead.Name = "btnhead";
-            this.btnhead.Size = new System.Drawing.Size(75, 28);
+            this.btnhead.Size = new System.Drawing.Size(50, 28);
             this.btnhead.TabIndex = 0;
             this.btnhead.Text = "<<";
             this.btnhead.UseVisualStyleBackColor = false;
             // 
             // btnxuat
             // 
-            this.btnxuat.BackColor = System.Drawing.Color.Lime;
+            this.btnxuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btnxuat.ForeColor = System.Drawing.Color.White;
             this.btnxuat.Location = new System.Drawing.Point(921, 12);
             this.btnxuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnxuat.Name = "btnxuat";
@@ -311,6 +334,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.btnxuat);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -337,9 +361,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBoxTeacher;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnadd;
-        private System.Windows.Forms.Button btnsua;
-        private System.Windows.Forms.Button btnxoa;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DataGridViewTextBoxColumn year;
@@ -355,6 +376,9 @@
         private System.Windows.Forms.Button btnhead;
         private System.Windows.Forms.Label lbnumpage;
         private System.Windows.Forms.Button btnxuat;
+        private System.Windows.Forms.Button btnxoa;
+        private System.Windows.Forms.Button btnsua;
+        private System.Windows.Forms.Button btnadd;
     }
 
 
