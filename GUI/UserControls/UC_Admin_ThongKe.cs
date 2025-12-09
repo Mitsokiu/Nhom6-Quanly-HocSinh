@@ -1,12 +1,7 @@
-﻿using BUS;
+﻿using BUS; // Namespace của bạn
+using DTO; // Namespace của bạn
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -14,117 +9,87 @@ namespace GUI.UserControls
 {
     public partial class UC_Admin_ThongKe : UserControl
     {
-        UserBUS userBus = new UserBUS();
-        private int totalUsers, totalStudents, totalTeachers,totalgvcn,totalgvbm;
+        // StatisticBUS statisticBUS = new StatisticBUS();
+
         public UC_Admin_ThongKe()
         {
             InitializeComponent();
-           
-            totalStudents = userBus.GetTotalStudents();
-            totalTeachers = userBus.GetTotalTeachers();
-            totalUsers = userBus.GetTotalUsers();
-            totalgvcn= userBus.GetTotalGVCN();
-            totalgvbm= userBus.GetTotalGVBM();
-            LoadDashboard();
-            LoadCharts();
-            LoadStudentLineChart();
-            LoadStudentChart(1);
-
-
         }
 
-
-        private void LoadDashboard()
+        protected override void OnLoad(EventArgs e)
         {
-         lbsum.Text = totalUsers.ToString();
-            lbnumhs.Text = totalStudents.ToString();
-            lbgv.Text = totalTeachers.ToString();
-        }
-
-
-        private void LoadCharts()
-        {
-           
-            chart2.Series[0].Points.Clear();
-
-          
-
-            // Chart giáo viên Pie
-            chart2.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            chart2.Series[0].Points.AddXY("Giáo Viên CN", totalgvcn);
-            chart2.Series[0].Points.AddXY("Giaó Viên BM ", totalgvbm);
-        }
-
-        private void LoadStudentLineChart()
-        {
-            var stats = userBus.GetStudentStatsByDate();
-           
-            chart1.Series.Clear();
-            chart1.ChartAreas[0].AxisX.Interval = 1;
-
-            var series = new Series("Học Sinh")
+            base.OnLoad(e);
+            if (!this.DesignMode)
             {
-                ChartType = SeriesChartType.Line,
-                BorderWidth = 3,
-                MarkerStyle = MarkerStyle.Circle,
-                MarkerSize = 7
-            };
-
-            foreach (var item in stats)
-            {
-                series.Points.AddXY(item.CreatedDate.ToString("dd/MM"), item.Count);
+                LoadDataCoCau();
             }
-
-            chart1.Series.Add(series);
         }
 
-
-        private void LoadStudentChart(int currentYearId)
+        // Hàm chỉ load dữ liệu cho Tab 1: Cơ Cấu
+        public void LoadDataCoCau()
         {
-            // 1. Lấy dữ liệu từ BUS
-            DataTable dtStudentCount = StudentBUS.GetStudentCountByClass(currentYearId);
-
-            // 2. Xóa dữ liệu cũ và thiết lập biểu đồ
-            chart3.Series.Clear();
-            chart3.Titles.Clear();
-
-            // Thêm tiêu đề
-            chart3.Titles.Add("Biểu Đồ So Sánh Số Lượng Học Sinh Theo Lớp");
-
-            // 3. Tạo Series (chuỗi dữ liệu) cho biểu đồ cột
-            Series series = new Series("Số lượng Học Sinh")
+            try
             {
-                ChartType = SeriesChartType.Column,
-                IsValueShownAsLabel = true // Hiển thị giá trị trên cột
-            };
+                // 1. Load Số liệu tổng quan (3 Card màu)
+                // lblNumStudents.Text = statisticBUS.GetTotalStudents().ToString();
+                // lblNumTeachers.Text = statisticBUS.GetTotalTeachers().ToString();
+                // lblNumClasses.Text = statisticBUS.GetTotalClasses().ToString();
 
-            // 4. Đổ dữ liệu từ DataTable vào Series
-            if (dtStudentCount.Rows.Count > 0)
-            {
-                foreach (DataRow row in dtStudentCount.Rows)
-                {
-                    string className = row["ClassName"].ToString();
-                    int studentCount = Convert.ToInt32(row["StudentCount"]);
+                // Mock data
+                lblNumStudents.Text = "270";
+                lblNumTeachers.Text = "65";
+                lblNumClasses.Text = "12";
 
-                    // Thêm điểm dữ liệu (Tên lớp là trục X, Số lượng là trục Y)
-                    series.Points.AddXY(className, studentCount);
-                }
+                // 2. Load Biểu đồ Học sinh (Tròn - Giới tính)
+                SetupPieChart(chartStudent, "Cơ cấu Giới tính HS");
+                chartStudent.Series[0].Points.Clear();
+                chartStudent.Series[0].Points.AddXY("Nam", 150);
+                chartStudent.Series[0].Points.AddXY("Nữ", 120);
+
+                // 3. Load Biểu đồ Giáo viên (Cột - Chức vụ)
+                SetupColumnChart(chartTeacher, "Cơ cấu Giáo viên");
+                chartTeacher.Series[0].Points.Clear();
+                chartTeacher.Series[0].Points.AddXY("GVCN", 20);
+                chartTeacher.Series[0].Points.AddXY("GVBM", 45);
+                chartTeacher.Series[0].Palette = ChartColorPalette.SeaGreen;
             }
-            else
+            catch (Exception ex)
             {
-                // Xử lý trường hợp không có dữ liệu
-                series.Points.AddXY("Không có dữ liệu", 0);
+                MessageBox.Show("Lỗi tải thống kê cơ cấu: " + ex.Message);
             }
-
-            // 5. Thêm Series vào Chart control
-            chart3.Series.Add(series);
         }
 
-
-
-        private void label4_Click(object sender, EventArgs e)
+        // Helper setup chart cho đẹp
+        private void SetupPieChart(Chart chart, string title)
         {
-
+            chart.Titles.Clear();
+            Title t = new Title(title);
+            t.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            chart.Titles.Add(t);
+            chart.Series[0].ChartType = SeriesChartType.Pie;
+            chart.Series[0].IsValueShownAsLabel = true;
         }
+
+        private void SetupColumnChart(Chart chart, string title)
+        {
+            chart.Titles.Clear();
+            Title t = new Title(title);
+            t.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            chart.Titles.Add(t);
+            chart.Series[0].ChartType = SeriesChartType.Column;
+            chart.Series[0].IsValueShownAsLabel = true;
+            chart.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+            chart.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.LightGray;
+        }
+
+        // Sau này khi bạn viết xong file UC_ThongKe_Diem, bạn sẽ dùng code này để add vào Tab 2
+        /*
+        private void LoadTabDiemSo()
+        {
+            UC_ThongKe_Diem ucDiem = new UC_ThongKe_Diem();
+            ucDiem.Dock = DockStyle.Fill;
+            tabDiemSo.Controls.Add(ucDiem);
+        }
+        */
     }
 }

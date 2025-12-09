@@ -296,6 +296,18 @@
     <Compile Include="UserControls\UC_Admin_ThongKe.Designer.cs">
       <DependentUpon>UC_Admin_ThongKe.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UC_Admin_ThongKe_DiemSo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_Admin_ThongKe_DiemSo.Designer.cs">
+      <DependentUpon>UC_Admin_ThongKe_DiemSo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_Admin_ThongKe_HocPhi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_Admin_ThongKe_HocPhi.Designer.cs">
+      <DependentUpon>UC_Admin_ThongKe_HocPhi.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UC_Admin_User.cs">
       <SubType>UserControl</SubType>
     </Compile>

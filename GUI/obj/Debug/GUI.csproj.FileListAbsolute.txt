@@ -706,3 +706,4 @@ C:\Code\c3\GUI\obj\Debug\GUI.csproj.Up2Date
 C:\Code\c3\GUI\obj\Debug\GUI.exe
 C:\Code\c3\GUI\obj\Debug\GUI.pdb
 C:\Code\c3\GUI\obj\Debug\GUI.UserControls.UC_GVCN_HanhKiem.resources
+D:\GitHub\QLHS\GUI\obj\Debug\GUI.UserControls.UC_GVCN_HanhKiem.resources
