@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 namespace DAO
 {
     public class StudentDAO
@@ -516,6 +517,32 @@ namespace DAO
             }
             return list;
         }
+
+
+        public StudentDTO GetStudentById(int studentId)
+        {
+            string query = @"
+        SELECT s.student_id, s.user_id, u.fullname, s.dob, s.gender, s.address, 
+               c.class_id, c.class_name, ay.name AS year_name
+        FROM students s
+        JOIN users u ON s.user_id = u.user_id
+        LEFT JOIN student_class sc ON s.student_id = sc.student_id
+        LEFT JOIN classes c ON sc.class_id = c.class_id
+        LEFT JOIN academic_years ay ON sc.school_year_id = ay.year_id
+        WHERE u.role_id = 'student' AND s.student_id = @param0
+        LIMIT 1";
+
+            DataTable dt = DbConnect.ExecuteQuery(query, new object[] { studentId });
+
+            if (dt.Rows.Count == 0) return null;
+
+            StudentDTO student = MapDataRowToStudent(dt.Rows[0]);
+           
+           
+            GetParentInfo(student); // Lấy thông tin phụ huynh
+            return student;
+        }
+
 
         public DataTable GetStudentParents(int studentId)
         {

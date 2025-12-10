@@ -106,7 +106,7 @@ namespace GUI.UserControls
             }
 
             int gradeId = Convert.ToInt32(cbBoxGrade.SelectedValue);
-            string className = textLop.Text.Trim();
+            string className = textId.Text.Trim();
 
             if (string.IsNullOrEmpty(className))
             {
@@ -147,7 +147,7 @@ namespace GUI.UserControls
 
             int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["class_id"].Value);
             int gradeId = Convert.ToInt32(cbBoxGrade.SelectedValue);
-            string className = textLop.Text.Trim();
+            string className = textId.Text.Trim();
 
             if (string.IsNullOrEmpty(className))
             {
@@ -187,8 +187,8 @@ namespace GUI.UserControls
 
             var row = dataGridView1.Rows[e.RowIndex];
 
-            textMa.Text = row.Cells["class_id"].Value?.ToString() ?? "";
-            textLop.Text = row.Cells["class_name"].Value?.ToString() ?? "";
+            textclass.Text = row.Cells["class_id"].Value?.ToString() ?? "";
+            textId.Text = row.Cells["class_name"].Value?.ToString() ?? "";
 
             // Gán ID khối cho ComboBox
             string gradeIdValue = row.Cells["grade_id"].Value?.ToString() ?? "";
@@ -204,8 +204,8 @@ namespace GUI.UserControls
 
         private void ResetForm()
         {
-            textMa.Clear();
-            textLop.Clear();
+            textclass.Clear();
+            textId.Clear();
             cbBoxGrade.SelectedIndex = -1;
         }
     }

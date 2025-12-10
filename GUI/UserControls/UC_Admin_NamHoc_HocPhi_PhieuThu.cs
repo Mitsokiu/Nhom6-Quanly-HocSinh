@@ -11,13 +11,11 @@ namespace GUI.UserControls
     public partial class UC_Admin_NamHoc_HocPhi_PhieuThu : UserControl
     {
         private TuitionBUS tuitionBUS = new TuitionBUS();
-        private List<TuitionDTO> currentTuitionList = new List<TuitionDTO>();
 
-        private int pageSize = 10;           // số dòng mỗi trang
-        private int currentPage = 1;         // trang hiện tại
-        private int totalPage = 1;           // tổng số trang
-        private List<TuitionDTO> allTuition; // toàn bộ dữ liệu đã lọc trùng
-
+        private List<TuitionDTO> allTuition = new List<TuitionDTO>(); // Data đã lọc trùng
+        private int pageSize = 10;
+        private int currentPage = 1;
+        private int totalPage = 1;
 
         public UC_Admin_NamHoc_HocPhi_PhieuThu()
         {
@@ -26,112 +24,91 @@ namespace GUI.UserControls
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
         }
 
-      
-        //private void LoadTuitionData()
-        //{
-        //    dataGridView1.Rows.Clear();
-        //    var list = tuitionBUS.GetAllTuition(); // lấy tất cả học phí
-
-        //    // Lọc trùng theo name + Amount + DueDate
-        //    var uniqueList = new List<TuitionDTO>();
-        //    var seen = new HashSet<string>();
-
-        //    foreach (var t in list)
-        //    {
-        //        string key = $"{t.name}_{t.Amount}_{t.DueDate:yyyyMMdd}";
-        //        if (!seen.Contains(key))
-        //        {
-        //            seen.Add(key);
-        //            uniqueList.Add(t);
-        //        }
-        //    }
-
-        //    currentTuitionList = uniqueList; // lưu danh sách đã lọc
-
-        //    foreach (var t in uniqueList)
-        //    {
-        //        dataGridView1.Rows.Add(t.name ?? "", t.Amount, t.DueDate.ToString("dd/MM/yyyy"));
-        //    }
-        //}
+        // ============================================================
+        // Tải dữ liệu + lọc trùng + phân trang
+        // ============================================================
         private void LoadTuitionData()
         {
             var list = tuitionBUS.GetAllTuition();
 
-            // Lọc trùng theo name + Amount + DueDate
-            var uniqueList = new List<TuitionDTO>();
+            // Lọc trùng theo name + amount + dueDate
+            var unique = new List<TuitionDTO>();
             var seen = new HashSet<string>();
+
             foreach (var t in list)
             {
                 string key = $"{t.name}_{t.Amount}_{t.DueDate:yyyyMMdd}";
                 if (!seen.Contains(key))
                 {
                     seen.Add(key);
-                    uniqueList.Add(t);
+                    unique.Add(t);
                 }
             }
 
-            allTuition = uniqueList;
+            allTuition = unique;
 
             totalPage = Math.Max(1, (int)Math.Ceiling(allTuition.Count / (double)pageSize));
             currentPage = 1;
 
-            LoadPage(currentPage);
+            LoadPage(1);
         }
+
         private void LoadPage(int page)
         {
             dataGridView1.Rows.Clear();
 
-            currentPage = Math.Min(Math.Max(1, page), totalPage);
+            currentPage = Math.Max(1, Math.Min(page, totalPage));
 
             int start = (currentPage - 1) * pageSize;
             var pageData = allTuition.Skip(start).Take(pageSize).ToList();
 
             foreach (var t in pageData)
             {
-                dataGridView1.Rows.Add(t.name ?? "", t.Amount, t.DueDate.ToString("dd/MM/yyyy"));
+                dataGridView1.Rows.Add(t.name, t.Amount, t.DueDate.ToString("dd/MM/yyyy"));
             }
 
-            // hiển thị số trang
-           lblpage.Text = $"{currentPage}/{totalPage}";
+            lblpage.Text = $"{currentPage}/{totalPage}";
 
-            // Enable/disable nút
             btnFirst.Enabled = currentPage > 1;
             btnPrev.Enabled = currentPage > 1;
             btnNext.Enabled = currentPage < totalPage;
             btnLast.Enabled = currentPage < totalPage;
         }
 
-
-        // Khi chọn hàng trên DataGridView, hiển thị dữ liệu lên TextBox và DateTimePicker
+        // ============================================================
+        // Khi chọn dòng → hiển thị lên textbox
+        // ============================================================
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentRow == null) return;
 
-            var row = dataGridView1.CurrentRow;
-            textBox2.Text = row.Cells[0].Value?.ToString() ?? "";
-            textBox3.Text = row.Cells[1].Value?.ToString() ?? "";
+            textBox2.Text = dataGridView1.CurrentRow.Cells[0].Value?.ToString() ?? "";
+            textBox3.Text = dataGridView1.CurrentRow.Cells[1].Value?.ToString() ?? "";
 
-            if (DateTime.TryParse(row.Cells[2].Value?.ToString(), out DateTime dueDate))
-                dateTimePicker1.Value = dueDate;
+            if (DateTime.TryParse(dataGridView1.CurrentRow.Cells[2].Value?.ToString(), out DateTime dt))
+                dateTimePicker1.Value = dt;
         }
 
-        // Thêm học phí cho tất cả học sinh
-        private void Button4_Click(object sender, EventArgs e)
+        // ============================================================
+        // Thêm học phí cho toàn bộ học sinh
+        // ============================================================
+        private void Btnadd_Click(object sender, EventArgs e)
         {
             string name = textBox2.Text;
+
             if (!decimal.TryParse(textBox3.Text, out decimal amount))
             {
                 MessageBox.Show("Số tiền không hợp lệ");
                 return;
             }
-            MessageBox.Show(amount.ToString(),name);
+
             DateTime dueDate = dateTimePicker1.Value;
 
-            bool success = tuitionBUS.AddTuitionForAllStudents(name, amount, dueDate);
+            bool ok = tuitionBUS.AddTuitionForAllStudents(name, amount, dueDate);
 
-            if (success)
+            if (ok)
             {
-                MessageBox.Show("Thêm học phí thành công");
+                MessageBox.Show("Thêm thành công");
                 LoadTuitionData();
             }
             else
@@ -140,57 +117,32 @@ namespace GUI.UserControls
             }
         }
 
+        // ============================================================
         // Sửa học phí
-        //private void button5_Click(object sender, EventArgs e)
-        //{
-        //    if (dataGridView1.CurrentRow == null) return;
-
-        //    int index = dataGridView1.CurrentRow.Index;
-        //    var tuition = currentTuitionList[index]; // lấy DTO từ danh sách
-
-        //    string name = textBox2.Text;
-        //    if (!decimal.TryParse(textBox3.Text, out decimal amount))
-        //    {
-        //        MessageBox.Show("Số tiền không hợp lệ");
-        //        return;
-        //    }
-        //    DateTime dueDate = dateTimePicker1.Value;
-
-        //    bool success = tuitionBUS.UpdateTuition(tuition.TuitionId, name, amount, dueDate);
-
-        //    if (success)
-        //    {
-        //        MessageBox.Show("Cập nhật thành công");
-        //        LoadTuitionData();
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Cập nhật thất bại");
-        //    }
-        //}
-        // Sửa hàm Sửa học phí
-        private void button5_Click(object sender, EventArgs e)
+        // ============================================================
+        private void btnsua_Click(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentRow == null) return;
 
-            int index = dataGridView1.CurrentRow.Index;
-            var tuition = currentTuitionList[index]; // DTO từ danh sách
+            int index = (currentPage - 1) * pageSize + dataGridView1.CurrentRow.Index;
+            if (index < 0 || index >= allTuition.Count) return;
 
-            string name = textBox2.Text;
-            if (!decimal.TryParse(textBox3.Text, out decimal amount))
+            var old = allTuition[index];
+
+            string newName = textBox2.Text;
+            if (!decimal.TryParse(textBox3.Text, out decimal newAmount))
             {
                 MessageBox.Show("Số tiền không hợp lệ");
                 return;
             }
-            DateTime dueDate = dateTimePicker1.Value;
+            DateTime newDueDate = dateTimePicker1.Value;
 
-            // Truyền thông tin cũ + mới cho BUS
-            bool success = tuitionBUS.UpdateTuition(
-                tuition.name, tuition.Amount, tuition.DueDate, // thông tin cũ
-                name, amount, dueDate                           // thông tin mới
+            bool ok = tuitionBUS.UpdateTuition(
+                old.name, old.Amount, old.DueDate,
+                newName, newAmount, newDueDate
             );
 
-            if (success)
+            if (ok)
             {
                 MessageBox.Show("Cập nhật thành công");
                 LoadTuitionData();
@@ -201,94 +153,36 @@ namespace GUI.UserControls
             }
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        // ============================================================
+        // Xóa học phí
+        // ============================================================
+        private void btnxoa_Click(object sender, EventArgs e)
         {
-            // Lấy giá trị từ TextBox
-            string name = textBox2.Text.Trim();
-           
-            DateTime dueDate;
+            if (dataGridView1.CurrentRow == null) return;
 
-            if (string.IsNullOrEmpty(name) ||
-                
-                !DateTime.TryParse(dateTimePicker1.Text.Trim(), out dueDate))
-            {
-                MessageBox.Show("Vui lòng chon dong can xoa.");
-                return;
-            }
+            int index = (currentPage - 1) * pageSize + dataGridView1.CurrentRow.Index;
+            if (index < 0 || index >= allTuition.Count) return;
 
-            var confirm = MessageBox.Show("Bạn có chắc muốn xóa?", "Xác nhận", MessageBoxButtons.YesNo);
+            var old = allTuition[index];
+
+            var confirm = MessageBox.Show("Bạn có chắc muốn xóa?",
+                                          "Xác nhận",
+                                          MessageBoxButtons.YesNo);
+
             if (confirm != DialogResult.Yes) return;
 
-            bool success = tuitionBUS.DeleteTuition(new TuitionDTO
-            {
-                name = name,
-               
-                DueDate = dueDate
-            });
+            bool ok = tuitionBUS.DeleteTuition(old.name, old.Amount, old.DueDate);
 
-            if (success)
+            if (ok)
             {
                 MessageBox.Show("Xóa thành công");
-                LoadTuitionData(); // Reload lại dữ liệu
+                LoadTuitionData();
             }
             else
             {
                 MessageBox.Show("Xóa thất bại");
             }
         }
-
-
-
-
-
-        //private void button6_Click(object sender, EventArgs e)
-        //{
-        //    if (dataGridView1.CurrentRow == null) return;
-
-        //    int index = dataGridView1.CurrentRow.Index;
-        //    var tuition = currentTuitionList[index]; // DTO từ danh sách
-
-        //    var confirm = MessageBox.Show("Bạn có chắc muốn xóa?", "Xác nhận", MessageBoxButtons.YesNo);
-        //    if (confirm == DialogResult.Yes)
-        //    {
-        //        bool success = tuitionBUS.DeleteTuition(
-        //            tuition.name, tuition.Amount, tuition.DueDate // dùng thông tin cũ để xóa tất cả bản ghi trùng
-        //        );
-
-        //        if (success)
-        //        {
-        //            MessageBox.Show("Xóa thành công");
-        //            LoadTuitionData();
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Xóa thất bại");
-        //        }
-        //    }
-        //}
-
-        //private void btnFirst_Click(object sender, EventArgs e)
-        //{
-        //    LoadPage(1);
-        //}
-
-        //private void btnPrev_Click(object sender, EventArgs e)
-        //{
-        //    if (currentPage > 1)
-        //        LoadPage(currentPage - 1);
-        //}
-
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-            if (currentPage < totalPage)
-                LoadPage(currentPage + 1);
-        }
-
-        private void btnLast_Click(object sender, EventArgs e)
-        {
-            LoadPage(totalPage);
-        }
-
 
 
         private void ExportToExcel(DataGridView dgv)
@@ -299,52 +193,56 @@ namespace GUI.UserControls
                 return;
             }
 
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "Excel File (*.xlsx)|*.xlsx";
-            sfd.FileName = "DanhSachHocPhi.xlsx";
+            SaveFileDialog sfd = new SaveFileDialog
+            {
+                Filter = "Excel File (*.xlsx)|*.xlsx",
+                FileName = "DanhSachHocPhi.xlsx"
+            };
 
             if (sfd.ShowDialog() != DialogResult.OK)
                 return;
 
             try
             {
-                using (var wb = new XLWorkbook())
+                using (var workbook = new XLWorkbook())
                 {
-                    var ws = wb.Worksheets.Add("HocPhi");
+                    var ws = workbook.Worksheets.Add("HocPhi");
 
-                    int colIndex = 1;
+                    int col = 1;
 
-                    // Tiêu đề cột
-                    foreach (DataGridViewColumn col in dgv.Columns)
+                    // Xuất tiêu đề cột
+                    foreach (DataGridViewColumn column in dgv.Columns)
                     {
-                        if (!col.Visible) continue;
+                        if (!column.Visible)
+                            continue;
 
-                        var cell = ws.Cell(1, colIndex);
-                        cell.Value = col.HeaderText;
+                        var cell = ws.Cell(1, col);
+                        cell.Value = column.HeaderText;
+
                         cell.Style.Font.Bold = true;
                         cell.Style.Fill.BackgroundColor = XLColor.LightGray;
                         cell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
                         cell.Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
 
-                        colIndex++;
+                        col++;
                     }
 
-                    // Dữ liệu
-                    int rowIndex = 2;
-                    foreach (DataGridViewRow row in dgv.Rows)
+                    // Xuất dữ liệu
+                    int row = 2;
+                    foreach (DataGridViewRow dgvRow in dgv.Rows)
                     {
-                        if (row.IsNewRow) continue;
+                        if (dgvRow.IsNewRow)
+                            continue;
 
-                        colIndex = 1;
-
-                        foreach (DataGridViewColumn col in dgv.Columns)
+                        col = 1;
+                        foreach (DataGridViewColumn column in dgv.Columns)
                         {
-                            if (!col.Visible) continue;
+                            if (!column.Visible)
+                                continue;
 
-                            var cell = ws.Cell(rowIndex, colIndex);
-                            var value = row.Cells[col.Index].Value;
+                            var cell = ws.Cell(row, col);
+                            var value = dgvRow.Cells[column.Index].Value;
 
-                            // Format ngày
                             if (value is DateTime dt)
                             {
                                 cell.Value = dt;
@@ -357,15 +255,14 @@ namespace GUI.UserControls
 
                             cell.Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
 
-                            colIndex++;
+                            col++;
                         }
 
-                        rowIndex++;
+                        row++;
                     }
 
                     ws.Columns().AdjustToContents();
-
-                    wb.SaveAs(sfd.FileName);
+                    workbook.SaveAs(sfd.FileName);
                 }
 
                 MessageBox.Show("Xuất Excel thành công.");
@@ -380,30 +277,15 @@ namespace GUI.UserControls
             ExportToExcel(dataGridView1);
         }
 
-        // Các nút khác (tạm để trống hoặc gọi sự kiện riêng)
-        private void button1_Click(object sender, EventArgs e)
-        {
-            // Quản lý học phí
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            // Thiết lập khoảng thu
-        }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
-
-        private void UC_Admin_NamHoc_HocPhi_PhieuThu_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        // ============================================================
+        // Điều hướng phân trang
+        // ============================================================
+        private void btnFirst_Click(object sender, EventArgs e) => LoadPage(1);
+        private void btnPrev_Click(object sender, EventArgs e) => LoadPage(currentPage - 1);
+        private void btnNext_Click(object sender, EventArgs e) => LoadPage(currentPage + 1);
+        private void btnLast_Click(object sender, EventArgs e) => LoadPage(totalPage);
     }
 }

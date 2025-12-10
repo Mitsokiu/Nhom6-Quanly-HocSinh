@@ -15,7 +15,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GUI.UserControls
 {
- 
+
     public partial class UC_Admin_Student : UserControl
     {
         private AcademicYearBUS yearBUS = new AcademicYearBUS();
@@ -30,7 +30,7 @@ namespace GUI.UserControls
         public UC_Admin_Student()
         {
             InitializeComponent();
-           
+
             LoadYears();
             LoadAllClasses();
 
@@ -38,7 +38,7 @@ namespace GUI.UserControls
 
         }
 
-      
+
 
 
         private void LoadYears()
@@ -136,7 +136,7 @@ namespace GUI.UserControls
 
             dataGridView1.DataSource = pageTable;
 
-           lblpage.Text = $"{currentPage}/{totalPage}";
+            lblpage.Text = $"{currentPage}/{totalPage}";
         }
 
 
@@ -207,6 +207,37 @@ namespace GUI.UserControls
             cbBoxClass.SelectedIndex = cbBoxClass.FindStringExact(className);
         }
 
+        private void btnDetail_Click(object sender, EventArgs e)
+        {
+            if (selectedStudentId <= 0)
+            {
+                MessageBox.Show("Vui lòng chọn học sinh trước!");
+                return;
+            }
+
+            StudentBUS studentBUS = new StudentBUS();
+            StudentDTO student = studentBUS.GetStudentById(selectedStudentId);
+
+            if (student != null)
+            {
+                // Mở form sửa
+                int teacherUserId = 1; // hoặc lấy từ session/login hiện tại
+                using (SuaHocSinh frm = new SuaHocSinh(teacherUserId, student))
+                {
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        // Reload danh sách học sinh sau khi sửa
+                        LoadStudentGridByYear(int.Parse(cbBoxYear.SelectedValue.ToString()));
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy học sinh.");
+            }
+        }
+
+
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -217,7 +248,7 @@ namespace GUI.UserControls
                 MessageBox.Show("Vui lòng chọn lớp hợp lệ!");
                 return;
             }
-     
+
 
             StudentDTO student = new StudentDTO
             {
@@ -328,7 +359,7 @@ namespace GUI.UserControls
 
         private void LoadStudentGrid()
         {
-           
+
         }
 
 

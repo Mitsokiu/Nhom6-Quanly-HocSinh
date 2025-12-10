@@ -17,7 +17,7 @@ namespace GUI.UserControls
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label_Ma = new System.Windows.Forms.Label();
             this.label_Khoi = new System.Windows.Forms.Label();
             this.label_Lop = new System.Windows.Forms.Label();
@@ -30,8 +30,8 @@ namespace GUI.UserControls
             this.Lop_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_Input = new System.Windows.Forms.Panel();
             this.cbBoxGrade = new System.Windows.Forms.ComboBox();
-            this.textMa = new System.Windows.Forms.TextBox();
-            this.textLop = new System.Windows.Forms.TextBox();
+            this.textclass = new System.Windows.Forms.TextBox();
+            this.textId = new System.Windows.Forms.TextBox();
             this.label_Title = new System.Windows.Forms.Label();
             this.panel_Pagination = new System.Windows.Forms.Panel();
             this.lblpage = new System.Windows.Forms.Label();
@@ -124,14 +124,14 @@ namespace GUI.UserControls
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(70)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(70)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 35;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_Column,
@@ -173,8 +173,8 @@ namespace GUI.UserControls
             this.panel_Input.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.panel_Input.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_Input.Controls.Add(this.cbBoxGrade);
-            this.panel_Input.Controls.Add(this.textMa);
-            this.panel_Input.Controls.Add(this.textLop);
+            this.panel_Input.Controls.Add(this.textclass);
+            this.panel_Input.Controls.Add(this.textId);
             this.panel_Input.Controls.Add(this.label_Ma);
             this.panel_Input.Controls.Add(this.btn_them);
             this.panel_Input.Controls.Add(this.btn_sua);
@@ -196,23 +196,23 @@ namespace GUI.UserControls
             this.cbBoxGrade.Size = new System.Drawing.Size(241, 28);
             this.cbBoxGrade.TabIndex = 13;
             // 
-            // textMa
+            // textclass
             // 
-            this.textMa.BackColor = System.Drawing.Color.White;
-            this.textMa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textMa.Location = new System.Drawing.Point(88, 120);
-            this.textMa.Name = "textMa";
-            this.textMa.Size = new System.Drawing.Size(241, 26);
-            this.textMa.TabIndex = 12;
+            this.textclass.BackColor = System.Drawing.Color.White;
+            this.textclass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textclass.Location = new System.Drawing.Point(88, 120);
+            this.textclass.Name = "textclass";
+            this.textclass.Size = new System.Drawing.Size(241, 26);
+            this.textclass.TabIndex = 12;
             // 
-            // textLop
+            // textId
             // 
-            this.textLop.BackColor = System.Drawing.Color.White;
-            this.textLop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textLop.Location = new System.Drawing.Point(88, 13);
-            this.textLop.Name = "textLop";
-            this.textLop.Size = new System.Drawing.Size(241, 26);
-            this.textLop.TabIndex = 11;
+            this.textId.BackColor = System.Drawing.Color.White;
+            this.textId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textId.Location = new System.Drawing.Point(88, 13);
+            this.textId.Name = "textId";
+            this.textId.Size = new System.Drawing.Size(241, 26);
+            this.textId.TabIndex = 11;
             // 
             // label_Title
             // 
@@ -339,8 +339,8 @@ namespace GUI.UserControls
         private System.Windows.Forms.DataGridViewTextBoxColumn Khoi_Column;
         private System.Windows.Forms.DataGridViewTextBoxColumn Lop_Column;
         private System.Windows.Forms.Panel panel_Input;
-        private System.Windows.Forms.TextBox textMa;
-        private System.Windows.Forms.TextBox textLop;
+        private System.Windows.Forms.TextBox textclass;
+        private System.Windows.Forms.TextBox textId;
         private System.Windows.Forms.Label label_Title;
         private System.Windows.Forms.Panel panel_Pagination;
         private System.Windows.Forms.Button btntail;

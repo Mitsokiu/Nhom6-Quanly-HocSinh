@@ -54,9 +54,14 @@ namespace BUS
         //    return dao.DeleteTuition(t);
         //}
 
-        public bool DeleteTuition(TuitionDTO tuition)
+        //public bool DeleteTuition(string name, decimal amount, DateTime dueDate)
+        //{
+        //    return dao.DeleteTuition(name, amount, dueDate);
+        //}
+
+        public bool DeleteTuition(string name, decimal amount, DateTime dueDate)
         {
-            return tuitionDAO.DeleteTuition(tuition.name, tuition.DueDate);
+            return tuitionDAO.DeleteTuition(name, amount, dueDate);
         }
 
 

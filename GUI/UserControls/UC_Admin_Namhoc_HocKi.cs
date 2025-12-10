@@ -79,11 +79,7 @@ namespace GUI.UserControls
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(textId.Text, out int id))
-            {
-                if (AcademicYearBUS.DeleteYear(id))
-                    LoadData();
-            }
+
         }
 
         private void txtnumber_TextChanged(object sender, EventArgs e)

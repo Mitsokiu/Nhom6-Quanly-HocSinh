@@ -74,7 +74,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(364, 515);
             this.panel1.TabIndex = 3;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // dateTimePicker1
             // 
@@ -107,7 +106,7 @@
             this.button6.TabIndex = 15;
             this.button6.Text = "Xóa";
             this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button6.Click += new System.EventHandler(this.btnxoa_Click);
             // 
             // button5
             // 
@@ -122,7 +121,7 @@
             this.button5.TabIndex = 14;
             this.button5.Text = "Sửa";
             this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.Click += new System.EventHandler(this.btnsua_Click);
             // 
             // button4
             // 
@@ -137,7 +136,7 @@
             this.button4.TabIndex = 13;
             this.button4.Text = "Thêm";
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.Button4_Click);
+            this.button4.Click += new System.EventHandler(this.Btnadd_Click);
             // 
             // label3
             // 
@@ -233,7 +232,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(638, 40);
             this.panel2.TabIndex = 17;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // lblpage
             // 
@@ -331,7 +329,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UC_Admin_NamHoc_HocPhi_PhieuThu";
             this.Size = new System.Drawing.Size(1034, 607);
-            this.Load += new System.EventHandler(this.UC_Admin_NamHoc_HocPhi_PhieuThu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

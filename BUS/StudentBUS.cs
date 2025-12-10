@@ -32,6 +32,13 @@ namespace BUS
        
         public List<StudentDTO> GetAllStudents() => dao.GetStudents();
         public List<StudentDTO> GetAllStudentss() => dao.GetStudentss();
+
+        public StudentDTO GetStudentById(int studentId)
+        {
+            StudentDAO dao = new StudentDAO();
+            return dao.GetStudentById(studentId);
+        }
+
         public List<StudentDTO> SearchStudents(string keyword)
         {
             if (string.IsNullOrWhiteSpace(keyword) || keyword == "Tìm kiếm học sinh...")

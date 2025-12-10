@@ -9,22 +9,22 @@ namespace DAO
 {
     public static class ClassDAO
     {
-        //public static void AddClass(ClassDTO c)
-        //{
-        //    string query = "INSERT INTO classes (class_name, grade_id) VALUES (@name, @grade)";
+        public static void AddClass(ClassDTO c)
+        {
+            string query = "INSERT INTO classes (class_name, grade_id) VALUES (@name, @grade)";
 
-        //    using (var conn = DbConnect.GetConnection())
-        //    {
-        //        conn.Open();
-        //        using (var cmd = new MySqlCommand(query, conn))
-        //        {
-        //            cmd.Parameters.AddWithValue("@name", c.ClassName);
-        //            cmd.Parameters.AddWithValue("@grade", c.GradeId);
-        //            cmd.ExecuteNonQuery();
-        //        }
-        //    }
-        //}
-   
+            using (var conn = DbConnect.GetConnection())
+            {
+                conn.Open();
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@name", c.ClassName);
+                    cmd.Parameters.AddWithValue("@grade", c.GradeId);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
         public static void UpdateClass(ClassDTO c)
         {
             string query = "UPDATE classes SET class_name = @name, grade_id = @grade WHERE class_id = @id";
@@ -120,23 +120,23 @@ namespace DAO
 
 
 
-        public static void AddClass(ClassDTO c)
-        {
-            using (var context = new SchoolDbContext())
-            {
-                var newClass = new Class
-                {
-                    ClassName = c.ClassName,
-                    GradeId = c.GradeId
-                };
+        //public static void AddClass(ClassDTO c)
+        //{
+        //    using (var context = new SchoolDbContext())
+        //    {
+        //        var newClass = new Class
+        //        {
+        //            ClassName = c.ClassName,
+        //            GradeId = c.GradeId
+        //        };
 
-                context.Classes.Add(newClass);
-                context.SaveChanges();
+        //        context.Classes.Add(newClass);
+        //        context.SaveChanges();
 
-                // Cập nhật Id vừa tạo về DTO nếu cần
-                c.Id = newClass.ClassId;
-            }
-        }
+        //        // Cập nhật Id vừa tạo về DTO nếu cần
+        //        c.Id = newClass.ClassId;
+        //    }
+        //}
 
 
 

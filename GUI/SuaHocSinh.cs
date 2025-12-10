@@ -1,9 +1,12 @@
 ﻿using BUS;
 using DTO;
 using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
@@ -18,6 +21,15 @@ namespace GUI
 
         private readonly int _currentTeacherUserId;
         private readonly StudentDTO _studentData;
+  
+
+        // Hoặc nếu muốn tĩnh
+        // private static ClassBUS classBUS = new ClassBUS();
+
+        private AcademicYearBUS yearBUS = new AcademicYearBUS();
+        private ClassBUS classBUS = new ClassBUS();
+
+
 
         // Biến lưu đường dẫn ảnh tạm thời khi chọn từ máy
         private string currentAvatarPath = null;
@@ -44,9 +56,15 @@ namespace GUI
             _errorProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
             _errorProvider.ContainerControl = this;
 
-            LoadComboBoxData();
+            // load dữ liệu trước
+            LoadYears();
+            LoadAllClasses();
+
+            //LoadComboBoxData();
             SetupUIForEdit();
             SetupEventHandlers();
+        
+
 
             this.Load += (s, e) =>
             {
@@ -160,6 +178,68 @@ namespace GUI
             if (picAvatar.Image != null) MakeAvatarCircular();
         }
 
+        private void LoadYears()
+        {
+            try
+            {
+                DataTable dt = yearBUS.GetAllYear();
+                if (dt == null) return;
+
+                // Thêm lựa chọn "Tất cả" (value 0)
+                DataRow dr = dt.NewRow();
+                dr["year_id"] = 0;
+                dr["name"] = "-- Chọn năm --";
+                dt.Rows.InsertAt(dr, 0);
+
+                cboYear.DisplayMember = "name";
+                cboYear.ValueMember = "year_id";
+                cboYear.DataSource = dt;
+                cboYear.SelectedIndex = 1;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi load năm: " + ex.Message);
+            }
+        }
+
+
+        private void LoadAllClasses()
+        {
+            try
+            {
+                var list = ClassBUS.GetAllClasses() ?? new List<ClassDTO>();
+
+                // Tạo DataTable để bind vào ComboBox
+                DataTable dt = new DataTable();
+                dt.Columns.Add("class_id", typeof(int));
+                dt.Columns.Add("class_name", typeof(string));
+
+                // Thêm lựa chọn "Tất cả"
+                DataRow dr = dt.NewRow();
+                dr["class_id"] = 0;
+                dr["class_name"] = "-- Tất cả lớp --";
+                dt.Rows.Add(dr);
+
+                // Thêm danh sách lớp
+                foreach (var c in list)
+                {
+                    dt.Rows.Add(c.Id, c.ClassName);
+                }
+
+                cboClass.DisplayMember = "class_name";
+                cboClass.ValueMember = "class_id";
+                cboClass.DataSource = dt;
+
+                cboClass.SelectedIndex = _studentData.ClassID;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi load lớp: " + ex.Message);
+            }
+        }
+
         private void SetupUIForEdit()
         {
             lblHeaderTitle.Text = "Cập nhật Hồ sơ";
@@ -167,58 +247,62 @@ namespace GUI
 
             if (_studentData != null)
             {
-                txtName.Text = _studentData.FullName;
-                dtpDob.Value = _studentData.DateOfBirth;
-                txtAddress.Text = _studentData.Address;
-                txtID.Text = _studentData.StudentCode;
+                txtName.Text = _studentData.FullName ?? "";
+                txtAddress.Text = _studentData.Address ?? "";
+                txtID.Text = _studentData.StudentCode ?? "";
                 ToggleGender(_studentData.Gender == "Male");
 
-                if (cboClass.Items.Count > 0) cboClass.SelectedValue = _studentData.ClassID;
-                if (cboYear.Items.Count > 0)
+                // Xử lý DateTimePicker tránh lỗi 0001-01-01
+                if (_studentData.DateOfBirth == DateTime.MinValue)
                 {
-                    if (_studentData.YearID > 0) cboYear.SelectedValue = _studentData.YearID;
-                    else cboYear.Text = _studentData.AcademicYear;
+                    dtpDob.Checked = false;       // để trống
+                    dtpDob.ShowCheckBox = true;   // bật chế độ hiển thị bỏ chọn
+                }
+                else
+                {
+                    dtpDob.ShowCheckBox = true;
+                    dtpDob.Checked = true;
+                    dtpDob.Value = _studentData.DateOfBirth;
                 }
 
-                txtFatherName.Text = _studentData.FatherName;
-                txtFatherPhone.Text = _studentData.FatherPhone;
-                txtFatherJob.Text = _studentData.FatherJob;
-                txtMotherName.Text = _studentData.MotherName;
-                txtMotherPhone.Text = _studentData.MotherPhone;
-                txtMotherJob.Text = _studentData.MotherJob;
+                txtFatherName.Text = _studentData.FatherName ?? "";
+                txtFatherPhone.Text = _studentData.FatherPhone ?? "";
+                txtFatherJob.Text = _studentData.FatherJob ?? "";
 
-                // Load ảnh sử dụng hàm Helper
+                txtMotherName.Text = _studentData.MotherName ?? "";
+                txtMotherPhone.Text = _studentData.MotherPhone ?? "";
+                txtMotherJob.Text = _studentData.MotherJob ?? "";
+
                 LoadAvatarToUI(_studentData.Avatar);
 
-                // Nếu chưa có ảnh riêng thì hiện chữ "Thay đổi ảnh" đè lên ảnh mặc định
                 if (string.IsNullOrEmpty(_studentData.Avatar))
                 {
                     lblUpload.Text = "Thay đổi ảnh";
-                    lblUpload.Visible = true; // Hiện chữ để người dùng biết có thể đổi
-                    lblUpload.BackColor = Color.Transparent; // Trong suốt để thấy avatar_macdinh ở dưới
+                    lblUpload.Visible = true;
+                    lblUpload.BackColor = Color.Transparent;
                 }
             }
         }
 
-        private void LoadComboBoxData()
-        {
-            try
-            {
-                var dtClass = _teacherBus.GetHomeroomClass(_currentTeacherUserId);
-                cboClass.DataSource = dtClass;
-                cboClass.DisplayMember = "class_name";
-                cboClass.ValueMember = "class_id";
+        //private void LoadComboBoxData()
+        //{
+        //    try
+        //    {
+        //        var dtClass = _teacherBus.GetHomeroomClass(_currentTeacherUserId);
+        //        cboClass.DataSource = dtClass;
+        //        cboClass.DisplayMember = "class_name";
+        //        cboClass.ValueMember = "class_id";
 
-                var dtYear = _teacherBus.GetCurrentAcademicYear();
-                cboYear.DataSource = dtYear;
-                cboYear.DisplayMember = "name";
-                cboYear.ValueMember = "year_id";
+        //        var dtYear = _teacherBus.GetCurrentAcademicYear();
+        //        cboYear.DataSource = dtYear;
+        //        cboYear.DisplayMember = "name";
+        //        cboYear.ValueMember = "year_id";
 
-                cboClass.Enabled = false;
-                cboYear.Enabled = false;
-            }
-            catch { }
-        }
+        //        cboClass.Enabled = false;
+        //        cboYear.Enabled = false;
+        //    }
+        //    catch { }
+        //}
 
         private void btnSave_Click(object sender, EventArgs e)
         {
