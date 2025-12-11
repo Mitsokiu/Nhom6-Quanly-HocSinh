@@ -1,37 +1,97 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Code\\c5\\",
+  "WorkspaceRootPath": "D:\\GitHub\\QLHS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|c:\\code\\c5\\gui\\usercontrols\\uc_admin_namhoc_hocki.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc_hocki.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\qlhs\\gui\\sidebar.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\sidebar.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|c:\\code\\c5\\gui\\usercontrols\\uc_admin_namhoc_hocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc_hocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\qlhs\\gui\\properties\\resources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\properties\\resources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|c:\\code\\c5\\gui\\usercontrols\\uc_admin_namhoc_hocphi_phieuthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc_hocphi_phieuthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\qlhs\\gui\\sidebar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\sidebar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|c:\\code\\c5\\gui\\usercontrols\\uc_admin_namhoc_hocphi_phieuthu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc_hocphi_phieuthu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\qlhs\\gui\\sidebar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\sidebar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|c:\\code\\c5\\gui\\usercontrols\\uc_admin_namhoc_hocphi_bar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc_hocphi_bar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\qlhs\\gui\\usercontrols\\uc_admin_thongke_hocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_thongke_hocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|c:\\code\\c5\\gui\\usercontrols\\uc_admin_namhoc_hocphi_phieuthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc_hocphi_phieuthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\qlhs\\gui\\usercontrols\\uc_admin_thongke_hocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_thongke_hocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|c:\\code\\c5\\dao\\tuitiondao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\qlhs\\gui\\usercontrols\\uc_admin_thongke_hocphi.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_thongke_hocphi.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\qlhs\\gui\\usercontrols\\uc_admin_thongke.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_thongke.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|d:\\github\\qlhs\\dao\\statisticdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|solutionrelative:dao\\statisticdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|D:\\GitHub\\QLHS\\dao\\tuitiondao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{25818EB4-958C-42CC-AAC9-1780EDBEC6B3}|DAO\\DAO.csproj|solutionrelative:dao\\tuitiondao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|c:\\code\\c5\\bus\\tuitionbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|d:\\github\\qlhs\\bus\\statisticbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|solutionrelative:bus\\statisticbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\qlhs\\gui\\usercontrols\\uc_admin_thongke_diemso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_thongke_diemso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\qlhs\\gui\\usercontrols\\uc_admin_thongke_diemso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_thongke_diemso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\qlhs\\gui\\usercontrols\\uc_admin_thongke_diemso.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_thongke_diemso.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\qlhs\\gui\\usercontrols\\uc_admin_thongke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_thongke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\usercontrols\\uc_admin_namhoc_hocphi_bar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc_hocphi_bar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\usercontrols\\uc_admin_namhoc_hocphi_phieuthu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc_hocphi_phieuthu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\usercontrols\\uc_admin_namhoc_hocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc_hocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\usercontrols\\uc_admin_namhoc_hocki.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc_hocki.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\usercontrols\\uc_admin_namhoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|d:\\github\\qlhs\\gui\\usercontrols\\uc_admin_namhoc_hocphi_phieuthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc_hocphi_phieuthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|D:\\GitHub\\QLHS\\gui\\usercontrols\\uc_admin_namhoc_hocphi_phieuthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C76F027-D90C-467E-9E38-48D0AFC63594}|GUI\\GUI.csproj|solutionrelative:gui\\usercontrols\\uc_admin_namhoc_hocphi_phieuthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|D:\\GitHub\\QLHS\\bus\\tuitionbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{101C8E04-554D-4277-B294-C6A69327631A}|BUS\\BUS.csproj|solutionrelative:bus\\tuitionbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -42,15 +102,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 370,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 20,
               "Title": "UC_Admin_NamHoc_HocPhi_PhieuThu.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\c5\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs",
+              "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs",
-              "ToolTip": "C:\\Code\\c5\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs [Design]",
+              "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs [Design]",
               "RelativeToolTip": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-10T11:43:47.153Z",
@@ -59,27 +119,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 21,
               "Title": "UC_Admin_NamHoc_HocPhi_PhieuThu.cs",
-              "DocumentMoniker": "C:\\Code\\c5\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs",
+              "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs",
-              "ToolTip": "C:\\Code\\c5\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs",
+              "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs",
               "RelativeToolTip": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.cs",
               "ViewState": "AgIAAJ4AAAAAAAAAAAA4wK8AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-10T11:43:33.539Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "TuitionDAO.cs",
-              "DocumentMoniker": "C:\\Code\\c5\\DAO\\TuitionDAO.cs",
+              "DocumentMoniker": "D:\\GitHub\\QLHS\\DAO\\TuitionDAO.cs",
               "RelativeDocumentMoniker": "DAO\\TuitionDAO.cs",
-              "ToolTip": "C:\\Code\\c5\\DAO\\TuitionDAO.cs",
+              "ToolTip": "D:\\GitHub\\QLHS\\DAO\\TuitionDAO.cs",
               "RelativeToolTip": "DAO\\TuitionDAO.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAA0wEYBAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAIwEYBAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-10T11:45:21.016Z",
               "IsPinned": true,
@@ -87,53 +146,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 22,
               "Title": "TuitionBUS.cs",
-              "DocumentMoniker": "C:\\Code\\c5\\BUS\\TuitionBUS.cs",
+              "DocumentMoniker": "D:\\GitHub\\QLHS\\BUS\\TuitionBUS.cs",
               "RelativeDocumentMoniker": "BUS\\TuitionBUS.cs",
-              "ToolTip": "C:\\Code\\c5\\BUS\\TuitionBUS.cs",
+              "ToolTip": "D:\\GitHub\\QLHS\\BUS\\TuitionBUS.cs",
               "RelativeToolTip": "BUS\\TuitionBUS.cs",
               "ViewState": "AgIAAE4AAAAAAAAAAAAAwGAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-10T11:49:33.982Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UC_Admin_Namhoc_HocKi.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\c5\\GUI\\UserControls\\UC_Admin_Namhoc_HocKi.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_Namhoc_HocKi.cs",
-              "ToolTip": "C:\\Code\\c5\\GUI\\UserControls\\UC_Admin_Namhoc_HocKi.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_Namhoc_HocKi.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T12:16:36.124Z",
-              "EditorCaption": " [Design]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UC_Admin_NamHoc_HocPhi.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\c5\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi.cs",
-              "ToolTip": "C:\\Code\\c5\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T12:16:31.174Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UC_Admin_NamHoc_HocPhi_Bar.cs [Design]",
-              "DocumentMoniker": "C:\\Code\\c5\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_Bar.cs",
-              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_Bar.cs",
-              "ToolTip": "C:\\Code\\c5\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_Bar.cs [Design]",
-              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_Bar.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T12:16:28.25Z",
-              "EditorCaption": " [Design]"
+              "Title": "Resources.resx",
+              "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\Properties\\Resources.resx",
+              "RelativeDocumentMoniker": "GUI\\Properties\\Resources.resx",
+              "ToolTip": "D:\\GitHub\\QLHS\\GUI\\Properties\\Resources.resx",
+              "RelativeToolTip": "GUI\\Properties\\Resources.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-12-11T16:52:43.121Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -149,13 +183,227 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Sidebar.cs",
+              "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\Sidebar.cs",
+              "RelativeDocumentMoniker": "GUI\\Sidebar.cs",
+              "ToolTip": "D:\\GitHub\\QLHS\\GUI\\Sidebar.cs",
+              "RelativeToolTip": "GUI\\Sidebar.cs",
+              "ViewState": "AgIAAJ4AAAAAAAAAAAAUwAoAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T16:37:35.816Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Sidebar.Designer.cs",
+              "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\Sidebar.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\Sidebar.Designer.cs",
+              "ToolTip": "D:\\GitHub\\QLHS\\GUI\\Sidebar.Designer.cs",
+              "RelativeToolTip": "GUI\\Sidebar.Designer.cs",
+              "ViewState": "AgIAAB8BAAAAAAAAAAApwCYBAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T16:37:28.091Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Sidebar.cs [Design]",
+              "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\Sidebar.cs",
+              "RelativeDocumentMoniker": "GUI\\Sidebar.cs",
+              "ToolTip": "D:\\GitHub\\QLHS\\GUI\\Sidebar.cs [Design]",
+              "RelativeToolTip": "GUI\\Sidebar.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T16:37:21.708Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UC_Admin_ThongKe_HocPhi.cs",
+              "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_ThongKe_HocPhi.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_ThongKe_HocPhi.cs",
+              "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_ThongKe_HocPhi.cs",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_ThongKe_HocPhi.cs",
+              "ViewState": "AgIAAL4AAAAAAAAAAAAgwPwAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T16:10:21.571Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UC_Admin_ThongKe_HocPhi.cs [Design]",
+              "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_ThongKe_HocPhi.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_ThongKe_HocPhi.cs",
+              "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_ThongKe_HocPhi.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_ThongKe_HocPhi.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T16:10:19.604Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UC_Admin_ThongKe_HocPhi.Designer.cs",
+              "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_ThongKe_HocPhi.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_ThongKe_HocPhi.Designer.cs",
+              "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_ThongKe_HocPhi.Designer.cs",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_ThongKe_HocPhi.Designer.cs",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAgwJIAAABoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T16:09:59.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UC_Admin_ThongKe_DiemSo.cs [Design]",
+              "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_ThongKe_DiemSo.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_ThongKe_DiemSo.cs",
+              "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_ThongKe_DiemSo.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_ThongKe_DiemSo.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T16:01:24.515Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UC_Admin_ThongKe_DiemSo.Designer.cs",
+              "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_ThongKe_DiemSo.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_ThongKe_DiemSo.Designer.cs",
+              "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_ThongKe_DiemSo.Designer.cs",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_ThongKe_DiemSo.Designer.cs",
+              "ViewState": "AgIAAAQBAAAAAAAAAAAuwBoBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T15:40:42.302Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "UC_Admin_ThongKe.cs",
+              "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_ThongKe.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_ThongKe.cs",
+              "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_ThongKe.cs",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_ThongKe.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAowC0AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T15:38:11.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UC_Admin_ThongKe.Designer.cs",
+              "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_ThongKe.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_ThongKe.Designer.cs",
+              "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_ThongKe.Designer.cs",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_ThongKe.Designer.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAgwGAAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T15:37:32.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UC_Admin_ThongKe_DiemSo.cs",
+              "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_ThongKe_DiemSo.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_ThongKe_DiemSo.cs",
+              "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_ThongKe_DiemSo.cs",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_ThongKe_DiemSo.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAgwHkAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T15:37:10.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "StatisticBUS.cs",
+              "DocumentMoniker": "D:\\GitHub\\QLHS\\BUS\\StatisticBUS.cs",
+              "RelativeDocumentMoniker": "BUS\\StatisticBUS.cs",
+              "ToolTip": "D:\\GitHub\\QLHS\\BUS\\StatisticBUS.cs",
+              "RelativeToolTip": "BUS\\StatisticBUS.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAuwCMAAABsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T15:36:14.31Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "StatisticDAO.cs",
+              "DocumentMoniker": "D:\\GitHub\\QLHS\\DAO\\StatisticDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\StatisticDAO.cs",
+              "ToolTip": "D:\\GitHub\\QLHS\\DAO\\StatisticDAO.cs",
+              "RelativeToolTip": "DAO\\StatisticDAO.cs",
+              "ViewState": "AgIAAJYAAAAAAAAAAAA3wK0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T15:31:08.849Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "UC_Admin_Namhoc.cs [Design]",
+              "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_Namhoc.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_Namhoc.cs",
+              "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_Namhoc.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_Namhoc.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T12:18:28.971Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "UC_Admin_Namhoc_HocKi.cs [Design]",
+              "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_Namhoc_HocKi.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_Namhoc_HocKi.cs",
+              "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_Namhoc_HocKi.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_Namhoc_HocKi.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T12:16:36.124Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "UC_Admin_NamHoc_HocPhi.cs [Design]",
+              "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi.cs",
+              "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T12:16:31.174Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "UC_Admin_NamHoc_HocPhi_Bar.cs [Design]",
+              "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_Bar.cs",
+              "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_Bar.cs",
+              "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_Bar.cs [Design]",
+              "RelativeToolTip": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_Bar.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T12:16:28.25Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "UC_Admin_NamHoc_HocPhi_PhieuThu.Designer.cs",
-              "DocumentMoniker": "C:\\Code\\c5\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.Designer.cs",
+              "DocumentMoniker": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.Designer.cs",
-              "ToolTip": "C:\\Code\\c5\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.Designer.cs",
+              "ToolTip": "D:\\GitHub\\QLHS\\GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.Designer.cs",
               "RelativeToolTip": "GUI\\UserControls\\UC_Admin_NamHoc_HocPhi_PhieuThu.Designer.cs",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAQwGwAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-10T11:55:25.509Z",
               "EditorCaption": ""

@@ -19,14 +19,20 @@ namespace BUS
             return new DataTable();
         }
 
-        // Điểm số
-        public DataTable GetSubjects() => dao.GetAllSubjects();
-        public DataTable GetSemesters() => dao.GetAllSemesters();
-        public DataTable GetAvgScoreByClass(string sub, string sem) => dao.GetAvgScoreByClass(sub, sem);
-        public DataTable GetScoreDistribution(string sub, string sem) => dao.GetScoreDistribution(sub, sem);
-        public DataTable GetTopStudents(string sub, string sem, bool isDesc) => dao.GetTopStudentScores(sub, sem, isDesc);
+        // Điểm số [CẬP NHẬT]
+        public DataTable GetGradeLevels() => dao.GetAllGradeLevels();
+        public DataTable GetSemesters() => dao.GetAllSemesters(); // Trả về DataTable có cột 'semester_display'
 
-        // Học phí
-        public DataTable GetTuitionStats(string sem) => dao.GetTuitionStats(sem);
+        // Nhận vào ID thay vì Name
+        public DataTable GetOverallAverageScoreDistribution(int gradeId, int semId) => dao.GetOverallAverageScoreDistribution(gradeId, semId);
+        public DataTable GetTopTenStudentsByAvgScore(int gradeId, int semId) => dao.GetTopTenStudentsByAvgScore(gradeId, semId);
+
+        // --- HỌC PHÍ ---
+
+        public DataTable GetTuitionSummary(int semId, int gradeId) => dao.GetTuitionSummary(semId, gradeId);
+
+        public DataTable GetTuitionCountStatus(int semId, int gradeId) => dao.GetTuitionCountStatus(semId, gradeId);
+
+        public DataTable GetUnpaidStudents(int semId, int gradeId) => dao.GetUnpaidStudents(semId, gradeId);
     }
 }

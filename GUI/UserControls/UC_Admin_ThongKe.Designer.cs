@@ -78,6 +78,25 @@
             this.tabCoCau.Text = "Thống Kê Cơ Cấu";
             this.tabCoCau.UseVisualStyleBackColor = true;
 
+            // Thêm hoặc kiểm tra thuộc tính của tabDiemSo
+            // tabDiemSo
+            this.tabDiemSo.Location = new System.Drawing.Point(4, 34);
+            this.tabDiemSo.Name = "tabDiemSo";
+            this.tabDiemSo.Padding = new System.Windows.Forms.Padding(10);
+            this.tabDiemSo.Size = new System.Drawing.Size(1092, 662);
+            this.tabDiemSo.Text = "Thống Kê Điểm Số";
+            this.tabDiemSo.UseVisualStyleBackColor = true;
+
+            // 
+            // tabHocPhi
+            // 
+            this.tabHocPhi.Location = new System.Drawing.Point(4, 34);
+            this.tabHocPhi.Name = "tabHocPhi";
+            this.tabHocPhi.Padding = new System.Windows.Forms.Padding(10);
+            this.tabHocPhi.Size = new System.Drawing.Size(1092, 662);
+            this.tabHocPhi.Text = "Thống Kê Học Phí"; // 
+            this.tabHocPhi.UseVisualStyleBackColor = true;
+
             // panelSummary (3 Cards)
             this.panelSummary.Controls.Add(this.cardLop);
             this.panelSummary.Controls.Add(this.cardGV);
